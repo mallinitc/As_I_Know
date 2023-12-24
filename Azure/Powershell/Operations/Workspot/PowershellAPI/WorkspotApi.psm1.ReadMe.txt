@@ -1,0 +1,71 @@
+<#
+	.SYNOPSIS
+		This module provides functions to make easy use of the Workspot API
+		
+	.DESCRIPTION
+		The functions in this module give the user a simplified ability 
+		to use the Workspot Control API capabilities from PowerShell.  
+		
+		Use Get-Help with the -Full parameter to review documentation of each 
+		function in this module.
+		
+		This module provides three ways to handle credentials and authentication:
+		 1- After importing the module, run Set-WorkspotApiCredentials to 
+		save your API credentials to the local machine in the current user 
+		profile. Other functions will call Get-WorkspotApiToken and retrieve
+		an AuthToken automatically using those stored credentials. This is the 
+		best way to use the module to work with Workspot API at interactive 
+		PowerShell consoles and to run scripts locally.
+
+		 2- Include the full set of API and Workspot Control credentials in each
+		individual function call. The function will call Get-WorkspotApiToken and 
+		retrieve its own AuthToken by passing those credentials. If the design goal 
+		is to leverage the Workspot API with orchestration this would be a more 
+		resilient way to perform those function calls.
+
+		 3- Use Get-WorkspotApiToken with either stored or passed credentials to get
+		your AuthToken, then include it when calling other functions. This would be
+		the most efficient way to use this module in a script that makes many API calls,
+		to reduce execution time.
+		
+	.FUNCTIONALITY
+		Function Get-WorkspotApiModuleHelp			- Displays this module help/summary.
+		Function Set-WorkspotApiCredentials			- Saves credentials to be used by Get-WorkspotApiToken.		
+		Function Get-WorkspotApiToken				- Retrieves an oAuth token for Workspot API calls. This function is 
+													 primarily used by other functions that need to authenticate to API.
+		Function Get-WorkspotApiStatus 				- Waits for completion of asynchronous Workspot API operation.  This 
+													 function is primarily for use by other functions in this module that 
+													 perform API calls with asynchronous operations. 
+		Function Get-WorkspotActiveUserReport		- Retrieves active user report from Control.
+		Function Get-WorkspotVdiPool				- Gets details of Workspot VDI Pools from Control.	
+		Function Get-WorkspotVdiPoolVm				- Gets details of VDI computers from specific Workspot VDI Pool.
+		Function Get-WorkspotUser					- Gets details Workspot Control user.
+		Function Get-WorkspotLicenseInfo			- Gets details of Workspot license information from Control.
+		Function New-WorkspotVdiPoolVm				- Creates new VDI computer within a Workspot VDI Pool.
+		Function New-WorkspotUser					- Creates new user in Workspot Control.	
+		Function Set-WorkspotUserCostCenter			- Sets the Cost Center value for the specified user.
+		Function Set-WorkspotVdiTags				- Sets tag pairs for specified VDI Computer.
+		Function Set-WorkspotVdiUserAssignment		- Assigns Workspot user to a VDI Pool, or to a specific VDI Computer.	
+		Function Remove-WorkspotVdiUserAssignment	- Removes assignment for Workspot user from the specified VDI Computer.
+		Function Remove-WorkspotUser				- Deletes user account from Workspot Control.
+		Function Remove-WorkspotVdiPoolVm			- Deletes a VDI Computer from a Workspot VDI Pool.
+		Function Restart-WorkspotVdiVm				- Issues the "reboot" command in Control for the specified VDI Computer.
+
+		
+	.NOTES
+		Author: Joe Semmelrock, joe@workspot.com
+		2018-10-30  Released
+		2018-11-08  Added Get-WorkspotLicenseInfo, updated comments.
+		2018-12-19  Fixed return for 3 functions. (Remove-WorkspotVdiUserAssignment, Remove-WorkspotUser, and Remove-WorkspotVdiPoolVm)
+					Improved Get-WorkspotActiveUserReport to include the date the user was last logged in
+					Added -CreateAsynchronously switch to New-WorkspotVdiPoolVm to end the function without waiting for the new VM build
+					Added return handling for a failed VM lookup in Remove-WorkspotVdiPoolVm
+					Fixed examples for New-WorkspotUser
+		2019-06-29  Added Restart-WorkspotVdiVm
+					Added Set-WorkspotUserCostCenter
+					Added Set-WorkspotVdiTags
+					Improved output from Get-WorkspotApiStatus
+					Added support for providing VM Name for New-WorkspotVdiPoolVm
+					Added variable delay to Get-WorkspotApiStatus with -StatusDelay parameter
+					Fixed some inconsistencies in the comment-based help and examples
+#>

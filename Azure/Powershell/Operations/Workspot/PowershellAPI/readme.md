@@ -1,0 +1,1 @@
+Simple, standalone scripts to provide to customers for specific Workspot API calls.
