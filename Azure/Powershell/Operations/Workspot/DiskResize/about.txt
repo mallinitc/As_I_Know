@@ -1,0 +1,1 @@
+Workspot VM disk resize script
