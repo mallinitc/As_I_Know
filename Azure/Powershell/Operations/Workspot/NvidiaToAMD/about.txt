@@ -1,0 +1,5 @@
+Scripts to 
+- uninstall nividia drivers
+- restart VM
+- install AMD
+across all GPU VMs in Azure
