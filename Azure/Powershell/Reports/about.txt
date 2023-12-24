@@ -1,0 +1,1 @@
+Scripts that are used to extract the data from Azure and send reports. 
