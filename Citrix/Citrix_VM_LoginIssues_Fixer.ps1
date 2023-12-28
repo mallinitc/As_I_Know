@@ -1,8 +1,7 @@
-﻿#Citrix XenDesktop - Login Issues - Fixing through Powershell
+﻿##Citrix XenDesktop - Login issues - Script2
 
-#This reads the DDC server Event Logs & depends on the Event IDs - Script will fix the VM login issues
-
-
+#Script1 - Reads all Login failures from DDC Server Event Logs and ingest them in DB
+#Script2 - Reads those data & try to fix the VMs
 
 
 ##Restart Function
