@@ -8,7 +8,7 @@
 #If VM is not running then do you want to power it on? YES/NO
 
 
-set-awsproxy -hostname proxy.ebiz.verizon.com -port 80
+set-awsproxy -hostname proxyURL -port 80
 
 if (!(Get-Module -Name AnyBox)) {
     Import-Module -Name AnyBox
