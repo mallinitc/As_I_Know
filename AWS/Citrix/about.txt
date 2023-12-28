@@ -1,0 +1,2 @@
+We had Citrix - XendDesktop environment hosted on AWS cloud
+These all scripts are operations related automation scripts.
