@@ -1,0 +1,51 @@
+﻿# azure-pipelines.yml (minimal wrapper)
+trigger: none
+
+parameters:
+  - name: Tier
+    type: number
+    default: 3
+
+stages:
+- stage: Validate
+  jobs:
+  - job: ValidateInputs
+    steps:
+    - pwsh: |
+        Write-Host "Tier: $(Tier)"
+        # Do input checks here if needed
+
+# Gate stage only for Tier 1-2
+- ${{ if or(eq(parameters.Tier, 1), eq(parameters.Tier, 2)) }}:
+  - stage: Approval
+    displayName: "Manual Approval (Tier 1-2)"
+    dependsOn: Validate
+    condition: succeeded()
+    # Create an Environment named 'pim-approvals' with required approver group in ADO project settings
+    environment: pim-approvals
+    jobs:
+    - job: Gate
+      steps:
+      - pwsh: Write-Host "Approved via environment gate."
+
+- stage: Execute
+  dependsOn: ${{ if or(eq(parameters.Tier, 1), eq(parameters.Tier, 2)) }}:
+               [Approval]
+             ${{ if and(ne(parameters.Tier, 1), ne(parameters.Tier, 2)) }}:
+               [Validate]
+  jobs:
+  - job: DoWork
+    steps:
+    - checkout: self
+    - pwsh: |
+        # Call the PowerShell you saved as scripts/pim.ps1
+        .\scripts\pim.ps1 `
+          -Action 'AzureRbacAssign' `
+          -TenantId '$(tenantId)' `
+          -SubscriptionId '$(subscriptionId)' `
+          -AzureRoleDefinitionIdOrName 'Owner' `
+          -TargetObjectId '$(targetObjectId)' `
+          -MakePIMEligible:$(makePIMEligible) `
+          -Tier $(Tier) `
+          -ApproverGroupObjectId '$(approverGroupObjectId)' `
+          -SnowTicketNumber '$(snowTicketNumber)'
