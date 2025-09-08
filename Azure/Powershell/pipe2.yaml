@@ -1,0 +1,72 @@
+trigger: none   # manual run only, you can adjust
+
+parameters:
+  - name: Action
+    displayName: "Select action"
+    type: string
+    default: "AzureRbac"
+    values:
+      - AzureRbac
+      - EntraRole
+
+  # Common parameters
+  - name: TenantId
+    type: string
+    default: ""
+
+  - name: MakePIMEligible
+    type: boolean
+    default: false
+
+  # Azure RBAC specific
+  - name: SubscriptionId
+    type: string
+    default: ""
+  - name: ManagementGroupId
+    type: string
+    default: ""
+  - name: AzureRoleDefinition
+    type: string
+    default: "Contributor"
+  - name: TargetObjectId
+    type: string
+    default: ""
+
+  # Entra Directory Role specific
+  - name: DirectoryRoleDisplayName
+    type: string
+    default: "Global Reader"
+  - name: AssigneeGroupObjectId
+    type: string
+    default: ""
+
+stages:
+- stage: RunRoleAssignment
+  jobs:
+  - job: Execute
+    pool:
+      vmImage: 'windows-latest'
+    steps:
+    - powershell: |
+        Write-Host "Action selected: ${{ parameters.Action }}"
+
+        if ("${{ parameters.Action }}" -eq "AzureRbac") {
+          & "C:\scripts\role-assign.ps1" `
+            -Action AzureRbacAssign `
+            -TenantId "${{ parameters.TenantId }}" `
+            -SubscriptionId "${{ parameters.SubscriptionId }}" `
+            -ManagementGroupId "${{ parameters.ManagementGroupId }}" `
+            -AzureRoleDefinitionIdOrName "${{ parameters.AzureRoleDefinition }}" `
+            -TargetObjectId "${{ parameters.TargetObjectId }}" `
+            -MakePIMEligible:(${ {parameters.MakePIMEligible} })
+        }
+
+        if ("${{ parameters.Action }}" -eq "EntraRole") {
+          & "C:\scripts\role-assign.ps1" `
+            -Action EntraRoleAssign `
+            -TenantId "${{ parameters.TenantId }}" `
+            -DirectoryRoleDisplayName "${{ parameters.DirectoryRoleDisplayName }}" `
+            -AssigneeGroupObjectId "${{ parameters.AssigneeGroupObjectId }}" `
+            -MakePIMEligible:(${ {parameters.MakePIMEligible} })
+        }
+      displayName: "Run Role Assignment Script"
