@@ -70,3 +70,19 @@ stages:
             -MakePIMEligible:(${ {parameters.MakePIMEligible} })
         }
       displayName: "Run Role Assignment Script"
+
+
+###########
+variables:
+- group: role-assignments-sbx   # contains tenantid, appid, secret (secret marked as secret)
+
+steps:
+- task: AzurePowerShell@5
+  inputs:
+    azurePowerShellVersion: 'LatestVersion'
+    ScriptType: 'FilePath'
+    ScriptPath: 'C:\scripts\RBAC_Assignments_App.ps1'
+    ScriptArguments: >
+      -TenantId "$(tenantid)"
+      -AppId "$(appid)"
+      -Secret "$(secret)"
