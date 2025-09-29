@@ -86,3 +86,34 @@ steps:
       -TenantId "$(tenantid)"
       -AppId "$(appid)"
       -Secret "$(secret)"
+#######
+trigger: none
+
+parameters:
+  - name: ScriptFile
+    displayName: "Which script in Azure Utilities to run?"
+    type: string
+    default: "RBAC_Assignments_App.ps1"
+
+variables:
+- group: role-assignments-sbx   # your Library with tenantid, appid, secret
+
+pool:
+  vmImage: 'windows-latest'
+
+steps:
+# Checkout GitHub repo
+- checkout: self
+
+# Run chosen script from Azure Utilities folder
+- task: AzurePowerShell@5
+  displayName: "Run PowerShell script from GitHub repo"
+  inputs:
+    azurePowerShellVersion: 'LatestVersion'
+    ScriptType: 'FilePath'
+    # Build.SourcesDirectory points to repo root
+    ScriptPath: '$(Build.SourcesDirectory)/Azure Utilities/${{ parameters.ScriptFile }}'
+    ScriptArguments: >
+      -TenantId "$(tenantid)"
+      -AppId "$(appid)"
+      -Secret "$(secret)"
