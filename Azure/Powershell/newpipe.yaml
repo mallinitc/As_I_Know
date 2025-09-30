@@ -1,63 +1,64 @@
-# ---------- pipeline.yml ----------
 trigger: none
 
-# Pick which action to run at queue time
 parameters:
   - name: Action
-    displayName: "Select action"
+    displayName: "Select Action"
     type: string
-    default: AzureRbac
+    default: RoleManagement
     values:
-      - AzureRbac       # Azure RBAC role at MG/Sub/RG/Resource scope
-      - EntraRole       # Entra ID directory role -> group
+      - RoleManagement   # Assign Azure RBAC role to SPN at scope
+      - GroupAssign      # Assign Entra directory role to group
+      - GroupCreate      # Create Entra ID group
 
-  # Common inputs (usually come from your Library variable group for creds)
+  # ---- Common mandatory params ----
   - name: TenantId
+    type: string
+    default: ""
+  - name: AppId
+    type: string
+    default: ""
+  - name: Secret
+    type: string
+    default: ""
+
+  # ---- RoleManagement params ----
+  - name: TestL_scope
+    type: string
+    default: ""
+  - name: RoleName
+    type: string
+    default: ""
+  - name: SSPName
+    type: string
+    default: ""
+
+  # ---- GroupAssign params ----
+  - name: EntraRole
+    type: string
+    default: ""
+  - name: GroupName
     type: string
     default: ""
   - name: MakePIMEligible
     type: boolean
     default: false
 
-  # ----- Azure RBAC inputs -----
-  - name: SubscriptionId
-    type: string
-    default: ""
-  - name: ManagementGroupId
-    type: string
-    default: ""
-  - name: ResourceGroupName
-    type: string
-    default: ""
-  - name: ResourceId
-    type: string
-    default: ""
-  - name: RoleInput            # name or GUID
-    type: string
-    default: "Reader"
-  - name: TargetObjectId       # group / SPN / MI ObjectId
+  # ---- GroupCreate params ----
+  - name: GroupDescription
     type: string
     default: ""
 
-  # ----- Entra Directory Role inputs -----
-  - name: DirectoryRoleDisplayName
-    type: string
-    default: "Global Reader"
-  - name: AssigneeGroupObjectId
-    type: string
-    default: ""
-
-# Library variable group (has tenantid/appid/secret). You can remove if you pass creds some other way.
 variables:
-- group: role-assignments-sbx
+- group: role-assignments-sbx   # tenantid, appid, secret stored securely
 
-# Centralize paths here (edit just these two names when you change scripts)
 - name: AzureUtilitiesDir
   value: '$(Build.SourcesDirectory)/Azure Utilities'
-- name: RbacScript
-  value: 'RBAC_Assignments_App.ps1'          # <--- change filename here if needed
-- name: EntraScript
-  value: 'EntraRole_Assignments_App.ps1'     # <--- change filename here if needed
+- name: ScriptRoleManagement
+  value: 'RoleManagement.ps1'
+- name: ScriptGroupAssign
+  value: 'Groupassign.ps1'
+- name: ScriptGroupCreate
+  value: 'GroupCreate.ps1'
 
 pool:
   vmImage: windows-latest
@@ -65,51 +66,54 @@ pool:
 steps:
 - checkout: self
 
-# Optional: show where the repo landed
-- powershell: |
-    Write-Host "Repo root          : $(Build.SourcesDirectory)"
-    Write-Host "Azure Utilities dir: $(AzureUtilitiesDir)"
-    Write-Host "RBAC script path   : $(AzureUtilitiesDir)/$(RbacScript)"
-    Write-Host "Entra script path  : $(AzureUtilitiesDir)/$(EntraScript)"
-  displayName: "Echo resolved paths"
-
-# Single place where we decide which script to run
 - task: AzurePowerShell@5
-  displayName: "Run selected action"
+  displayName: "Run Selected Script"
   inputs:
-    azureSubscription: 'sc-ado-role-automation'      # your ARM service connection
+    azureSubscription: 'sc-ado-role-automation'
     azurePowerShellVersion: 'LatestVersion'
     ScriptType: 'InlineScript'
     Inline: |
-      $rbacPath   = "$(AzureUtilitiesDir)/$(RbacScript)"
-      $entraPath  = "$(AzureUtilitiesDir)/$(EntraScript)"
+      $dir       = "$(AzureUtilitiesDir)"
+      $roleMgmt  = Join-Path $dir "$(ScriptRoleManagement)"
+      $groupAsgn = Join-Path $dir "$(ScriptGroupAssign)"
+      $groupCrt  = Join-Path $dir "$(ScriptGroupCreate)"
 
-      if ("${{ parameters.Action }}" -eq "AzureRbac") {
-        if (-not (Test-Path $rbacPath)) { throw "RBAC script not found: $rbacPath" }
-        Write-Host ">> Running Azure RBAC flow..."
-        & $rbacPath `
-          -TenantId  "${{ parameters.TenantId }}" `
-          -AppId     "$(appid)" `
-          -Secret    "$(secret)" `
-          -RoleInput "${{ parameters.RoleInput }}" `
-          -TargetObjectId "${{ parameters.TargetObjectId }}" `
-          -ManagementGroupId "${{ parameters.ManagementGroupId }}" `
-          -SubscriptionId "${{ parameters.SubscriptionId }}" `
-          -ResourceGroupName "${{ parameters.ResourceGroupName }}" `
-          -ResourceId "${{ parameters.ResourceId }}" `
-          -MakePIMEligible:(${ {parameters.MakePIMEligible} })
-      }
-      elseif ("${{ parameters.Action }}" -eq "EntraRole") {
-        if (-not (Test-Path $entraPath)) { throw "Entra script not found: $entraPath" }
-        Write-Host ">> Running Entra Directory Role flow..."
-        & $entraPath `
-          -TenantId  "${{ parameters.TenantId }}" `
-          -AppId     "$(appid)" `
-          -Secret    "$(secret)" `
-          -DirectoryRoleDisplayName "${{ parameters.DirectoryRoleDisplayName }}" `
-          -AssigneeGroupObjectId "${{ parameters.AssigneeGroupObjectId }}" `
-          -MakePIMEligible:(${ {parameters.MakePIMEligible} })
-      }
-      else {
-        throw "Unknown Action: ${{ parameters.Action }} (expected AzureRbac or EntraRole)"
+      $action = "${{ parameters.Action }}"
+      Write-Host ">>> Selected Action: $action"
+
+      switch ($action) {
+
+        'RoleManagement' {
+          if (-not (Test-Path $roleMgmt)) { throw "RoleManagement.ps1 not found" }
+          & $roleMgmt `
+            -TenantId  "${{ parameters.TenantId }}" `
+            -AppId     "${{ parameters.AppId }}" `
+            -Secret    "${{ parameters.Secret }}" `
+            -TestL_scope "${{ parameters.TestL_scope }}" `
+            -RoleName  "${{ parameters.RoleName }}" `
+            -SSPName   "${{ parameters.SSPName }}"
+        }
+
+        'GroupAssign' {
+          if (-not (Test-Path $groupAsgn)) { throw "Groupassign.ps1 not found" }
+          & $groupAsgn `
+            -TenantId  "${{ parameters.TenantId }}" `
+            -AppId     "${{ parameters.AppId }}" `
+            -Secret    "${{ parameters.Secret }}" `
+            -EntraRole "${{ parameters.EntraRole }}" `
+            -GroupName "${{ parameters.GroupName }}" `
+            -MakePIMEligible:(${ {parameters.MakePIMEligible} })
+        }
+
+        'GroupCreate' {
+          if (-not (Test-Path $groupCrt)) { throw "GroupCreate.ps1 not found" }
+          & $groupCrt `
+            -TenantId  "${{ parameters.TenantId }}" `
+            -AppId     "${{ parameters.AppId }}" `
+            -Secret    "${{ parameters.Secret }}" `
+            -GroupName "${{ parameters.GroupName }}" `
+            -GroupDescription "${{ parameters.GroupDescription }}"
+        }
+
+        default { throw "Unknown Action: $action" }
       }
