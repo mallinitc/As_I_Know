@@ -1,0 +1,115 @@
+# ---------- pipeline.yml ----------
+trigger: none
+
+# Pick which action to run at queue time
+parameters:
+  - name: Action
+    displayName: "Select action"
+    type: string
+    default: AzureRbac
+    values:
+      - AzureRbac       # Azure RBAC role at MG/Sub/RG/Resource scope
+      - EntraRole       # Entra ID directory role -> group
+
+  # Common inputs (usually come from your Library variable group for creds)
+  - name: TenantId
+    type: string
+    default: ""
+  - name: MakePIMEligible
+    type: boolean
+    default: false
+
+  # ----- Azure RBAC inputs -----
+  - name: SubscriptionId
+    type: string
+    default: ""
+  - name: ManagementGroupId
+    type: string
+    default: ""
+  - name: ResourceGroupName
+    type: string
+    default: ""
+  - name: ResourceId
+    type: string
+    default: ""
+  - name: RoleInput            # name or GUID
+    type: string
+    default: "Reader"
+  - name: TargetObjectId       # group / SPN / MI ObjectId
+    type: string
+    default: ""
+
+  # ----- Entra Directory Role inputs -----
+  - name: DirectoryRoleDisplayName
+    type: string
+    default: "Global Reader"
+  - name: AssigneeGroupObjectId
+    type: string
+    default: ""
+
+# Library variable group (has tenantid/appid/secret). You can remove if you pass creds some other way.
+variables:
+- group: role-assignments-sbx
+
+# Centralize paths here (edit just these two names when you change scripts)
+- name: AzureUtilitiesDir
+  value: '$(Build.SourcesDirectory)/Azure Utilities'
+- name: RbacScript
+  value: 'RBAC_Assignments_App.ps1'          # <--- change filename here if needed
+- name: EntraScript
+  value: 'EntraRole_Assignments_App.ps1'     # <--- change filename here if needed
+
+pool:
+  vmImage: windows-latest
+
+steps:
+- checkout: self
+
+# Optional: show where the repo landed
+- powershell: |
+    Write-Host "Repo root          : $(Build.SourcesDirectory)"
+    Write-Host "Azure Utilities dir: $(AzureUtilitiesDir)"
+    Write-Host "RBAC script path   : $(AzureUtilitiesDir)/$(RbacScript)"
+    Write-Host "Entra script path  : $(AzureUtilitiesDir)/$(EntraScript)"
+  displayName: "Echo resolved paths"
+
+# Single place where we decide which script to run
+- task: AzurePowerShell@5
+  displayName: "Run selected action"
+  inputs:
+    azureSubscription: 'sc-ado-role-automation'      # your ARM service connection
+    azurePowerShellVersion: 'LatestVersion'
+    ScriptType: 'InlineScript'
+    Inline: |
+      $rbacPath   = "$(AzureUtilitiesDir)/$(RbacScript)"
+      $entraPath  = "$(AzureUtilitiesDir)/$(EntraScript)"
+
+      if ("${{ parameters.Action }}" -eq "AzureRbac") {
+        if (-not (Test-Path $rbacPath)) { throw "RBAC script not found: $rbacPath" }
+        Write-Host ">> Running Azure RBAC flow..."
+        & $rbacPath `
+          -TenantId  "${{ parameters.TenantId }}" `
+          -AppId     "$(appid)" `
+          -Secret    "$(secret)" `
+          -RoleInput "${{ parameters.RoleInput }}" `
+          -TargetObjectId "${{ parameters.TargetObjectId }}" `
+          -ManagementGroupId "${{ parameters.ManagementGroupId }}" `
+          -SubscriptionId "${{ parameters.SubscriptionId }}" `
+          -ResourceGroupName "${{ parameters.ResourceGroupName }}" `
+          -ResourceId "${{ parameters.ResourceId }}" `
+          -MakePIMEligible:(${ {parameters.MakePIMEligible} })
+      }
+      elseif ("${{ parameters.Action }}" -eq "EntraRole") {
+        if (-not (Test-Path $entraPath)) { throw "Entra script not found: $entraPath" }
+        Write-Host ">> Running Entra Directory Role flow..."
+        & $entraPath `
+          -TenantId  "${{ parameters.TenantId }}" `
+          -AppId     "$(appid)" `
+          -Secret    "$(secret)" `
+          -DirectoryRoleDisplayName "${{ parameters.DirectoryRoleDisplayName }}" `
+          -AssigneeGroupObjectId "${{ parameters.AssigneeGroupObjectId }}" `
+          -MakePIMEligible:(${ {parameters.MakePIMEligible} })
+      }
+      else {
+        throw "Unknown Action: ${{ parameters.Action }} (expected AzureRbac or EntraRole)"
+      }
