@@ -74,3 +74,24 @@ catch {
     Write-Host "Graph connectivity failed."
     throw $_.Exception.Message
 }
+
+
+№##########
+
+# Get a GRAPH-scoped token as a STRING
+$graphToken = (Get-AzAccessToken -ResourceUrl 'https://graph.microsoft.com').Token  # <-- string
+
+# (optional) verify the audience
+$aud = (
+  [Text.Encoding]::UTF8.GetString(
+    [Convert]::FromBase64String(($graphToken.Split('.')[1] + '=='))
+  ) | ConvertFrom-Json
+).aud
+Write-Host "aud = $aud"   # should be https://graph.microsoft.com
+
+# Use it
+$headers = @{
+  Authorization = "Bearer $graphToken"
+  'Content-Type' = 'application/json'
+}
+$test = Invoke-RestMethod -Headers $headers -Uri 'https://graph.microsoft.com/v1.0/applications?$top=1' -Method GET
