@@ -95,3 +95,22 @@ $headers = @{
   'Content-Type' = 'application/json'
 }
 $test = Invoke-RestMethod -Headers $headers -Uri 'https://graph.microsoft.com/v1.0/applications?$top=1' -Method GET
+
+
+####
+# $secureAccessToken is a SecureString
+$ptr = [Runtime.InteropServices.Marshal]::SecureStringToBSTR($secureAccessToken)
+try {
+  $tokenPlain = [Runtime.InteropServices.Marshal]::PtrToStringUni($ptr)
+}
+finally {
+  [Runtime.InteropServices.Marshal]::ZeroFreeBSTR($ptr)
+}
+
+# now safe to use
+$decoded = (
+  [Text.Encoding]::UTF8.GetString(
+    [Convert]::FromBase64String(($tokenPlain.Split('.')[1] + '=='))
+  ) | ConvertFrom-Json
+).aud
+$headers = @{ Authorization = "Bearer $tokenPlain" }
