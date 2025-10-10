@@ -45,3 +45,32 @@ $headers = @{ Authorization = "Bearer $graphToken" }
 
 # Now call Graph safely
 $app = Invoke-RestMethod -Headers $headers -Uri "https://graph.microsoft.com/v1.0/applications?`$filter=displayName eq '$SPName'" -Method GET
+
+
+№####################
+
+Write-Host "Getting Microsoft Graph token..."
+try {
+    # Get a Graph-scoped token from the Az context
+    $graphToken = (Get-AzAccessToken -ResourceUrl "https://graph.microsoft.com").Token
+    Write-Host "Token fetched successfully"
+}
+catch {
+    throw "Failed to get Graph token: $($_.Exception.Message)"
+}
+
+$headers = @{
+    "Authorization" = "Bearer $graphToken"
+    "Content-Type"  = "application/json"
+}
+
+# Test Graph connectivity
+$testUri = "https://graph.microsoft.com/v1.0/applications?`$top=1"
+try {
+    $response = Invoke-RestMethod -Headers $headers -Uri $testUri -Method GET
+    Write-Host "Graph connectivity successful. App count:" ($response.value.Count)
+}
+catch {
+    Write-Host "Graph connectivity failed."
+    throw $_.Exception.Message
+}
