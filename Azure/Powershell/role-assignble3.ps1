@@ -19,3 +19,18 @@ function New-RoleAssignableGroup {
   Write-Host "Created role-assignable group: $($grp.Id)  ($DisplayName)"
   return $grp
 }
+
+
+#####
+$token = (Get-AzAccessToken -ResourceTypeName MSGraph).Token
+$headers = @{ Authorization = "Bearer $token" }
+
+# Example: users
+$users = Invoke-RestMethod -Headers $headers -Uri "https://graph.microsoft.com/v1.0/users?`$top=5" -Method GET
+
+# Example: application by displayName
+$encoded = [System.Web.HttpUtility]::UrlEncode("displayName eq '$SPName'")
+$app = Invoke-RestMethod -Headers $headers -Uri "https://graph.microsoft.com/v1.0/applications?`$filter=$encoded" -Method GET
+
+# Example: service principal by displayName
+$spn = Invoke-RestMethod -Headers $headers -Uri "https://graph.microsoft.com/v1.0/servicePrincipals?`$filter=$encoded" -Method GET
