@@ -34,3 +34,14 @@ $app = Invoke-RestMethod -Headers $headers -Uri "https://graph.microsoft.com/v1.
 
 # Example: service principal by displayName
 $spn = Invoke-RestMethod -Headers $headers -Uri "https://graph.microsoft.com/v1.0/servicePrincipals?`$filter=$encoded" -Method GET
+
+
+######
+
+
+# Get a token scoped to Microsoft Graph
+$graphToken = (Get-AzAccessToken -ResourceUrl "https://graph.microsoft.com").Token
+$headers = @{ Authorization = "Bearer $graphToken" }
+
+# Now call Graph safely
+$app = Invoke-RestMethod -Headers $headers -Uri "https://graph.microsoft.com/v1.0/applications?`$filter=displayName eq '$SPName'" -Method GET
