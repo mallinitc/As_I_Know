@@ -55,3 +55,24 @@ function Set-EntraDirectoryRoleAssignment {
 
   Write-Host "PIM eligibility request submitted (Directory Role). RequestId: $($req.id)"
 }
+
+
+
+$body = @{
+  action = "adminAssign"
+  roleDefinitionId = $roleDefinitionId
+  principalId = $groupId
+  directoryScopeId = "/"
+  justification = "Pipeline assignment"
+  scheduleInfo = @{
+    startDateTime = (Get-Date).ToUniversalTime().ToString("o")
+    expiration = @{
+      type = "afterDateTime"
+      endDateTime = (Get-Date).ToUniversalTime().AddYears(1).ToString("o")
+    }
+  }
+}
+
+Invoke-RestMethod -Headers $H -Method POST `
+  -Uri "https://graph.microsoft.com/beta/roleManagement/directory/roleEligibilityScheduleRequests" `
+  -Body ($body | ConvertTo-Json -Depth 8)
