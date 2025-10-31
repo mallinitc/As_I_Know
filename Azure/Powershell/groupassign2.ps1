@@ -93,3 +93,31 @@ $H = @{ Authorization = "Bearer $token"; "Content-Type" = "application/json" }
 
 Invoke-RestMethod -Headers $H -Method GET `
   "https://graph.microsoft.com/beta/roleManagement/directory/roleEligibilityScheduleRequests?`$top=1"
+
+
+$start = (Get-Date).ToUniversalTime().ToString("o")
+$end   = (Get-Date).ToUniversalTime().AddYears(1).ToString("o")
+
+$body = @{
+  action = "adminAssign"
+  roleDefinitionId = $roleDefinitionId
+  principalId = $groupId
+  directoryScopeId = "/"
+  justification = "Pipeline assignment"
+  scheduleInfo = @{
+    startDateTime = $start
+    expiration = @{
+      type = "afterDateTime"
+      endDateTime = $end
+    }
+  }
+}
+
+Write-Host "Sending JSON body:"
+$body | ConvertTo-Json -Depth 10 | Write-Host
+
+$response = Invoke-RestMethod -Headers $H -Method POST `
+  "https://graph.microsoft.com/beta/roleManagement/directory/roleEligibilityScheduleRequests" `
+  -Body ($body | ConvertTo-Json -Depth 10)
+
+Write-Host "✅ PIM eligible assignment created: $($response.id)"
