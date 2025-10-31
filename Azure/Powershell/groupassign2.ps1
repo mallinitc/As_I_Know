@@ -76,3 +76,20 @@ $body = @{
 Invoke-RestMethod -Headers $H -Method POST `
   -Uri "https://graph.microsoft.com/beta/roleManagement/directory/roleEligibilityScheduleRequests" `
   -Body ($body | ConvertTo-Json -Depth 8)
+
+
+
+$tokenResp = Invoke-RestMethod -Method POST -Uri "https://login.microsoftonline.com/$TenantId/oauth2/v2.0/token" -Body @{
+  client_id     = $ClientId
+  client_secret = $Secret
+  scope         = "https://graph.microsoft.com/.default"
+  resource      = "https://graph.microsoft.com/"
+  grant_type    = "client_credentials"
+}
+$token = $tokenResp.access_token
+$H = @{ Authorization = "Bearer $token"; "Content-Type" = "application/json" }
+
+
+
+Invoke-RestMethod -Headers $H -Method GET `
+  "https://graph.microsoft.com/beta/roleManagement/directory/roleEligibilityScheduleRequests?`$top=1"
