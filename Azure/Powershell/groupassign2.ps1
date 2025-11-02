@@ -121,3 +121,39 @@ $response = Invoke-RestMethod -Headers $H -Method POST `
   -Body ($body | ConvertTo-Json -Depth 10)
 
 Write-Host "✅ PIM eligible assignment created: $($response.id)"
+
+
+
+# ----- Direct (permanent) role assignment for a group -----
+
+# 1) Ensure a directoryRole *instance* exists for $roleName
+$dirRole = Invoke-RestMethod -Headers $H -Method GET `
+  "https://graph.microsoft.com/v1.0/directoryRoles?`$filter=displayName eq '$roleName'&`$select=id"
+
+if (-not $dirRole.value) {
+  $tmplId = (Invoke-RestMethod -Headers $H -Method GET `
+    "https://graph.microsoft.com/v1.0/directoryRoleTemplates?`$filter=displayName eq '$roleName'&`$select=id"
+  ).value[0].id
+
+  $dirRole = Invoke-RestMethod -Headers $H -Method POST `
+    "https://graph.microsoft.com/v1.0/directoryRoles" `
+    -Body (@{ roleTemplateId = $tmplId } | ConvertTo-Json)
+} else {
+  $dirRole = $dirRole.value[0]
+}
+
+# 2) Add the group as a member of the role (permanent active assignment)
+$refBody = @{ '@odata.id' = "https://graph.microsoft.com/v1.0/directoryObjects/$groupId" }
+
+try {
+  Invoke-RestMethod -Headers $H -Method POST `
+    "https://graph.microsoft.com/v1.0/directoryRoles/$($dirRole.id)/members/`$ref" `
+    -Body ($refBody | ConvertTo-Json)
+  Write-Host "✅ Direct role assignment added for group $groupId to '$roleName'."
+}
+catch {
+  # Idempotency: ignore 'already exists' errors
+  if ($_.ErrorDetails.Message -match 'already exist') {
+    Write-Host "ℹ️ Group already has direct assignment for '$roleName'."
+  } else { throw }
+}
