@@ -247,3 +247,16 @@ else {
         -Body ($refBody | ConvertTo-Json)
     Write-Host "✅ Direct role assignment added."
 }
+
+
+
+# $H = @{ Authorization="Bearer $token"; "Content-Type"="application/json" }
+$roleName = 'Reports Reader'   # your Entra role display name
+
+# URL-encode the $filter to avoid 400 on spaces/quotes
+$filter = [uri]::EscapeDataString("displayName eq '$roleName'")
+$url = "https://graph.microsoft.com/v1.0/roleManagement/directory/roleDefinitions?`$filter=$filter&`$select=id,templateId,displayName"
+
+$def = Invoke-RestMethod -Headers $H -Method GET -Uri $url
+$roleDefinitionId = $def.value[0].id
+$templateId       = $def.value[0].templateId
