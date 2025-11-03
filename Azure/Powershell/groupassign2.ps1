@@ -222,3 +222,28 @@ else {
         } else { throw }
     }
 }
+
+
+
+
+
+# URLs (do not change)
+$PimEligibleUrl = 'https://graph.microsoft.com/beta/roleManagement/directory/roleEligibilityScheduleRequests'
+$DirectMemberUrl = { param($roleId) "https://graph.microsoft.com/v1.0/directoryRoles/$roleId/members/`$ref" }
+
+if ($MakePIMEligible) {
+    # -- PIM Eligible --
+    $response = Invoke-RestMethod -Headers $H -Method POST `
+        -Uri $PimEligibleUrl.Trim() `
+        -Body ($body | ConvertTo-Json -Depth 10)
+    Write-Host "✅ PIM eligible assignment created: $($response.id)"
+}
+else {
+    # -- Direct assignment --
+    # (resolve/create $dirRole earlier as shown before)
+    $refBody = @{ '@odata.id' = "https://graph.microsoft.com/v1.0/directoryObjects/$groupId" }
+    Invoke-RestMethod -Headers $H -Method POST `
+        -Uri (& $DirectMemberUrl $dirRole.id).Trim() `
+        -Body ($refBody | ConvertTo-Json)
+    Write-Host "✅ Direct role assignment added."
+}
