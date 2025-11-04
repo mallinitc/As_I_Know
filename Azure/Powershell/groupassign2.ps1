@@ -305,3 +305,17 @@ if ($grp) {
     $grp | Format-List
     # Access id as: $grp.id
 }
+
+
+
+# Check and install Microsoft Graph module if not present
+if (-not (Get-Module -ListAvailable -Name Microsoft.Graph)) {
+    Write-Host "Microsoft.Graph module not found. Installing..."
+    Install-Module Microsoft.Graph -Scope CurrentUser -Force
+}
+
+# Import the module
+Import-Module Microsoft.Graph -Force
+
+# Now you can safely connect
+# Connect-MgGraph -Scopes "Directory.ReadWrite.All","Group.ReadWrite.All","RoleManagement.ReadWrite.Directory"
