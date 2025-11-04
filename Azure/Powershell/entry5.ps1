@@ -52,3 +52,35 @@ Connect-MgGraph -TenantId $TenantId -ClientId $ClientId -ClientSecret $secureSec
 # Exact-name lookup (safe casing & spaces)
 # $g = Get-MgGroup -Filter "displayName eq '$GroupName'" -ConsistencyLevel eventual -Count groupCount
 # $g | Select-Object Id, DisplayName, Mail, SecurityEnabled
+
+
+
+# Inputs: $H (Graph header with bearer token), $EntraRole (display name)
+
+# 1) Get the ROLE DEFINITION (use this id for PIM)
+$filter = [uri]::EscapeDataString("displayName eq '$EntraRole'")
+$defUrl = "https://graph.microsoft.com/v1.0/roleManagement/directory/roleDefinitions?`$filter=$filter&`$select=id,templateId,displayName"
+$def = Invoke-RestMethod -Headers $H -Method GET -Uri $defUrl
+if (-not $def.value) { throw "Role '$EntraRole' not found in roleDefinitions." }
+
+$roleDefinitionId = $def.value[0].id          # <-- for PIM
+$templateId       = $def.value[0].templateId   # <-- to locate/create instance
+
+Write-Host "roleDefinitionId : $roleDefinitionId"
+Write-Host "templateId       : $templateId"
+
+# 2) Get/ensure the DIRECTORY ROLE INSTANCE (use this id for direct assignment)
+$dirUrl = "https://graph.microsoft.com/v1.0/directoryRoles?`$filter=roleTemplateId eq '$templateId'&`$select=id,displayName,roleTemplateId"
+$dir = Invoke-RestMethod -Headers $H -Method GET -Uri $dirUrl
+
+if (-not $dir.value) {
+    # create role instance from the template
+    $dir = Invoke-RestMethod -Headers $H -Method POST `
+        -Uri "https://graph.microsoft.com/v1.0/directoryRoles" `
+        -Body (@{ roleTemplateId = $templateId } | ConvertTo-Json)
+} else {
+    $dir = $dir.value[0]
+}
+$directoryRoleId = $dir.id                     # <-- for direct assignment
+
+Write-Host "directoryRoleId  : $directoryRoleId"
