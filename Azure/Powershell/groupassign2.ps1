@@ -260,3 +260,48 @@ $url = "https://graph.microsoft.com/v1.0/roleManagement/directory/roleDefinition
 $def = Invoke-RestMethod -Headers $H -Method GET -Uri $url
 $roleDefinitionId = $def.value[0].id
 $templateId       = $def.value[0].templateId
+
+
+
+
+# Inputs you already have:
+# $H = @{ Authorization = "Bearer $token"; "Content-Type" = "application/json" }
+# $groupName = "<display name of the group>"
+
+function Get-GraphGroupByName {
+    param(
+        [Parameter(Mandatory)]
+        [string] $GroupDisplayName,
+        [Parameter(Mandatory)]
+        [hashtable] $Headers
+    )
+
+    # Filter: exact display name match (URL-encoded to avoid 400)
+    $filter = [uri]::EscapeDataString("displayName eq '$GroupDisplayName'")
+    $select = [uri]::EscapeDataString("id,displayName,mail,mailNickname,groupTypes,securityEnabled,isAssignableToRole")
+
+    $url = "https://graph.microsoft.com/v1.0/groups?`$filter=$filter&`$select=$select"
+    $resp = Invoke-RestMethod -Headers $Headers -Method GET -Uri $url
+
+    if (-not $resp.value -or $resp.value.Count -eq 0) {
+        Write-Host "❌ No group found with displayName '$GroupDisplayName'."
+        return $null
+    }
+
+    if ($resp.value.Count -gt 1) {
+        Write-Host "⚠️ Multiple groups found with the same displayName '$GroupDisplayName'. Showing all matches:"
+        # Return all matches so caller can choose
+        return $resp.value | Select-Object id,displayName,mail,mailNickname,securityEnabled,isAssignableToRole,groupTypes
+    }
+
+    # Exactly one match
+    return $resp.value[0] | Select-Object id,displayName,mail,mailNickname,securityEnabled,isAssignableToRole,groupTypes
+}
+
+# ----- Usage -----
+$grp = Get-GraphGroupByName -GroupDisplayName $groupName -Headers $H
+if ($grp) {
+    Write-Host "✅ Group found:"
+    $grp | Format-List
+    # Access id as: $grp.id
+}
