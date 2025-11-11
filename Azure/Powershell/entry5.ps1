@@ -84,3 +84,54 @@ if (-not $dir.value) {
 $directoryRoleId = $dir.id                     # <-- for direct assignment
 
 Write-Host "directoryRoleId  : $directoryRoleId"
+
+
+
+
+
+# Example ServiceNow change object response (replace this with your actual $result)
+# $result = @{
+#     result = @{
+#         number = "CHG0934716"
+#         state = "Approved"
+#         start_date = "2025-11-11T06:00:00Z"
+#         end_date = "2025-11-11T18:00:00Z"
+#     }
+# }
+
+# Extract fields
+$change = $result.result
+$status = $change.state
+$start  = [datetime]::Parse($change.start_date)
+$end    = [datetime]::Parse($change.end_date)
+$now    = (Get-Date).ToUniversalTime()
+
+Write-Host "Change Number : $($change.number)"
+Write-Host "Status        : $status"
+Write-Host "Planned Start : $start"
+Write-Host "Planned End   : $end"
+Write-Host "Current (UTC) : $now"
+
+# Check validity
+if ($status -eq "Approved" -and $now -ge $start -and $now -le $end) {
+    Write-Host "✅ Change is valid (Approved and within planned window)."
+    $isChangeValid = $true
+}
+else {
+    Write-Host "❌ Change is NOT valid."
+    if ($status -ne "Approved") {
+        Write-Host "Reason: Status is '$status' (expected 'Approved')."
+    }
+    elseif ($now -lt $start) {
+        Write-Host "Reason: Change window has not started yet."
+    }
+    elseif ($now -gt $end) {
+        Write-Host "Reason: Change window has already ended."
+    }
+    $isChangeValid = $false
+}
+
+# You can then use this variable to decide whether to proceed
+if (-not $isChangeValid) {
+    throw "Change validation failed — stopping execution."
+}
