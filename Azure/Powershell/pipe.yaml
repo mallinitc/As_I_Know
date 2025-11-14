@@ -49,3 +49,74 @@ stages:
           -Tier $(Tier) `
           -ApproverGroupObjectId '$(approverGroupObjectId)' `
           -SnowTicketNumber '$(snowTicketNumber)'
+
+
+
+
+parameters:
+- name: Action
+  type: string
+  default: RoleManagement
+  values:
+  - RoleManagement
+  - GroupAssign
+  - GroupCreate
+
+stages:
+- stage: RunActions
+  displayName: Run Selected Action
+  jobs:
+
+  # -------- RoleManagement (requires approval) ----------
+  - job: RoleManagementJob
+    displayName: Role Management (with approval)
+    condition: eq('${{ parameters.Action }}','RoleManagement')
+    environment: role-mgmt-approval   # <-- the environment you created
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+    - checkout: self
+    - task: AzurePowerShell@5
+      displayName: Run RoleManagement.ps1
+      inputs:
+        azureSubscription: 'SBX-Role-Assignments-ADO-Test'
+        ScriptType: 'FilePath'
+        ScriptPath: 'role-assignments-ado/RoleManagement.ps1'
+        azurePowerShellVersion: 'LatestVersion'
+        pwsh: true
+        # env: (optional – your existing env block if needed)
+      # (any variables or env you already had)
+
+  # -------- GroupAssign (no approval) ----------
+  - job: GroupAssignJob
+    displayName: Group Assign
+    condition: eq('${{ parameters.Action }}','GroupAssign')
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+    - checkout: self
+    - task: AzurePowerShell@5
+      displayName: Run GroupAssign.ps1
+      inputs:
+        azureSubscription: 'SBX-Role-Assignments-ADO-Test'
+        ScriptType: 'FilePath'
+        ScriptPath: 'role-assignments-ado/GroupAssign.ps1'
+        azurePowerShellVersion: 'LatestVersion'
+        pwsh: true
+
+  # -------- GroupCreate (no approval) ----------
+  - job: GroupCreateJob
+    displayName: Group Create
+    condition: eq('${{ parameters.Action }}','GroupCreate')
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+    - checkout: self
+    - task: AzurePowerShell@5
+      displayName: Run GroupCreate.ps1
+      inputs:
+        azureSubscription: 'SBX-Role-Assignments-ADO-Test'
+        ScriptType: 'FilePath'
+        ScriptPath: 'role-assignments-ado/GroupCreate.ps1'
+        azurePowerShellVersion: 'LatestVersion'
+        pwsh: true
