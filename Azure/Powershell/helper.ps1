@@ -91,3 +91,71 @@ function Get-DirectoryRoleDefinitionId {
 }
 
 Connect-Cloud -TenantId $TenantId -SubscriptionId $SubscriptionId
+
+
+
+
+
+
+
+
+
+
+
+
+
+# --- Get roleTemplate (for PIM eligible assignment) ---
+
+$filter     = [uri]::EscapeDataString("displayName eq '$EntraRole'")
+$tmplUrl    = "https://graph.microsoft.com/beta/directory/roleTemplates?`$filter=$filter&`$select=id,displayName"
+
+Write-Host "Querying role template for Entra role: '$EntraRole'"
+
+try {
+    # -ErrorAction Stop is IMPORTANT so the catch actually fires
+    $tmplResp = Invoke-RestMethod -Headers $H -Method GET -Uri $tmplUrl -ErrorAction Stop
+}
+catch {
+    # Default values
+    $rawBody = $_.ErrorDetails.Message
+    $code    = $null
+    $msg     = $rawBody
+
+    # Try to parse the Graph error JSON if possible
+    if ($rawBody) {
+        try {
+            $errObj = $rawBody | ConvertFrom-Json
+            $code   = $errObj.error.code
+            $msg    = $errObj.error.message
+        } catch {
+            # ignore JSON parse errors, we'll just show raw body
+        }
+    }
+
+    if ($code -eq 'Request_UnsupportedQuery') {
+        Write-Host "##[error] Graph query for roleTemplates does not support this filter."
+        Write-Host "##[error]   EntraRole   : $EntraRole"
+        Write-Host "##[error]   Request URL: $tmplUrl"
+        Write-Host "##[error]   Graph code : $code"
+        Write-Host "##[error]   Message    : $msg"
+    }
+    else {
+        Write-Host "##[error] Failed to query role template from Microsoft Graph."
+        if ($code) { Write-Host "##[error]   Graph code : $code" }
+        if ($msg)  { Write-Host "##[error]   Message    : $msg" }
+        if ($tmplUrl) { Write-Host "##[error]   Request URL: $tmplUrl" }
+    }
+
+    throw "Role template lookup failed – see Graph error above."
+}
+
+# If the API call succeeded but returned no records
+if (-not $tmplResp.value -or $tmplResp.value.Count -eq 0) {
+    Write-Host "##[error] No roleTemplate found with displayName '$EntraRole'."
+    throw "Role template '$EntraRole' not found."
+}
+
+$roleTemplate = $tmplResp.value[0]
+$TemplateId   = $roleTemplate.id
+
+Write-Host "Role template resolved. EntraRole='$EntraRole', TemplateId=$TemplateId"
