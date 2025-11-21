@@ -1,0 +1,200 @@
+param(
+    [Parameter(Mandatory = $true)]
+    [string]$Organization,              # e.g. "myorg"
+
+    [Parameter(Mandatory = $true)]
+    [string]$Project,                  # e.g. "MyProject"
+
+    [Parameter(Mandatory = $true)]
+    [int]$PipelineId,                  # definition id for role-assignment-ado
+
+    [Parameter(Mandatory = $true)]
+    [string]$WorkspaceId,              # Log Analytics Workspace ID (GUID)
+
+    [Parameter(Mandatory = $true)]
+    [string]$SharedKey,                # Log Analytics primary key (secret variable)
+
+    [string]$LogType      = "AdoPipelineAudit",
+    [int]   $LookbackHours = 24
+)
+
+# ------------------------
+# Helper: Log Analytics ingestion
+# ------------------------
+function Send-LogAnalyticsData {
+    param(
+        [Parameter(Mandatory = $true)]
+        [string]$CustomerId,   # WorkspaceId
+
+        [Parameter(Mandatory = $true)]
+        [string]$SharedKey,    # Workspace primary key
+
+        [Parameter(Mandatory = $true)]
+        [string]$LogType,      # Custom table name prefix
+
+        [Parameter(Mandatory = $true)]
+        [string]$Body          # JSON string
+    )
+
+    $method       = "POST"
+    $contentType  = "application/json"
+    $resource     = "/api/logs"
+    $rfc1123Date  = [DateTime]::UtcNow.ToString("r")
+    $bodyBytes    = [Text.Encoding]::UTF8.GetBytes($Body)
+    $contentLength = $bodyBytes.Length
+
+    $stringToSign = "$method`n$contentLength`n$contentType`nx-ms-date:$rfc1123Date`n$resource"
+    $bytesToHash  = [Text.Encoding]::UTF8.GetBytes($stringToSign)
+    $keyBytes     = [Convert]::FromBase64String($SharedKey)
+
+    $hmacSha256          = New-Object System.Security.Cryptography.HMACSHA256
+    $hmacSha256.Key      = $keyBytes
+    $hash                = $hmacSha256.ComputeHash($bytesToHash)
+    $signature           = [Convert]::ToBase64String($hash)
+    $authorizationHeader = "SharedKey $CustomerId:$signature"
+
+    $uri = "https://$CustomerId.ods.opinsights.azure.com$resource?api-version=2016-04-01"
+
+    $headers = @{
+        "Authorization"        = $authorizationHeader
+        "Log-Type"             = $LogType
+        "x-ms-date"            = $rfc1123Date
+        "time-generated-field" = ""   # use ingestion time
+    }
+
+    Write-Host "Sending $($contentLength) bytes to Log Analytics table ${LogType}_CL ..."
+    $response = Invoke-RestMethod -Uri $uri -Method Post -Headers $headers -Body $Body -ContentType $contentType
+    Write-Host "Log Analytics ingest status code: $($response.StatusCode) (ignore if not present; LA often returns empty body)"
+}
+
+# ------------------------
+# Helper: (placeholder) Get approvals for a run
+# ------------------------
+function Get-ApprovalInfoForRun {
+    param(
+        [Parameter(Mandatory = $true)]
+        [int]$RunId,
+
+        [Parameter(Mandatory = $true)]
+        [hashtable]$AuthHeader,
+
+        [Parameter(Mandatory = $true)]
+        [string]$Organization,
+
+        [Parameter(Mandatory = $true)]
+        [string]$Project
+    )
+
+    <#
+        TODO – this is where you can plug in your own approvals logic using:
+        - Approvals & Checks API (pipelines/approvals)
+        - Environment / checks / audit logs
+
+        For now we just return $null so the field exists in the schema.
+    #>
+
+    return $null
+}
+
+# ------------------------
+# Main script
+# ------------------------
+
+$accessToken = $env:SYSTEM_ACCESSTOKEN
+if (-not $accessToken) {
+    throw "SYSTEM_ACCESSTOKEN is empty. In the pipeline, enable 'Allow scripts to access the OAuth token'."
+}
+
+$authHeader = @{
+    Authorization = "Bearer $accessToken"
+    "Content-Type" = "application/json"
+}
+
+$baseUri = "https://dev.azure.com/$Organization/$Project/_apis"
+$since   = (Get-Date).AddHours(-1 * $LookbackHours)
+Write-Host "Collecting runs for pipeline id $PipelineId since $since (UTC: $([DateTime]::UtcNow.ToString("o")))"
+
+# 1. Get list of runs (top 10000, then we filter by date)
+$runsUri = "$baseUri/pipelines/$PipelineId/runs?api-version=7.1"
+$runs    = Invoke-RestMethod -Uri $runsUri -Headers $authHeader -Method Get
+
+if (-not $runs) {
+    Write-Warning "No runs returned from pipelines API."
+    return
+}
+
+$records = @()
+
+foreach ($runRef in $runs.value) {
+    # 2. Get detailed info for each run (includes templateParameters, variables, dates, etc.)
+    $runDetailsUri = "$baseUri/pipelines/$PipelineId/runs/$($runRef.id)?api-version=7.1"
+    $runDetails    = Invoke-RestMethod -Uri $runDetailsUri -Headers $authHeader -Method Get
+
+    # createdDate / finishedDate are ISO timestamps
+    $created = if ($runDetails.createdDate) { [datetime]$runDetails.createdDate } else { $null }
+    if ($created -and $created -lt $since) {
+        # Older than our lookback window – skip
+        continue
+    }
+
+    # Extract template parameters (runtime parameters) and variables
+    $templateParameters = $runDetails.templateParameters
+    $variables          = $runDetails.variables
+
+    $paramDict = @{}
+    if ($templateParameters) {
+        foreach ($p in $templateParameters.PSObject.Properties) {
+            $paramDict[$p.Name] = [string]$p.Value
+        }
+    }
+
+    # If you pass "parameters" through variables instead, you can also grab them here
+    $variableDict = @{}
+    if ($variables) {
+        foreach ($v in $variables.PSObject.Properties) {
+            # variable structure is typically: { "varName": { "value": "x", "isSecret": false } }
+            $value = $v.Value.value
+            $variableDict[$v.Name] = [string]$value
+        }
+    }
+
+    # Build approval info (currently stubbed)
+    $approvalInfo = Get-ApprovalInfoForRun -RunId $runDetails.id -AuthHeader $authHeader -Organization $Organization -Project $Project
+
+    # 3. Flatten to a single custom object / row
+    $record = [pscustomobject]@{
+        Organization = $Organization
+        Project      = $Project
+        PipelineId   = $PipelineId
+        PipelineName = $runDetails.pipeline.name
+        RunId        = $runDetails.id
+        RunName      = $runDetails.name
+        RunUrl       = $runDetails._links.web.href
+        State        = $runDetails.state
+        Result       = $runDetails.result
+        CreatedDate  = if ($created) { $created.ToString("o") } else { $null }
+        FinishedDate = if ($runDetails.finishedDate) { ([datetime]$runDetails.finishedDate).ToString("o") } else { $null }
+        RequestedFor = $runDetails.requestedFor.displayName
+        RequestedForUpn = $runDetails.requestedFor.uniqueName
+
+        # Store parameters / variables as JSON strings so the schema stays simple
+        ParametersJson = if ($paramDict.Count -gt 0) { $paramDict | ConvertTo-Json -Compress } else { $null }
+        VariablesJson  = if ($variableDict.Count -gt 0) { $variableDict | ConvertTo-Json -Compress } else { $null }
+
+        # approval information (you can later expand to fields like Approver, ApprovalTime)
+        ApprovalInfoJson = if ($approvalInfo) { $approvalInfo | ConvertTo-Json -Compress } else { $null }
+    }
+
+    $records += $record
+}
+
+if ($records.Count -eq 0) {
+    Write-Host "No runs found in the last $LookbackHours hours for pipeline id $PipelineId."
+    return
+}
+
+# 4. Send to Log Analytics
+$jsonBody = $records | ConvertTo-Json -Depth 6
+Send-LogAnalyticsData -CustomerId $WorkspaceId -SharedKey $SharedKey -LogType $LogType -Body $jsonBody
+
+Write-Host "Done. Sent $($records.Count) records to Log Analytics."
