@@ -336,3 +336,33 @@ foreach ($a in $recentApprovals) {
 
 Write-Host ""
 Write-Host "=== Approvals audit (console only) finished ==="
+
+
+
+
+
+
+
+
+foreach ($step in $a.steps) {
+    $order      = $step.order
+    $stepStatus = $step.status
+    $lastMod    = if ($step.lastModifiedOn) { [datetime]$step.lastModifiedOn } else { $null }
+
+    $actualName  = $step.actualApprover.displayName
+    $actualEmail = $step.actualApprover.uniqueName
+
+    # handle null/empty display name without ternary
+    $displayName = if ([string]::IsNullOrWhiteSpace($actualName)) { "(none)" } else { $actualName }
+
+    Write-Host ("  - Step #{0}" -f $order)
+    Write-Host ("    Status        : {0}" -f $stepStatus)
+    Write-Host ("    Approver      : {0}" -f $displayName)
+
+    if ($actualEmail) {
+        Write-Host ("    Approver UPN  : {0}" -f $actualEmail)
+    }
+    if ($lastMod) {
+        Write-Host ("    LastModified  : {0}" -f $lastMod.ToString("u"))
+    }
+}
