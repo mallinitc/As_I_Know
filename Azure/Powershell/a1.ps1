@@ -175,3 +175,164 @@ $bodyJson = $records | ConvertTo-Json
 Send-LogAnalyticsData -CustomerId $WorkspaceId -SharedKey $SharedKey -LogType $LogType -Body $bodyJson
 
 Write-Host "=== Approvals audit completed successfully ==="
+
+
+
+
+
+
+
+
+
+
+
+param(
+    [string]$Organization  = $env:ORG_NAME,
+    [string]$Project       = $env:PROJECT_NAME,
+    [string]$PipelineName  = $env:PIPELINE_NAME,
+    [int]   $LookbackHours = [int]($env:LOOKBACK_HOURS ? $env:LOOKBACK_HOURS : 24)
+)
+
+Write-Host "=== Approvals audit (console only) starting ==="
+Write-Host "Organization : $Organization"
+Write-Host "Project      : $Project"
+Write-Host "Pipeline     : $PipelineName"
+Write-Host "Lookback (h) : $LookbackHours"
+
+if (-not $env:SYSTEM_ACCESSTOKEN) {
+    throw "SYSTEM_ACCESSTOKEN not available. Make sure the task has env: SYSTEM_ACCESSTOKEN: \$(System.AccessToken)."
+}
+
+$baseUrl = "https://dev.azure.com/$Organization/$Project/_apis"
+$cutoff  = (Get-Date).ToUniversalTime().AddHours(-$LookbackHours)
+Write-Host "Cutoff time (UTC): $($cutoff.ToString('o'))"
+
+$adoHeaders = @{
+    Authorization = "Bearer $($env:SYSTEM_ACCESSTOKEN)"
+    "Content-Type" = "application/json"
+}
+
+# --------------------------------------------------------------------
+# 1. Find pipeline ID by name
+# --------------------------------------------------------------------
+Write-Host ""
+Write-Host "== Getting pipeline id for name '$PipelineName' =="
+$pipelineListUrl = "$baseUrl/pipelines?api-version=7.1"
+$pipelineList    = Invoke-RestMethod -Uri $pipelineListUrl -Headers $adoHeaders -Method Get
+
+if (-not $pipelineList.value) {
+    throw "No pipelines returned from '$pipelineListUrl'. Check org/project."
+}
+
+$pipeline = $pipelineList.value | Where-Object { $_.name -eq $PipelineName } | Select-Object -First 1
+
+if (-not $pipeline) {
+    throw "Pipeline with name '$PipelineName' not found in project '$Project'."
+}
+
+$pipelineId = $pipeline.id
+Write-Host "Pipeline id: $pipelineId"
+Write-Host ""
+
+# --------------------------------------------------------------------
+# 2. Get runs for this pipeline and filter to last 24h
+# --------------------------------------------------------------------
+Write-Host "== Pipeline runs in the last $LookbackHours hours =="
+$runsUrl = "$baseUrl/pipelines/$pipelineId/runs?api-version=7.1"
+$runs    = Invoke-RestMethod -Uri $runsUrl -Headers $adoHeaders -Method Get
+
+if (-not $runs.value) {
+    Write-Host "No runs returned for pipeline id $pipelineId."
+} else {
+    $recentRuns = $runs.value | Where-Object {
+        # createdDate is ISO string in UTC
+        $created = [datetime]$_.createdDate
+        $created.ToUniversalTime() -ge $cutoff
+    } | Sort-Object { [datetime]$_.createdDate } -Descending
+
+    if (-not $recentRuns) {
+        Write-Host "No runs in the last $LookbackHours hours."
+    } else {
+        foreach ($run in $recentRuns) {
+            $created  = [datetime]$run.createdDate
+            $finished = if ($run.finishedDate) { [datetime]$run.finishedDate } else { $null }
+
+            Write-Host "------------------------------------------------------------"
+            Write-Host ("RunId    : {0}" -f $run.id)
+            Write-Host ("Name     : {0}" -f $run.name)
+            Write-Host ("State    : {0}" -f $run.state)
+            Write-Host ("Result   : {0}" -f $run.result)
+            Write-Host ("Created  : {0}" -f $created.ToString("u"))
+            if ($finished) {
+                Write-Host ("Finished : {0}" -f $finished.ToString("u"))
+            } else {
+                Write-Host "Finished : (still running or not set)"
+            }
+        }
+    }
+}
+
+# --------------------------------------------------------------------
+# 3. Get approvals (approved) in the last 24h and print approvers
+# --------------------------------------------------------------------
+Write-Host ""
+Write-Host "== Approved approvals in the last $LookbackHours hours (all pipelines/resources) =="
+
+# We ask for all approvals with status=approved and expand steps (so we see who approved)
+$approvalsUrl = "$baseUrl/pipelines/approvals?api-version=7.1&state=approved&`$expand=steps"
+$approvals    = Invoke-RestMethod -Uri $approvalsUrl -Headers $adoHeaders -Method Get
+
+if (-not $approvals.value) {
+    Write-Host "No approvals returned by the Approvals API."
+    return
+}
+
+# Filter by time window
+$recentApprovals = $approvals.value | Where-Object {
+    $created = [datetime]$_.createdOn
+    $created.ToUniversalTime() -ge $cutoff
+} | Sort-Object { [datetime]$_.createdOn } -Descending
+
+if (-not $recentApprovals) {
+    Write-Host "No approvals in the last $LookbackHours hours."
+    return
+}
+
+foreach ($a in $recentApprovals) {
+    $createdOn  = [datetime]$a.createdOn
+    $modifiedOn = if ($a.lastModifiedOn) { [datetime]$a.lastModifiedOn } else { $createdOn }
+
+    Write-Host "------------------------------------------------------------"
+    Write-Host ("Approval Id   : {0}" -f $a.id)
+    Write-Host ("Status        : {0}" -f $a.status)
+    Write-Host ("CreatedOn     : {0}" -f $createdOn.ToString("u"))
+    Write-Host ("LastModified  : {0}" -f $modifiedOn.ToString("u"))
+    Write-Host ("Min approvers : {0}" -f $a.minRequiredApprovers)
+
+    if ($a.steps -and $a.steps.Count -gt 0) {
+        Write-Host "Steps / approvers:"
+        foreach ($step in $a.steps) {
+            $order      = $step.order
+            $stepStatus = $step.status
+            $lastMod    = if ($step.lastModifiedOn) { [datetime]$step.lastModifiedOn } else { $null }
+
+            $actualName  = $step.actualApprover.displayName
+            $actualEmail = $step.actualApprover.uniqueName
+
+            Write-Host ("  - Step #{0}" -f $order)
+            Write-Host ("    Status        : {0}" -f $stepStatus)
+            Write-Host ("    Approver      : {0}" -f ($actualName ? $actualName : "(none)"))
+            if ($actualEmail) {
+                Write-Host ("    Approver UPN  : {0}" -f $actualEmail)
+            }
+            if ($lastMod) {
+                Write-Host ("    LastModified  : {0}" -f $lastMod.ToString("u"))
+            }
+        }
+    } else {
+        Write-Host "No step details returned (try removing `$expand=steps if API behaves differently)."
+    }
+}
+
+Write-Host ""
+Write-Host "=== Approvals audit (console only) finished ==="
