@@ -197,3 +197,47 @@ Write-Host "=== Role assignments approvals audit finished ==="
 
 $displayApproverName = if ([string]::IsNullOrWhiteSpace($approverName)) { "(unknown)" } else { $approverName }
 Write-Host ("Approved by     : {0}" -f $displayApproverName)
+
+
+
+
+
+
+
+
+Write-Host ""
+Write-Host "== Stage approvals per run in last $LookbackHours hours =="
+
+foreach ($run in $recentRuns) {
+    $runId = $run.id
+    $approvalsUrl = "$baseUrl/pipelines/runs/$runId/approvals?api-version=7.1"
+
+    try {
+        $approvalResult = Invoke-RestMethod -Uri $approvalsUrl -Headers $headers -Method Get
+    }
+    catch {
+        Write-Host "No approvals API available for run $runId (may be no approvals or different pipeline type)"
+        continue
+    }
+
+    if (-not $approvalResult.value) {
+        Write-Host "No approval records for run $runId"
+        continue
+    }
+
+    foreach ($ap in $approvalResult.value) {
+        $approvedOn  = [datetime]$ap.modifiedOn
+        $approver    = $ap.approver.displayName
+        $approverUpn = $ap.approver.uniqueName
+        $comment     = $ap.comments
+
+        Write-Host "------------------------------------------------------------"
+        Write-Host ("RunId           : {0}" -f $runId)
+        Write-Host ("Status          : {0}" -f $ap.status)
+        Write-Host ("ApprovedBy      : {0}" -f $approver)
+        Write-Host ("Approver UPN    : {0}" -f $approverUpn)
+        Write-Host ("Stage / Job     : {0}" -f $ap.stageName)
+        Write-Host ("ApprovedOn      : {0}" -f $approvedOn.ToString("u"))
+        Write-Host ("Comment         : {0}" -f ($comment ? $comment : "(none)"))
+    }
+}
