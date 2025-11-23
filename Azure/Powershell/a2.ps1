@@ -191,3 +191,9 @@ foreach ($a in $recentApprovals) {
 
 Write-Host ""
 Write-Host "=== Role assignments approvals audit finished ==="
+
+
+
+
+$displayApproverName = if ([string]::IsNullOrWhiteSpace($approverName)) { "(unknown)" } else { $approverName }
+Write-Host ("Approved by     : {0}" -f $displayApproverName)
