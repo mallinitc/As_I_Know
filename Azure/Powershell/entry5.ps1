@@ -135,3 +135,65 @@ else {
 if (-not $isChangeValid) {
     throw "Change validation failed — stopping execution."
 }
+
+
+
+
+
+try {
+    New-AzRoleAssignment `
+        -ObjectId       $spnId `
+        -RoleDefinitionId $roleDefinitionId `
+        -Scope          $scope `
+        -ErrorAction    Stop
+
+    Write-Host "Role assignment created successfully."
+}
+catch {
+    # CloudException from Az modules
+    $ex = $_.Exception
+
+    # Default output if we can’t parse ARM body
+    $msg = $ex.Message
+    $httpStatus = $null
+    $armCode = $null
+    $armMessage = $null
+
+    # Try to read HTTP status
+    if ($ex.Response -and $ex.Response.StatusCode) {
+        $httpStatus = $ex.Response.StatusCode
+    }
+
+    # Try to read ARM JSON body: { "error": { "code": "...", "message": "..." } }
+    if ($ex.Body) {
+        try {
+            $body = $ex.Body | ConvertFrom-Json
+            if ($body.error) {
+                $armCode    = $body.error.code
+                $armMessage = $body.error.message
+            }
+        } catch {
+            # ignore JSON parse failure, we'll fall back to $msg
+        }
+    }
+
+    Write-Host "----------------------------------------"
+    if ($httpStatus) {
+        Write-Host ("HTTP Status : {0}" -f $httpStatus)
+    }
+
+    if ($armCode) {
+        Write-Host ("ARM Code    : {0}" -f $armCode)
+    }
+
+    if ($armMessage) {
+        Write-Host ("Message     : {0}" -f $armMessage)
+    }
+    else {
+        Write-Host ("Message     : {0}" -f $msg)
+    }
+    Write-Host "----------------------------------------"
+
+    # If you don't want the pipeline to fail, comment the next line
+    throw
+}
