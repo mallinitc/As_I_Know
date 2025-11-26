@@ -197,3 +197,28 @@ catch {
     # If you don't want the pipeline to fail, comment the next line
     throw
 }
+
+
+
+
+
+$Test_scope   = $Test_scope.Trim()
+$roleName     = $roleName.Trim()
+$SPName       = $SPName.Trim()
+$changenumber = $changenumber.Trim()
+
+if ([string]::IsNullOrWhiteSpace($Test_scope)) {
+    throw "#[error] Missing mandatory input: Test_scope"
+}
+
+if ([string]::IsNullOrWhiteSpace($roleName)) {
+    throw "#[error] Missing mandatory input: RoleName"
+}
+
+if ([string]::IsNullOrWhiteSpace($SPName)) {
+    throw "#[error] Missing mandatory input: SPName"
+}
+
+if ([string]::IsNullOrWhiteSpace($changenumber)) {
+    throw "#[error] Missing mandatory input: ChangeNumber"
+}
