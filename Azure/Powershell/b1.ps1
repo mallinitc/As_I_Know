@@ -1,4 +1,4 @@
-# ===== Normalize & validate resource scope =====
+8# ===== Normalize & validate resource scope =====
 
 # Raw value from pipeline
 $resourceScope = $Test_scope
@@ -44,3 +44,38 @@ if ( ($normalizedScope -notmatch $subPattern) -and
 $Test_scope = $normalizedScope
 
 Write-Host "DEBUG: Resource scope validation PASSED."
+
+
+
+try {
+    $temp = Get-AzRoleAssignment `
+        -ObjectId $spn.Id `
+        -RoleDefinitionId $roleDefinitionId `
+        -Scope $Test_scope `
+        -ErrorAction Stop
+    
+    Write-Host "DEBUG: Role assignment lookup succeeded."
+}
+catch {
+    # Extract the meaningful Azure error message
+    $msg = $_.Exception.Message
+
+    # Extract Azure error code if present
+    $errorCode = $null
+    if ($_.Exception.ErrorRecord -and $_.Exception.ErrorRecord.TargetObject) {
+        $errorCode = $_.Exception.ErrorRecord.TargetObject.error.code
+    }
+
+    Write-Host ""
+    Write-Host "================= ROLE ASSIGNMENT ERROR =================" -ForegroundColor Red
+    Write-Host "Scope              : $Test_scope"
+    Write-Host "Role               : $roleName"
+    Write-Host "Service Principal  : $SPName"
+    Write-Host ""
+    Write-Host "Error Code         : $errorCode"
+    Write-Host "Message            : $msg"
+    Write-Host "==========================================================" -ForegroundColor Red
+    Write-Host ""
+
+    throw "#[error] Failed to validate scope '$Test_scope'. Azure returned: $msg"
+}
