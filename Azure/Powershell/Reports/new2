@@ -1,0 +1,120 @@
+# Windows PowerShell 5.1
+Set-StrictMode -Version Latest
+$ErrorActionPreference = "Stop"
+
+# ----- Modules -----
+Import-Module Az.Accounts -ErrorAction Stop
+Import-Module Az.Resources -ErrorAction Stop
+
+# ----- Output -----
+$OutputCsv = ".\DirectUserRbacAssignments.csv"
+
+# Optional: exclude certain roles from the report (leave empty if not needed)
+$ExcludeRoleNames = @(
+  # "Reader"
+)
+
+# Optional: include classic admins too? (rarely useful now)
+$IncludeClassicAdmins = $false
+
+# ----- Login -----
+Connect-AzAccount | Out-Null
+
+# ----- Helper: Entra user enrichment with caching -----
+$userCache = @{}  # ObjectId -> user info
+
+function Get-EntraUserInfo {
+    param(
+        [Parameter(Mandatory)]
+        [string] $ObjectId
+    )
+
+    if ($userCache.ContainsKey($ObjectId)) { return $userCache[$ObjectId] }
+
+    $info = [pscustomobject]@{
+        ObjectId          = $ObjectId
+        DisplayName       = $null
+        UserPrincipalName = $null
+        Mail              = $null
+        AccountEnabled    = $null
+    }
+
+    try {
+        $u = Get-AzADUser -ObjectId $ObjectId -ErrorAction Stop
+        $info.DisplayName       = $u.DisplayName
+        $info.UserPrincipalName = $u.UserPrincipalName
+        $info.Mail              = $u.Mail
+        $info.AccountEnabled    = $u.AccountEnabled
+    } catch {
+        # Could be deleted user, guest edge cases, or lack of directory read permission.
+        # Keep nulls.
+    }
+
+    $userCache[$ObjectId] = $info
+    return $info
+}
+
+# ----- Main -----
+$subs = Get-AzSubscription | Select-Object Id, Name
+
+$results = New-Object System.Collections.Generic.List[object]
+
+foreach ($s in $subs) {
+    Write-Host ("Processing: {0} ({1})" -f $s.Name, $s.Id) -ForegroundColor Cyan
+
+    Set-AzContext -SubscriptionId $s.Id | Out-Null
+
+    $scope = "/subscriptions/$($s.Id)"
+
+    # Pull role assignments at subscription root (includes all child scopes)
+    if ($IncludeClassicAdmins) {
+        $assignments = Get-AzRoleAssignment -Scope $scope -IncludeClassicAdministrators -ErrorAction Stop
+    } else {
+        $assignments = Get-AzRoleAssignment -Scope $scope -ErrorAction Stop
+    }
+
+    # Filter to "direct user" role assignments
+    $directUserAssignments = $assignments | Where-Object {
+        $_.ObjectType -eq "User" -and
+        ($ExcludeRoleNames.Count -eq 0 -or ($ExcludeRoleNames -notcontains $_.RoleDefinitionName))
+    }
+
+    foreach ($a in $directUserAssignments) {
+
+        # Quick classification of where the assignment is made
+        $scopeLevel =
+            if ($a.Scope -eq $scope) { "Subscription" }
+            elseif ($a.Scope -like "$scope/resourceGroups/*") { "ResourceGroupOrBelow" }
+            else { "Other" }
+
+        # Enrich from Entra
+        $uinfo = Get-EntraUserInfo -ObjectId $a.ObjectId
+
+        $results.Add([pscustomobject]@{
+            SubscriptionId      = $s.Id
+            SubscriptionName    = $s.Name
+
+            ScopeLevel          = $scopeLevel
+            Scope               = $a.Scope
+
+            RoleName            = $a.RoleDefinitionName
+            RoleAssignmentId    = $a.RoleAssignmentId
+
+            PrincipalType       = $a.ObjectType            # should be "User"
+            PrincipalObjectId   = $a.ObjectId
+            PrincipalSignInName = $a.SignInName            # may be blank in some tenants
+
+            EntraDisplayName    = $uinfo.DisplayName
+            EntraUPN            = $uinfo.UserPrincipalName
+            EntraMail           = $uinfo.Mail
+            EntraEnabled        = $uinfo.AccountEnabled
+        }) | Out-Null
+    }
+}
+
+# ----- Export -----
+$results |
+    Sort-Object SubscriptionName, Scope, RoleName, EntraUPN |
+    Export-Csv -Path $OutputCsv -NoTypeInformation -Encoding UTF8
+
+Write-Host "Done. Exported: $OutputCsv" -ForegroundColor Green
