@@ -1,34 +1,40 @@
 trigger: none
 
+# Optional: If you want manual run only, keep as trigger: none
+# If you later want schedule weekly, we can add schedules.
+
 pool:
-  vmImage: windows-latest
-
-parameters:
-- name: DaysThreshold
-  type: number
-  default: 45
-
-- name: SubscriptionIdsCsv
-  type: string
-  default: ""   # optional: "subId1,subId2"
+  name: crd-saas-docker-pool   # <-- same pool as your working pipeline
 
 stages:
-- stage: PolicyExemptionStage
-  displayName: "Policy Exemptions - List Expiring"
+- stage: PolicyExemptionExpiryStage
+  displayName: "Policy Exemptions Expiry (45 days)"
   jobs:
-  - job: ListPolicyExemptionsJob
-    displayName: "Run Get-PolicyExemptions.ps1"
-    steps:
-    - checkout: self
+  - deployment: PolicyExemptionExpiryJob
+    displayName: "Run Policy Exemption Expiry Script"
+    environment: policyexp-expiration-ado   # or reuse an existing environment if you want approval gates
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - checkout: self
 
-    - task: AzurePowerShell@5
-      displayName: "List policy exemptions expiring soon"
-      inputs:
-        azureSubscription: "SBX-Role-Assignments-ADO-Test"  # <-- replace with your service connection
-        ScriptType: FilePath
-        ScriptPath: "$(Build.SourcesDirectory)\scripts\Get-PolicyExemptions.ps1"
-        ScriptArguments: >
-          -DaysThreshold ${{ parameters.DaysThreshold }}
-          -SubscriptionIdsCsv "${{ parameters.SubscriptionIdsCsv }}"
-        azurePowerShellVersion: LatestVersion
-        pwsh: true
+          - task: AzurePowerShell@5
+            displayName: "Run AzPolicyExemptionAlert.ps1"
+            inputs:
+              azureSubscription: 'SBX-Role-Assignments-ADO-Test'
+              ScriptType: InlineScript
+              azurePowerShellVersion: LatestVersion
+              pwsh: true
+              Inline: |
+                # ---- mirror your existing pipeline style ----
+                $dir = "$(Build.SourcesDirectory)\policyexp-expiration"
+                $script = Join-Path $dir "AzPolicyExemptionAlert.ps1"
+
+                Write-Host ">>> Script path: $script"
+                if (-not (Test-Path $script)) {
+                  throw "Policy exemption script not found at: $script"
+                }
+
+                # No params - script handles Get-AzSubscription + loops all subs + 45 days logic
+                & $script
