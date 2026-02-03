@@ -1,0 +1,34 @@
+trigger: none
+
+pool:
+  vmImage: windows-latest
+
+parameters:
+- name: DaysThreshold
+  type: number
+  default: 45
+
+- name: SubscriptionIdsCsv
+  type: string
+  default: ""   # optional: "subId1,subId2"
+
+stages:
+- stage: PolicyExemptionStage
+  displayName: "Policy Exemptions - List Expiring"
+  jobs:
+  - job: ListPolicyExemptionsJob
+    displayName: "Run Get-PolicyExemptions.ps1"
+    steps:
+    - checkout: self
+
+    - task: AzurePowerShell@5
+      displayName: "List policy exemptions expiring soon"
+      inputs:
+        azureSubscription: "SBX-Role-Assignments-ADO-Test"  # <-- replace with your service connection
+        ScriptType: FilePath
+        ScriptPath: "$(Build.SourcesDirectory)\scripts\Get-PolicyExemptions.ps1"
+        ScriptArguments: >
+          -DaysThreshold ${{ parameters.DaysThreshold }}
+          -SubscriptionIdsCsv "${{ parameters.SubscriptionIdsCsv }}"
+        azurePowerShellVersion: LatestVersion
+        pwsh: true
