@@ -185,3 +185,61 @@ Write-Host "MG AuthType : $($ctx.AuthType)"
 
 
 
+
+# Ensure Graph module is available in the agent session
+if (-not (Get-Module -ListAvailable Microsoft.Graph.Users)) {
+    Write-Host "Installing Microsoft.Graph.Users..."
+    Install-Module Microsoft.Graph.Users -Scope CurrentUser -Force -AllowClobber
+}
+
+Import-Module Microsoft.Graph.Users -Force
+
+# (Optional but useful) sanity check
+Get-Command Get-MgUser -ErrorAction Stop | Out-Null
+Write-Host "Graph module OK: Get-MgUser is available."
+
+
+
+
+
+
+function Resolve-UpnToDisplayNameOrKeep {
+    param(
+        [string]$UpnOrMail,
+        [string]$GraphToken
+    )
+
+    if ([string]::IsNullOrWhiteSpace($UpnOrMail)) { return $UpnOrMail }
+
+    $headers = @{ Authorization = "Bearer $GraphToken" }
+
+    # Try UPN
+    try {
+        $uri = "https://graph.microsoft.com/v1.0/users/$([uri]::EscapeDataString($UpnOrMail))?`$select=displayName,userPrincipalName,mail"
+        $u = Invoke-RestMethod -Method GET -Uri $uri -Headers $headers -ErrorAction Stop
+        if ($u.displayName) { return $u.displayName }
+    } catch {}
+
+    # Try mail filter (covers cases where createdBy is email but not UPN)
+    try {
+        $filter = [uri]::EscapeDataString("mail eq '$UpnOrMail'")
+        $uri = "https://graph.microsoft.com/v1.0/users?`$filter=$filter&`$select=displayName,mail&`$top=1"
+        $r = Invoke-RestMethod -Method GET -Uri $uri -Headers $headers -ErrorAction Stop
+        if ($r.value -and $r.value[0].displayName) { return $r.value[0].displayName }
+    } catch {}
+
+    return $UpnOrMail
+}
+
+
+
+
+
+
+
+$graphToken = (Get-AzAccessToken -ResourceUrl "https://graph.microsoft.com").Token
+
+$createdByDisplay = Resolve-UpnToDisplayNameOrKeep -UpnOrMail $createdByRaw -GraphToken $graphToken
+$modifiedByDisplay = Resolve-UpnToDisplayNameOrKeep -UpnOrMail $modifiedByRaw -GraphToken $graphToken
+
+
