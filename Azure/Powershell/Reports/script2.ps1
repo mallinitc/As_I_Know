@@ -85,3 +85,62 @@ foreach ($Exemption in $Exemptions) {
 
 # After loop, print a quick table for testing
 $Output | Select SubscriptionName, ExemptionName, Category, ExpiresOn, Scope, CreatedBy, LastModifiedBy | Format-Table -AutoSize
+
+
+
+
+
+
+function Resolve-UpnToDisplayNameOrKeep {
+    param(
+        [Parameter(Mandatory=$false)]
+        [string] $UpnOrMail
+    )
+
+    # If input is empty/null -> return empty (don’t force "Unknown")
+    if ([string]::IsNullOrWhiteSpace($UpnOrMail)) {
+        return $UpnOrMail
+    }
+
+    # Try UPN match
+    try {
+        $u = Get-MgUser -Filter "userPrincipalName eq '$UpnOrMail'" -ErrorAction Stop
+        if ($u) { return $u[0].DisplayName }
+    } catch {}
+
+    # Try mail match (covers cases where UPN != mail)
+    try {
+        $u = Get-MgUser -Filter "mail eq '$UpnOrMail'" -ErrorAction Stop
+        if ($u) { return $u[0].DisplayName }
+    } catch {}
+
+    # Could be deleted user / not resolvable -> keep original string
+    return $UpnOrMail
+}
+
+
+
+
+$obj = [pscustomobject]@{
+    SubscriptionName = $Subscription.Name
+    ExemptionName    = $ExemptionName
+    Scope            = $parentScope
+    Category         = $Category
+    ExpiresOn        = $ExpiresOn
+    ExemptionDesc    = $Desc
+    CreatedBy        = $createdByDisplay     # display name or original UPN
+    LastModifiedBy   = $modifiedByDisplay    # display name or original UPN
+}
+$null = $Output.Add($obj)
+
+
+$createdByRaw  = $Exemption.SystemDataCreatedBy
+$modifiedByRaw = $Exemption.SystemDataLastModifiedBy
+
+$createdByDisplay  = Resolve-UpnToDisplayNameOrKeep -UpnOrMail $createdByRaw
+$modifiedByDisplay = Resolve-UpnToDisplayNameOrKeep -UpnOrMail $modifiedByRaw
+
+
+
+
+
