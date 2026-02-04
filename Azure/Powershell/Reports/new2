@@ -172,4 +172,16 @@ try {
 
 
 
+$graphToken = (Get-AzAccessToken -ResourceUrl "https://graph.microsoft.com").Token
+$secureToken = ConvertTo-SecureString $graphToken -AsPlainText -Force
+
+Connect-MgGraph -AccessToken $secureToken | Out-Null
+
+$ctx = Get-MgContext
+Write-Host "MG ClientId : $($ctx.ClientId)"
+Write-Host "MG TenantId : $($ctx.TenantId)"
+Write-Host "MG AuthType : $($ctx.AuthType)"
+
+
+
 
