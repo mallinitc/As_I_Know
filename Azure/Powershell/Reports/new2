@@ -118,3 +118,58 @@ $results |
     Export-Csv -Path $OutputCsv -NoTypeInformation -Encoding UTF8
 
 Write-Host "Done. Exported: $OutputCsv" -ForegroundColor Green
+
+
+
+
+
+
+
+$ctx = Get-MgContext
+Write-Host "MG ClientId: $($ctx.ClientId)"
+Write-Host "MG TenantId: $($ctx.TenantId)"
+Write-Host "MG AuthType: $($ctx.AuthType)"
+Write-Host "MG Scopes  : $($ctx.Scopes -join ', ')"
+
+
+
+
+function Get-JwtPayload($jwt) {
+  $p = $jwt.Split('.')[1].Replace('-','+').Replace('_','/')
+  switch ($p.Length % 4) { 2 {$p+='=='} 3 {$p+='='} }
+  [Text.Encoding]::UTF8.GetString([Convert]::FromBase64String($p)) | ConvertFrom-Json
+}
+
+$tok = (Get-AzAccessToken -ResourceUrl "https://graph.microsoft.com").Token
+$pay = Get-JwtPayload $tok
+
+Write-Host "TOKEN aud   : $($pay.aud)"
+Write-Host "TOKEN appid : $($pay.appid)"
+Write-Host "TOKEN roles : $($pay.roles -join ', ')"
+
+
+
+
+
+$graphToken = (Get-AzAccessToken -ResourceUrl "https://graph.microsoft.com").Token
+$secure = ConvertTo-SecureString $graphToken -AsPlainText -Force
+Connect-MgGraph -AccessToken $secure | Out-Null
+
+
+
+
+
+
+
+
+try {
+  $u = Get-MgUser -Top 1 -ErrorAction Stop
+  Write-Host "Graph OK. Sample DisplayName: $($u.DisplayName)"
+} catch {
+  Write-Host "Graph FAILED: $($_.Exception.Message)"
+  throw  # fail the job so we can see the real error
+}
+
+
+
+
