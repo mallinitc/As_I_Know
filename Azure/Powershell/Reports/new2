@@ -243,3 +243,36 @@ $createdByDisplay = Resolve-UpnToDisplayNameOrKeep -UpnOrMail $createdByRaw -Gra
 $modifiedByDisplay = Resolve-UpnToDisplayNameOrKeep -UpnOrMail $modifiedByRaw -GraphToken $graphToken
 
 
+
+
+
+
+# Ensure Graph module is available
+if (-not (Get-Module -ListAvailable Microsoft.Graph.Users)) {
+    Write-Host "Installing Microsoft.Graph.Users..."
+    Install-Module Microsoft.Graph.Users -Scope CurrentUser -Force -AllowClobber
+}
+Import-Module Microsoft.Graph.Users -Force
+
+# Get a real Graph access token from Az context
+$graphToken = (Get-AzAccessToken -ResourceUrl "https://graph.microsoft.com" -TenantId (Get-AzContext).Tenant.Id).Token
+
+# IMPORTANT: pass RAW STRING token (no SecureString)
+Disconnect-MgGraph -ErrorAction SilentlyContinue | Out-Null
+Connect-MgGraph -AccessToken $graphToken -NoWelcome
+
+# Print context
+$ctx = Get-MgContext
+Write-Host "MG ClientId : $($ctx.ClientId)"
+Write-Host "MG TenantId : $($ctx.TenantId)"
+Write-Host "MG AuthType : $($ctx.AuthType)"
+
+# Hard validation - will fail fast if token/permissions are wrong
+try {
+    Get-MgUser -Top 1 -ErrorAction Stop | Out-Null
+    Write-Host "Graph OK: Get-MgUser succeeded."
+} catch {
+    Write-Host "Graph FAILED: $($_.Exception.Message)"
+    throw
+}
+
