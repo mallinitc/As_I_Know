@@ -8,9 +8,8 @@ $FromMail = ($ol.Session.Accounts|Where-Object {$_.SmtpAddress -like '*workspot.
 
 If($Frommail.count -ne 1)
 {
-    "There are multiple outlooks profiles are found. So please enter valid email adaress and password"
-     $FromMail = 'mallikarjunar@workspot.com'
-   
+    Write-Host "Multiple Outlook profiles were found. Please enter the sender email address."
+    $FromMail = Read-Host "Enter sender email address"
 }
 Write-host "Outlook details collected"
 
@@ -132,7 +131,9 @@ $Body = "<!DOCTYPE html> <html>Team,<br />Please find the Pool & VM status detai
 $Account = $Ol.Session.Accounts | Where-Object { $_.SmtpAddress -eq $Frommail }
 $Mail = $Ol.CreateItem(0)
 
-$Mail.recipients.add("example@workspot.com") | out-null
+$RecipientEmail = Read-Host "Enter recipient email address for this report"
+if (-not $RecipientEmail) { $RecipientEmail = 'recipient@example.com' }
+$Mail.recipients.add($RecipientEmail) | out-null
 $Mail.subject = $Sub
 $Mail.HTMLbody = $Body
 $Mail.SendUsingAccount = $Account

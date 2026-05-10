@@ -53,7 +53,7 @@
 
 		
 	.NOTES
-		Author: Joe Semmelrock, joe@workspot.com
+		Author: Joe Semmelrock, joe@example.com
 		2018-10-30  Released
 		2018-11-08  Added Get-WorkspotLicenseInfo, updated comments.
 		2018-12-19  Fixed return for 3 functions. (Remove-WorkspotVdiUserAssignment, Remove-WorkspotUser, and Remove-WorkspotVdiPoolVm)

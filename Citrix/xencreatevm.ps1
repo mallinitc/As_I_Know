@@ -17,16 +17,23 @@ Param(
     [parameter(Mandatory = $true )]
     $pvssite,
     [parameter(Mandatory = $true )]
-    $DC
+    $DC,
+    [parameter(Mandatory = $false, HelpMessage = "XenServer root password")][System.Security.SecureString] $XenRootPassword = $null
 )
 
+if (-not $XenRootPassword) {
+    $XenRootPassword = Read-Host -AsSecureString "Enter XenServer root password"
+}
+$Ptr = [Runtime.InteropServices.Marshal]::SecureStringToBSTR($XenRootPassword)
+$XenRootPasswordPlain = [Runtime.InteropServices.Marshal]::PtrToStringAuto($Ptr)
+[Runtime.InteropServices.Marshal]::ZeroFreeBSTR($Ptr)
 
 Add-PSSnapin *citrix*, *pvs*, *xen*, *mcli* -ErrorAction silentlyContinue
 Import-Module ActiveDirectory -ErrorAction silentlyContinue
 
 $XC = ""
 
-$xenserver = Connect-XenServer -Server "$xc" -UserName "root" -Password "PASS" -SetDefaultSession
+$xenserver = Connect-XenServer -Server "$xc" -UserName "root" -Password $XenRootPasswordPlain -SetDefaultSession
 
 $pvsSite = 'SDC'
 

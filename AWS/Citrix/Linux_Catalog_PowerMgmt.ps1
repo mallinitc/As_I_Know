@@ -32,8 +32,10 @@ do {
     $dgnames = (Get-BrokerDesktopGroup -Name "Linux-*" -AdminAddress $DDC -InMaintenanceMode $false).Name
     foreach ($dgname in $dgnames) {
         $macs = Get-BrokerMachine -AdminAddress $DDC -DesktopGroupName $dgname  -RegistrationState Registered -SummaryState Available -SessionState $null
-        $securePass = ConvertTo-SecureString "<Password>" -AsPlainText -Force
-        $cred = New-Object System.Management.Automation.PSCredential ("FN-VAD", $securePass)
+        if (-not $SSHPassword) {
+            $SSHPassword = Read-Host -AsSecureString "Enter the Linux SSH password"
+        }
+        $cred = New-Object System.Management.Automation.PSCredential ("FN-VAD", $SSHPassword)
 
 
         foreach ($mac in $macs) {

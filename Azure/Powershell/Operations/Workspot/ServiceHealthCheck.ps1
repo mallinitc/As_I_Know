@@ -14,7 +14,7 @@ $RGgroup.Name
 
 
 #Creating an ActionGroup
-$emails = @('support@workspot.com') 
+$emails = if ($env:SERVICE_HEALTH_SUPPORT_EMAILS) { $env:SERVICE_HEALTH_SUPPORT_EMAILS -split ';' } else { @('support@example.com') }
 $rgName = $RGgroup.Name
 $emailReceivers = @()
 

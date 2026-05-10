@@ -4,11 +4,24 @@
 Param(
         [parameter(Mandatory=$True, HelpMessage = "Source VM Name")] [string] $SourceVmName,
         [parameter(Mandatory=$True, HelpMessage = "Source Pool")] [string] $SourcePool,
-        [parameter(Mandatory=$True, HelpMessage = "Destination Pool")] [string] $DestPool
+        [parameter(Mandatory=$True, HelpMessage = "Destination Pool")] [string] $DestPool,
+        [parameter(Mandatory=$false, HelpMessage = "Workspot API client ID")][string] $ApiClientId = $env:WORKSPOT_API_CLIENT_ID,
+        [parameter(Mandatory=$false, HelpMessage = "Workspot API client secret")][string] $ApiClientSecret = $env:WORKSPOT_API_CLIENT_SECRET,
+        [parameter(Mandatory=$false, HelpMessage = "Workspot Control API username/email")][string] $WsControlUser = $env:WORKSPOT_CONTROL_USER,
+        [parameter(Mandatory=$false, HelpMessage = "Workspot Control API password")][System.Security.SecureString] $WsControlPass = $null
       )
 
 Connect-AzAccount
-Set-WorkspotApiCredentials -ApiClientId 6OjXbf0CfFzuwnAuZS5y -ApiClientSecret 1f3c3e16cb3bf83da863f969dd9af77fcfb00704 -WsControlUser aambastha@workspot.com -WsControlPass Anand@123
+if (-not $ApiClientId) { $ApiClientId = Read-Host "Enter Workspot API Client ID" }
+if (-not $ApiClientSecret) { $ApiClientSecret = Read-Host "Enter Workspot API Client Secret" }
+if (-not $WsControlUser) { $WsControlUser = Read-Host "Enter Workspot Control username/email" }
+if (-not $WsControlPass) { $WsControlPass = Read-Host -AsSecureString "Enter Workspot Control password" }
+
+$Ptr = [Runtime.InteropServices.Marshal]::SecureStringToBSTR($WsControlPass)
+$WsControlPassPlain = [Runtime.InteropServices.Marshal]::PtrToStringAuto($Ptr)
+[Runtime.InteropServices.Marshal]::ZeroFreeBSTR($Ptr)
+
+Set-WorkspotApiCredentials -ApiClientId $ApiClientId -ApiClientSecret $ApiClientSecret -WsControlUser $WsControlUser -WsControlPass $WsControlPassPlain
 #Should we read Control API details also using PARAM ?
 $Pools = Get-WorkspotVdiPool
 If(!(( $Pools|Where-Object {$_.name -like $SourcePool}) -and (Get-WorkspotVdiPoolVm -PoolName $SourcePool|Where-Object {$_.name -like $SourceVmName}) -and ($Pools|Where-Object {$_.name -like $DestPool})))
