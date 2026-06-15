@@ -1,0 +1,277 @@
+{
+  "generated_at": "2026-06-15T08:34:02.545485",
+  "source": "az role definition list",
+  "roles": {
+    "Contributor": {
+      "assignableScopes": [
+        "/"
+      ],
+      "createdBy": null,
+      "createdOn": "2015-02-02T21:55:09.880642+00:00",
+      "description": "Grants full access to manage all resources, but does not allow you to assign roles in Azure RBAC, manage assignments in Azure Blueprints, or share image galleries.",
+      "id": "/subscriptions/3276807a-5a08-4b8a-9795-c08f1d787ab2/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c",
+      "name": "b24988ac-6180-42a0-ab88-20f7382dd24c",
+      "permissions": [
+        {
+          "actions": [
+            "*"
+          ],
+          "condition": null,
+          "conditionVersion": null,
+          "dataActions": [],
+          "notActions": [
+            "Microsoft.Authorization/*/Delete",
+            "Microsoft.Authorization/*/Write",
+            "Microsoft.Authorization/elevateAccess/Action",
+            "Microsoft.Blueprint/blueprintAssignments/write",
+            "Microsoft.Blueprint/blueprintAssignments/delete",
+            "Microsoft.Compute/galleries/share/action",
+            "Microsoft.Purview/consents/write",
+            "Microsoft.Purview/consents/delete",
+            "Microsoft.Resources/deploymentStacks/manageDenySetting/action",
+            "Microsoft.Subscription/cancel/action",
+            "Microsoft.Subscription/enable/action"
+          ],
+          "notDataActions": []
+        }
+      ],
+      "roleName": "Contributor",
+      "roleType": "BuiltInRole",
+      "type": "Microsoft.Authorization/roleDefinitions",
+      "updatedBy": null,
+      "updatedOn": "2024-11-20T20:16:17.164658+00:00"
+    },
+    "Reader": {
+      "assignableScopes": [
+        "/"
+      ],
+      "createdBy": null,
+      "createdOn": "2015-02-02T21:55:09.880642+00:00",
+      "description": "View all resources, but does not allow you to make any changes.",
+      "id": "/subscriptions/3276807a-5a08-4b8a-9795-c08f1d787ab2/providers/Microsoft.Authorization/roleDefinitions/acdd72a7-3385-48ef-bd42-f606fba81ae7",
+      "name": "acdd72a7-3385-48ef-bd42-f606fba81ae7",
+      "permissions": [
+        {
+          "actions": [
+            "*/read"
+          ],
+          "condition": null,
+          "conditionVersion": null,
+          "dataActions": [],
+          "notActions": [],
+          "notDataActions": []
+        }
+      ],
+      "roleName": "Reader",
+      "roleType": "BuiltInRole",
+      "type": "Microsoft.Authorization/roleDefinitions",
+      "updatedBy": null,
+      "updatedOn": "2021-11-11T20:13:47.862868+00:00"
+    },
+    "Storage Account Contributor": {
+      "assignableScopes": [
+        "/"
+      ],
+      "createdBy": null,
+      "createdOn": "2015-06-02T00:18:27.354269+00:00",
+      "description": "Lets you manage storage accounts, including accessing storage account keys which provide full access to storage account data.",
+      "id": "/subscriptions/3276807a-5a08-4b8a-9795-c08f1d787ab2/providers/Microsoft.Authorization/roleDefinitions/17d1049b-9a84-46fb-8f53-869881c3d3ab",
+      "name": "17d1049b-9a84-46fb-8f53-869881c3d3ab",
+      "permissions": [
+        {
+          "actions": [
+            "Microsoft.Authorization/*/read",
+            "Microsoft.Insights/alertRules/*",
+            "Microsoft.Insights/diagnosticSettings/*",
+            "Microsoft.Network/virtualNetworks/subnets/joinViaServiceEndpoint/action",
+            "Microsoft.ResourceHealth/availabilityStatuses/read",
+            "Microsoft.Resources/deployments/*",
+            "Microsoft.Resources/subscriptions/resourceGroups/read",
+            "Microsoft.Storage/storageAccounts/*",
+            "Microsoft.Support/*"
+          ],
+          "condition": null,
+          "conditionVersion": null,
+          "dataActions": [],
+          "notActions": [],
+          "notDataActions": []
+        }
+      ],
+      "roleName": "Storage Account Contributor",
+      "roleType": "BuiltInRole",
+      "type": "Microsoft.Authorization/roleDefinitions",
+      "updatedBy": null,
+      "updatedOn": "2021-11-11T20:13:54.236353+00:00"
+    },
+    "Storage Blob Data Contributor": {
+      "assignableScopes": [
+        "/"
+      ],
+      "createdBy": null,
+      "createdOn": "2017-12-21T00:01:24.797231+00:00",
+      "description": "Allows for read, write and delete access to Azure Storage blob containers and data",
+      "id": "/subscriptions/3276807a-5a08-4b8a-9795-c08f1d787ab2/providers/Microsoft.Authorization/roleDefinitions/ba92f5b4-2d11-453d-a403-e96b0029c9fe",
+      "name": "ba92f5b4-2d11-453d-a403-e96b0029c9fe",
+      "permissions": [
+        {
+          "actions": [
+            "Microsoft.Storage/storageAccounts/blobServices/containers/delete",
+            "Microsoft.Storage/storageAccounts/blobServices/containers/read",
+            "Microsoft.Storage/storageAccounts/blobServices/containers/write",
+            "Microsoft.Storage/storageAccounts/blobServices/generateUserDelegationKey/action"
+          ],
+          "condition": null,
+          "conditionVersion": null,
+          "dataActions": [
+            "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/delete",
+            "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/read",
+            "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/write",
+            "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/move/action",
+            "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/add/action"
+          ],
+          "notActions": [],
+          "notDataActions": []
+        }
+      ],
+      "roleName": "Storage Blob Data Contributor",
+      "roleType": "BuiltInRole",
+      "type": "Microsoft.Authorization/roleDefinitions",
+      "updatedBy": null,
+      "updatedOn": "2021-11-11T20:13:54.939745+00:00"
+    },
+    "Storage Blob Data Reader": {
+      "assignableScopes": [
+        "/"
+      ],
+      "createdBy": null,
+      "createdOn": "2017-12-21T00:01:24.797231+00:00",
+      "description": "Allows for read access to Azure Storage blob containers and data",
+      "id": "/subscriptions/3276807a-5a08-4b8a-9795-c08f1d787ab2/providers/Microsoft.Authorization/roleDefinitions/2a2b9908-6ea1-4ae2-8e65-a410df84e7d1",
+      "name": "2a2b9908-6ea1-4ae2-8e65-a410df84e7d1",
+      "permissions": [
+        {
+          "actions": [
+            "Microsoft.Storage/storageAccounts/blobServices/containers/read",
+            "Microsoft.Storage/storageAccounts/blobServices/generateUserDelegationKey/action"
+          ],
+          "condition": null,
+          "conditionVersion": null,
+          "dataActions": [
+            "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/read"
+          ],
+          "notActions": [],
+          "notDataActions": []
+        }
+      ],
+      "roleName": "Storage Blob Data Reader",
+      "roleType": "BuiltInRole",
+      "type": "Microsoft.Authorization/roleDefinitions",
+      "updatedBy": null,
+      "updatedOn": "2021-11-11T20:13:55.297507+00:00"
+    },
+    "Network Contributor": {
+      "assignableScopes": [
+        "/"
+      ],
+      "createdBy": null,
+      "createdOn": "2015-06-02T00:18:27.354269+00:00",
+      "description": "Lets you manage networks, but not access to them.",
+      "id": "/subscriptions/3276807a-5a08-4b8a-9795-c08f1d787ab2/providers/Microsoft.Authorization/roleDefinitions/4d97b98b-1d4f-4787-a291-c67834d212e7",
+      "name": "4d97b98b-1d4f-4787-a291-c67834d212e7",
+      "permissions": [
+        {
+          "actions": [
+            "Microsoft.Authorization/*/read",
+            "Microsoft.Insights/alertRules/*",
+            "Microsoft.Network/*",
+            "Microsoft.ResourceHealth/availabilityStatuses/read",
+            "Microsoft.Resources/deployments/*",
+            "Microsoft.Resources/subscriptions/resourceGroups/read",
+            "Microsoft.Support/*"
+          ],
+          "condition": null,
+          "conditionVersion": null,
+          "dataActions": [],
+          "notActions": [],
+          "notDataActions": []
+        }
+      ],
+      "roleName": "Network Contributor",
+      "roleType": "BuiltInRole",
+      "type": "Microsoft.Authorization/roleDefinitions",
+      "updatedBy": null,
+      "updatedOn": "2021-11-11T20:13:44.632896+00:00"
+    },
+    "Virtual Machine Contributor": {
+      "assignableScopes": [
+        "/"
+      ],
+      "createdBy": null,
+      "createdOn": "2015-06-02T00:18:27.354269+00:00",
+      "description": "Lets you manage virtual machines, but not access to them, and not the virtual network or storage account they're connected to.",
+      "id": "/subscriptions/3276807a-5a08-4b8a-9795-c08f1d787ab2/providers/Microsoft.Authorization/roleDefinitions/9980e02c-c2be-4d73-94e8-173b1dc7cf3c",
+      "name": "9980e02c-c2be-4d73-94e8-173b1dc7cf3c",
+      "permissions": [
+        {
+          "actions": [
+            "Microsoft.Authorization/*/read",
+            "Microsoft.Compute/availabilitySets/*",
+            "Microsoft.Compute/locations/*",
+            "Microsoft.Compute/virtualMachines/*",
+            "Microsoft.Compute/virtualMachineScaleSets/*",
+            "Microsoft.Compute/cloudServices/*",
+            "Microsoft.Compute/disks/write",
+            "Microsoft.Compute/disks/read",
+            "Microsoft.Compute/disks/delete",
+            "Microsoft.Compute/hostgroups/write",
+            "Microsoft.Compute/hostgroups/hosts/write",
+            "Microsoft.DevTestLab/schedules/*",
+            "Microsoft.Insights/alertRules/*",
+            "Microsoft.Network/applicationGateways/backendAddressPools/join/action",
+            "Microsoft.Network/loadBalancers/backendAddressPools/join/action",
+            "Microsoft.Network/loadBalancers/inboundNatPools/join/action",
+            "Microsoft.Network/loadBalancers/inboundNatRules/join/action",
+            "Microsoft.Network/loadBalancers/probes/join/action",
+            "Microsoft.Network/loadBalancers/read",
+            "Microsoft.Network/locations/*",
+            "Microsoft.Network/networkInterfaces/*",
+            "Microsoft.Network/networkSecurityGroups/join/action",
+            "Microsoft.Network/networkSecurityGroups/read",
+            "Microsoft.Network/publicIPAddresses/join/action",
+            "Microsoft.Network/publicIPAddresses/read",
+            "Microsoft.Network/virtualNetworks/read",
+            "Microsoft.Network/virtualNetworks/subnets/join/action",
+            "Microsoft.RecoveryServices/locations/*",
+            "Microsoft.RecoveryServices/Vaults/backupFabrics/backupProtectionIntent/write",
+            "Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/*/read",
+            "Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/read",
+            "Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/write",
+            "Microsoft.RecoveryServices/Vaults/backupPolicies/read",
+            "Microsoft.RecoveryServices/Vaults/backupPolicies/write",
+            "Microsoft.RecoveryServices/Vaults/read",
+            "Microsoft.RecoveryServices/Vaults/usages/read",
+            "Microsoft.RecoveryServices/Vaults/write",
+            "Microsoft.ResourceHealth/availabilityStatuses/read",
+            "Microsoft.Resources/deployments/*",
+            "Microsoft.Resources/subscriptions/resourceGroups/read",
+            "Microsoft.SerialConsole/serialPorts/connect/action",
+            "Microsoft.SqlVirtualMachine/*",
+            "Microsoft.Storage/storageAccounts/listKeys/action",
+            "Microsoft.Storage/storageAccounts/read",
+            "Microsoft.Support/*"
+          ],
+          "condition": null,
+          "conditionVersion": null,
+          "dataActions": [],
+          "notActions": [],
+          "notDataActions": []
+        }
+      ],
+      "roleName": "Virtual Machine Contributor",
+      "roleType": "BuiltInRole",
+      "type": "Microsoft.Authorization/roleDefinitions",
+      "updatedBy": null,
+      "updatedOn": "2025-02-10T16:13:38.151887+00:00"
+    }
+  }
+}
