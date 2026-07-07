@@ -1,0 +1,7 @@
+requirement_id,requirement_type,requirement,measurable_goal,gr4ml_alignment
+FR-01,Functional,The system shall accept a user prompt as text input before it reaches the enterprise LLM application.,Prompt input should be accepted as a string and passed to the detection pipeline.,Business View
+FR-02,Functional,The system shall classify each prompt as Benign or Malicious.,Each input prompt must return one binary class label.,Analytics Design View
+FR-03,Functional,"The system shall generate an operational decision: Allow, Review, or Block.",Each prediction must be mapped to a security decision using malicious probability thresholds.,Analytics Design View
+NFR-01,Quality,The system should minimize missed malicious prompts.,Malicious recall should be prioritized as the primary evaluation metric.,Business View
+NFR-02,Quality,The system should provide reproducible model artifacts.,"Final model, vectorizer, metrics, and metadata must be saved as versioned artifacts.",Data Preparation View
+NFR-03,Quality,The system should support explainable and auditable evaluation.,"Accuracy, precision, recall, F1-score, confusion matrix, and classification report must be generated.",Analytics Design View

@@ -1,0 +1,31 @@
+{
+    "model_version": "v1.0",
+    "model_name": "Logistic Regression",
+    "project_name": "ML-Based Malicious Prompt Detection System",
+    "domain": "Cybersecurity / AI Security",
+    "task_type": "Supervised Binary Text Classification",
+    "positive_class": "Malicious",
+    "feature_extraction": "TF-IDF",
+    "max_features": 5000,
+    "ngram_range": "1 to 2",
+    "primary_metric": "Recall for malicious prompts",
+    "final_test_metrics": {
+        "model": "Logistic Regression",
+        "accuracy": 0.9342,
+        "precision_malicious": 0.9083,
+        "recall_malicious": 0.9873,
+        "f1_malicious": 0.9462
+    },
+    "final_test_confusion_matrix": {
+        "true_benign": 335,
+        "false_positive": 55,
+        "false_negative": 7,
+        "true_malicious": 545
+    },
+    "model_artifact": "artifacts\\final_logistic_regression_model.joblib",
+    "vectorizer_artifact": "artifacts\\tfidf_vectorizer.joblib",
+    "dataset_train_rows": 4391,
+    "dataset_validation_rows": 941,
+    "dataset_test_rows": 942,
+    "random_state": 42
+}

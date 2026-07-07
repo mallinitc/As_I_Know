@@ -1,0 +1,5 @@
+model,accuracy,precision_malicious,recall_malicious,f1_malicious
+Logistic Regression,0.9277,0.8963,0.9869,0.9394
+Random Forest,0.9352,0.9099,0.9831,0.9451
+Linear SVM,0.9352,0.9127,0.9794,0.9449
+Multinomial Naive Bayes,0.9299,0.9077,0.9757,0.9404

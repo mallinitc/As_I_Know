@@ -1,0 +1,4 @@
+quality_requirement,justification,measurable_indicator,achieved_result
+High Malicious Recall,"The system must minimize false negatives because a missed malicious prompt may reach the enterprise LLM application and cause prompt injection, data leakage, or policy bypass.",Recall for malicious prompts,0.9873
+Auditability and Explainable Evaluation,"Security teams need evidence showing how the model performs, including false positives, false negatives, and class-wise metrics, before trusting it as a screening layer.","Confusion matrix, classification report, precision, recall, and F1-score",Generated and saved
+Reproducibility and Version Control,"The trained model, vectorizer, metrics, and metadata must be saved so the same model version can be reused, reviewed, and compared with future versions.",Saved model registry metadata and artifacts,Model registry metadata v1.0 created

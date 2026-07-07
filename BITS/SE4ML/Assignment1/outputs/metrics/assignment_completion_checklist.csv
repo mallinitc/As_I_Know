@@ -1,0 +1,9 @@
+assignment_requirement,status,notebook_evidence
+Select domain and define problem statement,Completed,Cybersecurity / AI Security domain and malicious prompt detection problem defined
+Formulate requirement specifications using GR4ML concepts,Completed,Requirements and GR4ML alignment table created
+"Develop GR4ML Business, Analytics Design, and Data Preparation Views",Completed,GR4ML view summary table created
+Identify top three quality requirements with justification,Completed,Top quality requirements table created
+Draw system architecture diagram with ML and non-ML components,Completed,System architecture diagram generated and saved
+Select and apply two architectural patterns,Completed,Pipe-and-Filter and Model Registry / Model Versioning patterns implemented
+Implement selected architectural patterns using suitable tools,Completed,"Reusable inference pipeline, saved model artifacts, vectorizer, metrics, and metadata"
+Evaluate ML models and report results,Completed,"Validation comparison, test metrics, confusion matrix, and classification report generated"

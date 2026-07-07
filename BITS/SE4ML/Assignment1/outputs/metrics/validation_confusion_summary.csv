@@ -1,0 +1,5 @@
+model,true_benign,false_positive,false_negative,true_malicious
+Logistic Regression,346,61,7,527
+Random Forest,355,52,9,525
+Linear SVM,357,50,11,523
+Multinomial Naive Bayes,354,53,13,521

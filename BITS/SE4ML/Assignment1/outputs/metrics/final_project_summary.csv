@@ -1,0 +1,7 @@
+section,summary
+Context,"Enterprise LLM applications can be exposed to malicious prompts, prompt injection attempts, instruction overrides, and data extraction requests."
+Problem,The system must detect whether a user prompt is benign or malicious before it reaches the enterprise LLM application.
+Solution,A supervised binary text classification pipeline was implemented using TF-IDF features and multiple candidate models.
+Selected Model,Logistic Regression was selected because it produced the lowest validation false negatives and the highest malicious recall.
+Final Result,The final model achieved 0.9873 malicious recall and 0.9462 malicious F1-score on the untouched test set.
+Architecture,The implementation demonstrates the Pipe-and-Filter Pattern and Model Registry / Model Versioning Pattern.

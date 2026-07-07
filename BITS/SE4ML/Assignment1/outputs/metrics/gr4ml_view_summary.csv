@@ -1,0 +1,4 @@
+gr4ml_view,project_alignment,key_elements,project_evidence
+Business View,Defines the enterprise security need for detecting malicious prompts before they reach an LLM application.,"Domain, problem statement, stakeholders, business risk, primary success metric","Cybersecurity domain, malicious prompt detection problem, recall-focused evaluation"
+Analytics Design View,"Defines the ML task, candidate models, feature representation, evaluation metrics, and decision logic.","Binary classification, TF-IDF, Logistic Regression, Naive Bayes, Linear SVM, Random Forest","Model comparison table, validation metrics, test metrics, classification report"
+Data Preparation View,"Defines how data is loaded, checked, transformed, and prepared for reliable model development.","Dataset splits, missing values, duplicate checks, label mapping, TF-IDF transformation","Train-validation-test split analysis, data quality table, TF-IDF feature matrix"
