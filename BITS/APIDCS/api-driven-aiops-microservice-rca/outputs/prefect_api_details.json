@@ -1,0 +1,20 @@
+{
+    "application_name": "API-driven AIOps Microservice RCA Pipeline",
+    "flow_name": "api-driven-aiops-microservice-rca-pipeline",
+    "flow_id": "fdc3bb96-2fe4-41a7-9e22-596ea1125824",
+    "deployment_name": "aiops-rca-every-2-min",
+    "deployment_id": "050a478d-8c55-4dcf-bad0-3055e3d89d34",
+    "deployment_status": "READY",
+    "latest_completed_flow_run_name": "versatile-bat",
+    "latest_completed_flow_run_state": "COMPLETED",
+    "latest_completed_flow_run_start_time": "2026-07-10T17:59:34.985488Z",
+    "latest_completed_flow_run_end_time": "2026-07-10T17:59:41.097011Z",
+    "next_scheduled_flow_run_name": "winged-hoatzin",
+    "next_scheduled_flow_run_state": "SCHEDULED",
+    "next_scheduled_flow_run_expected_start_time": "2026-07-10T18:01:34.954401Z",
+    "work_pool_name": "local-process-pool",
+    "work_pool_type": "process",
+    "api_source": "http://127.0.0.1:4200/api",
+    "total_completed_flow_runs_checked": 5,
+    "total_scheduled_flow_runs_checked": 5
+}

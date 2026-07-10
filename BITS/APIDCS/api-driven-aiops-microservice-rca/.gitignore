@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+
+data/raw/
+data/raw/sn_dataset_extracted/
+
+models/
+.ipynb_checkpoints/
+
+*.log
+.env
