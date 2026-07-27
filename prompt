@@ -324,3 +324,1150 @@ Formatting Requirements
 - Make the document approximately 8–12 pages long
 - Include an appendix section if necessary
 - Make the proposal look suitable for enterprise management review and approval
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ARCA — Access Risk & Change Analyzer
+Enterprise-Level Concept, Architecture, and Implementation Direction
+
+1. Proposed Tool Names
+
+Option 1: ARCA — Access Risk & Change Analyzer
+This is the preferred name. ARCA focuses on analyzing access risk in the context of change management. It is short, easy to remember, and clearly represents the two main areas of the tool: access risk and change validation.
+
+Option 2: PRISM — Privilege Risk Intelligence & Scope Mapping
+PRISM represents visibility, intelligence, and mapping. This name is suitable if the tool is positioned as a visibility and intelligence layer that maps change intent to required Azure access, scope, and privileged role recommendations.
+
+Option 3: GUARD — Governance Utility for Access Risk Detection
+GUARD is a security-oriented name. It emphasizes governance, access risk detection, and preventive control. This name is suitable if the tool is positioned more as a security guardrail for privileged access and change workflows.
+
+Recommended final name:
+ARCA — Access Risk & Change Analyzer
+
+Recommended subtitle:
+Read-only advisory engine for change quality and PIM access-risk validation
+
+One-line description:
+ARCA automatically analyzes change quality at the point of submission and assists PIM approvers by validating whether requested privileged access aligns with the approved change, while keeping all final decisions within existing ServiceNow and approver workflows.
+
+2. Updated Enterprise Vision
+
+ARCA is being evolved from a simple PIM least-privilege recommendation assistant into an enterprise-level change-to-access risk analysis platform.
+
+The original prototype focused mainly on validating whether a requested PIM role, such as Contributor, was broader than required for a given Azure change. The updated enterprise vision is broader. ARCA will now support two major validation stages across the change lifecycle.
+
+Stage 1:
+Change Quality Validation
+
+Stage 2:
+PIM-to-Change Alignment Validation
+
+The goal is not to replace ServiceNow, PIM, or human approvers. The goal is to provide an intelligent, read-only advisory layer that identifies missing information, detects access risk, recommends least-privilege access, and gives approvers evidence before privileged access is used.
+
+ARCA should be positioned as a decision-support and risk-analysis platform, not as an automated approval engine.
+
+3. Business Problem
+
+In the current process, change descriptions may not always contain enough detail for access-risk review. A change may say something generic such as “need access for deployment” or “need Contributor for implementation,” without clearly mentioning the exact Azure resource, scope, required action, implementer, or access window.
+
+This creates multiple risks:
+
+* Approvers may not have enough context to validate whether the requested access is justified.
+* Implementers may request broad roles such as Contributor even when a narrower role is enough.
+* PIM requests may not fully align with the approved change.
+* PIM duration may exceed the actual change window.
+* PIM scope may be broader than the resource mentioned in the change.
+* Implementer details in ServiceNow and PIM may not match.
+* Audit evidence may be weak because decisions are not supported by structured analysis.
+
+ARCA is designed to reduce these risks by validating change quality early and validating PIM alignment before privileged access is accepted by the approver.
+
+4. Why This Use Case Is Important
+
+Privileged access is one of the highest-risk areas in cloud operations. Even temporary access through PIM can create risk if the requested role, scope, or duration is broader than required.
+
+For example, an implementer may request:
+
+Contributor at Subscription scope for 8 hours
+
+But the actual change may only require:
+
+Storage Account Contributor at Resource Group or Resource scope for 2 hours
+
+In such cases, ARCA helps approvers understand that the requested access is overprivileged and recommends a safer least-privilege alternative.
+
+The business benefits are:
+
+* Reduces overprivileged access
+* Improves change quality before approval
+* Helps teams write better change descriptions
+* Supports consistent access review
+* Reduces manual effort for approvers
+* Improves audit evidence
+* Reduces access-related operational and security risk
+* Supports least-privilege and zero-trust principles
+* Improves governance across change and PIM workflows
+
+5. Updated ARCA Operating Model
+
+ARCA will operate in a read-only advisory mode.
+
+This means:
+
+ARCA reads change details.
+ARCA reads PIM request details.
+ARCA analyzes access risk.
+ARCA generates recommendations.
+ARCA displays evidence.
+ARCA does not directly update ServiceNow records.
+ARCA does not approve or reject changes.
+ARCA does not approve or reject PIM requests.
+ARCA does not directly grant or remove access.
+
+Final decisions remain with existing ServiceNow workflows and authorized approvers.
+
+This positioning is important because it reduces implementation risk, simplifies InfoSec review, and makes ARCA acceptable as an advisory control before it is allowed to take any automated action.
+
+6. Two-Part Enterprise Design
+
+ARCA will have two major parts.
+
+Part 1:
+Change Quality Validation
+
+Part 2:
+PIM-to-Change Alignment Validation
+
+These two parts serve different users and different stages of the change lifecycle.
+
+Part 1 is for a large user base because many IT teams raise changes.
+
+Part 2 is for a limited user base because only privileged-access approvers need to validate actual PIM requests.
+
+7. Part 1 — Change Quality Validation
+
+Part 1 validates whether a ServiceNow change contains enough information for access-risk review.
+
+This part should be automatic and event-driven. We should not expect every change creator to open a separate ARCA UI. Many users across IT teams raise changes, so asking them to manually validate changes in another tool is not practical.
+
+Recommended enterprise flow:
+
+User creates a change in ServiceNow.
+User moves the change from Draft to the next stage, such as Assess or Review.
+A ServiceNow webhook, Flow Designer action, or MCP-based integration triggers ARCA automatically.
+ARCA reads the change details.
+ARCA validates change quality.
+ARCA generates recommendations.
+The recommendation is made available through a mechanism to be finalized by management.
+
+Part 1 should check whether the change includes enough information such as:
+
+* Change number
+* Environment
+* Change type
+* Business justification
+* Implementation plan
+* Backout plan
+* Affected Azure service
+* Affected Azure resource name
+* Resource group or subscription
+* Required access or expected role
+* Expected scope
+* Planned start time
+* Planned end time
+* Implementer details
+* Assignment group
+* Emergency or standard change classification
+* Risk and impact details
+* Whether the description is specific enough for access-risk review
+
+Example Part 1 output:
+
+CHANGE_READY_FOR_REVIEW
+The change contains enough access-relevant information for review.
+
+MISSING_REQUIRED_DETAILS
+The change is missing important information such as resource name, expected access scope, implementer, or access duration.
+
+ACCESS_DETAILS_INCOMPLETE
+The change mentions implementation activity but does not clearly state what privileged access is required.
+
+MANUAL_REVIEW_REQUIRED
+The change cannot be confidently classified or requires manual security review.
+
+Part 1 recommendation example:
+
+ARCA detected that this change is missing the affected Azure resource name and expected access scope. Please include the Azure resource, resource group or subscription, required access action, implementer, and expected access window before the change proceeds for access-risk review.
+
+Important note:
+In the current recommended scope, ARCA should not directly write this recommendation into the ServiceNow record. It should return the recommendation as structured output. Management can decide later whether this output should be shown in ServiceNow, an ARCA UI, a dashboard, Teams notification, or another channel.
+
+8. Part 1 Technical Implementation Direction
+
+Part 1 can be implemented as an event-driven validation service.
+
+Possible trigger options:
+
+Option 1:
+ServiceNow webhook or outbound REST message when the change moves from Draft to Assess or Review.
+
+Option 2:
+ServiceNow Flow Designer action that calls the ARCA API.
+
+Option 3:
+ServiceNow MCP Server that exposes read-only tools for fetching change details.
+
+Option 4:
+Scheduled polling, if event-based integration is not immediately available.
+
+Recommended approach:
+Use event-based triggering where possible. ServiceNow should trigger ARCA automatically when the change reaches a configured workflow state.
+
+Part 1 high-level architecture:
+
+ServiceNow Change Created or Updated
+↓
+Change State Transition Trigger
+↓
+ARCA API Endpoint
+↓
+Read Change Details
+↓
+LLM-Based Extraction and Classification
+↓
+Rule-Based Quality Validation
+↓
+Structured Recommendation Output
+↓
+Recommendation Display Channel
+
+Part 1 should use Azure OpenAI or an approved enterprise LLM to extract structured information from unstructured change text. However, the quality decision should be based on deterministic validation rules.
+
+Example extraction fields:
+
+{
+"change_number": "CHG90001",
+"environment": "Production",
+"change_type": "storage_networking_change",
+"affected_service": "Azure Storage",
+"resource_names": ["stgprodcritical01"],
+"requested_access": "Contributor",
+"requested_scope": "Subscription",
+"planned_start": "2026-07-25 22:00",
+"planned_end": "2026-07-25 23:30",
+"implementer": "[user@company.com](mailto:user@company.com)",
+"description_quality": "Incomplete"
+}
+
+Example quality validation rules:
+
+* Resource name must be present.
+* Environment must be present.
+* Implementation action must be specific.
+* Access requirement must be mentioned if privileged access is needed.
+* Scope must be specific.
+* Planned start and end time must be available.
+* Implementer must be identified.
+* Emergency changes must include business impact and justification.
+* Change must mention affected Azure service or resource family.
+
+9. Part 2 — PIM-to-Change Alignment Validation
+
+Part 2 validates whether the actual PIM request aligns with the approved ServiceNow change.
+
+This part is used mainly by approvers, who are limited in number. Therefore, a separate ARCA UI or approver dashboard is practical and useful.
+
+Part 2 compares approved change context with actual PIM request details.
+
+It checks:
+
+* Does the PIM requester match the approved implementer?
+* Does the PIM role match the required access?
+* Is the requested role broader than required?
+* Is the requested scope aligned with the affected resource in the change?
+* Is the requested duration aligned with the change window?
+* Does the PIM justification reference the correct change number?
+* Is the requested PIM window within the approved change window?
+* Is the resource mentioned in the change covered by the requested PIM scope?
+* Is the role/scope/duration combination risky?
+* Is manual review required?
+
+Example Part 2 input from approved change:
+
+Change Number:
+CHG90001
+
+Environment:
+Production
+
+Approved activity:
+Update storage account firewall and virtual network rules.
+
+Affected resource:
+stgprodcritical01
+
+Expected access:
+Storage Account Contributor
+
+Approved scope:
+Resource Group or specific Storage Account
+
+Approved window:
+10:00 PM to 11:30 PM
+
+Approved implementer:
+[user1@company.com](mailto:user1@company.com)
+
+Example Part 2 input from PIM request:
+
+Requester:
+[user1@company.com](mailto:user1@company.com)
+
+Requested role:
+Contributor
+
+Requested scope:
+Subscription
+
+Requested duration:
+8 hours
+
+Justification:
+CHG90001 production storage firewall update
+
+ARCA validation output:
+
+Decision:
+REJECT_OVERPRIVILEGED
+
+Reason:
+Requested role Contributor at Subscription scope is broader than required for the approved storage account network-rule change. The recommended role is Storage Account Contributor at Resource Group or Resource scope.
+
+Detected issues:
+
+* Role is broader than required.
+* Scope is broader than the affected resource.
+* Duration exceeds the approved change window.
+
+Recommended correction:
+
+Use Storage Account Contributor at Resource Group or Storage Account scope for the approved change window.
+
+10. Part 2 Technical Implementation Direction
+
+Part 2 requires data from two sides.
+
+Source 1:
+Approved change details from ServiceNow
+
+Source 2:
+Actual PIM request details from Azure / Entra / Microsoft Graph / PIM logs
+
+Part 2 architecture:
+
+Approver opens ARCA UI
+↓
+Approver enters or selects Change Number / PIM Request
+↓
+ARCA reads approved change context
+↓
+ARCA reads PIM request details
+↓
+ARCA compares role, scope, duration, implementer, and justification
+↓
+ARCA recommends approve, reject, or manual review
+↓
+Approver takes final action outside ARCA
+
+ARCA UI should show:
+
+* Change number
+* Change summary
+* Approved activity
+* Affected resource
+* Approved implementer
+* Approved change window
+* Requested PIM role
+* Requested PIM scope
+* Requested PIM duration
+* PIM requester
+* PIM justification
+* Required Azure actions
+* Matching Azure roles
+* Recommended least-privilege role
+* Risk flags
+* Final recommendation
+* Explanation and evidence
+
+Possible output statuses:
+
+APPROVE_RECOMMENDED
+The requested PIM access matches the recommended least-privilege access.
+
+REJECT_OVERPRIVILEGED
+The requested role is broader than required.
+
+SCOPE_MISMATCH
+The requested PIM scope is broader than or different from the approved change scope.
+
+DURATION_MISMATCH
+The requested PIM duration does not align with the approved change window.
+
+IMPLEMENTER_MISMATCH
+The PIM requester does not match the approved implementer.
+
+CHANGE_DETAILS_INSUFFICIENT
+The change does not contain enough information to validate the PIM request.
+
+MANUAL_REVIEW_REQUIRED
+ARCA cannot confidently determine the correct recommendation and requires human review.
+
+11. Role of ServiceNow MCP
+
+Management suggested exploring ServiceNow MCP servers. This is a valid recommendation.
+
+MCP should be evaluated as an integration layer, not as a full replacement for ARCA.
+
+MCP can help ARCA read ServiceNow data in a governed way. Instead of building every ServiceNow API integration from scratch, an MCP server may expose approved tools for reading change details, tasks, assignment information, and approval state.
+
+Potential MCP tools:
+
+get_change_details(change_number)
+get_change_tasks(change_number)
+get_change_approvals(change_number)
+get_change_implementer(change_number)
+get_change_window(change_number)
+get_change_ci_or_resource(change_number)
+get_change_work_notes(change_number)
+
+For the recommended Phase 1 design, MCP should be read-only.
+
+MCP should not expose update or approval tools initially.
+
+Allowed:
+Read change details
+Read related tasks
+Read planned start/end
+Read implementer
+Read approval state
+Read work notes if required
+
+Not allowed in Phase 1:
+Update change records
+Approve changes
+Reject changes
+Create PIM requests
+Approve PIM requests
+Modify ServiceNow work notes automatically
+
+Recommended MCP positioning:
+ServiceNow MCP can be used as a read-only integration layer for retrieving change context. ARCA’s core validation and risk-analysis engine remains independent from the integration method.
+
+This means ARCA can work with:
+
+* ServiceNow MCP
+* ServiceNow REST API
+* ServiceNow webhook
+* ServiceNow Flow Designer
+* Manual input for prototype/demo
+
+12. Why MCP Does Not Replace ARCA
+
+MCP can expose ServiceNow data and actions, but it does not automatically implement the company’s privileged-access policy.
+
+MCP does not automatically know:
+
+* Whether Contributor is too broad
+* Whether Subscription scope is justified
+* Whether the requested duration matches the change window
+* Whether the PIM requester matches the approved implementer
+* Which Azure RBAC actions are required for the change
+* Which least-privilege role should be recommended
+* Whether the change description has enough access details
+* Whether the PIM request creates access risk
+
+These are ARCA’s responsibilities.
+
+Therefore, the correct architecture is:
+
+ServiceNow MCP / REST / Webhook
+↓
+ARCA Validation Engine
+↓
+Azure RBAC / PIM Data
+↓
+Risk Analysis and Recommendation
+↓
+Approver / Dashboard / ServiceNow Display Channel
+
+MCP is an integration enabler. ARCA is the intelligence and decision-support engine.
+
+13. Enterprise ARCA Reference Architecture
+
+Recommended enterprise architecture:
+
+ServiceNow Change Management
+↓
+Webhook / Flow Designer / MCP Read Tool
+↓
+ARCA API Gateway
+↓
+Authentication and Authorization Layer
+↓
+Change Context Reader
+↓
+Azure OpenAI Extraction Service
+↓
+Change Quality Validator
+↓
+Access Action Mapper
+↓
+Azure RBAC Role Definition Service
+↓
+PIM Request Reader
+↓
+PIM-to-Change Alignment Engine
+↓
+Recommendation and Evidence Builder
+↓
+ARCA UI / Dashboard / API Response
+↓
+Human Approver
+
+Supporting components:
+
+* Azure OpenAI or Microsoft Foundry model deployment
+* Azure Key Vault for secrets
+* Managed Identity for Azure access
+* ServiceNow read-only integration
+* Microsoft Graph / Azure APIs for PIM details
+* Azure RBAC role cache
+* Version-controlled action catalog
+* Audit log store
+* Monitoring and alerting
+* Human approval workflow
+
+14. ARCA Core Engine Components
+
+The enterprise version of ARCA should have modular components.
+
+1. Change Context Reader
+   Reads change details from ServiceNow or MCP.
+
+2. LLM Extraction Service
+   Extracts structured fields from unstructured change text.
+
+3. Change Quality Validator
+   Checks whether the change has enough access-related information.
+
+4. Access Action Mapper
+   Maps the change type to required Azure RBAC actions.
+
+5. Role Definition Service
+   Loads Azure built-in and custom role definitions.
+
+6. Least-Privilege Recommender
+   Finds the narrowest role that covers required actions.
+
+7. PIM Request Reader
+   Reads actual PIM request details from Azure / Entra / Graph / logs.
+
+8. Alignment Engine
+   Compares change details with PIM request details.
+
+9. Risk Scoring Engine
+   Generates risk level based on role, scope, duration, environment, and mismatch.
+
+10. Recommendation Builder
+    Creates a clear result for approvers.
+
+11. Audit and Evidence Store
+    Stores recommendation, input, output, model version, rule version, and decision evidence.
+
+12. Recommended Data Flow for Part 1
+
+Detailed Part 1 data flow:
+
+Step 1:
+Change creator submits or moves change to next stage.
+
+Step 2:
+ServiceNow triggers ARCA automatically through webhook, Flow Designer, or MCP integration.
+
+Step 3:
+ARCA reads change fields:
+
+* Short description
+* Description
+* Implementation plan
+* Backout plan
+* Risk and impact
+* Planned start/end
+* Assignment group
+* Implementer
+* Configuration item
+* Affected service
+* Environment
+
+Step 4:
+ARCA uses Azure OpenAI to extract structured information from the change text.
+
+Step 5:
+ARCA validates quality rules:
+
+* Is resource name present?
+* Is action clear?
+* Is access requirement clear?
+* Is environment clear?
+* Is implementer clear?
+* Is access scope mentioned?
+* Is time window available?
+* Is business justification available?
+
+Step 6:
+ARCA generates structured recommendation.
+
+Step 7:
+The recommendation is returned to the calling system or displayed through the agreed channel.
+
+Part 1 example output:
+
+{
+"validation_stage": "CHANGE_QUALITY_VALIDATION",
+"change_number": "CHG90001",
+"status": "MISSING_REQUIRED_DETAILS",
+"risk_level": "MEDIUM",
+"missing_fields": [
+"affected_resource",
+"expected_pim_scope",
+"implementer"
+],
+"recommendation": "Please include affected Azure resource, expected PIM role or scope, and implementer details before access-risk review.",
+"read_only": true
+}
+
+16. Recommended Data Flow for Part 2
+
+Detailed Part 2 data flow:
+
+Step 1:
+Approver opens ARCA UI or dashboard.
+
+Step 2:
+Approver enters change number and PIM request details, or selects from pending requests.
+
+Step 3:
+ARCA reads approved change details from ServiceNow.
+
+Step 4:
+ARCA reads PIM request details from Azure / Entra / Microsoft Graph.
+
+Step 5:
+ARCA maps change intent to required Azure actions.
+
+Step 6:
+ARCA compares required actions with Azure role definitions.
+
+Step 7:
+ARCA identifies least-privilege role.
+
+Step 8:
+ARCA compares requested PIM role, scope, duration, and requester with change details.
+
+Step 9:
+ARCA generates recommendation and evidence.
+
+Step 10:
+Approver takes final decision in the existing PIM or ServiceNow workflow.
+
+Part 2 example output:
+
+{
+"validation_stage": "PIM_ALIGNMENT_VALIDATION",
+"change_number": "CHG90001",
+"final_decision": "REJECT_OVERPRIVILEGED",
+"requested_role": "Contributor",
+"recommended_role": "Storage Account Contributor",
+"requested_scope": "Subscription",
+"recommended_scope": "Resource Group or Storage Account",
+"requested_duration": "8 hours",
+"approved_change_window": "2 hours",
+"risk_flags": [
+"ROLE_OVERPRIVILEGED",
+"SCOPE_TOO_BROAD",
+"DURATION_EXCEEDS_CHANGE_WINDOW"
+],
+"reason": "Requested Contributor role at Subscription scope is broader than required for the approved storage account network-rule change.",
+"read_only": true
+}
+
+17. Visualization — Overall ARCA Workflow
+
+Recommended diagram content:
+
+ServiceNow Change Created
+↓
+Stage 1 Trigger
+↓
+ARCA Change Quality Validation
+↓
+Is change quality sufficient?
+↓
+Yes → Change proceeds through normal workflow
+No → Recommendation generated for missing details
+↓
+Change Approved
+↓
+PIM Request Created
+↓
+Stage 2 ARCA Validation
+↓
+Compare PIM with approved change
+↓
+Generate role/scope/duration/implementer recommendation
+↓
+Approver takes final decision
+
+18. Visualization — Part 1 Workflow
+
+Recommended diagram content:
+
+Change Creator
+↓
+ServiceNow Draft Change
+↓
+Move to Assess / Review
+↓
+Webhook / MCP / Flow Trigger
+↓
+ARCA reads change details
+↓
+LLM extracts structured fields
+↓
+Quality rules validate completeness
+↓
+Recommendation generated
+↓
+Display method to be finalized:
+
+* ARCA UI
+* ServiceNow panel
+* Dashboard
+* Notification
+* API response
+
+19. Visualization — Part 2 Workflow
+
+Recommended diagram content:
+
+Approved Change
+↓
+PIM Request
+↓
+ARCA reads both contexts
+↓
+Compare:
+
+* Role
+* Scope
+* Duration
+* Requester
+* Change window
+* Justification
+  ↓
+  Least-privilege recommendation
+  ↓
+  Risk flags and evidence
+  ↓
+  Approver decision
+
+20. Visualization — ARCA Engine Internals
+
+Recommended diagram content:
+
+Input Layer:
+ServiceNow change data
+PIM request data
+Azure RBAC role definitions
+
+Intelligence Layer:
+Azure OpenAI extraction
+Change classification
+Intent summarization
+
+Rule Layer:
+Change quality rules
+Required action mapper
+Role coverage logic
+Scope validation
+Duration validation
+Implementer validation
+
+Output Layer:
+Recommendation
+Risk flags
+Evidence
+Audit record
+UI/dashboard/API response
+
+21. Why Azure OpenAI for Enterprise
+
+The local prototype used a local model and local runtime to prove the concept. At enterprise level, ARCA should use Azure OpenAI or Microsoft Foundry model deployment because it provides enterprise-grade governance.
+
+Benefits:
+
+* Company-approved AI platform
+* Better security controls
+* Private networking support
+* Identity and access management
+* Monitoring and logging
+* Scalable model deployment
+* Better operational support
+* Easier integration with Azure services
+* Central governance for AI usage
+
+Recommended LLM usage:
+Use the LLM for extraction, classification, summarization, and explanation.
+
+Do not use the LLM as the final approval authority.
+
+The final recommendation should come from deterministic rule logic, Azure RBAC role definitions, action mappings, and policy rules.
+
+22. Why Final Decision Should Not Be Fully LLM-Based
+
+For security and privileged access use cases, explainability is critical.
+
+A poor design would be:
+
+Change text
+↓
+LLM directly says approve or reject
+
+This is risky because LLMs can hallucinate, be inconsistent, or provide confident but incorrect recommendations.
+
+Recommended design:
+
+Change text
+↓
+LLM extracts structured fields
+↓
+Rule engine maps required actions
+↓
+RBAC engine checks role coverage
+↓
+Decision engine compares requested vs recommended access
+↓
+Human approver takes final action
+
+This keeps ARCA explainable, auditable, and safer.
+
+23. Enterprise Controls and Governance
+
+ARCA should include the following governance controls:
+
+* Read-only access in Phase 1
+* No automatic ServiceNow record updates
+* No automatic PIM approval or rejection
+* Human-in-the-loop decision model
+* Audit logs for every recommendation
+* Model version tracking
+* Rule version tracking
+* Prompt version tracking
+* Input/output logging with sensitive-data controls
+* Access control for ARCA UI
+* Role-based access for approvers
+* Integration allowlisting
+* ServiceNow table access review
+* Security review before any write-back capability
+* Manual override tracking if added later
+
+24. Audit Evidence
+
+Every ARCA recommendation should generate an evidence package.
+
+Audit record should include:
+
+* Change number
+* Validation stage
+* Timestamp
+* Input source
+* Extracted fields
+* Detected change type
+* Required Azure actions
+* Requested PIM role
+* Requested PIM scope
+* Requested PIM duration
+* Recommended role
+* Recommended scope
+* Recommended duration
+* Risk flags
+* Final recommendation
+* Reason
+* Model used
+* Prompt version
+* Rule catalog version
+* Role definition cache version
+* Whether human override happened
+* Read-only/advisory mode indicator
+
+This supports audit, security review, and future model improvement.
+
+25. Risk Flags
+
+ARCA should support structured risk flags.
+
+Examples:
+
+ROLE_OVERPRIVILEGED
+Requested role is broader than required.
+
+SCOPE_TOO_BROAD
+Requested scope is broader than the affected resource or resource group.
+
+DURATION_TOO_LONG
+Requested duration exceeds approved change window.
+
+IMPLEMENTER_MISMATCH
+PIM requester does not match approved implementer.
+
+CHANGE_NUMBER_MISSING
+PIM justification does not mention valid change number.
+
+RESOURCE_MISMATCH
+PIM scope does not match resource mentioned in change.
+
+CHANGE_DETAILS_INSUFFICIENT
+Change does not contain enough information for access review.
+
+EMERGENCY_HIGH_RISK
+Emergency change requests broad privileged access.
+
+MANUAL_REVIEW_REQUIRED
+ARCA cannot make a confident recommendation.
+
+26. Example Enterprise Scenario — Stage 1
+
+Change submitted:
+
+Change Number:
+CHG90001
+
+Description:
+Emergency change required to restore application connectivity. The production application is unable to access storage account stgprodcritical01 because storage account firewall and virtual network rules are blocking the approved application subnet. Need to update the storage account network rules immediately.
+
+Requested PIM Role:
+Contributor
+
+Requested Scope:
+Subscription
+
+Requested Duration:
+4 hours
+
+ARCA Stage 1 result:
+
+Validation status:
+CHANGE_READY_FOR_ACCESS_REVIEW
+
+Detected change type:
+storage_networking_change
+
+Detected resource:
+stgprodcritical01
+
+Detected environment:
+Production
+
+Detected expected action:
+Update storage account network rules
+
+Risk observation:
+The change includes enough detail to identify the resource and access pattern. However, requested Contributor role should be validated during PIM review because a narrower storage-specific role may be sufficient.
+
+27. Example Enterprise Scenario — Stage 2
+
+Actual PIM request:
+
+Requester:
+[implementer@company.com](mailto:implementer@company.com)
+
+Requested role:
+Contributor
+
+Requested scope:
+Subscription
+
+Requested duration:
+4 hours
+
+Change context:
+Storage account firewall and virtual network rule update for stgprodcritical01.
+
+ARCA Stage 2 result:
+
+Decision:
+REJECT_OVERPRIVILEGED
+
+Recommended role:
+Storage Account Contributor
+
+Recommended scope:
+Resource Group or Storage Account scope
+
+Reason:
+The approved change requires storage account network configuration changes only. Contributor at Subscription scope is broader than required. Storage Account Contributor covers the required storage account read/write actions with lower privilege.
+
+Risk flags:
+ROLE_OVERPRIVILEGED
+SCOPE_TOO_BROAD
+
+28. Implementation Roadmap
+
+Phase 1:
+Finalize ARCA enterprise design and naming.
+Document two-stage validation model.
+Keep tool read-only and advisory.
+
+Phase 2:
+Build Stage 1 change quality validation API.
+Integrate with ServiceNow test environment using webhook, Flow Designer, REST API, or MCP.
+Return structured recommendations.
+
+Phase 3:
+Build Stage 2 approver UI.
+Read approved change details and PIM request details.
+Validate role, scope, duration, implementer, and window alignment.
+
+Phase 4:
+Integrate Azure OpenAI.
+Move from local prototype model to enterprise AI service.
+Introduce prompt versioning and model governance.
+
+Phase 5:
+Build version-controlled action catalog.
+Expand supported Azure services:
+
+* Storage
+* Network
+* Key Vault
+* Virtual Machines
+* App Services
+* SQL
+* AKS
+* Log Analytics
+* IAM/RBAC
+* Security tools
+
+Phase 6:
+Add audit evidence store.
+Store recommendation outputs for review and reporting.
+
+Phase 7:
+Add dashboards.
+Track overprivileged requests avoided, missing change details, common risk patterns, and manual-review volume.
+
+Phase 8:
+Evaluate controlled write-back options if management approves.
+Possible future write-back:
+
+* ServiceNow work note
+* Validation task
+* Risk score field
+* Approval comment
+
+For now, write-back should remain out of scope.
+
+29. ServiceNow Integration Decision Points
+
+Questions to finalize with management:
+
+1. At which state should Stage 1 validation trigger?
+   Example:
+   Draft to Assess
+   Draft to Review
+   New to Assess
+   Before CAB approval
+
+2. Where should Stage 1 recommendations be displayed?
+   Options:
+   Separate ARCA UI
+   ServiceNow embedded view
+   ServiceNow related link
+   Dashboard
+   Teams notification
+   API response only
+
+3. Should ARCA remain read-only in Phase 1?
+   Recommended answer:
+   Yes.
+
+4. Should ServiceNow MCP be used?
+   Recommended answer:
+   Explore MCP as a read-only integration layer, but keep ARCA engine independent.
+
+5. How should Stage 2 be used by approvers?
+   Options:
+   Manual ARCA UI lookup
+   Dashboard of pending PIM validations
+   Automatic matching of PIM requests to changes
+   API-based integration with existing approval process
+
+6. What PIM data source should be used?
+   Options:
+   Microsoft Graph
+   Azure APIs
+   PIM logs
+   Entra audit logs
+   Existing approval emails or records
+
+7. Final Recommended Positioning
+
+ARCA should be presented as:
+
+ARCA — Access Risk & Change Analyzer
+
+Subtitle:
+Read-only advisory engine for change quality and PIM access-risk validation
+
+Enterprise description:
+ARCA is an intelligent, read-only advisory platform that validates change quality at the point of submission and assists PIM approvers by verifying whether privileged access requests align with the approved change. It analyzes change intent, required Azure actions, requested role, scope, duration, implementer, and change window to identify overprivilege, missing details, and mismatches. ARCA does not directly modify ServiceNow records or approve/reject PIM requests. It provides evidence-based recommendations so existing approvers and workflows can make better access decisions.
+
+31. Suggested Slide Update Summary
+
+Update the slides to reflect the following changes:
+
+* Rename the tool from Nexus to ARCA.
+* Add full form: Access Risk & Change Analyzer.
+* Position ARCA as a two-stage enterprise validation platform.
+* Stage 1: Change Quality Validation.
+* Stage 2: PIM-to-Change Alignment Validation.
+* Emphasize read-only advisory mode.
+* Clarify that ARCA does not modify ServiceNow records.
+* Clarify that ARCA does not approve or reject PIM requests directly.
+* Add ServiceNow webhook / MCP / Flow Designer as possible integration options.
+* Explain that MCP is an integration layer, not the full ARCA engine.
+* Add Azure OpenAI as enterprise LLM direction.
+* Explain that LLM performs extraction/classification, while final decisions are deterministic and rule-based.
+* Add architecture diagrams for Stage 1, Stage 2, and enterprise deployment.
+* Add risk flags and audit evidence.
+* Add roadmap from prototype to enterprise implementation.
+
+32. Short Management-Friendly Explanation
+
+ARCA expands the current prototype into a two-stage change-to-access risk analyzer. In the first stage, ARCA automatically validates the quality of ServiceNow changes when they move out of Draft or reach a configured workflow stage. It checks whether the change contains enough information for access-risk review, such as resource, environment, implementer, access need, scope, and time window.
+
+In the second stage, ARCA assists privileged-access approvers by comparing the approved change against the actual PIM request. It validates whether the requested role, scope, duration, implementer, and justification match the approved change. ARCA provides evidence-based recommendations such as approve recommended, reject overprivileged, scope mismatch, duration mismatch, implementer mismatch, or manual review required.
+
+ARCA will operate in read-only advisory mode. It will not directly update ServiceNow records or approve/reject PIM requests. This makes the solution safer to introduce and easier to govern while still improving access-risk visibility and decision quality.
+
+33. Short Technical Explanation
+
+ARCA uses an enterprise AI-assisted architecture where an LLM extracts structured information from unstructured change descriptions. The final access-risk recommendation is not directly decided by the LLM. Instead, deterministic services map change intent to required Azure RBAC actions, compare those actions against Azure role definitions, and validate whether the actual PIM request aligns with the approved change.
+
+The enterprise version can use Azure OpenAI for extraction and classification, ServiceNow webhook or MCP for change data retrieval, Microsoft Graph or Azure APIs for PIM request details, and a rule-based decision engine for role, scope, duration, and implementer validation.
+
+This hybrid design combines the flexibility of AI for understanding change text with the reliability of deterministic access-control logic for security decisions.
+
+34. Final One-Line Summary
+
+ARCA — Access Risk & Change Analyzer — is a read-only advisory platform that validates change quality early and helps PIM approvers confirm whether privileged access requests align with approved changes, reducing overprivilege and improving access governance.
+
