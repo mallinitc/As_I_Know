@@ -1,0 +1,34 @@
+{
+  "evidence_version": "code-quality-toolchain-v1",
+  "generated_at_utc": "2026-08-14T13:23:14.681338+00:00",
+  "python_executable": "/opt/conda/bin/python",
+  "python_version": "3.11.11",
+  "requirements_file": "requirements.dev.txt",
+  "requirements_status": "ALREADY_PRESENT",
+  "requirements_sha256": "d9f25f7436dc2c76e683b11bfe194c3973c4e8b508803f8303351fb0914c9ad7",
+  "configuration_file": "pyproject.toml",
+  "configuration_status": "ALREADY_PRESENT",
+  "configuration_sha256": "bdaf179d311b4868f37363b5db324c1306476147d0da120bff14c2c3469f07b4",
+  "tool_versions": {
+    "pytest": "pytest 8.3.5",
+    "black": "python -m black, 24.10.0 (compiled: yes)\nPython (CPython) 3.11.11",
+    "isort": "_                 _\n                (_) ___  ___  _ __| |_\n                | |/ _/ / _ \\/ '__  _/\n                | |\\__ \\/\\_\\/| |  | |_\n                |_|\\___/\\___/\\_/   \\_/\n\n      isort your imports, so you don't have to.\n\n                    VERSION 5.13.2",
+    "ruff": "ruff 0.9.10"
+  },
+  "source_scope": [
+    "src",
+    "api",
+    "ui",
+    "tests"
+  ],
+  "excluded_artifact_types": [
+    "notebooks",
+    "reports",
+    "generated outputs",
+    "datasets",
+    "model artifacts",
+    "checkpoints",
+    "MLflow runs",
+    "Hugging Face caches"
+  ]
+}

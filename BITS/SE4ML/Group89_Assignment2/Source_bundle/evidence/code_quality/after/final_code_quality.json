@@ -1,0 +1,86 @@
+{
+  "evidence_version": "final-code-quality-validation-v1",
+  "generated_at_utc": "2026-08-14T15:49:36.143887+00:00",
+  "mode": "read_only_check",
+  "source_scope": [
+    "src",
+    "api",
+    "ui",
+    "tests"
+  ],
+  "source_modified": false,
+  "comparison": {
+    "black": {
+      "baseline_return_code": 1,
+      "baseline_findings": 36,
+      "final_return_code": 0,
+      "final_passed": true
+    },
+    "isort": {
+      "baseline_return_code": 1,
+      "baseline_findings": 26,
+      "final_return_code": 0,
+      "final_passed": true
+    },
+    "ruff": {
+      "baseline_return_code": 1,
+      "baseline_findings": 4,
+      "final_return_code": 0,
+      "final_passed": true
+    }
+  },
+  "final_results": {
+    "black": {
+      "command": [
+        "/opt/conda/bin/python",
+        "-m",
+        "black",
+        "--check",
+        "src",
+        "api",
+        "ui",
+        "tests"
+      ],
+      "return_code": 0,
+      "passed": true,
+      "report_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/code_quality/after/black_after.txt",
+      "report_sha256": "e3c227c000bb13dd2ecb5b9ec42d747f6fec364aafcb0769069c55b00fbf22c6",
+      "report_size_bytes": 57
+    },
+    "isort": {
+      "command": [
+        "/opt/conda/bin/python",
+        "-m",
+        "isort",
+        "--check-only",
+        "src",
+        "api",
+        "ui",
+        "tests"
+      ],
+      "return_code": 0,
+      "passed": true,
+      "report_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/code_quality/after/isort_after.txt",
+      "report_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "report_size_bytes": 1
+    },
+    "ruff": {
+      "command": [
+        "/opt/conda/bin/python",
+        "-m",
+        "ruff",
+        "check",
+        "src",
+        "api",
+        "ui",
+        "tests"
+      ],
+      "return_code": 0,
+      "passed": true,
+      "report_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/code_quality/after/ruff_after.txt",
+      "report_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "report_size_bytes": 19
+    }
+  },
+  "all_tools_passed": true
+}

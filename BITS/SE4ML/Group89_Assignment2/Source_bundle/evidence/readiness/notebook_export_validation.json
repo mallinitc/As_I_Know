@@ -1,0 +1,23 @@
+{
+  "duplicate_headings_present": false,
+  "error_outputs_present": false,
+  "exported_notebook": "/home/jovyan/chest-xray-ai-assistant/89.ipynb",
+  "final_cell_count": 58,
+  "generated_at_utc": "2026-08-15T06:08:05.120196+00:00",
+  "group_number": 89,
+  "identity_complete": true,
+  "kernel": "python3",
+  "notebook_bytes": 634026,
+  "original_cell_count": 62,
+  "prohibited_wording_present": false,
+  "project": "Software-Engineered Chest X-Ray Analysis and Explanation System",
+  "python_version": "3.11.11",
+  "removed_error_cells": 0,
+  "removed_temporary_cells": 5,
+  "renamed_duplicate_headings": 1,
+  "sha256": "f0dae0c23ee5ac2fd434862b00ad5d3549e7d97f495c1193d4a339741b2c57dc",
+  "source_notebook": "/home/jovyan/chest-xray-ai-assistant/notebooks/10_se4ml_engineering_quality_assurance.ipynb",
+  "status": "READY",
+  "technical_sections_preserved": true,
+  "temporary_cells_present": false
+}

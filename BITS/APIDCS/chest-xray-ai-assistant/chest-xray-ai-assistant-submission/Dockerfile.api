@@ -1,0 +1,23 @@
+# Managed by Notebook 9
+FROM pytorch/pytorch:2.5.1-cuda12.1-cudnn9-runtime
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    TOKENIZERS_PARALLELISM=false \
+    CHEST_XRAY_SOLUTION_ROOT=/home/jovyan/chest-xray-ai-assistant \
+    CHEST_XRAY_DATA_ROOT=/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data \
+    HF_HOME=/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/hf-cache \
+    HF_DATASETS_CACHE=/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/hf-cache/datasets \
+    TORCH_HOME=/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/models/torch-cache \
+    MLFLOW_TRACKING_URI=file:///home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/mlflow
+
+WORKDIR /home/jovyan/chest-xray-ai-assistant
+COPY requirements.api.txt /tmp/requirements.api.txt
+RUN python -m pip install --no-cache-dir -r /tmp/requirements.api.txt
+COPY . /home/jovyan/chest-xray-ai-assistant
+
+EXPOSE 8000
+HEALTHCHECK --interval=30s --timeout=10s --start-period=180s --retries=5 \
+  CMD python -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=5)" || exit 1
+
+CMD ["python", "-m", "uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "8000"]

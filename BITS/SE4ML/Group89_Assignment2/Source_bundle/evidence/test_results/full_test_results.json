@@ -1,0 +1,23 @@
+{
+  "evidence_version": "full-regression-suite-v1",
+  "generated_at_utc": "2026-08-15T04:32:43.095797+00:00",
+  "command": [
+    "/opt/conda/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "--tb=short",
+    "--disable-warnings"
+  ],
+  "return_code": 0,
+  "expected_test_function_count": 44,
+  "categories": [
+    "unit",
+    "data_validation",
+    "model_behavior_and_inference",
+    "security",
+    "api_integration"
+  ],
+  "passed": true,
+  "pytest_output_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/test_results/full_pytest.txt"
+}

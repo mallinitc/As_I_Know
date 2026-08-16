@@ -1,0 +1,7 @@
+pdf_file,document_hash,is_duplicate,duplicate_of,kept_after_dedup,words,characters
+microsoft_intune_enrollment_options.pdf,b46ac7ac66f89fef,False,,True,2574,16844
+nist_sp800_61r3_incident_response.pdf,896d57dd59a76bec,False,,True,14205,104939
+redhat_rhel7_storage_administration_guide.pdf,4723d88e2fa73696,False,,True,110723,696042
+redhat_rhel7_system_administrators_guide.pdf,0dee66485d0ed3c2,False,,True,181132,1177574
+servicenow_incident_management.pdf,af23816f916e9c44,False,,True,22579,137296
+ubuntu_server_documentation.pdf,809bd8e123ff5c8b,False,,True,278122,1903400

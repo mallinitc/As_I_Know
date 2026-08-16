@@ -1,0 +1,62 @@
+{
+  "test_name": "test_research_production_parity",
+  "execution_device": "cpu",
+  "sample_split": "test",
+  "sample_index": 0,
+  "model_version": "resnet18-chestmnist-v1",
+  "label_order": [
+    "atelectasis",
+    "cardiomegaly",
+    "effusion",
+    "infiltration",
+    "mass",
+    "nodule",
+    "pneumonia",
+    "pneumothorax",
+    "consolidation",
+    "edema",
+    "emphysema",
+    "fibrosis",
+    "pleural",
+    "hernia"
+  ],
+  "probability_shape": [
+    14
+  ],
+  "absolute_tolerance": 1e-06,
+  "maximum_absolute_difference": 0.0,
+  "research_probabilities": [
+    0.1610977053642273,
+    0.08368073403835297,
+    0.08965757489204407,
+    0.48572731018066406,
+    0.5553659796714783,
+    0.6509888768196106,
+    0.44613486528396606,
+    0.04972490295767784,
+    0.12068691849708557,
+    0.09453080594539642,
+    0.08117660135030746,
+    0.10937410593032837,
+    0.12620466947555542,
+    0.011267868801951408
+  ],
+  "production_probabilities": [
+    0.1610977053642273,
+    0.08368073403835297,
+    0.08965757489204407,
+    0.48572731018066406,
+    0.5553659796714783,
+    0.6509888768196106,
+    0.44613486528396606,
+    0.04972490295767784,
+    0.12068691849708557,
+    0.09453080594539642,
+    0.08117660135030746,
+    0.10937410593032837,
+    0.12620466947555542,
+    0.011267868801951408
+  ],
+  "passed": true,
+  "frozen_checkpoint_modified": false
+}

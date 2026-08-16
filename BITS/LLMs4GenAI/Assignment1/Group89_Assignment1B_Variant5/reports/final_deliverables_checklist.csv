@@ -1,0 +1,19 @@
+requirement,path,expected,exists,type,size_kb
+Cleaned domain corpus text files,/home/jovyan/llmlab/domain_corpus,Folder with cleaned .txt files,True,folder,
+Instruction dataset JSONL,/home/jovyan/llmlab/data/instruction_dataset.jsonl,JSONL file with instruction and response fields,True,file,701.53
+Training split,/home/jovyan/llmlab/data/train_instruction_dataset.jsonl,Train JSONL split,True,file,560.6
+Validation split,/home/jovyan/llmlab/data/val_instruction_dataset.jsonl,Validation JSONL split,True,file,140.93
+SFT token-length validation,/home/jovyan/llmlab/reports/sft_token_length_summary.csv,Token distribution report before fine-tuning,True,file,0.15
+Baseline model outputs,/home/jovyan/llmlab/outputs/baseline_outputs.csv,Part A2 baseline outputs,True,file,2.67
+Base model architecture report,/home/jovyan/llmlab/reports/base_model_architecture_report.csv,Model architecture details,True,file,0.25
+QLoRA Adapter B,/home/jovyan/llmlab/adapters/qwen2_5_3b_adapter_b,Saved LoRA adapter folder,True,folder,
+QLoRA training logs,/home/jovyan/llmlab/reports/qlora_training_log_history.csv,Training log history and loss visualization,True,file,0.38
+Adapter B outputs,/home/jovyan/llmlab/outputs/adapter_b_outputs.csv,Part B3 adapter outputs,True,file,3.35
+Baseline vs adapter comparison,/home/jovyan/llmlab/reports/baseline_vs_adapter_b_comparison.csv,Part B3 quantitative comparison report,True,file,7.02
+Baseline vs adapter qualitative terms,/home/jovyan/llmlab/reports/baseline_vs_adapter_qualitative_terms.csv,Prompt-level qualitative difference report,True,file,1.81
+Part C1 decoding strategy benchmark,/home/jovyan/llmlab/benchmarks/part_c1_decoding_strategy_results.csv,"Greedy, Beam, Top-K, Top-P, and three Temperature results",True,file,20.09
+Part C1 decoding strategy summary,/home/jovyan/llmlab/reports/part_c1_decoding_strategy_summary.csv,Strategy-level latency and throughput summary,True,file,0.46
+Part C2 speculative decoding benchmark,/home/jovyan/llmlab/benchmarks/part_c2_speculative_decoding_results.csv,Normal vs speculative decoding results,True,file,5.47
+Part C2 speculative decoding summary,/home/jovyan/llmlab/reports/part_c2_speculative_decoding_summary.csv,Speedup and memory comparison,True,file,0.22
+Part C3 4-bit quantization benchmark,/home/jovyan/llmlab/benchmarks/part_c3_4bit_quantization_benchmark.csv,10-prompt 4-bit NF4 benchmark,True,file,8.93
+Part C3 three-configuration cost comparison,/home/jovyan/llmlab/reports/part_c3_three_config_cost_comparison.csv,"bfloat16, 4-bit NF4, and 4-bit NF4 + speculative cost table",True,file,0.54

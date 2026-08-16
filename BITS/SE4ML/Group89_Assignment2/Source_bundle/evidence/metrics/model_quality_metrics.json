@@ -1,0 +1,41 @@
+{
+  "evidence_version": "frozen-test-model-quality-v1",
+  "generated_at_utc": "2026-08-15T04:26:16.025237+00:00",
+  "model_version": "resnet18-chestmnist-v1",
+  "evaluation_partition": "test",
+  "evaluation_image_count": 22433,
+  "output_labels": 14,
+  "threshold_source": "frozen validation-calibrated thresholds",
+  "test_threshold_recalibration": false,
+  "full_test_inference_reexecuted": false,
+  "metrics": {
+    "macro_roc_auc": 0.8175483218037151,
+    "micro_roc_auc": 0.8225933365912523,
+    "macro_average_precision": 0.22162304421174453,
+    "micro_average_precision": 0.2111370931542994,
+    "macro_precision": 0.2241363273238017,
+    "micro_precision": 0.261506619796971,
+    "macro_recall": 0.41525561263326427,
+    "micro_recall": 0.4821320411871593,
+    "macro_f1": 0.2815834293063487,
+    "micro_f1": 0.33909135444844407,
+    "hamming_loss": 0.09879896326203107,
+    "subset_accuracy": 0.36415102750412337
+  },
+  "per_finding_rows": 14,
+  "source_artifact": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/metrics/test_overall_metrics.json",
+  "source_sha256": "054cfcfa7c0a3f0910647d2a6b7bdc0fd3d4ecc5e4cd72e158209cd1a707522e",
+  "per_finding_artifact": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/metrics/test_per_finding_metrics.csv",
+  "per_finding_sha256": "645861c47b6db3ea1d499e84ac41119fcdcec426a9212f9667bd0616f7c93549",
+  "mlflow_artifact": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/mlflow/948605447360058881/089ff35f4898430784d2ce61121cfb0f/artifacts/evaluation/metrics/test_overall_metrics.json",
+  "mlflow_sha256": "054cfcfa7c0a3f0910647d2a6b7bdc0fd3d4ecc5e4cd72e158209cd1a707522e",
+  "output_mlflow_metric_parity": true,
+  "interpretation": {
+    "macro_roc_auc": "Equal-weight ranking performance across fourteen findings.",
+    "micro_roc_auc": "Ranking performance after pooling all label decisions.",
+    "macro_f1": "Equal-weight balance of precision and recall across findings.",
+    "micro_f1": "Pooled threshold-decision balance across all findings.",
+    "hamming_loss": "Fraction of individual label decisions that are incorrect.",
+    "subset_accuracy": "Fraction of images whose complete fourteen-label decision vector matches."
+  }
+}

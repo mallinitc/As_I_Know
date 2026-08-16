@@ -1,0 +1,90 @@
+{
+  "schema_validity_rate": 1.0,
+  "missing_non_finite_rate": 0.0,
+  "binary_label_validity_rate": 1.0,
+  "split_artifact_isolation_rate": 1.0,
+  "maximum_prevalence_shift": 0.008135278721066841,
+  "maximum_shift_label": "atelectasis",
+  "maximum_shift_pair": "val_vs_test",
+  "maximum_js_divergence": 0.000846275126941958,
+  "maximum_js_pair": "val_vs_test",
+  "prevalence_by_split": {
+    "train": [
+      0.10190141204057705,
+      0.02485089463220676,
+      0.1180226334301881,
+      0.17732069123719224,
+      0.05082326553499516,
+      0.0557552123158485,
+      0.01246367946169139,
+      0.04721669980119284,
+      0.041583830351225974,
+      0.021537442014579192,
+      0.022926543304276903,
+      0.014757608196972014,
+      0.029043686598358567,
+      0.001835142988224499
+    ],
+    "val": [
+      0.09974150993849719,
+      0.021392280951956503,
+      0.11516177912469917,
+      0.1798734290043676,
+      0.05570906497905339,
+      0.054639450931455565,
+      0.011854889027542562,
+      0.044923789999108656,
+      0.039843123273018984,
+      0.017826900793297084,
+      0.01853997682502897,
+      0.014796327658436581,
+      0.03315803547553258,
+      0.0036545146626259027
+    ],
+    "test": [
+      0.10787678865956403,
+      0.025943921900771185,
+      0.12276556858199973,
+      0.1755449560914724,
+      0.05050595105425044,
+      0.05951054250434627,
+      0.010787678865956404,
+      0.048544554896803815,
+      0.04266036642446396,
+      0.01841037756876031,
+      0.02268978736682566,
+      0.01613694111353809,
+      0.03271965408104132,
+      0.0018722417866535908
+    ]
+  },
+  "js_divergence_by_pair": {
+    "train_vs_val": 0.0008128205519114804,
+    "train_vs_test": 0.00031778581486967294,
+    "val_vs_test": 0.000846275126941958
+  },
+  "thresholds": {
+    "minimum_schema_validity_rate": 1.0,
+    "maximum_missing_non_finite_rate": 0.0,
+    "minimum_binary_label_validity_rate": 1.0,
+    "minimum_split_artifact_isolation_rate": 1.0,
+    "maximum_prevalence_shift": 0.03,
+    "maximum_js_divergence": 0.01
+  },
+  "checks": {
+    "schema_validity": true,
+    "missing_non_finite": true,
+    "binary_label_validity": true,
+    "split_artifact_isolation": true,
+    "maximum_prevalence_shift": true,
+    "maximum_js_divergence": true
+  },
+  "metric_definitions": {
+    "schema_validity_rate": "conforming required arrays / 6",
+    "missing_non_finite_rate": "non-finite numeric elements / all elements",
+    "binary_label_validity_rate": "label values in {0,1} / all label values",
+    "maximum_prevalence_shift": "max absolute label-prevalence difference across partition pairs",
+    "maximum_js_divergence": "maximum Jensen-Shannon divergence across normalized partition prevalence vectors",
+    "split_artifact_isolation_rate": "unique resolved split artifacts / 6"
+  }
+}

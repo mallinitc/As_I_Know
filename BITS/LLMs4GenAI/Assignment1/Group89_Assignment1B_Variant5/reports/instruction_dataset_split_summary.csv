@@ -1,0 +1,3 @@
+split,records,percentage,path
+train,232,79.73,/home/jovyan/llmlab/data/train_instruction_dataset.jsonl
+validation,59,20.27,/home/jovyan/llmlab/data/val_instruction_dataset.jsonl

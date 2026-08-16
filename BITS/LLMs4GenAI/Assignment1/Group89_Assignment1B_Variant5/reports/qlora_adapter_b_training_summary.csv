@@ -1,0 +1,2 @@
+base_model,adapter_name,adapter_output_dir,lora_r,lora_alpha,target_modules,lora_dropout,train_records,validation_records,epochs,learning_rate,train_batch_size,gradient_accumulation_steps,effective_batch_size,final_train_loss,global_steps
+Qwen/Qwen2.5-3B-Instruct,Adapter B,/home/jovyan/llmlab/adapters/qwen2_5_3b_adapter_b,16,32,"['q_proj', 'v_proj']",0.05,232,59,1,0.0002,1,4,4,2.2410625589304956,58

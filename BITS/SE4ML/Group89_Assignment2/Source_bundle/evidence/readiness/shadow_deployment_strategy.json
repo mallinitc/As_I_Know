@@ -1,0 +1,48 @@
+{
+  "active_response_contract": {
+    "candidate_failure_affects_active_response": false,
+    "candidate_output_client_visible": false,
+    "response_provider": "active_model_only"
+  },
+  "comparison_metrics": [
+    "candidate_error_rate",
+    "mean_probability_delta",
+    "decision_disagreement_rate",
+    "p95_latency_overhead_ms"
+  ],
+  "data_handling": {
+    "aggregate_metrics_persisted": true,
+    "client_response_modified": false,
+    "generated_text_persisted": false,
+    "raw_image_persisted_by_experimentation_layer": false
+  },
+  "operational_controls": {
+    "automatic_full_promotion": false,
+    "failure_action": "retain_active_model",
+    "kill_switch": "policy.enabled",
+    "successful_gate_action": "eligible_for_controlled_canary"
+  },
+  "promotion_gates": {
+    "maximum_candidate_error_rate": 0.005,
+    "maximum_decision_disagreement_rate": 0.02,
+    "maximum_mean_probability_delta": 0.03,
+    "maximum_p95_latency_overhead_ms": 75.0,
+    "minimum_observations": 1000
+  },
+  "pytest_return_code": 0,
+  "quality_results": {
+    "black": "PASS",
+    "isort": "PASS",
+    "ruff": "PASS"
+  },
+  "routing": {
+    "configured_sample_rate": 0.1,
+    "mutable_routing_state_required": false,
+    "observed_selection_rate": 0.1039,
+    "selected_requests": 1039,
+    "selection_key": "SHA-256 hash of the request identifier",
+    "validation_population": 10000
+  },
+  "status": "READY",
+  "strategy": "deterministic_shadow_deployment"
+}

@@ -1,0 +1,72 @@
+{
+  "api_healthcheck_present": true,
+  "compose_service_count": 2,
+  "compose_services": [
+    "api",
+    "ui"
+  ],
+  "docker_compose_cli": {
+    "detail": "Docker CLI is not installed in the notebook runtime; Compose was validated through YAML and pytest contracts.",
+    "state": "NOT_AVAILABLE"
+  },
+  "evaluated_at_utc": "2026-08-15T05:41:23.136456+00:00",
+  "images_built": false,
+  "large_artifacts_explicitly_copied": false,
+  "models_loaded": false,
+  "packaging_files": {
+    "Dockerfile.api": {
+      "bytes": 1212,
+      "path": "/home/jovyan/chest-xray-ai-assistant/Dockerfile.api"
+    },
+    "Dockerfile.ui": {
+      "bytes": 884,
+      "path": "/home/jovyan/chest-xray-ai-assistant/Dockerfile.ui"
+    },
+    "docker-compose.yaml": {
+      "bytes": 2161,
+      "path": "/home/jovyan/chest-xray-ai-assistant/docker-compose.yaml"
+    },
+    "requirements.api.txt": {
+      "bytes": 393,
+      "path": "/home/jovyan/chest-xray-ai-assistant/requirements.api.txt"
+    },
+    "requirements.txt": {
+      "bytes": 71,
+      "path": "/home/jovyan/chest-xray-ai-assistant/requirements.txt"
+    },
+    "requirements.ui.txt": {
+      "bytes": 116,
+      "path": "/home/jovyan/chest-xray-ai-assistant/requirements.ui.txt"
+    }
+  },
+  "project": "Software-Engineered Chest X-Ray Analysis and Explanation System",
+  "pytest_return_code": 0,
+  "quality_results": {
+    "black": "PASS",
+    "isort": "PASS",
+    "ruff": "PASS"
+  },
+  "requirements": {
+    "requirements.api.txt": {
+      "all_direct_dependencies_pinned": true,
+      "direct_dependency_count": 17
+    },
+    "requirements.txt": {
+      "all_direct_dependencies_pinned": true,
+      "direct_dependency_count": 0
+    },
+    "requirements.ui.txt": {
+      "all_direct_dependencies_pinned": true,
+      "direct_dependency_count": 6
+    }
+  },
+  "services_started": false,
+  "status": "PASS",
+  "storage": {
+    "free_gib": 8.707080841064453,
+    "protected_reserve_gib": 4.0,
+    "reserve_preserved": true
+  },
+  "ui_depends_on_api": true,
+  "ui_healthcheck_present": true
+}

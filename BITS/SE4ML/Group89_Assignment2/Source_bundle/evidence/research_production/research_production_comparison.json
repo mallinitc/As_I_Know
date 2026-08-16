@@ -1,0 +1,107 @@
+{
+  "comparison": [
+    {
+      "dimension": "Execution boundary",
+      "production_implementation": "Reusable ComputerVisionService instance",
+      "research_implementation": "Notebook-controlled execution state"
+    },
+    {
+      "dimension": "Model lifecycle",
+      "production_implementation": "Construction, restoration and readiness owned by the service",
+      "research_implementation": "Model construction and restoration performed by notebook cells"
+    },
+    {
+      "dimension": "Configuration",
+      "production_implementation": "Validated ServiceSettings dependency",
+      "research_implementation": "Notebook variables and loaded metadata"
+    },
+    {
+      "dimension": "Preprocessing",
+      "production_implementation": "Reusable preprocess method with a fixed tensor contract",
+      "research_implementation": "Transformation sequence executed directly"
+    },
+    {
+      "dimension": "Concurrency",
+      "production_implementation": "Inference lock protects shared model state",
+      "research_implementation": "Single interactive execution flow"
+    },
+    {
+      "dimension": "Failure handling",
+      "production_implementation": "ModelNotReadyError and ServiceExecutionError contracts",
+      "research_implementation": "Notebook exception propagation"
+    },
+    {
+      "dimension": "Observability",
+      "production_implementation": "Structured lifecycle and inference events",
+      "research_implementation": "Cell output and evaluation artifacts"
+    },
+    {
+      "dimension": "Output contract",
+      "production_implementation": "ClassificationResult with ordered finding evidence",
+      "research_implementation": "Fourteen sigmoid probabilities"
+    },
+    {
+      "dimension": "Verification",
+      "production_implementation": "Automated numerical parity and contract tests",
+      "research_implementation": "Frozen reference probability path"
+    }
+  ],
+  "model_artifacts_modified": false,
+  "numerical_parity": {
+    "absolute_tolerance": 1e-06,
+    "maximum_absolute_difference": 0.0,
+    "output_labels": 14,
+    "source_artifact": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/research_production/research_production_parity.json",
+    "within_tolerance": true
+  },
+  "parity_test": {
+    "path": "/home/jovyan/chest-xray-ai-assistant/tests/model/test_inference_contract.py",
+    "sha256": "c4ecb09111774c599c2745d7d8604ad3f770c189458d404c80e1007307de23be"
+  },
+  "production_contracts": {
+    "classification_result_present": true,
+    "inference_lock_present": true,
+    "model_lifecycle_owned_by_service": true,
+    "model_not_ready_error_present": true,
+    "prediction_contract_present": true,
+    "preprocessing_contract_present": true,
+    "readiness_contract_present": true,
+    "service_class_present": true,
+    "service_execution_error_present": true,
+    "structured_logger_present": true
+  },
+  "production_source": {
+    "class": "ComputerVisionService",
+    "methods": [
+      "__init__",
+      "_load_model",
+      "confidence_category",
+      "is_ready",
+      "predict",
+      "preprocess"
+    ],
+    "path": "/home/jovyan/chest-xray-ai-assistant/src/services/computer_vision_service.py",
+    "sha256": "9c68baf5d2f3c595257f3cbd12c7642b4c04af1a0070a2f0300e4faaea82857a"
+  },
+  "project": "Software-Engineered Chest X-Ray Analysis and Explanation System",
+  "research_anchor_counts": {
+    "checkpoint_restoration": 2,
+    "evaluation_mode": 3,
+    "inference_context": 2,
+    "memory_mapped_data": 6,
+    "model_construction": 2,
+    "probability_transformation": 2
+  },
+  "research_sources": [
+    {
+      "path": "/home/jovyan/chest-xray-ai-assistant/notebooks/03_multilabel_model_development.ipynb",
+      "sha256": "860a4021d69431d2f599bfcccf76a7c715b909670c9b5a27ce0a184dc1c0dcca"
+    },
+    {
+      "path": "/home/jovyan/chest-xray-ai-assistant/notebooks/04_model_evaluation.ipynb",
+      "sha256": "8d27914da4eddc77a6446de6b860c2d9ad91cdf3b172598ccdb70e54176222b4"
+    }
+  ],
+  "source_files_modified": false,
+  "status": "VERIFIED"
+}

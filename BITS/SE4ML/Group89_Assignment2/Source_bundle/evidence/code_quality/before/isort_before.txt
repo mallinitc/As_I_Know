@@ -1,0 +1,582 @@
+--- /home/jovyan/chest-xray-ai-assistant/src/services/language_model_service.py:before	2026-08-08 13:37:00.522016
++++ /home/jovyan/chest-xray-ai-assistant/src/services/language_model_service.py:after	2026-08-14 15:39:47.416003
+@@ -10,10 +10,7 @@
+ from typing import Any, Sequence
+ 
+ import torch
+-from transformers import (
+-    AutoTokenizer,
+-    T5ForConditionalGeneration,
+-)
++from transformers import AutoTokenizer, T5ForConditionalGeneration
+ 
+ 
+ @dataclass(frozen=True)
+--- /home/jovyan/chest-xray-ai-assistant/src/services/computer_vision_service.py:before	2026-08-14 13:04:34.335630
++++ /home/jovyan/chest-xray-ai-assistant/src/services/computer_vision_service.py:after	2026-08-14 15:39:47.422069
+@@ -12,18 +12,10 @@
+ from PIL import Image
+ from torchvision import models, transforms
+ 
+-from api.core.config import (
+-    ServiceSettings,
+-    get_settings,
+-    load_yaml_file,
+-)
+-from api.core.errors import (
+-    ModelNotReadyError,
+-    ServiceExecutionError,
+-)
++from api.core.config import ServiceSettings, get_settings, load_yaml_file
++from api.core.errors import ModelNotReadyError, ServiceExecutionError
+ from api.schemas.prediction import FindingEvidence
+ from src.services.image_service import ValidatedImage
+-
+ 
+ logger = logging.getLogger(__name__)
+ 
+--- /home/jovyan/chest-xray-ai-assistant/src/services/language_workflow_service.py:before	2026-08-08 14:01:14.561624
++++ /home/jovyan/chest-xray-ai-assistant/src/services/language_workflow_service.py:after	2026-08-14 15:39:47.425962
+@@ -7,11 +7,7 @@
+ from typing import Any, Callable, Mapping
+ from uuid import UUID
+ 
+-from api.schemas import (
+-    EmbeddedLanguageOutput,
+-    LanguageGenerationResponse,
+-)
+-
++from api.schemas import EmbeddedLanguageOutput, LanguageGenerationResponse
+ 
+ SUPPORTED_LANGUAGE_TASKS = (
+     "structured_report",
+--- /home/jovyan/chest-xray-ai-assistant/src/services/grounding_service.py:before	2026-08-08 13:34:53.668473
++++ /home/jovyan/chest-xray-ai-assistant/src/services/grounding_service.py:after	2026-08-14 15:39:47.430159
+@@ -5,7 +5,6 @@
+ 
+ from dataclasses import dataclass
+ from typing import Any, Mapping, Sequence
+-
+ 
+ TASK_PREFIXES = {
+     "structured_report": "generate structured report:",
+--- /home/jovyan/chest-xray-ai-assistant/src/services/prediction_store_service.py:before	2026-08-08 13:26:18.490763
++++ /home/jovyan/chest-xray-ai-assistant/src/services/prediction_store_service.py:after	2026-08-14 15:39:47.433297
+@@ -7,18 +7,9 @@
+ from uuid import UUID, uuid4
+ 
+ from api.core.errors import PredictionNotFoundError
+-from api.schemas.aggregate import (
+-    EmbeddedLanguageOutput,
+-    StoredPredictionResponse,
+-)
+-from api.schemas.explainability import (
+-    ExplainabilityContract,
+-    GradCAMEvidence,
+-)
+-from api.schemas.prediction import (
+-    FindingEvidence,
+-    ImageMetadata,
+-)
++from api.schemas.aggregate import EmbeddedLanguageOutput, StoredPredictionResponse
++from api.schemas.explainability import ExplainabilityContract, GradCAMEvidence
++from api.schemas.prediction import FindingEvidence, ImageMetadata
+ 
+ 
+ @dataclass
+--- /home/jovyan/chest-xray-ai-assistant/src/services/image_service.py:before	2026-08-14 13:01:02.449901
++++ /home/jovyan/chest-xray-ai-assistant/src/services/image_service.py:after	2026-08-14 15:39:47.438384
+@@ -16,7 +16,6 @@
+     UploadTooLargeError,
+ )
+ from api.schemas.prediction import ImageMetadata
+-
+ 
+ logger = logging.getLogger(__name__)
+ 
+--- /home/jovyan/chest-xray-ai-assistant/src/services/language_guardrail_service.py:before	2026-08-14 13:07:39.254169
++++ /home/jovyan/chest-xray-ai-assistant/src/services/language_guardrail_service.py:after	2026-08-14 15:39:47.446759
+@@ -8,7 +8,6 @@
+ import time
+ from dataclasses import dataclass
+ from typing import Any, Mapping, Sequence
+-
+ 
+ logger = logging.getLogger(__name__)
+ 
+--- /home/jovyan/chest-xray-ai-assistant/src/services/complete_workflow_service.py:before	2026-08-08 14:18:38.997837
++++ /home/jovyan/chest-xray-ai-assistant/src/services/complete_workflow_service.py:after	2026-08-14 15:39:47.451690
+@@ -6,10 +6,7 @@
+ from dataclasses import dataclass
+ from typing import Any, Callable
+ 
+-from api.schemas import (
+-    CompleteAnalysisResponse,
+-)
+-
++from api.schemas import CompleteAnalysisResponse
+ 
+ MANDATORY_LANGUAGE_TASKS = (
+     "structured_report",
+--- /home/jovyan/chest-xray-ai-assistant/api/main.py:before	2026-08-08 15:13:27.268892
++++ /home/jovyan/chest-xray-ai-assistant/api/main.py:after	2026-08-14 15:39:47.460260
+@@ -7,45 +7,17 @@
+ import time
+ from typing import Any
+ 
+-from fastapi import (
+-    FastAPI,
+-    Request,
+-)
+-from fastapi.exceptions import (
+-    RequestValidationError,
+-)
+-from fastapi.responses import (
+-    JSONResponse,
+-)
+-
+-from api.core.config import (
+-    get_settings,
+-)
+-from api.core.dependencies import (
+-    get_service_container,
+-)
+-from api.core.factory import (
+-    ensure_default_service_container,
+-)
+-from api.core.errors import (
+-    ServiceError,
+-    ServiceExecutionError,
+-)
+-from api.core.runtime import (
+-    RequestContext,
+-    build_error_response,
+-    utc_now,
+-)
+-from api.routes import (
+-    aggregate_router,
+-    health_router,
+-    system_router,
+-    workflow_router,
+-)
+-from api.schemas import (
+-    APIErrorResponse,
+-)
+-
++from fastapi import FastAPI, Request
++from fastapi.exceptions import RequestValidationError
++from fastapi.responses import JSONResponse
++
++from api.core.config import get_settings
++from api.core.dependencies import get_service_container
++from api.core.errors import ServiceError, ServiceExecutionError
++from api.core.factory import ensure_default_service_container
++from api.core.runtime import RequestContext, build_error_response, utc_now
++from api.routes import aggregate_router, health_router, system_router, workflow_router
++from api.schemas import APIErrorResponse
+ 
+ settings = get_settings()
+ 
+--- /home/jovyan/chest-xray-ai-assistant/api/routes/workflows.py:before	2026-08-08 14:28:45.225149
++++ /home/jovyan/chest-xray-ai-assistant/api/routes/workflows.py:after	2026-08-14 15:39:47.463963
+@@ -3,26 +3,12 @@
+ 
+ from __future__ import annotations
+ 
+-from fastapi import (
+-    APIRouter,
+-    Depends,
+-    File,
+-    UploadFile,
+-)
+-from starlette.concurrency import (
+-    run_in_threadpool,
+-)
+-
+-from api.core.config import (
+-    get_settings,
+-)
+-from api.core.dependencies import (
+-    ServiceContainer,
+-    get_service_container,
+-)
+-from api.core.runtime import (
+-    RequestContext,
+-)
++from fastapi import APIRouter, Depends, File, UploadFile
++from starlette.concurrency import run_in_threadpool
++
++from api.core.config import get_settings
++from api.core.dependencies import ServiceContainer, get_service_container
++from api.core.runtime import RequestContext
+ from api.schemas import (
+     ClassificationResponse,
+     GroundedGenerationRequest,
+@@ -31,7 +17,6 @@
+     LanguageGenerationResponse,
+ )
+ 
+-
+ router = APIRouter(
+     prefix="/api/v1",
+     tags=["analysis"],
+--- /home/jovyan/chest-xray-ai-assistant/api/routes/system.py:before	2026-08-08 14:33:34.971862
++++ /home/jovyan/chest-xray-ai-assistant/api/routes/system.py:after	2026-08-14 15:39:47.466564
+@@ -6,26 +6,16 @@
+ import json
+ from pathlib import Path
+ 
+-from fastapi import (
+-    APIRouter,
+-    Depends,
+-)
+-
+-from api.core.dependencies import (
+-    ServiceContainer,
+-    get_service_container,
+-)
+-from api.core.runtime import (
+-    RequestContext,
+-    build_success_metadata,
+-)
++from fastapi import APIRouter, Depends
++
++from api.core.dependencies import ServiceContainer, get_service_container
++from api.core.runtime import RequestContext, build_success_metadata
+ from api.schemas import (
+     HealthResponse,
+     ModelInfoResponse,
+     ModelMetricsResponse,
+     OperationalMetricsResponse,
+ )
+-
+ 
+ _TEMPLATE_PATH = (
+     Path(__file__).resolve().parents[2]
+--- /home/jovyan/chest-xray-ai-assistant/api/routes/__init__.py:before	2026-08-08 14:36:05.336638
++++ /home/jovyan/chest-xray-ai-assistant/api/routes/__init__.py:after	2026-08-14 15:39:47.467967
+@@ -1,16 +1,9 @@
+ 
+ """Public FastAPI route package."""
+ 
+-from api.routes.aggregate import (
+-    router as aggregate_router,
+-)
+-from api.routes.system import (
+-    health_router,
+-    system_router,
+-)
+-from api.routes.workflows import (
+-    router as workflow_router,
+-)
++from api.routes.aggregate import router as aggregate_router
++from api.routes.system import health_router, system_router
++from api.routes.workflows import router as workflow_router
+ 
+ __all__ = [
+     "aggregate_router",
+--- /home/jovyan/chest-xray-ai-assistant/api/routes/aggregate.py:before	2026-08-08 14:30:00.112659
++++ /home/jovyan/chest-xray-ai-assistant/api/routes/aggregate.py:after	2026-08-14 15:39:47.470037
+@@ -5,34 +5,17 @@
+ 
+ from uuid import UUID
+ 
+-from fastapi import (
+-    APIRouter,
+-    Depends,
+-    File,
+-    Form,
+-    UploadFile,
+-)
+-from starlette.concurrency import (
+-    run_in_threadpool,
+-)
++from fastapi import APIRouter, Depends, File, Form, UploadFile
++from starlette.concurrency import run_in_threadpool
+ 
+-from api.core.dependencies import (
+-    ServiceContainer,
+-    get_service_container,
+-)
+-from api.core.runtime import (
+-    RequestContext,
+-    build_success_metadata,
+-)
+-from api.routes.workflows import (
+-    _validate_upload,
+-)
++from api.core.dependencies import ServiceContainer, get_service_container
++from api.core.runtime import RequestContext, build_success_metadata
++from api.routes.workflows import _validate_upload
+ from api.schemas import (
+     CompleteAnalysisOptions,
+     CompleteAnalysisResponse,
+     StoredPredictionResponse,
+ )
+-
+ 
+ router = APIRouter(
+     prefix="/api/v1",
+--- /home/jovyan/chest-xray-ai-assistant/api/core/runtime.py:before	2026-08-08 13:11:10.638539
++++ /home/jovyan/chest-xray-ai-assistant/api/core/runtime.py:after	2026-08-14 15:39:47.472644
+@@ -8,10 +8,7 @@
+ 
+ from api.core.config import ServiceSettings, get_settings
+ from api.core.errors import ServiceError
+-from api.schemas.common import (
+-    APIErrorResponse,
+-    ModelVersions,
+-)
++from api.schemas.common import APIErrorResponse, ModelVersions
+ 
+ 
+ def utc_now() -> datetime:
+--- /home/jovyan/chest-xray-ai-assistant/api/core/dependencies.py:before	2026-08-08 14:20:38.726725
++++ /home/jovyan/chest-xray-ai-assistant/api/core/dependencies.py:after	2026-08-14 15:39:47.474791
+@@ -7,9 +7,7 @@
+ from dataclasses import dataclass
+ from typing import Any
+ 
+-from api.core.errors import (
+-    ModelNotReadyError,
+-)
++from api.core.errors import ModelNotReadyError
+ 
+ 
+ @dataclass(frozen=True)
+--- /home/jovyan/chest-xray-ai-assistant/api/core/config.py:before	2026-08-08 13:05:47.128451
++++ /home/jovyan/chest-xray-ai-assistant/api/core/config.py:after	2026-08-14 15:39:47.477990
+@@ -8,7 +8,6 @@
+ 
+ import yaml
+ from pydantic import BaseModel, ConfigDict, Field, model_validator
+-
+ 
+ DEFAULT_SOLUTION_ROOT = Path(
+     "/home/jovyan/chest-xray-ai-assistant"
+--- /home/jovyan/chest-xray-ai-assistant/api/core/errors.py:before	2026-08-08 13:08:38.651570
++++ /home/jovyan/chest-xray-ai-assistant/api/core/errors.py:after	2026-08-14 15:39:47.479674
+@@ -1,7 +1,6 @@
+ """Typed client-safe exceptions for API services."""
+ 
+ from typing import Any
+-
+ 
+ SENSITIVE_DETAIL_TERMS = {
+     "traceback",
+--- /home/jovyan/chest-xray-ai-assistant/api/core/factory.py:before	2026-08-08 15:13:27.267891
++++ /home/jovyan/chest-xray-ai-assistant/api/core/factory.py:after	2026-08-14 15:39:47.486652
+@@ -11,60 +11,27 @@
+ import torch
+ import yaml
+ 
+-from api.core.config import (
+-    get_settings,
+-)
++from api.core.config import get_settings
+ from api.core.dependencies import (
+     ServiceContainer,
+     configure_service_container,
+     get_service_container,
+     service_container_is_configured,
+ )
+-from api.core.runtime import (
+-    build_success_metadata,
+-)
+-from api.core.telemetry import (
+-    EndpointTelemetryAdapter,
+-)
+-from api.schemas import (
+-    ExplainabilityContract,
+-    GradCAMEvidence,
+-)
+-from src.services.complete_workflow_service import (
+-    CompleteAnalysisWorkflow,
+-)
+-from src.services.computer_vision_service import (
+-    ComputerVisionService,
+-)
+-from src.services.gradcam_service import (
+-    GradCAMService,
+-)
+-from src.services.grounding_service import (
+-    GroundedInputSerializer,
+-    TASK_PREFIXES,
+-)
+-from src.services.image_service import (
+-    ImageValidationService,
+-)
+-from src.services.image_workflow_service import (
+-    ImageAnalysisWorkflow,
+-)
+-from src.services.language_guardrail_service import (
+-    DeterministicLanguageGuardrail,
+-)
+-from src.services.language_model_service import (
+-    GroundedLanguageModelService,
+-)
+-from src.services.language_workflow_service import (
+-    StoredPredictionLanguageWorkflow,
+-)
+-from src.services.operational_metrics_service import (
+-    OperationalMetricsService,
+-)
+-from src.services.prediction_store_service import (
+-    PredictionStoreService,
+-)
+-
++from api.core.runtime import build_success_metadata
++from api.core.telemetry import EndpointTelemetryAdapter
++from api.schemas import ExplainabilityContract, GradCAMEvidence
++from src.services.complete_workflow_service import CompleteAnalysisWorkflow
++from src.services.computer_vision_service import ComputerVisionService
++from src.services.gradcam_service import GradCAMService
++from src.services.grounding_service import TASK_PREFIXES, GroundedInputSerializer
++from src.services.image_service import ImageValidationService
++from src.services.image_workflow_service import ImageAnalysisWorkflow
++from src.services.language_guardrail_service import DeterministicLanguageGuardrail
++from src.services.language_model_service import GroundedLanguageModelService
++from src.services.language_workflow_service import StoredPredictionLanguageWorkflow
++from src.services.operational_metrics_service import OperationalMetricsService
++from src.services.prediction_store_service import PredictionStoreService
+ 
+ REGISTERED_ENDPOINTS = (
+     "GET /health",
+--- /home/jovyan/chest-xray-ai-assistant/api/schemas/system.py:before	2026-08-08 12:58:40.802482
++++ /home/jovyan/chest-xray-ai-assistant/api/schemas/system.py:after	2026-08-14 15:39:47.492428
+@@ -6,7 +6,6 @@
+ from pydantic import Field
+ 
+ from api.schemas.common import StrictSchema, SuccessResponseBase
+-
+ 
+ NonNegativeFloat = Annotated[
+     float,
+--- /home/jovyan/chest-xray-ai-assistant/api/schemas/__init__.py:before	2026-08-08 13:03:45.346636
++++ /home/jovyan/chest-xray-ai-assistant/api/schemas/__init__.py:after	2026-08-14 15:39:47.494526
+@@ -16,9 +16,7 @@
+     GradCAMEvidence,
+     ImageAnalysisResponse,
+ )
+-from api.schemas.language import (
+-    LanguageGenerationResponse,
+-)
++from api.schemas.language import LanguageGenerationResponse
+ from api.schemas.prediction import (
+     ClassificationResponse,
+     FindingEvidence,
+--- /home/jovyan/chest-xray-ai-assistant/api/schemas/language.py:before	2026-08-08 12:55:57.593228
++++ /home/jovyan/chest-xray-ai-assistant/api/schemas/language.py:after	2026-08-14 15:39:47.496425
+@@ -6,7 +6,6 @@
+ from pydantic import Field, model_validator
+ 
+ from api.schemas.common import SuccessResponseBase
+-
+ 
+ LanguageTask = Literal[
+     "structured_report",
+--- /home/jovyan/chest-xray-ai-assistant/api/schemas/aggregate.py:before	2026-08-08 13:02:03.047933
++++ /home/jovyan/chest-xray-ai-assistant/api/schemas/aggregate.py:after	2026-08-14 15:39:47.499012
+@@ -11,11 +11,7 @@
+     GradCAMEvidence,
+     ImageAnalysisResponse,
+ )
+-from api.schemas.language import (
+-    GuardrailAction,
+-    GuardrailTrigger,
+-    LanguageTask,
+-)
++from api.schemas.language import GuardrailAction, GuardrailTrigger, LanguageTask
+ from api.schemas.prediction import ClassificationResponse
+ 
+ 
+--- /home/jovyan/chest-xray-ai-assistant/ui/api_client.py:before	2026-08-09 01:39:03.375399
++++ /home/jovyan/chest-xray-ai-assistant/ui/api_client.py:after	2026-08-14 15:39:47.502729
+@@ -5,7 +5,6 @@
+ from uuid import UUID
+ 
+ import httpx
+-
+ 
+ DEFAULT_API_BASE_URL = "http://127.0.0.1:8000"
+ DEFAULT_TIMEOUT_SECONDS = 120.0
+--- /home/jovyan/chest-xray-ai-assistant/ui/app.py:before	2026-08-09 01:39:03.886402
++++ /home/jovyan/chest-xray-ai-assistant/ui/app.py:after	2026-08-14 15:39:47.514074
+@@ -7,11 +7,7 @@
+ 
+ import streamlit as st
+ import yaml
+-
+-from api_client import (
+-    APIClientError,
+-    ChestXRayAPIClient,
+-)
++from api_client import APIClientError, ChestXRayAPIClient
+ from components import (
+     render_finding_summary,
+     render_grounded_question_response,
+@@ -19,7 +15,6 @@
+     render_stored_prediction_summary,
+     render_visual_evidence,
+ )
+-
+ 
+ SOLUTION_ROOT = Path(__file__).resolve().parents[1]
+ UI_CONFIG_PATH = SOLUTION_ROOT / "configs" / "ui_config.yaml"
+--- /home/jovyan/chest-xray-ai-assistant/tests/api/test_language_endpoints.py:before	2026-08-08 15:21:42.999583
++++ /home/jovyan/chest-xray-ai-assistant/tests/api/test_language_endpoints.py:after	2026-08-14 15:39:47.519690
+@@ -12,7 +12,6 @@
+     LanguageGenerationResponse,
+     StoredPredictionResponse,
+ )
+-
+ 
+ LANGUAGE_ROUTES = (
+     (
+--- /home/jovyan/chest-xray-ai-assistant/tests/unit/test_structured_logging.py:before	2026-08-14 13:14:52.038566
++++ /home/jovyan/chest-xray-ai-assistant/tests/unit/test_structured_logging.py:after	2026-08-14 15:39:47.526794
+@@ -14,15 +14,9 @@
+     ModelNotReadyError,
+     UnsupportedMediaTypeError,
+ )
+-from src.services.computer_vision_service import (
+-    ComputerVisionService,
+-)
+-from src.services.image_service import (
+-    ImageValidationService,
+-)
+-from src.services.language_guardrail_service import (
+-    DeterministicLanguageGuardrail,
+-)
++from src.services.computer_vision_service import ComputerVisionService
++from src.services.image_service import ImageValidationService
++from src.services.language_guardrail_service import DeterministicLanguageGuardrail
+ 
+ 
+ def build_png_bytes() -> bytes:
+ERROR: /home/jovyan/chest-xray-ai-assistant/src/services/language_model_service.py Imports are incorrectly sorted and/or formatted.
+ERROR: /home/jovyan/chest-xray-ai-assistant/src/services/computer_vision_service.py Imports are incorrectly sorted and/or formatted.
+ERROR: /home/jovyan/chest-xray-ai-assistant/src/services/language_workflow_service.py Imports are incorrectly sorted and/or formatted.
+ERROR: /home/jovyan/chest-xray-ai-assistant/src/services/grounding_service.py Imports are incorrectly sorted and/or formatted.
+ERROR: /home/jovyan/chest-xray-ai-assistant/src/services/prediction_store_service.py Imports are incorrectly sorted and/or formatted.
+ERROR: /home/jovyan/chest-xray-ai-assistant/src/services/image_service.py Imports are incorrectly sorted and/or formatted.
+ERROR: /home/jovyan/chest-xray-ai-assistant/src/services/language_guardrail_service.py Imports are incorrectly sorted and/or formatted.
+ERROR: /home/jovyan/chest-xray-ai-assistant/src/services/complete_workflow_service.py Imports are incorrectly sorted and/or formatted.
+ERROR: /home/jovyan/chest-xray-ai-assistant/api/main.py Imports are incorrectly sorted and/or formatted.
+ERROR: /home/jovyan/chest-xray-ai-assistant/api/routes/workflows.py Imports are incorrectly sorted and/or formatted.
+ERROR: /home/jovyan/chest-xray-ai-assistant/api/routes/system.py Imports are incorrectly sorted and/or formatted.
+ERROR: /home/jovyan/chest-xray-ai-assistant/api/routes/__init__.py Imports are incorrectly sorted and/or formatted.
+ERROR: /home/jovyan/chest-xray-ai-assistant/api/routes/aggregate.py Imports are incorrectly sorted and/or formatted.
+ERROR: /home/jovyan/chest-xray-ai-assistant/api/core/runtime.py Imports are incorrectly sorted and/or formatted.
+ERROR: /home/jovyan/chest-xray-ai-assistant/api/core/dependencies.py Imports are incorrectly sorted and/or formatted.
+ERROR: /home/jovyan/chest-xray-ai-assistant/api/core/config.py Imports are incorrectly sorted and/or formatted.
+ERROR: /home/jovyan/chest-xray-ai-assistant/api/core/errors.py Imports are incorrectly sorted and/or formatted.
+ERROR: /home/jovyan/chest-xray-ai-assistant/api/core/factory.py Imports are incorrectly sorted and/or formatted.
+ERROR: /home/jovyan/chest-xray-ai-assistant/api/schemas/system.py Imports are incorrectly sorted and/or formatted.
+ERROR: /home/jovyan/chest-xray-ai-assistant/api/schemas/__init__.py Imports are incorrectly sorted and/or formatted.
+ERROR: /home/jovyan/chest-xray-ai-assistant/api/schemas/language.py Imports are incorrectly sorted and/or formatted.
+ERROR: /home/jovyan/chest-xray-ai-assistant/api/schemas/aggregate.py Imports are incorrectly sorted and/or formatted.
+ERROR: /home/jovyan/chest-xray-ai-assistant/ui/api_client.py Imports are incorrectly sorted and/or formatted.
+ERROR: /home/jovyan/chest-xray-ai-assistant/ui/app.py Imports are incorrectly sorted and/or formatted.
+ERROR: /home/jovyan/chest-xray-ai-assistant/tests/api/test_language_endpoints.py Imports are incorrectly sorted and/or formatted.
+ERROR: /home/jovyan/chest-xray-ai-assistant/tests/unit/test_structured_logging.py Imports are incorrectly sorted and/or formatted.

@@ -1,0 +1,22 @@
+solution:
+  root: /home/jovyan/chest-xray-ai-assistant
+  notebooks: /home/jovyan/chest-xray-ai-assistant/notebooks
+  source: /home/jovyan/chest-xray-ai-assistant/src
+  api: /home/jovyan/chest-xray-ai-assistant/api
+  ui: /home/jovyan/chest-xray-ai-assistant/ui
+  configs: /home/jovyan/chest-xray-ai-assistant/configs
+  tests: /home/jovyan/chest-xray-ai-assistant/tests
+  reports: /home/jovyan/chest-xray-ai-assistant/reports
+data:
+  root: /home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data
+  raw: /home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/raw
+  processed: /home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/processed
+  models: /home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/models
+  checkpoints: /home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/checkpoints
+  mlflow: /home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/mlflow
+  outputs: /home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs
+  explainability: /home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/explainability
+cache:
+  huggingface: /home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/hf-cache
+  torch: /home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/models/torch-cache
+  pip: /home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/pip-cache

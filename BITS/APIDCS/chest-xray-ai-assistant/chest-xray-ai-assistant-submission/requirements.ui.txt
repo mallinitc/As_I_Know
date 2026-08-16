@@ -1,0 +1,7 @@
+# Managed by Notebook 9
+streamlit==1.41.1
+httpx==0.23.0
+PyYAML==6.0.2
+pandas==2.2.3
+Pillow==11.2.1
+protobuf==4.25.3

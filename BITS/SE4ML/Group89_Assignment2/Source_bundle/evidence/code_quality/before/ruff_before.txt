@@ -1,0 +1,6 @@
+api/main.py:6:8: F401 [*] `inspect` imported but unused
+api/main.py:36:5: F401 [*] `api.core.runtime.build_error_response` imported but unused
+api/schemas/aggregate.py:4:20: F401 [*] `typing.Literal` imported but unused
+src/services/computer_vision_service.py:7:21: F401 [*] `pathlib.Path` imported but unused
+Found 4 errors.
+[*] 4 fixable with the `--fix` option.

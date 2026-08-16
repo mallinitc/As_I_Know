@@ -1,0 +1,7 @@
+pdf_file,detected_language,kept_after_language_filter,words,characters
+microsoft_intune_enrollment_options.pdf,en,True,2574,16844
+nist_sp800_61r3_incident_response.pdf,en,True,14205,104939
+redhat_rhel7_storage_administration_guide.pdf,en,True,110723,696042
+redhat_rhel7_system_administrators_guide.pdf,en,True,181132,1177574
+servicenow_incident_management.pdf,en,True,22579,137296
+ubuntu_server_documentation.pdf,en,True,278122,1903400

@@ -1,0 +1,2025 @@
+{
+  "components": {
+    "schemas": {
+      "Body_analyze_complete_api_v1_analyze_complete_post": {
+        "properties": {
+          "image": {
+            "format": "binary",
+            "title": "Image",
+            "type": "string"
+          },
+          "question": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Question"
+          }
+        },
+        "required": [
+          "image"
+        ],
+        "title": "Body_analyze_complete_api_v1_analyze_complete_post",
+        "type": "object"
+      },
+      "Body_analyze_image_api_v1_image_analyze_post": {
+        "properties": {
+          "image": {
+            "format": "binary",
+            "title": "Image",
+            "type": "string"
+          }
+        },
+        "required": [
+          "image"
+        ],
+        "title": "Body_analyze_image_api_v1_image_analyze_post",
+        "type": "object"
+      },
+      "Body_classify_image_api_v1_image_classify_post": {
+        "properties": {
+          "image": {
+            "format": "binary",
+            "title": "Image",
+            "type": "string"
+          }
+        },
+        "required": [
+          "image"
+        ],
+        "title": "Body_classify_image_api_v1_image_classify_post",
+        "type": "object"
+      },
+      "ClassificationResponse": {
+        "additionalProperties": false,
+        "description": "Complete multilabel classification response.",
+        "properties": {
+          "api_version": {
+            "const": "v1",
+            "default": "v1",
+            "title": "Api Version",
+            "type": "string"
+          },
+          "crossed_finding_names": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Crossed Finding Names",
+            "type": "array"
+          },
+          "educational_use_only": {
+            "const": true,
+            "default": true,
+            "title": "Educational Use Only",
+            "type": "boolean"
+          },
+          "findings": {
+            "items": {
+              "$ref": "#/components/schemas/FindingEvidence"
+            },
+            "maxItems": 14,
+            "minItems": 14,
+            "title": "Findings",
+            "type": "array"
+          },
+          "image": {
+            "$ref": "#/components/schemas/ImageMetadata"
+          },
+          "interpretation": {
+            "maxLength": 1000,
+            "minLength": 1,
+            "title": "Interpretation",
+            "type": "string"
+          },
+          "latency_ms": {
+            "minimum": 0.0,
+            "title": "Latency Ms",
+            "type": "number"
+          },
+          "model_versions": {
+            "$ref": "#/components/schemas/ModelVersions"
+          },
+          "no_target_finding": {
+            "title": "No Target Finding",
+            "type": "boolean"
+          },
+          "prediction_id": {
+            "format": "uuid",
+            "title": "Prediction Id",
+            "type": "string"
+          },
+          "prompt_registry_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Prompt Registry Version"
+          },
+          "request_id": {
+            "format": "uuid",
+            "title": "Request Id",
+            "type": "string"
+          },
+          "status": {
+            "const": "success",
+            "default": "success",
+            "title": "Status",
+            "type": "string"
+          },
+          "timestamp_utc": {
+            "format": "date-time",
+            "title": "Timestamp Utc",
+            "type": "string"
+          },
+          "warnings": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Warnings",
+            "type": "array"
+          }
+        },
+        "required": [
+          "request_id",
+          "timestamp_utc",
+          "model_versions",
+          "latency_ms",
+          "prediction_id",
+          "image",
+          "findings",
+          "crossed_finding_names",
+          "no_target_finding",
+          "interpretation"
+        ],
+        "title": "ClassificationResponse",
+        "type": "object"
+      },
+      "CompleteAnalysisResponse": {
+        "additionalProperties": false,
+        "description": "Complete image, visual, and guarded language workflow.",
+        "properties": {
+          "api_version": {
+            "const": "v1",
+            "default": "v1",
+            "title": "Api Version",
+            "type": "string"
+          },
+          "crossed_finding_names": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Crossed Finding Names",
+            "type": "array"
+          },
+          "educational_use_only": {
+            "const": true,
+            "default": true,
+            "title": "Educational Use Only",
+            "type": "boolean"
+          },
+          "explainability": {
+            "$ref": "#/components/schemas/ExplainabilityContract"
+          },
+          "findings": {
+            "items": {
+              "$ref": "#/components/schemas/FindingEvidence"
+            },
+            "maxItems": 14,
+            "minItems": 14,
+            "title": "Findings",
+            "type": "array"
+          },
+          "image": {
+            "$ref": "#/components/schemas/ImageMetadata"
+          },
+          "interpretation": {
+            "maxLength": 1000,
+            "minLength": 1,
+            "title": "Interpretation",
+            "type": "string"
+          },
+          "language_outputs": {
+            "items": {
+              "$ref": "#/components/schemas/EmbeddedLanguageOutput"
+            },
+            "maxItems": 4,
+            "minItems": 3,
+            "title": "Language Outputs",
+            "type": "array"
+          },
+          "latency_ms": {
+            "minimum": 0.0,
+            "title": "Latency Ms",
+            "type": "number"
+          },
+          "model_versions": {
+            "$ref": "#/components/schemas/ModelVersions"
+          },
+          "no_target_finding": {
+            "title": "No Target Finding",
+            "type": "boolean"
+          },
+          "prediction_id": {
+            "format": "uuid",
+            "title": "Prediction Id",
+            "type": "string"
+          },
+          "prompt_registry_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Prompt Registry Version"
+          },
+          "request_id": {
+            "format": "uuid",
+            "title": "Request Id",
+            "type": "string"
+          },
+          "status": {
+            "const": "success",
+            "default": "success",
+            "title": "Status",
+            "type": "string"
+          },
+          "timestamp_utc": {
+            "format": "date-time",
+            "title": "Timestamp Utc",
+            "type": "string"
+          },
+          "visual_evidence": {
+            "items": {
+              "$ref": "#/components/schemas/GradCAMEvidence"
+            },
+            "title": "Visual Evidence",
+            "type": "array"
+          },
+          "warnings": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Warnings",
+            "type": "array"
+          }
+        },
+        "required": [
+          "request_id",
+          "timestamp_utc",
+          "model_versions",
+          "latency_ms",
+          "prediction_id",
+          "image",
+          "findings",
+          "crossed_finding_names",
+          "no_target_finding",
+          "interpretation",
+          "explainability",
+          "visual_evidence",
+          "language_outputs"
+        ],
+        "title": "CompleteAnalysisResponse",
+        "type": "object"
+      },
+      "ComponentHealth": {
+        "additionalProperties": false,
+        "description": "Runtime readiness of one service component.",
+        "properties": {
+          "detail": {
+            "maxLength": 500,
+            "minLength": 1,
+            "title": "Detail",
+            "type": "string"
+          },
+          "device": {
+            "anyOf": [
+              {
+                "maxLength": 100,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Device"
+          },
+          "loaded": {
+            "title": "Loaded",
+            "type": "boolean"
+          },
+          "status": {
+            "enum": [
+              "ready",
+              "not_loaded",
+              "degraded",
+              "error"
+            ],
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "loaded",
+          "detail"
+        ],
+        "title": "ComponentHealth",
+        "type": "object"
+      },
+      "EmbeddedLanguageOutput": {
+        "additionalProperties": false,
+        "description": "One language result embedded in a larger API response.",
+        "properties": {
+          "generated_tokens": {
+            "minimum": 1.0,
+            "title": "Generated Tokens",
+            "type": "integer"
+          },
+          "generation_latency_ms": {
+            "minimum": 0.0,
+            "title": "Generation Latency Ms",
+            "type": "number"
+          },
+          "guardrail_action": {
+            "enum": [
+              "accepted_model_generation",
+              "safe_template_fallback"
+            ],
+            "title": "Guardrail Action",
+            "type": "string"
+          },
+          "output_text": {
+            "maxLength": 10000,
+            "minLength": 1,
+            "title": "Output Text",
+            "type": "string"
+          },
+          "question": {
+            "anyOf": [
+              {
+                "maxLength": 500,
+                "minLength": 3,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Question"
+          },
+          "task_type": {
+            "enum": [
+              "structured_report",
+              "plain_language_explanation",
+              "grounded_question_answering",
+              "educational_follow_up"
+            ],
+            "title": "Task Type",
+            "type": "string"
+          },
+          "trigger_reasons": {
+            "items": {
+              "enum": [
+                "task_routing_issue",
+                "section_order_issue",
+                "missing_required_finding_issue",
+                "unsupported_finding_issue",
+                "numeric_grounding_issue",
+                "safety_boundary_issue",
+                "no_target_boundary_issue",
+                "qa_refusal_issue",
+                "gradcam_boundary_issue",
+                "forbidden_claim_issue"
+              ],
+              "type": "string"
+            },
+            "title": "Trigger Reasons",
+            "type": "array"
+          }
+        },
+        "required": [
+          "task_type",
+          "output_text",
+          "guardrail_action",
+          "generated_tokens",
+          "generation_latency_ms"
+        ],
+        "title": "EmbeddedLanguageOutput",
+        "type": "object"
+      },
+      "ExplainabilityContract": {
+        "additionalProperties": false,
+        "description": "Frozen Grad-CAM method and interpretation boundary.",
+        "properties": {
+          "attribution_target": {
+            "const": "finding_specific_pre_sigmoid_logit",
+            "default": "finding_specific_pre_sigmoid_logit",
+            "title": "Attribution Target",
+            "type": "string"
+          },
+          "heatmap_normalization": {
+            "const": "independent_zero_to_one",
+            "default": "independent_zero_to_one",
+            "title": "Heatmap Normalization",
+            "type": "string"
+          },
+          "limitation": {
+            "maxLength": 1000,
+            "minLength": 1,
+            "title": "Limitation",
+            "type": "string"
+          },
+          "method": {
+            "const": "LayerGradCam",
+            "default": "LayerGradCam",
+            "title": "Method",
+            "type": "string"
+          },
+          "positive_attributions_only": {
+            "const": true,
+            "default": true,
+            "title": "Positive Attributions Only",
+            "type": "boolean"
+          },
+          "target_layer": {
+            "maxLength": 200,
+            "minLength": 1,
+            "title": "Target Layer",
+            "type": "string"
+          }
+        },
+        "required": [
+          "target_layer",
+          "limitation"
+        ],
+        "title": "ExplainabilityContract",
+        "type": "object"
+      },
+      "FindingEvidence": {
+        "additionalProperties": false,
+        "description": "One model finding with its frozen decision evidence.",
+        "properties": {
+          "approved_description": {
+            "maxLength": 500,
+            "minLength": 1,
+            "title": "Approved Description",
+            "type": "string"
+          },
+          "confidence_category": {
+            "enum": [
+              "below_threshold",
+              "borderline",
+              "moderate",
+              "higher"
+            ],
+            "title": "Confidence Category",
+            "type": "string"
+          },
+          "crossed_threshold": {
+            "title": "Crossed Threshold",
+            "type": "boolean"
+          },
+          "display_name": {
+            "maxLength": 100,
+            "minLength": 1,
+            "title": "Display Name",
+            "type": "string"
+          },
+          "frozen_threshold": {
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Frozen Threshold",
+            "type": "number"
+          },
+          "label_id": {
+            "maximum": 13.0,
+            "minimum": 0.0,
+            "title": "Label Id",
+            "type": "integer"
+          },
+          "label_name": {
+            "maxLength": 50,
+            "minLength": 1,
+            "title": "Label Name",
+            "type": "string"
+          },
+          "probability": {
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Probability",
+            "type": "number"
+          }
+        },
+        "required": [
+          "label_id",
+          "label_name",
+          "display_name",
+          "probability",
+          "frozen_threshold",
+          "crossed_threshold",
+          "confidence_category",
+          "approved_description"
+        ],
+        "title": "FindingEvidence",
+        "type": "object"
+      },
+      "GradCAMEvidence": {
+        "additionalProperties": false,
+        "description": "Finding-specific visual evidence returned as PNG content.",
+        "properties": {
+          "crossed_threshold": {
+            "const": true,
+            "default": true,
+            "title": "Crossed Threshold",
+            "type": "boolean"
+          },
+          "finding_name": {
+            "maxLength": 50,
+            "minLength": 1,
+            "title": "Finding Name",
+            "type": "string"
+          },
+          "frozen_threshold": {
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Frozen Threshold",
+            "type": "number"
+          },
+          "heatmap_png_base64": {
+            "minLength": 12,
+            "title": "Heatmap Png Base64",
+            "type": "string"
+          },
+          "high_attribution_area_percent": {
+            "anyOf": [
+              {
+                "maximum": 100.0,
+                "minimum": 0.0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "High Attribution Area Percent"
+          },
+          "overlay_png_base64": {
+            "minLength": 12,
+            "title": "Overlay Png Base64",
+            "type": "string"
+          },
+          "probability": {
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Probability",
+            "type": "number"
+          }
+        },
+        "required": [
+          "finding_name",
+          "probability",
+          "frozen_threshold",
+          "heatmap_png_base64",
+          "overlay_png_base64"
+        ],
+        "title": "GradCAMEvidence",
+        "type": "object"
+      },
+      "GroundedGenerationRequest": {
+        "additionalProperties": false,
+        "description": "Request a language task using an existing prediction context.",
+        "properties": {
+          "prediction_id": {
+            "format": "uuid",
+            "title": "Prediction Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "prediction_id"
+        ],
+        "title": "GroundedGenerationRequest",
+        "type": "object"
+      },
+      "GroundedQuestionRequest": {
+        "additionalProperties": false,
+        "description": "Request grounded question answering for an existing prediction.",
+        "properties": {
+          "prediction_id": {
+            "format": "uuid",
+            "title": "Prediction Id",
+            "type": "string"
+          },
+          "question": {
+            "maxLength": 500,
+            "minLength": 3,
+            "title": "Question",
+            "type": "string"
+          }
+        },
+        "required": [
+          "prediction_id",
+          "question"
+        ],
+        "title": "GroundedQuestionRequest",
+        "type": "object"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "title": "Detail",
+            "type": "array"
+          }
+        },
+        "title": "HTTPValidationError",
+        "type": "object"
+      },
+      "HealthResponse": {
+        "additionalProperties": false,
+        "description": "API and component health response.",
+        "properties": {
+          "api_version": {
+            "const": "v1",
+            "default": "v1",
+            "title": "Api Version",
+            "type": "string"
+          },
+          "components": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/ComponentHealth"
+            },
+            "title": "Components",
+            "type": "object"
+          },
+          "educational_use_only": {
+            "const": true,
+            "default": true,
+            "title": "Educational Use Only",
+            "type": "boolean"
+          },
+          "latency_ms": {
+            "minimum": 0.0,
+            "title": "Latency Ms",
+            "type": "number"
+          },
+          "model_versions": {
+            "$ref": "#/components/schemas/ModelVersions"
+          },
+          "prompt_registry_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Prompt Registry Version"
+          },
+          "request_id": {
+            "format": "uuid",
+            "title": "Request Id",
+            "type": "string"
+          },
+          "service_name": {
+            "maxLength": 200,
+            "minLength": 1,
+            "title": "Service Name",
+            "type": "string"
+          },
+          "status": {
+            "const": "success",
+            "default": "success",
+            "title": "Status",
+            "type": "string"
+          },
+          "timestamp_utc": {
+            "format": "date-time",
+            "title": "Timestamp Utc",
+            "type": "string"
+          },
+          "uptime_seconds": {
+            "minimum": 0.0,
+            "title": "Uptime Seconds",
+            "type": "number"
+          },
+          "warnings": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Warnings",
+            "type": "array"
+          }
+        },
+        "required": [
+          "request_id",
+          "timestamp_utc",
+          "model_versions",
+          "latency_ms",
+          "service_name",
+          "uptime_seconds",
+          "components"
+        ],
+        "title": "HealthResponse",
+        "type": "object"
+      },
+      "ImageAnalysisResponse": {
+        "additionalProperties": false,
+        "description": "Classification response extended with Grad-CAM evidence.",
+        "properties": {
+          "api_version": {
+            "const": "v1",
+            "default": "v1",
+            "title": "Api Version",
+            "type": "string"
+          },
+          "crossed_finding_names": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Crossed Finding Names",
+            "type": "array"
+          },
+          "educational_use_only": {
+            "const": true,
+            "default": true,
+            "title": "Educational Use Only",
+            "type": "boolean"
+          },
+          "explainability": {
+            "$ref": "#/components/schemas/ExplainabilityContract"
+          },
+          "findings": {
+            "items": {
+              "$ref": "#/components/schemas/FindingEvidence"
+            },
+            "maxItems": 14,
+            "minItems": 14,
+            "title": "Findings",
+            "type": "array"
+          },
+          "image": {
+            "$ref": "#/components/schemas/ImageMetadata"
+          },
+          "interpretation": {
+            "maxLength": 1000,
+            "minLength": 1,
+            "title": "Interpretation",
+            "type": "string"
+          },
+          "latency_ms": {
+            "minimum": 0.0,
+            "title": "Latency Ms",
+            "type": "number"
+          },
+          "model_versions": {
+            "$ref": "#/components/schemas/ModelVersions"
+          },
+          "no_target_finding": {
+            "title": "No Target Finding",
+            "type": "boolean"
+          },
+          "prediction_id": {
+            "format": "uuid",
+            "title": "Prediction Id",
+            "type": "string"
+          },
+          "prompt_registry_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Prompt Registry Version"
+          },
+          "request_id": {
+            "format": "uuid",
+            "title": "Request Id",
+            "type": "string"
+          },
+          "status": {
+            "const": "success",
+            "default": "success",
+            "title": "Status",
+            "type": "string"
+          },
+          "timestamp_utc": {
+            "format": "date-time",
+            "title": "Timestamp Utc",
+            "type": "string"
+          },
+          "visual_evidence": {
+            "items": {
+              "$ref": "#/components/schemas/GradCAMEvidence"
+            },
+            "title": "Visual Evidence",
+            "type": "array"
+          },
+          "warnings": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Warnings",
+            "type": "array"
+          }
+        },
+        "required": [
+          "request_id",
+          "timestamp_utc",
+          "model_versions",
+          "latency_ms",
+          "prediction_id",
+          "image",
+          "findings",
+          "crossed_finding_names",
+          "no_target_finding",
+          "interpretation",
+          "explainability",
+          "visual_evidence"
+        ],
+        "title": "ImageAnalysisResponse",
+        "type": "object"
+      },
+      "ImageMetadata": {
+        "additionalProperties": false,
+        "description": "Validated metadata for an accepted uploaded image.",
+        "properties": {
+          "filename": {
+            "maxLength": 255,
+            "minLength": 1,
+            "title": "Filename",
+            "type": "string"
+          },
+          "height": {
+            "exclusiveMinimum": 0.0,
+            "title": "Height",
+            "type": "integer"
+          },
+          "media_type": {
+            "enum": [
+              "image/png",
+              "image/jpeg"
+            ],
+            "title": "Media Type",
+            "type": "string"
+          },
+          "original_mode": {
+            "maxLength": 20,
+            "minLength": 1,
+            "title": "Original Mode",
+            "type": "string"
+          },
+          "sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "width": {
+            "exclusiveMinimum": 0.0,
+            "title": "Width",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "filename",
+          "media_type",
+          "width",
+          "height",
+          "original_mode",
+          "sha256"
+        ],
+        "title": "ImageMetadata",
+        "type": "object"
+      },
+      "LanguageGenerationResponse": {
+        "additionalProperties": false,
+        "description": "Guarded output from one grounded language task.",
+        "properties": {
+          "api_version": {
+            "const": "v1",
+            "default": "v1",
+            "title": "Api Version",
+            "type": "string"
+          },
+          "educational_use_only": {
+            "const": true,
+            "default": true,
+            "title": "Educational Use Only",
+            "type": "boolean"
+          },
+          "generated_tokens": {
+            "minimum": 1.0,
+            "title": "Generated Tokens",
+            "type": "integer"
+          },
+          "generation_latency_ms": {
+            "minimum": 0.0,
+            "title": "Generation Latency Ms",
+            "type": "number"
+          },
+          "grounded_finding_names": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Grounded Finding Names",
+            "type": "array"
+          },
+          "guardrail_action": {
+            "enum": [
+              "accepted_model_generation",
+              "safe_template_fallback"
+            ],
+            "title": "Guardrail Action",
+            "type": "string"
+          },
+          "latency_ms": {
+            "minimum": 0.0,
+            "title": "Latency Ms",
+            "type": "number"
+          },
+          "model_versions": {
+            "$ref": "#/components/schemas/ModelVersions"
+          },
+          "no_target_finding": {
+            "title": "No Target Finding",
+            "type": "boolean"
+          },
+          "output_text": {
+            "maxLength": 10000,
+            "minLength": 1,
+            "title": "Output Text",
+            "type": "string"
+          },
+          "prediction_id": {
+            "format": "uuid",
+            "title": "Prediction Id",
+            "type": "string"
+          },
+          "prompt_registry_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Prompt Registry Version"
+          },
+          "question": {
+            "anyOf": [
+              {
+                "maxLength": 500,
+                "minLength": 3,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Question"
+          },
+          "request_id": {
+            "format": "uuid",
+            "title": "Request Id",
+            "type": "string"
+          },
+          "status": {
+            "const": "success",
+            "default": "success",
+            "title": "Status",
+            "type": "string"
+          },
+          "task_type": {
+            "enum": [
+              "structured_report",
+              "plain_language_explanation",
+              "grounded_question_answering",
+              "educational_follow_up"
+            ],
+            "title": "Task Type",
+            "type": "string"
+          },
+          "timestamp_utc": {
+            "format": "date-time",
+            "title": "Timestamp Utc",
+            "type": "string"
+          },
+          "trigger_reasons": {
+            "items": {
+              "enum": [
+                "task_routing_issue",
+                "section_order_issue",
+                "missing_required_finding_issue",
+                "unsupported_finding_issue",
+                "numeric_grounding_issue",
+                "safety_boundary_issue",
+                "no_target_boundary_issue",
+                "qa_refusal_issue",
+                "gradcam_boundary_issue",
+                "forbidden_claim_issue"
+              ],
+              "type": "string"
+            },
+            "title": "Trigger Reasons",
+            "type": "array"
+          },
+          "warnings": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Warnings",
+            "type": "array"
+          }
+        },
+        "required": [
+          "request_id",
+          "timestamp_utc",
+          "model_versions",
+          "latency_ms",
+          "prediction_id",
+          "task_type",
+          "grounded_finding_names",
+          "no_target_finding",
+          "output_text",
+          "guardrail_action",
+          "generated_tokens",
+          "generation_latency_ms"
+        ],
+        "title": "LanguageGenerationResponse",
+        "type": "object"
+      },
+      "ModelInfoResponse": {
+        "additionalProperties": false,
+        "description": "Sanitized frozen model and prompt lineage.",
+        "properties": {
+          "api_version": {
+            "const": "v1",
+            "default": "v1",
+            "title": "Api Version",
+            "type": "string"
+          },
+          "computer_vision": {
+            "title": "Computer Vision",
+            "type": "object"
+          },
+          "educational_use_only": {
+            "const": true,
+            "default": true,
+            "title": "Educational Use Only",
+            "type": "boolean"
+          },
+          "explainability": {
+            "title": "Explainability",
+            "type": "object"
+          },
+          "language": {
+            "title": "Language",
+            "type": "object"
+          },
+          "latency_ms": {
+            "minimum": 0.0,
+            "title": "Latency Ms",
+            "type": "number"
+          },
+          "limitations": {
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1,
+            "title": "Limitations",
+            "type": "array"
+          },
+          "model_versions": {
+            "$ref": "#/components/schemas/ModelVersions"
+          },
+          "prompt_registry_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Prompt Registry Version"
+          },
+          "request_id": {
+            "format": "uuid",
+            "title": "Request Id",
+            "type": "string"
+          },
+          "status": {
+            "const": "success",
+            "default": "success",
+            "title": "Status",
+            "type": "string"
+          },
+          "timestamp_utc": {
+            "format": "date-time",
+            "title": "Timestamp Utc",
+            "type": "string"
+          },
+          "warnings": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Warnings",
+            "type": "array"
+          }
+        },
+        "required": [
+          "request_id",
+          "timestamp_utc",
+          "model_versions",
+          "latency_ms",
+          "computer_vision",
+          "language",
+          "explainability",
+          "limitations"
+        ],
+        "title": "ModelInfoResponse",
+        "type": "object"
+      },
+      "ModelMetricsResponse": {
+        "additionalProperties": false,
+        "description": "Frozen development and held-out evaluation metrics.",
+        "properties": {
+          "api_version": {
+            "const": "v1",
+            "default": "v1",
+            "title": "Api Version",
+            "type": "string"
+          },
+          "computer_vision_metrics": {
+            "additionalProperties": {
+              "minimum": 0.0,
+              "type": "number"
+            },
+            "title": "Computer Vision Metrics",
+            "type": "object"
+          },
+          "educational_use_only": {
+            "const": true,
+            "default": true,
+            "title": "Educational Use Only",
+            "type": "boolean"
+          },
+          "guardrail_metrics": {
+            "additionalProperties": {
+              "minimum": 0.0,
+              "type": "number"
+            },
+            "title": "Guardrail Metrics",
+            "type": "object"
+          },
+          "language_metrics": {
+            "additionalProperties": {
+              "minimum": 0.0,
+              "type": "number"
+            },
+            "title": "Language Metrics",
+            "type": "object"
+          },
+          "latency_ms": {
+            "minimum": 0.0,
+            "title": "Latency Ms",
+            "type": "number"
+          },
+          "model_versions": {
+            "$ref": "#/components/schemas/ModelVersions"
+          },
+          "prompt_registry_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Prompt Registry Version"
+          },
+          "request_id": {
+            "format": "uuid",
+            "title": "Request Id",
+            "type": "string"
+          },
+          "status": {
+            "const": "success",
+            "default": "success",
+            "title": "Status",
+            "type": "string"
+          },
+          "timestamp_utc": {
+            "format": "date-time",
+            "title": "Timestamp Utc",
+            "type": "string"
+          },
+          "warnings": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Warnings",
+            "type": "array"
+          }
+        },
+        "required": [
+          "request_id",
+          "timestamp_utc",
+          "model_versions",
+          "latency_ms",
+          "computer_vision_metrics",
+          "language_metrics",
+          "guardrail_metrics"
+        ],
+        "title": "ModelMetricsResponse",
+        "type": "object"
+      },
+      "ModelVersions": {
+        "additionalProperties": false,
+        "description": "Version lineage for the models contributing to a response.",
+        "properties": {
+          "computer_vision": {
+            "title": "Computer Vision",
+            "type": "string"
+          },
+          "explainability_method": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Explainability Method"
+          },
+          "language": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Language"
+          }
+        },
+        "required": [
+          "computer_vision"
+        ],
+        "title": "ModelVersions",
+        "type": "object"
+      },
+      "OperationalMetricsResponse": {
+        "additionalProperties": false,
+        "description": "Aggregate in-process request and guardrail measurements.",
+        "properties": {
+          "api_version": {
+            "const": "v1",
+            "default": "v1",
+            "title": "Api Version",
+            "type": "string"
+          },
+          "educational_use_only": {
+            "const": true,
+            "default": true,
+            "title": "Educational Use Only",
+            "type": "boolean"
+          },
+          "endpoint_average_latency_ms": {
+            "additionalProperties": {
+              "minimum": 0.0,
+              "type": "number"
+            },
+            "title": "Endpoint Average Latency Ms",
+            "type": "object"
+          },
+          "endpoint_request_counts": {
+            "additionalProperties": {
+              "minimum": 0.0,
+              "type": "integer"
+            },
+            "title": "Endpoint Request Counts",
+            "type": "object"
+          },
+          "failed_requests": {
+            "minimum": 0.0,
+            "title": "Failed Requests",
+            "type": "integer"
+          },
+          "guardrail_action_counts": {
+            "additionalProperties": {
+              "minimum": 0.0,
+              "type": "integer"
+            },
+            "title": "Guardrail Action Counts",
+            "type": "object"
+          },
+          "language_generation_requests": {
+            "minimum": 0.0,
+            "title": "Language Generation Requests",
+            "type": "integer"
+          },
+          "latency_ms": {
+            "minimum": 0.0,
+            "title": "Latency Ms",
+            "type": "number"
+          },
+          "model_versions": {
+            "$ref": "#/components/schemas/ModelVersions"
+          },
+          "prompt_registry_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Prompt Registry Version"
+          },
+          "request_id": {
+            "format": "uuid",
+            "title": "Request Id",
+            "type": "string"
+          },
+          "service_started_at_utc": {
+            "format": "date-time",
+            "title": "Service Started At Utc",
+            "type": "string"
+          },
+          "status": {
+            "const": "success",
+            "default": "success",
+            "title": "Status",
+            "type": "string"
+          },
+          "successful_requests": {
+            "minimum": 0.0,
+            "title": "Successful Requests",
+            "type": "integer"
+          },
+          "timestamp_utc": {
+            "format": "date-time",
+            "title": "Timestamp Utc",
+            "type": "string"
+          },
+          "total_requests": {
+            "minimum": 0.0,
+            "title": "Total Requests",
+            "type": "integer"
+          },
+          "warnings": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Warnings",
+            "type": "array"
+          }
+        },
+        "required": [
+          "request_id",
+          "timestamp_utc",
+          "model_versions",
+          "latency_ms",
+          "service_started_at_utc",
+          "total_requests",
+          "successful_requests",
+          "failed_requests",
+          "endpoint_request_counts",
+          "endpoint_average_latency_ms",
+          "language_generation_requests",
+          "guardrail_action_counts"
+        ],
+        "title": "OperationalMetricsResponse",
+        "type": "object"
+      },
+      "StoredPredictionResponse": {
+        "additionalProperties": false,
+        "description": "Retrievable classification with optional later-stage outputs.",
+        "properties": {
+          "api_version": {
+            "const": "v1",
+            "default": "v1",
+            "title": "Api Version",
+            "type": "string"
+          },
+          "created_at_utc": {
+            "format": "date-time",
+            "title": "Created At Utc",
+            "type": "string"
+          },
+          "crossed_finding_names": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Crossed Finding Names",
+            "type": "array"
+          },
+          "educational_use_only": {
+            "const": true,
+            "default": true,
+            "title": "Educational Use Only",
+            "type": "boolean"
+          },
+          "explainability": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ExplainabilityContract"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "findings": {
+            "items": {
+              "$ref": "#/components/schemas/FindingEvidence"
+            },
+            "maxItems": 14,
+            "minItems": 14,
+            "title": "Findings",
+            "type": "array"
+          },
+          "image": {
+            "$ref": "#/components/schemas/ImageMetadata"
+          },
+          "interpretation": {
+            "maxLength": 1000,
+            "minLength": 1,
+            "title": "Interpretation",
+            "type": "string"
+          },
+          "language_outputs": {
+            "items": {
+              "$ref": "#/components/schemas/EmbeddedLanguageOutput"
+            },
+            "title": "Language Outputs",
+            "type": "array"
+          },
+          "latency_ms": {
+            "minimum": 0.0,
+            "title": "Latency Ms",
+            "type": "number"
+          },
+          "model_versions": {
+            "$ref": "#/components/schemas/ModelVersions"
+          },
+          "no_target_finding": {
+            "title": "No Target Finding",
+            "type": "boolean"
+          },
+          "prediction_id": {
+            "format": "uuid",
+            "title": "Prediction Id",
+            "type": "string"
+          },
+          "prompt_registry_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Prompt Registry Version"
+          },
+          "request_id": {
+            "format": "uuid",
+            "title": "Request Id",
+            "type": "string"
+          },
+          "status": {
+            "const": "success",
+            "default": "success",
+            "title": "Status",
+            "type": "string"
+          },
+          "timestamp_utc": {
+            "format": "date-time",
+            "title": "Timestamp Utc",
+            "type": "string"
+          },
+          "visual_evidence": {
+            "items": {
+              "$ref": "#/components/schemas/GradCAMEvidence"
+            },
+            "title": "Visual Evidence",
+            "type": "array"
+          },
+          "warnings": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Warnings",
+            "type": "array"
+          }
+        },
+        "required": [
+          "request_id",
+          "timestamp_utc",
+          "model_versions",
+          "latency_ms",
+          "prediction_id",
+          "image",
+          "findings",
+          "crossed_finding_names",
+          "no_target_finding",
+          "interpretation",
+          "created_at_utc"
+        ],
+        "title": "StoredPredictionResponse",
+        "type": "object"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "title": "Location",
+            "type": "array"
+          },
+          "msg": {
+            "title": "Message",
+            "type": "string"
+          },
+          "type": {
+            "title": "Error Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError",
+        "type": "object"
+      }
+    }
+  },
+  "info": {
+    "description": "Educational decision-support API for frozen ChestMNIST classification, visual evidence, and grounded language generation. This service is not a diagnostic system.",
+    "title": "API-Driven Chest X-Ray Analysis and Explanation Assistant",
+    "version": "v1"
+  },
+  "openapi": "3.1.0",
+  "paths": {
+    "/api/v1/analyze-complete": {
+      "post": {
+        "description": "Run classification, Grad-CAM, and guarded language generation.",
+        "operationId": "analyze_complete_api_v1_analyze_complete_post",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/Body_analyze_complete_api_v1_analyze_complete_post"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CompleteAnalysisResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Run the complete chest X-ray analysis workflow",
+        "tags": [
+          "complete-analysis"
+        ]
+      }
+    },
+    "/api/v1/explanation/generate": {
+      "post": {
+        "description": "Explain stored model output using guarded simple language.",
+        "operationId": "generate_explanation_api_v1_explanation_generate_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GroundedGenerationRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LanguageGenerationResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Generate a grounded plain-language explanation",
+        "tags": [
+          "analysis"
+        ]
+      }
+    },
+    "/api/v1/follow-up/recommend": {
+      "post": {
+        "description": "Generate non-diagnostic educational follow-up guidance.",
+        "operationId": "recommend_follow_up_api_v1_follow_up_recommend_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GroundedGenerationRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LanguageGenerationResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Generate controlled educational follow-up",
+        "tags": [
+          "analysis"
+        ]
+      }
+    },
+    "/api/v1/image/analyze": {
+      "post": {
+        "description": "Run classification and threshold-controlled Grad-CAM.",
+        "operationId": "analyze_image_api_v1_image_analyze_post",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/Body_analyze_image_api_v1_image_analyze_post"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ImageAnalysisResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Classify an image and generate visual evidence",
+        "tags": [
+          "analysis"
+        ]
+      }
+    },
+    "/api/v1/image/classify": {
+      "post": {
+        "description": "Run frozen multilabel classification and store the prediction.",
+        "operationId": "classify_image_api_v1_image_classify_post",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/Body_classify_image_api_v1_image_classify_post"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClassificationResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Classify a chest X-ray image",
+        "tags": [
+          "analysis"
+        ]
+      }
+    },
+    "/api/v1/llmops/metrics": {
+      "get": {
+        "description": "Return aggregate operational data without request content.",
+        "operationId": "llmops_metrics_api_v1_llmops_metrics_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationalMetricsResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Return API operational metrics",
+        "tags": [
+          "system"
+        ]
+      }
+    },
+    "/api/v1/model/info": {
+      "get": {
+        "description": "Return sanitized computer-vision and language lineage.",
+        "operationId": "model_info_api_v1_model_info_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModelInfoResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Return versioned model information",
+        "tags": [
+          "system"
+        ]
+      }
+    },
+    "/api/v1/model/metrics": {
+      "get": {
+        "description": "Return frozen evaluation and guardrail measurements.",
+        "operationId": "model_metrics_api_v1_model_metrics_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModelMetricsResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Return frozen model evaluation metrics",
+        "tags": [
+          "system"
+        ]
+      }
+    },
+    "/api/v1/predictions/{prediction_id}": {
+      "get": {
+        "description": "Return one stored prediction and its attached outputs.",
+        "operationId": "get_prediction_api_v1_predictions__prediction_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "prediction_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Prediction Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StoredPredictionResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Retrieve one stored prediction",
+        "tags": [
+          "complete-analysis"
+        ]
+      }
+    },
+    "/api/v1/question/answer": {
+      "post": {
+        "description": "Answer only from server-controlled stored grounding values.",
+        "operationId": "answer_grounded_question_api_v1_question_answer_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GroundedQuestionRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LanguageGenerationResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Answer a question using stored model output",
+        "tags": [
+          "analysis"
+        ]
+      }
+    },
+    "/api/v1/report/generate": {
+      "post": {
+        "description": "Generate a guarded structured report from a stored prediction.",
+        "operationId": "generate_report_api_v1_report_generate_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GroundedGenerationRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LanguageGenerationResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Generate a grounded preliminary model report",
+        "tags": [
+          "analysis"
+        ]
+      }
+    },
+    "/health": {
+      "get": {
+        "description": "Return service readiness without running model inference.",
+        "operationId": "health_health_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Check service readiness",
+        "tags": [
+          "health"
+        ]
+      }
+    }
+  }
+}

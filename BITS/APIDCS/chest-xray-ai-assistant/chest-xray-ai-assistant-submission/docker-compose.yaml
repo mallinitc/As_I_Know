@@ -1,0 +1,71 @@
+# Managed by Notebook 9
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    image: chest-xray-assistant-api:latest
+    environment:
+      CHEST_XRAY_API_HOST: 0.0.0.0
+      CHEST_XRAY_API_PORT: '8000'
+      CHEST_XRAY_DATA_ROOT: /home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data
+      MLFLOW_TRACKING_URI: file:///home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/mlflow
+      HF_HOME: /home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/hf-cache
+      HF_DATASETS_CACHE: /home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/hf-cache/datasets
+      TORCH_HOME: /home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/models/torch-cache
+      TOKENIZERS_PARALLELISM: 'false'
+    ports:
+    - ${CHEST_XRAY_API_PORT:-8000}:8000
+    volumes:
+    - ${CHEST_XRAY_DATA_ROOT:-/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data}:/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data
+    healthcheck:
+      test:
+      - CMD
+      - python
+      - -c
+      - import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=5)
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 180s
+    deploy:
+      resources:
+        reservations:
+          devices:
+          - driver: nvidia
+            count: all
+            capabilities:
+            - gpu
+    restart: unless-stopped
+    networks:
+    - chest-xray-network
+  ui:
+    build:
+      context: .
+      dockerfile: Dockerfile.ui
+    image: chest-xray-assistant-ui:latest
+    environment:
+      CHEST_XRAY_API_BASE_URL: http://api:8000
+      CHEST_XRAY_UI_HOST: 0.0.0.0
+      CHEST_XRAY_UI_PORT: '8501'
+    ports:
+    - ${CHEST_XRAY_UI_PORT:-8501}:8501
+    depends_on:
+      api:
+        condition: service_healthy
+    healthcheck:
+      test:
+      - CMD
+      - python
+      - -c
+      - import urllib.request; urllib.request.urlopen('http://127.0.0.1:8501/_stcore/health', timeout=5)
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 20s
+    restart: unless-stopped
+    networks:
+    - chest-xray-network
+networks:
+  chest-xray-network:
+    driver: bridge

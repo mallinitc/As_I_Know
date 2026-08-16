@@ -1,0 +1,7 @@
+stage,documents,total_words,total_characters,notes,docs_removed_from_previous_stage,words_removed_from_previous_stage
+Raw extracted,6,609335,4057646,Text extracted from the collected PDF documents.,0,0
+Basic normalized,6,609335,4036095,"Whitespace, line breaks, and excessive blank lines normalized.",0,0
+After length filter,6,609335,4036095,"Documents with fewer than 1,000 words would be removed.",0,0
+After deduplication,6,609335,4036095,Exact duplicate documents checked using SHA256 hashing.,0,0
+After language filter,6,609335,4036095,Only English-language documents retained using langdetect.,0,0
+Final saved corpus,6,609335,4036095,Final cleaned .txt files saved in domain_corpus/.,0,0

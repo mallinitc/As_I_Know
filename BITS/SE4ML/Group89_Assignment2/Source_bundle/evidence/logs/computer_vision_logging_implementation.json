@@ -1,0 +1,30 @@
+{
+  "evidence_version": "computer-vision-logging-v1",
+  "generated_at_utc": "2026-08-14T13:04:37.716133+00:00",
+  "source_file": "src/services/computer_vision_service.py",
+  "modification_status": "IMPLEMENTED",
+  "source_sha256_before": "8602a7810c5ce9fe4c78166351c8c8f013b033a272b6e6a4a4526a4d6a484ceb",
+  "source_sha256_after": "773971e95717452881800e09b55509ec98aeef073f22df03d9ce112bbf555950",
+  "required_events": [
+    "cv_inference_completed",
+    "cv_inference_failed",
+    "cv_inference_started",
+    "cv_model_load_failed",
+    "cv_model_load_started",
+    "cv_model_ready",
+    "cv_model_unavailable"
+  ],
+  "missing_events": [],
+  "severity_counts": {
+    "INFO": 4,
+    "WARNING": 1,
+    "ERROR": 2
+  },
+  "compile_passed": true,
+  "fresh_process_import_passed": true,
+  "checkpoint_path_logged": false,
+  "image_content_logged": false,
+  "tensor_values_logged": false,
+  "probability_array_logged": false,
+  "model_contract_changed": false
+}

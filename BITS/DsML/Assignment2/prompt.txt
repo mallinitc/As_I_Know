@@ -1,0 +1,487 @@
+Act as a senior AI/ML architect, AIOps engineer, cloud-native solution architect, and academic project reviewer.
+
+I need your independent recommendation for my Assignment II project for the BITS Pilani WILP subject:
+
+“API-Driven Cloud Native Solutions”
+
+Please carefully assess the assignment requirements, my previous project, my professional background, my available Kubeflow environment, the limited implementation time, dataset feasibility, API feasibility, and academic evaluation value.
+
+Do not simply agree with the options I have already considered. Challenge weak assumptions, identify risks, and recommend the most practical and academically strong solution.
+
+==================================================
+1. ASSIGNMENT II REQUIREMENTS
+==================================================
+
+The assignment requires us to:
+
+1. Select one domain, such as education, customer service, cloud operations, cybersecurity, etc.
+2. Select any two categories from:
+   - Natural Language Processing
+   - Computer Vision
+   - Speech Recognition
+3. Implement at least five AI subtasks across the selected categories.
+4. Select appropriate LLMs or SLMs for the subtasks.
+5. Ensure that all subtasks are cohesive and contribute to one unified project objective.
+6. Use relevant APIs, such as Hugging Face, OpenAI, or self-hosted model APIs.
+7. Make the application interactive and demonstrable.
+8. Apply LLMOps principles.
+9. Measure at least five relevant model or system metrics.
+10. Select a relevant domain dataset and fine-tune at least one LLM or SLM.
+11. Demonstrate the fine-tuned model.
+12. Prepare a Word/PDF report containing architecture, implementation details, screenshots, evaluation results, APIs, LLMOps evidence, and group contributions.
+13. The project will also have a live demonstration and viva.
+
+The API-driven aspect is important. The selected dataset and project must support a clear FastAPI or equivalent API layer rather than remaining only as a notebook experiment.
+
+==================================================
+2. ASSIGNMENT I BACKGROUND
+==================================================
+
+For Assignment I in the same subject, we implemented:
+
+“API-Driven AIOps Pipeline for Microservice Anomaly Detection and Root Cause Analysis”
+
+The solution contained:
+
+- A microservice observability dataset
+- Metrics, logs, traces/spans, and fault metadata in the raw source
+- Approximately 67,752 final processed metric records
+- Twelve microservices with metrics
+- Three injected fault types:
+  - cpu_load
+  - network_delay
+  - network_loss
+- Binary anomaly classification
+- Logistic Regression and Random Forest
+- Random Forest accuracy around 0.9879
+- Random Forest F1-score around 0.8992
+- Prefect-based DataOps and MLOps orchestration
+- A scheduled pipeline
+- FastAPI endpoints for:
+  - Health
+  - Dataset summary
+  - Model metrics
+  - Prefect summary
+  - Anomaly prediction
+- Swagger UI demonstration
+- GitHub repository and reproducible artifacts
+
+Assignment I was completed quickly and the dataset was relatively small and controlled. It was sufficient for that assignment, but it did not convincingly represent large-scale, sustained, real-world cloud microservice operations.
+
+Assignment I primarily answered:
+
+“Is the current microservice behaviour anomalous?”
+
+For Assignment II, we are considering an advanced continuation that could answer:
+
+- What fault occurred?
+- Which service or instance caused it?
+- What logs, metrics, and traces support that conclusion?
+- What is the incident severity?
+- What remediation should an operator perform?
+- Can an operator investigate it using text or voice?
+
+The Assignment II project should be substantially new and should not look like merely adding one LLM call to Assignment I.
+
+==================================================
+3. MY PROFESSIONAL BACKGROUND
+==================================================
+
+I have approximately 12–13 years of IT experience and currently work primarily in:
+
+- Microsoft Azure
+- Azure Cloud Security
+- Azure DevOps
+- Terraform and Terragrunt
+- PowerShell
+- Python
+- Azure Policy
+- Azure RBAC and PIM
+- Azure Monitor
+- Log Analytics
+- KQL
+- Microsoft Sentinel
+- Managed identities
+- Service connections
+- Azure deployment pipelines
+- Azure APIs and REST APIs
+- Cloud governance and automation
+
+I am interested in AI/ML and MLOps projects that can also provide practical learning relevant to my Azure Cloud Security and Azure DevOps role.
+
+Therefore, a cloud-native microservice AIOps, observability, API security, authentication, incident diagnosis, or DevSecOps use case is preferable to an unrelated domain such as education or generic customer service.
+
+However, the dataset does not necessarily have to originate from Azure if it represents realistic cloud microservice operations and can be honestly mapped to:
+
+- Azure Kubernetes Service
+- Azure Monitor
+- Application Insights
+- Container Insights
+- Log Analytics
+- AppRequests
+- AppDependencies
+- AppExceptions
+- AppTraces
+- ContainerLogV2
+- InsightsMetrics
+- Azure DevOps pipelines
+
+We must not falsely claim that a dataset originated from Azure when it did not.
+
+==================================================
+4. TIME CONSTRAINT
+==================================================
+
+We currently have only about three days to implement the assignment.
+
+Therefore, we cannot:
+
+- Deploy a complete microservice application on AKS
+- Generate several gigabytes of telemetry ourselves
+- Build a very complex distributed production environment
+- Spend most of the available time reverse-engineering an undocumented dataset
+
+The project must be:
+
+- Realistic enough for academic evaluation
+- Technically meaningful
+- Implementable within three days
+- API friendly
+- Suitable for fine-tuning
+- Demonstrable through a UI and Swagger
+- Manageable in the available Kubeflow environment
+
+==================================================
+5. KUBEFLOW ENVIRONMENT
+==================================================
+
+A Kubeflow notebook has already been created with the maximum resources permitted by the namespace quota:
+
+Compute:
+- 1 NVIDIA GPU
+- The GPU used in my recent LLM assignment was an NVIDIA A100-class GPU, likely A100-SXM4 with 80 GB VRAM
+- 6 CPUs
+- 15 GiB system RAM
+
+Storage:
+- Workspace volume: 8 GiB
+- Dedicated data volume: 24 GiB
+- Total PVC quota: 32 GiB
+
+The 24 GiB data volume must accommodate:
+
+- Downloaded dataset archives
+- Extracted raw files
+- Processed Parquet or CSV files
+- Hugging Face model cache
+- Fine-tuned model
+- Checkpoints
+- MLflow artifacts
+- Temporary preprocessing files
+- Evaluation outputs
+
+Important constraints:
+
+- The complete dataset cannot consume the entire 24 GiB.
+- At least 3–4 GiB of free working space should remain.
+- The full dataset cannot be loaded into 15 GiB RAM.
+- Processing must be incremental, chunked, partition-based, or use Polars/PyArrow/Parquet.
+- A dataset whose extracted size is uncertain and potentially above 15–18 GiB is risky.
+- The A100 GPU is powerful, but storage, RAM, preprocessing time, and dataset documentation are the real constraints.
+
+==================================================
+6. PROJECT DIRECTION CURRENTLY UNDER CONSIDERATION
+==================================================
+
+A possible high-level project is:
+
+“API-Driven Multi-Source AIOps Copilot for Cloud Microservice Incident Classification, Root-Cause Localisation, Explanation, and Remediation”
+
+Possible selected AI categories:
+
+1. Natural Language Processing
+2. Speech Recognition
+
+Possible cohesive subtasks:
+
+1. Log-event classification
+2. Fault-category classification
+3. Root-cause service or instance prediction
+4. Incident-severity classification
+5. Incident summarisation
+6. Question answering over incident evidence
+7. Remediation recommendation using runbooks/RAG
+8. Incident-ticket generation
+9. Voice-to-text operator investigation using Whisper
+
+Potential API endpoints could include:
+
+POST /api/v1/incidents/classify
+POST /api/v1/incidents/root-cause
+POST /api/v1/incidents/severity
+POST /api/v1/incidents/summarize
+POST /api/v1/incidents/ask
+POST /api/v1/incidents/remediation
+POST /api/v1/incidents/generate-ticket
+POST /api/v1/voice/transcribe
+GET  /api/v1/incidents/{incident_id}
+GET  /api/v1/model-info
+GET  /api/v1/metrics
+GET  /health
+
+The fine-tuned model could be a DeBERTa-v3-base, ModernBERT-base, DistilBERT, or another suitable SLM for fault classification, severity classification, or root-cause classification.
+
+A separate instruction model could be used with RAG for summarisation, question answering, and remediation.
+
+==================================================
+7. DATASET OPTIONS CURRENTLY SHORTLISTED
+==================================================
+
+Please independently verify the latest official documentation, download size, extracted size, licensing, schemas, labels, and availability of each dataset before recommending it.
+
+OPTION 1: RCAEval selected RE2 and RE3 applications
+
+Possible selection:
+- RE2 Online Boutique
+- RE2 Sock Shop
+- RE3 Online Boutique
+- RE3 Sock Shop
+
+Approximate compressed total previously estimated:
+- Around 1.7–1.8 GB
+
+Expected but not officially confirmed working footprint:
+- Around 8–15 GiB
+
+Expected contents:
+- Metrics
+- Logs
+- Distributed traces
+- Fault injection timestamps
+- Fault types
+- Root-cause services
+- Resource faults
+- Network faults
+- Code-level faults
+
+Strengths:
+- Strong RCA ground truth
+- Clearly structured failure cases
+- Straightforward API schemas
+- Good for fault classification and root-cause prediction
+- Safer storage fit
+- Published RCA benchmark
+
+Weaknesses:
+- Uses benchmark applications such as Online Boutique and Sock Shop
+- Not Azure-specific
+- Need to verify whether the selected subset has enough records for meaningful fine-tuning
+- Need to verify exact extracted footprint
+
+OPTION 2: LO2v2 metrics plus selected OAuth microservice logs
+
+Known/estimated components:
+- Metrics archive around 1.3 GB compressed
+- Metrics around 6.3 GB extracted
+- OAuth logs archive around 2.9 GB compressed
+- Index file around 31 MB
+- Only selected logs should be extracted
+
+Expected working footprint:
+- Around 12–20 GiB depending on selected runs
+
+Expected contents:
+- OAuth 2.0 microservice application
+- Correct and intentionally erroneous tests
+- Container metrics
+- Host metrics
+- Application logs
+- Run/test metadata
+- API and authentication-related failures
+
+Strengths:
+- Strong relevance to OAuth, API security, Entra concepts, and cloud security
+- Realistic microservice/API testing
+- Modular packages
+- Suitable for logs and metrics analysis
+- Strong professional relevance
+
+Weaknesses:
+- RCA labels may be less direct than RCAEval
+- Distributed traces may be limited or more difficult to use
+- Need to inspect error categories and class balance
+- Full logs may not fit
+- API use case must be carefully defined
+
+OPTION 3: CCF AIOps Challenge 2022
+
+Known details previously considered:
+- Complete compressed archive around 9.5 GB
+- Multiple dates of logs, metrics, and traces
+- Approximately 40 microservice instances and 6 VMs
+- Ground truth may include fault category, severity, and root-cause instance
+- Cloud-like e-commerce workload
+
+Strengths:
+- Enterprise-looking multi-instance cloud telemetry
+- Logs, metrics, and traces
+- Multiple collection dates
+- Root-cause and severity information
+- Strong real-world scale
+
+Weaknesses:
+- Exact extracted size is unclear
+- The full archive is unsafe for the 24 GiB data volume
+- Selective extraction may be difficult
+- More schema and timestamp reverse engineering
+- High implementation risk within three days
+- A single date may or may not have sufficient class coverage
+
+OPTION 4: RCAEval RE2 Train Ticket only
+
+Approximate compressed size previously estimated:
+- Around 2.8 GB
+
+Expected working footprint:
+- Possibly 10–18 GiB
+
+Strengths:
+- One consistent and relatively complex microservice application
+- Metrics, logs, traces, resource/network faults, and RCA labels
+- Straightforward API design
+
+Weaknesses:
+- Extracted footprint could be too close to the storage limit
+- Less application diversity
+- Not Azure-specific
+- Exact extracted size must be confirmed
+
+OPTION 5: RCAEval RE3 complete suite
+
+Approximate compressed size:
+- Around 534 MB
+
+Expected working footprint:
+- Around 3–7 GiB
+
+Expected contents:
+- Around 90 code-level failure cases
+- Logs
+- Metrics
+- Traces
+- Stack-trace evidence
+- Response-code evidence
+- Root-cause labels
+
+Strengths:
+- Very safe for storage
+- Strong NLP and exception-analysis potential
+- Easy API implementation
+- Low risk
+
+Weaknesses:
+- May be too small to support the “enterprise-scale” project claim
+- Fewer incidents
+- Less resource/network-fault coverage
+
+==================================================
+8. WHAT I NEED FROM YOU
+==================================================
+
+Please provide an independent final checkpoint with the following:
+
+1. Recommend the best five datasets or dataset configurations for this exact assignment and Kubeflow environment.
+
+2. You may include datasets not listed above, but they must:
+   - Be publicly obtainable
+   - Have clear licensing or academic usage terms
+   - Fit within the 24 GiB data volume after accounting for models and processed outputs
+   - Support logs, metrics, traces, incidents, authentication events, cloud operations, or DevOps telemetry
+   - Have labels suitable for fine-tuning and objective evaluation
+   - Support a practical FastAPI application
+   - Be feasible within three days
+
+3. For every recommended dataset, provide:
+   - Official dataset name
+   - Official source/download location
+   - Domain
+   - Compressed download size
+   - Verified extracted size, if published
+   - If extracted size is not published, explicitly say “not officially documented”
+   - Recommended subset or packages
+   - Estimated working storage requirement
+   - Data types available: logs, metrics, traces, ground truth, topology, etc.
+   - Number of incidents/runs/classes when known
+   - Fine-tuning task that best fits it
+   - At least five cohesive AI subtasks
+   - Suggested API endpoints
+   - Main risks
+   - Expected three-day implementation complexity
+   - Azure relevance
+   - Overall score out of 100
+
+4. Explicitly compare:
+   - RCAEval selected RE2 + RE3 applications
+   - LO2v2 metrics + selected OAuth logs
+   - CCF AIOps 2022 one-date or selective subset
+   - Any better alternative you identify
+
+5. Recommend one final dataset and one backup dataset.
+
+6. Recommend the final problem statement for the selected dataset.
+
+7. Explain whether the project genuinely satisfies:
+   - Two AI categories
+   - At least five cohesive subtasks
+   - API-driven implementation
+   - Fine-tuning requirement
+   - LLMOps requirement
+   - Five or more metrics
+   - Interactive demonstration
+   - Three-day feasibility
+
+8. Provide a realistic storage plan for the 24 GiB data PVC, including:
+   - Raw/downloaded files
+   - Extracted data
+   - Processed Parquet
+   - Hugging Face cache
+   - Model/checkpoints
+   - MLflow and outputs
+   - Minimum free-space margin
+
+9. Recommend the simplest reliable architecture:
+   - Data preprocessing
+   - Fine-tuned classifier
+   - RAG/generative model if necessary
+   - FastAPI
+   - Streamlit or Gradio
+   - MLflow or lightweight LLMOps tracking
+
+10. Clearly distinguish:
+   - Verified facts
+   - Estimates
+   - Assumptions
+   - Recommendations
+
+11. Do not recommend deploying and collecting a new Azure microservice dataset because the assignment must be completed in approximately three days.
+
+12. Do not recommend a dataset simply because it is very large. Prioritise:
+   - Usable labelled incidents
+   - Dataset documentation
+   - API implementation feasibility
+   - Storage predictability
+   - Academic evaluation strength
+   - Professional Azure/cloud relevance
+   - Three-day delivery risk
+
+At the end, provide a concise decision table and state:
+
+- Final recommended dataset
+- Final backup dataset
+- Final project title
+- Final problem statement
+- Selected two AI categories
+- Mandatory fine-tuned model task
+- Core APIs to implement
+- Expected total storage consumption
+- Key reason for the final choice

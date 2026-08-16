@@ -1,0 +1,161 @@
+{
+  "audit_version": "exception-logging-audit-before-v1",
+  "generated_at_utc": "2026-08-14T12:52:39.621140+00:00",
+  "inspection_method": "static_ast_without_import",
+  "summary": {
+    "modules": 3,
+    "logger_initializers": 0,
+    "logging_calls": 0,
+    "observed_levels": [],
+    "raised_exceptions": 15,
+    "handled_exceptions": 3
+  },
+  "modules": [
+    {
+      "path": "src/services/image_service.py",
+      "line_count": 220,
+      "logger_initializers": [],
+      "logging_calls": [],
+      "severity_counts": {
+        "CRITICAL": 0,
+        "DEBUG": 0,
+        "ERROR": 0,
+        "EXCEPTION": 0,
+        "INFO": 0,
+        "WARNING": 0
+      },
+      "raised_exceptions": [
+        {
+          "context": "<module>.ImageValidationService.validate_and_decode",
+          "exception": "UnsupportedMediaTypeError(details={'received_media_type': media_type, 'supported_media_types': list(self.settings.supported_image_media_types)})",
+          "line": 83
+        },
+        {
+          "context": "<module>.ImageValidationService.validate_and_decode",
+          "exception": "InvalidImageError(details={'reason': 'The uploaded file is empty.'})",
+          "line": 94
+        },
+        {
+          "context": "<module>.ImageValidationService.validate_and_decode",
+          "exception": "UploadTooLargeError(details={'received_bytes': len(content), 'maximum_bytes': self.settings.maximum_upload_bytes})",
+          "line": 106
+        },
+        {
+          "context": "<module>.ImageValidationService.validate_and_decode",
+          "exception": "InvalidImageError(details={'reason': 'Image decoding or integrity validation failed.'})",
+          "line": 156
+        },
+        {
+          "context": "<module>.ImageValidationService.validate_and_decode",
+          "exception": "UnsupportedMediaTypeError(message='The declared media type does not match the decoded image format.', details={'declared_media_type': media_type, 'detected_format': detected_format})",
+          "line": 172
+        },
+        {
+          "context": "<module>.ImageValidationService.validate_and_decode",
+          "exception": "InvalidImageError(details={'reason': 'Image dimensions exceed the supported boundary.', 'width': width, 'height': height, 'maximum_width': MAXIMUM_IMAGE_WIDTH, 'maximum_height': MAXIMUM_IMAGE_HEIGHT})",
+          "line": 193
+        }
+      ],
+      "handled_exceptions": [
+        {
+          "context": "<module>.ImageValidationService.validate_and_decode",
+          "exception": "(UnidentifiedImageError, OSError, ValueError)",
+          "bound_name": "error",
+          "line": 151
+        }
+      ]
+    },
+    {
+      "path": "src/services/computer_vision_service.py",
+      "line_count": 432,
+      "logger_initializers": [],
+      "logging_calls": [],
+      "severity_counts": {
+        "CRITICAL": 0,
+        "DEBUG": 0,
+        "ERROR": 0,
+        "EXCEPTION": 0,
+        "INFO": 0,
+        "WARNING": 0
+      },
+      "raised_exceptions": [
+        {
+          "context": "<module>.ComputerVisionService._load_model",
+          "exception": "ModelNotReadyError(details={'component': 'computer_vision', 'reason': 'Frozen model loading failed.'})",
+          "line": 185
+        },
+        {
+          "context": "<module>.ComputerVisionService.predict",
+          "exception": "ModelNotReadyError(details={'component': 'computer_vision'})",
+          "line": 259
+        },
+        {
+          "context": "<module>.ComputerVisionService.predict",
+          "exception": "ServiceExecutionError(message='Computer-vision inference failed.', details={'component': 'computer_vision'})",
+          "line": 314
+        }
+      ],
+      "handled_exceptions": [
+        {
+          "context": "<module>.ComputerVisionService._load_model",
+          "exception": "Exception",
+          "bound_name": "error",
+          "line": 184
+        },
+        {
+          "context": "<module>.ComputerVisionService.predict",
+          "exception": "Exception",
+          "bound_name": "error",
+          "line": 313
+        }
+      ]
+    },
+    {
+      "path": "src/services/language_guardrail_service.py",
+      "line_count": 1077,
+      "logger_initializers": [],
+      "logging_calls": [],
+      "severity_counts": {
+        "CRITICAL": 0,
+        "DEBUG": 0,
+        "ERROR": 0,
+        "EXCEPTION": 0,
+        "INFO": 0,
+        "WARNING": 0
+      },
+      "raised_exceptions": [
+        {
+          "context": "<module>.DeterministicLanguageGuardrail.__init__",
+          "exception": "ValueError('The educational limitation is required.')",
+          "line": 104
+        },
+        {
+          "context": "<module>.DeterministicLanguageGuardrail.__init__",
+          "exception": "ValueError('The Grad-CAM limitation is required.')",
+          "line": 109
+        },
+        {
+          "context": "<module>.DeterministicLanguageGuardrail.__init__",
+          "exception": "ValueError('Professional-review guidance is required.')",
+          "line": 114
+        },
+        {
+          "context": "<module>.DeterministicLanguageGuardrail._normalize_findings",
+          "exception": "ValueError('The guardrail requires at least one grounded finding.')",
+          "line": 209
+        },
+        {
+          "context": "<module>.DeterministicLanguageGuardrail.audit",
+          "exception": "ValueError(f'Unsupported language task: {task_type}')",
+          "line": 563
+        },
+        {
+          "context": "<module>.DeterministicLanguageGuardrail.build_fallback",
+          "exception": "ValueError(f'Unsupported language task: {task_type}')",
+          "line": 936
+        }
+      ],
+      "handled_exceptions": []
+    }
+  ]
+}

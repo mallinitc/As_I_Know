@@ -1,0 +1,39 @@
+reformatted /home/jovyan/chest-xray-ai-assistant/api/routes/__init__.py
+reformatted /home/jovyan/chest-xray-ai-assistant/tests/api/conftest.py
+reformatted /home/jovyan/chest-xray-ai-assistant/api/routes/aggregate.py
+reformatted /home/jovyan/chest-xray-ai-assistant/tests/api/test_system_endpoints.py
+reformatted /home/jovyan/chest-xray-ai-assistant/api/core/runtime.py
+reformatted /home/jovyan/chest-xray-ai-assistant/tests/api/test_complete_endpoint.py
+reformatted /home/jovyan/chest-xray-ai-assistant/api/core/errors.py
+reformatted /home/jovyan/chest-xray-ai-assistant/api/core/dependencies.py
+reformatted /home/jovyan/chest-xray-ai-assistant/api/schemas/explainability.py
+reformatted /home/jovyan/chest-xray-ai-assistant/tests/api/test_language_endpoints.py
+reformatted /home/jovyan/chest-xray-ai-assistant/api/schemas/language.py
+reformatted /home/jovyan/chest-xray-ai-assistant/api/schemas/requests.py
+reformatted /home/jovyan/chest-xray-ai-assistant/api/core/telemetry.py
+reformatted /home/jovyan/chest-xray-ai-assistant/api/schemas/prediction.py
+reformatted /home/jovyan/chest-xray-ai-assistant/src/services/complete_workflow_service.py
+reformatted /home/jovyan/chest-xray-ai-assistant/api/routes/workflows.py
+reformatted /home/jovyan/chest-xray-ai-assistant/api/core/config.py
+reformatted /home/jovyan/chest-xray-ai-assistant/api/routes/system.py
+reformatted /home/jovyan/chest-xray-ai-assistant/api/schemas/aggregate.py
+reformatted /home/jovyan/chest-xray-ai-assistant/tests/api/test_image_endpoints.py
+reformatted /home/jovyan/chest-xray-ai-assistant/api/main.py
+reformatted /home/jovyan/chest-xray-ai-assistant/src/services/prediction_store_service.py
+reformatted /home/jovyan/chest-xray-ai-assistant/src/services/language_model_service.py
+reformatted /home/jovyan/chest-xray-ai-assistant/src/services/image_service.py
+reformatted /home/jovyan/chest-xray-ai-assistant/src/services/operational_metrics_service.py
+reformatted /home/jovyan/chest-xray-ai-assistant/src/services/image_workflow_service.py
+reformatted /home/jovyan/chest-xray-ai-assistant/ui/api_client.py
+reformatted /home/jovyan/chest-xray-ai-assistant/src/services/language_workflow_service.py
+reformatted /home/jovyan/chest-xray-ai-assistant/tests/unit/test_structured_logging.py
+reformatted /home/jovyan/chest-xray-ai-assistant/src/services/grounding_service.py
+reformatted /home/jovyan/chest-xray-ai-assistant/src/services/gradcam_service.py
+reformatted /home/jovyan/chest-xray-ai-assistant/api/core/factory.py
+reformatted /home/jovyan/chest-xray-ai-assistant/src/services/computer_vision_service.py
+reformatted /home/jovyan/chest-xray-ai-assistant/ui/components.py
+reformatted /home/jovyan/chest-xray-ai-assistant/ui/app.py
+reformatted /home/jovyan/chest-xray-ai-assistant/src/services/language_guardrail_service.py
+
+All done! ✨ 🍰 ✨
+36 files reformatted, 9 files left unchanged.

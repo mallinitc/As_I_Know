@@ -1,0 +1,95 @@
+{
+  "evaluated_at_utc": "2026-08-15T05:44:27.374169+00:00",
+  "models_loaded": false,
+  "project": "Software-Engineered Chest X-Ray Analysis and Explanation System",
+  "pytest": {
+    "duration_seconds": 71.64,
+    "passed_tests": 81,
+    "report": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/test_results/final_full_pytest.txt",
+    "return_code": 0,
+    "status": "PASS",
+    "warning_count": 1
+  },
+  "python_executable": "/opt/conda/bin/python",
+  "python_file_count": 62,
+  "python_version": "3.11.11",
+  "quality_gates": {
+    "black": {
+      "command": [
+        "/opt/conda/bin/python",
+        "-m",
+        "black",
+        "--check",
+        "--diff",
+        "src",
+        "api",
+        "ui",
+        "tests"
+      ],
+      "report": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/code_quality/final/black_final_repository.txt",
+      "return_code": 0,
+      "status": "PASS"
+    },
+    "compileall": {
+      "command": [
+        "/opt/conda/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "src",
+        "api",
+        "ui",
+        "tests"
+      ],
+      "report": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/code_quality/final/compileall_final_repository.txt",
+      "return_code": 0,
+      "status": "PASS"
+    },
+    "isort": {
+      "command": [
+        "/opt/conda/bin/python",
+        "-m",
+        "isort",
+        "--check-only",
+        "--diff",
+        "src",
+        "api",
+        "ui",
+        "tests"
+      ],
+      "report": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/code_quality/final/isort_final_repository.txt",
+      "return_code": 0,
+      "status": "PASS"
+    },
+    "ruff": {
+      "command": [
+        "/opt/conda/bin/python",
+        "-m",
+        "ruff",
+        "check",
+        "src",
+        "api",
+        "ui",
+        "tests"
+      ],
+      "report": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/code_quality/final/ruff_final_repository.txt",
+      "return_code": 0,
+      "status": "PASS"
+    }
+  },
+  "services_started": false,
+  "source_files_modified_by_validation": false,
+  "source_scopes": [
+    "src",
+    "api",
+    "ui",
+    "tests"
+  ],
+  "status": "PASS",
+  "storage": {
+    "free_gib": 8.707054138183594,
+    "protected_reserve_gib": 4.0,
+    "reserve_preserved": true
+  },
+  "test_file_count": 12
+}

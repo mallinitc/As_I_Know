@@ -1,0 +1,35 @@
+{
+  "evidence_version": "model-training-components-v1",
+  "generated_at_utc": "2026-08-15T03:57:49.554519+00:00",
+  "file_statuses": {
+    "src/models/resnet18_factory.py": "CREATED",
+    "src/models/__init__.py": "CREATED",
+    "src/training/small_batch_trainer.py": "CREATED",
+    "src/training/__init__.py": "CREATED"
+  },
+  "research_contract": {
+    "architecture": "ResNet-18",
+    "output_logits": 14,
+    "classifier_dropout": 0.2,
+    "loss": "BCEWithLogitsLoss",
+    "optimizer": "AdamW",
+    "gradient_clip_norm": 1.0
+  },
+  "production_components": [
+    "ResNet18Factory",
+    "SmallBatchTrainer",
+    "TrainingTrace"
+  ],
+  "quality_tools_passed": true,
+  "fresh_process_validation_passed": true,
+  "validation_result": {
+    "output_shape": [
+      2,
+      14
+    ],
+    "total_parameters": 11183694,
+    "trainable_parameters": 7182,
+    "batch_validation": "PASS"
+  },
+  "frozen_checkpoint_modified": false
+}

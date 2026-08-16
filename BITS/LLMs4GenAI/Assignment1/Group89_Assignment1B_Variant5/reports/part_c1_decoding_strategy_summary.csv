@@ -1,0 +1,8 @@
+strategy_name,prompts_tested,avg_output_tokens,avg_latency_seconds,avg_tokens_per_second,min_tokens_per_second,max_tokens_per_second
+Greedy,3,150.0,12.023,12.519,11.519,13.186
+Beam_Search,3,150.0,15.643,9.591,9.386,9.739
+Top_K_Sampling,3,150.0,11.275,13.304,13.19,13.387
+Top_P_Sampling,3,150.0,11.459,13.099,12.6,13.444
+Temperature_0_3,3,150.0,12.053,12.489,11.511,13.27
+Temperature_0_7,3,150.0,11.944,12.575,11.966,13.025
+Temperature_1_2,3,150.0,12.312,12.199,11.879,12.814

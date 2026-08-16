@@ -1,0 +1,159 @@
+contract_version: api-contract-v1
+created_utc: '2026-08-08T12:55:26.104287+00:00'
+api_title: API-Driven Chest X-Ray Analysis and Explanation Assistant
+api_version: v1
+api_prefix: /api/v1
+service_lineage:
+  computer_vision_model_version: resnet18-chestmnist-v1
+  language_model_version: flan-t5-small-chestmnist-v1
+  prompt_registry_version: grounded-language-prompts-v1
+upload_contract:
+  maximum_size_mib: 10
+  supported_media_types:
+  - image/png
+  - image/jpeg
+  image_mode_handling: convert accepted images to RGB
+common_response_fields:
+- request_id
+- timestamp_utc
+- api_version
+- status
+- model_versions
+- prompt_registry_version
+- latency_ms
+- warnings
+- educational_use_only
+common_error_fields:
+- request_id
+- timestamp_utc
+- api_version
+- status
+- error_code
+- message
+- details
+- latency_ms
+- educational_use_only
+global_response_rules:
+- Generate a UUID request identifier for every request.
+- Return an ISO-8601 UTC timestamp.
+- Return model and prompt lineage where applicable.
+- Return total endpoint latency in milliseconds.
+- Return guardrail action and trigger reasons for language outputs.
+- Do not expose internal tracebacks or filesystem paths.
+- Do not claim that an output is a clinical diagnosis.
+- Do not claim that Grad-CAM confirms or segments a lesion.
+- Preserve the no-target-finding interpretation boundary.
+endpoints:
+- name: health
+  method: GET
+  path: /health
+  summary: Report API and loaded-service health.
+  request_contract: null
+  response_contract: HealthResponse
+  services: []
+- name: model_info
+  method: GET
+  path: /api/v1/model/info
+  summary: Return model, prompt, and explainability lineage.
+  request_contract: null
+  response_contract: ModelInfoResponse
+  services:
+  - computer_vision
+  - grounded_language
+- name: model_metrics
+  method: GET
+  path: /api/v1/model/metrics
+  summary: Return frozen computer-vision and language metrics.
+  request_contract: null
+  response_contract: ModelMetricsResponse
+  services:
+  - computer_vision
+  - grounded_language
+- name: classify_image
+  method: POST
+  path: /api/v1/image/classify
+  summary: Classify the supported ChestMNIST findings.
+  request_contract: multipart/form-data image
+  response_contract: ClassificationResponse
+  services:
+  - computer_vision
+  - prediction_store
+- name: analyze_image
+  method: POST
+  path: /api/v1/image/analyze
+  summary: Classify an image and generate finding-specific Grad-CAM evidence.
+  request_contract: multipart/form-data image
+  response_contract: ImageAnalysisResponse
+  services:
+  - computer_vision
+  - gradcam
+  - prediction_store
+- name: generate_report
+  method: POST
+  path: /api/v1/report/generate
+  summary: Generate a guarded structured preliminary report.
+  request_contract: GroundedGenerationRequest
+  response_contract: LanguageGenerationResponse
+  services:
+  - prediction_store
+  - grounded_language
+  - language_guardrail
+- name: generate_explanation
+  method: POST
+  path: /api/v1/explanation/generate
+  summary: Generate a guarded plain-language explanation.
+  request_contract: GroundedGenerationRequest
+  response_contract: LanguageGenerationResponse
+  services:
+  - prediction_store
+  - grounded_language
+  - language_guardrail
+- name: answer_question
+  method: POST
+  path: /api/v1/question/answer
+  summary: Answer a question using only stored grounded model evidence.
+  request_contract: GroundedQuestionRequest
+  response_contract: LanguageGenerationResponse
+  services:
+  - prediction_store
+  - grounded_language
+  - language_guardrail
+- name: recommend_follow_up
+  method: POST
+  path: /api/v1/follow-up/recommend
+  summary: Generate controlled educational follow-up guidance.
+  request_contract: GroundedGenerationRequest
+  response_contract: LanguageGenerationResponse
+  services:
+  - prediction_store
+  - grounded_language
+  - language_guardrail
+- name: analyze_complete
+  method: POST
+  path: /api/v1/analyze-complete
+  summary: Run classification, Grad-CAM, and all grounded language tasks.
+  request_contract: multipart/form-data image with optional question
+  response_contract: CompleteAnalysisResponse
+  services:
+  - computer_vision
+  - gradcam
+  - grounded_language
+  - language_guardrail
+  - prediction_store
+  - operational_metrics
+- name: get_prediction
+  method: GET
+  path: /api/v1/predictions/{prediction_id}
+  summary: Retrieve a previously stored prediction result.
+  request_contract: prediction_id path parameter
+  response_contract: StoredPredictionResponse
+  services:
+  - prediction_store
+- name: llmops_metrics
+  method: GET
+  path: /api/v1/llmops/metrics
+  summary: Return aggregate request, latency, generation, and guardrail metrics.
+  request_contract: null
+  response_contract: OperationalMetricsResponse
+  services:
+  - operational_metrics

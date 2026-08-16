@@ -1,0 +1,415 @@
+{
+  "evidence_version": "transactional-code-remediation-v1",
+  "generated_at_utc": "2026-08-14T15:48:14.988729+00:00",
+  "source_scope": [
+    "src",
+    "api",
+    "ui",
+    "tests"
+  ],
+  "transaction_snapshot_files": 45,
+  "pre_remediation_tests_passed": true,
+  "pre_remediation_pytest_output": "\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[33m                                            [100%]\u001b[0m\n\u001b[33m\u001b[32m29 passed\u001b[0m, \u001b[33m\u001b[1m1 warning\u001b[0m\u001b[33m in 43.18s\u001b[0m\u001b[0m",
+  "commands": {
+    "ruff_fix": {
+      "return_code": 0,
+      "report_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/code_quality/after/ruff_fix.txt"
+    },
+    "isort_apply": {
+      "return_code": 0,
+      "report_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/code_quality/after/isort_apply.txt"
+    },
+    "black_apply": {
+      "return_code": 0,
+      "report_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/code_quality/after/black_apply.txt"
+    }
+  },
+  "compile_passed": true,
+  "public_symbols_preserved": true,
+  "post_remediation_tests_passed": true,
+  "post_remediation_pytest_output": "\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[33m                                            [100%]\u001b[0m\n\u001b[33m\u001b[32m29 passed\u001b[0m, \u001b[33m\u001b[1m1 warning\u001b[0m\u001b[33m in 35.14s\u001b[0m\u001b[0m",
+  "modified_file_count": 38,
+  "modified_files": [
+    {
+      "path": "api/core/config.py",
+      "sha256_before": "75537df61959ad4c182054a7356ec7faa3f3f3d7f539b3cef4dbe8ae3f231037",
+      "sha256_after": "3ba1894ed9fd203f418fb96f1113cce2e500f020b872ecf0101e458192f6309d",
+      "lines_before": 257,
+      "lines_after": 187,
+      "diff_added_lines": 31,
+      "diff_removed_lines": 101,
+      "public_symbols_preserved": true
+    },
+    {
+      "path": "api/core/dependencies.py",
+      "sha256_before": "38b0735b9715604e54fb1497832231669b5a3e4c679afa2addf9169c8c760672",
+      "sha256_after": "13fbd31742110bfb8e6a04779b3b32f0124acd82cf957603591fb86ac57d8ae1",
+      "lines_before": 203,
+      "lines_after": 137,
+      "diff_added_lines": 23,
+      "diff_removed_lines": 89,
+      "public_symbols_preserved": true
+    },
+    {
+      "path": "api/core/errors.py",
+      "sha256_before": "243403310d1776702e0b199cdcfbc01f867ef7bae77def052411b64f62e5bca7",
+      "sha256_after": "7ccfa013018c8f831bb81ed25d426401c662d0aa6b8713bcc6c5ec05eb0d6d02",
+      "lines_before": 147,
+      "lines_after": 119,
+      "diff_added_lines": 23,
+      "diff_removed_lines": 51,
+      "public_symbols_preserved": true
+    },
+    {
+      "path": "api/core/factory.py",
+      "sha256_before": "bf3597059b000d2d6574dc1442c7eeb361a02bb256b34f5867486546a64ac236",
+      "sha256_after": "7a6ca5e8215131236b94deb021e46681e1ee40eda61fbcff201e8846994d857c",
+      "lines_before": 589,
+      "lines_after": 366,
+      "diff_added_lines": 166,
+      "diff_removed_lines": 389,
+      "public_symbols_preserved": true
+    },
+    {
+      "path": "api/core/runtime.py",
+      "sha256_before": "d9dc3cae44ebbcc74483355c9edbbbd8cbe54c784e0574ec9d79a5b9a1c54669",
+      "sha256_after": "de121fcf9f7a83a9d0d81d120768c4827c921323e2ec04a35671378f4c83d89a",
+      "lines_before": 150,
+      "lines_after": 107,
+      "diff_added_lines": 17,
+      "diff_removed_lines": 60,
+      "public_symbols_preserved": true
+    },
+    {
+      "path": "api/core/telemetry.py",
+      "sha256_before": "d24a1c2cc25078088060e838d081d840cb028364774b866c989289f84481e41c",
+      "sha256_after": "9633df766fc192609c2ade6fcdb7d7c93e3de97b28ee9d467917a2f65e8dcd56",
+      "lines_before": 208,
+      "lines_after": 141,
+      "diff_added_lines": 25,
+      "diff_removed_lines": 92,
+      "public_symbols_preserved": true
+    },
+    {
+      "path": "api/main.py",
+      "sha256_before": "39333aea0e739cd5278c2991ab871d4a07a1f0a77d2a3e94bc8cca6772a9617e",
+      "sha256_after": "387daea511cb176c257b2064a0b157cfe66114a4761e6b361d8431d82e9e6e5c",
+      "lines_before": 407,
+      "lines_after": 286,
+      "diff_added_lines": 81,
+      "diff_removed_lines": 202,
+      "public_symbols_preserved": true
+    },
+    {
+      "path": "api/routes/__init__.py",
+      "sha256_before": "05d7236b88e7eccd10c13007ee06fefb92136fa18bda78ed470b6b69cbfedd5b",
+      "sha256_after": "971c0e938510a823d28a9d9d97d9b2e8a6305e6553045217f92b9741b8183c59",
+      "lines_before": 20,
+      "lines_after": 12,
+      "diff_added_lines": 3,
+      "diff_removed_lines": 11,
+      "public_symbols_preserved": true
+    },
+    {
+      "path": "api/routes/aggregate.py",
+      "sha256_before": "9e0f5523046dae8500b62c7790c44b20d986d7ee382450467db9cc2fd97b688b",
+      "sha256_after": "9431968bb8a9a53571c56bef97ff76f886092637d5ea2fc1a4d722e7ae9ee7cd",
+      "lines_before": 128,
+      "lines_after": 90,
+      "diff_added_lines": 16,
+      "diff_removed_lines": 54,
+      "public_symbols_preserved": true
+    },
+    {
+      "path": "api/routes/system.py",
+      "sha256_before": "2cb1312e6d75f500a67b4c20155eda58c77079d91f5397ee6e01ed68d8fd8163",
+      "sha256_after": "8a08fdb531139c8784b77c144448f8dc1b3111720899b6cde5967d6a36bd7c02",
+      "lines_before": 223,
+      "lines_after": 163,
+      "diff_added_lines": 24,
+      "diff_removed_lines": 84,
+      "public_symbols_preserved": true
+    },
+    {
+      "path": "api/routes/workflows.py",
+      "sha256_before": "5985fb08ddc345046f8581f2a1c1baa38a137f3f4f091ee752fc21e23a31d604",
+      "sha256_after": "26c3028489602270e03d88a953cfd95bb511d63cc432d2c7da9b10bb0c07c408",
+      "lines_before": 255,
+      "lines_after": 201,
+      "diff_added_lines": 25,
+      "diff_removed_lines": 79,
+      "public_symbols_preserved": true
+    },
+    {
+      "path": "api/schemas/__init__.py",
+      "sha256_before": "11930faaef4184835b9a5875f42f735c61a007bfe8f710a9405278ff60770694",
+      "sha256_after": "04e53d7b3f38a58fd426f811980e852e1cd45a67c45cd2bfa0fd1ea77f11fa69",
+      "lines_before": 63,
+      "lines_after": 61,
+      "diff_added_lines": 1,
+      "diff_removed_lines": 3,
+      "public_symbols_preserved": true
+    },
+    {
+      "path": "api/schemas/aggregate.py",
+      "sha256_before": "28315f43fb5cf320977b98835d999675a217df0c1fb3d1c5fc901b52b3ce78fd",
+      "sha256_after": "9ee7f733a3124fd5e4c8fd6db7fc044bb8c28f94d7084394485d9813c7f78716",
+      "lines_before": 211,
+      "lines_after": 156,
+      "diff_added_lines": 26,
+      "diff_removed_lines": 81,
+      "public_symbols_preserved": true
+    },
+    {
+      "path": "api/schemas/explainability.py",
+      "sha256_before": "a3db9676795c5f8bf0c962ae0e650812a3359be6d06fc0889a42a41b6c15c0ec",
+      "sha256_after": "0dda149d9c56ee50f5dc39722f65c2b8e1dc06694a9ce91b5a21fea403b5cb1f",
+      "lines_before": 122,
+      "lines_after": 98,
+      "diff_added_lines": 14,
+      "diff_removed_lines": 38,
+      "public_symbols_preserved": true
+    },
+    {
+      "path": "api/schemas/language.py",
+      "sha256_before": "e6aa80b250c42b32bfc892993b4f001a4c29b881a04d4206f7551c228abe5e19",
+      "sha256_after": "a23c32a046c3136b7d91bf1bf51f697cb3abb0a995741b3a36cfd9f950501d48",
+      "lines_before": 133,
+      "lines_after": 110,
+      "diff_added_lines": 12,
+      "diff_removed_lines": 35,
+      "public_symbols_preserved": true
+    },
+    {
+      "path": "api/schemas/prediction.py",
+      "sha256_before": "7c9c0ff219b46f5c24012ac6f40531cf659c1822a8769dc53447bb5f262fe41e",
+      "sha256_after": "e3b13b2d9ab131562299204a724954249825e9938f2b4cd549d040d3c79c7b4b",
+      "lines_before": 110,
+      "lines_after": 88,
+      "diff_added_lines": 15,
+      "diff_removed_lines": 37,
+      "public_symbols_preserved": true
+    },
+    {
+      "path": "api/schemas/requests.py",
+      "sha256_before": "f2b276869a95d48981da8b7f68e63a45d2bd7706603fb1a1796eccdbb81b90c5",
+      "sha256_after": "d94579471aebf1931706d61aba7be376e337af536a2d19b059c7008c6f28500f",
+      "lines_before": 80,
+      "lines_after": 76,
+      "diff_added_lines": 3,
+      "diff_removed_lines": 7,
+      "public_symbols_preserved": true
+    },
+    {
+      "path": "api/schemas/system.py",
+      "sha256_before": "3dd312c4c783f79f2e83c22a9f58402c74a80fdaf0637ab66b123e869c8f64c2",
+      "sha256_after": "11363b499b7cbb6355fd37b9644317bce08a93402b2937dcabfe8d070fdcf6ac",
+      "lines_before": 99,
+      "lines_after": 98,
+      "diff_added_lines": 0,
+      "diff_removed_lines": 1,
+      "public_symbols_preserved": true
+    },
+    {
+      "path": "src/services/complete_workflow_service.py",
+      "sha256_before": "312b930b56ab147a0489672b0dd2df9b90119b1e6641376527ccf7e16a483816",
+      "sha256_after": "dcc4482440a0236e358190879c0519b219481111a12b47bfec5fd88b728c7416",
+      "lines_before": 212,
+      "lines_after": 125,
+      "diff_added_lines": 47,
+      "diff_removed_lines": 134,
+      "public_symbols_preserved": true
+    },
+    {
+      "path": "src/services/computer_vision_service.py",
+      "sha256_before": "773971e95717452881800e09b55509ec98aeef073f22df03d9ce112bbf555950",
+      "sha256_after": "9c68baf5d2f3c595257f3cbd12c7642b4c04af1a0070a2f0300e4faaea82857a",
+      "lines_before": 510,
+      "lines_after": 346,
+      "diff_added_lines": 76,
+      "diff_removed_lines": 240,
+      "public_symbols_preserved": true
+    },
+    {
+      "path": "src/services/gradcam_service.py",
+      "sha256_before": "7238446e8d95ff89460e36479d71fead2ca3461d66cc307e66577937eb4120cb",
+      "sha256_after": "b2fbd53fa844d75a4b06977a92e4a9f6b42092550374bdc5075ee497456df0f3",
+      "lines_before": 479,
+      "lines_after": 386,
+      "diff_added_lines": 60,
+      "diff_removed_lines": 153,
+      "public_symbols_preserved": true
+    },
+    {
+      "path": "src/services/grounding_service.py",
+      "sha256_before": "791d7e8b0c160acaf574a538f579dd0858fdae3af7fab20421278a6919134945",
+      "sha256_after": "36412650aba99ef89244fa9fa2028e91139d278dbac1f58b655c4df2c59403b3",
+      "lines_before": 496,
+      "lines_after": 383,
+      "diff_added_lines": 66,
+      "diff_removed_lines": 179,
+      "public_symbols_preserved": true
+    },
+    {
+      "path": "src/services/image_service.py",
+      "sha256_before": "7c884bf40a7a947d9b1d3039c6b2d8a932474089978caba6ecfeb55bdb488a4b",
+      "sha256_after": "bec73d1c3d6ac5436442e0520ae7fc3aa125c7c61c7dd0a692652f91156cc680",
+      "lines_before": 303,
+      "lines_after": 240,
+      "diff_added_lines": 31,
+      "diff_removed_lines": 94,
+      "public_symbols_preserved": true
+    },
+    {
+      "path": "src/services/image_workflow_service.py",
+      "sha256_before": "0b891c00c119b2b1a505acb025eaf07bc308cb2321884a4d502560f02004d551",
+      "sha256_after": "b90d1668b67a48da72f6e6b41796b43733ce05bcacd99fa477e089d8ba8ee683",
+      "lines_before": 391,
+      "lines_after": 245,
+      "diff_added_lines": 83,
+      "diff_removed_lines": 229,
+      "public_symbols_preserved": true
+    },
+    {
+      "path": "src/services/language_guardrail_service.py",
+      "sha256_before": "b352348b70715e2749d373c1fbe3b0c8c83f39d02d289bdf234e8b83d6686cac",
+      "sha256_after": "4715c3ecb5d38f5d2eb895c1739cf4c5e1a52522555fc818c827a91be86f48e5",
+      "lines_before": 1143,
+      "lines_after": 942,
+      "diff_added_lines": 137,
+      "diff_removed_lines": 338,
+      "public_symbols_preserved": true
+    },
+    {
+      "path": "src/services/language_model_service.py",
+      "sha256_before": "91ba397b0df2ecae22a0bd9c150a480c111214487b0c48900ced97aa10e7474c",
+      "sha256_after": "133cc1ba47394a368879ce35faa8be1508a71d173667bee9f2b661cfc0786b5b",
+      "lines_before": 377,
+      "lines_after": 279,
+      "diff_added_lines": 78,
+      "diff_removed_lines": 176,
+      "public_symbols_preserved": true
+    },
+    {
+      "path": "src/services/language_workflow_service.py",
+      "sha256_before": "4a099bdeaae8950044cb7f437fc6f170883476bddd614f8dfc2ae71945d4493f",
+      "sha256_after": "57c8e239b121b2c7baf566b5e12ab906d6fa10552d1b50c4725f73640dfa5c1d",
+      "lines_before": 359,
+      "lines_after": 244,
+      "diff_added_lines": 60,
+      "diff_removed_lines": 175,
+      "public_symbols_preserved": true
+    },
+    {
+      "path": "src/services/operational_metrics_service.py",
+      "sha256_before": "2a4a02e4a8843db36c24b9b4ff53042fc0bc9c70a07ac38a7c56950dbe366e67",
+      "sha256_after": "9be02be95bcf76d345a3811a27651945df17eb3bf56fc62dad6e7d7e6253a851",
+      "lines_before": 459,
+      "lines_after": 301,
+      "diff_added_lines": 81,
+      "diff_removed_lines": 239,
+      "public_symbols_preserved": true
+    },
+    {
+      "path": "src/services/prediction_store_service.py",
+      "sha256_before": "2c7a1fb92b89e210ebcce443729a47e8a244144726a02ce3ce2b4d5f41d23987",
+      "sha256_after": "e2959fdbb0ab8d2b5f864d79ec05c6590b2b3139cda2dd54fe3419db39e6b039",
+      "lines_before": 309,
+      "lines_after": 214,
+      "diff_added_lines": 46,
+      "diff_removed_lines": 141,
+      "public_symbols_preserved": true
+    },
+    {
+      "path": "tests/api/conftest.py",
+      "sha256_before": "75df3ccb11fdcb2712bbd9de737af3fab2789622c29e62fe941814989ad408b6",
+      "sha256_after": "a614bc3dbd2474d0dda96860f29f60b3481294c62ee901014b50586d7b19f9e8",
+      "lines_before": 78,
+      "lines_after": 71,
+      "diff_added_lines": 3,
+      "diff_removed_lines": 10,
+      "public_symbols_preserved": true
+    },
+    {
+      "path": "tests/api/test_complete_endpoint.py",
+      "sha256_before": "91026a170d2eba479ad9c8d299c4b48970fb26796bb80ce455b1968ed807c9fd",
+      "sha256_after": "8b23727b2fa172818f712d8059ea361b91c6689b6c241f3742840997be57cf65",
+      "lines_before": 145,
+      "lines_after": 108,
+      "diff_added_lines": 14,
+      "diff_removed_lines": 51,
+      "public_symbols_preserved": true
+    },
+    {
+      "path": "tests/api/test_image_endpoints.py",
+      "sha256_before": "0c13c74e01ed857d8b0e41406a72bd2cf9f36e443f2599e6333e6db309aa4b45",
+      "sha256_after": "22dea8464df290517425cfdcb6d90896d9529279e4766a868103734a608b2b61",
+      "lines_before": 192,
+      "lines_after": 145,
+      "diff_added_lines": 15,
+      "diff_removed_lines": 62,
+      "public_symbols_preserved": true
+    },
+    {
+      "path": "tests/api/test_language_endpoints.py",
+      "sha256_before": "847fcc9092d005665fe59a9e8f45172424ff00f7fe25d4fdba4bfb1509455dce",
+      "sha256_after": "9033d7ff96a13f6ca48a7c13ea6d0e97cd9c5f461fc8c127c6b9d1adf816c265",
+      "lines_before": 187,
+      "lines_after": 129,
+      "diff_added_lines": 18,
+      "diff_removed_lines": 76,
+      "public_symbols_preserved": true
+    },
+    {
+      "path": "tests/api/test_system_endpoints.py",
+      "sha256_before": "4788cbec3b5d053cbd6c43eb7d925924f34a1db482af4ebdcc2610248198937a",
+      "sha256_after": "e19c900374e7aff199cd526a1c59b159483de862cc84fa551666c7cf648aa32d",
+      "lines_before": 123,
+      "lines_after": 88,
+      "diff_added_lines": 16,
+      "diff_removed_lines": 51,
+      "public_symbols_preserved": true
+    },
+    {
+      "path": "tests/unit/test_structured_logging.py",
+      "sha256_before": "0f0d68170823d23750096c2130b7b6ecd92c42157a39f899b00306813019ec1f",
+      "sha256_after": "3c2847f2e4cffd1f417293995cc5555b5a0f2b6d858f45e47156e80697e31ef7",
+      "lines_before": 335,
+      "lines_after": 265,
+      "diff_added_lines": 38,
+      "diff_removed_lines": 108,
+      "public_symbols_preserved": true
+    },
+    {
+      "path": "ui/api_client.py",
+      "sha256_before": "100599050fae5bc8f2e3fc6a6e83e23cdf7de7f2593dd16367e5367ef477afbf",
+      "sha256_after": "7879b86a38862141c7634b41fac25051457169069767b84a5ab52f0ab6a49279",
+      "lines_before": 285,
+      "lines_after": 275,
+      "diff_added_lines": 17,
+      "diff_removed_lines": 27,
+      "public_symbols_preserved": true
+    },
+    {
+      "path": "ui/app.py",
+      "sha256_before": "b4a734267c1164f2590433b3ec758a59d703f9204cf788bfaf6de57f219d9441",
+      "sha256_after": "48143abc578ae07281f03055fe2a4b5f701d1927662d0e6292fc2182c45a709a",
+      "lines_before": 911,
+      "lines_after": 735,
+      "diff_added_lines": 100,
+      "diff_removed_lines": 276,
+      "public_symbols_preserved": true
+    },
+    {
+      "path": "ui/components.py",
+      "sha256_before": "0367ed59a4caded18136cce95653c91d0f09bcf89a7bd5bb4af4a461ee1e76f2",
+      "sha256_after": "39dfbd806b3f9204971afb6bc2f3b049cdb21c77e871feafd19d216ada1fd5cc",
+      "lines_before": 820,
+      "lines_after": 691,
+      "diff_added_lines": 70,
+      "diff_removed_lines": 199,
+      "public_symbols_preserved": true
+    }
+  ],
+  "rollback_required": false
+}

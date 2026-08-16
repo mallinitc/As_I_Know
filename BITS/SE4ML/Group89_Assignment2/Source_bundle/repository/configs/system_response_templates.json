@@ -1,0 +1,55 @@
+{
+  "health": {
+    "components": {
+      "computer_vision": {
+        "detail": "The model artifact is available but has not been loaded.",
+        "device": null,
+        "loaded": false,
+        "status": "not_loaded"
+      },
+      "grounded_language": {
+        "detail": "The model artifact is available but has not been loaded.",
+        "device": null,
+        "loaded": false,
+        "status": "not_loaded"
+      }
+    },
+    "service_name": "API-Driven Chest X-Ray Analysis and Explanation Assistant"
+  },
+  "model_info": {
+    "computer_vision": {
+      "architecture": "ResNet-18",
+      "input_resolution": "224x224",
+      "labels": 14
+    },
+    "explainability": {
+      "method": "LayerGradCam",
+      "target_layer": "layer4[-1].conv2"
+    },
+    "language": {
+      "base_model": "google/flan-t5-small",
+      "fine_tuning": "full sequence-to-sequence",
+      "tasks": 4
+    },
+    "limitations": [
+      "The service is an educational decision-support prototype.",
+      "Grad-CAM does not confirm or segment a lesion."
+    ]
+  },
+  "model_metrics": {
+    "computer_vision_metrics": {
+      "macro_roc_auc": 0.8175,
+      "micro_f1": 0.3391
+    },
+    "guardrail_metrics": {
+      "guarded_contract_compliance": 1.0,
+      "raw_acceptance_rate": 0.7267
+    },
+    "language_metrics": {
+      "bleu_4": 0.7393,
+      "rouge_l_f1": 0.8489
+    }
+  },
+  "operational_static": {},
+  "template_version": "system-response-templates-v1"
+}

@@ -1,0 +1,61 @@
+mode,prompt_id,prompt,generated_text,input_tokens,output_tokens,latency_seconds,tokens_per_second,peak_vram_gb
+normal_target_generation,P1_VPN_Authentication_Failure,"User cannot connect to corporate VPN. Error: ""Authentication failure"" on Cisco AnyConnect. Provide a step-by-step resolution procedure.","1. Check the network connection: Ensure that the user is connected to the corporate network and that the network connection is stable. 2. Verify the network settings: Confirm that the user's network settings are correct, including the IP address, subnet mask, default gateway, and DNS server addresses. 3. Check the firewall settings: Verify that the user's firewall settings allow traffic to the corporate network and the Cisco AnyConnect server. 4. Check the Cisco AnyConnect client settings: Ensure that the user has installed the latest version of the Cisco AnyConnect client and that it is configured correctly. 5. Check the Cisco AnyConnect client logs: Review the logs for any error messages or warnings that may indicate the cause of the authentication failure",26,150,11.744,12.772,3.588
+speculative_decoding,P1_VPN_Authentication_Failure,"User cannot connect to corporate VPN. Error: ""Authentication failure"" on Cisco AnyConnect. Provide a step-by-step resolution procedure.","1. Check the network connection: Ensure that the user is connected to the corporate network and that the network connection is stable. 2. Verify the network settings: Confirm that the user's network settings are correct, including the IP address, subnet mask, default gateway, and DNS server addresses. 3. Check the firewall settings: Verify that the user's firewall settings allow traffic to the corporate network and the Cisco AnyConnect server. 4. Check the Cisco AnyConnect client settings: Ensure that the user has installed the latest version of the Cisco AnyConnect client and that it is configured correctly. 5. Check the Cisco AnyConnect client logs: Review the logs for any error messages or warnings that may indicate the cause of the authentication failure",26,150,10.764,13.936,3.622
+normal_target_generation,P2_Linux_Disk_Usage_98,A Linux server reports disk usage at 98%. Which commands should an IT helpdesk engineer run to identify and clean large files safely?,"To identify and clean large files safely, the IT helpdesk engineer can use the following commands:
+
+1. **Find Large Files:**
+   Use the `du` (disk usage) command with the `-h` option to find large files:
+   ```sh
+   du -ah --max-depth=1 /path/to/directory | sort -hr
+   ```
+   This will list all files in the specified directory and its subdirectories, sorted by size in human-readable format.
+
+2. **Identify Large Directories:**
+   Use the `du` command with the `-d 0` option to find directories that consume a lot of space:
+   ```sh
+   du -d 0 -h /path/to/directory",28,150,11.671,12.852,3.589
+speculative_decoding,P2_Linux_Disk_Usage_98,A Linux server reports disk usage at 98%. Which commands should an IT helpdesk engineer run to identify and clean large files safely?,"To identify and clean large files safely, the IT helpdesk engineer can use the following commands:
+
+1. **Find Large Files:**
+   Use the `du` (disk usage) command with the `-h` option to find large files:
+   ```sh
+   du -ah --max-depth=1 /path/to/directory | sort -hr
+   ```
+   This will list all files in the specified directory and its subdirectories, sorted by size in human-readable format.
+
+2. **Identify Large Directories:**
+   Use the `du` command with the `-d 0` option to find directories that consume a lot of space:
+   ```sh
+   du -d 0 -h /path/to/directory",28,150,9.281,16.162,3.625
+normal_target_generation,P3_AD_Account_Locked,A user account is locked after multiple failed login attempts. Explain the standard incident resolution steps for unlocking the account and documenting the ticket.,"Standard Incident Resolution Steps:
+
+1. Verify the issue: Confirm that the account is indeed locked due to multiple failed login attempts.
+
+2. Unlock the account: Use the appropriate command or procedure to unlock the account. For example, if using a Unix-based system, you can use the following command:
+   ```
+   sudo passwd -u username
+   ```
+
+3. Notify the user: Inform the user that their account has been unlocked and provide any necessary instructions on how to log in again.
+
+4. Document the incident: Create a new ticket with the following information:
+
+   - Ticket Title: Account Lockout Incident
+   - Ticket Description: The user's account was locked due to multiple failed login attempts. The account has now been unlocked.
+   -",26,150,11.153,13.45,3.588
+speculative_decoding,P3_AD_Account_Locked,A user account is locked after multiple failed login attempts. Explain the standard incident resolution steps for unlocking the account and documenting the ticket.,"Standard Incident Resolution Steps:
+
+1. Verify the issue: Confirm that the account is indeed locked due to multiple failed login attempts.
+
+2. Unlock the account: Use the appropriate command or procedure to unlock the account. For example, if using a Unix-based system, you can use the following command:
+   ```
+   sudo passwd -u username
+   ```
+
+3. Notify the user: Inform the user that their account has been unlocked and provide any necessary instructions on how to log in again.
+
+4. Document the incident: Create a new ticket with the following information:
+
+   - Ticket Title: Account Lockout Incident
+   - Ticket Description: The user's account was locked due to multiple failed login attempts. The account has now been unlocked.
+   -",26,150,9.53,15.74,3.623

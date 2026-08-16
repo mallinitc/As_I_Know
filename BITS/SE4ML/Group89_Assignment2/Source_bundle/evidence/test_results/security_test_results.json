@@ -1,0 +1,18 @@
+{
+  "evidence_version": "image-upload-security-tests-v1",
+  "generated_at_utc": "2026-08-15T04:23:25.251412+00:00",
+  "test_file": "tests/security/test_image_upload_security.py",
+  "return_code": 0,
+  "tests_passed": true,
+  "controls": {
+    "empty_upload_rejection": true,
+    "malformed_image_rejection": true,
+    "mime_format_consistency": true,
+    "maximum_upload_size": true,
+    "maximum_dimensions": true,
+    "path_traversal_prevention": true,
+    "safe_rgb_conversion": true,
+    "raw_content_excluded_from_errors": true
+  },
+  "pytest_output_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/test_results/security_pytest.txt"
+}

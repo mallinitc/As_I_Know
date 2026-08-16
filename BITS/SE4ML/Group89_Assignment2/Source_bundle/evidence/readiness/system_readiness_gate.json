@@ -1,0 +1,131 @@
+{
+  "api_contract": {
+    "openapi_operations": 12,
+    "openapi_paths": 12
+  },
+  "engineering_baseline": {
+    "black": "PASS",
+    "compileall": "PASS",
+    "isort": "PASS",
+    "python_files": 62,
+    "ruff": "PASS",
+    "test_modules": 12,
+    "tests_passed": 81
+  },
+  "evaluated_at_utc": "2026-08-15T05:55:49.679713+00:00",
+  "gate_count": 13,
+  "gates": {
+    "code_quality": {
+      "artifact": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/readiness/final_engineering_validation.json",
+      "passed": true,
+      "status": "PASS"
+    },
+    "data_quality": {
+      "artifact": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/data_quality/data_quality_metrics.json",
+      "passed": true,
+      "status": "PASS"
+    },
+    "evidence_integrity": {
+      "artifact": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/readiness/evidence_integrity_manifest.json",
+      "passed": true,
+      "status": "PASS"
+    },
+    "inference_parity": {
+      "artifact": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/research_production/research_production_parity.json",
+      "passed": true,
+      "status": "PASS"
+    },
+    "model_quality": {
+      "artifact": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/metrics/model_quality_metrics.json",
+      "passed": true,
+      "status": "PASS"
+    },
+    "openapi_contract": {
+      "artifact": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/architecture/openapi_contract_validation.json",
+      "passed": true,
+      "status": "PASS"
+    },
+    "packaging_deployment": {
+      "artifact": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/readiness/packaging_deployment_validation.json",
+      "passed": true,
+      "status": "PASS"
+    },
+    "repository_modularity": {
+      "artifact": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/architecture/repository_modularity_audit.json",
+      "passed": true,
+      "status": "PASS"
+    },
+    "research_production_comparison": {
+      "artifact": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/research_production/research_production_comparison.json",
+      "passed": true,
+      "status": "PASS"
+    },
+    "security_validation": {
+      "artifact": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/test_results/security_test_results.json",
+      "passed": true,
+      "status": "PASS"
+    },
+    "service_layer_contracts": {
+      "artifact": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/architecture/service_layer_contract_audit.json",
+      "passed": true,
+      "status": "PASS"
+    },
+    "shadow_deployment": {
+      "artifact": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/readiness/shadow_deployment_strategy.json",
+      "passed": true,
+      "status": "PASS"
+    },
+    "structured_logging": {
+      "artifact": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/logs/logging_validation.json",
+      "passed": true,
+      "status": "PASS"
+    }
+  },
+  "gates_passed": 13,
+  "group_members": [
+    {
+      "bits_id": "2024ac05968@wilp.bits-pilani.ac.in",
+      "contribution_percent": 20,
+      "name": "ADURTI SAI VENKATESH"
+    },
+    {
+      "bits_id": "2024ac05284@wilp.bits-pilani.ac.in",
+      "contribution_percent": 20,
+      "name": "ANKITA TOMAR"
+    },
+    {
+      "bits_id": "2024ac05653@wilp.bits-pilani.ac.in",
+      "contribution_percent": 20,
+      "name": "D MALLIKARJUNA REDDY"
+    },
+    {
+      "bits_id": "2024ad05005@wilp.bits-pilani.ac.in",
+      "contribution_percent": 20,
+      "name": "KSHIRSAGAR RUTUJA VILAS"
+    },
+    {
+      "bits_id": "2024aa05099@wilp.bits-pilani.ac.in",
+      "contribution_percent": 20,
+      "name": "MISHRA SUDHAKAR RAMNAWAL LALIT"
+    }
+  ],
+  "group_number": 89,
+  "model_lineage": {
+    "computer_vision_version": "resnet18-chestmnist-v1",
+    "configured_labels": 14,
+    "language_model_version": "flan-t5-small-chestmnist-v1",
+    "output_labels": 14
+  },
+  "models_retrained": false,
+  "project": "Software-Engineered Chest X-Ray Analysis and Explanation System",
+  "readiness_contract": "se4ml-system-readiness-v1",
+  "services_started": false,
+  "status": "READY_FOR_SUBMISSION",
+  "storage": {
+    "free_gib": 8.707000732421875,
+    "protected_reserve_gib": 4.0,
+    "reserve_preserved": true
+  },
+  "thresholds_recalibrated": false,
+  "total_contribution_percent": 100
+}

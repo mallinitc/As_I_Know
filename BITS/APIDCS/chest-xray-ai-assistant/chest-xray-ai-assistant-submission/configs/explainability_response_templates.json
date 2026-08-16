@@ -1,0 +1,20 @@
+{
+  "contract": {
+    "attribution_target": "finding_specific_pre_sigmoid_logit",
+    "heatmap_normalization": "independent_zero_to_one",
+    "limitation": "Grad-CAM highlights image regions that influenced a model output. It does not confirm a lesion, provide segmentation, or establish a clinical diagnosis.",
+    "method": "LayerGradCam",
+    "positive_attributions_only": true,
+    "target_layer": "layer4[-1].conv2"
+  },
+  "evidence": {
+    "crossed_threshold": true,
+    "finding_name": "atelectasis",
+    "frozen_threshold": 0.7,
+    "heatmap_png_base64": "iVBORw0KGgpjb250cm9sbGVkLXNjaGVtYS10ZXN0",
+    "high_attribution_area_percent": 22.5,
+    "overlay_png_base64": "iVBORw0KGgpjb250cm9sbGVkLXNjaGVtYS10ZXN0",
+    "probability": 0.8
+  },
+  "template_version": "explainability-response-templates-v1"
+}

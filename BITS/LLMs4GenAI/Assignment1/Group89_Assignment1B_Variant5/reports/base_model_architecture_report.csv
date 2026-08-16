@@ -1,0 +1,2 @@
+model_id,model_type,torch_dtype,total_parameters,trainable_parameters,decoder_layers,hidden_size,vocab_size,num_attention_heads,num_key_value_heads,intermediate_size
+Qwen/Qwen2.5-3B-Instruct,qwen2,torch.bfloat16,3085938688,3085938688,36,2048,151936,16,2,11008

@@ -1,0 +1,68 @@
+[tool.black]
+line-length = 88
+target-version = ["py311"]
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+    notebooks
+  | reports
+  | outputs
+  | data
+  | models
+  | checkpoints
+  | mlruns
+  | huggingface
+  | __pycache__
+)/
+'''
+
+[tool.isort]
+profile = "black"
+line_length = 88
+py_version = 311
+known_first_party = [
+    "api",
+    "configs",
+    "deployment",
+    "src",
+    "tests",
+    "ui",
+]
+skip_glob = [
+    "notebooks/*",
+    "reports/*",
+    "outputs/*",
+    "data/*",
+    "models/*",
+    "checkpoints/*",
+    "mlruns/*",
+    "huggingface/*",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+exclude = [
+    "notebooks",
+    "reports",
+    "outputs",
+    "data",
+    "models",
+    "checkpoints",
+    "mlruns",
+    "huggingface",
+]
+
+[tool.ruff.lint]
+select = [
+    "E4",
+    "E7",
+    "E9",
+    "F",
+]
+ignore = []
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+testpaths = ["tests"]
+addopts = "-ra"

@@ -1,0 +1,37 @@
+prompt_id,prompt,baseline_output,input_tokens,output_tokens,latency_seconds,tokens_per_second,peak_vram_gb
+P1_VPN_Authentication_Failure,"User cannot connect to corporate VPN. Error: ""Authentication failure"" on Cisco AnyConnect. Provide a step-by-step resolution procedure.","If you're encountering an ""Authentication failure"" error when trying to connect to your corporate VPN using Cisco AnyConnect, here's a step-by-step guide to help you resolve the issue:
+
+### Step 1: Verify Your Credentials
+1. **Check Username and Password**: Ensure that you are entering the correct username and password for your corporate account.
+2. **Check Corporate Network**: Confirm that you have access to the corporate network from your device.
+
+### Step 2: Check Network Connectivity
+1. **Ping Corporate Server**: Open Command Prompt (Windows) or Terminal (Mac/Linux) and try pinging the corporate server IP address:
+   ```sh
+   ping <corporate_server_ip>
+   ```
+   Replace `<corporate_server_ip>` with",26,150,5.765,26.018,5.878
+P2_Linux_Disk_Usage_98,A Linux server reports disk usage at 98%. Which commands should an IT helpdesk engineer run to identify and clean large files safely?,"To identify and clean large files safely on a Linux server with disk usage at 98%, the IT helpdesk engineer can follow these steps:
+
+1. **Identify Large Files:**
+   - Use `du` (disk usage) command to find directories or files that are consuming a lot of space.
+   - Use `find` command to search for specific file types or sizes.
+
+2. **List Large Directories:**
+   ```sh
+   du -a --max-depth=1 | sort -n -r | head -n 50
+   ```
+   This command lists the top 50 largest directories by size, sorted in descending order.
+
+3. **List Large Files:**
+   ```sh
+   du -",28,150,4.538,33.055,5.878
+P3_AD_Account_Locked,A user account is locked after multiple failed login attempts. Explain the standard incident resolution steps for unlocking the account and documenting the ticket.,"To resolve a locked account issue, follow these standard steps:
+
+1. **Verify the Lockout Mechanism**: Confirm that the lockout mechanism is correctly configured to prevent brute-force attacks. Ensure that the lockout duration and threshold are set appropriately.
+
+2. **Check Login Attempts**: Verify if the account was indeed locked due to multiple failed login attempts. Check the system logs or audit trails to confirm the number of failed attempts.
+
+3. **Unlock the Account**:
+   - **Temporary Unlock**: If the account was locked due to a single failed attempt, unlock it immediately.
+   - **Permanent Unlock**: If the account has been locked due to multiple failed attempts, you may need to reset the password or use another method to unlock it. This could",26,150,4.432,33.845,5.878

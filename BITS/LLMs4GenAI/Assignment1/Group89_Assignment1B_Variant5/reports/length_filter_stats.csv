@@ -1,0 +1,7 @@
+pdf_file,words,characters,min_word_threshold,kept_after_length_filter,reason
+microsoft_intune_enrollment_options.pdf,2574,16844,1000,True,Meets threshold
+nist_sp800_61r3_incident_response.pdf,14205,104939,1000,True,Meets threshold
+redhat_rhel7_storage_administration_guide.pdf,110723,696042,1000,True,Meets threshold
+redhat_rhel7_system_administrators_guide.pdf,181132,1177574,1000,True,Meets threshold
+servicenow_incident_management.pdf,22579,137296,1000,True,Meets threshold
+ubuntu_server_documentation.pdf,278122,1903400,1000,True,Meets threshold

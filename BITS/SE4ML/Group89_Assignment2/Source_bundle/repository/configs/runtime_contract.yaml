@@ -1,0 +1,25 @@
+# Managed by Notebook 9
+contract_version: cloud-native-runtime-contract-v1
+python_version: '3.11'
+solution_root: /home/jovyan/chest-xray-ai-assistant
+data_root: /home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data
+api:
+  application: api.main:app
+  host_environment_variable: CHEST_XRAY_API_HOST
+  port_environment_variable: CHEST_XRAY_API_PORT
+  default_host: 0.0.0.0
+  default_port: 8000
+  health_path: /health
+ui:
+  application: ui/app.py
+  host_environment_variable: CHEST_XRAY_UI_HOST
+  port_environment_variable: CHEST_XRAY_UI_PORT
+  api_base_url_environment_variable: CHEST_XRAY_API_BASE_URL
+  default_host: 0.0.0.0
+  default_port: 8501
+  health_path: /_stcore/health
+  maximum_upload_mib: 10
+persistent_volume:
+  host_environment_variable: CHEST_XRAY_DATA_ROOT
+  container_path: /home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data
+  minimum_free_storage_gib: 4.0

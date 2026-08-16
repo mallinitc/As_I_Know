@@ -1,0 +1,3 @@
+# Managed by Notebook 9
+-r requirements.api.txt
+-r requirements.ui.txt

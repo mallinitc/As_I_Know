@@ -1,0 +1,159 @@
+{
+  "component_schema_count": 23,
+  "openapi_version": "3.1.0",
+  "operation_count": 12,
+  "operations": [
+    {
+      "documented_status_codes": [
+        "200",
+        "422"
+      ],
+      "method": "POST",
+      "operation_id": "analyze_complete_api_v1_analyze_complete_post",
+      "path": "/api/v1/analyze-complete",
+      "request_media_types": [
+        "multipart/form-data"
+      ],
+      "response_schema": "CompleteAnalysisResponse"
+    },
+    {
+      "documented_status_codes": [
+        "200",
+        "422"
+      ],
+      "method": "POST",
+      "operation_id": "generate_explanation_api_v1_explanation_generate_post",
+      "path": "/api/v1/explanation/generate",
+      "request_media_types": [
+        "application/json"
+      ],
+      "response_schema": "LanguageGenerationResponse"
+    },
+    {
+      "documented_status_codes": [
+        "200",
+        "422"
+      ],
+      "method": "POST",
+      "operation_id": "recommend_follow_up_api_v1_follow_up_recommend_post",
+      "path": "/api/v1/follow-up/recommend",
+      "request_media_types": [
+        "application/json"
+      ],
+      "response_schema": "LanguageGenerationResponse"
+    },
+    {
+      "documented_status_codes": [
+        "200",
+        "422"
+      ],
+      "method": "POST",
+      "operation_id": "analyze_image_api_v1_image_analyze_post",
+      "path": "/api/v1/image/analyze",
+      "request_media_types": [
+        "multipart/form-data"
+      ],
+      "response_schema": "ImageAnalysisResponse"
+    },
+    {
+      "documented_status_codes": [
+        "200",
+        "422"
+      ],
+      "method": "POST",
+      "operation_id": "classify_image_api_v1_image_classify_post",
+      "path": "/api/v1/image/classify",
+      "request_media_types": [
+        "multipart/form-data"
+      ],
+      "response_schema": "ClassificationResponse"
+    },
+    {
+      "documented_status_codes": [
+        "200"
+      ],
+      "method": "GET",
+      "operation_id": "llmops_metrics_api_v1_llmops_metrics_get",
+      "path": "/api/v1/llmops/metrics",
+      "request_media_types": [],
+      "response_schema": "OperationalMetricsResponse"
+    },
+    {
+      "documented_status_codes": [
+        "200"
+      ],
+      "method": "GET",
+      "operation_id": "model_info_api_v1_model_info_get",
+      "path": "/api/v1/model/info",
+      "request_media_types": [],
+      "response_schema": "ModelInfoResponse"
+    },
+    {
+      "documented_status_codes": [
+        "200"
+      ],
+      "method": "GET",
+      "operation_id": "model_metrics_api_v1_model_metrics_get",
+      "path": "/api/v1/model/metrics",
+      "request_media_types": [],
+      "response_schema": "ModelMetricsResponse"
+    },
+    {
+      "documented_status_codes": [
+        "200",
+        "422"
+      ],
+      "method": "GET",
+      "operation_id": "get_prediction_api_v1_predictions__prediction_id__get",
+      "path": "/api/v1/predictions/{prediction_id}",
+      "request_media_types": [],
+      "response_schema": "StoredPredictionResponse"
+    },
+    {
+      "documented_status_codes": [
+        "200",
+        "422"
+      ],
+      "method": "POST",
+      "operation_id": "answer_grounded_question_api_v1_question_answer_post",
+      "path": "/api/v1/question/answer",
+      "request_media_types": [
+        "application/json"
+      ],
+      "response_schema": "LanguageGenerationResponse"
+    },
+    {
+      "documented_status_codes": [
+        "200",
+        "422"
+      ],
+      "method": "POST",
+      "operation_id": "generate_report_api_v1_report_generate_post",
+      "path": "/api/v1/report/generate",
+      "request_media_types": [
+        "application/json"
+      ],
+      "response_schema": "LanguageGenerationResponse"
+    },
+    {
+      "documented_status_codes": [
+        "200"
+      ],
+      "method": "GET",
+      "operation_id": "health_health_get",
+      "path": "/health",
+      "request_media_types": [],
+      "response_schema": "HealthResponse"
+    }
+  ],
+  "path_count": 12,
+  "pytest_return_code": 0,
+  "quality_results": {
+    "black": "PASS",
+    "isort": "PASS",
+    "ruff": "PASS"
+  },
+  "status": "PASS",
+  "title": "API-Driven Chest X-Ray Analysis and Explanation Assistant",
+  "unique_operation_ids": true
+}

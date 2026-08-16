@@ -1,0 +1,205 @@
+strategy_name,prompt_id,prompt,generated_text,input_tokens,output_tokens,latency_seconds,tokens_per_second,generation_config
+Greedy,P1_VPN_Authentication_Failure,"User cannot connect to corporate VPN. Error: ""Authentication failure"" on Cisco AnyConnect. Provide a step-by-step resolution procedure.","1. Check the network connection: Ensure that the user is connected to the corporate network and that the network connection is stable. 2. Verify the network settings: Confirm that the user's network settings are correct, including the IP address, subnet mask, default gateway, and DNS server addresses. 3. Check the firewall settings: Verify that the user's firewall settings allow traffic to the corporate network and the Cisco AnyConnect server. 4. Check the Cisco AnyConnect client settings: Ensure that the user has installed the latest version of the Cisco AnyConnect client and that it is configured correctly. 5. Check the Cisco AnyConnect client logs: Review the logs for any error messages or warnings that may indicate the cause of the authentication failure",26,150,11.672,12.851,"{""do_sample"": false, ""num_beams"": 1, ""max_new_tokens"": 150}"
+Greedy,P2_Linux_Disk_Usage_98,A Linux server reports disk usage at 98%. Which commands should an IT helpdesk engineer run to identify and clean large files safely?,"To identify and clean large files safely, the IT helpdesk engineer can use the following commands:
+
+1. **Find Large Files:**
+   Use the `du` (disk usage) command with the `-h` option to find large files:
+   ```sh
+   du -ah --max-depth=1 /path/to/directory | sort -hr
+   ```
+   This will list all files in the specified directory and its subdirectories, sorted by size in human-readable format.
+
+2. **Identify Large Directories:**
+   Use the `du` command with the `-d 0` option to find directories that consume a lot of space:
+   ```sh
+   du -d 0 -h /path/to/directory",28,150,13.021,11.519,"{""do_sample"": false, ""num_beams"": 1, ""max_new_tokens"": 150}"
+Greedy,P3_AD_Account_Locked,A user account is locked after multiple failed login attempts. Explain the standard incident resolution steps for unlocking the account and documenting the ticket.,"Standard Incident Resolution Steps:
+
+1. Verify the issue: Confirm that the account is indeed locked due to multiple failed login attempts.
+
+2. Unlock the account: Use the appropriate command or procedure to unlock the account. For example, if using a Unix-based system, you can use the following command:
+   ```
+   sudo passwd -u username
+   ```
+
+3. Notify the user: Inform the user that their account has been unlocked and provide any necessary instructions on how to log in again.
+
+4. Document the incident: Create a new ticket with the following information:
+
+   - Ticket Title: Account Lockout Incident
+   - Ticket Description: The user's account was locked due to multiple failed login attempts. The account has now been unlocked.
+   -",26,150,11.376,13.186,"{""do_sample"": false, ""num_beams"": 1, ""max_new_tokens"": 150}"
+Beam_Search,P1_VPN_Authentication_Failure,"User cannot connect to corporate VPN. Error: ""Authentication failure"" on Cisco AnyConnect. Provide a step-by-step resolution procedure.",1. Ensure that the user has the correct username and password for the corporate network. 2. Verify that the user has the latest version of Cisco AnyConnect installed on their device. 3. Check if the user is using the correct profile for the corporate network. 4. Ensure that the user has the necessary permissions to access the corporate network. 5. Check if the user is using the correct IP address and port number for the corporate network. 6. Verify that the user is using the correct SSL certificate for the corporate network. 7. Check if the user is using the correct DNS settings for the corporate network. 8. Verify that the user is using the correct proxy settings for the corporate network. 9.,26,150,15.981,9.386,"{""do_sample"": false, ""num_beams"": 4, ""early_stopping"": true, ""max_new_tokens"": 150}"
+Beam_Search,P2_Linux_Disk_Usage_98,A Linux server reports disk usage at 98%. Which commands should an IT helpdesk engineer run to identify and clean large files safely?,"To identify and clean large files safely, an IT helpdesk engineer can run the following commands on a Linux server with 98% disk usage:
+
+### 1. Identify Large Files
+Use the `du` (disk usage) command to find large files:
+
+```sh
+du -a --max-depth=1 /path/to/directory | sort -n -r | head -n 10
+```
+
+- `-a`: Include all files, not just directories.
+- `--max-depth=1`: Limit the output to the top-level directory.
+- `sort -n -r`: Sort by size in descending order.
+- `head -n 10`: Display the 10 largest files.
+
+### 2.",28,150,15.403,9.739,"{""do_sample"": false, ""num_beams"": 4, ""early_stopping"": true, ""max_new_tokens"": 150}"
+Beam_Search,P3_AD_Account_Locked,A user account is locked after multiple failed login attempts. Explain the standard incident resolution steps for unlocking the account and documenting the ticket.,"Standard incident resolution steps for unlocking a locked account and documenting the ticket are as follows:
+
+1. Verify the incident: Confirm that the account is locked due to multiple failed login attempts. Check the account lockout policy and the number of failed login attempts.
+
+2. Unlock the account: Unlock the account using the appropriate command or procedure. For example, if the account lockout policy is set to 10 failed login attempts, unlock the account after 10 failed login attempts.
+
+3. Notify the user: Notify the user that their account has been unlocked and provide instructions on how to reset their password.
+
+4. Document the incident: Document the incident in the incident management system. Include the following information:
+
+   - Incident number
+   - Date and",26,150,15.545,9.649,"{""do_sample"": false, ""num_beams"": 4, ""early_stopping"": true, ""max_new_tokens"": 150}"
+Top_K_Sampling,P1_VPN_Authentication_Failure,"User cannot connect to corporate VPN. Error: ""Authentication failure"" on Cisco AnyConnect. Provide a step-by-step resolution procedure.","If the issue persists, provide troubleshooting steps. 1. Check Network Connection To ensure that the user has proper network access and connectivity. Follow these steps: a. Verify that the user is able to connect to the internet using the browser. b. Verify that the user can ping the gateway address of the main router. c. Verify that the user can ping the domain name server (DNS) used by the organization. d. Verify that the user can ping the IP address of the remote network from the corporate network. e. Do a port scan from the corporate network to see if all relevant ports are open from the corporate network to the remote network. 2. Check User Credentials Verify that the user credentials are correct and up-to-date in the",26,150,11.372,13.19,"{""do_sample"": true, ""num_beams"": 1, ""temperature"": 0.7, ""top_k"": 50, ""top_p"": 1.0, ""max_new_tokens"": 150}"
+Top_K_Sampling,P2_Linux_Disk_Usage_98,A Linux server reports disk usage at 98%. Which commands should an IT helpdesk engineer run to identify and clean large files safely?,"To identify and clean large files safely, a helpdesk engineer can use the following commands on a Linux server:
+1. Use the `du` command with the `-a` option to display the size of all files and directories in the current directory and its subdirectories:
+```
+du -a
+```
+2. Sort the output by size using the `sort` command with the `-h` (human-readable) and `-n` (numerical sort) options:
+```
+du -a | sort -hr
+```
+3. Filter the results to show only those files larger than a certain size, such as 500MB or larger:
+```
+du -a | sort -hr | grep '^[-0-9]*",28,150,11.248,13.336,"{""do_sample"": true, ""num_beams"": 1, ""temperature"": 0.7, ""top_k"": 50, ""top_p"": 1.0, ""max_new_tokens"": 150}"
+Top_K_Sampling,P3_AD_Account_Locked,A user account is locked after multiple failed login attempts. Explain the standard incident resolution steps for unlocking the account and documenting the ticket.,"Provide a sample of the incident report.
+
+Incident Resolution Steps:
+1. Enable the account, then lock it again.
+2. Create a support case with the following fields:
+    - Case Type: Change Request
+    - Case Category: Incident Management
+    - Description: Account locking due to multiple failed login attempts.
+3. Email the customer the following details:
+    - Account ID
+    - Reason why the account was locked
+    - Contact information (phone number or email address)
+4. Follow up on the Support case to resolve the issue and re-enable the account.
+Incident Report:
+Case Number: 123456789-0000000000000000",26,150,11.205,13.387,"{""do_sample"": true, ""num_beams"": 1, ""temperature"": 0.7, ""top_k"": 50, ""top_p"": 1.0, ""max_new_tokens"": 150}"
+Top_P_Sampling,P1_VPN_Authentication_Failure,"User cannot connect to corporate VPN. Error: ""Authentication failure"" on Cisco AnyConnect. Provide a step-by-step resolution procedure.","Here are the steps to troubleshoot and resolve the issue of authentication failure while connecting to a corporate VPN using Cisco AnyConnect:
+
+1. Check the network connection
+- Verify that your device is connected to the corporate network (e.g., Wi-Fi or Ethernet cable).
+- Ensure that your device's network settings are correctly configured for the corporate network.
+2. Check the firewall rules
+- If you have a firewall enabled, check if it allows the traffic to the corporate network and any relevant ports used by Cisco AnyConnect.
+- Consider temporarily disabling the firewall to rule out any potential issues with it.
+3. Clear browser cookies and cache
+- Sometimes, clearing browser cookies and cache can resolve issues with authentication failures.
+4. Disable any antivirus software
+-",26,150,11.157,13.444,"{""do_sample"": true, ""num_beams"": 1, ""temperature"": 0.7, ""top_p"": 0.9, ""max_new_tokens"": 150}"
+Top_P_Sampling,P2_Linux_Disk_Usage_98,A Linux server reports disk usage at 98%. Which commands should an IT helpdesk engineer run to identify and clean large files safely?,"To identify and clean large files safely, the IT helpdesk engineer can use the following commands on a Linux server with 98% disk usage:
+
+1. Identify large files:
+   - Use `du` command with `-h` (human-readable format) and `-a` (show all files):
+     ```
+     du -ah / | sort -rh | head -n 10
+     ```
+
+2. Find directories with large files:
+   - Use `find` command with `-type d` (directories) and `-exec du -h --max-depth=1 {} +`:
+     ```
+     find / -type d -exec du -h --max-depth=1 {} + | sort -hr
+     ```
+
+3",28,150,11.317,13.254,"{""do_sample"": true, ""num_beams"": 1, ""temperature"": 0.7, ""top_p"": 0.9, ""max_new_tokens"": 150}"
+Top_P_Sampling,P3_AD_Account_Locked,A user account is locked after multiple failed login attempts. Explain the standard incident resolution steps for unlocking the account and documenting the ticket.,"The following are the standard incident resolution steps for the account lockout situation: 1. Verify that the account was really locked out due to a failed login attempt. If there was no failed login, then it’s not a lockout issue. 2. Find the account in Active Directory. You can use the Active Directory Users and Computers snap-in in Windows Server 2012 or PowerShell cmdlets on Windows Server 2016. 3. Unlock the account using the appropriate command. In Windows Server 2012, you unlock the account with the following command: Set-ADAccount lockoutaccount -LockedOut $false Alternatively, you can run the following command: Remove-ADAccount lockoutaccount -Locked",26,150,11.904,12.6,"{""do_sample"": true, ""num_beams"": 1, ""temperature"": 0.7, ""top_p"": 0.9, ""max_new_tokens"": 150}"
+Temperature_0_3,P1_VPN_Authentication_Failure,"User cannot connect to corporate VPN. Error: ""Authentication failure"" on Cisco AnyConnect. Provide a step-by-step resolution procedure.","1. Check the network connection: Ensure that the user's device is connected to the corporate network and that the network connection is stable. 2. Verify the network settings: Confirm that the user has the correct IP address, subnet mask, gateway, and DNS server addresses configured in their network settings. 3. Check the firewall settings: Ensure that the user's firewall is not blocking the connection to the corporate network. 4. Check the AnyConnect client settings: Verify that the user has selected the correct authentication method (e.g., certificate-based or username/password) and that the correct credentials are entered. 5. Check the network security policies: Ensure that the user's organization has not implemented any network security policies that may be preventing the",26,150,13.031,11.511,"{""do_sample"": true, ""num_beams"": 1, ""temperature"": 0.3, ""max_new_tokens"": 150}"
+Temperature_0_3,P2_Linux_Disk_Usage_98,A Linux server reports disk usage at 98%. Which commands should an IT helpdesk engineer run to identify and clean large files safely?,"To identify and clean large files safely, the IT helpdesk engineer can use the following commands on the server:
+
+1. **Find Large Files:**
+   - Use `du` (disk usage) with `-a` (all files) and `-h` (human-readable format) to find large files:
+     ```sh
+     du -ah --max-depth=1 /path/to/directory | sort -hr
+     ```
+   - This command will list all files in the specified directory and its subdirectories, sorted by size in descending order.
+
+2. **Identify Large Directories:**
+   - Use `du` with `-d 0` to find directories that consume a lot of space:
+     ```sh
+     du -",28,150,11.825,12.685,"{""do_sample"": true, ""num_beams"": 1, ""temperature"": 0.3, ""max_new_tokens"": 150}"
+Temperature_0_3,P3_AD_Account_Locked,A user account is locked after multiple failed login attempts. Explain the standard incident resolution steps for unlocking the account and documenting the ticket.,"Standard Incident Resolution Steps:
+
+1. Verify the issue: Check if the account is indeed locked due to multiple failed login attempts. Confirm that the account has not been locked by checking the system logs or contacting the IT support team.
+
+2. Unlock the account: If the account is locked, unlock it using the appropriate procedure. This may involve resetting the lockout timer, changing the password, or performing a soft reset of the account. Follow the organization's guidelines for account lockout procedures.
+
+3. Notify the affected user: Inform the user about the account lockout and provide instructions on how to unlock the account. Provide any necessary information, such as the reason for the lockout, the steps to take, and any additional resources available.
+
+4. Document",26,150,11.304,13.27,"{""do_sample"": true, ""num_beams"": 1, ""temperature"": 0.3, ""max_new_tokens"": 150}"
+Temperature_0_7,P1_VPN_Authentication_Failure,"User cannot connect to corporate VPN. Error: ""Authentication failure"" on Cisco AnyConnect. Provide a step-by-step resolution procedure.","Step 1: Verify Network Connectivity
+Ensure that the user can connect to the internet and other devices on the network. Run a traceroute from the user's device to the company's DNS server (e.g., 8.8.8.8). If the user can reach the DNS server, they should be able to access other websites and services as well.
+
+Step 2: Check User Account Permissions
+Verify that the user has the necessary permissions to access the network resources. Check with IT support if the user is a new employee or if there are any changes in their account permissions.
+
+Step 3: Verify Cisco AnyConnect Installation
+Check that Cisco AnyConnect is installed and up-to-date on the user's device. Open the Cisco Any",26,150,11.78,12.733,"{""do_sample"": true, ""num_beams"": 1, ""temperature"": 0.7, ""max_new_tokens"": 150}"
+Temperature_0_7,P2_Linux_Disk_Usage_98,A Linux server reports disk usage at 98%. Which commands should an IT helpdesk engineer run to identify and clean large files safely?,"To address the high disk usage on a Linux server, an IT helpdesk engineer can use several commands to identify and clean large files. Here are the steps and commands to follow:
+
+1. **Identify Large Files:**
+   - Use the `du` command with the `-a` option to find all files by size:
+     ```bash
+     sudo du -a --max-depth=1 | sort -rh | head -n 20
+     ```
+     This will show the largest files in the current directory.
+
+   - Alternatively, you can use `find` to search for large files recursively:
+     ```bash
+     sudo find / -type f -size +100M -print
+     ```
+     Replace `/`",28,150,11.517,13.025,"{""do_sample"": true, ""num_beams"": 1, ""temperature"": 0.7, ""max_new_tokens"": 150}"
+Temperature_0_7,P3_AD_Account_Locked,A user account is locked after multiple failed login attempts. Explain the standard incident resolution steps for unlocking the account and documenting the ticket.,"Standard Incident Resolution Steps:
+
+1. Log in to the system
+2. Identify the account that needs to be unlocked
+3. Verify if the account has been locked due to multiple failed login attempts
+4. Check the system logs to verify the number of failed login attempts
+5. Unlock the account by resetting the failed login attempt count or changing the lockout duration
+6. Notify the affected user(s) about the unlock
+7. Update the incident ticket with the details of the incident resolution
+8. Close the incident ticket
+
+Ticket Documentation:
+
+1. Incident Title: Account Locked Due to Multiple Failed Login Attempts
+2. Incident Description: The user's account was locked due to multiple failed login attempts. The account was unlocked and the incident is",26,150,12.536,11.966,"{""do_sample"": true, ""num_beams"": 1, ""temperature"": 0.7, ""max_new_tokens"": 150}"
+Temperature_1_2,P1_VPN_Authentication_Failure,"User cannot connect to corporate VPN. Error: ""Authentication failure"" on Cisco AnyConnect. Provide a step-by-step resolution procedure.","Here are the steps for resolving an authentication failure issue with Cisco AnyConnect when attempting to connect to a corporate network using an SSL-encrypted tunnel over a 3rd party network:
+
+1. Verify the user account and password
+	* Ensure the user account exists in Active Directory or LDAP
+	* Ensure the password is not expired or has been changed recently
+	* Verify the domain administrator account has the appropriate permissions to grant network access
+2. Check the client software version
+	* Download and install any available updates for the Cisco AnyConnect client
+	* Confirm that you are running the most recent client version
+3. Review and modify security restrictions
+	* Check the Cisco AnyConnect connection properties and make sure that any applicable policies have been",26,150,11.706,12.814,"{""do_sample"": true, ""num_beams"": 1, ""temperature"": 1.2, ""max_new_tokens"": 150}"
+Temperature_1_2,P2_Linux_Disk_Usage_98,A Linux server reports disk usage at 98%. Which commands should an IT helpdesk engineer run to identify and clean large files safely?,"To identify and clean large files on a server with 98% disk usage, you can follow these steps:
+
+### Identify Large Files
+1. **Check the Largest Files:**
+   - Use the `find` command to locate large files.
+   ```sh
+   find / -type f -size +500M
+   ```
+   This command searches for files larger than 500 MB (adjust this size according to your needs).
+
+2. **Use `du` Command:**
+   - List directories that use a lot of space.
+   ```sh
+   du -ahx --max-depth=1 | sort -hr
+   ```
+
+### Analyze and Clean Large Files
+3. **Remove Files:**",28,150,12.602,11.903,"{""do_sample"": true, ""num_beams"": 1, ""temperature"": 1.2, ""max_new_tokens"": 150}"
+Temperature_1_2,P3_AD_Account_Locked,A user account is locked after multiple failed login attempts. Explain the standard incident resolution steps for unlocking the account and documenting the ticket.,"The Incident Resolution Steps 1. Acknowledge the Incident 2. Collect all necessary information about the incident (the problem and its symptoms) from various sources 3. Determine if the Problem can be Resolved Immediately 4. If possible, Resolve the Problem without waiting for additional information 5. Otherwise, gather more Information to further diagnose the Problem and determine a Plan of Action 6. Take corrective Action and Monitor Progress 7. Communicate with All Involved Parties 8. Document the Entire Event, from Start to Finish, in an Event Report. Standard Account Locking Incident Report  Incident Description : 1. Incident Occured On : 2. Incident Type : 3. Incident Status : 4. Date : 5",26,150,12.628,11.879,"{""do_sample"": true, ""num_beams"": 1, ""temperature"": 1.2, ""max_new_tokens"": 150}"

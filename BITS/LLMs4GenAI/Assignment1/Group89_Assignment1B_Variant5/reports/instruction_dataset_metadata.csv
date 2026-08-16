@@ -1,0 +1,292 @@
+record_id,source_file,chunk_id,instruction_template_id,instruction,response_words
+1,nist_sp800_61r3_incident_response.txt,nist_sp800_61r3_incident_response.txt_chunk_0037,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+2,nist_sp800_61r3_incident_response.txt,nist_sp800_61r3_incident_response.txt_chunk_0031,2,Extract the important support-engineer actions described in this corpus section.,350
+3,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0023,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,350
+4,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0271,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+5,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0087,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+6,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0361,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+7,nist_sp800_61r3_incident_response.txt,nist_sp800_61r3_incident_response.txt_chunk_0022,2,Extract the important support-engineer actions described in this corpus section.,350
+8,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0313,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,350
+9,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0581,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+10,nist_sp800_61r3_incident_response.txt,nist_sp800_61r3_incident_response.txt_chunk_0029,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+11,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0885,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+12,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0702,2,Extract the important support-engineer actions described in this corpus section.,350
+13,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0537,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,350
+14,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0003,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+15,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0297,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+16,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0047,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+17,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0230,2,Extract the important support-engineer actions described in this corpus section.,350
+18,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0445,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,350
+19,nist_sp800_61r3_incident_response.txt,nist_sp800_61r3_incident_response.txt_chunk_0039,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+20,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0114,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+21,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0086,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+22,nist_sp800_61r3_incident_response.txt,nist_sp800_61r3_incident_response.txt_chunk_0026,2,Extract the important support-engineer actions described in this corpus section.,350
+23,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0096,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,350
+24,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0223,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+25,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0452,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+26,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0507,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+27,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0320,2,Extract the important support-engineer actions described in this corpus section.,350
+28,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0068,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,350
+29,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0453,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+30,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0153,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+31,nist_sp800_61r3_incident_response.txt,nist_sp800_61r3_incident_response.txt_chunk_0044,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+32,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0118,2,Extract the important support-engineer actions described in this corpus section.,350
+33,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0075,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,350
+34,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0110,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+35,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0895,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+36,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0599,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+37,nist_sp800_61r3_incident_response.txt,nist_sp800_61r3_incident_response.txt_chunk_0023,2,Extract the important support-engineer actions described in this corpus section.,350
+38,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0350,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,350
+39,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0205,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+40,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0138,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+41,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0024,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+42,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0450,2,Extract the important support-engineer actions described in this corpus section.,350
+43,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0369,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,323
+44,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0116,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+45,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0051,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+46,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0065,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+47,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0532,2,Extract the important support-engineer actions described in this corpus section.,350
+48,servicenow_incident_management.txt,servicenow_incident_management.txt_chunk_0016,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,350
+49,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0282,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+50,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0243,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+51,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0103,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+52,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0496,2,Extract the important support-engineer actions described in this corpus section.,350
+53,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0342,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,350
+54,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0139,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+55,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0302,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+56,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0131,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+57,nist_sp800_61r3_incident_response.txt,nist_sp800_61r3_incident_response.txt_chunk_0025,2,Extract the important support-engineer actions described in this corpus section.,350
+58,microsoft_intune_enrollment_options.txt,microsoft_intune_enrollment_options.txt_chunk_0009,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,174
+59,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0329,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+60,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0074,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+61,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0113,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+62,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0009,2,Extract the important support-engineer actions described in this corpus section.,350
+63,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0363,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,350
+64,nist_sp800_61r3_incident_response.txt,nist_sp800_61r3_incident_response.txt_chunk_0015,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+65,microsoft_intune_enrollment_options.txt,microsoft_intune_enrollment_options.txt_chunk_0004,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+66,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0239,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+67,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0861,2,Extract the important support-engineer actions described in this corpus section.,350
+68,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0825,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,350
+69,servicenow_incident_management.txt,servicenow_incident_management.txt_chunk_0059,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+70,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0143,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+71,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0095,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+72,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0815,2,Extract the important support-engineer actions described in this corpus section.,350
+73,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0288,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,350
+74,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0526,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+75,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0244,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+76,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0841,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+77,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0484,2,Extract the important support-engineer actions described in this corpus section.,350
+78,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0239,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,350
+79,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0392,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+80,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0148,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+81,servicenow_incident_management.txt,servicenow_incident_management.txt_chunk_0020,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+82,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0879,2,Extract the important support-engineer actions described in this corpus section.,350
+83,nist_sp800_61r3_incident_response.txt,nist_sp800_61r3_incident_response.txt_chunk_0006,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,350
+84,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0027,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+85,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0109,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+86,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0395,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+87,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0316,2,Extract the important support-engineer actions described in this corpus section.,350
+88,nist_sp800_61r3_incident_response.txt,nist_sp800_61r3_incident_response.txt_chunk_0041,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,350
+89,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0636,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+90,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0348,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+91,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0176,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+92,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0277,2,Extract the important support-engineer actions described in this corpus section.,350
+93,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0737,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,350
+94,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0206,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+95,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0242,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+96,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0280,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+97,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0859,2,Extract the important support-engineer actions described in this corpus section.,350
+98,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0564,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,350
+99,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0119,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+100,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0325,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+101,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0254,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+102,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0226,2,Extract the important support-engineer actions described in this corpus section.,350
+103,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0381,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,350
+104,nist_sp800_61r3_incident_response.txt,nist_sp800_61r3_incident_response.txt_chunk_0035,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+105,nist_sp800_61r3_incident_response.txt,nist_sp800_61r3_incident_response.txt_chunk_0038,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+106,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0239,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+107,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0279,2,Extract the important support-engineer actions described in this corpus section.,350
+108,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0654,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,350
+109,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0089,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+110,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0088,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+111,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0144,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+112,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0521,2,Extract the important support-engineer actions described in this corpus section.,350
+113,nist_sp800_61r3_incident_response.txt,nist_sp800_61r3_incident_response.txt_chunk_0008,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,350
+114,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0624,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+115,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0420,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+116,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0298,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+117,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0139,2,Extract the important support-engineer actions described in this corpus section.,350
+118,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0377,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,350
+119,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0198,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+120,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0064,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+121,nist_sp800_61r3_incident_response.txt,nist_sp800_61r3_incident_response.txt_chunk_0012,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+122,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0120,2,Extract the important support-engineer actions described in this corpus section.,350
+123,nist_sp800_61r3_incident_response.txt,nist_sp800_61r3_incident_response.txt_chunk_0011,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,350
+124,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0752,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+125,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0219,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+126,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0352,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+127,nist_sp800_61r3_incident_response.txt,nist_sp800_61r3_incident_response.txt_chunk_0001,2,Extract the important support-engineer actions described in this corpus section.,350
+128,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0249,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,350
+129,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0091,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+130,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0367,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+131,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0238,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+132,nist_sp800_61r3_incident_response.txt,nist_sp800_61r3_incident_response.txt_chunk_0034,2,Extract the important support-engineer actions described in this corpus section.,350
+133,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0229,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,350
+134,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0218,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+135,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0055,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+136,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0724,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+137,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0554,2,Extract the important support-engineer actions described in this corpus section.,350
+138,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0512,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,350
+139,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0149,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+140,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0231,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+141,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0848,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+142,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0887,2,Extract the important support-engineer actions described in this corpus section.,350
+143,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0229,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,350
+144,nist_sp800_61r3_incident_response.txt,nist_sp800_61r3_incident_response.txt_chunk_0010,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+145,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0143,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+146,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0584,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+147,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0202,2,Extract the important support-engineer actions described in this corpus section.,350
+148,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0492,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,350
+149,nist_sp800_61r3_incident_response.txt,nist_sp800_61r3_incident_response.txt_chunk_0020,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+150,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0543,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+151,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0508,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+152,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0117,2,Extract the important support-engineer actions described in this corpus section.,350
+153,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0068,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,350
+154,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0094,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+155,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0148,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+156,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0222,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+157,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0606,2,Extract the important support-engineer actions described in this corpus section.,350
+158,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0252,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,350
+159,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0768,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+160,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0168,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+161,nist_sp800_61r3_incident_response.txt,nist_sp800_61r3_incident_response.txt_chunk_0043,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+162,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0339,2,Extract the important support-engineer actions described in this corpus section.,350
+163,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0047,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,350
+164,nist_sp800_61r3_incident_response.txt,nist_sp800_61r3_incident_response.txt_chunk_0027,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+165,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0087,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+166,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0015,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+167,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0190,2,Extract the important support-engineer actions described in this corpus section.,350
+168,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0671,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,350
+169,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0225,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+170,nist_sp800_61r3_incident_response.txt,nist_sp800_61r3_incident_response.txt_chunk_0030,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+171,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0100,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+172,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0374,2,Extract the important support-engineer actions described in this corpus section.,350
+173,nist_sp800_61r3_incident_response.txt,nist_sp800_61r3_incident_response.txt_chunk_0045,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,350
+174,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0436,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+175,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0219,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+176,nist_sp800_61r3_incident_response.txt,nist_sp800_61r3_incident_response.txt_chunk_0019,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+177,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0366,2,Extract the important support-engineer actions described in this corpus section.,350
+178,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0191,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,350
+179,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0759,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+180,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0158,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+181,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0268,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+182,microsoft_intune_enrollment_options.txt,microsoft_intune_enrollment_options.txt_chunk_0008,2,Extract the important support-engineer actions described in this corpus section.,350
+183,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0076,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,350
+184,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0147,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+185,nist_sp800_61r3_incident_response.txt,nist_sp800_61r3_incident_response.txt_chunk_0017,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+186,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0044,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+187,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0291,2,Extract the important support-engineer actions described in this corpus section.,350
+188,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0070,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,350
+189,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0550,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+190,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0174,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+191,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0818,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+192,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0112,2,Extract the important support-engineer actions described in this corpus section.,350
+193,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0330,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,350
+194,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0202,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+195,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0133,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+196,nist_sp800_61r3_incident_response.txt,nist_sp800_61r3_incident_response.txt_chunk_0047,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+197,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0231,2,Extract the important support-engineer actions described in this corpus section.,350
+198,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0372,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,350
+199,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0052,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+200,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0200,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+201,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0282,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+202,nist_sp800_61r3_incident_response.txt,nist_sp800_61r3_incident_response.txt_chunk_0016,2,Extract the important support-engineer actions described in this corpus section.,350
+203,nist_sp800_61r3_incident_response.txt,nist_sp800_61r3_incident_response.txt_chunk_0021,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,350
+204,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0243,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+205,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0767,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+206,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0108,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+207,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0381,2,Extract the important support-engineer actions described in this corpus section.,350
+208,nist_sp800_61r3_incident_response.txt,nist_sp800_61r3_incident_response.txt_chunk_0024,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,350
+209,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0177,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+210,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0559,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+211,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0265,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+212,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0431,2,Extract the important support-engineer actions described in this corpus section.,350
+213,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0531,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,350
+214,nist_sp800_61r3_incident_response.txt,nist_sp800_61r3_incident_response.txt_chunk_0003,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+215,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0883,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+216,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0288,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+217,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0199,2,Extract the important support-engineer actions described in this corpus section.,350
+218,nist_sp800_61r3_incident_response.txt,nist_sp800_61r3_incident_response.txt_chunk_0033,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,350
+219,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0148,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+220,microsoft_intune_enrollment_options.txt,microsoft_intune_enrollment_options.txt_chunk_0006,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+221,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0093,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+222,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0031,2,Extract the important support-engineer actions described in this corpus section.,350
+223,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0924,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,350
+224,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0216,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+225,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0577,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+226,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0073,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+227,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0141,2,Extract the important support-engineer actions described in this corpus section.,350
+228,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0194,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,350
+229,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0357,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+230,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0441,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+231,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0310,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+232,nist_sp800_61r3_incident_response.txt,nist_sp800_61r3_incident_response.txt_chunk_0013,2,Extract the important support-engineer actions described in this corpus section.,350
+233,nist_sp800_61r3_incident_response.txt,nist_sp800_61r3_incident_response.txt_chunk_0046,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,350
+234,nist_sp800_61r3_incident_response.txt,nist_sp800_61r3_incident_response.txt_chunk_0042,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+235,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0569,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+236,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0152,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+237,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0410,2,Extract the important support-engineer actions described in this corpus section.,350
+238,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0426,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,350
+239,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0910,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+240,nist_sp800_61r3_incident_response.txt,nist_sp800_61r3_incident_response.txt_chunk_0036,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+241,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0588,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+242,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0240,2,Extract the important support-engineer actions described in this corpus section.,350
+243,nist_sp800_61r3_incident_response.txt,nist_sp800_61r3_incident_response.txt_chunk_0014,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,350
+244,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0273,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+245,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0238,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+246,nist_sp800_61r3_incident_response.txt,nist_sp800_61r3_incident_response.txt_chunk_0032,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+247,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0343,2,Extract the important support-engineer actions described in this corpus section.,350
+248,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0328,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,350
+249,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0275,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+250,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0626,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+251,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0059,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+252,nist_sp800_61r3_incident_response.txt,nist_sp800_61r3_incident_response.txt_chunk_0007,2,Extract the important support-engineer actions described in this corpus section.,350
+253,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0174,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,350
+254,nist_sp800_61r3_incident_response.txt,nist_sp800_61r3_incident_response.txt_chunk_0028,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+255,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0263,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+256,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0054,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+257,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0244,2,Extract the important support-engineer actions described in this corpus section.,350
+258,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0145,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,350
+259,nist_sp800_61r3_incident_response.txt,nist_sp800_61r3_incident_response.txt_chunk_0018,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+260,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0371,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+261,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0125,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+262,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0829,2,Extract the important support-engineer actions described in this corpus section.,350
+263,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0096,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,350
+264,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0198,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+265,nist_sp800_61r3_incident_response.txt,nist_sp800_61r3_incident_response.txt_chunk_0009,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+266,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0125,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+267,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0234,2,Extract the important support-engineer actions described in this corpus section.,350
+268,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0749,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,350
+269,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0346,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+270,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0303,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+271,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0056,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+272,nist_sp800_61r3_incident_response.txt,nist_sp800_61r3_incident_response.txt_chunk_0040,2,Extract the important support-engineer actions described in this corpus section.,350
+273,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0171,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,350
+274,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0262,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+275,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0293,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+276,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0248,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+277,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0270,2,Extract the important support-engineer actions described in this corpus section.,350
+278,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0191,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,350
+279,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0269,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+280,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0305,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+281,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0260,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+282,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0138,2,Extract the important support-engineer actions described in this corpus section.,350
+283,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0823,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,350
+284,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0525,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+285,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0251,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+286,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0591,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350
+287,redhat_rhel7_system_administrators_guide.txt,redhat_rhel7_system_administrators_guide.txt_chunk_0113,2,Extract the important support-engineer actions described in this corpus section.,350
+288,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0281,3,Rewrite this corpus section as concise operational guidance for an IT support analyst.,350
+289,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0229,4,Identify the main troubleshooting or incident-resolution points from this corpus section.,350
+290,redhat_rhel7_storage_administration_guide.txt,redhat_rhel7_storage_administration_guide.txt_chunk_0085,5,Create a clear Tier-1/Tier-2 helpdesk knowledge-base note from this corpus section.,350
+291,ubuntu_server_documentation.txt,ubuntu_server_documentation.txt_chunk_0592,1,Summarize the key IT helpdesk guidance from this domain corpus section.,350

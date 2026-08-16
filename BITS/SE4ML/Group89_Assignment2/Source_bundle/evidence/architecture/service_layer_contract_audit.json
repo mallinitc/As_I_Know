@@ -1,0 +1,1986 @@
+{
+  "audit_version": "service-layer-contract-audit-v1",
+  "generated_at_utc": "2026-08-14T12:51:12.958016+00:00",
+  "inspection_method": "static_ast_without_import",
+  "summary": {
+    "requested_modules": 16,
+    "available_modules": 16,
+    "missing_modules": 0,
+    "invalid_modules": 0,
+    "classes": 27,
+    "public_methods": 42,
+    "public_functions": 14
+  },
+  "missing_module_paths": [],
+  "invalid_module_paths": [],
+  "modules": [
+    {
+      "path": "src/services/image_service.py",
+      "available": true,
+      "syntax_valid": true,
+      "line_count": 220,
+      "module_documented": true,
+      "imports": [
+        "PIL",
+        "api.core.config",
+        "api.core.errors",
+        "api.schemas.prediction",
+        "dataclasses",
+        "hashlib",
+        "io",
+        "pathlib"
+      ],
+      "classes": [
+        {
+          "name": "ValidatedImage",
+          "bases": [],
+          "documented": true,
+          "constructor": null,
+          "initialized_attributes": [],
+          "public_methods": [
+            {
+              "name": "response_metadata",
+              "async": false,
+              "arguments": [],
+              "returns": "ImageMetadata",
+              "line": 44,
+              "documented": true
+            }
+          ]
+        },
+        {
+          "name": "ImageValidationService",
+          "bases": [],
+          "documented": true,
+          "constructor": {
+            "name": "__init__",
+            "async": false,
+            "arguments": [
+              {
+                "name": "settings",
+                "annotation": "ServiceSettings | None",
+                "kind": "positional"
+              }
+            ],
+            "returns": "None",
+            "line": 62,
+            "documented": false
+          },
+          "initialized_attributes": [
+            "settings"
+          ],
+          "public_methods": [
+            {
+              "name": "validate_and_decode",
+              "async": false,
+              "arguments": [
+                {
+                  "name": "filename",
+                  "annotation": "str",
+                  "kind": "keyword_only"
+                },
+                {
+                  "name": "media_type",
+                  "annotation": "str",
+                  "kind": "keyword_only"
+                },
+                {
+                  "name": "content",
+                  "annotation": "bytes",
+                  "kind": "keyword_only"
+                }
+              ],
+              "returns": "ValidatedImage",
+              "line": 70,
+              "documented": true
+            }
+          ]
+        }
+      ],
+      "functions": []
+    },
+    {
+      "path": "src/services/computer_vision_service.py",
+      "available": true,
+      "syntax_valid": true,
+      "line_count": 432,
+      "module_documented": true,
+      "imports": [
+        "PIL",
+        "api.core.config",
+        "api.core.errors",
+        "api.schemas.prediction",
+        "dataclasses",
+        "numpy",
+        "pathlib",
+        "src.services.image_service",
+        "threading",
+        "time",
+        "torch",
+        "torch.nn",
+        "torchvision"
+      ],
+      "classes": [
+        {
+          "name": "ClassificationResult",
+          "bases": [],
+          "documented": true,
+          "constructor": null,
+          "initialized_attributes": [],
+          "public_methods": []
+        },
+        {
+          "name": "ComputerVisionService",
+          "bases": [],
+          "documented": true,
+          "constructor": {
+            "name": "__init__",
+            "async": false,
+            "arguments": [
+              {
+                "name": "settings",
+                "annotation": "ServiceSettings | None",
+                "kind": "positional"
+              },
+              {
+                "name": "device",
+                "annotation": "str | None",
+                "kind": "positional"
+              }
+            ],
+            "returns": "None",
+            "line": 62,
+            "documented": false
+          },
+          "initialized_attributes": [
+            "_inference_lock",
+            "_ready",
+            "controlled_language",
+            "device",
+            "finding_contract",
+            "findings",
+            "model",
+            "model_load_latency_ms",
+            "preprocess_transform",
+            "settings",
+            "thresholds"
+          ],
+          "public_methods": [
+            {
+              "name": "is_ready",
+              "async": false,
+              "arguments": [],
+              "returns": "bool",
+              "line": 210,
+              "documented": true
+            },
+            {
+              "name": "confidence_category",
+              "async": false,
+              "arguments": [
+                {
+                  "name": "probability",
+                  "annotation": "float",
+                  "kind": "positional"
+                },
+                {
+                  "name": "threshold",
+                  "annotation": "float",
+                  "kind": "positional"
+                }
+              ],
+              "returns": "str",
+              "line": 216,
+              "documented": true
+            },
+            {
+              "name": "preprocess",
+              "async": false,
+              "arguments": [
+                {
+                  "name": "image",
+                  "annotation": "Image.Image",
+                  "kind": "positional"
+                }
+              ],
+              "returns": "torch.Tensor",
+              "line": 235,
+              "documented": true
+            },
+            {
+              "name": "predict",
+              "async": false,
+              "arguments": [
+                {
+                  "name": "validated_image",
+                  "annotation": "ValidatedImage",
+                  "kind": "positional"
+                }
+              ],
+              "returns": "ClassificationResult",
+              "line": 252,
+              "documented": true
+            }
+          ]
+        }
+      ],
+      "functions": []
+    },
+    {
+      "path": "src/services/gradcam_service.py",
+      "available": true,
+      "syntax_valid": true,
+      "line_count": 479,
+      "module_documented": true,
+      "imports": [
+        "PIL",
+        "__future__",
+        "base64",
+        "captum.attr",
+        "dataclasses",
+        "io",
+        "numpy",
+        "threading",
+        "time",
+        "torch",
+        "torch.nn.functional",
+        "torchvision",
+        "typing"
+      ],
+      "classes": [
+        {
+          "name": "GradCAMResult",
+          "bases": [],
+          "documented": true,
+          "constructor": null,
+          "initialized_attributes": [],
+          "public_methods": []
+        },
+        {
+          "name": "GradCAMService",
+          "bases": [],
+          "documented": true,
+          "constructor": {
+            "name": "__init__",
+            "async": false,
+            "arguments": [
+              {
+                "name": "model",
+                "annotation": "torch.nn.Module",
+                "kind": "keyword_only"
+              },
+              {
+                "name": "device",
+                "annotation": "torch.device | str",
+                "kind": "keyword_only"
+              },
+              {
+                "name": "limitation",
+                "annotation": "str",
+                "kind": "keyword_only"
+              },
+              {
+                "name": "image_size",
+                "annotation": "int",
+                "kind": "keyword_only"
+              },
+              {
+                "name": "overlay_alpha",
+                "annotation": "float",
+                "kind": "keyword_only"
+              }
+            ],
+            "returns": "None",
+            "line": 44,
+            "documented": false
+          },
+          "initialized_attributes": [
+            "_layer_gradcam",
+            "_lock",
+            "_preprocess",
+            "device",
+            "image_size",
+            "limitation",
+            "model",
+            "overlay_alpha",
+            "target_layer"
+          ],
+          "public_methods": [
+            {
+              "name": "model_dtype",
+              "async": false,
+              "arguments": [],
+              "returns": "torch.dtype",
+              "line": 115,
+              "documented": true
+            },
+            {
+              "name": "generate",
+              "async": false,
+              "arguments": [
+                {
+                  "name": "image",
+                  "annotation": "Image.Image",
+                  "kind": "keyword_only"
+                },
+                {
+                  "name": "label_id",
+                  "annotation": "int",
+                  "kind": "keyword_only"
+                },
+                {
+                  "name": "label_name",
+                  "annotation": "str",
+                  "kind": "keyword_only"
+                },
+                {
+                  "name": "probability",
+                  "annotation": "float",
+                  "kind": "keyword_only"
+                },
+                {
+                  "name": "frozen_threshold",
+                  "annotation": "float",
+                  "kind": "keyword_only"
+                },
+                {
+                  "name": "threshold_decision",
+                  "annotation": "bool",
+                  "kind": "keyword_only"
+                }
+              ],
+              "returns": "GradCAMResult",
+              "line": 292,
+              "documented": true
+            },
+            {
+              "name": "generate_for_crossed_findings",
+              "async": false,
+              "arguments": [
+                {
+                  "name": "image",
+                  "annotation": "Image.Image",
+                  "kind": "keyword_only"
+                },
+                {
+                  "name": "findings",
+                  "annotation": "Sequence[Any]",
+                  "kind": "keyword_only"
+                }
+              ],
+              "returns": "tuple[GradCAMResult, ...]",
+              "line": 417,
+              "documented": true
+            }
+          ]
+        }
+      ],
+      "functions": []
+    },
+    {
+      "path": "src/services/grounding_service.py",
+      "available": true,
+      "syntax_valid": true,
+      "line_count": 496,
+      "module_documented": true,
+      "imports": [
+        "__future__",
+        "dataclasses",
+        "typing"
+      ],
+      "classes": [
+        {
+          "name": "GroundedFinding",
+          "bases": [],
+          "documented": true,
+          "constructor": null,
+          "initialized_attributes": [],
+          "public_methods": []
+        },
+        {
+          "name": "SerializedGroundingInput",
+          "bases": [],
+          "documented": true,
+          "constructor": null,
+          "initialized_attributes": [],
+          "public_methods": []
+        },
+        {
+          "name": "GroundedInputSerializer",
+          "bases": [],
+          "documented": true,
+          "constructor": {
+            "name": "__init__",
+            "async": false,
+            "arguments": [
+              {
+                "name": "language_model_version",
+                "annotation": "str",
+                "kind": "keyword_only"
+              },
+              {
+                "name": "limitation_boundary",
+                "annotation": "str",
+                "kind": "keyword_only"
+              },
+              {
+                "name": "optional_value_marker",
+                "annotation": "str",
+                "kind": "keyword_only"
+              },
+              {
+                "name": "task_prefixes",
+                "annotation": "Mapping[str, str] | None",
+                "kind": "keyword_only"
+              }
+            ],
+            "returns": "None",
+            "line": 61,
+            "documented": false
+          },
+          "initialized_attributes": [
+            "language_model_version",
+            "limitation_boundary",
+            "optional_value_marker",
+            "task_prefixes"
+          ],
+          "public_methods": [
+            {
+              "name": "normalize_finding",
+              "async": false,
+              "arguments": [
+                {
+                  "name": "record",
+                  "annotation": "Any",
+                  "kind": "positional"
+                }
+              ],
+              "returns": "GroundedFinding",
+              "line": 154,
+              "documented": true
+            },
+            {
+              "name": "serialize",
+              "async": false,
+              "arguments": [
+                {
+                  "name": "task_type",
+                  "annotation": "str",
+                  "kind": "keyword_only"
+                },
+                {
+                  "name": "findings",
+                  "annotation": "Sequence[Any]",
+                  "kind": "keyword_only"
+                },
+                {
+                  "name": "no_target_finding",
+                  "annotation": "bool",
+                  "kind": "keyword_only"
+                },
+                {
+                  "name": "user_question",
+                  "annotation": "str | None",
+                  "kind": "keyword_only"
+                }
+              ],
+              "returns": "SerializedGroundingInput",
+              "line": 317,
+              "documented": true
+            }
+          ]
+        }
+      ],
+      "functions": []
+    },
+    {
+      "path": "src/services/language_model_service.py",
+      "available": true,
+      "syntax_valid": true,
+      "line_count": 377,
+      "module_documented": true,
+      "imports": [
+        "__future__",
+        "dataclasses",
+        "pathlib",
+        "threading",
+        "time",
+        "torch",
+        "transformers",
+        "typing"
+      ],
+      "classes": [
+        {
+          "name": "LanguageGenerationResult",
+          "bases": [],
+          "documented": true,
+          "constructor": null,
+          "initialized_attributes": [],
+          "public_methods": []
+        },
+        {
+          "name": "GroundedLanguageModelService",
+          "bases": [],
+          "documented": true,
+          "constructor": {
+            "name": "__init__",
+            "async": false,
+            "arguments": [
+              {
+                "name": "model_directory",
+                "annotation": "str | Path",
+                "kind": "keyword_only"
+              },
+              {
+                "name": "model_version",
+                "annotation": "str",
+                "kind": "keyword_only"
+              },
+              {
+                "name": "device",
+                "annotation": "str | torch.device | None",
+                "kind": "keyword_only"
+              },
+              {
+                "name": "use_bfloat16",
+                "annotation": "bool",
+                "kind": "keyword_only"
+              }
+            ],
+            "returns": "None",
+            "line": 40,
+            "documented": false
+          },
+          "initialized_attributes": [
+            "_lock",
+            "device",
+            "inference_dtype",
+            "model",
+            "model_directory",
+            "model_load_latency_ms",
+            "model_version",
+            "tokenizer",
+            "use_bfloat16"
+          ],
+          "public_methods": [
+            {
+              "name": "generate_many",
+              "async": false,
+              "arguments": [
+                {
+                  "name": "records",
+                  "annotation": "Sequence[Any]",
+                  "kind": "positional"
+                }
+              ],
+              "returns": "tuple[LanguageGenerationResult, ...]",
+              "line": 205,
+              "documented": true
+            },
+            {
+              "name": "generate",
+              "async": false,
+              "arguments": [
+                {
+                  "name": "record",
+                  "annotation": "Any",
+                  "kind": "positional"
+                }
+              ],
+              "returns": "LanguageGenerationResult",
+              "line": 369,
+              "documented": true
+            }
+          ]
+        }
+      ],
+      "functions": []
+    },
+    {
+      "path": "src/services/language_guardrail_service.py",
+      "available": true,
+      "syntax_valid": true,
+      "line_count": 1077,
+      "module_documented": true,
+      "imports": [
+        "__future__",
+        "dataclasses",
+        "re",
+        "time",
+        "typing"
+      ],
+      "classes": [
+        {
+          "name": "GuardrailAudit",
+          "bases": [],
+          "documented": true,
+          "constructor": null,
+          "initialized_attributes": [],
+          "public_methods": []
+        },
+        {
+          "name": "GuardedLanguageResult",
+          "bases": [],
+          "documented": true,
+          "constructor": null,
+          "initialized_attributes": [],
+          "public_methods": []
+        },
+        {
+          "name": "DeterministicLanguageGuardrail",
+          "bases": [],
+          "documented": true,
+          "constructor": {
+            "name": "__init__",
+            "async": false,
+            "arguments": [
+              {
+                "name": "educational_limitation",
+                "annotation": "str",
+                "kind": "keyword_only"
+              },
+              {
+                "name": "gradcam_limitation",
+                "annotation": "str",
+                "kind": "keyword_only"
+              },
+              {
+                "name": "professional_review_guidance",
+                "annotation": "str",
+                "kind": "keyword_only"
+              }
+            ],
+            "returns": "None",
+            "line": 86,
+            "documented": false
+          },
+          "initialized_attributes": [
+            "educational_limitation",
+            "gradcam_limitation",
+            "professional_review_guidance"
+          ],
+          "public_methods": [
+            {
+              "name": "audit",
+              "async": false,
+              "arguments": [
+                {
+                  "name": "task_type",
+                  "annotation": "str",
+                  "kind": "keyword_only"
+                },
+                {
+                  "name": "generated_text",
+                  "annotation": "str",
+                  "kind": "keyword_only"
+                },
+                {
+                  "name": "findings",
+                  "annotation": "Sequence[Any]",
+                  "kind": "keyword_only"
+                },
+                {
+                  "name": "no_target_finding",
+                  "annotation": "bool",
+                  "kind": "keyword_only"
+                },
+                {
+                  "name": "user_question",
+                  "annotation": "str | None",
+                  "kind": "keyword_only"
+                }
+              ],
+              "returns": "tuple[GuardrailAudit, tuple[str, ...], str | None]",
+              "line": 547,
+              "documented": true
+            },
+            {
+              "name": "build_fallback",
+              "async": false,
+              "arguments": [
+                {
+                  "name": "task_type",
+                  "annotation": "str",
+                  "kind": "keyword_only"
+                },
+                {
+                  "name": "findings",
+                  "annotation": "Sequence[Any]",
+                  "kind": "keyword_only"
+                },
+                {
+                  "name": "no_target_finding",
+                  "annotation": "bool",
+                  "kind": "keyword_only"
+                },
+                {
+                  "name": "user_question",
+                  "annotation": "str | None",
+                  "kind": "keyword_only"
+                },
+                {
+                  "name": "question_intent",
+                  "annotation": "str | None",
+                  "kind": "keyword_only"
+                }
+              ],
+              "returns": "str",
+              "line": 826,
+              "documented": true
+            },
+            {
+              "name": "apply",
+              "async": false,
+              "arguments": [
+                {
+                  "name": "task_type",
+                  "annotation": "str",
+                  "kind": "keyword_only"
+                },
+                {
+                  "name": "raw_generated_text",
+                  "annotation": "str",
+                  "kind": "keyword_only"
+                },
+                {
+                  "name": "findings",
+                  "annotation": "Sequence[Any]",
+                  "kind": "keyword_only"
+                },
+                {
+                  "name": "no_target_finding",
+                  "annotation": "bool",
+                  "kind": "keyword_only"
+                },
+                {
+                  "name": "user_question",
+                  "annotation": "str | None",
+                  "kind": "keyword_only"
+                }
+              ],
+              "returns": "GuardedLanguageResult",
+              "line": 1013,
+              "documented": true
+            }
+          ]
+        }
+      ],
+      "functions": []
+    },
+    {
+      "path": "src/services/prediction_store_service.py",
+      "available": true,
+      "syntax_valid": true,
+      "line_count": 309,
+      "module_documented": true,
+      "imports": [
+        "api.core.errors",
+        "api.schemas.aggregate",
+        "api.schemas.explainability",
+        "api.schemas.prediction",
+        "dataclasses",
+        "datetime",
+        "threading",
+        "typing",
+        "uuid"
+      ],
+      "classes": [
+        {
+          "name": "PredictionRecord",
+          "bases": [],
+          "documented": true,
+          "constructor": null,
+          "initialized_attributes": [],
+          "public_methods": []
+        },
+        {
+          "name": "PredictionStoreService",
+          "bases": [],
+          "documented": true,
+          "constructor": {
+            "name": "__init__",
+            "async": false,
+            "arguments": [
+              {
+                "name": "maximum_records",
+                "annotation": "int",
+                "kind": "keyword_only"
+              },
+              {
+                "name": "retention_hours",
+                "annotation": "int",
+                "kind": "keyword_only"
+              }
+            ],
+            "returns": "None",
+            "line": 47,
+            "documented": false
+          },
+          "initialized_attributes": [
+            "_lock",
+            "_records",
+            "maximum_records",
+            "retention"
+          ],
+          "public_methods": [
+            {
+              "name": "utc_now",
+              "async": false,
+              "arguments": [],
+              "returns": "datetime",
+              "line": 74,
+              "documented": false
+            },
+            {
+              "name": "create",
+              "async": false,
+              "arguments": [
+                {
+                  "name": "image",
+                  "annotation": "ImageMetadata",
+                  "kind": "keyword_only"
+                },
+                {
+                  "name": "findings",
+                  "annotation": "list[FindingEvidence]",
+                  "kind": "keyword_only"
+                },
+                {
+                  "name": "crossed_finding_names",
+                  "annotation": "list[str]",
+                  "kind": "keyword_only"
+                },
+                {
+                  "name": "no_target_finding",
+                  "annotation": "bool",
+                  "kind": "keyword_only"
+                },
+                {
+                  "name": "interpretation",
+                  "annotation": "str",
+                  "kind": "keyword_only"
+                },
+                {
+                  "name": "prediction_id",
+                  "annotation": "UUID | None",
+                  "kind": "keyword_only"
+                },
+                {
+                  "name": "created_at_utc",
+                  "annotation": "datetime | None",
+                  "kind": "keyword_only"
+                }
+              ],
+              "returns": "PredictionRecord",
+              "line": 117,
+              "documented": true
+            },
+            {
+              "name": "get",
+              "async": false,
+              "arguments": [
+                {
+                  "name": "prediction_id",
+                  "annotation": "UUID",
+                  "kind": "positional"
+                }
+              ],
+              "returns": "PredictionRecord",
+              "line": 167,
+              "documented": true
+            },
+            {
+              "name": "attach_visual_evidence",
+              "async": false,
+              "arguments": [
+                {
+                  "name": "prediction_id",
+                  "annotation": "UUID",
+                  "kind": "keyword_only"
+                },
+                {
+                  "name": "explainability",
+                  "annotation": "ExplainabilityContract",
+                  "kind": "keyword_only"
+                },
+                {
+                  "name": "visual_evidence",
+                  "annotation": "list[GradCAMEvidence]",
+                  "kind": "keyword_only"
+                }
+              ],
+              "returns": "PredictionRecord",
+              "line": 193,
+              "documented": true
+            },
+            {
+              "name": "upsert_language_output",
+              "async": false,
+              "arguments": [
+                {
+                  "name": "prediction_id",
+                  "annotation": "UUID",
+                  "kind": "keyword_only"
+                },
+                {
+                  "name": "language_output",
+                  "annotation": "EmbeddedLanguageOutput",
+                  "kind": "keyword_only"
+                }
+              ],
+              "returns": "PredictionRecord",
+              "line": 214,
+              "documented": true
+            },
+            {
+              "name": "build_response",
+              "async": false,
+              "arguments": [
+                {
+                  "name": "prediction_id",
+                  "annotation": "UUID",
+                  "kind": "keyword_only"
+                },
+                {
+                  "name": "response_metadata",
+                  "annotation": "dict[str, Any]",
+                  "kind": "keyword_only"
+                }
+              ],
+              "returns": "StoredPredictionResponse",
+              "line": 245,
+              "documented": true
+            },
+            {
+              "name": "snapshot_metrics",
+              "async": false,
+              "arguments": [],
+              "returns": "dict[str, int]",
+              "line": 287,
+              "documented": true
+            }
+          ]
+        }
+      ],
+      "functions": []
+    },
+    {
+      "path": "src/services/operational_metrics_service.py",
+      "available": true,
+      "syntax_valid": true,
+      "line_count": 459,
+      "module_documented": true,
+      "imports": [
+        "__future__",
+        "collections",
+        "dataclasses",
+        "datetime",
+        "math",
+        "threading",
+        "time",
+        "typing"
+      ],
+      "classes": [
+        {
+          "name": "OperationalMetricsSnapshot",
+          "bases": [],
+          "documented": true,
+          "constructor": null,
+          "initialized_attributes": [],
+          "public_methods": []
+        },
+        {
+          "name": "OperationalMetricsService",
+          "bases": [],
+          "documented": true,
+          "constructor": {
+            "name": "__init__",
+            "async": false,
+            "arguments": [
+              {
+                "name": "registered_endpoints",
+                "annotation": "Iterable[str]",
+                "kind": "keyword_only"
+              },
+              {
+                "name": "maximum_latency_samples",
+                "annotation": "int",
+                "kind": "keyword_only"
+              }
+            ],
+            "returns": "None",
+            "line": 54,
+            "documented": false
+          },
+          "initialized_attributes": [
+            "_endpoint_counts",
+            "_error_code_counts",
+            "_failed_requests",
+            "_language_action_counts",
+            "_latency_samples",
+            "_lock",
+            "_service_invocation_counts",
+            "_started_at_monotonic",
+            "_started_at_utc",
+            "_status_code_counts",
+            "_successful_requests",
+            "_total_requests",
+            "maximum_latency_samples",
+            "registered_endpoints"
+          ],
+          "public_methods": [
+            {
+              "name": "record_request",
+              "async": false,
+              "arguments": [
+                {
+                  "name": "endpoint",
+                  "annotation": "str",
+                  "kind": "keyword_only"
+                },
+                {
+                  "name": "status_code",
+                  "annotation": "int",
+                  "kind": "keyword_only"
+                },
+                {
+                  "name": "latency_ms",
+                  "annotation": "float",
+                  "kind": "keyword_only"
+                },
+                {
+                  "name": "error_code",
+                  "annotation": "str | None",
+                  "kind": "keyword_only"
+                }
+              ],
+              "returns": "None",
+              "line": 161,
+              "documented": true
+            },
+            {
+              "name": "record_service_invocation",
+              "async": false,
+              "arguments": [
+                {
+                  "name": "service_name",
+                  "annotation": "str",
+                  "kind": "positional"
+                },
+                {
+                  "name": "count",
+                  "annotation": "int",
+                  "kind": "positional"
+                }
+              ],
+              "returns": "None",
+              "line": 226,
+              "documented": true
+            },
+            {
+              "name": "record_language_action",
+              "async": false,
+              "arguments": [
+                {
+                  "name": "action",
+                  "annotation": "str",
+                  "kind": "positional"
+                },
+                {
+                  "name": "count",
+                  "annotation": "int",
+                  "kind": "positional"
+                }
+              ],
+              "returns": "None",
+              "line": 260,
+              "documented": true
+            },
+            {
+              "name": "snapshot",
+              "async": false,
+              "arguments": [],
+              "returns": "OperationalMetricsSnapshot",
+              "line": 315,
+              "documented": true
+            }
+          ]
+        }
+      ],
+      "functions": []
+    },
+    {
+      "path": "src/services/image_workflow_service.py",
+      "available": true,
+      "syntax_valid": true,
+      "line_count": 391,
+      "module_documented": true,
+      "imports": [
+        "__future__",
+        "api.schemas",
+        "dataclasses",
+        "typing"
+      ],
+      "classes": [
+        {
+          "name": "ImageWorkflowExecution",
+          "bases": [],
+          "documented": true,
+          "constructor": null,
+          "initialized_attributes": [],
+          "public_methods": []
+        },
+        {
+          "name": "ImageAnalysisWorkflow",
+          "bases": [],
+          "documented": true,
+          "constructor": {
+            "name": "__init__",
+            "async": false,
+            "arguments": [
+              {
+                "name": "computer_vision_service",
+                "annotation": "Any",
+                "kind": "keyword_only"
+              },
+              {
+                "name": "gradcam_service",
+                "annotation": "Any",
+                "kind": "keyword_only"
+              },
+              {
+                "name": "prediction_store",
+                "annotation": "Any",
+                "kind": "keyword_only"
+              },
+              {
+                "name": "operational_metrics",
+                "annotation": "Any",
+                "kind": "keyword_only"
+              },
+              {
+                "name": "metadata_builder",
+                "annotation": "Callable[..., dict[str, Any]]",
+                "kind": "keyword_only"
+              },
+              {
+                "name": "explainability_contract",
+                "annotation": "ExplainabilityContract",
+                "kind": "keyword_only"
+              },
+              {
+                "name": "evidence_template",
+                "annotation": "GradCAMEvidence",
+                "kind": "keyword_only"
+              }
+            ],
+            "returns": "None",
+            "line": 31,
+            "documented": false
+          },
+          "initialized_attributes": [
+            "computer_vision_service",
+            "evidence_template",
+            "explainability_contract",
+            "gradcam_service",
+            "metadata_builder",
+            "operational_metrics",
+            "prediction_store"
+          ],
+          "public_methods": [
+            {
+              "name": "classify",
+              "async": false,
+              "arguments": [
+                {
+                  "name": "validated_image",
+                  "annotation": "Any",
+                  "kind": "keyword_only"
+                },
+                {
+                  "name": "request_context",
+                  "annotation": "Any",
+                  "kind": "keyword_only"
+                }
+              ],
+              "returns": "ImageWorkflowExecution",
+              "line": 175,
+              "documented": true
+            },
+            {
+              "name": "analyze",
+              "async": false,
+              "arguments": [
+                {
+                  "name": "validated_image",
+                  "annotation": "Any",
+                  "kind": "keyword_only"
+                },
+                {
+                  "name": "request_context",
+                  "annotation": "Any",
+                  "kind": "keyword_only"
+                }
+              ],
+              "returns": "ImageWorkflowExecution",
+              "line": 288,
+              "documented": true
+            }
+          ]
+        }
+      ],
+      "functions": []
+    },
+    {
+      "path": "src/services/language_workflow_service.py",
+      "available": true,
+      "syntax_valid": true,
+      "line_count": 359,
+      "module_documented": true,
+      "imports": [
+        "__future__",
+        "api.schemas",
+        "dataclasses",
+        "typing",
+        "uuid"
+      ],
+      "classes": [
+        {
+          "name": "LanguageWorkflowExecution",
+          "bases": [],
+          "documented": true,
+          "constructor": null,
+          "initialized_attributes": [],
+          "public_methods": []
+        },
+        {
+          "name": "StoredPredictionLanguageWorkflow",
+          "bases": [],
+          "documented": true,
+          "constructor": {
+            "name": "__init__",
+            "async": false,
+            "arguments": [
+              {
+                "name": "prediction_store",
+                "annotation": "Any",
+                "kind": "keyword_only"
+              },
+              {
+                "name": "grounding_serializer",
+                "annotation": "Any",
+                "kind": "keyword_only"
+              },
+              {
+                "name": "language_model_service",
+                "annotation": "Any",
+                "kind": "keyword_only"
+              },
+              {
+                "name": "language_guardrail",
+                "annotation": "Any",
+                "kind": "keyword_only"
+              },
+              {
+                "name": "operational_metrics",
+                "annotation": "Any",
+                "kind": "keyword_only"
+              },
+              {
+                "name": "metadata_builder",
+                "annotation": "Callable[..., dict[str, Any]]",
+                "kind": "keyword_only"
+              }
+            ],
+            "returns": "None",
+            "line": 38,
+            "documented": false
+          },
+          "initialized_attributes": [
+            "grounding_serializer",
+            "language_guardrail",
+            "language_model_service",
+            "metadata_builder",
+            "operational_metrics",
+            "prediction_store"
+          ],
+          "public_methods": [
+            {
+              "name": "generate",
+              "async": false,
+              "arguments": [
+                {
+                  "name": "prediction_id",
+                  "annotation": "UUID",
+                  "kind": "keyword_only"
+                },
+                {
+                  "name": "task_type",
+                  "annotation": "str",
+                  "kind": "keyword_only"
+                },
+                {
+                  "name": "request_context",
+                  "annotation": "Any",
+                  "kind": "keyword_only"
+                },
+                {
+                  "name": "question",
+                  "annotation": "str | None",
+                  "kind": "keyword_only"
+                }
+              ],
+              "returns": "LanguageWorkflowExecution",
+              "line": 143,
+              "documented": true
+            }
+          ]
+        }
+      ],
+      "functions": []
+    },
+    {
+      "path": "src/services/complete_workflow_service.py",
+      "available": true,
+      "syntax_valid": true,
+      "line_count": 212,
+      "module_documented": true,
+      "imports": [
+        "__future__",
+        "api.schemas",
+        "dataclasses",
+        "typing"
+      ],
+      "classes": [
+        {
+          "name": "CompleteWorkflowExecution",
+          "bases": [],
+          "documented": true,
+          "constructor": null,
+          "initialized_attributes": [],
+          "public_methods": []
+        },
+        {
+          "name": "CompleteAnalysisWorkflow",
+          "bases": [],
+          "documented": true,
+          "constructor": {
+            "name": "__init__",
+            "async": false,
+            "arguments": [
+              {
+                "name": "image_workflow",
+                "annotation": "Any",
+                "kind": "keyword_only"
+              },
+              {
+                "name": "language_workflow",
+                "annotation": "Any",
+                "kind": "keyword_only"
+              },
+              {
+                "name": "prediction_store",
+                "annotation": "Any",
+                "kind": "keyword_only"
+              },
+              {
+                "name": "operational_metrics",
+                "annotation": "Any",
+                "kind": "keyword_only"
+              },
+              {
+                "name": "metadata_builder",
+                "annotation": "Callable[..., dict[str, Any]]",
+                "kind": "keyword_only"
+              }
+            ],
+            "returns": "None",
+            "line": 39,
+            "documented": false
+          },
+          "initialized_attributes": [
+            "image_workflow",
+            "language_workflow",
+            "metadata_builder",
+            "operational_metrics",
+            "prediction_store"
+          ],
+          "public_methods": [
+            {
+              "name": "analyze_complete",
+              "async": false,
+              "arguments": [
+                {
+                  "name": "validated_image",
+                  "annotation": "Any",
+                  "kind": "keyword_only"
+                },
+                {
+                  "name": "request_context",
+                  "annotation": "Any",
+                  "kind": "keyword_only"
+                },
+                {
+                  "name": "question",
+                  "annotation": "str | None",
+                  "kind": "keyword_only"
+                }
+              ],
+              "returns": "CompleteWorkflowExecution",
+              "line": 64,
+              "documented": true
+            }
+          ]
+        }
+      ],
+      "functions": []
+    },
+    {
+      "path": "api/core/dependencies.py",
+      "available": true,
+      "syntax_valid": true,
+      "line_count": 203,
+      "module_documented": true,
+      "imports": [
+        "__future__",
+        "api.core.errors",
+        "dataclasses",
+        "threading",
+        "typing"
+      ],
+      "classes": [
+        {
+          "name": "ServiceContainer",
+          "bases": [],
+          "documented": true,
+          "constructor": null,
+          "initialized_attributes": [],
+          "public_methods": [
+            {
+              "name": "readiness",
+              "async": false,
+              "arguments": [],
+              "returns": "dict[str, bool]",
+              "line": 31,
+              "documented": true
+            },
+            {
+              "name": "ready",
+              "async": false,
+              "arguments": [],
+              "returns": "bool",
+              "line": 94,
+              "documented": true
+            }
+          ]
+        }
+      ],
+      "functions": [
+        {
+          "name": "configure_service_container",
+          "async": false,
+          "arguments": [
+            {
+              "name": "container",
+              "annotation": "ServiceContainer",
+              "kind": "positional"
+            },
+            {
+              "name": "replace",
+              "annotation": "bool",
+              "kind": "keyword_only"
+            }
+          ],
+          "returns": "ServiceContainer",
+          "line": 106,
+          "documented": true
+        },
+        {
+          "name": "get_service_container",
+          "async": false,
+          "arguments": [],
+          "returns": "ServiceContainer",
+          "line": 153,
+          "documented": true
+        },
+        {
+          "name": "service_container_is_configured",
+          "async": false,
+          "arguments": [],
+          "returns": "bool",
+          "line": 187,
+          "documented": true
+        },
+        {
+          "name": "clear_service_container",
+          "async": false,
+          "arguments": [],
+          "returns": "None",
+          "line": 197,
+          "documented": true
+        }
+      ]
+    },
+    {
+      "path": "api/core/factory.py",
+      "available": true,
+      "syntax_valid": true,
+      "line_count": 589,
+      "module_documented": true,
+      "imports": [
+        "__future__",
+        "api.core.config",
+        "api.core.dependencies",
+        "api.core.runtime",
+        "api.core.telemetry",
+        "api.schemas",
+        "json",
+        "pathlib",
+        "src.services.complete_workflow_service",
+        "src.services.computer_vision_service",
+        "src.services.gradcam_service",
+        "src.services.grounding_service",
+        "src.services.image_service",
+        "src.services.image_workflow_service",
+        "src.services.language_guardrail_service",
+        "src.services.language_model_service",
+        "src.services.language_workflow_service",
+        "src.services.operational_metrics_service",
+        "src.services.prediction_store_service",
+        "threading",
+        "torch",
+        "typing",
+        "yaml"
+      ],
+      "classes": [],
+      "functions": [
+        {
+          "name": "build_default_service_container",
+          "async": false,
+          "arguments": [
+            {
+              "name": "replace",
+              "annotation": "bool",
+              "kind": "keyword_only"
+            }
+          ],
+          "returns": "ServiceContainer",
+          "line": 223,
+          "documented": true
+        },
+        {
+          "name": "ensure_default_service_container",
+          "async": false,
+          "arguments": [],
+          "returns": "ServiceContainer",
+          "line": 583,
+          "documented": true
+        }
+      ]
+    },
+    {
+      "path": "api/routes/aggregate.py",
+      "available": true,
+      "syntax_valid": true,
+      "line_count": 128,
+      "module_documented": true,
+      "imports": [
+        "__future__",
+        "api.core.dependencies",
+        "api.core.runtime",
+        "api.routes.workflows",
+        "api.schemas",
+        "fastapi",
+        "starlette.concurrency",
+        "uuid"
+      ],
+      "classes": [],
+      "functions": [
+        {
+          "name": "analyze_complete",
+          "async": true,
+          "arguments": [
+            {
+              "name": "image",
+              "annotation": "UploadFile",
+              "kind": "positional"
+            },
+            {
+              "name": "question",
+              "annotation": "str | None",
+              "kind": "positional"
+            },
+            {
+              "name": "services",
+              "annotation": "ServiceContainer",
+              "kind": "positional"
+            }
+          ],
+          "returns": "CompleteAnalysisResponse",
+          "line": 48,
+          "documented": true
+        },
+        {
+          "name": "get_prediction",
+          "async": true,
+          "arguments": [
+            {
+              "name": "prediction_id",
+              "annotation": "UUID",
+              "kind": "positional"
+            },
+            {
+              "name": "services",
+              "annotation": "ServiceContainer",
+              "kind": "positional"
+            }
+          ],
+          "returns": "StoredPredictionResponse",
+          "line": 86,
+          "documented": true
+        }
+      ]
+    },
+    {
+      "path": "api/routes/workflows.py",
+      "available": true,
+      "syntax_valid": true,
+      "line_count": 255,
+      "module_documented": true,
+      "imports": [
+        "__future__",
+        "api.core.config",
+        "api.core.dependencies",
+        "api.core.runtime",
+        "api.schemas",
+        "fastapi",
+        "starlette.concurrency"
+      ],
+      "classes": [],
+      "functions": [
+        {
+          "name": "classify_image",
+          "async": true,
+          "arguments": [
+            {
+              "name": "image",
+              "annotation": "UploadFile",
+              "kind": "positional"
+            },
+            {
+              "name": "services",
+              "annotation": "ServiceContainer",
+              "kind": "positional"
+            }
+          ],
+          "returns": "ClassificationResponse",
+          "line": 87,
+          "documented": true
+        },
+        {
+          "name": "analyze_image",
+          "async": true,
+          "arguments": [
+            {
+              "name": "image",
+              "annotation": "UploadFile",
+              "kind": "positional"
+            },
+            {
+              "name": "services",
+              "annotation": "ServiceContainer",
+              "kind": "positional"
+            }
+          ],
+          "returns": "ImageAnalysisResponse",
+          "line": 117,
+          "documented": true
+        },
+        {
+          "name": "generate_report",
+          "async": true,
+          "arguments": [
+            {
+              "name": "request",
+              "annotation": "GroundedGenerationRequest",
+              "kind": "positional"
+            },
+            {
+              "name": "services",
+              "annotation": "ServiceContainer",
+              "kind": "positional"
+            }
+          ],
+          "returns": "LanguageGenerationResponse",
+          "line": 147,
+          "documented": true
+        },
+        {
+          "name": "generate_explanation",
+          "async": true,
+          "arguments": [
+            {
+              "name": "request",
+              "annotation": "GroundedGenerationRequest",
+              "kind": "positional"
+            },
+            {
+              "name": "services",
+              "annotation": "ServiceContainer",
+              "kind": "positional"
+            }
+          ],
+          "returns": "LanguageGenerationResponse",
+          "line": 175,
+          "documented": true
+        },
+        {
+          "name": "answer_grounded_question",
+          "async": true,
+          "arguments": [
+            {
+              "name": "request",
+              "annotation": "GroundedQuestionRequest",
+              "kind": "positional"
+            },
+            {
+              "name": "services",
+              "annotation": "ServiceContainer",
+              "kind": "positional"
+            }
+          ],
+          "returns": "LanguageGenerationResponse",
+          "line": 205,
+          "documented": true
+        },
+        {
+          "name": "recommend_follow_up",
+          "async": true,
+          "arguments": [
+            {
+              "name": "request",
+              "annotation": "GroundedGenerationRequest",
+              "kind": "positional"
+            },
+            {
+              "name": "services",
+              "annotation": "ServiceContainer",
+              "kind": "positional"
+            }
+          ],
+          "returns": "LanguageGenerationResponse",
+          "line": 235,
+          "documented": true
+        }
+      ]
+    },
+    {
+      "path": "ui/api_client.py",
+      "available": true,
+      "syntax_valid": true,
+      "line_count": 285,
+      "module_documented": false,
+      "imports": [
+        "__future__",
+        "httpx",
+        "os",
+        "typing",
+        "uuid"
+      ],
+      "classes": [
+        {
+          "name": "APIClientError",
+          "bases": [
+            "RuntimeError"
+          ],
+          "documented": true,
+          "constructor": {
+            "name": "__init__",
+            "async": false,
+            "arguments": [
+              {
+                "name": "message",
+                "annotation": "str",
+                "kind": "keyword_only"
+              },
+              {
+                "name": "error_code",
+                "annotation": "str",
+                "kind": "keyword_only"
+              },
+              {
+                "name": "status_code",
+                "annotation": "int | None",
+                "kind": "keyword_only"
+              },
+              {
+                "name": "request_id",
+                "annotation": "str | None",
+                "kind": "keyword_only"
+              },
+              {
+                "name": "details",
+                "annotation": "dict[str, Any] | None",
+                "kind": "keyword_only"
+              }
+            ],
+            "returns": "None",
+            "line": 17,
+            "documented": false
+          },
+          "initialized_attributes": [
+            "details",
+            "error_code",
+            "message",
+            "request_id",
+            "status_code"
+          ],
+          "public_methods": [
+            {
+              "name": "to_display_dict",
+              "async": false,
+              "arguments": [],
+              "returns": "dict[str, Any]",
+              "line": 33,
+              "documented": true
+            }
+          ]
+        },
+        {
+          "name": "ChestXRayAPIClient",
+          "bases": [],
+          "documented": true,
+          "constructor": {
+            "name": "__init__",
+            "async": false,
+            "arguments": [
+              {
+                "name": "base_url",
+                "annotation": "str | None",
+                "kind": "keyword_only"
+              },
+              {
+                "name": "timeout_seconds",
+                "annotation": "float",
+                "kind": "keyword_only"
+              }
+            ],
+            "returns": "None",
+            "line": 47,
+            "documented": false
+          },
+          "initialized_attributes": [
+            "_client",
+            "base_url",
+            "timeout_seconds"
+          ],
+          "public_methods": [
+            {
+              "name": "health",
+              "async": false,
+              "arguments": [],
+              "returns": "dict[str, Any]",
+              "line": 183,
+              "documented": false
+            },
+            {
+              "name": "model_info",
+              "async": false,
+              "arguments": [],
+              "returns": "dict[str, Any]",
+              "line": 189,
+              "documented": false
+            },
+            {
+              "name": "model_metrics",
+              "async": false,
+              "arguments": [],
+              "returns": "dict[str, Any]",
+              "line": 195,
+              "documented": false
+            },
+            {
+              "name": "analyze_complete",
+              "async": false,
+              "arguments": [
+                {
+                  "name": "filename",
+                  "annotation": "str",
+                  "kind": "keyword_only"
+                },
+                {
+                  "name": "media_type",
+                  "annotation": "str",
+                  "kind": "keyword_only"
+                },
+                {
+                  "name": "image_content",
+                  "annotation": "bytes",
+                  "kind": "keyword_only"
+                },
+                {
+                  "name": "question",
+                  "annotation": "str | None",
+                  "kind": "keyword_only"
+                }
+              ],
+              "returns": "dict[str, Any]",
+              "line": 201,
+              "documented": false
+            },
+            {
+              "name": "answer_question",
+              "async": false,
+              "arguments": [
+                {
+                  "name": "prediction_id",
+                  "annotation": "str | UUID",
+                  "kind": "keyword_only"
+                },
+                {
+                  "name": "question",
+                  "annotation": "str",
+                  "kind": "keyword_only"
+                }
+              ],
+              "returns": "dict[str, Any]",
+              "line": 238,
+              "documented": false
+            },
+            {
+              "name": "get_prediction",
+              "async": false,
+              "arguments": [
+                {
+                  "name": "prediction_id",
+                  "annotation": "str | UUID",
+                  "kind": "positional"
+                }
+              ],
+              "returns": "dict[str, Any]",
+              "line": 258,
+              "documented": false
+            },
+            {
+              "name": "llmops_metrics",
+              "async": false,
+              "arguments": [],
+              "returns": "dict[str, Any]",
+              "line": 267,
+              "documented": false
+            },
+            {
+              "name": "close",
+              "async": false,
+              "arguments": [],
+              "returns": "None",
+              "line": 273,
+              "documented": false
+            }
+          ]
+        }
+      ],
+      "functions": []
+    }
+  ]
+}

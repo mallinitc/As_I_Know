@@ -1,0 +1,58 @@
+prompt_id,standard_response,speculative_response,response_similarity_ratio
+P1_VPN_Authentication_Failure,"1. Check the network connection: Ensure that the user is connected to the corporate network and that the network connection is stable. 2. Verify the network settings: Confirm that the user's network settings are correct, including the IP address, subnet mask, default gateway, and DNS server addresses. 3. Check the firewall settings: Verify that the user's firewall settings allow traffic to the corporate network and the Cisco AnyConnect server. 4. Check the Cisco AnyConnect client settings: Ensure that the user has installed the latest version of the Cisco AnyConnect client and that it is configured correctly. 5. Check the Cisco AnyConnect client logs: Review the logs for any error messages or warnings that may indicate the cause of the authentication failure","1. Check the network connection: Ensure that the user is connected to the corporate network and that the network connection is stable. 2. Verify the network settings: Confirm that the user's network settings are correct, including the IP address, subnet mask, default gateway, and DNS server addresses. 3. Check the firewall settings: Verify that the user's firewall settings allow traffic to the corporate network and the Cisco AnyConnect server. 4. Check the Cisco AnyConnect client settings: Ensure that the user has installed the latest version of the Cisco AnyConnect client and that it is configured correctly. 5. Check the Cisco AnyConnect client logs: Review the logs for any error messages or warnings that may indicate the cause of the authentication failure",1.0
+P2_Linux_Disk_Usage_98,"To identify and clean large files safely, the IT helpdesk engineer can use the following commands:
+
+1. **Find Large Files:**
+   Use the `du` (disk usage) command with the `-h` option to find large files:
+   ```sh
+   du -ah --max-depth=1 /path/to/directory | sort -hr
+   ```
+   This will list all files in the specified directory and its subdirectories, sorted by size in human-readable format.
+
+2. **Identify Large Directories:**
+   Use the `du` command with the `-d 0` option to find directories that consume a lot of space:
+   ```sh
+   du -d 0 -h /path/to/directory","To identify and clean large files safely, the IT helpdesk engineer can use the following commands:
+
+1. **Find Large Files:**
+   Use the `du` (disk usage) command with the `-h` option to find large files:
+   ```sh
+   du -ah --max-depth=1 /path/to/directory | sort -hr
+   ```
+   This will list all files in the specified directory and its subdirectories, sorted by size in human-readable format.
+
+2. **Identify Large Directories:**
+   Use the `du` command with the `-d 0` option to find directories that consume a lot of space:
+   ```sh
+   du -d 0 -h /path/to/directory",1.0
+P3_AD_Account_Locked,"Standard Incident Resolution Steps:
+
+1. Verify the issue: Confirm that the account is indeed locked due to multiple failed login attempts.
+
+2. Unlock the account: Use the appropriate command or procedure to unlock the account. For example, if using a Unix-based system, you can use the following command:
+   ```
+   sudo passwd -u username
+   ```
+
+3. Notify the user: Inform the user that their account has been unlocked and provide any necessary instructions on how to log in again.
+
+4. Document the incident: Create a new ticket with the following information:
+
+   - Ticket Title: Account Lockout Incident
+   - Ticket Description: The user's account was locked due to multiple failed login attempts. The account has now been unlocked.
+   -","Standard Incident Resolution Steps:
+
+1. Verify the issue: Confirm that the account is indeed locked due to multiple failed login attempts.
+
+2. Unlock the account: Use the appropriate command or procedure to unlock the account. For example, if using a Unix-based system, you can use the following command:
+   ```
+   sudo passwd -u username
+   ```
+
+3. Notify the user: Inform the user that their account has been unlocked and provide any necessary instructions on how to log in again.
+
+4. Document the incident: Create a new ticket with the following information:
+
+   - Ticket Title: Account Lockout Incident
+   - Ticket Description: The user's account was locked due to multiple failed login attempts. The account has now been unlocked.
+   -",1.0

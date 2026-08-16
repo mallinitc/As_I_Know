@@ -1,0 +1,1508 @@
+{
+  "audit_version": "repository-modularity-audit-v1",
+  "generated_at_utc": "2026-08-14T12:40:28.463494+00:00",
+  "solution_root": "/home/jovyan/chest-xray-ai-assistant",
+  "inspection_method": "static_ast_without_module_import",
+  "packages": [
+    "api",
+    "configs",
+    "deployment",
+    "src",
+    "tests",
+    "ui"
+  ],
+  "summary": {
+    "python_files": 45,
+    "lines_of_code": 11040,
+    "public_classes": 61,
+    "public_functions": 74,
+    "syntax_errors": 0
+  },
+  "package_summary": {
+    "api": {
+      "python_files": 21,
+      "lines_of_code": 3456,
+      "public_classes": 35,
+      "public_functions": 30,
+      "local_dependencies": 58,
+      "syntax_errors": 0
+    },
+    "configs": {
+      "python_files": 0,
+      "lines_of_code": 0,
+      "public_classes": 0,
+      "public_functions": 0,
+      "local_dependencies": 0,
+      "syntax_errors": 0
+    },
+    "deployment": {
+      "python_files": 1,
+      "lines_of_code": 30,
+      "public_classes": 0,
+      "public_functions": 1,
+      "local_dependencies": 0,
+      "syntax_errors": 0
+    },
+    "src": {
+      "python_files": 13,
+      "lines_of_code": 4813,
+      "public_classes": 24,
+      "public_functions": 0,
+      "local_dependencies": 14,
+      "syntax_errors": 0
+    },
+    "tests": {
+      "python_files": 7,
+      "lines_of_code": 725,
+      "public_classes": 0,
+      "public_functions": 22,
+      "local_dependencies": 5,
+      "syntax_errors": 0
+    },
+    "ui": {
+      "python_files": 3,
+      "lines_of_code": 2016,
+      "public_classes": 2,
+      "public_functions": 21,
+      "local_dependencies": 0,
+      "syntax_errors": 0
+    }
+  },
+  "dependency_frequency": {
+    "api.core.config": 6,
+    "api.core.dependencies": 5,
+    "api.core.errors": 6,
+    "api.core.factory": 1,
+    "api.core.runtime": 5,
+    "api.core.telemetry": 1,
+    "api.main": 1,
+    "api.routes": 1,
+    "api.routes.aggregate": 1,
+    "api.routes.system": 1,
+    "api.routes.workflows": 2,
+    "api.schemas": 12,
+    "api.schemas.aggregate": 2,
+    "api.schemas.common": 8,
+    "api.schemas.explainability": 3,
+    "api.schemas.language": 2,
+    "api.schemas.prediction": 6,
+    "api.schemas.requests": 1,
+    "api.schemas.system": 1,
+    "src.services.complete_workflow_service": 1,
+    "src.services.computer_vision_service": 1,
+    "src.services.gradcam_service": 1,
+    "src.services.grounding_service": 1,
+    "src.services.image_service": 2,
+    "src.services.image_workflow_service": 1,
+    "src.services.language_guardrail_service": 1,
+    "src.services.language_model_service": 1,
+    "src.services.language_workflow_service": 1,
+    "src.services.operational_metrics_service": 1,
+    "src.services.prediction_store_service": 1
+  },
+  "syntax_failures": [],
+  "modules": [
+    {
+      "path": "api/__init__.py",
+      "module": "api",
+      "line_count": 1,
+      "sha256": "afe5f2f2a74cb3cbf080796b1dc4b3bb7fb44c97b0279790c4c63b4cae1c376f",
+      "classes": [],
+      "functions": [],
+      "local_imports": [],
+      "syntax_valid": true,
+      "syntax_error": null
+    },
+    {
+      "path": "api/core/__init__.py",
+      "module": "api.core",
+      "line_count": 1,
+      "sha256": "afe5f2f2a74cb3cbf080796b1dc4b3bb7fb44c97b0279790c4c63b4cae1c376f",
+      "classes": [],
+      "functions": [],
+      "local_imports": [],
+      "syntax_valid": true,
+      "syntax_error": null
+    },
+    {
+      "path": "api/core/config.py",
+      "module": "api.core.config",
+      "line_count": 257,
+      "sha256": "75537df61959ad4c182054a7356ec7faa3f3f3d7f539b3cef4dbe8ae3f231037",
+      "classes": [
+        {
+          "name": "ServiceSettings",
+          "line": 21,
+          "public_methods": [
+            "validate_artifacts",
+            "sanitized_lineage"
+          ]
+        }
+      ],
+      "functions": [
+        {
+          "name": "load_yaml_file",
+          "async": false,
+          "line": 133
+        },
+        {
+          "name": "load_json_file",
+          "async": false,
+          "line": 152
+        },
+        {
+          "name": "get_settings",
+          "async": false,
+          "line": 172
+        }
+      ],
+      "local_imports": [],
+      "syntax_valid": true,
+      "syntax_error": null
+    },
+    {
+      "path": "api/core/dependencies.py",
+      "module": "api.core.dependencies",
+      "line_count": 203,
+      "sha256": "38b0735b9715604e54fb1497832231669b5a3e4c679afa2addf9169c8c760672",
+      "classes": [
+        {
+          "name": "ServiceContainer",
+          "line": 16,
+          "public_methods": [
+            "readiness",
+            "ready"
+          ]
+        }
+      ],
+      "functions": [
+        {
+          "name": "configure_service_container",
+          "async": false,
+          "line": 106
+        },
+        {
+          "name": "get_service_container",
+          "async": false,
+          "line": 153
+        },
+        {
+          "name": "service_container_is_configured",
+          "async": false,
+          "line": 187
+        },
+        {
+          "name": "clear_service_container",
+          "async": false,
+          "line": 197
+        }
+      ],
+      "local_imports": [
+        "api.core.errors"
+      ],
+      "syntax_valid": true,
+      "syntax_error": null
+    },
+    {
+      "path": "api/core/errors.py",
+      "module": "api.core.errors",
+      "line_count": 147,
+      "sha256": "243403310d1776702e0b199cdcfbc01f867ef7bae77def052411b64f62e5bca7",
+      "classes": [
+        {
+          "name": "ServiceError",
+          "line": 71,
+          "public_methods": []
+        },
+        {
+          "name": "InvalidImageError",
+          "line": 94,
+          "public_methods": []
+        },
+        {
+          "name": "UnsupportedMediaTypeError",
+          "line": 102,
+          "public_methods": []
+        },
+        {
+          "name": "UploadTooLargeError",
+          "line": 110,
+          "public_methods": []
+        },
+        {
+          "name": "PredictionNotFoundError",
+          "line": 118,
+          "public_methods": []
+        },
+        {
+          "name": "ModelNotReadyError",
+          "line": 126,
+          "public_methods": []
+        },
+        {
+          "name": "GroundingContractError",
+          "line": 134,
+          "public_methods": []
+        },
+        {
+          "name": "ServiceExecutionError",
+          "line": 142,
+          "public_methods": []
+        }
+      ],
+      "functions": [
+        {
+          "name": "sanitize_client_details",
+          "async": false,
+          "line": 16
+        }
+      ],
+      "local_imports": [],
+      "syntax_valid": true,
+      "syntax_error": null
+    },
+    {
+      "path": "api/core/factory.py",
+      "module": "api.core.factory",
+      "line_count": 589,
+      "sha256": "bf3597059b000d2d6574dc1442c7eeb361a02bb256b34f5867486546a64ac236",
+      "classes": [],
+      "functions": [
+        {
+          "name": "build_default_service_container",
+          "async": false,
+          "line": 223
+        },
+        {
+          "name": "ensure_default_service_container",
+          "async": false,
+          "line": 583
+        }
+      ],
+      "local_imports": [
+        "api.core.config",
+        "api.core.dependencies",
+        "api.core.runtime",
+        "api.core.telemetry",
+        "api.schemas",
+        "src.services.complete_workflow_service",
+        "src.services.computer_vision_service",
+        "src.services.gradcam_service",
+        "src.services.grounding_service",
+        "src.services.image_service",
+        "src.services.image_workflow_service",
+        "src.services.language_guardrail_service",
+        "src.services.language_model_service",
+        "src.services.language_workflow_service",
+        "src.services.operational_metrics_service",
+        "src.services.prediction_store_service"
+      ],
+      "syntax_valid": true,
+      "syntax_error": null
+    },
+    {
+      "path": "api/core/runtime.py",
+      "module": "api.core.runtime",
+      "line_count": 150,
+      "sha256": "d9dc3cae44ebbcc74483355c9edbbbd8cbe54c784e0574ec9d79a5b9a1c54669",
+      "classes": [
+        {
+          "name": "RequestContext",
+          "line": 24,
+          "public_methods": [
+            "elapsed_ms"
+          ]
+        }
+      ],
+      "functions": [
+        {
+          "name": "utc_now",
+          "async": false,
+          "line": 17
+        },
+        {
+          "name": "build_model_versions",
+          "async": false,
+          "line": 51
+        },
+        {
+          "name": "build_success_metadata",
+          "async": false,
+          "line": 76
+        },
+        {
+          "name": "build_error_response",
+          "async": false,
+          "line": 124
+        }
+      ],
+      "local_imports": [
+        "api.core.config",
+        "api.core.errors",
+        "api.schemas.common"
+      ],
+      "syntax_valid": true,
+      "syntax_error": null
+    },
+    {
+      "path": "api/core/telemetry.py",
+      "module": "api.core.telemetry",
+      "line_count": 208,
+      "sha256": "d24a1c2cc25078088060e838d081d840cb028364774b866c989289f84481e41c",
+      "classes": [
+        {
+          "name": "APIOperationalSnapshot",
+          "line": 13,
+          "public_methods": []
+        },
+        {
+          "name": "EndpointTelemetryAdapter",
+          "line": 26,
+          "public_methods": [
+            "registered_endpoints",
+            "record_request",
+            "record_service_invocation",
+            "record_language_action",
+            "snapshot",
+            "endpoint_average_latency_ms",
+            "api_snapshot"
+          ]
+        }
+      ],
+      "functions": [],
+      "local_imports": [],
+      "syntax_valid": true,
+      "syntax_error": null
+    },
+    {
+      "path": "api/main.py",
+      "module": "api.main",
+      "line_count": 407,
+      "sha256": "39333aea0e739cd5278c2991ab871d4a07a1f0a77d2a3e94bc8cca6772a9617e",
+      "classes": [],
+      "functions": [
+        {
+          "name": "request_context_and_metrics",
+          "async": true,
+          "line": 226
+        },
+        {
+          "name": "service_error_handler",
+          "async": true,
+          "line": 294
+        },
+        {
+          "name": "request_validation_error_handler",
+          "async": true,
+          "line": 326
+        },
+        {
+          "name": "unexpected_error_handler",
+          "async": true,
+          "line": 375
+        }
+      ],
+      "local_imports": [
+        "api.core.config",
+        "api.core.dependencies",
+        "api.core.errors",
+        "api.core.factory",
+        "api.core.runtime",
+        "api.routes",
+        "api.schemas"
+      ],
+      "syntax_valid": true,
+      "syntax_error": null
+    },
+    {
+      "path": "api/routes/__init__.py",
+      "module": "api.routes",
+      "line_count": 20,
+      "sha256": "05d7236b88e7eccd10c13007ee06fefb92136fa18bda78ed470b6b69cbfedd5b",
+      "classes": [],
+      "functions": [],
+      "local_imports": [
+        "api.routes.aggregate",
+        "api.routes.system",
+        "api.routes.workflows"
+      ],
+      "syntax_valid": true,
+      "syntax_error": null
+    },
+    {
+      "path": "api/routes/aggregate.py",
+      "module": "api.routes.aggregate",
+      "line_count": 128,
+      "sha256": "9e0f5523046dae8500b62c7790c44b20d986d7ee382450467db9cc2fd97b688b",
+      "classes": [],
+      "functions": [
+        {
+          "name": "analyze_complete",
+          "async": true,
+          "line": 48
+        },
+        {
+          "name": "get_prediction",
+          "async": true,
+          "line": 86
+        }
+      ],
+      "local_imports": [
+        "api.core.dependencies",
+        "api.core.runtime",
+        "api.routes.workflows",
+        "api.schemas"
+      ],
+      "syntax_valid": true,
+      "syntax_error": null
+    },
+    {
+      "path": "api/routes/system.py",
+      "module": "api.routes.system",
+      "line_count": 223,
+      "sha256": "2cb1312e6d75f500a67b4c20155eda58c77079d91f5397ee6e01ed68d8fd8163",
+      "classes": [],
+      "functions": [
+        {
+          "name": "health",
+          "async": true,
+          "line": 65
+        },
+        {
+          "name": "model_info",
+          "async": true,
+          "line": 104
+        },
+        {
+          "name": "model_metrics",
+          "async": true,
+          "line": 134
+        },
+        {
+          "name": "llmops_metrics",
+          "async": true,
+          "line": 164
+        }
+      ],
+      "local_imports": [
+        "api.core.dependencies",
+        "api.core.runtime",
+        "api.schemas"
+      ],
+      "syntax_valid": true,
+      "syntax_error": null
+    },
+    {
+      "path": "api/routes/workflows.py",
+      "module": "api.routes.workflows",
+      "line_count": 255,
+      "sha256": "5985fb08ddc345046f8581f2a1c1baa38a137f3f4f091ee752fc21e23a31d604",
+      "classes": [],
+      "functions": [
+        {
+          "name": "classify_image",
+          "async": true,
+          "line": 87
+        },
+        {
+          "name": "analyze_image",
+          "async": true,
+          "line": 117
+        },
+        {
+          "name": "generate_report",
+          "async": true,
+          "line": 147
+        },
+        {
+          "name": "generate_explanation",
+          "async": true,
+          "line": 175
+        },
+        {
+          "name": "answer_grounded_question",
+          "async": true,
+          "line": 205
+        },
+        {
+          "name": "recommend_follow_up",
+          "async": true,
+          "line": 235
+        }
+      ],
+      "local_imports": [
+        "api.core.config",
+        "api.core.dependencies",
+        "api.core.runtime",
+        "api.schemas"
+      ],
+      "syntax_valid": true,
+      "syntax_error": null
+    },
+    {
+      "path": "api/schemas/__init__.py",
+      "module": "api.schemas",
+      "line_count": 63,
+      "sha256": "11930faaef4184835b9a5875f42f735c61a007bfe8f710a9405278ff60770694",
+      "classes": [],
+      "functions": [],
+      "local_imports": [
+        "api.schemas.aggregate",
+        "api.schemas.common",
+        "api.schemas.explainability",
+        "api.schemas.language",
+        "api.schemas.prediction",
+        "api.schemas.requests",
+        "api.schemas.system"
+      ],
+      "syntax_valid": true,
+      "syntax_error": null
+    },
+    {
+      "path": "api/schemas/aggregate.py",
+      "module": "api.schemas.aggregate",
+      "line_count": 211,
+      "sha256": "28315f43fb5cf320977b98835d999675a217df0c1fb3d1c5fc901b52b3ce78fd",
+      "classes": [
+        {
+          "name": "EmbeddedLanguageOutput",
+          "line": 22,
+          "public_methods": [
+            "validate_embedded_output"
+          ]
+        },
+        {
+          "name": "CompleteAnalysisResponse",
+          "line": 113,
+          "public_methods": [
+            "validate_complete_language_tasks"
+          ]
+        },
+        {
+          "name": "StoredPredictionResponse",
+          "line": 164,
+          "public_methods": [
+            "validate_stored_extensions"
+          ]
+        }
+      ],
+      "functions": [],
+      "local_imports": [
+        "api.schemas.common",
+        "api.schemas.explainability",
+        "api.schemas.language",
+        "api.schemas.prediction"
+      ],
+      "syntax_valid": true,
+      "syntax_error": null
+    },
+    {
+      "path": "api/schemas/common.py",
+      "module": "api.schemas.common",
+      "line_count": 49,
+      "sha256": "ee855fbeda300725e0d07ac013fed076a51838a69f9739a3b9bfa4b9d0f4ba61",
+      "classes": [
+        {
+          "name": "StrictSchema",
+          "line": 10,
+          "public_methods": []
+        },
+        {
+          "name": "ModelVersions",
+          "line": 16,
+          "public_methods": []
+        },
+        {
+          "name": "SuccessResponseBase",
+          "line": 24,
+          "public_methods": []
+        },
+        {
+          "name": "APIErrorResponse",
+          "line": 38,
+          "public_methods": []
+        }
+      ],
+      "functions": [],
+      "local_imports": [],
+      "syntax_valid": true,
+      "syntax_error": null
+    },
+    {
+      "path": "api/schemas/explainability.py",
+      "module": "api.schemas.explainability",
+      "line_count": 122,
+      "sha256": "a3db9676795c5f8bf0c962ae0e650812a3359be6d06fc0889a42a41b6c15c0ec",
+      "classes": [
+        {
+          "name": "ExplainabilityContract",
+          "line": 12,
+          "public_methods": []
+        },
+        {
+          "name": "GradCAMEvidence",
+          "line": 27,
+          "public_methods": [
+            "validate_png_base64"
+          ]
+        },
+        {
+          "name": "ImageAnalysisResponse",
+          "line": 68,
+          "public_methods": [
+            "validate_visual_evidence"
+          ]
+        }
+      ],
+      "functions": [],
+      "local_imports": [
+        "api.schemas.common",
+        "api.schemas.prediction"
+      ],
+      "syntax_valid": true,
+      "syntax_error": null
+    },
+    {
+      "path": "api/schemas/language.py",
+      "module": "api.schemas.language",
+      "line_count": 133,
+      "sha256": "e6aa80b250c42b32bfc892993b4f001a4c29b881a04d4206f7551c228abe5e19",
+      "classes": [
+        {
+          "name": "LanguageGenerationResponse",
+          "line": 37,
+          "public_methods": [
+            "validate_language_contract"
+          ]
+        }
+      ],
+      "functions": [],
+      "local_imports": [
+        "api.schemas.common"
+      ],
+      "syntax_valid": true,
+      "syntax_error": null
+    },
+    {
+      "path": "api/schemas/prediction.py",
+      "module": "api.schemas.prediction",
+      "line_count": 110,
+      "sha256": "7c9c0ff219b46f5c24012ac6f40531cf659c1822a8769dc53447bb5f262fe41e",
+      "classes": [
+        {
+          "name": "ImageMetadata",
+          "line": 11,
+          "public_methods": []
+        },
+        {
+          "name": "FindingEvidence",
+          "line": 24,
+          "public_methods": []
+        },
+        {
+          "name": "ClassificationResponse",
+          "line": 45,
+          "public_methods": [
+            "validate_finding_contract"
+          ]
+        }
+      ],
+      "functions": [],
+      "local_imports": [
+        "api.schemas.common"
+      ],
+      "syntax_valid": true,
+      "syntax_error": null
+    },
+    {
+      "path": "api/schemas/requests.py",
+      "module": "api.schemas.requests",
+      "line_count": 80,
+      "sha256": "f2b276869a95d48981da8b7f68e63a45d2bd7706603fb1a1796eccdbb81b90c5",
+      "classes": [
+        {
+          "name": "GroundedGenerationRequest",
+          "line": 10,
+          "public_methods": []
+        },
+        {
+          "name": "GroundedQuestionRequest",
+          "line": 16,
+          "public_methods": [
+            "validate_question"
+          ]
+        },
+        {
+          "name": "CompleteAnalysisOptions",
+          "line": 44,
+          "public_methods": [
+            "validate_optional_question"
+          ]
+        }
+      ],
+      "functions": [],
+      "local_imports": [
+        "api.schemas.common"
+      ],
+      "syntax_valid": true,
+      "syntax_error": null
+    },
+    {
+      "path": "api/schemas/system.py",
+      "module": "api.schemas.system",
+      "line_count": 99,
+      "sha256": "3dd312c4c783f79f2e83c22a9f58402c74a80fdaf0637ab66b123e869c8f64c2",
+      "classes": [
+        {
+          "name": "ComponentHealth",
+          "line": 21,
+          "public_methods": []
+        },
+        {
+          "name": "HealthResponse",
+          "line": 41,
+          "public_methods": []
+        },
+        {
+          "name": "ModelInfoResponse",
+          "line": 52,
+          "public_methods": []
+        },
+        {
+          "name": "ModelMetricsResponse",
+          "line": 63,
+          "public_methods": []
+        },
+        {
+          "name": "OperationalMetricsResponse",
+          "line": 80,
+          "public_methods": []
+        }
+      ],
+      "functions": [],
+      "local_imports": [
+        "api.schemas.common"
+      ],
+      "syntax_valid": true,
+      "syntax_error": null
+    },
+    {
+      "path": "deployment/validate_services.py",
+      "module": "deployment.validate_services",
+      "line_count": 30,
+      "sha256": "4580fc64344e23b7e5c06fc8a44566e5942fc13b76b979d814bf67f57b379401",
+      "classes": [],
+      "functions": [
+        {
+          "name": "read",
+          "async": false,
+          "line": 11
+        }
+      ],
+      "local_imports": [],
+      "syntax_valid": true,
+      "syntax_error": null
+    },
+    {
+      "path": "src/__init__.py",
+      "module": "src",
+      "line_count": 1,
+      "sha256": "afe5f2f2a74cb3cbf080796b1dc4b3bb7fb44c97b0279790c4c63b4cae1c376f",
+      "classes": [],
+      "functions": [],
+      "local_imports": [],
+      "syntax_valid": true,
+      "syntax_error": null
+    },
+    {
+      "path": "src/services/__init__.py",
+      "module": "src.services",
+      "line_count": 1,
+      "sha256": "afe5f2f2a74cb3cbf080796b1dc4b3bb7fb44c97b0279790c4c63b4cae1c376f",
+      "classes": [],
+      "functions": [],
+      "local_imports": [],
+      "syntax_valid": true,
+      "syntax_error": null
+    },
+    {
+      "path": "src/services/complete_workflow_service.py",
+      "module": "src.services.complete_workflow_service",
+      "line_count": 212,
+      "sha256": "312b930b56ab147a0489672b0dd2df9b90119b1e6641376527ccf7e16a483816",
+      "classes": [
+        {
+          "name": "CompleteWorkflowExecution",
+          "line": 26,
+          "public_methods": []
+        },
+        {
+          "name": "CompleteAnalysisWorkflow",
+          "line": 36,
+          "public_methods": [
+            "analyze_complete"
+          ]
+        }
+      ],
+      "functions": [],
+      "local_imports": [
+        "api.schemas"
+      ],
+      "syntax_valid": true,
+      "syntax_error": null
+    },
+    {
+      "path": "src/services/computer_vision_service.py",
+      "module": "src.services.computer_vision_service",
+      "line_count": 432,
+      "sha256": "8602a7810c5ce9fe4c78166351c8c8f013b033a272b6e6a4a4526a4d6a484ceb",
+      "classes": [
+        {
+          "name": "ClassificationResult",
+          "line": 40,
+          "public_methods": []
+        },
+        {
+          "name": "ComputerVisionService",
+          "line": 59,
+          "public_methods": [
+            "is_ready",
+            "confidence_category",
+            "preprocess",
+            "predict"
+          ]
+        }
+      ],
+      "functions": [],
+      "local_imports": [
+        "api.core.config",
+        "api.core.errors",
+        "api.schemas.prediction",
+        "src.services.image_service"
+      ],
+      "syntax_valid": true,
+      "syntax_error": null
+    },
+    {
+      "path": "src/services/gradcam_service.py",
+      "module": "src.services.gradcam_service",
+      "line_count": 479,
+      "sha256": "7238446e8d95ff89460e36479d71fead2ca3461d66cc307e66577937eb4120cb",
+      "classes": [
+        {
+          "name": "GradCAMResult",
+          "line": 22,
+          "public_methods": []
+        },
+        {
+          "name": "GradCAMService",
+          "line": 38,
+          "public_methods": [
+            "model_dtype",
+            "generate",
+            "generate_for_crossed_findings"
+          ]
+        }
+      ],
+      "functions": [],
+      "local_imports": [],
+      "syntax_valid": true,
+      "syntax_error": null
+    },
+    {
+      "path": "src/services/grounding_service.py",
+      "module": "src.services.grounding_service",
+      "line_count": 496,
+      "sha256": "791d7e8b0c160acaf574a538f579dd0858fdae3af7fab20421278a6919134945",
+      "classes": [
+        {
+          "name": "GroundedFinding",
+          "line": 33,
+          "public_methods": []
+        },
+        {
+          "name": "SerializedGroundingInput",
+          "line": 46,
+          "public_methods": []
+        },
+        {
+          "name": "GroundedInputSerializer",
+          "line": 58,
+          "public_methods": [
+            "normalize_finding",
+            "serialize"
+          ]
+        }
+      ],
+      "functions": [],
+      "local_imports": [],
+      "syntax_valid": true,
+      "syntax_error": null
+    },
+    {
+      "path": "src/services/image_service.py",
+      "module": "src.services.image_service",
+      "line_count": 220,
+      "sha256": "4cda31250b539c9f28cd1e1057166c391c62a763fc35a0f4e743a2ea089782e7",
+      "classes": [
+        {
+          "name": "ValidatedImage",
+          "line": 33,
+          "public_methods": [
+            "response_metadata"
+          ]
+        },
+        {
+          "name": "ImageValidationService",
+          "line": 59,
+          "public_methods": [
+            "validate_and_decode"
+          ]
+        }
+      ],
+      "functions": [],
+      "local_imports": [
+        "api.core.config",
+        "api.core.errors",
+        "api.schemas.prediction"
+      ],
+      "syntax_valid": true,
+      "syntax_error": null
+    },
+    {
+      "path": "src/services/image_workflow_service.py",
+      "module": "src.services.image_workflow_service",
+      "line_count": 391,
+      "sha256": "0b891c00c119b2b1a505acb025eaf07bc308cb2321884a4d502560f02004d551",
+      "classes": [
+        {
+          "name": "ImageWorkflowExecution",
+          "line": 19,
+          "public_methods": []
+        },
+        {
+          "name": "ImageAnalysisWorkflow",
+          "line": 28,
+          "public_methods": [
+            "classify",
+            "analyze"
+          ]
+        }
+      ],
+      "functions": [],
+      "local_imports": [
+        "api.schemas"
+      ],
+      "syntax_valid": true,
+      "syntax_error": null
+    },
+    {
+      "path": "src/services/language_guardrail_service.py",
+      "module": "src.services.language_guardrail_service",
+      "line_count": 1077,
+      "sha256": "8ea7b4bc2597574ba100895d90632eac81f9f037494631c3a5834ad5035c8cb3",
+      "classes": [
+        {
+          "name": "GuardrailAudit",
+          "line": 51,
+          "public_methods": []
+        },
+        {
+          "name": "GuardedLanguageResult",
+          "line": 67,
+          "public_methods": []
+        },
+        {
+          "name": "DeterministicLanguageGuardrail",
+          "line": 80,
+          "public_methods": [
+            "audit",
+            "build_fallback",
+            "apply"
+          ]
+        }
+      ],
+      "functions": [],
+      "local_imports": [],
+      "syntax_valid": true,
+      "syntax_error": null
+    },
+    {
+      "path": "src/services/language_model_service.py",
+      "module": "src.services.language_model_service",
+      "line_count": 377,
+      "sha256": "91ba397b0df2ecae22a0bd9c150a480c111214487b0c48900ced97aa10e7474c",
+      "classes": [
+        {
+          "name": "LanguageGenerationResult",
+          "line": 20,
+          "public_methods": []
+        },
+        {
+          "name": "GroundedLanguageModelService",
+          "line": 33,
+          "public_methods": [
+            "generate_many",
+            "generate"
+          ]
+        }
+      ],
+      "functions": [],
+      "local_imports": [],
+      "syntax_valid": true,
+      "syntax_error": null
+    },
+    {
+      "path": "src/services/language_workflow_service.py",
+      "module": "src.services.language_workflow_service",
+      "line_count": 359,
+      "sha256": "4a099bdeaae8950044cb7f437fc6f170883476bddd614f8dfc2ae71945d4493f",
+      "classes": [
+        {
+          "name": "LanguageWorkflowExecution",
+          "line": 25,
+          "public_methods": []
+        },
+        {
+          "name": "StoredPredictionLanguageWorkflow",
+          "line": 35,
+          "public_methods": [
+            "generate"
+          ]
+        }
+      ],
+      "functions": [],
+      "local_imports": [
+        "api.schemas"
+      ],
+      "syntax_valid": true,
+      "syntax_error": null
+    },
+    {
+      "path": "src/services/operational_metrics_service.py",
+      "module": "src.services.operational_metrics_service",
+      "line_count": 459,
+      "sha256": "2a4a02e4a8843db36c24b9b4ff53042fc0bc9c70a07ac38a7c56950dbe366e67",
+      "classes": [
+        {
+          "name": "OperationalMetricsSnapshot",
+          "line": 16,
+          "public_methods": []
+        },
+        {
+          "name": "OperationalMetricsService",
+          "line": 38,
+          "public_methods": [
+            "record_request",
+            "record_service_invocation",
+            "record_language_action",
+            "snapshot"
+          ]
+        }
+      ],
+      "functions": [],
+      "local_imports": [],
+      "syntax_valid": true,
+      "syntax_error": null
+    },
+    {
+      "path": "src/services/prediction_store_service.py",
+      "module": "src.services.prediction_store_service",
+      "line_count": 309,
+      "sha256": "2c7a1fb92b89e210ebcce443729a47e8a244144726a02ce3ce2b4d5f41d23987",
+      "classes": [
+        {
+          "name": "PredictionRecord",
+          "line": 25,
+          "public_methods": []
+        },
+        {
+          "name": "PredictionStoreService",
+          "line": 44,
+          "public_methods": [
+            "utc_now",
+            "create",
+            "get",
+            "attach_visual_evidence",
+            "upsert_language_output",
+            "build_response",
+            "snapshot_metrics"
+          ]
+        }
+      ],
+      "functions": [],
+      "local_imports": [
+        "api.core.errors",
+        "api.schemas.aggregate",
+        "api.schemas.explainability",
+        "api.schemas.prediction"
+      ],
+      "syntax_valid": true,
+      "syntax_error": null
+    },
+    {
+      "path": "tests/__init__.py",
+      "module": "tests",
+      "line_count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "classes": [],
+      "functions": [],
+      "local_imports": [],
+      "syntax_valid": true,
+      "syntax_error": null
+    },
+    {
+      "path": "tests/api/__init__.py",
+      "module": "tests.api",
+      "line_count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "classes": [],
+      "functions": [],
+      "local_imports": [],
+      "syntax_valid": true,
+      "syntax_error": null
+    },
+    {
+      "path": "tests/api/conftest.py",
+      "module": "tests.api.conftest",
+      "line_count": 78,
+      "sha256": "75df3ccb11fdcb2712bbd9de737af3fab2789622c29e62fe941814989ad408b6",
+      "classes": [],
+      "functions": [
+        {
+          "name": "client",
+          "async": false,
+          "line": 19
+        },
+        {
+          "name": "valid_png_bytes",
+          "async": false,
+          "line": 30
+        },
+        {
+          "name": "classification_payload",
+          "async": false,
+          "line": 61
+        }
+      ],
+      "local_imports": [
+        "api.main"
+      ],
+      "syntax_valid": true,
+      "syntax_error": null
+    },
+    {
+      "path": "tests/api/test_complete_endpoint.py",
+      "module": "tests.api.test_complete_endpoint",
+      "line_count": 145,
+      "sha256": "91026a170d2eba479ad9c8d299c4b48970fb26796bb80ce455b1968ed807c9fd",
+      "classes": [],
+      "functions": [
+        {
+          "name": "test_complete_analysis_with_question",
+          "async": false,
+          "line": 13
+        },
+        {
+          "name": "test_complete_analysis_without_question",
+          "async": false,
+          "line": 90
+        },
+        {
+          "name": "test_complete_invalid_media_is_controlled",
+          "async": false,
+          "line": 122
+        }
+      ],
+      "local_imports": [
+        "api.schemas"
+      ],
+      "syntax_valid": true,
+      "syntax_error": null
+    },
+    {
+      "path": "tests/api/test_image_endpoints.py",
+      "module": "tests.api.test_image_endpoints",
+      "line_count": 192,
+      "sha256": "0c13c74e01ed857d8b0e41406a72bd2cf9f36e443f2599e6333e6db309aa4b45",
+      "classes": [],
+      "functions": [
+        {
+          "name": "test_valid_png_classification",
+          "async": false,
+          "line": 16
+        },
+        {
+          "name": "test_classification_can_be_retrieved",
+          "async": false,
+          "line": 50
+        },
+        {
+          "name": "test_valid_png_analysis",
+          "async": false,
+          "line": 79
+        },
+        {
+          "name": "test_invalid_image_requests_are_controlled",
+          "async": false,
+          "line": 139
+        },
+        {
+          "name": "test_spoofed_media_type_is_rejected",
+          "async": false,
+          "line": 168
+        }
+      ],
+      "local_imports": [
+        "api.schemas"
+      ],
+      "syntax_valid": true,
+      "syntax_error": null
+    },
+    {
+      "path": "tests/api/test_language_endpoints.py",
+      "module": "tests.api.test_language_endpoints",
+      "line_count": 187,
+      "sha256": "847fcc9092d005665fe59a9e8f45172424ff00f7fe25d4fdba4bfb1509455dce",
+      "classes": [],
+      "functions": [
+        {
+          "name": "test_grounded_language_endpoint",
+          "async": false,
+          "line": 44
+        },
+        {
+          "name": "test_language_outputs_are_upserted",
+          "async": false,
+          "line": 101
+        },
+        {
+          "name": "test_blank_question_is_rejected",
+          "async": false,
+          "line": 138
+        },
+        {
+          "name": "test_missing_language_prediction_is_controlled",
+          "async": false,
+          "line": 166
+        }
+      ],
+      "local_imports": [
+        "api.schemas"
+      ],
+      "syntax_valid": true,
+      "syntax_error": null
+    },
+    {
+      "path": "tests/api/test_system_endpoints.py",
+      "module": "tests.api.test_system_endpoints",
+      "line_count": 123,
+      "sha256": "4788cbec3b5d053cbd6c43eb7d925924f34a1db482af4ebdcc2610248198937a",
+      "classes": [],
+      "functions": [
+        {
+          "name": "test_health_endpoint",
+          "async": false,
+          "line": 17
+        },
+        {
+          "name": "test_model_info_endpoint",
+          "async": false,
+          "line": 33
+        },
+        {
+          "name": "test_model_metrics_endpoint",
+          "async": false,
+          "line": 48
+        },
+        {
+          "name": "test_operational_metrics_endpoint",
+          "async": false,
+          "line": 62
+        },
+        {
+          "name": "test_openapi_contains_twelve_paths",
+          "async": false,
+          "line": 78
+        },
+        {
+          "name": "test_missing_prediction_is_controlled",
+          "async": false,
+          "line": 89
+        },
+        {
+          "name": "test_malformed_prediction_id_is_controlled",
+          "async": false,
+          "line": 107
+        }
+      ],
+      "local_imports": [
+        "api.schemas"
+      ],
+      "syntax_valid": true,
+      "syntax_error": null
+    },
+    {
+      "path": "ui/api_client.py",
+      "module": "ui.api_client",
+      "line_count": 285,
+      "sha256": "100599050fae5bc8f2e3fc6a6e83e23cdf7de7f2593dd16367e5367ef477afbf",
+      "classes": [
+        {
+          "name": "APIClientError",
+          "line": 14,
+          "public_methods": [
+            "to_display_dict"
+          ]
+        },
+        {
+          "name": "ChestXRayAPIClient",
+          "line": 44,
+          "public_methods": [
+            "health",
+            "model_info",
+            "model_metrics",
+            "analyze_complete",
+            "answer_question",
+            "get_prediction",
+            "llmops_metrics",
+            "close"
+          ]
+        }
+      ],
+      "functions": [],
+      "local_imports": [],
+      "syntax_valid": true,
+      "syntax_error": null
+    },
+    {
+      "path": "ui/app.py",
+      "module": "ui.app",
+      "line_count": 911,
+      "sha256": "b4a734267c1164f2590433b3ec758a59d703f9204cf788bfaf6de57f219d9441",
+      "classes": [],
+      "functions": [
+        {
+          "name": "load_ui_configuration",
+          "async": false,
+          "line": 28
+        },
+        {
+          "name": "format_file_size",
+          "async": false,
+          "line": 48
+        },
+        {
+          "name": "initialize_session_state",
+          "async": false,
+          "line": 55
+        },
+        {
+          "name": "reset_analysis_state",
+          "async": false,
+          "line": 75
+        },
+        {
+          "name": "get_api_client",
+          "async": false,
+          "line": 85
+        },
+        {
+          "name": "render_api_error",
+          "async": false,
+          "line": 95
+        },
+        {
+          "name": "render_sidebar",
+          "async": false,
+          "line": 135
+        },
+        {
+          "name": "render_upload",
+          "async": false,
+          "line": 170
+        },
+        {
+          "name": "render_analysis_submission",
+          "async": false,
+          "line": 301
+        },
+        {
+          "name": "render_response_metadata",
+          "async": false,
+          "line": 393
+        },
+        {
+          "name": "render_follow_up_workflow",
+          "async": false,
+          "line": 473
+        },
+        {
+          "name": "render_retrieval_workflow",
+          "async": false,
+          "line": 550
+        },
+        {
+          "name": "render_operational_metrics_workflow",
+          "async": false,
+          "line": 626
+        },
+        {
+          "name": "main",
+          "async": false,
+          "line": 801
+        }
+      ],
+      "local_imports": [],
+      "syntax_valid": true,
+      "syntax_error": null
+    },
+    {
+      "path": "ui/components.py",
+      "module": "ui.components",
+      "line_count": 820,
+      "sha256": "0367ed59a4caded18136cce95653c91d0f09bcf89a7bd5bb4af4a461ee1e76f2",
+      "classes": [],
+      "functions": [
+        {
+          "name": "build_finding_table",
+          "async": false,
+          "line": 11
+        },
+        {
+          "name": "render_finding_summary",
+          "async": false,
+          "line": 54
+        },
+        {
+          "name": "decode_base64_image",
+          "async": false,
+          "line": 201
+        },
+        {
+          "name": "render_visual_evidence",
+          "async": false,
+          "line": 234
+        },
+        {
+          "name": "render_language_outputs",
+          "async": false,
+          "line": 445
+        },
+        {
+          "name": "render_grounded_question_response",
+          "async": false,
+          "line": 628
+        },
+        {
+          "name": "render_stored_prediction_summary",
+          "async": false,
+          "line": 742
+        }
+      ],
+      "local_imports": [],
+      "syntax_valid": true,
+      "syntax_error": null
+    }
+  ]
+}

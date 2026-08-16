@@ -1,0 +1,28 @@
+{
+  "evidence_version": "structured-logging-runtime-validation-v1",
+  "generated_at_utc": "2026-08-14T13:14:55.757080+00:00",
+  "test_file": "tests/unit/test_structured_logging.py",
+  "pytest_command": [
+    "/opt/conda/bin/python",
+    "-m",
+    "pytest",
+    "/home/jovyan/chest-xray-ai-assistant/tests/unit/test_structured_logging.py",
+    "-q",
+    "--tb=short",
+    "--disable-warnings"
+  ],
+  "return_code": 0,
+  "tests_passed": true,
+  "validated_components": [
+    "image_validation",
+    "computer_vision",
+    "language_guardrail"
+  ],
+  "validated_levels": [
+    "INFO",
+    "WARNING",
+    "ERROR"
+  ],
+  "sensitive_content_exclusion_tested": true,
+  "pytest_output_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/test_results/logging_pytest.txt"
+}

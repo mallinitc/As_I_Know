@@ -1,0 +1,77 @@
+dataset:
+  name: ChestMNIST
+  flag: chestmnist
+  library_version: 3.0.2
+  task: multi-label, binary-class
+  image_size: 224
+  source_channels: 1
+  model_input_channels: 3
+  license: CC BY 4.0
+  archive_path: /home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/raw/chestmnist_224.npz
+  source_url: https://zenodo.org/records/10519652/files/chestmnist_224.npz?download=1
+  checksum_md5: 45bd33e6f06c3e8cdb481c74a89152aa
+  splits:
+    train: 78468
+    val: 11219
+    test: 22433
+  labels:
+    0: atelectasis
+    1: cardiomegaly
+    2: effusion
+    3: infiltration
+    4: mass
+    5: nodule
+    6: pneumonia
+    7: pneumothorax
+    8: consolidation
+    9: edema
+    10: emphysema
+    11: fibrosis
+    12: pleural
+    13: hernia
+preprocessing:
+  grayscale_to_rgb: true
+  normalization:
+    mean:
+    - 0.485
+    - 0.456
+    - 0.406
+    standard_deviation:
+    - 0.229
+    - 0.224
+    - 0.225
+  training_augmentation:
+    affine_probability: 0.5
+    rotation_degrees: 5
+    translation_fraction: 0.02
+    scale_range:
+    - 0.95
+    - 1.05
+    intensity_probability: 0.5
+    brightness_variation: 0.1
+    contrast_variation: 0.1
+    horizontal_flip: false
+    aggressive_crop: false
+class_imbalance:
+  weighting_method: negative_count / positive_count
+  maximum_positive_weight: 100.0
+  positive_weights:
+    atelectasis: 8.813406703351676
+    cardiomegaly: 39.24
+    effusion: 7.472951085195983
+    infiltration: 4.639499784389823
+    mass: 18.67602808425276
+    nodule: 16.935542857142856
+    pneumonia: 79.23312883435582
+    pneumothorax: 20.178947368421053
+    consolidation: 23.04780876494024
+    edema: 45.43076923076923
+    emphysema: 42.61756531406337
+    fibrosis: 66.76165803108809
+    pleural: 33.43089074155331
+    hernia: 100.0
+interpretation_policy:
+  zero_label_description: No target finding recorded
+  zero_label_is_confirmed_normal: false
+  labels_are_image_level: true
+  clinical_diagnosis_permitted: false

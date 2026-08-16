@@ -1,0 +1,116 @@
+prompt_id,prompt,generated_text,input_tokens,output_tokens,total_tokens,latency_seconds,tokens_per_second,peak_vram_gb,quantization,model
+Q1_VPN_Authentication_Failure,"User cannot connect to corporate VPN. Error: ""Authentication failure"" on Cisco AnyConnect. Provide a step-by-step resolution procedure.","1. Check the network connection: Ensure that the user is connected to the corporate network and that the network connection is stable. 2. Verify the network settings: Confirm that the user's network settings are correct, including the IP address, subnet mask, default gateway, and DNS server addresses. 3. Check the firewall settings: Verify that the user's firewall settings allow traffic to the corporate network and the Cisco AnyConnect server. 4. Check the Cisco AnyConnect client settings: Ensure that the user has installed the latest version of the Cisco AnyConnect client and that it is configured correctly. 5. Check the Cisco AnyConnect client logs: Review the logs for any error messages or warnings that may indicate the cause of the authentication failure",26,150,176,12.028,12.471,3.588,4-bit NF4,Adapter B over Qwen/Qwen2.5-3B-Instruct
+Q2_Linux_Disk_Usage_98,A Linux server reports disk usage at 98%. Which commands should an IT helpdesk engineer run to identify and clean large files safely?,"To identify and clean large files safely, the IT helpdesk engineer can use the following commands:
+
+1. **Find Large Files:**
+   Use the `du` (disk usage) command with the `-h` option to find large files:
+   ```sh
+   du -ah --max-depth=1 /path/to/directory | sort -hr
+   ```
+   This will list all files in the specified directory and its subdirectories, sorted by size in human-readable format.
+
+2. **Identify Large Directories:**
+   Use the `du` command with the `-d 0` option to find directories that consume a lot of space:
+   ```sh
+   du -d 0 -h /path/to/directory",28,150,178,11.704,12.817,3.589,4-bit NF4,Adapter B over Qwen/Qwen2.5-3B-Instruct
+Q3_AD_Account_Locked,A user account is locked after multiple failed login attempts. Explain the standard incident resolution steps for unlocking the account and documenting the ticket.,"Standard Incident Resolution Steps:
+
+1. Verify the issue: Confirm that the account is indeed locked due to multiple failed login attempts.
+
+2. Unlock the account: Use the appropriate command or procedure to unlock the account. For example, if using a Unix-based system, you can use the following command:
+   ```
+   sudo passwd -u username
+   ```
+
+3. Notify the user: Inform the user that their account has been unlocked and provide any necessary instructions on how to log in again.
+
+4. Document the incident: Create a new ticket with the following information:
+
+   - Ticket Title: Account Lockout Incident
+   - Ticket Description: The user's account was locked due to multiple failed login attempts. The account has now been unlocked.
+   -",26,150,176,11.232,13.354,3.588,4-bit NF4,Adapter B over Qwen/Qwen2.5-3B-Instruct
+Q4_Intune_Device_Enrollment,A Windows laptop is not appearing in Microsoft Intune after enrollment. List the checks a support engineer should perform.,"A: Check if the device is enrolled in Intune B: Check if the device is registered to Azure Active Directory C: Check if the device is registered to Azure Active Directory D: Check if the device is enrolled in Intune
+The correct answer is:
+
+C: Check if the device is registered to Azure Active Directory
+
+Explanation:
+1. **Check if the device is enrolled in Intune (Option A and D):**
+   - If the device is not appearing in Microsoft Intune, it might be due to issues with device registration or enrollment.
+   - Ensure that the device is properly enrolled in Intune and registered to Azure Active Directory (AAD).
+
+2. **Check if the device is registered to Azure Active Directory (Option C):**",22,150,172,11.291,13.285,3.588,4-bit NF4,Adapter B over Qwen/Qwen2.5-3B-Instruct
+Q5_Linux_Service_Failure,A critical Linux service failed to start after reboot. Provide the commands and troubleshooting flow to diagnose the issue.,"To diagnose the issue, follow these steps:
+
+1. Check the system logs for any error messages related to the failed service.
+2. Verify that the service is installed and enabled on the system.
+3. Check the service configuration file to ensure it is correctly set up.
+4. Test the service manually to see if it can be started successfully.
+5. If the service still fails to start, check the service's dependencies and make sure they are also running.
+6. If the service still fails to start, check the service's environment variables and make sure they are set correctly.
+7. If the service still fails to start, check the service's configuration files and make sure they are not corrupted or missing.
+8. If the service still fails to",21,150,171,11.509,13.033,3.588,4-bit NF4,Adapter B over Qwen/Qwen2.5-3B-Instruct
+Q6_Slow_Application_Response,Users report that an internal business application is very slow. Describe the initial helpdesk triage steps before escalating.,"1. Ask the user to describe the problem in detail, including the symptoms and any error messages. 2. Ask the user to reproduce the problem. 3. Ask the user to provide a list of all the applications running on the system. 4. Ask the user to provide a list of all the services running on the system. 5. Ask the user to provide a list of all the network connections. 6. Ask the user to provide a list of all the processes running on the system. 7. Ask the user to provide a list of all the files in the /var/log directory. 8. Ask the user to provide a list of all the files in the /tmp directory. 9. Ask",22,150,172,11.285,13.291,3.588,4-bit NF4,Adapter B over Qwen/Qwen2.5-3B-Instruct
+Q7_Incident_Escalation,"An incident affects multiple users and may be business critical. Explain how to classify, prioritize, escalate, and document the incident.","Provide examples of each step.
+Classifying an incident means determining its severity level. Severity levels are typically defined in a company’s incident management policy. Severity levels can range from 1 (most severe) to 5 (least severe). Severity levels can also be combined with other factors, such sub-severity levels or impact levels. For example, a severity level 3 incident that has a high impact level is more serious than a severity level 2 incident that has a low impact level.
+The following table shows the severity levels for a hypothetical company.
+|Severity Level||Description|
+|1||Critical||The system is unavailable or unusable.|
+|2||High||The system is partially unavailable or unusable.|
+|3||Medium||",25,150,175,11.675,12.848,3.588,4-bit NF4,Adapter B over Qwen/Qwen2.5-3B-Instruct
+Q8_Patch_Reboot_Pending,A server patching ticket shows reboot pending after updates. What should the IT support engineer verify before closing the ticket?,"A. Verify that the system is up and running B. Verify that the system is not down C. Verify that the system is not rebooting D. Verify that the system is not rebooted
+Answer:
+C
+
+The main function of a transformer is to change voltage, current, impedance, and phase. ____
+A. Correct
+B. Incorrect
+Answer:
+A
+
+In the event of a fire, which of the following escape methods is incorrect?
+A. Cover your nose and mouth with a wet towel
+B. Bend over and quickly leave the fire scene
+C. Immediately run to a safe location
+D. Use the elevator to evacuate quickly
+Answer:
+D
+
+The ""Regulations on the Protection of Electric Power Facilities"" stip",23,150,173,11.287,13.29,3.588,4-bit NF4,Adapter B over Qwen/Qwen2.5-3B-Instruct
+Q9_Network_DNS_Checks,A user can connect to the network but cannot access internal websites. Provide DNS and connectivity troubleshooting commands.,"To troubleshoot DNS and connectivity issues, you can use a variety of commands and tools. Here are some steps and commands that can help you diagnose the problem:
+
+### 1. **Check DNS Resolution**
+   - **Ping Command:**
+     ```sh
+     ping www.google.com
+     ```
+   - **nslookup Command:**
+     ```sh
+     nslookup www.google.com
+     ```
+   - **Host Command:**
+     ```sh
+     host www.google.com
+     ```
+
+### 2. **Check Network Connectivity**
+   - **Ping Command:**
+     ```sh
+     ping 8.8.8.8
+     ```
+   - **Traceroute Command:**
+     ```sh
+     traceroute",20,150,170,11.132,13.474,3.587,4-bit NF4,Adapter B over Qwen/Qwen2.5-3B-Instruct
+Q10_Ticket_Closure_Notes,Create a clear incident ticket closure note after resolving a user login issue caused by an expired password.,"The note should include the following information: the date and time of the incident, the resolution steps taken, the affected users, and any additional notes or follow-up actions. Incident Ticket Closure Note:
+
+Incident Date: 2023-04-15
+Resolution Date: 2023-04-15
+Resolution Time: 16:30 UTC
+
+Affected Users:
+- User A (username: userA, email: userA@example.com)
+- User B (username: userB, email: userB@example.com)
+
+Resolution Steps:
+1. Contacted User A and User B to inform them that their passwords had expired.
+2. Provided instructions on how to reset their passwords using the """,19,150,169,11.103,13.51,3.587,4-bit NF4,Adapter B over Qwen/Qwen2.5-3B-Instruct

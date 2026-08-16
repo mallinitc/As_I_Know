@@ -1,0 +1,952 @@
+{
+  "dataset_duplicated": false,
+  "evidence_files": [
+    {
+      "absolute_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/architecture/data_module_implementation.json",
+      "bytes": 1597,
+      "modified_at_utc": "2026-08-14T21:22:35.176246+00:00",
+      "relative_path": "architecture/data_module_implementation.json",
+      "sha256": "101804cdefde86783853170d4e623980610265078a561b6d910831fd9bba9227"
+    },
+    {
+      "absolute_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/architecture/exception_logging_audit_before.json",
+      "bytes": 5650,
+      "modified_at_utc": "2026-08-14T12:52:39.620433+00:00",
+      "relative_path": "architecture/exception_logging_audit_before.json",
+      "sha256": "a94b6a31702efa155d2741a895f4436d07be940a0b6294304249f364925a132b"
+    },
+    {
+      "absolute_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/architecture/model_training_module_implementation.json",
+      "bytes": 926,
+      "modified_at_utc": "2026-08-15T03:57:49.553450+00:00",
+      "relative_path": "architecture/model_training_module_implementation.json",
+      "sha256": "328ced5cf861c188636fc6f536030e4232f33417927c0106932a5b30e27ee5e7"
+    },
+    {
+      "absolute_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/architecture/openapi_contract_validation.json",
+      "bytes": 4181,
+      "modified_at_utc": "2026-08-15T05:27:08.202193+00:00",
+      "relative_path": "architecture/openapi_contract_validation.json",
+      "sha256": "a27e35ed47c072055f8cd648a38ebdc2a04cf92a5ffbd9eef65a763b807783e9"
+    },
+    {
+      "absolute_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/architecture/openapi_schema.json",
+      "bytes": 56422,
+      "modified_at_utc": "2026-08-15T05:27:08.202193+00:00",
+      "relative_path": "architecture/openapi_schema.json",
+      "sha256": "6ff43bb7e0a0712faa3117c2e02ba4287a73ce8ee098120b1aadb458887cc925"
+    },
+    {
+      "absolute_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/architecture/repository_modularity_audit.json",
+      "bytes": 38214,
+      "modified_at_utc": "2026-08-14T12:40:28.465212+00:00",
+      "relative_path": "architecture/repository_modularity_audit.json",
+      "sha256": "136550074c5b00daad69e7441edf87115d1fcda755d7f09066814a340d104366"
+    },
+    {
+      "absolute_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/architecture/service_layer_contract_audit.json",
+      "bytes": 55172,
+      "modified_at_utc": "2026-08-14T12:51:12.959084+00:00",
+      "relative_path": "architecture/service_layer_contract_audit.json",
+      "sha256": "609adf29841863ab20ee2f4f470c6235d2564eea65f84ad9bc34f4018cb23bcc"
+    },
+    {
+      "absolute_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/code_quality/after/black_after.txt",
+      "bytes": 57,
+      "modified_at_utc": "2026-08-14T15:49:35.925534+00:00",
+      "relative_path": "code_quality/after/black_after.txt",
+      "sha256": "e3c227c000bb13dd2ecb5b9ec42d747f6fec364aafcb0769069c55b00fbf22c6"
+    },
+    {
+      "absolute_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/code_quality/after/black_apply.txt",
+      "bytes": 2864,
+      "modified_at_utc": "2026-08-14T15:47:37.804866+00:00",
+      "relative_path": "code_quality/after/black_apply.txt",
+      "sha256": "7609c6955958515bdd78aa489e6cd430dc876d514d8af81ba0fac288c86c31e6"
+    },
+    {
+      "absolute_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/code_quality/after/compileall_after.txt",
+      "bytes": 1,
+      "modified_at_utc": "2026-08-14T15:47:37.885866+00:00",
+      "relative_path": "code_quality/after/compileall_after.txt",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "absolute_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/code_quality/after/final_code_quality.json",
+      "bytes": 2263,
+      "modified_at_utc": "2026-08-14T15:49:36.142535+00:00",
+      "relative_path": "code_quality/after/final_code_quality.json",
+      "sha256": "3303e57fcc1e7d910c78f87b4772f3092ab01de363995f4ef212e5403d6d2103"
+    },
+    {
+      "absolute_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/code_quality/after/isort_after.txt",
+      "bytes": 1,
+      "modified_at_utc": "2026-08-14T15:49:36.103535+00:00",
+      "relative_path": "code_quality/after/isort_after.txt",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "absolute_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/code_quality/after/isort_apply.txt",
+      "bytes": 1859,
+      "modified_at_utc": "2026-08-14T15:47:36.493858+00:00",
+      "relative_path": "code_quality/after/isort_apply.txt",
+      "sha256": "61748ef1272544b9be4cdc4c9b36b29de9ed08ff1cc317ccbdae621bb65e147a"
+    },
+    {
+      "absolute_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/code_quality/after/post_remediation_pytest.txt",
+      "bytes": 421,
+      "modified_at_utc": "2026-08-14T15:48:14.955077+00:00",
+      "relative_path": "code_quality/after/post_remediation_pytest.txt",
+      "sha256": "095798c1478460ad82c397da76ff6277ff5635e7e48a302c199778a96a32eeef"
+    },
+    {
+      "absolute_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/code_quality/after/pre_remediation_pytest.txt",
+      "bytes": 421,
+      "modified_at_utc": "2026-08-14T15:47:36.263857+00:00",
+      "relative_path": "code_quality/after/pre_remediation_pytest.txt",
+      "sha256": "c5d5d31b7f00786d727d1cfef88113129a4a81e1327514cd80cefc54a36f2353"
+    },
+    {
+      "absolute_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/code_quality/after/remediation_registry.json",
+      "bytes": 17612,
+      "modified_at_utc": "2026-08-14T15:48:14.989077+00:00",
+      "relative_path": "code_quality/after/remediation_registry.json",
+      "sha256": "b7bdcee620c19c51fe29e40a9a36517bd26e9216d0a3dbe5c558953dc7380855"
+    },
+    {
+      "absolute_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/code_quality/after/ruff_after.txt",
+      "bytes": 19,
+      "modified_at_utc": "2026-08-14T15:49:36.142535+00:00",
+      "relative_path": "code_quality/after/ruff_after.txt",
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    {
+      "absolute_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/code_quality/after/ruff_fix.txt",
+      "bytes": 39,
+      "modified_at_utc": "2026-08-14T15:47:36.301857+00:00",
+      "relative_path": "code_quality/after/ruff_fix.txt",
+      "sha256": "18a1870e43654de125f6cf52d247a1e8da43d31a58999f7c8f4b52783084d1be"
+    },
+    {
+      "absolute_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/code_quality/before/baseline_code_quality.json",
+      "bytes": 6912,
+      "modified_at_utc": "2026-08-14T15:39:47.571070+00:00",
+      "relative_path": "code_quality/before/baseline_code_quality.json",
+      "sha256": "d334c5cba8f5856fec89153c0d981418502a2b1143688d999803b8edc9f333da"
+    },
+    {
+      "absolute_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/code_quality/before/black_before.txt",
+      "bytes": 313453,
+      "modified_at_utc": "2026-08-14T15:39:47.310069+00:00",
+      "relative_path": "code_quality/before/black_before.txt",
+      "sha256": "437ff3d767c760df665387d9d4800c3837246ba39e81f0bf6e5dcf22b70f4132"
+    },
+    {
+      "absolute_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/code_quality/before/isort_before.txt",
+      "bytes": 20937,
+      "modified_at_utc": "2026-08-14T15:39:47.537070+00:00",
+      "relative_path": "code_quality/before/isort_before.txt",
+      "sha256": "76d219f2d75ae1ac94a8fd07010cdf65b951839e8b9c8b3cff5b0a61d5a5adbd"
+    },
+    {
+      "absolute_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/code_quality/before/ruff_before.txt",
+      "bytes": 365,
+      "modified_at_utc": "2026-08-14T15:39:47.569070+00:00",
+      "relative_path": "code_quality/before/ruff_before.txt",
+      "sha256": "85a36afa80a4bd51b188828d1a580994ff11ae3ad81d7a615eb9c90a0d2b4eb0"
+    },
+    {
+      "absolute_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/code_quality/final/black_final_repository.txt",
+      "bytes": 57,
+      "modified_at_utc": "2026-08-15T05:43:13.926192+00:00",
+      "relative_path": "code_quality/final/black_final_repository.txt",
+      "sha256": "95861a7c6e1a646997c6b83c3027dcd31acf1ebc7e0538de89b5574f350b2c3f"
+    },
+    {
+      "absolute_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/code_quality/final/compileall_final_repository.txt",
+      "bytes": 1,
+      "modified_at_utc": "2026-08-15T05:43:14.215193+00:00",
+      "relative_path": "code_quality/final/compileall_final_repository.txt",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "absolute_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/code_quality/final/isort_final_repository.txt",
+      "bytes": 1,
+      "modified_at_utc": "2026-08-15T05:43:14.134193+00:00",
+      "relative_path": "code_quality/final/isort_final_repository.txt",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "absolute_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/code_quality/final/ruff_final_repository.txt",
+      "bytes": 19,
+      "modified_at_utc": "2026-08-15T05:43:14.164193+00:00",
+      "relative_path": "code_quality/final/ruff_final_repository.txt",
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    {
+      "absolute_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/code_quality/toolchain_configuration.json",
+      "bytes": 1279,
+      "modified_at_utc": "2026-08-14T13:23:14.680312+00:00",
+      "relative_path": "code_quality/toolchain_configuration.json",
+      "sha256": "fc6ca761ef5981e56e8bf122dc643a7e978f5444ff69ba99b180d0534fc23d35"
+    },
+    {
+      "absolute_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/data_quality/data_quality_metrics.json",
+      "bytes": 2800,
+      "modified_at_utc": "2026-08-15T04:06:12.517823+00:00",
+      "relative_path": "data_quality/data_quality_metrics.json",
+      "sha256": "0737945eef3a35fbb1537cb5e333b69ff71a652d7f222f06a125948e62a5a4ce"
+    },
+    {
+      "absolute_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/logs/computer_vision_logging_implementation.json",
+      "bytes": 956,
+      "modified_at_utc": "2026-08-14T13:04:37.715682+00:00",
+      "relative_path": "logs/computer_vision_logging_implementation.json",
+      "sha256": "ed6e5de3b2a09014cd0d820a019f35c297444e10832f159f2132178154703a10"
+    },
+    {
+      "absolute_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/logs/image_validation_logging_implementation.json",
+      "bytes": 898,
+      "modified_at_utc": "2026-08-14T13:01:02.871910+00:00",
+      "relative_path": "logs/image_validation_logging_implementation.json",
+      "sha256": "ec7941c274b7b7b2ffc0b4f50b709cc05085068f73cfaa53f38e88a5f6daf8c9"
+    },
+    {
+      "absolute_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/logs/language_guardrail_logging_implementation.json",
+      "bytes": 987,
+      "modified_at_utc": "2026-08-14T13:07:39.312170+00:00",
+      "relative_path": "logs/language_guardrail_logging_implementation.json",
+      "sha256": "9af46b4e405c80a55a584e5ec0ef8759148b65ca4789c5fe23a89fcafd2292bd"
+    },
+    {
+      "absolute_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/logs/logging_validation.json",
+      "bytes": 806,
+      "modified_at_utc": "2026-08-14T13:14:55.756598+00:00",
+      "relative_path": "logs/logging_validation.json",
+      "sha256": "e1c8d5ef3fc5998851a9d8e01efe2a6d38cca365c4dae6550a9b432bac1f58a3"
+    },
+    {
+      "absolute_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/metrics/model_quality_metrics.json",
+      "bytes": 2245,
+      "modified_at_utc": "2026-08-15T04:26:16.024486+00:00",
+      "relative_path": "metrics/model_quality_metrics.json",
+      "sha256": "1ee2ba52299ed3c405cc07f78b3b9bb178d86de7c25c76b0774e304a9d4b098e"
+    },
+    {
+      "absolute_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/readiness/final_engineering_validation.json",
+      "bytes": 2503,
+      "modified_at_utc": "2026-08-15T05:44:27.373482+00:00",
+      "relative_path": "readiness/final_engineering_validation.json",
+      "sha256": "ae49913bb5ce121185ce2d81afccbdcc1c4f70be6c23fd47e1832be29614f645"
+    },
+    {
+      "absolute_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/readiness/packaging_deployment_validation.json",
+      "bytes": 2036,
+      "modified_at_utc": "2026-08-15T05:41:23.135778+00:00",
+      "relative_path": "readiness/packaging_deployment_validation.json",
+      "sha256": "59aa7ad2a533bf3bdeca0057184a97aea0f035d3460dd84e64ed51ad82b71339"
+    },
+    {
+      "absolute_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/readiness/shadow_deployment_strategy.json",
+      "bytes": 1455,
+      "modified_at_utc": "2026-08-15T05:30:23.249316+00:00",
+      "relative_path": "readiness/shadow_deployment_strategy.json",
+      "sha256": "da9c86ca72fa27619ced9c675dfed1fa8fd46c9108fe4eed9a21034af8bb3889"
+    },
+    {
+      "absolute_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/research_production/research_production_comparison.json",
+      "bytes": 4061,
+      "modified_at_utc": "2026-08-15T05:34:41.681625+00:00",
+      "relative_path": "research_production/research_production_comparison.json",
+      "sha256": "e929e0f8788739251ccee5ca911f2c5058bfac55b5d5a6254ad58c934e2ef8de"
+    },
+    {
+      "absolute_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/research_production/research_production_parity.json",
+      "bytes": 1359,
+      "modified_at_utc": "2026-08-15T05:44:21.760459+00:00",
+      "relative_path": "research_production/research_production_parity.json",
+      "sha256": "3272214a7802a1b6b4572d1bc31eea3cc6cf2ce3b4e3564f2d4b25c9a6b3d077"
+    },
+    {
+      "absolute_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/test_results/data_validation_pytest.txt",
+      "bytes": 192,
+      "modified_at_utc": "2026-08-15T04:06:10.963819+00:00",
+      "relative_path": "test_results/data_validation_pytest.txt",
+      "sha256": "acd9d71626b143af5202c12b5bc3523b284b8248bb2e82e146765cc2d9623e8a"
+    },
+    {
+      "absolute_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/test_results/final_full_pytest.txt",
+      "bytes": 988,
+      "modified_at_utc": "2026-08-15T05:44:27.359482+00:00",
+      "relative_path": "test_results/final_full_pytest.txt",
+      "sha256": "7e3f49d849ae556f3e426db22ecca860c33fb3bb74ed10453e2be669a5dc8f89"
+    },
+    {
+      "absolute_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/test_results/full_pytest.txt",
+      "bytes": 602,
+      "modified_at_utc": "2026-08-15T04:32:43.093628+00:00",
+      "relative_path": "test_results/full_pytest.txt",
+      "sha256": "e4b19481d64501bd99adbb5bfcb05615f4e595db8e993951f97c31a6feaa7126"
+    },
+    {
+      "absolute_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/test_results/full_test_results.json",
+      "bytes": 587,
+      "modified_at_utc": "2026-08-15T04:32:43.094629+00:00",
+      "relative_path": "test_results/full_test_results.json",
+      "sha256": "a3c340cf9a5d188b80cef97e2ff7f333308df7a7fb6cc0c37a4e5d1c838f222d"
+    },
+    {
+      "absolute_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/test_results/inference_contract_pytest.txt",
+      "bytes": 193,
+      "modified_at_utc": "2026-08-15T04:13:46.865225+00:00",
+      "relative_path": "test_results/inference_contract_pytest.txt",
+      "sha256": "f8b22d09c3d1212ea91f563d02dfc385bb893dce849308a8f944e845a2c0027e"
+    },
+    {
+      "absolute_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/test_results/logging_pytest.txt",
+      "bytes": 192,
+      "modified_at_utc": "2026-08-14T13:14:55.755598+00:00",
+      "relative_path": "test_results/logging_pytest.txt",
+      "sha256": "4da5a5af6c2063f1ccec593f7dc331264b579c7b3ca1ec72471d34efe0c9bf20"
+    },
+    {
+      "absolute_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/test_results/openapi_contract_pytest.txt",
+      "bytes": 249,
+      "modified_at_utc": "2026-08-15T05:26:52.854104+00:00",
+      "relative_path": "test_results/openapi_contract_pytest.txt",
+      "sha256": "9c3ad8ffac8b4a816aa6d2648ea83ef5e7cecbfb7b9cf59d4e6341f8aeffdb16"
+    },
+    {
+      "absolute_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/test_results/packaging_contract_pytest.txt",
+      "bytes": 238,
+      "modified_at_utc": "2026-08-15T05:41:23.127779+00:00",
+      "relative_path": "test_results/packaging_contract_pytest.txt",
+      "sha256": "866a6decea08c4e3f873bfd6fe5f56b7a833523b9950cd82120677c11f731826"
+    },
+    {
+      "absolute_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/test_results/security_pytest.txt",
+      "bytes": 192,
+      "modified_at_utc": "2026-08-15T04:23:25.249701+00:00",
+      "relative_path": "test_results/security_pytest.txt",
+      "sha256": "c854aae601b7d2c01bdf6e40935e90c0bc35a8a171717bd327bc770ad935dee0"
+    },
+    {
+      "absolute_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/test_results/security_test_results.json",
+      "bytes": 685,
+      "modified_at_utc": "2026-08-15T04:23:25.250701+00:00",
+      "relative_path": "test_results/security_test_results.json",
+      "sha256": "a99341aa4365e31a5f0e9c6d3200d2961c67132bf66539b644e7e630d2884ea4"
+    },
+    {
+      "absolute_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/test_results/shadow_deployment_pytest.txt",
+      "bytes": 247,
+      "modified_at_utc": "2026-08-15T05:30:23.232316+00:00",
+      "relative_path": "test_results/shadow_deployment_pytest.txt",
+      "sha256": "9dfe334e6cfe2bb8b690935019cb5866c32e21e313ca7254e5ffdb841d286b74"
+    },
+    {
+      "absolute_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/test_results/test_taxonomy.json",
+      "bytes": 1328,
+      "modified_at_utc": "2026-08-15T04:32:43.094629+00:00",
+      "relative_path": "test_results/test_taxonomy.json",
+      "sha256": "270fd829f1a05c23897c63fd04c334e1c5659da5f3b8429e101992e226c40b72"
+    },
+    {
+      "absolute_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/test_results/training_behavior_pytest.txt",
+      "bytes": 147,
+      "modified_at_utc": "2026-08-15T04:00:27.074848+00:00",
+      "relative_path": "test_results/training_behavior_pytest.txt",
+      "sha256": "830054733db5582cc6307b8176622e1112140b074411fafe2f7b5331128f5f83"
+    },
+    {
+      "absolute_path": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2/test_results/training_behavior_test_results.json",
+      "bytes": 1027,
+      "modified_at_utc": "2026-08-15T05:44:26.065476+00:00",
+      "relative_path": "test_results/training_behavior_test_results.json",
+      "sha256": "74fc7708d7d031a63cebf73184f0dfe906e32c63ddf96d54bab6d3ad14d982ce"
+    }
+  ],
+  "evidence_root": "/home/jovyan/apicdsa2-datavol-1/chest-xray-ai-assistant-data/outputs/se4ml_assignment2",
+  "generated_at_utc": "2026-08-15T05:49:34.819509+00:00",
+  "integrity_algorithm": "SHA-256",
+  "manifest_contract": "se4ml-evidence-integrity-v1",
+  "model_artifacts_duplicated": false,
+  "project": "Software-Engineered Chest X-Ray Analysis and Explanation System",
+  "repository_contract_files": [
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/Dockerfile.api",
+      "bytes": 1212,
+      "modified_at_utc": "2026-08-09T01:54:26.553763+00:00",
+      "relative_path": "Dockerfile.api",
+      "sha256": "86d98192699f7502c19aad67ca4b5cd25617ed6172088aa724aaf01b122cd478"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/Dockerfile.ui",
+      "bytes": 884,
+      "modified_at_utc": "2026-08-09T01:54:26.566763+00:00",
+      "relative_path": "Dockerfile.ui",
+      "sha256": "eeff4ad8f81ed3b6a76da6a25311bb8afd367ab853dcfa64e3e05b61fb43089e"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/api/__init__.py",
+      "bytes": 45,
+      "modified_at_utc": "2026-08-08T09:29:35.947026+00:00",
+      "relative_path": "api/__init__.py",
+      "sha256": "afe5f2f2a74cb3cbf080796b1dc4b3bb7fb44c97b0279790c4c63b4cae1c376f"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/api/core/__init__.py",
+      "bytes": 45,
+      "modified_at_utc": "2026-08-08T09:29:35.947026+00:00",
+      "relative_path": "api/core/__init__.py",
+      "sha256": "afe5f2f2a74cb3cbf080796b1dc4b3bb7fb44c97b0279790c4c63b4cae1c376f"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/api/core/config.py",
+      "bytes": 5798,
+      "modified_at_utc": "2026-08-14T15:47:37.279863+00:00",
+      "relative_path": "api/core/config.py",
+      "sha256": "3ba1894ed9fd203f418fb96f1113cce2e500f020b872ecf0101e458192f6309d"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/api/core/dependencies.py",
+      "bytes": 4070,
+      "modified_at_utc": "2026-08-14T15:47:37.180862+00:00",
+      "relative_path": "api/core/dependencies.py",
+      "sha256": "13fbd31742110bfb8e6a04779b3b32f0124acd82cf957603591fb86ac57d8ae1"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/api/core/errors.py",
+      "bytes": 3297,
+      "modified_at_utc": "2026-08-14T15:47:37.177862+00:00",
+      "relative_path": "api/core/errors.py",
+      "sha256": "7ccfa013018c8f831bb81ed25d426401c662d0aa6b8713bcc6c5ec05eb0d6d02"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/api/core/factory.py",
+      "bytes": 11275,
+      "modified_at_utc": "2026-08-14T15:47:37.481864+00:00",
+      "relative_path": "api/core/factory.py",
+      "sha256": "7a6ca5e8215131236b94deb021e46681e1ee40eda61fbcff201e8846994d857c"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/api/core/runtime.py",
+      "bytes": 3163,
+      "modified_at_utc": "2026-08-14T15:47:37.176862+00:00",
+      "relative_path": "api/core/runtime.py",
+      "sha256": "de121fcf9f7a83a9d0d81d120768c4827c921323e2ec04a35671378f4c83d89a"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/api/core/telemetry.py",
+      "bytes": 4125,
+      "modified_at_utc": "2026-08-14T15:47:37.260863+00:00",
+      "relative_path": "api/core/telemetry.py",
+      "sha256": "9633df766fc192609c2ade6fcdb7d7c93e3de97b28ee9d467917a2f65e8dcd56"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/api/main.py",
+      "bytes": 6932,
+      "modified_at_utc": "2026-08-14T15:47:37.296863+00:00",
+      "relative_path": "api/main.py",
+      "sha256": "387daea511cb176c257b2064a0b157cfe66114a4761e6b361d8431d82e9e6e5c"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/api/routes/__init__.py",
+      "bytes": 319,
+      "modified_at_utc": "2026-08-14T15:47:37.109862+00:00",
+      "relative_path": "api/routes/__init__.py",
+      "sha256": "971c0e938510a823d28a9d9d97d9b2e8a6305e6553045217f92b9741b8183c59"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/api/routes/aggregate.py",
+      "bytes": 2612,
+      "modified_at_utc": "2026-08-14T15:47:37.167862+00:00",
+      "relative_path": "api/routes/aggregate.py",
+      "sha256": "9431968bb8a9a53571c56bef97ff76f886092637d5ea2fc1a4d722e7ae9ee7cd"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/api/routes/system.py",
+      "bytes": 4419,
+      "modified_at_utc": "2026-08-14T15:47:37.279863+00:00",
+      "relative_path": "api/routes/system.py",
+      "sha256": "8a08fdb531139c8784b77c144448f8dc1b3111720899b6cde5967d6a36bd7c02"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/api/routes/workflows.py",
+      "bytes": 5579,
+      "modified_at_utc": "2026-08-14T15:47:37.273863+00:00",
+      "relative_path": "api/routes/workflows.py",
+      "sha256": "26c3028489602270e03d88a953cfd95bb511d63cc432d2c7da9b10bb0c07c408"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/api/schemas/__init__.py",
+      "bytes": 1486,
+      "modified_at_utc": "2026-08-14T15:47:36.457858+00:00",
+      "relative_path": "api/schemas/__init__.py",
+      "sha256": "04e53d7b3f38a58fd426f811980e852e1cd45a67c45cd2bfa0fd1ea77f11fa69"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/api/schemas/aggregate.py",
+      "bytes": 5072,
+      "modified_at_utc": "2026-08-14T15:47:37.281863+00:00",
+      "relative_path": "api/schemas/aggregate.py",
+      "sha256": "9ee7f733a3124fd5e4c8fd6db7fc044bb8c28f94d7084394485d9813c7f78716"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/api/schemas/common.py",
+      "bytes": 1473,
+      "modified_at_utc": "2026-08-08T12:55:26.124976+00:00",
+      "relative_path": "api/schemas/common.py",
+      "sha256": "ee855fbeda300725e0d07ac013fed076a51838a69f9739a3b9bfa4b9d0f4ba61"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/api/schemas/explainability.py",
+      "bytes": 3285,
+      "modified_at_utc": "2026-08-14T15:47:37.259863+00:00",
+      "relative_path": "api/schemas/explainability.py",
+      "sha256": "0dda149d9c56ee50f5dc39722f65c2b8e1dc06694a9ce91b5a21fea403b5cb1f"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/api/schemas/language.py",
+      "bytes": 3218,
+      "modified_at_utc": "2026-08-14T15:47:37.259863+00:00",
+      "relative_path": "api/schemas/language.py",
+      "sha256": "a23c32a046c3136b7d91bf1bf51f697cb3abb0a995741b3a36cfd9f950501d48"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/api/schemas/prediction.py",
+      "bytes": 2694,
+      "modified_at_utc": "2026-08-14T15:47:37.265863+00:00",
+      "relative_path": "api/schemas/prediction.py",
+      "sha256": "e3b13b2d9ab131562299204a724954249825e9938f2b4cd549d040d3c79c7b4b"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/api/schemas/requests.py",
+      "bytes": 2044,
+      "modified_at_utc": "2026-08-14T15:47:37.260863+00:00",
+      "relative_path": "api/schemas/requests.py",
+      "sha256": "d94579471aebf1931706d61aba7be376e337af536a2d19b059c7008c6f28500f"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/api/schemas/system.py",
+      "bytes": 2144,
+      "modified_at_utc": "2026-08-14T15:47:36.455858+00:00",
+      "relative_path": "api/schemas/system.py",
+      "sha256": "11363b499b7cbb6355fd37b9644317bce08a93402b2937dcabfe8d070fdcf6ac"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/configs/api_contract.yaml",
+      "bytes": 4740,
+      "modified_at_utc": "2026-08-08T12:55:26.109976+00:00",
+      "relative_path": "configs/api_contract.yaml",
+      "sha256": "0d65b5f1eefaad18799ff08eefd79b644951870dfb387f19f8e50476542707c2"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/configs/chestmnist_config.yaml",
+      "bytes": 1929,
+      "modified_at_utc": "2026-08-07T17:13:32.013026+00:00",
+      "relative_path": "configs/chestmnist_config.yaml",
+      "sha256": "5d5142f050ad0cfbdbca3cd0482d0f004fd9420c11aba432424090caa5c980c3"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/configs/explainability_response_templates.json",
+      "bytes": 810,
+      "modified_at_utc": "2026-08-08T15:13:27.267891+00:00",
+      "relative_path": "configs/explainability_response_templates.json",
+      "sha256": "c371f69a261df6bc48fd8d81481559b90d6091c4f9033f535bd679e4c354de0a"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/configs/finding_contract.yaml",
+      "bytes": 3768,
+      "modified_at_utc": "2026-08-08T13:17:03.188737+00:00",
+      "relative_path": "configs/finding_contract.yaml",
+      "sha256": "cdda22f2c65e16698144c5be32acbef48f97455aaf504853448126b484b57f86"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/configs/paths.yaml",
+      "bytes": 1332,
+      "modified_at_utc": "2026-08-07T13:08:44.723637+00:00",
+      "relative_path": "configs/paths.yaml",
+      "sha256": "7ad7ef2d806d982244ec5dadf7dd113d81199e8724c8f068f0fd840cf5150723"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/configs/prompt_registry.yaml",
+      "bytes": 7295,
+      "modified_at_utc": "2026-08-08T05:19:19.754475+00:00",
+      "relative_path": "configs/prompt_registry.yaml",
+      "sha256": "d7b8f548afa7257fd26f2f5b19c9a092524e66e4213a058ae9f3bfa70ef6c417"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/configs/runtime_contract.yaml",
+      "bytes": 888,
+      "modified_at_utc": "2026-08-09T01:54:26.541763+00:00",
+      "relative_path": "configs/runtime_contract.yaml",
+      "sha256": "bcda87766b55a0bc6d2e9eac2ddf76266f8e3f7ed0dbf1ca0efd4a35d509488e"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/configs/system_response_templates.json",
+      "bytes": 1451,
+      "modified_at_utc": "2026-08-08T14:33:34.971862+00:00",
+      "relative_path": "configs/system_response_templates.json",
+      "sha256": "a35d2a4863910dd05d8b5ae665fdd59cd38070edcda555653623d6d04c3ab564"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/configs/ui_config.yaml",
+      "bytes": 1046,
+      "modified_at_utc": "2026-08-09T01:39:03.679401+00:00",
+      "relative_path": "configs/ui_config.yaml",
+      "sha256": "72a04aae4c4b482d22112bd407ed5a56194e03af9436a618777f378a7dd55f74"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/deployment/validate_services.py",
+      "bytes": 1315,
+      "modified_at_utc": "2026-08-09T01:54:26.600763+00:00",
+      "relative_path": "deployment/validate_services.py",
+      "sha256": "4580fc64344e23b7e5c06fc8a44566e5942fc13b76b979d814bf67f57b379401"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/docker-compose.yaml",
+      "bytes": 2161,
+      "modified_at_utc": "2026-08-09T01:54:26.582763+00:00",
+      "relative_path": "docker-compose.yaml",
+      "sha256": "bb743ac6cafadd5735e1ac17ce80320981e6af893be27054ef26537615c25e80"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/pyproject.toml",
+      "bytes": 910,
+      "modified_at_utc": "2026-08-14T13:19:44.821854+00:00",
+      "relative_path": "pyproject.toml",
+      "sha256": "bdaf179d311b4868f37363b5db324c1306476147d0da120bff14c2c3469f07b4"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/requirements.api.txt",
+      "bytes": 393,
+      "modified_at_utc": "2026-08-09T01:54:26.525763+00:00",
+      "relative_path": "requirements.api.txt",
+      "sha256": "8dc6d59073ba5ec5db5a3501a3969651fa172041cc1bb4751f12cfbe91d374fe"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/requirements.dev.txt",
+      "bytes": 56,
+      "modified_at_utc": "2026-08-14T13:19:44.821854+00:00",
+      "relative_path": "requirements.dev.txt",
+      "sha256": "d9f25f7436dc2c76e683b11bfe194c3973c4e8b508803f8303351fb0914c9ad7"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/requirements.txt",
+      "bytes": 71,
+      "modified_at_utc": "2026-08-09T01:54:26.525763+00:00",
+      "relative_path": "requirements.txt",
+      "sha256": "6f6e714d8d3f19a8c73dc3eec140ffb2eb3b803cc81d8b307c5f691711091c56"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/requirements.ui.txt",
+      "bytes": 116,
+      "modified_at_utc": "2026-08-09T01:54:26.525763+00:00",
+      "relative_path": "requirements.ui.txt",
+      "sha256": "10b073af16c5d10ad6b8efc69a152dcb103fdd42a4de9f0def6a5a2caa495c04"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/src/__init__.py",
+      "bytes": 45,
+      "modified_at_utc": "2026-08-08T09:29:35.948025+00:00",
+      "relative_path": "src/__init__.py",
+      "sha256": "afe5f2f2a74cb3cbf080796b1dc4b3bb7fb44c97b0279790c4c63b4cae1c376f"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/src/data/__init__.py",
+      "bytes": 321,
+      "modified_at_utc": "2026-08-14T21:22:33.081234+00:00",
+      "relative_path": "src/data/__init__.py",
+      "sha256": "adbe2c404ff35fdb2e5b532872fa1c0ab2f3a885026d29893a4d8d9a1f2d3f0d"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/src/data/chestmnist_dataset.py",
+      "bytes": 7546,
+      "modified_at_utc": "2026-08-14T21:22:33.174234+00:00",
+      "relative_path": "src/data/chestmnist_dataset.py",
+      "sha256": "22bcd1c5878a5f7feafaa7b8ec06a506f9b6e892a4ee37d6686dac5ac6c67131"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/src/data/quality_metrics.py",
+      "bytes": 10124,
+      "modified_at_utc": "2026-08-15T04:06:05.432802+00:00",
+      "relative_path": "src/data/quality_metrics.py",
+      "sha256": "f77f56c25ffac77bc58693217f7998a88f955b0eb152684de5edaa032c17ce78"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/src/experimentation/__init__.py",
+      "bytes": 155,
+      "modified_at_utc": "2026-08-15T05:30:22.127310+00:00",
+      "relative_path": "src/experimentation/__init__.py",
+      "sha256": "2017bd7955bc5963e28a4107a4172779598d2aaf765d3cb94f92cb4d371c4508"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/src/experimentation/shadow_deployment.py",
+      "bytes": 5874,
+      "modified_at_utc": "2026-08-15T05:30:22.788313+00:00",
+      "relative_path": "src/experimentation/shadow_deployment.py",
+      "sha256": "602fd266c118359caf619274c4cb92ad18ceb98d2c8b9f9cdf14ab2a5c77ba3c"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/src/models/__init__.py",
+      "bytes": 217,
+      "modified_at_utc": "2026-08-15T03:57:38.483423+00:00",
+      "relative_path": "src/models/__init__.py",
+      "sha256": "70ca58a38b17e191d437888707c360d6da8fe35cd89eb7e54b21740383556107"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/src/models/resnet18_factory.py",
+      "bytes": 2233,
+      "modified_at_utc": "2026-08-15T03:57:38.485423+00:00",
+      "relative_path": "src/models/resnet18_factory.py",
+      "sha256": "f2896618ddf2d4b9dd7a6d6aff5ba06da159b2ba201ffb686589cfc96471d5e6"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/src/services/__init__.py",
+      "bytes": 45,
+      "modified_at_utc": "2026-08-08T09:29:35.948025+00:00",
+      "relative_path": "src/services/__init__.py",
+      "sha256": "afe5f2f2a74cb3cbf080796b1dc4b3bb7fb44c97b0279790c4c63b4cae1c376f"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/src/services/complete_workflow_service.py",
+      "bytes": 4103,
+      "modified_at_utc": "2026-08-14T15:47:37.269863+00:00",
+      "relative_path": "src/services/complete_workflow_service.py",
+      "sha256": "dcc4482440a0236e358190879c0519b219481111a12b47bfec5fd88b728c7416"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/src/services/computer_vision_service.py",
+      "bytes": 10598,
+      "modified_at_utc": "2026-08-14T15:47:37.483864+00:00",
+      "relative_path": "src/services/computer_vision_service.py",
+      "sha256": "9c68baf5d2f3c595257f3cbd12c7642b4c04af1a0070a2f0300e4faaea82857a"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/src/services/gradcam_service.py",
+      "bytes": 10961,
+      "modified_at_utc": "2026-08-14T15:47:37.434864+00:00",
+      "relative_path": "src/services/gradcam_service.py",
+      "sha256": "b2fbd53fa844d75a4b06977a92e4a9f6b42092550374bdc5075ee497456df0f3"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/src/services/grounding_service.py",
+      "bytes": 12226,
+      "modified_at_utc": "2026-08-14T15:47:37.420864+00:00",
+      "relative_path": "src/services/grounding_service.py",
+      "sha256": "36412650aba99ef89244fa9fa2028e91139d278dbac1f58b655c4df2c59403b3"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/src/services/image_service.py",
+      "bytes": 7381,
+      "modified_at_utc": "2026-08-14T15:47:37.371863+00:00",
+      "relative_path": "src/services/image_service.py",
+      "sha256": "bec73d1c3d6ac5436442e0520ae7fc3aa125c7c61c7dd0a692652f91156cc680"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/src/services/image_workflow_service.py",
+      "bytes": 8289,
+      "modified_at_utc": "2026-08-14T15:47:37.383863+00:00",
+      "relative_path": "src/services/image_workflow_service.py",
+      "sha256": "b90d1668b67a48da72f6e6b41796b43733ce05bcacd99fa477e089d8ba8ee683"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/src/services/language_guardrail_service.py",
+      "bytes": 28794,
+      "modified_at_utc": "2026-08-14T15:47:37.611865+00:00",
+      "relative_path": "src/services/language_guardrail_service.py",
+      "sha256": "4715c3ecb5d38f5d2eb895c1739cf4c5e1a52522555fc818c827a91be86f48e5"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/src/services/language_model_service.py",
+      "bytes": 8279,
+      "modified_at_utc": "2026-08-14T15:47:37.369864+00:00",
+      "relative_path": "src/services/language_model_service.py",
+      "sha256": "133cc1ba47394a368879ce35faa8be1508a71d173667bee9f2b661cfc0786b5b"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/src/services/language_workflow_service.py",
+      "bytes": 8081,
+      "modified_at_utc": "2026-08-14T15:47:37.395864+00:00",
+      "relative_path": "src/services/language_workflow_service.py",
+      "sha256": "57c8e239b121b2c7baf566b5e12ab906d6fa10552d1b50c4725f73640dfa5c1d"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/src/services/operational_metrics_service.py",
+      "bytes": 9558,
+      "modified_at_utc": "2026-08-14T15:47:37.376863+00:00",
+      "relative_path": "src/services/operational_metrics_service.py",
+      "sha256": "9be02be95bcf76d345a3811a27651945df17eb3bf56fc62dad6e7d7e6253a851"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/src/services/prediction_store_service.py",
+      "bytes": 6601,
+      "modified_at_utc": "2026-08-14T15:47:37.368863+00:00",
+      "relative_path": "src/services/prediction_store_service.py",
+      "sha256": "e2959fdbb0ab8d2b5f864d79ec05c6590b2b3139cda2dd54fe3419db39e6b039"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/src/training/__init__.py",
+      "bytes": 176,
+      "modified_at_utc": "2026-08-15T03:57:38.487423+00:00",
+      "relative_path": "src/training/__init__.py",
+      "sha256": "26be6d6522bdaeaf0d5a4b609160e73e06570b02b8e906541893d120ff4c8f20"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/src/training/small_batch_trainer.py",
+      "bytes": 4874,
+      "modified_at_utc": "2026-08-15T03:57:39.111425+00:00",
+      "relative_path": "src/training/small_batch_trainer.py",
+      "sha256": "1745410d19d02a882c9e249d58b5e35a79d6bc76029d68bee7d1e70ae72849c9"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/tests/__init__.py",
+      "bytes": 0,
+      "modified_at_utc": "2026-08-08T15:21:42.998583+00:00",
+      "relative_path": "tests/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/tests/api/__init__.py",
+      "bytes": 0,
+      "modified_at_utc": "2026-08-08T15:21:42.998583+00:00",
+      "relative_path": "tests/api/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/tests/api/conftest.py",
+      "bytes": 1221,
+      "modified_at_utc": "2026-08-14T15:47:37.166862+00:00",
+      "relative_path": "tests/api/conftest.py",
+      "sha256": "a614bc3dbd2474d0dda96860f29f60b3481294c62ee901014b50586d7b19f9e8"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/tests/api/test_complete_endpoint.py",
+      "bytes": 2621,
+      "modified_at_utc": "2026-08-14T15:47:37.175862+00:00",
+      "relative_path": "tests/api/test_complete_endpoint.py",
+      "sha256": "8b23727b2fa172818f712d8059ea361b91c6689b6c241f3742840997be57cf65"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/tests/api/test_image_endpoints.py",
+      "bytes": 3204,
+      "modified_at_utc": "2026-08-14T15:47:37.290863+00:00",
+      "relative_path": "tests/api/test_image_endpoints.py",
+      "sha256": "22dea8464df290517425cfdcb6d90896d9529279e4766a868103734a608b2b61"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/tests/api/test_language_endpoints.py",
+      "bytes": 2953,
+      "modified_at_utc": "2026-08-14T15:47:37.259863+00:00",
+      "relative_path": "tests/api/test_language_endpoints.py",
+      "sha256": "9033d7ff96a13f6ca48a7c13ea6d0e97cd9c5f461fc8c127c6b9d1adf816c265"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/tests/api/test_openapi_schema_contract.py",
+      "bytes": 5277,
+      "modified_at_utc": "2026-08-15T05:26:34.963001+00:00",
+      "relative_path": "tests/api/test_openapi_schema_contract.py",
+      "sha256": "f0972360a0eb649eda612372c891b2694d43e0310eb2c4b3a1522575a7a18dd0"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/tests/api/test_system_endpoints.py",
+      "bytes": 2202,
+      "modified_at_utc": "2026-08-14T15:47:37.174862+00:00",
+      "relative_path": "tests/api/test_system_endpoints.py",
+      "sha256": "e19c900374e7aff199cd526a1c59b159483de862cc84fa551666c7cf648aa32d"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/tests/conftest.py",
+      "bytes": 1112,
+      "modified_at_utc": "2026-08-15T04:31:25.251069+00:00",
+      "relative_path": "tests/conftest.py",
+      "sha256": "ba2dfcd6c8e2776c4d4486affeb40b03b9c0ebb2f16182e118d74887bd962e83"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/tests/data/test_chestmnist_data_quality.py",
+      "bytes": 4079,
+      "modified_at_utc": "2026-08-15T04:06:05.391802+00:00",
+      "relative_path": "tests/data/test_chestmnist_data_quality.py",
+      "sha256": "d358b53fe0c6136f5727a1ad29e548ce2b60da31aaac1222c50d79195dece90c"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/tests/deployment/test_packaging_contract.py",
+      "bytes": 5622,
+      "modified_at_utc": "2026-08-15T05:41:22.768777+00:00",
+      "relative_path": "tests/deployment/test_packaging_contract.py",
+      "sha256": "3a207b6890e18dbbfbfecc32e4e26df182dc74b5b8502db705af6bfcf2854713"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/tests/experimentation/test_shadow_deployment_policy.py",
+      "bytes": 4533,
+      "modified_at_utc": "2026-08-15T05:30:22.777313+00:00",
+      "relative_path": "tests/experimentation/test_shadow_deployment_policy.py",
+      "sha256": "04fc154877ea1fa30ab4f5c39a861de2d28b7120c19817344c879c75e5beeaa2"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/tests/model/test_inference_contract.py",
+      "bytes": 8535,
+      "modified_at_utc": "2026-08-15T04:13:01.558081+00:00",
+      "relative_path": "tests/model/test_inference_contract.py",
+      "sha256": "c4ecb09111774c599c2745d7d8604ad3f770c189458d404c80e1007307de23be"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/tests/model/test_training_behavior.py",
+      "bytes": 3710,
+      "modified_at_utc": "2026-08-15T04:00:16.627820+00:00",
+      "relative_path": "tests/model/test_training_behavior.py",
+      "sha256": "06b3a2918529539ec82a02fb2987f2c70eb9b15b479e39fefc5dfeebb4e45076"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/tests/security/test_image_upload_security.py",
+      "bytes": 3557,
+      "modified_at_utc": "2026-08-15T04:23:24.727695+00:00",
+      "relative_path": "tests/security/test_image_upload_security.py",
+      "sha256": "b209b2b96efe6deb6b272caaba2d79c39e2fa195c3186056524ed6739b16b018"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/tests/unit/test_structured_logging.py",
+      "bytes": 7227,
+      "modified_at_utc": "2026-08-14T15:47:37.397864+00:00",
+      "relative_path": "tests/unit/test_structured_logging.py",
+      "sha256": "3c2847f2e4cffd1f417293995cc5555b5a0f2b6d858f45e47156e80697e31ef7"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/ui/api_client.py",
+      "bytes": 7669,
+      "modified_at_utc": "2026-08-14T15:47:37.393863+00:00",
+      "relative_path": "ui/api_client.py",
+      "sha256": "7879b86a38862141c7634b41fac25051457169069767b84a5ab52f0ab6a49279"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/ui/app.py",
+      "bytes": 21956,
+      "modified_at_utc": "2026-08-14T15:47:37.594865+00:00",
+      "relative_path": "ui/app.py",
+      "sha256": "48143abc578ae07281f03055fe2a4b5f701d1927662d0e6292fc2182c45a709a"
+    },
+    {
+      "absolute_path": "/home/jovyan/chest-xray-ai-assistant/ui/components.py",
+      "bytes": 19215,
+      "modified_at_utc": "2026-08-14T15:47:37.538864+00:00",
+      "relative_path": "ui/components.py",
+      "sha256": "39dfbd806b3f9204971afb6bc2f3b049cdb21c77e871feafd19d216ada1fd5cc"
+    }
+  ],
+  "required_evidence": {
+    "all_registered": true,
+    "expected_count": 36,
+    "json_files_parsed": 25,
+    "non_json_files_validated": 11,
+    "registered_count": 36
+  },
+  "solution_root": "/home/jovyan/chest-xray-ai-assistant",
+  "source_files_modified": false,
+  "status": "VERIFIED",
+  "storage": {
+    "free_gib": 8.707050323486328,
+    "protected_reserve_gib": 4.0,
+    "reserve_preserved": true
+  }
+}

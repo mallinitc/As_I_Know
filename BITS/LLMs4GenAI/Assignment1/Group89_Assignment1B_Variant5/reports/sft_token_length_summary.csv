@@ -1,0 +1,3 @@
+split,records,min_tokens,avg_tokens,median_tokens,max_tokens,records_over_max_length
+train,232,454,602.92,560.0,1751,4
+validation,59,291,609.1,574.0,1095,2

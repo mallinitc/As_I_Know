@@ -1,0 +1,51 @@
+{
+  "evidence_version": "pytest-taxonomy-v1",
+  "generated_at_utc": "2026-08-15T04:32:43.095013+00:00",
+  "categories": {
+    "unit": {
+      "directory": "tests/unit",
+      "files": [
+        "tests/unit/test_structured_logging.py"
+      ],
+      "file_count": 1,
+      "test_function_count": 6
+    },
+    "data_validation": {
+      "directory": "tests/data",
+      "files": [
+        "tests/data/test_chestmnist_data_quality.py"
+      ],
+      "file_count": 1,
+      "test_function_count": 6
+    },
+    "model_behavior_and_inference": {
+      "directory": "tests/model",
+      "files": [
+        "tests/model/test_inference_contract.py",
+        "tests/model/test_training_behavior.py"
+      ],
+      "file_count": 2,
+      "test_function_count": 7
+    },
+    "security": {
+      "directory": "tests/security",
+      "files": [
+        "tests/security/test_image_upload_security.py"
+      ],
+      "file_count": 1,
+      "test_function_count": 6
+    },
+    "api_integration": {
+      "directory": "tests/api",
+      "files": [
+        "tests/api/test_complete_endpoint.py",
+        "tests/api/test_image_endpoints.py",
+        "tests/api/test_language_endpoints.py",
+        "tests/api/test_system_endpoints.py"
+      ],
+      "file_count": 4,
+      "test_function_count": 19
+    }
+  },
+  "expected_test_function_count": 44
+}

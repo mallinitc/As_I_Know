@@ -1,0 +1,29 @@
+{
+  "evidence_version": "language-guardrail-logging-v1",
+  "generated_at_utc": "2026-08-14T13:07:39.312640+00:00",
+  "source_file": "src/services/language_guardrail_service.py",
+  "modification_status": "IMPLEMENTED",
+  "source_sha256_before": "8ea7b4bc2597574ba100895d90632eac81f9f037494631c3a5834ad5035c8cb3",
+  "source_sha256_after": "b352348b70715e2749d373c1fbe3b0c8c83f39d02d289bdf234e8b83d6686cac",
+  "required_events": [
+    "guardrail_evaluation_completed",
+    "guardrail_evaluation_failed",
+    "guardrail_evaluation_started",
+    "guardrail_fallback_activated",
+    "guardrail_fallback_failed",
+    "guardrail_output_accepted"
+  ],
+  "missing_events": [],
+  "severity_counts": {
+    "INFO": 3,
+    "WARNING": 1,
+    "ERROR": 2
+  },
+  "compile_passed": true,
+  "fresh_process_import_passed": true,
+  "generated_text_logged": false,
+  "user_question_logged": false,
+  "serialized_prompt_logged": false,
+  "finding_evidence_logged": false,
+  "guardrail_contract_changed": false
+}

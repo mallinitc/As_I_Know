@@ -1,0 +1,72 @@
+{
+  "evidence_version": "production-data-module-v1",
+  "generated_at_utc": "2026-08-14T21:22:35.176862+00:00",
+  "module": "src/data/chestmnist_dataset.py",
+  "module_status": "CREATED",
+  "package_init_status": "CREATED",
+  "research_component": "ChestMNISTMemmapDataset",
+  "production_components": [
+    "ChestMNISTDataRepository",
+    "ChestMNISTMemmapDataset",
+    "SplitValidationResult"
+  ],
+  "read_only_memory_mapping": true,
+  "quality_tools_passed": true,
+  "fresh_process_validation_passed": true,
+  "split_results": [
+    {
+      "split": "train",
+      "image_shape": [
+        78468,
+        224,
+        224
+      ],
+      "label_shape": [
+        78468,
+        14
+      ],
+      "image_dtype": "uint8",
+      "label_dtype": "uint8",
+      "images_memory_mapped": true,
+      "labels_memory_mapped": true,
+      "binary_labels_valid": true,
+      "passed": true
+    },
+    {
+      "split": "val",
+      "image_shape": [
+        11219,
+        224,
+        224
+      ],
+      "label_shape": [
+        11219,
+        14
+      ],
+      "image_dtype": "uint8",
+      "label_dtype": "uint8",
+      "images_memory_mapped": true,
+      "labels_memory_mapped": true,
+      "binary_labels_valid": true,
+      "passed": true
+    },
+    {
+      "split": "test",
+      "image_shape": [
+        22433,
+        224,
+        224
+      ],
+      "label_shape": [
+        22433,
+        14
+      ],
+      "image_dtype": "uint8",
+      "label_dtype": "uint8",
+      "images_memory_mapped": true,
+      "labels_memory_mapped": true,
+      "binary_labels_valid": true,
+      "passed": true
+    }
+  ]
+}

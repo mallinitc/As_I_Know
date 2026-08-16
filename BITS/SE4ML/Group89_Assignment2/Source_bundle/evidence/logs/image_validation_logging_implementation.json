@@ -1,0 +1,28 @@
+{
+  "evidence_version": "image-validation-logging-v1",
+  "generated_at_utc": "2026-08-14T13:01:02.872495+00:00",
+  "source_file": "src/services/image_service.py",
+  "modification_status": "IMPLEMENTED",
+  "source_sha256_before": "4cda31250b539c9f28cd1e1057166c391c62a763fc35a0f4e743a2ea089782e7",
+  "source_sha256_after": "7c884bf40a7a947d9b1d3039c6b2d8a932474089978caba6ecfeb55bdb488a4b",
+  "required_events": [
+    "empty_image_upload",
+    "image_decoding_failed",
+    "image_format_mismatch",
+    "image_validation_completed",
+    "image_validation_started",
+    "invalid_image_dimensions",
+    "oversized_image_upload",
+    "unsupported_image_media_type"
+  ],
+  "missing_events": [],
+  "severity_counts": {
+    "INFO": 2,
+    "WARNING": 5,
+    "ERROR": 1
+  },
+  "compile_passed": true,
+  "fresh_process_import_passed": true,
+  "raw_image_bytes_logged": false,
+  "user_filename_logged": false
+}
