@@ -1,0 +1,128 @@
+ARCA 2.0 — OFFICE LAPTOP SETUP & VERIFICATION CHECKLIST
+=======================================================
+Purpose: Reproduce ONLY the development-environment setup done on the personal laptop.
+Platform: Windows 11 | Command Prompt (CMD) | VS Code | Python | AWS
+Project folder: D:\Usecase\ARCA2 (change the drive/path if company policy requires it)
+
+IMPORTANT FOR OFFICE AWS
+------------------------
+* Use your organization's approved AWS identity, account, region, and permissions.
+* Do NOT create IAM users, access keys, groups, policies, or enable IAM Identity Center on the office account unless authorized.
+* Prefer company SSO/temporary credentials. Never paste passwords, tokens, or access keys into chats/screenshots.
+* Office device restrictions (software installation, proxies, Python package indexes) may require IT approval.
+* If ANY step fails, STOP at that step and share the error/screenshot before proceeding.
+* The 'arca-dev' profile is an example. Replace it with your OFFICE-approved profile name.
+
+[ ] STEP 1 — CHECK PYTHON
+Command:
+    python --version
+Expected: Python 3.11.x (personal laptop: Python 3.11.9)
+If missing/wrong: Request/install organization-approved Python 3.11, then reopen CMD.
+
+[ ] STEP 2 — CHECK AWS CLI
+Command:
+    aws --version
+Expected: aws-cli/2.x ... Windows/... (personal laptop: 2.38.1)
+If missing: Install AWS CLI v2 using the organization-approved installer.
+Official installer: https://awscli.amazonaws.com/AWSCLIV2.msi
+Reopen CMD; rerun command.
+Note: AWS CLI's bundled Python version is independent of the project Python version.
+
+[ ] STEP 3 — CHECK GIT
+Command:
+    git --version
+Expected: git version 2.x (personal laptop: 2.54.0.windows.1)
+If missing: Install organization-approved Git for Windows; reopen CMD.
+
+[ ] STEP 4 — CHECK VS CODE
+Command:
+    code --version
+Expected: VS Code version displayed (personal laptop: 1.134.0)
+If missing: Install organization-approved VS Code or enable its 'code' command on PATH.
+
+[ ] STEP 5 — CREATE/OPEN PROJECT DIRECTORY
+Command (CMD):
+    mkdir D:\Usecase\ARCA2
+    cd /d D:\Usecase\ARCA2
+Expected prompt:
+    D:\Usecase\ARCA2>
+If directory already exists, 'mkdir' may say it exists — proceed with cd /d.
+
+[ ] STEP 6 — AUTHENTICATE TO OFFICE AWS (CHOOSE THE APPROVED METHOD)
+Option A — Organization uses IAM Identity Center / SSO:
+    aws configure sso --profile arca-office
+    aws sso login --profile arca-office
+Option B — Organization specifically supports AWS CLI browser login:
+    aws login --profile arca-office
+Follow company guidance. Do NOT automatically use a personal/root identity.
+Verify:
+    aws sts get-caller-identity --profile arca-office
+Expected: JSON with UserId, Account, Arn; ARN represents your OFFICE-authorized user/assumed role, NOT root.
+If AccessDenied/NoCredentials: contact your AWS administrator or share sanitized error.
+
+[ ] STEP 7 — CHECK AWS REGION AND BEDROCK MODEL DISCOVERY
+Use your APPROVED office AWS Region (example: us-east-1).
+Command:
+    aws bedrock list-foundation-models --region us-east-1 --profile arca-office --query "modelSummaries[?contains(modelId, 'nova')].[modelId,modelName,modelLifecycle.status]" --output table
+Expected: Table of available Nova models (e.g. amazon.nova-lite-v1:0, ACTIVE), if permitted.
+If AccessDenied: request only authorized Bedrock discovery permissions.
+NOTE: ACTIVE means the model is listed; it does NOT prove you can invoke it.
+
+[ ] STEP 8 — TEST BEDROCK INFERENCE (SMALL PAID TEST; ONLY IF AUTHORIZED)
+AWS Console -> Amazon Bedrock -> Playground -> Chat -> choose an APPROVED model in the SAME region.
+Prompt:
+    Explain the principle of least privilege in AWS IAM in two sentences.
+Expected: Model returns an answer (not an AccessDeniedException).
+If account verification/model access/provisioning error: STOP; share sanitized error.
+Personal-account result: model listed, but invocation was blocked pending AWS account verification.
+
+[ ] STEP 9 — CREATE PYTHON VIRTUAL ENVIRONMENT
+From D:\Usecase\ARCA2>:
+    python -m venv .venv
+Expected: .venv folder exists, no errors.
+Activate in CMD:
+    .venv\Scripts\activate
+Expected prompt:
+    (.venv) D:\Usecase\ARCA2>
+NOTE: Command Prompt activation shown above; PowerShell uses a different command.
+
+[ ] STEP 10 — INSTALL PROJECT LIBRARIES
+Run with (.venv) active:
+    python -m pip install boto3 botocore langgraph streamlit pydantic python-dotenv pandas
+Expected: 'Successfully installed ...' (or 'Requirement already satisfied').
+If corporate proxy/package index errors: stop and follow IT-approved package installation process.
+Test imports:
+    python -c "import boto3, langgraph, streamlit, pydantic, pandas, dotenv; print('ARCA Python dependencies: OK')"
+Expected:
+    ARCA Python dependencies: OK
+
+[ ] STEP 11 — OPEN VS CODE AND SELECT THE PROJECT INTERPRETER
+Command:
+    code D:\Usecase\ARCA2
+Expected: ARCA2 folder opens; .venv is visible.
+In VS Code: Ctrl+Shift+P -> Python: Select Interpreter
+Select:
+    D:\Usecase\ARCA2\.venv\Scripts\python.exe
+Expected: Python 3.11.x (.venv) selected.
+If command unavailable, install/enable the organization-approved Microsoft Python extension.
+
+[ ] STEP 12 — OPTIONAL S3 CHECK (NOT YET COMPLETED ON PERSONAL ACCOUNT)
+Only if your OFFICE role has approved S3 access:
+    aws s3 ls --profile arca-office --region us-east-1
+Expected: Bucket list, OR AccessDenied if listing all buckets is intentionally prohibited.
+A denied account-wide list DOES NOT mean you lack access to the hackathon's assigned bucket.
+Use the bucket name/prefix and permissions supplied by organizers when available.
+DO NOT create or modify buckets yet.
+
+FINAL STATUS CHECK
+------------------
+[ ] Python, Git, AWS CLI and VS Code verified
+[ ] Project directory and .venv created
+[ ] Required libraries installed and import test passed
+[ ] VS Code .venv interpreter selected
+[ ] Office AWS CLI identity verified (not root)
+[ ] Bedrock model discovery verified
+[ ] Bedrock inference verified (or access issue documented)
+[ ] Assigned S3 bucket details/permissions identified (can be done later)
+
+STOP HERE. This checklist covers environment setup ONLY; no ARCA application implementation.
