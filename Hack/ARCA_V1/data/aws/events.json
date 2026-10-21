@@ -1,0 +1,6 @@
+[
+ {"eventID":"evt-1","eventTime":"2026-10-20T10:15:00Z","eventSource":"s3.amazonaws.com","eventName":"PutBucketPolicy","actor":"alice@example.invalid","resources":["arn:aws:s3:::arca-demo-reports"],"readOnly":false},
+ {"eventID":"evt-2","eventTime":"2026-10-20T10:25:00Z","eventSource":"ec2.amazonaws.com","eventName":"TerminateInstances","actor":"alice@example.invalid","resources":["arn:aws:ec2:us-east-1:111122223333:instance/i-0bad999"],"readOnly":false},
+ {"eventID":"evt-3","eventTime":"2026-10-20T11:20:00Z","eventSource":"ec2.amazonaws.com","eventName":"TerminateInstances","actor":"bob@example.invalid","resources":["arn:aws:ec2:us-east-1:111122223333:instance/i-0abc123"],"readOnly":false},
+ {"eventID":"evt-4","eventTime":"2026-10-20T12:30:00Z","eventSource":"iam.amazonaws.com","eventName":"CreatePolicyVersion","actor":"charlie@example.invalid","resources":["arn:aws:iam::111122223333:policy/test"],"readOnly":false}
+]

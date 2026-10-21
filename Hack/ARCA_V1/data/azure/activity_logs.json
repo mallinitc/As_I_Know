@@ -1,0 +1,2906 @@
+[
+  {
+    "event_data_id": "az-event-0001",
+    "correlation_id": "az-corr-0001",
+    "event_timestamp": "2026-10-20T10:25:00Z",
+    "category": "Administrative",
+    "caller": "engineer01@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000001",
+    "operation_name": {
+      "value": "Microsoft.Storage/storageAccounts/write",
+      "localized_value": "Write"
+    },
+    "authorization": {
+      "action": "Microsoft.Storage/storageAccounts/write",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod01"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod01",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "VALID_APPROVED_CHANGE"
+    }
+  },
+  {
+    "event_data_id": "az-event-0002",
+    "correlation_id": "az-corr-0002",
+    "event_timestamp": "2026-10-20T12:25:00Z",
+    "category": "Administrative",
+    "caller": "engineer02@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000002",
+    "operation_name": {
+      "value": "Microsoft.Compute/virtualMachines/restart/action",
+      "localized_value": "Action"
+    },
+    "authorization": {
+      "action": "Microsoft.Compute/virtualMachines/restart/action",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod01"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod01",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "INCOMPLETE_CHANGE_REQUEST"
+    }
+  },
+  {
+    "event_data_id": "az-event-0003",
+    "correlation_id": "az-corr-0003",
+    "event_timestamp": "2026-10-20T14:25:00Z",
+    "category": "Administrative",
+    "caller": "engineer03@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000003",
+    "operation_name": {
+      "value": "Microsoft.Web/sites/write",
+      "localized_value": "Write"
+    },
+    "authorization": {
+      "action": "Microsoft.Web/sites/write",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Web/sites/app-arca-prod01"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Web/sites/app-arca-prod01",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "OVERPRIVILEGED_PIM_REQUEST"
+    }
+  },
+  {
+    "event_data_id": "az-event-0004",
+    "correlation_id": "az-corr-0004",
+    "event_timestamp": "2026-10-20T16:25:00Z",
+    "category": "Administrative",
+    "caller": "engineer04@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000004",
+    "operation_name": {
+      "value": "Microsoft.Compute/virtualMachines/delete",
+      "localized_value": "Delete"
+    },
+    "authorization": {
+      "action": "Microsoft.Compute/virtualMachines/delete",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod02"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod02",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "INSUFFICIENT_RBAC_PERMISSIONS"
+    }
+  },
+  {
+    "event_data_id": "az-event-0005",
+    "correlation_id": "az-corr-0005",
+    "event_timestamp": "2026-10-20T18:25:00Z",
+    "category": "Administrative",
+    "caller": "engineer05@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000005",
+    "operation_name": {
+      "value": "Microsoft.Storage/storageAccounts/write",
+      "localized_value": "Write"
+    },
+    "authorization": {
+      "action": "Microsoft.Storage/storageAccounts/write",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod02"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod02",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "EXCESSIVE_SUBSCRIPTION_SCOPE"
+    }
+  },
+  {
+    "event_data_id": "az-event-0006",
+    "correlation_id": "az-corr-0006",
+    "event_timestamp": "2026-10-20T20:25:00Z",
+    "category": "Administrative",
+    "caller": "engineer06@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000006",
+    "operation_name": {
+      "value": "Microsoft.Web/sites/write",
+      "localized_value": "Write"
+    },
+    "authorization": {
+      "action": "Microsoft.Web/sites/write",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Web/sites/app-arca-prod02"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Web/sites/app-arca-prod02",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "PIM_EXTENDS_BEYOND_CHANGE_WINDOW"
+    }
+  },
+  {
+    "event_data_id": "az-event-0007",
+    "correlation_id": "az-corr-0007",
+    "event_timestamp": "2026-10-20T22:25:00Z",
+    "category": "Administrative",
+    "caller": "engineer07@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000007",
+    "operation_name": {
+      "value": "Microsoft.Storage/storageAccounts/write",
+      "localized_value": "Write"
+    },
+    "authorization": {
+      "action": "Microsoft.Storage/storageAccounts/write",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod04"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod04",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "UNEXPECTED_RESOURCE_MODIFICATION"
+    }
+  },
+  {
+    "event_data_id": "az-event-0008",
+    "correlation_id": "az-corr-0008",
+    "event_timestamp": "2026-10-21T01:35:00Z",
+    "category": "Administrative",
+    "caller": "engineer08@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000008",
+    "operation_name": {
+      "value": "Microsoft.Compute/virtualMachines/start/action",
+      "localized_value": "Action"
+    },
+    "authorization": {
+      "action": "Microsoft.Compute/virtualMachines/start/action",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod03"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod03",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "ACTIVITY_OUTSIDE_CHANGE_WINDOW"
+    }
+  },
+  {
+    "event_data_id": "az-event-0009",
+    "correlation_id": "az-corr-0009",
+    "event_timestamp": "2026-10-21T02:25:00Z",
+    "category": "Administrative",
+    "caller": "engineer12@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000012",
+    "operation_name": {
+      "value": "Microsoft.KeyVault/vaults/write",
+      "localized_value": "Write"
+    },
+    "authorization": {
+      "action": "Microsoft.KeyVault/vaults/write",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.KeyVault/vaults/kv-arca-prod01"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.KeyVault/vaults/kv-arca-prod01",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "UNEXPECTED_ENGINEER"
+    }
+  },
+  {
+    "event_data_id": "az-event-0010",
+    "correlation_id": "az-corr-0010",
+    "event_timestamp": "2026-10-21T04:25:00Z",
+    "category": "Administrative",
+    "caller": "engineer10@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000010",
+    "operation_name": {
+      "value": "Microsoft.Sql/servers/databases/write",
+      "localized_value": "Write"
+    },
+    "authorization": {
+      "action": "Microsoft.Sql/servers/databases/write",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Sql/servers/databases/sql-arca-prod/db01"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Sql/servers/databases/sql-arca-prod/db01",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "VALID_APPROVED_CHANGE"
+    }
+  },
+  {
+    "event_data_id": "az-event-0011",
+    "correlation_id": "az-corr-0011",
+    "event_timestamp": "2026-10-21T06:25:00Z",
+    "category": "Administrative",
+    "caller": "engineer11@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000011",
+    "operation_name": {
+      "value": "Microsoft.Authorization/roleAssignments/delete",
+      "localized_value": "Delete"
+    },
+    "authorization": {
+      "action": "Microsoft.Authorization/roleAssignments/delete",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod01/providers/Microsoft.Authorization/roleAssignments/30000000-0000-0000-0000-000000000011"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod01/providers/Microsoft.Authorization/roleAssignments/30000000-0000-0000-0000-000000000011",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "STORAGE_ACCESS_LOSS_ROLE_REMOVAL",
+      "affected_resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod01"
+    }
+  },
+  {
+    "event_data_id": "az-event-0012",
+    "correlation_id": "az-corr-0012",
+    "event_timestamp": "2026-10-21T08:25:00Z",
+    "category": "Administrative",
+    "caller": "engineer12@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000012",
+    "operation_name": {
+      "value": "Microsoft.Storage/storageAccounts/write",
+      "localized_value": "Write"
+    },
+    "authorization": {
+      "action": "Microsoft.Storage/storageAccounts/write",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod04"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod04",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "STORAGE_ACCESS_LOSS_FIREWALL",
+      "changed_settings": [
+        "networkAcls"
+      ]
+    }
+  },
+  {
+    "event_data_id": "az-event-0013",
+    "correlation_id": "az-corr-0013",
+    "event_timestamp": "2026-10-21T10:25:00Z",
+    "category": "Administrative",
+    "caller": "engineer01@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000001",
+    "operation_name": {
+      "value": "Microsoft.Network/networkSecurityGroups/write",
+      "localized_value": "Write"
+    },
+    "authorization": {
+      "action": "Microsoft.Network/networkSecurityGroups/write",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Network/networkSecurityGroups/nsg-arca-prod01"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Network/networkSecurityGroups/nsg-arca-prod01",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "VALID_APPROVED_CHANGE"
+    }
+  },
+  {
+    "event_data_id": "az-event-0014",
+    "correlation_id": "az-corr-0014",
+    "event_timestamp": "2026-10-21T12:25:00Z",
+    "category": "Administrative",
+    "caller": "engineer02@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000002",
+    "operation_name": {
+      "value": "Microsoft.Web/sites/config/write",
+      "localized_value": "Write"
+    },
+    "authorization": {
+      "action": "Microsoft.Web/sites/config/write",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Web/sites/app-arca-prod03"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Web/sites/app-arca-prod03",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "VALID_APPROVED_CHANGE"
+    }
+  },
+  {
+    "event_data_id": "az-event-0015",
+    "correlation_id": "az-corr-0015",
+    "event_timestamp": "2026-10-21T14:25:00Z",
+    "category": "Administrative",
+    "caller": "engineer03@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000003",
+    "operation_name": {
+      "value": "Microsoft.Compute/virtualMachines/deallocate/action",
+      "localized_value": "Action"
+    },
+    "authorization": {
+      "action": "Microsoft.Compute/virtualMachines/deallocate/action",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod04"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod04",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "VALID_APPROVED_CHANGE"
+    }
+  },
+  {
+    "event_data_id": "az-event-0016",
+    "correlation_id": "az-corr-0016",
+    "event_timestamp": "2026-10-21T16:25:00Z",
+    "category": "Administrative",
+    "caller": "engineer04@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000004",
+    "operation_name": {
+      "value": "Microsoft.Storage/storageAccounts/write",
+      "localized_value": "Write"
+    },
+    "authorization": {
+      "action": "Microsoft.Storage/storageAccounts/write",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod05"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod05",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "VALID_APPROVED_CHANGE"
+    }
+  },
+  {
+    "event_data_id": "az-event-0017",
+    "correlation_id": "az-corr-0017",
+    "event_timestamp": "2026-10-21T18:25:00Z",
+    "category": "Administrative",
+    "caller": "engineer05@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000005",
+    "operation_name": {
+      "value": "Microsoft.Sql/servers/databases/write",
+      "localized_value": "Write"
+    },
+    "authorization": {
+      "action": "Microsoft.Sql/servers/databases/write",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Sql/servers/databases/sql-arca-prod/db02"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Sql/servers/databases/sql-arca-prod/db02",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "VALID_APPROVED_CHANGE"
+    }
+  },
+  {
+    "event_data_id": "az-event-0018",
+    "correlation_id": "az-corr-0018",
+    "event_timestamp": "2026-10-21T20:25:00Z",
+    "category": "Administrative",
+    "caller": "engineer06@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000006",
+    "operation_name": {
+      "value": "Microsoft.KeyVault/vaults/write",
+      "localized_value": "Write"
+    },
+    "authorization": {
+      "action": "Microsoft.KeyVault/vaults/write",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.KeyVault/vaults/kv-arca-prod02"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.KeyVault/vaults/kv-arca-prod02",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "VALID_APPROVED_CHANGE"
+    }
+  },
+  {
+    "event_data_id": "az-event-0019",
+    "correlation_id": "az-corr-0019",
+    "event_timestamp": "2026-10-21T22:25:00Z",
+    "category": "Administrative",
+    "caller": "engineer07@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000007",
+    "operation_name": {
+      "value": "Microsoft.Network/networkSecurityGroups/securityRules/write",
+      "localized_value": "Write"
+    },
+    "authorization": {
+      "action": "Microsoft.Network/networkSecurityGroups/securityRules/write",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Network/networkSecurityGroups/nsg-arca-prod02"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Network/networkSecurityGroups/nsg-arca-prod02",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "VALID_APPROVED_CHANGE"
+    }
+  },
+  {
+    "event_data_id": "az-event-0020",
+    "correlation_id": "az-corr-0020",
+    "event_timestamp": "2026-10-22T00:25:00Z",
+    "category": "Administrative",
+    "caller": "engineer08@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000008",
+    "operation_name": {
+      "value": "Microsoft.Web/sites/restart/action",
+      "localized_value": "Action"
+    },
+    "authorization": {
+      "action": "Microsoft.Web/sites/restart/action",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Web/sites/app-arca-prod04"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Web/sites/app-arca-prod04",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "VALID_APPROVED_CHANGE"
+    }
+  },
+  {
+    "event_data_id": "az-event-0021",
+    "correlation_id": "az-undoc-0001",
+    "event_timestamp": "2026-10-25T10:00:00Z",
+    "category": "Administrative",
+    "caller": "engineer05@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000005",
+    "operation_name": {
+      "value": "Microsoft.Storage/storageAccounts/write",
+      "localized_value": "Synthetic undocumented production write"
+    },
+    "authorization": {
+      "action": "Microsoft.Storage/storageAccounts/write",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod06"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod06",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "UNDOCUMENTED_PRODUCTION_MODIFICATION"
+    }
+  },
+  {
+    "event_data_id": "az-event-0022",
+    "correlation_id": "az-undoc-0002",
+    "event_timestamp": "2026-10-25T10:17:00Z",
+    "category": "Administrative",
+    "caller": "engineer06@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000006",
+    "operation_name": {
+      "value": "Microsoft.Compute/virtualMachines/delete",
+      "localized_value": "Synthetic undocumented production write"
+    },
+    "authorization": {
+      "action": "Microsoft.Compute/virtualMachines/delete",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod03"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod03",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "UNDOCUMENTED_PRODUCTION_MODIFICATION"
+    }
+  },
+  {
+    "event_data_id": "az-event-0023",
+    "correlation_id": "az-undoc-0003",
+    "event_timestamp": "2026-10-25T10:34:00Z",
+    "category": "Administrative",
+    "caller": "engineer07@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000007",
+    "operation_name": {
+      "value": "Microsoft.Web/sites/config/write",
+      "localized_value": "Synthetic undocumented production write"
+    },
+    "authorization": {
+      "action": "Microsoft.Web/sites/config/write",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod06"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod06",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "UNDOCUMENTED_PRODUCTION_MODIFICATION"
+    }
+  },
+  {
+    "event_data_id": "az-event-0024",
+    "correlation_id": "az-undoc-0004",
+    "event_timestamp": "2026-10-25T10:51:00Z",
+    "category": "Administrative",
+    "caller": "engineer08@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000008",
+    "operation_name": {
+      "value": "Microsoft.Network/networkSecurityGroups/securityRules/write",
+      "localized_value": "Synthetic undocumented production write"
+    },
+    "authorization": {
+      "action": "Microsoft.Network/networkSecurityGroups/securityRules/write",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Web/sites/app-arca-prod03"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Web/sites/app-arca-prod03",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "UNDOCUMENTED_PRODUCTION_MODIFICATION"
+    }
+  },
+  {
+    "event_data_id": "az-event-0025",
+    "correlation_id": "az-undoc-0005",
+    "event_timestamp": "2026-10-25T11:08:00Z",
+    "category": "Administrative",
+    "caller": "engineer09@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000009",
+    "operation_name": {
+      "value": "Microsoft.KeyVault/vaults/write",
+      "localized_value": "Synthetic undocumented production write"
+    },
+    "authorization": {
+      "action": "Microsoft.KeyVault/vaults/write",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Web/sites/app-arca-prod06"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Web/sites/app-arca-prod06",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "UNDOCUMENTED_PRODUCTION_MODIFICATION"
+    }
+  },
+  {
+    "event_data_id": "az-event-0026",
+    "correlation_id": "az-undoc-0006",
+    "event_timestamp": "2026-10-25T11:25:00Z",
+    "category": "Administrative",
+    "caller": "engineer10@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000010",
+    "operation_name": {
+      "value": "Microsoft.Sql/servers/databases/write",
+      "localized_value": "Synthetic undocumented production write"
+    },
+    "authorization": {
+      "action": "Microsoft.Sql/servers/databases/write",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.KeyVault/vaults/kv-arca-prod03"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.KeyVault/vaults/kv-arca-prod03",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "UNDOCUMENTED_PRODUCTION_MODIFICATION"
+    }
+  },
+  {
+    "event_data_id": "az-event-0027",
+    "correlation_id": "az-undoc-0007",
+    "event_timestamp": "2026-10-25T11:42:00Z",
+    "category": "Administrative",
+    "caller": "engineer11@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000011",
+    "operation_name": {
+      "value": "Microsoft.Storage/storageAccounts/write",
+      "localized_value": "Synthetic undocumented production write"
+    },
+    "authorization": {
+      "action": "Microsoft.Storage/storageAccounts/write",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Sql/servers/databases/sql-arca-prod/db02"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Sql/servers/databases/sql-arca-prod/db02",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "UNDOCUMENTED_PRODUCTION_MODIFICATION"
+    }
+  },
+  {
+    "event_data_id": "az-event-0028",
+    "correlation_id": "az-undoc-0008",
+    "event_timestamp": "2026-10-25T11:59:00Z",
+    "category": "Administrative",
+    "caller": "engineer12@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000012",
+    "operation_name": {
+      "value": "Microsoft.Compute/virtualMachines/delete",
+      "localized_value": "Synthetic undocumented production write"
+    },
+    "authorization": {
+      "action": "Microsoft.Compute/virtualMachines/delete",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Network/networkSecurityGroups/nsg-arca-prod01"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Network/networkSecurityGroups/nsg-arca-prod01",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "UNDOCUMENTED_PRODUCTION_MODIFICATION"
+    }
+  },
+  {
+    "event_data_id": "az-event-0029",
+    "correlation_id": "az-undoc-0009",
+    "event_timestamp": "2026-10-25T12:16:00Z",
+    "category": "Administrative",
+    "caller": "engineer01@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000001",
+    "operation_name": {
+      "value": "Microsoft.Web/sites/config/write",
+      "localized_value": "Synthetic undocumented production write"
+    },
+    "authorization": {
+      "action": "Microsoft.Web/sites/config/write",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Network/networkSecurityGroups/nsg-arca-prod04"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Network/networkSecurityGroups/nsg-arca-prod04",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "UNDOCUMENTED_PRODUCTION_MODIFICATION"
+    }
+  },
+  {
+    "event_data_id": "az-event-0030",
+    "correlation_id": "az-undoc-0010",
+    "event_timestamp": "2026-10-25T12:33:00Z",
+    "category": "Administrative",
+    "caller": "engineer02@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000002",
+    "operation_name": {
+      "value": "Microsoft.Network/networkSecurityGroups/securityRules/write",
+      "localized_value": "Synthetic undocumented production write"
+    },
+    "authorization": {
+      "action": "Microsoft.Network/networkSecurityGroups/securityRules/write",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod03"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod03",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "UNDOCUMENTED_PRODUCTION_MODIFICATION"
+    }
+  },
+  {
+    "event_data_id": "az-event-0031",
+    "correlation_id": "az-read-0031",
+    "event_timestamp": "2026-10-26T02:35:00Z",
+    "category": "Administrative",
+    "caller": "engineer07@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000007",
+    "operation_name": {
+      "value": "Microsoft.Storage/storageAccounts/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Storage/storageAccounts/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod01"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod01",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0032",
+    "correlation_id": "az-read-0032",
+    "event_timestamp": "2026-10-26T02:40:00Z",
+    "category": "Administrative",
+    "caller": "engineer08@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000008",
+    "operation_name": {
+      "value": "Microsoft.Storage/storageAccounts/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Storage/storageAccounts/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod02"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod02",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0033",
+    "correlation_id": "az-read-0033",
+    "event_timestamp": "2026-10-26T02:45:00Z",
+    "category": "Administrative",
+    "caller": "engineer09@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000009",
+    "operation_name": {
+      "value": "Microsoft.Storage/storageAccounts/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Storage/storageAccounts/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod03"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod03",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0034",
+    "correlation_id": "az-read-0034",
+    "event_timestamp": "2026-10-26T02:50:00Z",
+    "category": "Administrative",
+    "caller": "engineer10@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000010",
+    "operation_name": {
+      "value": "Microsoft.Storage/storageAccounts/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Storage/storageAccounts/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod04"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod04",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0035",
+    "correlation_id": "az-read-0035",
+    "event_timestamp": "2026-10-26T02:55:00Z",
+    "category": "Administrative",
+    "caller": "engineer11@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000011",
+    "operation_name": {
+      "value": "Microsoft.Storage/storageAccounts/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Storage/storageAccounts/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod05"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod05",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0036",
+    "correlation_id": "az-read-0036",
+    "event_timestamp": "2026-10-26T03:00:00Z",
+    "category": "Administrative",
+    "caller": "engineer12@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000012",
+    "operation_name": {
+      "value": "Microsoft.Storage/storageAccounts/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Storage/storageAccounts/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod06"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod06",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0037",
+    "correlation_id": "az-read-0037",
+    "event_timestamp": "2026-10-26T03:05:00Z",
+    "category": "Administrative",
+    "caller": "engineer01@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000001",
+    "operation_name": {
+      "value": "Microsoft.Compute/virtualMachines/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Compute/virtualMachines/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod01"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod01",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0038",
+    "correlation_id": "az-read-0038",
+    "event_timestamp": "2026-10-26T03:10:00Z",
+    "category": "Administrative",
+    "caller": "engineer02@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000002",
+    "operation_name": {
+      "value": "Microsoft.Compute/virtualMachines/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Compute/virtualMachines/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod02"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod02",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0039",
+    "correlation_id": "az-read-0039",
+    "event_timestamp": "2026-10-26T03:15:00Z",
+    "category": "Administrative",
+    "caller": "engineer03@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000003",
+    "operation_name": {
+      "value": "Microsoft.Compute/virtualMachines/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Compute/virtualMachines/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod03"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod03",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0040",
+    "correlation_id": "az-read-0040",
+    "event_timestamp": "2026-10-26T03:20:00Z",
+    "category": "Administrative",
+    "caller": "engineer04@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000004",
+    "operation_name": {
+      "value": "Microsoft.Compute/virtualMachines/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Compute/virtualMachines/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod04"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod04",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0041",
+    "correlation_id": "az-read-0041",
+    "event_timestamp": "2026-10-26T03:25:00Z",
+    "category": "Administrative",
+    "caller": "engineer05@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000005",
+    "operation_name": {
+      "value": "Microsoft.Compute/virtualMachines/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Compute/virtualMachines/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod05"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod05",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0042",
+    "correlation_id": "az-read-0042",
+    "event_timestamp": "2026-10-26T03:30:00Z",
+    "category": "Administrative",
+    "caller": "engineer06@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000006",
+    "operation_name": {
+      "value": "Microsoft.Compute/virtualMachines/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Compute/virtualMachines/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod06"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod06",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0043",
+    "correlation_id": "az-read-0043",
+    "event_timestamp": "2026-10-26T03:35:00Z",
+    "category": "Administrative",
+    "caller": "engineer07@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000007",
+    "operation_name": {
+      "value": "Microsoft.Web/sites/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Web/sites/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Web/sites/app-arca-prod01"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Web/sites/app-arca-prod01",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0044",
+    "correlation_id": "az-read-0044",
+    "event_timestamp": "2026-10-26T03:40:00Z",
+    "category": "Administrative",
+    "caller": "engineer08@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000008",
+    "operation_name": {
+      "value": "Microsoft.Web/sites/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Web/sites/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Web/sites/app-arca-prod02"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Web/sites/app-arca-prod02",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0045",
+    "correlation_id": "az-read-0045",
+    "event_timestamp": "2026-10-26T03:45:00Z",
+    "category": "Administrative",
+    "caller": "engineer09@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000009",
+    "operation_name": {
+      "value": "Microsoft.Web/sites/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Web/sites/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Web/sites/app-arca-prod03"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Web/sites/app-arca-prod03",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0046",
+    "correlation_id": "az-read-0046",
+    "event_timestamp": "2026-10-26T03:50:00Z",
+    "category": "Administrative",
+    "caller": "engineer10@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000010",
+    "operation_name": {
+      "value": "Microsoft.Web/sites/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Web/sites/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Web/sites/app-arca-prod04"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Web/sites/app-arca-prod04",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0047",
+    "correlation_id": "az-read-0047",
+    "event_timestamp": "2026-10-26T03:55:00Z",
+    "category": "Administrative",
+    "caller": "engineer11@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000011",
+    "operation_name": {
+      "value": "Microsoft.Web/sites/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Web/sites/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Web/sites/app-arca-prod05"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Web/sites/app-arca-prod05",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0048",
+    "correlation_id": "az-read-0048",
+    "event_timestamp": "2026-10-26T04:00:00Z",
+    "category": "Administrative",
+    "caller": "engineer12@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000012",
+    "operation_name": {
+      "value": "Microsoft.Web/sites/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Web/sites/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Web/sites/app-arca-prod06"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Web/sites/app-arca-prod06",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0049",
+    "correlation_id": "az-read-0049",
+    "event_timestamp": "2026-10-26T04:05:00Z",
+    "category": "Administrative",
+    "caller": "engineer01@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000001",
+    "operation_name": {
+      "value": "Microsoft.KeyVault/vaults/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.KeyVault/vaults/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.KeyVault/vaults/kv-arca-prod01"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.KeyVault/vaults/kv-arca-prod01",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0050",
+    "correlation_id": "az-read-0050",
+    "event_timestamp": "2026-10-26T04:10:00Z",
+    "category": "Administrative",
+    "caller": "engineer02@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000002",
+    "operation_name": {
+      "value": "Microsoft.KeyVault/vaults/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.KeyVault/vaults/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.KeyVault/vaults/kv-arca-prod02"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.KeyVault/vaults/kv-arca-prod02",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0051",
+    "correlation_id": "az-read-0051",
+    "event_timestamp": "2026-10-26T04:15:00Z",
+    "category": "Administrative",
+    "caller": "engineer03@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000003",
+    "operation_name": {
+      "value": "Microsoft.KeyVault/vaults/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.KeyVault/vaults/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.KeyVault/vaults/kv-arca-prod03"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.KeyVault/vaults/kv-arca-prod03",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0052",
+    "correlation_id": "az-read-0052",
+    "event_timestamp": "2026-10-26T04:20:00Z",
+    "category": "Administrative",
+    "caller": "engineer04@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000004",
+    "operation_name": {
+      "value": "Microsoft.KeyVault/vaults/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.KeyVault/vaults/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.KeyVault/vaults/kv-arca-prod04"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.KeyVault/vaults/kv-arca-prod04",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0053",
+    "correlation_id": "az-read-0053",
+    "event_timestamp": "2026-10-26T04:25:00Z",
+    "category": "Administrative",
+    "caller": "engineer05@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000005",
+    "operation_name": {
+      "value": "Microsoft.Sql/servers/databases/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Sql/servers/databases/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Sql/servers/databases/sql-arca-prod/db01"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Sql/servers/databases/sql-arca-prod/db01",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0054",
+    "correlation_id": "az-read-0054",
+    "event_timestamp": "2026-10-26T04:30:00Z",
+    "category": "Administrative",
+    "caller": "engineer06@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000006",
+    "operation_name": {
+      "value": "Microsoft.Sql/servers/databases/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Sql/servers/databases/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Sql/servers/databases/sql-arca-prod/db02"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Sql/servers/databases/sql-arca-prod/db02",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0055",
+    "correlation_id": "az-read-0055",
+    "event_timestamp": "2026-10-26T04:35:00Z",
+    "category": "Administrative",
+    "caller": "engineer07@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000007",
+    "operation_name": {
+      "value": "Microsoft.Sql/servers/databases/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Sql/servers/databases/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Sql/servers/databases/sql-arca-prod/db03"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Sql/servers/databases/sql-arca-prod/db03",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0056",
+    "correlation_id": "az-read-0056",
+    "event_timestamp": "2026-10-26T04:40:00Z",
+    "category": "Administrative",
+    "caller": "engineer08@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000008",
+    "operation_name": {
+      "value": "Microsoft.Sql/servers/databases/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Sql/servers/databases/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Sql/servers/databases/sql-arca-prod/db04"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Sql/servers/databases/sql-arca-prod/db04",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0057",
+    "correlation_id": "az-read-0057",
+    "event_timestamp": "2026-10-26T04:45:00Z",
+    "category": "Administrative",
+    "caller": "engineer09@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000009",
+    "operation_name": {
+      "value": "Microsoft.Network/networkSecurityGroups/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Network/networkSecurityGroups/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Network/networkSecurityGroups/nsg-arca-prod01"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Network/networkSecurityGroups/nsg-arca-prod01",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0058",
+    "correlation_id": "az-read-0058",
+    "event_timestamp": "2026-10-26T04:50:00Z",
+    "category": "Administrative",
+    "caller": "engineer10@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000010",
+    "operation_name": {
+      "value": "Microsoft.Network/networkSecurityGroups/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Network/networkSecurityGroups/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Network/networkSecurityGroups/nsg-arca-prod02"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Network/networkSecurityGroups/nsg-arca-prod02",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0059",
+    "correlation_id": "az-read-0059",
+    "event_timestamp": "2026-10-26T04:55:00Z",
+    "category": "Administrative",
+    "caller": "engineer11@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000011",
+    "operation_name": {
+      "value": "Microsoft.Network/networkSecurityGroups/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Network/networkSecurityGroups/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Network/networkSecurityGroups/nsg-arca-prod03"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Network/networkSecurityGroups/nsg-arca-prod03",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0060",
+    "correlation_id": "az-read-0060",
+    "event_timestamp": "2026-10-26T05:00:00Z",
+    "category": "Administrative",
+    "caller": "engineer12@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000012",
+    "operation_name": {
+      "value": "Microsoft.Network/networkSecurityGroups/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Network/networkSecurityGroups/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Network/networkSecurityGroups/nsg-arca-prod04"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Network/networkSecurityGroups/nsg-arca-prod04",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0061",
+    "correlation_id": "az-read-0061",
+    "event_timestamp": "2026-10-26T05:05:00Z",
+    "category": "Administrative",
+    "caller": "engineer01@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000001",
+    "operation_name": {
+      "value": "Microsoft.Storage/storageAccounts/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Storage/storageAccounts/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod01"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod01",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0062",
+    "correlation_id": "az-read-0062",
+    "event_timestamp": "2026-10-26T05:10:00Z",
+    "category": "Administrative",
+    "caller": "engineer02@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000002",
+    "operation_name": {
+      "value": "Microsoft.Storage/storageAccounts/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Storage/storageAccounts/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod02"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod02",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0063",
+    "correlation_id": "az-read-0063",
+    "event_timestamp": "2026-10-26T05:15:00Z",
+    "category": "Administrative",
+    "caller": "engineer03@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000003",
+    "operation_name": {
+      "value": "Microsoft.Storage/storageAccounts/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Storage/storageAccounts/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod03"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod03",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0064",
+    "correlation_id": "az-read-0064",
+    "event_timestamp": "2026-10-26T05:20:00Z",
+    "category": "Administrative",
+    "caller": "engineer04@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000004",
+    "operation_name": {
+      "value": "Microsoft.Storage/storageAccounts/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Storage/storageAccounts/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod04"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod04",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0065",
+    "correlation_id": "az-read-0065",
+    "event_timestamp": "2026-10-26T05:25:00Z",
+    "category": "Administrative",
+    "caller": "engineer05@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000005",
+    "operation_name": {
+      "value": "Microsoft.Storage/storageAccounts/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Storage/storageAccounts/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod05"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod05",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0066",
+    "correlation_id": "az-read-0066",
+    "event_timestamp": "2026-10-26T05:30:00Z",
+    "category": "Administrative",
+    "caller": "engineer06@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000006",
+    "operation_name": {
+      "value": "Microsoft.Storage/storageAccounts/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Storage/storageAccounts/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod06"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod06",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0067",
+    "correlation_id": "az-read-0067",
+    "event_timestamp": "2026-10-26T05:35:00Z",
+    "category": "Administrative",
+    "caller": "engineer07@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000007",
+    "operation_name": {
+      "value": "Microsoft.Compute/virtualMachines/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Compute/virtualMachines/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod01"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod01",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0068",
+    "correlation_id": "az-read-0068",
+    "event_timestamp": "2026-10-26T05:40:00Z",
+    "category": "Administrative",
+    "caller": "engineer08@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000008",
+    "operation_name": {
+      "value": "Microsoft.Compute/virtualMachines/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Compute/virtualMachines/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod02"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod02",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0069",
+    "correlation_id": "az-read-0069",
+    "event_timestamp": "2026-10-26T05:45:00Z",
+    "category": "Administrative",
+    "caller": "engineer09@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000009",
+    "operation_name": {
+      "value": "Microsoft.Compute/virtualMachines/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Compute/virtualMachines/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod03"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod03",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0070",
+    "correlation_id": "az-read-0070",
+    "event_timestamp": "2026-10-26T05:50:00Z",
+    "category": "Administrative",
+    "caller": "engineer10@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000010",
+    "operation_name": {
+      "value": "Microsoft.Compute/virtualMachines/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Compute/virtualMachines/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod04"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod04",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0071",
+    "correlation_id": "az-read-0071",
+    "event_timestamp": "2026-10-26T05:55:00Z",
+    "category": "Administrative",
+    "caller": "engineer11@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000011",
+    "operation_name": {
+      "value": "Microsoft.Compute/virtualMachines/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Compute/virtualMachines/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod05"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod05",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0072",
+    "correlation_id": "az-read-0072",
+    "event_timestamp": "2026-10-26T06:00:00Z",
+    "category": "Administrative",
+    "caller": "engineer12@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000012",
+    "operation_name": {
+      "value": "Microsoft.Compute/virtualMachines/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Compute/virtualMachines/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod06"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod06",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0073",
+    "correlation_id": "az-read-0073",
+    "event_timestamp": "2026-10-26T06:05:00Z",
+    "category": "Administrative",
+    "caller": "engineer01@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000001",
+    "operation_name": {
+      "value": "Microsoft.Web/sites/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Web/sites/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Web/sites/app-arca-prod01"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Web/sites/app-arca-prod01",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0074",
+    "correlation_id": "az-read-0074",
+    "event_timestamp": "2026-10-26T06:10:00Z",
+    "category": "Administrative",
+    "caller": "engineer02@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000002",
+    "operation_name": {
+      "value": "Microsoft.Web/sites/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Web/sites/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Web/sites/app-arca-prod02"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Web/sites/app-arca-prod02",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0075",
+    "correlation_id": "az-read-0075",
+    "event_timestamp": "2026-10-26T06:15:00Z",
+    "category": "Administrative",
+    "caller": "engineer03@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000003",
+    "operation_name": {
+      "value": "Microsoft.Web/sites/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Web/sites/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Web/sites/app-arca-prod03"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Web/sites/app-arca-prod03",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0076",
+    "correlation_id": "az-read-0076",
+    "event_timestamp": "2026-10-26T06:20:00Z",
+    "category": "Administrative",
+    "caller": "engineer04@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000004",
+    "operation_name": {
+      "value": "Microsoft.Web/sites/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Web/sites/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Web/sites/app-arca-prod04"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Web/sites/app-arca-prod04",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0077",
+    "correlation_id": "az-read-0077",
+    "event_timestamp": "2026-10-26T06:25:00Z",
+    "category": "Administrative",
+    "caller": "engineer05@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000005",
+    "operation_name": {
+      "value": "Microsoft.Web/sites/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Web/sites/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Web/sites/app-arca-prod05"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Web/sites/app-arca-prod05",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0078",
+    "correlation_id": "az-read-0078",
+    "event_timestamp": "2026-10-26T06:30:00Z",
+    "category": "Administrative",
+    "caller": "engineer06@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000006",
+    "operation_name": {
+      "value": "Microsoft.Web/sites/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Web/sites/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Web/sites/app-arca-prod06"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Web/sites/app-arca-prod06",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0079",
+    "correlation_id": "az-read-0079",
+    "event_timestamp": "2026-10-26T06:35:00Z",
+    "category": "Administrative",
+    "caller": "engineer07@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000007",
+    "operation_name": {
+      "value": "Microsoft.KeyVault/vaults/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.KeyVault/vaults/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.KeyVault/vaults/kv-arca-prod01"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.KeyVault/vaults/kv-arca-prod01",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0080",
+    "correlation_id": "az-read-0080",
+    "event_timestamp": "2026-10-26T06:40:00Z",
+    "category": "Administrative",
+    "caller": "engineer08@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000008",
+    "operation_name": {
+      "value": "Microsoft.KeyVault/vaults/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.KeyVault/vaults/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.KeyVault/vaults/kv-arca-prod02"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.KeyVault/vaults/kv-arca-prod02",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0081",
+    "correlation_id": "az-read-0081",
+    "event_timestamp": "2026-10-26T06:45:00Z",
+    "category": "Administrative",
+    "caller": "engineer09@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000009",
+    "operation_name": {
+      "value": "Microsoft.KeyVault/vaults/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.KeyVault/vaults/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.KeyVault/vaults/kv-arca-prod03"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.KeyVault/vaults/kv-arca-prod03",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0082",
+    "correlation_id": "az-read-0082",
+    "event_timestamp": "2026-10-26T06:50:00Z",
+    "category": "Administrative",
+    "caller": "engineer10@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000010",
+    "operation_name": {
+      "value": "Microsoft.KeyVault/vaults/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.KeyVault/vaults/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.KeyVault/vaults/kv-arca-prod04"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.KeyVault/vaults/kv-arca-prod04",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0083",
+    "correlation_id": "az-read-0083",
+    "event_timestamp": "2026-10-26T06:55:00Z",
+    "category": "Administrative",
+    "caller": "engineer11@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000011",
+    "operation_name": {
+      "value": "Microsoft.Sql/servers/databases/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Sql/servers/databases/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Sql/servers/databases/sql-arca-prod/db01"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Sql/servers/databases/sql-arca-prod/db01",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0084",
+    "correlation_id": "az-read-0084",
+    "event_timestamp": "2026-10-26T07:00:00Z",
+    "category": "Administrative",
+    "caller": "engineer12@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000012",
+    "operation_name": {
+      "value": "Microsoft.Sql/servers/databases/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Sql/servers/databases/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Sql/servers/databases/sql-arca-prod/db02"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Sql/servers/databases/sql-arca-prod/db02",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0085",
+    "correlation_id": "az-read-0085",
+    "event_timestamp": "2026-10-26T07:05:00Z",
+    "category": "Administrative",
+    "caller": "engineer01@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000001",
+    "operation_name": {
+      "value": "Microsoft.Sql/servers/databases/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Sql/servers/databases/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Sql/servers/databases/sql-arca-prod/db03"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Sql/servers/databases/sql-arca-prod/db03",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0086",
+    "correlation_id": "az-read-0086",
+    "event_timestamp": "2026-10-26T07:10:00Z",
+    "category": "Administrative",
+    "caller": "engineer02@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000002",
+    "operation_name": {
+      "value": "Microsoft.Sql/servers/databases/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Sql/servers/databases/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Sql/servers/databases/sql-arca-prod/db04"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Sql/servers/databases/sql-arca-prod/db04",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0087",
+    "correlation_id": "az-read-0087",
+    "event_timestamp": "2026-10-26T07:15:00Z",
+    "category": "Administrative",
+    "caller": "engineer03@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000003",
+    "operation_name": {
+      "value": "Microsoft.Network/networkSecurityGroups/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Network/networkSecurityGroups/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Network/networkSecurityGroups/nsg-arca-prod01"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Network/networkSecurityGroups/nsg-arca-prod01",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0088",
+    "correlation_id": "az-read-0088",
+    "event_timestamp": "2026-10-26T07:20:00Z",
+    "category": "Administrative",
+    "caller": "engineer04@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000004",
+    "operation_name": {
+      "value": "Microsoft.Network/networkSecurityGroups/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Network/networkSecurityGroups/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Network/networkSecurityGroups/nsg-arca-prod02"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Network/networkSecurityGroups/nsg-arca-prod02",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0089",
+    "correlation_id": "az-read-0089",
+    "event_timestamp": "2026-10-26T07:25:00Z",
+    "category": "Administrative",
+    "caller": "engineer05@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000005",
+    "operation_name": {
+      "value": "Microsoft.Network/networkSecurityGroups/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Network/networkSecurityGroups/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Network/networkSecurityGroups/nsg-arca-prod03"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Network/networkSecurityGroups/nsg-arca-prod03",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0090",
+    "correlation_id": "az-read-0090",
+    "event_timestamp": "2026-10-26T07:30:00Z",
+    "category": "Administrative",
+    "caller": "engineer06@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000006",
+    "operation_name": {
+      "value": "Microsoft.Network/networkSecurityGroups/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Network/networkSecurityGroups/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Network/networkSecurityGroups/nsg-arca-prod04"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Network/networkSecurityGroups/nsg-arca-prod04",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0091",
+    "correlation_id": "az-read-0091",
+    "event_timestamp": "2026-10-26T07:35:00Z",
+    "category": "Administrative",
+    "caller": "engineer07@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000007",
+    "operation_name": {
+      "value": "Microsoft.Storage/storageAccounts/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Storage/storageAccounts/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod01"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod01",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0092",
+    "correlation_id": "az-read-0092",
+    "event_timestamp": "2026-10-26T07:40:00Z",
+    "category": "Administrative",
+    "caller": "engineer08@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000008",
+    "operation_name": {
+      "value": "Microsoft.Storage/storageAccounts/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Storage/storageAccounts/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod02"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod02",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0093",
+    "correlation_id": "az-read-0093",
+    "event_timestamp": "2026-10-26T07:45:00Z",
+    "category": "Administrative",
+    "caller": "engineer09@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000009",
+    "operation_name": {
+      "value": "Microsoft.Storage/storageAccounts/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Storage/storageAccounts/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod03"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod03",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0094",
+    "correlation_id": "az-read-0094",
+    "event_timestamp": "2026-10-26T07:50:00Z",
+    "category": "Administrative",
+    "caller": "engineer10@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000010",
+    "operation_name": {
+      "value": "Microsoft.Storage/storageAccounts/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Storage/storageAccounts/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod04"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod04",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0095",
+    "correlation_id": "az-read-0095",
+    "event_timestamp": "2026-10-26T07:55:00Z",
+    "category": "Administrative",
+    "caller": "engineer11@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000011",
+    "operation_name": {
+      "value": "Microsoft.Storage/storageAccounts/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Storage/storageAccounts/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod05"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod05",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0096",
+    "correlation_id": "az-read-0096",
+    "event_timestamp": "2026-10-26T08:00:00Z",
+    "category": "Administrative",
+    "caller": "engineer12@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000012",
+    "operation_name": {
+      "value": "Microsoft.Storage/storageAccounts/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Storage/storageAccounts/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod06"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod06",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0097",
+    "correlation_id": "az-read-0097",
+    "event_timestamp": "2026-10-26T08:05:00Z",
+    "category": "Administrative",
+    "caller": "engineer01@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000001",
+    "operation_name": {
+      "value": "Microsoft.Compute/virtualMachines/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Compute/virtualMachines/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod01"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod01",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0098",
+    "correlation_id": "az-read-0098",
+    "event_timestamp": "2026-10-26T08:10:00Z",
+    "category": "Administrative",
+    "caller": "engineer02@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000002",
+    "operation_name": {
+      "value": "Microsoft.Compute/virtualMachines/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Compute/virtualMachines/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod02"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod02",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0099",
+    "correlation_id": "az-read-0099",
+    "event_timestamp": "2026-10-26T08:15:00Z",
+    "category": "Administrative",
+    "caller": "engineer03@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000003",
+    "operation_name": {
+      "value": "Microsoft.Compute/virtualMachines/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Compute/virtualMachines/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod03"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod03",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  },
+  {
+    "event_data_id": "az-event-0100",
+    "correlation_id": "az-read-0100",
+    "event_timestamp": "2026-10-26T08:20:00Z",
+    "category": "Administrative",
+    "caller": "engineer04@example.invalid",
+    "caller_principal_id": "20000000-0000-0000-0000-000000000004",
+    "operation_name": {
+      "value": "Microsoft.Compute/virtualMachines/read",
+      "localized_value": "Read synthetic resource"
+    },
+    "authorization": {
+      "action": "Microsoft.Compute/virtualMachines/read",
+      "scope": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod04"
+    },
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod04",
+    "resource_group": "rg-arca-prod",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "status": {
+      "value": "Succeeded",
+      "localized_value": "Succeeded"
+    },
+    "sub_status": {
+      "value": "OK"
+    },
+    "properties": {
+      "synthetic_scenario": "BENIGN_READ"
+    }
+  }
+]

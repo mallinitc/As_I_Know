@@ -1,0 +1,117 @@
+ARCA HACKATHON DEMONSTRATION — VERIFIED CASES
+================================================
+
+Environment
+-----------
+Run ARCA in mock mode and choose Azure Environment unless a case explicitly says AWS.
+Every “Verified demo example” dropdown is optional; selecting Manual entry preserves normal entry.
+The examples populate inputs but never submit, approve, execute, or change source evidence.
+
+1. STAGE 1 — VALIDATE CHANGE
+----------------------------
+Navigation: Change Lifecycle > Stage 1 — Validate Change.
+Select an example, review the populated pasted record, then click Validate draft.
+
+S1-VALID — Complete storage configuration draft
+Expected: VALID / Ready for Submission. Problem: none. Correction: none.
+
+S1-MISSING-IMPLEMENTER — Missing implementer
+Expected: INCOMPLETE. Problem: implementer is mandatory. Correction: enter the authorized UPN or principal ID.
+
+S1-MISSING-RESOURCE — Missing target resource
+Expected: INCOMPLETE. Problem: resource and expected operation are absent. Correction: enter the exact resource name/ID and operation.
+
+S1-REVERSED-WINDOW — End time precedes start time
+Expected: INCONSISTENT. Problem: 09:00Z end precedes 10:00Z start. Correction: provide a chronological UTC window.
+
+S1-AMBIGUOUS-TASK — Ambiguous implementation instruction
+Expected: AMBIGUOUS. Problem: “Update as needed” is not executable. Correction: provide ordered, resource-specific steps.
+
+Stage 1 copy/paste success example:
+Purpose: Rotate the application storage configuration
+Business Justification: Maintain the approved security baseline
+Environment: production
+Implementer: engineer01@example.invalid
+Target Resource: /subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod01
+Implementation Tasks: Update the resource configuration; verify the deployment completes
+Start: 2026-10-22T10:00:00Z
+End: 2026-10-22T11:00:00Z
+Expected Outcome: The approved configuration is active
+Post-change Validation: Confirm service health; test application access
+Rollback Plan: Restore the previous configuration from the captured baseline
+Risk and Impact: Moderate risk with a five minute application interruption
+Role Requirements: Contributor
+Scope Requirements: Resource scope only
+Expected Operations: Microsoft.Storage/storageAccounts/write @ /subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod01
+
+2. STAGE 2 — VALIDATE PRIVILEGES
+--------------------------------
+Navigation: Change Lifecycle > Stage 2 — Validate Privileges.
+
+Search by Change Number: select the example, click Retrieve all PIM requests, then Validate All PIM Requests.
+S2C-APPROPRIATE: CHG-AZ-2021 / pim-az-0021, 0022, 0023 => APPROVE_RECOMMENDED. No correction.
+S2C-OVERPRIVILEGED: CHG-AZ-2022 / pim-az-0024, 0025 => OVERPRIVILEGED. Remove redundant subscription Contributor.
+S2C-INSUFFICIENT: CHG-AZ-2023 / pim-az-0026 => INSUFFICIENT_ACCESS. Add only catalog-supported coverage for missing tasks.
+S2C-TWO-IMPLEMENTERS: CHG-AZ-2024 / pim-az-0027, 0028 => APPROVE_RECOMMENDED. Permissions remain separated by principal.
+S2C-WRONG-REFERENCE: CHG-AZ-2025 / pim-az-0029 => MANUAL_REVIEW_REQUIRED. Resolve the conflicting ticket reference.
+
+Search by User ID: select the example, click Search PIM requests, then Validate All PIM Requests.
+S2U-ONE-USER-THREE: engineer01@example.invalid + CHG-AZ-2021 => APPROVE_RECOMMENDED.
+S2U-CONTRIBUTOR: engineer05@example.invalid + CHG-AZ-2022 => OVERPRIVILEGED; remove broad grant.
+S2U-INSUFFICIENT: object ID 20000000-0000-0000-0000-000000000007 + CHG-AZ-2023 => INSUFFICIENT_ACCESS.
+S2U-SECOND-IMPLEMENTER: engineer12@example.invalid + CHG-AZ-2024 => INSUFFICIENT_ACCESS in isolation; validate all change-linked requests for combined coverage.
+S2U-CONFLICT: engineer09@example.invalid + CHG-AZ-2025 => MANUAL_REVIEW_REQUIRED.
+
+Paste PIM Records: select the example, inspect the exact source JSON, click Parse PIM records, then Validate All PIM Requests.
+S2P-APPROPRIATE => APPROVE_RECOMMENDED; S2P-BROAD => OVERPRIVILEGED;
+S2P-INSUFFICIENT => INSUFFICIENT_ACCESS; S2P-MULTI-PRINCIPAL => APPROVE_RECOMMENDED;
+S2P-CONFLICT => MANUAL_REVIEW_REQUIRED. Corrections are the same as the corresponding change-number cases.
+
+Stage 2 copy/paste example: choose S2P-APPROPRIATE. The application inserts the unmodified JSON records for
+pim-az-0021, pim-az-0022, and pim-az-0023, including their original timestamps and evidence IDs.
+
+3. STAGE 3 — VERIFY EXECUTION
+-----------------------------
+Navigation: Change Lifecycle > Stage 3 — Verify Execution. Select example, click Verify execution.
+S3-MATCH: CHG-AZ-2001 => POTENTIAL_MATCH. This is correlation, not proof of successful execution.
+S3-TIMING: CHG-AZ-2007 => DEVIATION_DETECTED. Review timing evidence and reconcile the approved window.
+S3-UNEXPECTED-ACTOR: CHG-AZ-2008 => DEVIATION_DETECTED. Confirm the actor or raise an exception review.
+S3-UNEXPECTED-RESOURCE: CHG-AZ-2009 => DEVIATION_DETECTED. Reconcile resource/operation scope.
+S3-NO-EVIDENCE: CHG-AZ-2021 => EVIDENCE_INCOMPLETE. Collect execution evidence; do not infer success.
+
+4. AUTOMATED / FULL LIFECYCLE INVESTIGATIONS
+---------------------------------------------
+Navigation: Change Lifecycle > Full Lifecycle Assessment. Select example, click Run lifecycle analysis.
+AUTO-CLEAN: CHG-AZ-2001 => terminal POTENTIAL_MATCH; no confirmed execution claim.
+AUTO-INCOMPLETE: CHG-AZ-2002 => NEEDS_INFO; complete the change description before downstream assessment.
+AUTO-TIMING: CHG-AZ-2007 => REVIEW_REQUIRED; reconcile timing deviation.
+AUTO-ACTOR: CHG-AZ-2008 => REVIEW_REQUIRED; validate unexpected actor authorization.
+AUTO-SCOPE: CHG-AZ-2009 => REVIEW_REQUIRED; reconcile execution scope.
+
+5. UNDOCUMENTED CHANGES
+-----------------------
+Navigation: Undocumented Changes. Select the example; results update immediately.
+UD-AZ-24H => Last 24 Hours, 10 unmatched events.
+UD-AZ-2D => Last 2 Days, 10 unmatched events.
+UD-AZ-7D => Last 7 Days, 13 unmatched events.
+UD-AZ-15D => Last 15 Days, 13 unmatched events.
+UD-AWS-24H => choose AWS Environment, Last 24 Hours, 2 unmatched events (evt-2 and evt-4).
+Expected status for every case: UNMATCHED_CHANGES. Problem: events lack an exact approved-change match in available evidence.
+Recommended correction: investigate and link supporting approval evidence if it exists; do not classify unmatched activity as unauthorized without proof.
+
+6. ASK ARCA
+-----------
+Navigation: Ask ARCA. Select example, then click Ask ARCA. Suggested buttons and custom text use the same agent path.
+ASK-UNDOCUMENTED: “Show undocumented production changes in the last 24 hours.” => complete; 10 unmatched records.
+ASK-PIM: “Who requested Contributor access at subscription scope this week?” => complete; matching PIM evidence.
+ASK-RESOURCE: “Who modified starchprod04 during the last 48 hours?” => complete; resource evidence and actors.
+ASK-ACCESS: access-loss question for starchprod04 => clarification; supply the affected identity rather than assuming it.
+ASK-AMBIGUOUS: “this Storage Account” => clarification; supply exact name/resource group/resource ID.
+ASK-UNSUPPORTED: weather question => unsupported; use a cloud change/access investigation question.
+
+Evidence integrity notes
+------------------------
+All 41 catalog scenarios were programmatically executed against the local evaluators.
+Azure historical reference: latest applicable synthetic evidence timestamp, exposed in Environment Details.
+AWS historical reference: latest applicable CloudTrail timestamp, exposed in Environment Details.
+No paid model or cloud API is required. No catalog action modifies the synthetic datasets.

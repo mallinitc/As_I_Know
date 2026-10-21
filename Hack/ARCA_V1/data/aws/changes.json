@@ -1,0 +1,4 @@
+[
+  {"change_id":"CHG1001","environment":"production","actor":"alice@example.invalid","start":"2026-10-20T10:00:00Z","end":"2026-10-20T11:00:00Z","description":"Update the bucket policy on arca-demo-reports to allow the reporting application role to read reports; rollback by restoring the previous policy.","expected":[{"eventName":"PutBucketPolicy","resource":"arn:aws:s3:::arca-demo-reports"}]},
+  {"change_id":"CHG1002","environment":"production","actor":"bob@example.invalid","start":"2026-10-20T11:00:00Z","end":"2026-10-20T12:00:00Z","description":"Delete unused test EC2 instance i-0abc123 in approved window, rollback via snapshot restore.","expected":[{"eventName":"TerminateInstances","resource":"arn:aws:ec2:us-east-1:111122223333:instance/i-0abc123"}]}
+]

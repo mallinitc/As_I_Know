@@ -1,0 +1,114 @@
+[
+  {
+    "grant_id": "SF-GTU-001",
+    "user_name": "SFSECURITY01",
+    "role_name": "SECURITYADMIN",
+    "granted_on": "2026-10-01T00:00:00Z",
+    "revoked_on": null
+  },
+  {
+    "grant_id": "SF-GTU-002",
+    "user_name": "SFENGINEER01",
+    "role_name": "SYSADMIN",
+    "granted_on": "2026-10-01T00:00:00Z",
+    "revoked_on": null
+  },
+  {
+    "grant_id": "SF-GTU-003",
+    "user_name": "SFENGINEER02",
+    "role_name": "SYSADMIN",
+    "granted_on": "2026-10-01T00:00:00Z",
+    "revoked_on": null
+  },
+  {
+    "grant_id": "SF-GTU-004",
+    "user_name": "SFENGINEER03",
+    "role_name": "SYSADMIN",
+    "granted_on": "2026-10-01T00:00:00Z",
+    "revoked_on": null
+  },
+  {
+    "grant_id": "SF-GTU-005",
+    "user_name": "SFENGINEER05",
+    "role_name": "SYSADMIN",
+    "granted_on": "2026-10-01T00:00:00Z",
+    "revoked_on": null
+  },
+  {
+    "grant_id": "SF-GTU-006",
+    "user_name": "SFENGINEER08",
+    "role_name": "SYSADMIN",
+    "granted_on": "2026-10-01T00:00:00Z",
+    "revoked_on": null
+  },
+  {
+    "grant_id": "SF-GTU-007",
+    "user_name": "SFSECURITY02",
+    "role_name": "SECURITYADMIN",
+    "granted_on": "2026-10-01T00:00:00Z",
+    "revoked_on": null
+  },
+  {
+    "grant_id": "SF-GTU-008",
+    "user_name": "SFENGINEER12",
+    "role_name": "SYSADMIN",
+    "granted_on": "2026-10-01T00:00:00Z",
+    "revoked_on": null
+  },
+  {
+    "grant_id": "SF-GTU-009",
+    "user_name": "SFSECURITY05",
+    "role_name": "SECURITYADMIN",
+    "granted_on": "2026-10-01T00:00:00Z",
+    "revoked_on": null
+  },
+  {
+    "grant_id": "SF-GTU-010",
+    "user_name": "SFENGINEER14",
+    "role_name": "SYSADMIN",
+    "granted_on": "2026-10-01T00:00:00Z",
+    "revoked_on": null
+  },
+  {
+    "grant_id": "SF-GTU-011",
+    "user_name": "SFENGINEER16",
+    "role_name": "SYSADMIN",
+    "granted_on": "2026-10-01T00:00:00Z",
+    "revoked_on": null
+  },
+  {
+    "grant_id": "SF-GTU-012",
+    "user_name": "SFENGINEER19",
+    "role_name": "SYSADMIN",
+    "granted_on": "2026-10-01T00:00:00Z",
+    "revoked_on": null
+  },
+  {
+    "grant_id": "SF-GTU-013",
+    "user_name": "SFENGINEER22",
+    "role_name": "SYSADMIN",
+    "granted_on": "2026-10-01T00:00:00Z",
+    "revoked_on": null
+  },
+  {
+    "grant_id": "SF-GTU-014",
+    "user_name": "SFROGUE01",
+    "role_name": "SYSADMIN",
+    "granted_on": "2026-10-01T00:00:00Z",
+    "revoked_on": null
+  },
+  {
+    "grant_id": "SF-GTU-015",
+    "user_name": "SFROGUE02",
+    "role_name": "SYSADMIN",
+    "granted_on": "2026-10-01T00:00:00Z",
+    "revoked_on": null
+  },
+  {
+    "grant_id": "SF-GTU-016",
+    "user_name": "SFROGUE03",
+    "role_name": "SYSADMIN",
+    "granted_on": "2026-10-01T00:00:00Z",
+    "revoked_on": null
+  }
+]

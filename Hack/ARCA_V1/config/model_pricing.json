@@ -1,0 +1,20 @@
+{
+  "description": "ARCA cost-estimation catalog. Rates are USD per one million tokens and are estimates, not provider billing.",
+  "models": [
+    {
+      "provider": "openai",
+      "model_id": "gpt-5-mini",
+      "usd_per_million_tokens": {"input": 0.25, "cached_input": 0.025, "output": 2.0}
+    },
+    {
+      "provider": "openai",
+      "model_id": "gpt-4.1-mini",
+      "usd_per_million_tokens": {"input": 0.4, "cached_input": 0.1, "output": 1.6}
+    },
+    {
+      "provider": "bedrock",
+      "model_id": "anthropic.claude-3-5-sonnet-20241022-v2:0",
+      "usd_per_million_tokens": {"input": 3.0, "output": 15.0}
+    }
+  ]
+}

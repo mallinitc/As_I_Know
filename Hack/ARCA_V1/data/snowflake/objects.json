@@ -1,0 +1,14 @@
+[
+  {"object_id":"sf-object-account","object_type":"ACCOUNT","object_name":"ARCA_DEMO_ACCOUNT","database":null,"schema":null},
+  {"object_id":"sf-object-finance-db","object_type":"DATABASE","object_name":"FINANCE_DB","database":"FINANCE_DB","schema":null},
+  {"object_id":"sf-object-finance-reporting","object_type":"SCHEMA","object_name":"FINANCE_DB.REPORTING","database":"FINANCE_DB","schema":"REPORTING"},
+  {"object_id":"sf-object-transactions","object_type":"TABLE","object_name":"FINANCE_DB.REPORTING.TRANSACTIONS","database":"FINANCE_DB","schema":"REPORTING"},
+  {"object_id":"sf-object-other-table","object_type":"TABLE","object_name":"FINANCE_DB.REPORTING.OTHER_TABLE","database":"FINANCE_DB","schema":"REPORTING"},
+  {"object_id":"sf-object-dev-staging","object_type":"SCHEMA","object_name":"DEV_DB.STAGING","database":"DEV_DB","schema":"STAGING"},
+  {"object_id":"sf-object-dev-transactions","object_type":"TABLE","object_name":"DEV_DB.STAGING.TRANSACTIONS_RAW","database":"DEV_DB","schema":"STAGING"},
+  {"object_id":"sf-object-marketing-reporting","object_type":"SCHEMA","object_name":"MARKETING_DB.REPORTING","database":"MARKETING_DB","schema":"REPORTING"},
+  {"object_id":"sf-object-campaign-summary","object_type":"TABLE","object_name":"MARKETING_DB.REPORTING.CAMPAIGN_SUMMARY","database":"MARKETING_DB","schema":"REPORTING"},
+  {"object_id":"sf-object-reporting-wh","object_type":"WAREHOUSE","object_name":"REPORTING_WH","database":null,"schema":null},
+  {"object_id":"sf-object-reporting-user","object_type":"USER","object_name":"SVC_REPORTING","database":null,"schema":null},
+  {"object_id":"sf-object-test-user","object_type":"USER","object_name":"SVC_TEST_AUTOMATION","database":null,"schema":null}
+]
