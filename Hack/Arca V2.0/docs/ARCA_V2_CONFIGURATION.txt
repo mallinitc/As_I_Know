@@ -1,0 +1,119 @@
+ARCA V2 CONFIGURATION INVENTORY
+Verified: 2026-10-22
+
+1. Configuration loading
+
+The FastAPI entry point is backend/main.py. It loads ARCA_V2/.env with
+python-dotenv and override=False, so an already-defined process environment
+variable takes precedence. The tracked template is .env.example. Never commit
+or copy the populated .env file.
+
+The Next.js client reads public variables at build/dev-server startup. The
+tracked frontend template is frontend/.env.example. A developer may copy it to
+frontend/.env.local; this local file must not contain server credentials.
+
+2. Backend environment variables
+
+No environment variable is required for deterministic, synthetic-data mode.
+The application defaults shown below are implemented in backend/config.py.
+
+ARCA_API_CORS_ORIGINS
+  Optional. Comma-separated explicit origins. Default:
+  http://localhost:3000,http://127.0.0.1:3000. Wildcards are rejected.
+
+ARCA_LOG_DIR
+  Optional. Default: ARCA_V2/logs. Relative paths must remain under ARCA_V2;
+  absolute paths are accepted. API logs are written below <log dir>/api/.
+
+ARCA_LLM_ENABLED
+  Optional boolean. Default false. Accepted true values: 1, true, yes, on.
+
+ARCA_LLM_PROVIDER
+  Required only when LLM assistance is enabled. Implemented values are
+  openai, azure_openai, and openai_compatible. V2 has no Bedrock provider.
+
+ARCA_LLM_ENDPOINT
+  Required for azure_openai and openai_compatible. For openai, an empty value
+  defaults to https://api.openai.com. The configured URL must use HTTPS.
+
+ARCA_LLM_MODEL
+  Required only for LLM assistance. This is the model/deployment identifier;
+  the verified local configuration uses gpt-5-mini.
+
+ARCA_LLM_API_KEY
+  Required only for LLM assistance. Supply securely in the untracked .env or
+  process environment. Never place a real key in a template or frontend file.
+
+ARCA_LLM_API_VERSION
+  Required only for azure_openai. Not used by standard OpenAI or a generic
+  OpenAI-compatible endpoint.
+
+ARCA_LLM_TIMEOUT_SECONDS
+  Optional. Default 20; numeric range 1-120 seconds. The currently configured
+  local value is 45 seconds (the secret itself was not inspected or recorded).
+
+ARCA_LLM_INPUT_MAX_CHARS
+  Optional. Default 30000; permitted range 2000-100000.
+
+ARCA_LLM_MAX_OUTPUT_TOKENS
+  Optional. Default 1200; permitted range 100-10000.
+
+ARCA_LLM_REASONING_EFFORT
+  Optional. Default minimal. Allowed: minimal, low, medium, high.
+
+3. Frontend environment variables
+
+NEXT_PUBLIC_ARCA_API_URL
+  Optional. Default http://127.0.0.1:8000. Template value matches the default.
+
+NEXT_PUBLIC_ARCA_LLM_TIMEOUT_MS
+  Optional. Default 55000 milliseconds for LLM-assisted requests. Ordinary
+  API requests use the fixed 10000 millisecond client timeout.
+
+4. Ports and endpoints
+
+Backend: 127.0.0.1:8000
+OpenAPI UI: http://127.0.0.1:8000/docs
+Health: http://127.0.0.1:8000/api/v1/health
+Frontend: 127.0.0.1:3000
+
+5. Evidence and policy locations
+
+AWS synthetic evidence: data/aws/
+Azure synthetic evidence: data/azure/
+Snowflake synthetic evidence: data/snowflake/
+Investigation scenarios: data/investigations/
+Cross-provider demo catalog: data/demo_catalog.json
+Validation policies: config/change_validation_policy.json and
+config/pim_validation_policy.json
+Model pricing metadata: config/model_pricing.json
+
+All provider repositories are read-only against local JSON fixtures. No live
+AWS, Azure, Snowflake, ServiceNow, or identity connection is configured.
+
+6. Agent execution modes
+
+deterministic (default): local rule engines and allowlisted evidence tools only.
+llm_assisted: deterministic results remain authoritative; a configured model
+adds advisory interpretation. Agent 5 may use model planning and synthesis,
+but only registered read-only tools execute. Failed model calls retain the
+deterministic result and are not labeled as AI success.
+
+Agent 5 also accepts legacy API aliases mock and ai, normalized by its service.
+Automated tests use injected/mock clients and do not require paid requests.
+
+7. Test-only browser variables
+
+scripts/browser_validate_v2.mjs optionally reads ARCA_CDP_PORT,
+ARCA_FRONTEND_URL, ARCA_AGENT5_RESPONSE_GZIP_B64, ARCA_AGENT5_ONLY,
+ARCA_AGENT5_EXPECT_COMPLETED, ARCA_AGENT5_RESPONSE_SOURCE, and
+ARCA_FINAL_LLM_VERIFY. These are validation controls, not runtime application
+configuration. The browser script uses an already-running Chromium/Chrome
+DevTools endpoint and adds no npm browser-testing dependency.
+
+8. Required local files
+
+Required: requirements.txt or requirements.lock.txt, frontend/package.json,
+frontend/package-lock.json, config/, data/, backend/, and frontend/src/.
+Optional local-only: .env and frontend/.env.local. Start from the tracked
+.env.example templates and supply secrets separately on each machine.

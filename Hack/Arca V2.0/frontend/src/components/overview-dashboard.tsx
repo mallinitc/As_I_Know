@@ -1,0 +1,51 @@
+"use client";
+
+import { useEffect, useMemo, useState } from "react";
+import Link from "next/link";
+import { AlertTriangle, ArrowRight, CheckCircle2, ClipboardList, RefreshCw, ShieldAlert } from "lucide-react";
+import { useEnvironment } from "@/components/app-shell";
+import { AnalyticsFilterBar } from "@/components/analytics-filter-bar";
+import { DistributionDonut, RiskTrendChart } from "@/components/dashboard-charts";
+import { DashboardSkeleton } from "@/components/dashboard-skeleton";
+import { MetricCard } from "@/components/metric-card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { agentWorkspaces } from "@/data/agent-workspaces";
+import { AskArcaAction } from "@/components/ask-arca-action";
+import { getAnalyticsOverview } from "@/lib/arca-api";
+import type { AnalyticsFilters, AnalyticsOverviewResponse } from "@/types/api";
+
+const icons = [ClipboardList, CheckCircle2, ShieldAlert, AlertTriangle];
+const tones = ["blue", "emerald", "red", "amber"] as const;
+const severityVariant = { critical: "destructive", high: "warning", medium: "default", low: "success" } as const;
+
+export function OverviewDashboard() {
+  const { environment } = useEnvironment();
+  const [filters, setFilters] = useState<AnalyticsFilters>({ provider: "all", days: null, severity: "all" });
+  const [data, setData] = useState<AnalyticsOverviewResponse | null>(null); const [error, setError] = useState(""); const [reload, setReload] = useState(0);
+  const effectiveFilters = useMemo(() => ({ ...filters, provider: environment }), [environment, filters]);
+  useEffect(() => { let active = true; getAnalyticsOverview(effectiveFilters).then((value) => { if (active) { setData(value); setError(""); } }).catch((reason: Error) => { if (active) setError(reason.message); }); return () => { active = false; }; }, [effectiveFilters, reload]);
+  if (!data && !error) return <DashboardSkeleton />;
+  if (error) return <div className="rounded-2xl border border-red-200 bg-red-50 p-8 text-center"><h2 className="font-bold text-red-900">Executive analytics are unavailable</h2><p className="mt-2 text-sm text-red-700">{error}</p><Button className="mt-4" onClick={() => { setError(""); setReload((value) => value + 1); }}><RefreshCw className="size-4" /> Retry</Button></div>;
+  if (!data) return null;
+  const metrics = [
+    { label: "Total changes", value: String(data.total_unique_changes), change: `${data.approved_changes} approved`, trend: "neutral" as const, detail: "Unique provider/change pairs" },
+    { label: "Compliance rate", value: data.compliance_rate === null ? "Unavailable" : `${data.compliance_rate}%`, change: `${data.compliance_denominator} assessed`, trend: "neutral" as const, detail: "Review and unknown excluded" },
+    { label: "High-risk findings", value: String(data.high_risk_findings), change: "Unique findings", trend: "neutral" as const, detail: "Critical and high severity" },
+    { label: "Execution deviations", value: String(data.execution_deviations), change: `${data.potentially_unapproved_activities} unapproved`, trend: "neutral" as const, detail: "Distinct evidence-backed deviations" },
+  ];
+  return <div className="space-y-6">
+    <section className="flex flex-col justify-between gap-5 xl:flex-row xl:items-end"><div><div className="flex flex-wrap gap-2"><Badge>Executive overview</Badge><Badge variant="neutral">{data.metadata.dataset_label}</Badge></div><h2 className="mt-4 text-3xl font-bold tracking-[-0.03em] text-[#102a43] sm:text-4xl">Assurance posture at a glance</h2><p className="mt-2 max-w-2xl text-sm leading-6 text-slate-500 sm:text-base">Native V2 change, access, and execution assurance results across synthetic AWS, Azure, and Snowflake evidence.</p></div><AnalyticsFilterBar filters={effectiveFilters} onChange={(next) => { setError(""); setFilters(next); }} /></section>
+    <p className="text-xs text-slate-400">Snapshot reference {new Date(data.metadata.reference_timestamp).toLocaleString()} · Synthetic evidence only; not live cloud telemetry.</p>
+    <section className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">{metrics.map((metric, index) => <MetricCard key={metric.label} metric={metric} icon={icons[index]} tone={tones[index]} />)}</section>
+    <section aria-labelledby="five-agent-workflow"><div className="mb-4 flex flex-wrap items-end justify-between gap-3"><div><p className="text-xs font-semibold uppercase tracking-[0.14em] text-blue-600">Operating model</p><h2 id="five-agent-workflow" className="mt-1 text-2xl font-bold text-[#102a43]">Five-Agent Workflow</h2><p className="mt-1 text-sm text-slate-500">Independent workspaces backed by existing deterministic services and synthetic evidence.</p></div><Badge variant="neutral">No completion state inferred</Badge></div><div className="grid gap-4 md:grid-cols-2 xl:grid-cols-5">{agentWorkspaces.map((agent) => { const Icon = agent.icon; return <Card key={agent.number} className="group transition hover:-translate-y-0.5 hover:border-blue-200 hover:shadow-md"><CardContent className="flex h-full flex-col p-5"><div className="flex items-center justify-between"><div className="grid size-10 place-items-center rounded-xl bg-blue-50 text-blue-700"><Icon className="size-5" /></div><Badge>Agent {agent.number}</Badge></div><h3 className="mt-4 font-bold text-[#102a43]">{agent.name}</h3><p className="mt-2 flex-1 text-sm leading-6 text-slate-500">{agent.responsibility}</p><div className="mt-4 flex flex-wrap gap-1">{agent.supportedProviders.map((provider) => <span key={provider} className="rounded bg-slate-100 px-1.5 py-1 text-[10px] font-semibold text-slate-500">{provider}</span>)}</div><Link href={agent.href} className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-blue-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">Open Workspace <ArrowRight className="size-4 transition group-hover:translate-x-0.5" /></Link></CardContent></Card>; })}</div></section>
+    <Card className="border-blue-200 bg-gradient-to-r from-blue-50 to-white"><CardHeader><div><CardTitle>Ask ARCA</CardTitle><CardDescription>Open a contextual, evidence-backed investigation from the executive dashboard.</CardDescription></div></CardHeader><CardContent className="flex flex-wrap gap-3"><AskArcaAction sourceAgent="Executive Dashboard" provider={environment} question={`Summarize the highest-risk findings across ${environment === "all" ? "all environments" : environment} in the last 7 days.`} label="Summarize highest risks"/><AskArcaAction sourceAgent="Executive Dashboard" provider={environment} question={`Show potentially undocumented changes across ${environment === "all" ? "all environments" : environment} in the last 7 days.`} label="Find undocumented changes"/><AskArcaAction sourceAgent="Executive Dashboard" provider={environment} question={`Which access findings across ${environment === "all" ? "all environments" : environment} need immediate review?`} label="Review access risks"/></CardContent></Card>
+    <section className="grid gap-6 xl:grid-cols-2"><DistributionDonut title="Provider risk distribution" description="Distinct findings by evidence provider" data={data.provider_risk_counts} /><RiskTrendChart data={data.findings_over_time} /></section>
+    <section className="grid gap-6 lg:grid-cols-2"><AssuranceCard title="Change Assurance Summary" summary={data.change_assurance} /><AssuranceCard title="Execution Assurance Summary" summary={data.execution_assurance} /></section>
+    <Card><CardHeader><div><CardTitle>Recent significant findings</CardTitle><CardDescription>Critical and high-severity evidence, prioritized by timestamp</CardDescription></div><span className="text-xs font-semibold text-slate-500">{data.recent_significant_findings.length} shown</span></CardHeader><CardContent>{data.recent_significant_findings.length ? <div className="overflow-x-auto"><table className="w-full min-w-[760px] text-left text-sm"><thead><tr className="border-y bg-slate-50 text-xs uppercase text-slate-500"><th className="px-3 py-3">Finding</th><th className="px-3 py-3">Provider</th><th className="px-3 py-3">Severity</th><th className="px-3 py-3">Change</th><th className="px-3 py-3">Observed</th></tr></thead><tbody>{data.recent_significant_findings.map((finding) => <tr key={finding.finding_id} className="border-b hover:bg-blue-50/40"><td className="px-3 py-4"><Link href={finding.route ?? "/risk-investigations"} className="font-semibold text-slate-900 hover:text-blue-700">{finding.summary}</Link><p className="mt-1 font-mono text-[11px] text-slate-400">{finding.finding_id}</p></td><td className="px-3 py-4 uppercase text-slate-600">{finding.provider}</td><td className="px-3 py-4"><Badge variant={severityVariant[finding.severity]}>{finding.severity}</Badge></td><td className="px-3 py-4 font-mono text-xs">{finding.change_id ?? "Unmatched"}</td><td className="px-3 py-4 whitespace-nowrap text-xs text-slate-500">{finding.timestamp ? new Date(finding.timestamp).toLocaleString() : "Unavailable"}</td></tr>)}</tbody></table></div> : <p className="py-12 text-center text-sm text-slate-500">No significant findings match the selected filters.</p>}</CardContent></Card>
+  </div>;
+}
+
+function AssuranceCard({ title, summary }: { title: string; summary: AnalyticsOverviewResponse["change_assurance"] }) { return <Card><CardHeader><div><CardTitle>{title}</CardTitle><CardDescription>Deterministic outcomes in the selected scope</CardDescription></div></CardHeader><CardContent className="grid grid-cols-3 gap-3"><SummaryValue label="Compliant" value={summary.compliant} tone="text-emerald-700 bg-emerald-50" /><SummaryValue label="Noncompliant" value={summary.noncompliant} tone="text-red-700 bg-red-50" /><SummaryValue label="Review / unknown" value={summary.review_or_unknown} tone="text-amber-700 bg-amber-50" /></CardContent></Card>; }
+function SummaryValue({ label, value, tone }: { label: string; value: number; tone: string }) { return <div className={`rounded-xl p-4 text-center ${tone}`}><p className="text-2xl font-bold">{value}</p><p className="mt-1 text-xs font-semibold">{label}</p></div>; }

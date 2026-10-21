@@ -1,0 +1,412 @@
+{
+  "generated_at": "2026-10-21T22:08:27.785Z",
+  "browser": "Installed Google Chrome via DevTools Protocol",
+  "results": [
+    {
+      "name": "/ title",
+      "status": "PASS",
+      "detail": "Assurance posture at a glance"
+    },
+    {
+      "name": "/ desktop overflow",
+      "status": "PASS",
+      "detail": "viewport 1440"
+    },
+    {
+      "name": "/agents/change-quality title",
+      "status": "PASS",
+      "detail": "Change Quality"
+    },
+    {
+      "name": "/agents/change-quality desktop overflow",
+      "status": "PASS",
+      "detail": "viewport 1440"
+    },
+    {
+      "name": "/agents/access-intelligence title",
+      "status": "PASS",
+      "detail": "Access Intelligence"
+    },
+    {
+      "name": "/agents/access-intelligence desktop overflow",
+      "status": "PASS",
+      "detail": "viewport 1440"
+    },
+    {
+      "name": "/execution-assurance title",
+      "status": "PASS",
+      "detail": "Post-Implementation Validation"
+    },
+    {
+      "name": "/execution-assurance desktop overflow",
+      "status": "PASS",
+      "detail": "viewport 1440"
+    },
+    {
+      "name": "/risk-investigations title",
+      "status": "PASS",
+      "detail": "Undocumented Changes"
+    },
+    {
+      "name": "/risk-investigations desktop overflow",
+      "status": "PASS",
+      "detail": "viewport 1440"
+    },
+    {
+      "name": "/ask-arca title",
+      "status": "PASS",
+      "detail": "Ask ARCA"
+    },
+    {
+      "name": "/ask-arca desktop overflow",
+      "status": "PASS",
+      "detail": "viewport 1440"
+    },
+    {
+      "name": "/analytics title",
+      "status": "PASS",
+      "detail": "Risk and control intelligence"
+    },
+    {
+      "name": "/analytics desktop overflow",
+      "status": "PASS",
+      "detail": "viewport 1440"
+    },
+    {
+      "name": "Overview five-agent cards",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Sidebar five-agent navigation",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Legacy Change Assurance route",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Change Assurance aws scenarios",
+      "status": "PASS",
+      "detail": "{\"value\":\"AWS-CHANGE-01\",\"text\":\"01 - Valid Change\",\"count\":7}"
+    },
+    {
+      "name": "Change Assurance aws processing state",
+      "status": "PASS",
+      "detail": "button disabled after submit"
+    },
+    {
+      "name": "Change Assurance aws result",
+      "status": "PASS",
+      "detail": "{\"result\":true,\"evidence\":true,\"recommendation\":true}"
+    },
+    {
+      "name": "Change Assurance azure scenarios",
+      "status": "PASS",
+      "detail": "{\"value\":\"AZ-CHANGE-01\",\"text\":\"Stage 1 - Valid Approved Change\",\"count\":26}"
+    },
+    {
+      "name": "Change Assurance azure processing state",
+      "status": "PASS",
+      "detail": "button disabled after submit"
+    },
+    {
+      "name": "Change Assurance azure result",
+      "status": "PASS",
+      "detail": "{\"result\":true,\"evidence\":true,\"recommendation\":true}"
+    },
+    {
+      "name": "Change Assurance snowflake scenarios",
+      "status": "PASS",
+      "detail": "{\"value\":\"SF-UNIFIED-01\",\"text\":\"SF-UNIFIED-01 — 01 — Valid Change / Appropriate Role\",\"count\":26}"
+    },
+    {
+      "name": "Change Assurance snowflake processing state",
+      "status": "PASS",
+      "detail": "button disabled after submit"
+    },
+    {
+      "name": "Change Assurance snowflake result",
+      "status": "PASS",
+      "detail": "{\"result\":true,\"evidence\":true,\"recommendation\":true}"
+    },
+    {
+      "name": "Agent 1 missing-field explanations",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Agent 1 improved draft",
+      "status": "PASS",
+      "detail": "{\"action\":true,\"fields\":18,\"copy\":true,\"error\":\"\"}"
+    },
+    {
+      "name": "Contextual Ask ARCA autorun exactly once",
+      "status": "PASS",
+      "detail": "1"
+    },
+    {
+      "name": "Access Intelligence aws scenarios",
+      "status": "PASS",
+      "detail": "{\"value\":\"AWS-ACCESS-06\",\"text\":\"06 - Appropriate S3 Permission\",\"count\":16}"
+    },
+    {
+      "name": "Access Intelligence aws result",
+      "status": "PASS",
+      "detail": "{\"result\":true,\"evidence\":true,\"recommendation\":true}"
+    },
+    {
+      "name": "Access Intelligence azure scenarios",
+      "status": "PASS",
+      "detail": "{\"value\":\"AZ-ACCESS-01\",\"text\":\"Stage 2 - Valid Approved Change\",\"count\":26}"
+    },
+    {
+      "name": "Access Intelligence azure result",
+      "status": "PASS",
+      "detail": "{\"result\":true,\"evidence\":true,\"recommendation\":true}"
+    },
+    {
+      "name": "Access Intelligence snowflake scenarios",
+      "status": "PASS",
+      "detail": "{\"value\":\"SF-UNIFIED-01\",\"text\":\"SF-UNIFIED-01 — 01 — Valid Change / Appropriate Role\",\"count\":26}"
+    },
+    {
+      "name": "Access Intelligence snowflake result",
+      "status": "PASS",
+      "detail": "{\"result\":true,\"evidence\":true,\"recommendation\":true}"
+    },
+    {
+      "name": "Provider switch clears stale Change Assurance result",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Failed request restores controls and clears stale result",
+      "status": "PASS",
+      "detail": "{\"alert\":\"Validation was not completed\\n\\nUnable to reach the ARCA API at http://127.0.0.1:8000. Confirm the backend is running.\",\"enabled\":true,\"stale\":false}"
+    },
+    {
+      "name": "Execution Assurance aws scenarios",
+      "status": "PASS",
+      "detail": "{\"value\":\"AWS-EXEC-01\",\"text\":\"01 - Compliant Execution\",\"count\":14}"
+    },
+    {
+      "name": "Execution Assurance aws result",
+      "status": "PASS",
+      "detail": "{\"findings\":true,\"evidence\":true,\"recommendation\":true}"
+    },
+    {
+      "name": "Execution Assurance azure scenarios",
+      "status": "PASS",
+      "detail": "{\"value\":\"AZ-EXEC-01\",\"text\":\"01 - Compliant Storage Change\",\"count\":26}"
+    },
+    {
+      "name": "Execution Assurance azure result",
+      "status": "PASS",
+      "detail": "{\"findings\":true,\"evidence\":true,\"recommendation\":true}"
+    },
+    {
+      "name": "Execution Assurance snowflake scenarios",
+      "status": "PASS",
+      "detail": "{\"value\":\"SF-POST-01\",\"text\":\"01 — Change Executed Successfully\",\"count\":17}"
+    },
+    {
+      "name": "Execution Assurance snowflake result",
+      "status": "PASS",
+      "detail": "{\"findings\":true,\"evidence\":true,\"recommendation\":true}"
+    },
+    {
+      "name": "User/principal investigation",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Risk single-provider scenario selectable",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Risk result and evidence",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Risk cross-environment scenario selectable",
+      "status": "PASS",
+      "detail": "{\"value\":\"RISK-10\",\"text\":\"Multi-environment deviations\",\"count\":16}"
+    },
+    {
+      "name": "Risk severity filter",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Ask ARCA deterministic default",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Ask ARCA LLM capability state",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Ask ARCA change scenario",
+      "status": "PASS",
+      "detail": "{\"value\":\"ASK-01\",\"text\":\"Snowflake change investigation\",\"count\":16}"
+    },
+    {
+      "name": "Ask ARCA user scenario",
+      "status": "PASS",
+      "detail": "{\"value\":\"ASK-04\",\"text\":\"Snowflake user investigation\",\"count\":16}"
+    },
+    {
+      "name": "Ask ARCA cross scenario",
+      "status": "PASS",
+      "detail": "{\"value\":\"ASK-10\",\"text\":\"Cross-environment risk summary\",\"count\":16}"
+    },
+    {
+      "name": "Ask ARCA ambiguous scenario",
+      "status": "PASS",
+      "detail": "{\"value\":\"ASK-14\",\"text\":\"Ambiguous user question\",\"count\":16}"
+    },
+    {
+      "name": "Ask ARCA tool trace and evidence",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Ask ARCA response mode disclosure",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Analytics filters and API refresh",
+      "status": "PASS",
+      "detail": "{\"label\":true,\"charts\":7,\"requests\":6,\"kpis\":true}"
+    },
+    {
+      "name": "Analytics chart tooltip",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Overview finding navigation target",
+      "status": "PASS",
+      "detail": "/agents/change-quality"
+    },
+    {
+      "name": "laptop / layout",
+      "status": "PASS",
+      "detail": "{\"overflow\":false,\"main\":true,\"menu\":true}"
+    },
+    {
+      "name": "laptop /agents/change-quality layout",
+      "status": "PASS",
+      "detail": "{\"overflow\":false,\"main\":true,\"menu\":true}"
+    },
+    {
+      "name": "laptop /agents/access-intelligence layout",
+      "status": "PASS",
+      "detail": "{\"overflow\":false,\"main\":true,\"menu\":true}"
+    },
+    {
+      "name": "laptop /execution-assurance layout",
+      "status": "PASS",
+      "detail": "{\"overflow\":false,\"main\":true,\"menu\":true}"
+    },
+    {
+      "name": "laptop /risk-investigations layout",
+      "status": "PASS",
+      "detail": "{\"overflow\":false,\"main\":true,\"menu\":true}"
+    },
+    {
+      "name": "laptop /ask-arca layout",
+      "status": "PASS",
+      "detail": "{\"overflow\":false,\"main\":true,\"menu\":true}"
+    },
+    {
+      "name": "laptop /analytics layout",
+      "status": "PASS",
+      "detail": "{\"overflow\":false,\"main\":true,\"menu\":true}"
+    },
+    {
+      "name": "tablet / layout",
+      "status": "PASS",
+      "detail": "{\"overflow\":false,\"main\":true,\"menu\":true}"
+    },
+    {
+      "name": "tablet /agents/change-quality layout",
+      "status": "PASS",
+      "detail": "{\"overflow\":false,\"main\":true,\"menu\":true}"
+    },
+    {
+      "name": "tablet /agents/access-intelligence layout",
+      "status": "PASS",
+      "detail": "{\"overflow\":false,\"main\":true,\"menu\":true}"
+    },
+    {
+      "name": "tablet /execution-assurance layout",
+      "status": "PASS",
+      "detail": "{\"overflow\":false,\"main\":true,\"menu\":true}"
+    },
+    {
+      "name": "tablet /risk-investigations layout",
+      "status": "PASS",
+      "detail": "{\"overflow\":false,\"main\":true,\"menu\":true}"
+    },
+    {
+      "name": "tablet /ask-arca layout",
+      "status": "PASS",
+      "detail": "{\"overflow\":false,\"main\":true,\"menu\":true}"
+    },
+    {
+      "name": "tablet /analytics layout",
+      "status": "PASS",
+      "detail": "{\"overflow\":false,\"main\":true,\"menu\":true}"
+    },
+    {
+      "name": "mobile / layout",
+      "status": "PASS",
+      "detail": "{\"overflow\":false,\"main\":true,\"menu\":true}"
+    },
+    {
+      "name": "mobile /agents/change-quality layout",
+      "status": "PASS",
+      "detail": "{\"overflow\":false,\"main\":true,\"menu\":true}"
+    },
+    {
+      "name": "mobile /agents/access-intelligence layout",
+      "status": "PASS",
+      "detail": "{\"overflow\":false,\"main\":true,\"menu\":true}"
+    },
+    {
+      "name": "mobile /execution-assurance layout",
+      "status": "PASS",
+      "detail": "{\"overflow\":false,\"main\":true,\"menu\":true}"
+    },
+    {
+      "name": "mobile /risk-investigations layout",
+      "status": "PASS",
+      "detail": "{\"overflow\":false,\"main\":true,\"menu\":true}"
+    },
+    {
+      "name": "mobile /ask-arca layout",
+      "status": "PASS",
+      "detail": "{\"overflow\":false,\"main\":true,\"menu\":true}"
+    },
+    {
+      "name": "mobile /analytics layout",
+      "status": "PASS",
+      "detail": "{\"overflow\":false,\"main\":true,\"menu\":true}"
+    },
+    {
+      "name": "Mobile sidebar navigation",
+      "status": "PASS",
+      "detail": ""
+    }
+  ],
+  "failures": []
+}

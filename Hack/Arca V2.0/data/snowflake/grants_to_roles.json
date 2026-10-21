@@ -1,0 +1,42 @@
+[
+  {
+    "grant_id": "sf-role-grant-001",
+    "granted_role": "SYSADMIN",
+    "grantee_role": "ACCOUNTADMIN"
+  },
+  {
+    "grant_id": "sf-role-grant-002",
+    "granted_role": "SECURITYADMIN",
+    "grantee_role": "ACCOUNTADMIN"
+  },
+  {
+    "grant_id": "sf-role-grant-003",
+    "granted_role": "USERADMIN",
+    "grantee_role": "SECURITYADMIN"
+  },
+  {
+    "grant_id": "sf-role-grant-004",
+    "granted_role": "REPORTING_DDL_ADMIN",
+    "grantee_role": "SYSADMIN"
+  },
+  {
+    "grant_id": "sf-role-grant-005",
+    "granted_role": "WAREHOUSE_OPERATOR",
+    "grantee_role": "SYSADMIN"
+  },
+  {
+    "grant_id": "sf-role-grant-006",
+    "granted_role": "DATA_ENGINEER",
+    "grantee_role": "SYSADMIN"
+  },
+  {
+    "grant_id": "sf-role-grant-007",
+    "granted_role": "REPORTING_READONLY",
+    "grantee_role": "REPORTING_DDL_ADMIN"
+  },
+  {
+    "grant_id": "sf-role-grant-008",
+    "granted_role": "WAREHOUSE_OPERATOR",
+    "grantee_role": "REPORTING_OPERATIONS"
+  }
+]

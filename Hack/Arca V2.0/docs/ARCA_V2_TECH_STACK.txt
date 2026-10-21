@@ -1,0 +1,136 @@
+ARCA V2 TECHNOLOGY STACK
+Verified from the installed environments and manifests on 2026-10-22
+
+1. High-level architecture
+
+ARCA V2 is a native two-tier application. A Next.js App Router frontend calls
+a versioned FastAPI JSON API. Backend repositories load isolated synthetic AWS,
+Azure, and Snowflake JSON evidence. Provider-specific deterministic services
+perform validation, access analysis, execution correlation, investigation, and
+analytics. An optional HTTP LLM gateway can add advisory analysis without
+altering deterministic security decisions.
+
+2. Backend stack
+
+Verified interpreter: Python 3.11.15 (64-bit environment)
+Minimum established by direct packages: Python >=3.10
+
+Direct runtime dependencies (installed / manifest range):
+  FastAPI 0.158.0 / >=0.115,<1
+  Uvicorn 0.54.0 / >=0.30,<1
+  Pydantic 2.14.1 / >=2,<3
+  HTTPX 0.28.1 / >=0.27,<1
+  python-dotenv 1.2.4 / >=1,<2
+
+Direct test dependency:
+  pytest 9.1.1 / >=8,<10
+
+Notable transitive runtime versions are Starlette 1.9.0, pydantic-core
+2.50.1, HTTP Core 1.0.9, AnyIO 4.15.1, H11 0.16.0, and Click 8.5.0. Exact
+direct and transitive pins are in requirements.lock.txt.
+
+OpenAI integration: backend/llm/providers.py uses HTTPX directly against the
+OpenAI Responses API (/v1/responses), requests strict Pydantic-derived JSON
+schemas, disables response storage, and captures token usage. The official
+openai SDK 2.54.0 is installed in the current virtual environment but is not
+imported by V2 and is therefore not an application dependency or lockfile pin.
+Official API reference: https://developers.openai.com/api/reference/python
+
+No backend code imports boto3, cloud SDKs, LangGraph, pandas, or Streamlit.
+Those packages found in the environment are unrelated to native V2 and are
+intentionally excluded from the reproducible V2 lockfile.
+
+3. Frontend stack
+
+Verified tools: Node.js 24.22.1 and npm 11.19.1.
+Next.js 16.4.2 establishes Node.js >=20.9.0. Node 24.22.1 is the only runtime
+version verified for this snapshot.
+
+Direct runtime dependencies (exact installed versions):
+  Next.js 16.4.2
+  React 19.3.0
+  React DOM 19.3.0
+  Lucide React 1.61.0
+  Recharts 3.10.1
+  Radix UI Slot 1.5.0
+  class-variance-authority 0.7.1
+  clsx 2.1.1
+  tailwind-merge 3.7.0
+
+Direct development dependencies:
+  TypeScript 5.9.3
+  Tailwind CSS 4.3.3
+  @tailwindcss/turbopack 4.3.3
+  ESLint 9.39.5
+  eslint-config-next 16.4.2
+  @types/node 20.19.43
+  @types/react 19.3.0
+  @types/react-dom 19.3.0
+
+shadcn/ui is represented by components.json plus repository-owned Badge,
+Button, Card, and Skeleton components in frontend/src/components/ui/. It is
+not a separately installed runtime package. Package-lock v3 records the exact
+full dependency graph. The browser validation script uses Node built-ins and
+the Chrome DevTools Protocol; Playwright, Puppeteer, and Cypress are not
+installed dependencies.
+
+4. Five-agent architecture
+
+Agent 1 - Change Quality: mandatory-field and clarity assessment; editable
+change-draft preparation can be optionally refined by the model.
+Agent 2 - Access Intelligence: AWS IAM, Azure PIM/RBAC, and Snowflake role and
+scope assessment using provider-specific deterministic rules.
+Agent 3 - Execution Assurance: approved intent versus observed execution and
+identity/activity evidence.
+Agent 4 - Risk Investigation: provider-specific or cross-environment risk and
+potentially undocumented activity analysis.
+Agent 5 - Ask ARCA: conversational intent resolution, allowlisted read-only
+tool planning, deterministic investigation, and optional evidence-grounded
+advisory synthesis.
+
+5. Execution modes and safety
+
+Deterministic mode is the default and requires no model connection.
+LLM-assisted mode supports openai, azure_openai, and openai_compatible gateway
+contracts. Model output is Pydantic-validated and advisory. It cannot change
+the deterministic finding status/severity, approve access, or execute a cloud
+change. Provider evidence adapters and the LLM provider are independent.
+
+6. Provider evidence adapters
+
+AWS: data/aws/ through backend/repositories/aws.py; AWS-specific IAM/action,
+scope, execution-event, and investigation behavior remains separate.
+Azure: data/azure/ through backend/repositories/azure.py; Azure PIM, RBAC role
+definitions/assignments, resources, and Activity Logs remain distinct.
+Snowflake: data/snowflake/ through backend/repositories/snowflake.py; changes,
+roles/grants, query/access/login history, objects, and scenario catalogs are
+evaluated using Snowflake-specific services.
+
+All three adapters use synthetic local evidence and make no live cloud calls.
+
+7. Operating system and development tools
+
+Verified OS: 64-bit Microsoft Windows NT 10.0 build 26200.9711. The local
+Windows product caption was unavailable/inconsistent, so no edition claim is
+made. Linux and macOS were not tested.
+
+Required tools: Python 3.10+ (3.11.15 verified), pip, Node.js >=20.9.0
+(24.22.1 verified), npm (11.19.1 verified), and Windows PowerShell or cmd.
+Google Chrome/Chromium with remote debugging is needed only for the optional
+browser validation script.
+
+8. Startup requirements
+
+Backend dependencies must be installed in ARCA_V2/.venv. Port 8000 must be
+available. scripts/start_api_v2.bat starts Uvicorn at 127.0.0.1:8000.
+Frontend dependencies must be installed with npm ci in frontend/. Port 3000
+must be available. Run npm run dev -- --hostname 127.0.0.1 --port 3000.
+The API CORS allowlist must include the exact frontend origin.
+
+9. Known external connectivity limitation
+
+The latest controlled verification resolved api.openai.com but could not open
+TCP 443 from this workstation. Deterministic operation is unaffected. A live
+LLM request requires outbound HTTPS, a valid untracked API key, provider/model
+access, and any organization proxy/CA settings. No AWS, Azure, or Snowflake
+network connectivity is required for the synthetic demo.
