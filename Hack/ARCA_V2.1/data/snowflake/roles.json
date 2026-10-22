@@ -1,0 +1,12 @@
+[
+  {"role_id": "role-accountadmin", "role_name": "ACCOUNTADMIN", "role_type": "ACCOUNT_ROLE", "description": "Synthetic top-level account administration role."},
+  {"role_id": "role-sysadmin", "role_name": "SYSADMIN", "role_type": "ACCOUNT_ROLE", "description": "Synthetic object and warehouse administration role."},
+  {"role_id": "role-securityadmin", "role_name": "SECURITYADMIN", "role_type": "ACCOUNT_ROLE", "description": "Synthetic grants and role-hierarchy administration role."},
+  {"role_id": "role-useradmin", "role_name": "USERADMIN", "role_type": "ACCOUNT_ROLE", "description": "Synthetic user administration role."},
+  {"role_id": "role-reporting-ddl", "role_name": "REPORTING_DDL_ADMIN", "role_type": "ACCOUNT_ROLE", "description": "DDL administration for approved reporting objects."},
+  {"role_id": "role-reporting-read", "role_name": "REPORTING_READONLY", "role_type": "ACCOUNT_ROLE", "description": "Read-only access to approved reporting objects."},
+  {"role_id": "role-warehouse-operator", "role_name": "WAREHOUSE_OPERATOR", "role_type": "ACCOUNT_ROLE", "description": "Operation of approved reporting warehouses."},
+  {"role_id": "role-data-engineer", "role_name": "DATA_ENGINEER", "role_type": "ACCOUNT_ROLE", "description": "DDL access for approved development and marketing pipelines."},
+  {"role_id": "role-incomplete", "role_name": "CATALOG_INCOMPLETE_ROLE", "role_type": "ACCOUNT_ROLE", "description": "Fixture with intentionally missing privilege metadata."},
+  {"role_id": "role-reporting-operations", "role_name": "REPORTING_OPERATIONS", "role_type": "ACCOUNT_ROLE", "description": "Synthetic operational role inheriting the approved reporting warehouse privileges."}
+]

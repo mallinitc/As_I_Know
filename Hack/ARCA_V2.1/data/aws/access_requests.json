@@ -1,0 +1,22 @@
+[
+ {"change_id":"CHG1001","role":"WideS3Admin","actions":["s3:*"],"resources":["*"],"duration_minutes":240},
+ {"change_id":"CHG1002","role":"EC2TerminationScoped","actions":["ec2:TerminateInstances"],"resources":["arn:aws:ec2:us-east-1:111122223333:instance/i-0abc123"],"duration_minutes":60},
+ {"request_id":"aws-ar-1003","change_id":"CHG1003","principal":"carol@example.invalid","role":"S3ReadScoped","duration_minutes":60,"policy_ids":["aws-pol-1003"]},
+ {"request_id":"aws-ar-1004","change_id":"CHG1004","principal":"unknown","role":"S3WriteScoped","duration_minutes":60,"policy_ids":["aws-pol-1004"]},
+ {"request_id":"aws-ar-1005","change_id":"CHG1005","principal":"dana@example.invalid","role":"EC2RebootScoped","duration_minutes":60,"policy_ids":["aws-pol-1005"]},
+ {"request_id":"aws-ar-1006","change_id":"CHG1006","principal":"erin@example.invalid","role":"S3PolicyScoped","duration_minutes":60,"policy_ids":["aws-pol-1006"]},
+ {"request_id":"aws-ar-1007","change_id":"CHG1007","principal":"frank@example.invalid","role":"S3ReadScoped","duration_minutes":60,"policy_ids":["aws-pol-1007"]},
+ {"request_id":"aws-ar-1008","change_id":"CHG1008","principal":"gina@example.invalid","role":"S3ListOnly","duration_minutes":60,"policy_ids":["aws-pol-1008"]},
+ {"request_id":"aws-ar-1009","change_id":"CHG1009","principal":"hank@example.invalid","role":"EC2AdminBroad","duration_minutes":60,"policy_ids":["aws-pol-1009"]},
+ {"request_id":"aws-ar-1010","change_id":"CHG1010","principal":"ivy@example.invalid","role":"EC2TerminationDenied","duration_minutes":60,"policy_ids":["aws-pol-1010-allow","aws-pol-1010-deny"]},
+ {"request_id":"aws-ar-1011","change_id":"CHG1011","principal":"jules@example.invalid","role":"S3WrongBucket","duration_minutes":60,"policy_ids":["aws-pol-1011"]},
+ {"request_id":"aws-ar-1012","change_id":"CHG1012","principal":"kai@example.invalid","role":"S3PolicyAllResources","duration_minutes":60,"policy_ids":["aws-pol-1012"]},
+ {"request_id":"aws-ar-1013","change_id":"CHG1013","principal":"lee@example.invalid","role":"MissingEvidence","duration_minutes":60,"policy_ids":[]},
+ {"request_id":"aws-ar-1014","change_id":"CHG1014","principal":"morgan@example.invalid","role":"S3FinanceReader","duration_minutes":60,"policy_ids":["aws-pol-1014"]},
+ {"request_id":"aws-ar-1015","change_id":"CHG1015","principal":"nora@example.invalid","role":"EC2StartOnly","duration_minutes":60,"policy_ids":["aws-pol-1015"]},
+ {"request_id":"aws-ar-1016","change_id":"CHG1016","principal":"omar@example.invalid","role":"UnknownServiceRole","duration_minutes":60,"policy_ids":["aws-pol-1016"]},
+ {"request_id":"aws-ar-1017","change_id":"CHG1017","principal":"pat@example.invalid","role":"S3ReadMissingTarget","duration_minutes":60,"policy_ids":["aws-pol-1017"]},
+ {"request_id":"aws-ar-1018","change_id":"CHG1018","principal":"quinn@example.invalid","role":"EC2RebootScoped","duration_minutes":30,"policy_ids":["aws-pol-1018"]},
+ {"request_id":"aws-ar-1019","change_id":"CHG1019","principal":"riley@example.invalid","role":"ConditionalS3Read","duration_minutes":60,"policy_ids":["aws-pol-1019"]},
+ {"request_id":"aws-ar-1020","change_id":"CHG1020","principal":"sam@example.invalid","role":"BoundaryRestrictedWriter","duration_minutes":60,"policy_ids":["aws-pol-1020-identity","aws-pol-1020-boundary"]}
+]

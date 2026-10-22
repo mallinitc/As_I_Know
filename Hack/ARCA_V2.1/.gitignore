@@ -1,0 +1,80 @@
+# Local credentials and secrets
+.env
+.env.*
+!.env.example
+api.txt
+*.pem
+*.key
+*.pfx
+*.p12
+.streamlit/secrets.toml
+.aws/
+
+# Python environments and caches
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Local runtime output and transferable archives
+logs/
+backups/
+*.log
+*.zip
+
+# Keep environment directory structure, not generated runtime contents
+!logs/
+logs/**
+!logs/aws/
+!logs/azure/
+!logs/snowflake/
+!logs/aws/.gitkeep
+!logs/azure/.gitkeep
+!logs/snowflake/.gitkeep
+outputs/**
+!outputs/aws/
+!outputs/azure/
+!outputs/snowflake/
+!outputs/cross_environment/
+!outputs/aws/.gitkeep
+!outputs/azure/.gitkeep
+!outputs/snowflake/.gitkeep
+!outputs/cross_environment/.gitkeep
+
+# Local databases
+*.db
+*.sqlite3
+
+# Local tool and operating-system artifacts
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Frontend dependencies and generated output
+node_modules/
+.next/
+out/
+coverage/
+*.tsbuildinfo
+
+# Browser validation profiles and generated evidence
+.browser-profile*/
+docs/demo/screenshots/
+docs/demo/browser-*-results.json
+
+# Local editor and IDE state
+.vscode/
+.idea/
+*.tmp
+*.bak
+*.swp
+.DS_Store
+Thumbs.db
+
+# Common local credential filenames
+credentials.json
+service-account*.json
+snowflake_private_key*

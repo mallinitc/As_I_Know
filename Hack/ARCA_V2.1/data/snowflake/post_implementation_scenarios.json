@@ -1,0 +1,318 @@
+[
+  {
+    "scenario_id": "SF-POST-01",
+    "scenario_name": "01 \u2014 Change Executed Successfully",
+    "change_id": "CHG-SF-1007",
+    "user_identity": null,
+    "evaluation_timestamp": "2026-11-24T00:00:00Z",
+    "investigation_mode": "change",
+    "evidence_query_ids": [
+      "SF-QRY-001"
+    ],
+    "window_days": 10,
+    "expected_findings": [
+      "COMPLIANT_EXECUTION"
+    ]
+  },
+  {
+    "scenario_id": "SF-POST-02",
+    "scenario_name": "02 \u2014 Change Executed Outside Approved Window",
+    "change_id": "CHG-SF-1007",
+    "user_identity": null,
+    "evaluation_timestamp": "2026-11-24T00:00:00Z",
+    "investigation_mode": "change",
+    "evidence_query_ids": [
+      "SF-QRY-002"
+    ],
+    "window_days": 10,
+    "expected_findings": [
+      "EXECUTED_OUTSIDE_WINDOW"
+    ]
+  },
+  {
+    "scenario_id": "SF-POST-03",
+    "scenario_name": "03 \u2014 Unauthorized Implementer",
+    "change_id": "CHG-SF-1007",
+    "user_identity": null,
+    "evaluation_timestamp": "2026-11-24T00:00:00Z",
+    "investigation_mode": "change",
+    "evidence_query_ids": [
+      "SF-QRY-003"
+    ],
+    "window_days": 10,
+    "expected_findings": [
+      "UNAUTHORIZED_IMPLEMENTER"
+    ]
+  },
+  {
+    "scenario_id": "SF-POST-04",
+    "scenario_name": "04 \u2014 Incorrect Snowflake Role",
+    "change_id": "CHG-SF-1007",
+    "user_identity": null,
+    "evaluation_timestamp": "2026-11-24T00:00:00Z",
+    "investigation_mode": "change",
+    "evidence_query_ids": [
+      "SF-QRY-004"
+    ],
+    "window_days": 10,
+    "expected_findings": [
+      "ROLE_MISMATCH"
+    ]
+  },
+  {
+    "scenario_id": "SF-POST-05",
+    "scenario_name": "05 \u2014 Unexpected GRANT ROLE",
+    "change_id": "CHG-SF-1007",
+    "user_identity": null,
+    "evaluation_timestamp": "2026-11-24T00:00:00Z",
+    "investigation_mode": "change",
+    "evidence_query_ids": [
+      "SF-QRY-005"
+    ],
+    "window_days": 10,
+    "expected_findings": [
+      "WRONG_TARGET_OBJECT",
+      "EXPECTED_OPERATION_MISSING"
+    ]
+  },
+  {
+    "scenario_id": "SF-POST-06",
+    "scenario_name": "06 \u2014 Wrong Table Modified",
+    "change_id": "CHG-SF-1008",
+    "user_identity": null,
+    "evaluation_timestamp": "2026-11-24T00:00:00Z",
+    "investigation_mode": "change",
+    "evidence_query_ids": [
+      "SF-QRY-006"
+    ],
+    "window_days": 10,
+    "expected_findings": [
+      "WRONG_TARGET_OBJECT",
+      "EXPECTED_OPERATION_MISSING"
+    ]
+  },
+  {
+    "scenario_id": "SF-POST-07",
+    "scenario_name": "07 \u2014 Wrong Database Modified",
+    "change_id": "CHG-SF-1022",
+    "user_identity": null,
+    "evaluation_timestamp": "2026-11-24T00:00:00Z",
+    "investigation_mode": "change",
+    "evidence_query_ids": [
+      "SF-QRY-007"
+    ],
+    "window_days": 10,
+    "expected_findings": [
+      "WRONG_TARGET_OBJECT",
+      "EXPECTED_OPERATION_MISSING"
+    ]
+  },
+  {
+    "scenario_id": "SF-POST-08",
+    "scenario_name": "08 \u2014 Approved Operation Failed",
+    "change_id": "CHG-SF-1008",
+    "user_identity": null,
+    "evaluation_timestamp": "2026-11-24T00:00:00Z",
+    "investigation_mode": "change",
+    "evidence_query_ids": [
+      "SF-QRY-008"
+    ],
+    "window_days": 10,
+    "expected_findings": [
+      "FAILED_EXECUTION",
+      "EXPECTED_OPERATION_MISSING"
+    ]
+  },
+  {
+    "scenario_id": "SF-POST-09",
+    "scenario_name": "09 \u2014 Expected Operation Never Observed",
+    "change_id": "CHG-SF-1017",
+    "user_identity": null,
+    "evaluation_timestamp": "2026-11-24T00:00:00Z",
+    "investigation_mode": "change",
+    "evidence_query_ids": [],
+    "window_days": 10,
+    "expected_findings": [
+      "NO_EXECUTION_EVIDENCE",
+      "EXPECTED_OPERATION_MISSING"
+    ]
+  },
+  {
+    "scenario_id": "SF-POST-10",
+    "scenario_name": "10 \u2014 Multiple Operations / Partial Implementation",
+    "change_id": "CHG-SF-1012",
+    "user_identity": null,
+    "evaluation_timestamp": "2026-11-24T00:00:00Z",
+    "investigation_mode": "change",
+    "evidence_query_ids": [
+      "SF-QRY-010"
+    ],
+    "window_days": 10,
+    "expected_findings": [
+      "COMPLIANT_EXECUTION",
+      "EXPECTED_OPERATION_MISSING"
+    ]
+  },
+  {
+    "scenario_id": "SF-POST-11",
+    "scenario_name": "11 \u2014 Extra Unauthorized Operation",
+    "change_id": "CHG-SF-1009",
+    "user_identity": null,
+    "evaluation_timestamp": "2026-11-24T00:00:00Z",
+    "investigation_mode": "change",
+    "evidence_query_ids": [
+      "SF-QRY-011",
+      "SF-QRY-012"
+    ],
+    "window_days": 10,
+    "expected_findings": [
+      "COMPLIANT_EXECUTION",
+      "UNAPPROVED_OPERATION",
+      "UNEXPECTED_ADDITIONAL_OPERATION"
+    ]
+  },
+  {
+    "scenario_id": "SF-POST-12",
+    "scenario_name": "12 \u2014 Compliant Role Modification",
+    "change_id": "CHG-SF-1013",
+    "user_identity": null,
+    "evaluation_timestamp": "2026-11-24T00:00:00Z",
+    "investigation_mode": "change",
+    "evidence_query_ids": [
+      "SF-QRY-013"
+    ],
+    "window_days": 10,
+    "expected_findings": [
+      "COMPLIANT_EXECUTION"
+    ]
+  },
+  {
+    "scenario_id": "SF-POST-13",
+    "scenario_name": "13 \u2014 Privilege Escalation During Change",
+    "change_id": "CHG-SF-1013",
+    "user_identity": null,
+    "evaluation_timestamp": "2026-11-24T00:00:00Z",
+    "investigation_mode": "change",
+    "evidence_query_ids": [
+      "SF-QRY-014"
+    ],
+    "window_days": 10,
+    "expected_findings": [
+      "UNAPPROVED_OPERATION",
+      "UNEXPECTED_ADDITIONAL_OPERATION",
+      "EXPECTED_OPERATION_MISSING"
+    ]
+  },
+  {
+    "scenario_id": "SF-POST-14",
+    "scenario_name": "14 \u2014 Role Revocation Outside Change Window",
+    "change_id": "CHG-SF-1007",
+    "user_identity": null,
+    "evaluation_timestamp": "2026-11-24T00:00:00Z",
+    "investigation_mode": "change",
+    "evidence_query_ids": [
+      "SF-QRY-015"
+    ],
+    "window_days": 10,
+    "expected_findings": [
+      "EXECUTED_OUTSIDE_WINDOW",
+      "UNAPPROVED_OPERATION",
+      "UNEXPECTED_ADDITIONAL_OPERATION",
+      "EXPECTED_OPERATION_MISSING"
+    ]
+  },
+  {
+    "scenario_id": "SF-POST-15",
+    "scenario_name": "15 \u2014 Warehouse Modified Outside Approved Window",
+    "change_id": "CHG-SF-1014",
+    "user_identity": null,
+    "evaluation_timestamp": "2026-11-24T00:00:00Z",
+    "investigation_mode": "change",
+    "evidence_query_ids": [
+      "SF-QRY-016"
+    ],
+    "window_days": 10,
+    "expected_findings": [
+      "EXECUTED_OUTSIDE_WINDOW"
+    ]
+  },
+  {
+    "scenario_id": "SF-POST-16",
+    "scenario_name": "16 \u2014 Database Configuration Changed Incorrectly",
+    "change_id": "CHG-SF-1003",
+    "user_identity": null,
+    "evaluation_timestamp": "2026-11-24T00:00:00Z",
+    "investigation_mode": "change",
+    "evidence_query_ids": [
+      "SF-QRY-017"
+    ],
+    "window_days": 10,
+    "expected_findings": [
+      "WRONG_TARGET_OBJECT",
+      "INSUFFICIENT_AUDIT_EVIDENCE",
+      "EXPECTED_OPERATION_MISSING"
+    ]
+  },
+  {
+    "scenario_id": "SF-POST-17",
+    "scenario_name": "17 \u2014 Unapproved User Creation",
+    "change_id": null,
+    "user_identity": "rogue.engineer@example.invalid",
+    "evaluation_timestamp": "2026-11-24T00:00:00Z",
+    "investigation_mode": "user",
+    "evidence_query_ids": [
+      "SF-QRY-018"
+    ],
+    "window_days": 10,
+    "expected_findings": [
+      "POSSIBLE_UNAPPROVED_ACTIVITY"
+    ]
+  },
+  {
+    "scenario_id": "SF-POST-18",
+    "scenario_name": "18 \u2014 Unapproved Role Grant",
+    "change_id": null,
+    "user_identity": "rogue.engineer@example.invalid",
+    "evaluation_timestamp": "2026-11-24T00:00:00Z",
+    "investigation_mode": "user",
+    "evidence_query_ids": [
+      "SF-QRY-019"
+    ],
+    "window_days": 10,
+    "expected_findings": [
+      "POSSIBLE_UNAPPROVED_ACTIVITY"
+    ]
+  },
+  {
+    "scenario_id": "SF-POST-19",
+    "scenario_name": "19 \u2014 Activity Without Matching Change",
+    "change_id": null,
+    "user_identity": "rogue.engineer@example.invalid",
+    "evaluation_timestamp": "2026-11-24T00:00:00Z",
+    "investigation_mode": "user",
+    "evidence_query_ids": [
+      "SF-QRY-020"
+    ],
+    "window_days": 10,
+    "expected_findings": [
+      "POSSIBLE_UNAPPROVED_ACTIVITY"
+    ]
+  },
+  {
+    "scenario_id": "SF-POST-20",
+    "scenario_name": "20 \u2014 Multiple Changes by Same Implementer",
+    "change_id": null,
+    "user_identity": "sfsecurity01@example.invalid",
+    "evaluation_timestamp": "2026-11-24T00:00:00Z",
+    "investigation_mode": "user",
+    "evidence_query_ids": [
+      "SF-QRY-021",
+      "SF-QRY-022"
+    ],
+    "window_days": 20,
+    "expected_findings": [
+      "COMPLIANT_EXECUTION",
+      "UNAUTHORIZED_IMPLEMENTER"
+    ]
+  }
+]

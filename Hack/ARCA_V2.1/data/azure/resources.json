@@ -1,0 +1,452 @@
+[
+  {
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod01",
+    "name": "starchprod01",
+    "type": "Microsoft.Storage/storageAccounts",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "resource_group": "rg-arca-prod",
+    "location": "centralindia",
+    "environment": "production",
+    "criticality": "high",
+    "tags": {
+      "application": "ARCA",
+      "owner": "cloud-platform",
+      "synthetic": "true"
+    }
+  },
+  {
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod02",
+    "name": "starchprod02",
+    "type": "Microsoft.Storage/storageAccounts",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "resource_group": "rg-arca-prod",
+    "location": "centralindia",
+    "environment": "production",
+    "criticality": "high",
+    "tags": {
+      "application": "ARCA",
+      "owner": "cloud-platform",
+      "synthetic": "true"
+    }
+  },
+  {
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod03",
+    "name": "starchprod03",
+    "type": "Microsoft.Storage/storageAccounts",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "resource_group": "rg-arca-prod",
+    "location": "centralindia",
+    "environment": "production",
+    "criticality": "moderate",
+    "tags": {
+      "application": "ARCA",
+      "owner": "cloud-platform",
+      "synthetic": "true"
+    }
+  },
+  {
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod04",
+    "name": "starchprod04",
+    "type": "Microsoft.Storage/storageAccounts",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "resource_group": "rg-arca-prod",
+    "location": "centralindia",
+    "environment": "production",
+    "criticality": "moderate",
+    "tags": {
+      "application": "ARCA",
+      "owner": "cloud-platform",
+      "synthetic": "true"
+    }
+  },
+  {
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod05",
+    "name": "starchprod05",
+    "type": "Microsoft.Storage/storageAccounts",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "resource_group": "rg-arca-prod",
+    "location": "centralindia",
+    "environment": "production",
+    "criticality": "moderate",
+    "tags": {
+      "application": "ARCA",
+      "owner": "cloud-platform",
+      "synthetic": "true"
+    }
+  },
+  {
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod06",
+    "name": "starchprod06",
+    "type": "Microsoft.Storage/storageAccounts",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "resource_group": "rg-arca-prod",
+    "location": "centralindia",
+    "environment": "production",
+    "criticality": "moderate",
+    "tags": {
+      "application": "ARCA",
+      "owner": "cloud-platform",
+      "synthetic": "true"
+    }
+  },
+  {
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod01",
+    "name": "vm-arca-prod01",
+    "type": "Microsoft.Compute/virtualMachines",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "resource_group": "rg-arca-prod",
+    "location": "centralindia",
+    "environment": "production",
+    "criticality": "high",
+    "tags": {
+      "application": "ARCA",
+      "owner": "cloud-platform",
+      "synthetic": "true"
+    }
+  },
+  {
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod02",
+    "name": "vm-arca-prod02",
+    "type": "Microsoft.Compute/virtualMachines",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "resource_group": "rg-arca-prod",
+    "location": "centralindia",
+    "environment": "production",
+    "criticality": "high",
+    "tags": {
+      "application": "ARCA",
+      "owner": "cloud-platform",
+      "synthetic": "true"
+    }
+  },
+  {
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod03",
+    "name": "vm-arca-prod03",
+    "type": "Microsoft.Compute/virtualMachines",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "resource_group": "rg-arca-prod",
+    "location": "centralindia",
+    "environment": "production",
+    "criticality": "moderate",
+    "tags": {
+      "application": "ARCA",
+      "owner": "cloud-platform",
+      "synthetic": "true"
+    }
+  },
+  {
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod04",
+    "name": "vm-arca-prod04",
+    "type": "Microsoft.Compute/virtualMachines",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "resource_group": "rg-arca-prod",
+    "location": "centralindia",
+    "environment": "production",
+    "criticality": "moderate",
+    "tags": {
+      "application": "ARCA",
+      "owner": "cloud-platform",
+      "synthetic": "true"
+    }
+  },
+  {
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod05",
+    "name": "vm-arca-prod05",
+    "type": "Microsoft.Compute/virtualMachines",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "resource_group": "rg-arca-prod",
+    "location": "centralindia",
+    "environment": "production",
+    "criticality": "moderate",
+    "tags": {
+      "application": "ARCA",
+      "owner": "cloud-platform",
+      "synthetic": "true"
+    }
+  },
+  {
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod06",
+    "name": "vm-arca-prod06",
+    "type": "Microsoft.Compute/virtualMachines",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "resource_group": "rg-arca-prod",
+    "location": "centralindia",
+    "environment": "production",
+    "criticality": "moderate",
+    "tags": {
+      "application": "ARCA",
+      "owner": "cloud-platform",
+      "synthetic": "true"
+    }
+  },
+  {
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Web/sites/app-arca-prod01",
+    "name": "app-arca-prod01",
+    "type": "Microsoft.Web/sites",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "resource_group": "rg-arca-prod",
+    "location": "centralindia",
+    "environment": "production",
+    "criticality": "high",
+    "tags": {
+      "application": "ARCA",
+      "owner": "cloud-platform",
+      "synthetic": "true"
+    }
+  },
+  {
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Web/sites/app-arca-prod02",
+    "name": "app-arca-prod02",
+    "type": "Microsoft.Web/sites",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "resource_group": "rg-arca-prod",
+    "location": "centralindia",
+    "environment": "production",
+    "criticality": "high",
+    "tags": {
+      "application": "ARCA",
+      "owner": "cloud-platform",
+      "synthetic": "true"
+    }
+  },
+  {
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Web/sites/app-arca-prod03",
+    "name": "app-arca-prod03",
+    "type": "Microsoft.Web/sites",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "resource_group": "rg-arca-prod",
+    "location": "centralindia",
+    "environment": "production",
+    "criticality": "moderate",
+    "tags": {
+      "application": "ARCA",
+      "owner": "cloud-platform",
+      "synthetic": "true"
+    }
+  },
+  {
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Web/sites/app-arca-prod04",
+    "name": "app-arca-prod04",
+    "type": "Microsoft.Web/sites",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "resource_group": "rg-arca-prod",
+    "location": "centralindia",
+    "environment": "production",
+    "criticality": "moderate",
+    "tags": {
+      "application": "ARCA",
+      "owner": "cloud-platform",
+      "synthetic": "true"
+    }
+  },
+  {
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Web/sites/app-arca-prod05",
+    "name": "app-arca-prod05",
+    "type": "Microsoft.Web/sites",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "resource_group": "rg-arca-prod",
+    "location": "centralindia",
+    "environment": "production",
+    "criticality": "moderate",
+    "tags": {
+      "application": "ARCA",
+      "owner": "cloud-platform",
+      "synthetic": "true"
+    }
+  },
+  {
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Web/sites/app-arca-prod06",
+    "name": "app-arca-prod06",
+    "type": "Microsoft.Web/sites",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "resource_group": "rg-arca-prod",
+    "location": "centralindia",
+    "environment": "production",
+    "criticality": "moderate",
+    "tags": {
+      "application": "ARCA",
+      "owner": "cloud-platform",
+      "synthetic": "true"
+    }
+  },
+  {
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.KeyVault/vaults/kv-arca-prod01",
+    "name": "kv-arca-prod01",
+    "type": "Microsoft.KeyVault/vaults",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "resource_group": "rg-arca-prod",
+    "location": "centralindia",
+    "environment": "production",
+    "criticality": "high",
+    "tags": {
+      "application": "ARCA",
+      "owner": "cloud-platform",
+      "synthetic": "true"
+    }
+  },
+  {
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.KeyVault/vaults/kv-arca-prod02",
+    "name": "kv-arca-prod02",
+    "type": "Microsoft.KeyVault/vaults",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "resource_group": "rg-arca-prod",
+    "location": "centralindia",
+    "environment": "production",
+    "criticality": "high",
+    "tags": {
+      "application": "ARCA",
+      "owner": "cloud-platform",
+      "synthetic": "true"
+    }
+  },
+  {
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.KeyVault/vaults/kv-arca-prod03",
+    "name": "kv-arca-prod03",
+    "type": "Microsoft.KeyVault/vaults",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "resource_group": "rg-arca-prod",
+    "location": "centralindia",
+    "environment": "production",
+    "criticality": "moderate",
+    "tags": {
+      "application": "ARCA",
+      "owner": "cloud-platform",
+      "synthetic": "true"
+    }
+  },
+  {
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.KeyVault/vaults/kv-arca-prod04",
+    "name": "kv-arca-prod04",
+    "type": "Microsoft.KeyVault/vaults",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "resource_group": "rg-arca-prod",
+    "location": "centralindia",
+    "environment": "production",
+    "criticality": "moderate",
+    "tags": {
+      "application": "ARCA",
+      "owner": "cloud-platform",
+      "synthetic": "true"
+    }
+  },
+  {
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Sql/servers/databases/sql-arca-prod/db01",
+    "name": "sql-arca-prod/db01",
+    "type": "Microsoft.Sql/servers/databases",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "resource_group": "rg-arca-prod",
+    "location": "centralindia",
+    "environment": "production",
+    "criticality": "high",
+    "tags": {
+      "application": "ARCA",
+      "owner": "cloud-platform",
+      "synthetic": "true"
+    }
+  },
+  {
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Sql/servers/databases/sql-arca-prod/db02",
+    "name": "sql-arca-prod/db02",
+    "type": "Microsoft.Sql/servers/databases",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "resource_group": "rg-arca-prod",
+    "location": "centralindia",
+    "environment": "production",
+    "criticality": "high",
+    "tags": {
+      "application": "ARCA",
+      "owner": "cloud-platform",
+      "synthetic": "true"
+    }
+  },
+  {
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Sql/servers/databases/sql-arca-prod/db03",
+    "name": "sql-arca-prod/db03",
+    "type": "Microsoft.Sql/servers/databases",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "resource_group": "rg-arca-prod",
+    "location": "centralindia",
+    "environment": "production",
+    "criticality": "moderate",
+    "tags": {
+      "application": "ARCA",
+      "owner": "cloud-platform",
+      "synthetic": "true"
+    }
+  },
+  {
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Sql/servers/databases/sql-arca-prod/db04",
+    "name": "sql-arca-prod/db04",
+    "type": "Microsoft.Sql/servers/databases",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "resource_group": "rg-arca-prod",
+    "location": "centralindia",
+    "environment": "production",
+    "criticality": "moderate",
+    "tags": {
+      "application": "ARCA",
+      "owner": "cloud-platform",
+      "synthetic": "true"
+    }
+  },
+  {
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Network/networkSecurityGroups/nsg-arca-prod01",
+    "name": "nsg-arca-prod01",
+    "type": "Microsoft.Network/networkSecurityGroups",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "resource_group": "rg-arca-prod",
+    "location": "centralindia",
+    "environment": "production",
+    "criticality": "high",
+    "tags": {
+      "application": "ARCA",
+      "owner": "cloud-platform",
+      "synthetic": "true"
+    }
+  },
+  {
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Network/networkSecurityGroups/nsg-arca-prod02",
+    "name": "nsg-arca-prod02",
+    "type": "Microsoft.Network/networkSecurityGroups",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "resource_group": "rg-arca-prod",
+    "location": "centralindia",
+    "environment": "production",
+    "criticality": "high",
+    "tags": {
+      "application": "ARCA",
+      "owner": "cloud-platform",
+      "synthetic": "true"
+    }
+  },
+  {
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Network/networkSecurityGroups/nsg-arca-prod03",
+    "name": "nsg-arca-prod03",
+    "type": "Microsoft.Network/networkSecurityGroups",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "resource_group": "rg-arca-prod",
+    "location": "centralindia",
+    "environment": "production",
+    "criticality": "moderate",
+    "tags": {
+      "application": "ARCA",
+      "owner": "cloud-platform",
+      "synthetic": "true"
+    }
+  },
+  {
+    "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Network/networkSecurityGroups/nsg-arca-prod04",
+    "name": "nsg-arca-prod04",
+    "type": "Microsoft.Network/networkSecurityGroups",
+    "subscription_id": "00000000-1111-2222-3333-444444444444",
+    "resource_group": "rg-arca-prod",
+    "location": "centralindia",
+    "environment": "production",
+    "criticality": "moderate",
+    "tags": {
+      "application": "ARCA",
+      "owner": "cloud-platform",
+      "synthetic": "true"
+    }
+  }
+]
