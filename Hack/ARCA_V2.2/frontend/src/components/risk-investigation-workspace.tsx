@@ -1,0 +1,121 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import { AlertCircle, Filter, LoaderCircle, SearchCheck, ShieldAlert } from "lucide-react";
+import { AiAnalysisPanel, AssistanceModeSelector } from "@/components/llm-assistance";
+import { AssessmentFeedback } from "@/components/assessment-feedback";
+import { AskArcaAction } from "@/components/ask-arca-action";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Skeleton } from "@/components/ui/skeleton";
+import { getRiskScenarios, investigateRisk } from "@/lib/arca-api";
+import type { AssistanceMode, ExecutionWindowDays, RiskEnvironment, RiskResponse, RiskScenario, RiskSeverity } from "@/types/api";
+
+const control = "h-11 w-full rounded-lg border border-slate-200 bg-white px-3 text-sm text-slate-800 shadow-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 disabled:bg-slate-50";
+const v1Days: ExecutionWindowDays[] = [1, 2, 7, 15, 30];
+const readable = (value: string) => value.replaceAll("_", " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
+const show = (value: unknown) => value == null ? "Not provided" : String(value);
+const variant = (value: string): "success" | "warning" | "destructive" | "default" | "neutral" =>
+  ["critical", "high"].includes(value.toLowerCase()) ? "destructive" : value.toLowerCase() === "medium" ? "warning" : value.toLowerCase() === "low" ? "default" : "neutral";
+
+export function RiskInvestigationWorkspace() {
+  const [scenarios, setScenarios] = useState<RiskScenario[]>([]);
+  const [scenarioId, setScenarioId] = useState("");
+  const [environment, setEnvironment] = useState<RiskEnvironment>("azure");
+  const [identity, setIdentity] = useState("");
+  const [role, setRole] = useState("");
+  const [resource, setResource] = useState("");
+  const [windowDays, setWindowDays] = useState<ExecutionWindowDays>(7);
+  const [severity, setSeverity] = useState<RiskSeverity>("all");
+  const [evaluation, setEvaluation] = useState<string>();
+  const [result, setResult] = useState<RiskResponse | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [running, setRunning] = useState(false);
+  const [error, setError] = useState("");
+  const [assistanceMode, setAssistanceMode] = useState<AssistanceMode>("deterministic");
+
+  useEffect(() => {
+    getRiskScenarios().then((response) => setScenarios(response.items)).catch((reason) =>
+      setError(reason instanceof Error ? reason.message : "Risk scenarios could not be loaded."),
+    ).finally(() => setLoading(false));
+  }, []);
+
+  function clearOutput() { setResult(null); setError(""); }
+
+  function select(id: string) {
+    setScenarioId(id); clearOutput();
+    const scenario = scenarios.find((item) => item.scenario_id === id);
+    if (!scenario) { setEvaluation(undefined); return; }
+    setEnvironment(scenario.environment); setIdentity(scenario.identity || ""); setRole(scenario.role || "");
+    setResource(scenario.resource || ""); setWindowDays(scenario.window_days as ExecutionWindowDays);
+    setSeverity(scenario.severity); setEvaluation(scenario.evaluation_timestamp);
+  }
+
+  async function run() {
+    if (running) return;
+    setRunning(true); clearOutput();
+    try {
+      setResult(await investigateRisk({
+        environment, window_days: windowDays, severity, execution_mode: assistanceMode,
+        ...(identity && { identity }), ...(role && { role }), ...(resource && { resource }),
+        ...(evaluation && { evaluation_timestamp: evaluation }), ...(scenarioId && { scenario_id: scenarioId }),
+      }));
+    } catch (reason) {
+      setError(reason instanceof Error ? reason.message : "Risk investigation could not be completed.");
+    } finally { setRunning(false); }
+  }
+
+  if (loading) return <div className="space-y-5"><Skeleton className="h-32"/><Skeleton className="h-80"/></div>;
+  const displayedDays = windowDays === 10 ? [1, 2, 7, 10, 15, 30] as ExecutionWindowDays[] : v1Days;
+  return <div className="space-y-6">
+    <Card>
+      <CardHeader><div><CardTitle>Investigation scope</CardTitle><CardDescription>Activity Logs are filtered first, then successful administrative changes are correlated with available approved records.</CardDescription></div><Badge variant="neutral">{scenarios.length} verified examples</Badge></CardHeader>
+      <CardContent className="space-y-5">
+        <label className="space-y-2 text-sm font-semibold">Verified Demo Example
+          <select className={control} value={scenarioId} onChange={(event) => select(event.target.value)} disabled={running}>
+            <option value="">Manual investigation</option>{scenarios.map((item) => <option key={item.scenario_id} value={item.scenario_id}>{item.scenario_name}</option>)}
+          </select>
+        </label>
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          <Field label="Environment"><select className={control} value={environment} onChange={(event) => { setEnvironment(event.target.value as RiskEnvironment); setScenarioId(""); setEvaluation(undefined); if (event.target.value === "azure") setWindowDays(7); clearOutput(); }} disabled={running}><option value="all">All Environments</option><option value="aws">AWS</option><option value="azure">Azure</option><option value="snowflake">Snowflake</option></select></Field>
+          <Field label="User / Principal"><input className={control} value={identity} onChange={(event) => { setIdentity(event.target.value); setScenarioId(""); clearOutput(); }} placeholder="Optional identity" disabled={running}/></Field>
+          <Field label="Role"><input className={control} value={role} onChange={(event) => { setRole(event.target.value); setScenarioId(""); clearOutput(); }} placeholder="Optional role" disabled={running}/></Field>
+          <Field label="Resource"><input className={control} value={resource} onChange={(event) => { setResource(event.target.value); setScenarioId(""); clearOutput(); }} placeholder="Optional ARN, ID, or object" disabled={running}/></Field>
+          <Field label="Time Range"><select className={control} value={windowDays} onChange={(event) => { setWindowDays(Number(event.target.value) as ExecutionWindowDays); setScenarioId(""); setEvaluation(undefined); clearOutput(); }} disabled={running}>{displayedDays.map((item) => <option key={item} value={item}>{item === 1 ? "Last 24 Hours" : `Last ${item} Days`}</option>)}</select></Field>
+          <Field label="Severity"><select className={control} value={severity} onChange={(event) => { setSeverity(event.target.value as RiskSeverity); setScenarioId(""); clearOutput(); }} disabled={running}><option value="all">All severities</option>{["critical", "high", "medium", "low"].map((item) => <option key={item} value={item}>{readable(item)}</option>)}</select></Field>
+        </div>
+        <AssistanceModeSelector mode={assistanceMode} onChange={setAssistanceMode} disabled={running}/>
+        <div className="flex items-center gap-3 border-t pt-5"><Button onClick={run} disabled={running}>{running ? <LoaderCircle className="size-4 animate-spin"/> : <SearchCheck className="size-4"/>}Run Investigation</Button>{running && <span role="status" className="text-sm font-medium text-blue-700">Correlating security evidence...</span>}</div>
+      </CardContent>
+    </Card>
+    {error && <div role="alert" className="flex gap-3 rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-800"><AlertCircle className="size-5"/>{error}</div>}
+    {result && <Results result={result}/>} 
+  </div>;
+}
+
+function Field({ label, children }: { label: string; children: React.ReactNode }) { return <label className="space-y-2 text-sm font-semibold text-slate-700">{label}{children}</label>; }
+
+function feedbackProvider(result: RiskResponse): "aws" | "azure" | "snowflake" | "all" {
+  const value = result.providers_investigated.length === 1 ? result.providers_investigated[0] : "all";
+  return value === "aws" || value === "azure" || value === "snowflake" ? value : "all";
+}
+
+function Results({ result }: { result: RiskResponse }) {
+  return <section className="space-y-5" aria-live="polite">
+    <div className="flex flex-wrap items-center justify-between gap-3"><div><p className="text-xs font-semibold uppercase text-blue-600">{result.investigation_id}</p><h2 className="text-2xl font-bold text-[#102a43]">Investigation summary</h2><p className="mt-1 text-sm text-slate-600">{result.summary}</p><p className="mt-1 text-xs text-slate-500">Selected period: {result.period_start} — {result.period_end}</p></div><Badge variant="neutral">{result.confidence} confidence</Badge></div>
+    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">{Object.entries(result.risk_counts).map(([key, value]) => <Card key={key}><CardContent className="p-4"><p className="text-xs font-semibold uppercase text-slate-500">{key}</p><p className="mt-1 text-2xl font-bold text-[#102a43]">{value}</p></CardContent></Card>)}</div>
+    <div className="grid gap-5 xl:grid-cols-2">
+      <Card><CardHeader><CardTitle>Findings by severity</CardTitle><Badge variant="neutral">{result.findings.length}</Badge></CardHeader><CardContent className="space-y-3">{result.findings.length ? result.findings.map((item) => <details key={item.finding_id} className="rounded-lg border p-3"><summary className="cursor-pointer list-none"><div className="flex flex-wrap items-center gap-2"><Badge variant={variant(item.severity)}>{item.severity}</Badge><Badge variant="neutral">{item.provider.toUpperCase()}</Badge><b className="text-sm">{readable(item.category)}</b></div><p className="mt-2 text-sm text-slate-600">{item.summary}</p></summary><div className="mt-3 space-y-1 border-t pt-3 text-xs text-slate-500"><p>Actor: {item.actor || "Unknown"}</p><p>Resource: {item.resource || "Unavailable"}</p><p>Timestamp: {item.timestamp || "Unavailable"}</p><p>Related change: {item.change_id || "No exact approved-change match"}</p><p>Evidence: {item.evidence_ids.join(", ")}</p><p className="mt-2 font-medium text-slate-700">{item.recommendation}</p></div></details>) : <p className="text-sm text-emerald-700">{result.activity_timeline.length ? "Activity was present, with no unmatched changes identified." : "No administrative activity was recorded during the selected period."}</p>}</CardContent></Card>
+      <div className="space-y-5">
+        <Card><CardHeader><CardTitle>Environment distribution</CardTitle></CardHeader><CardContent className="flex flex-wrap gap-2">{result.providers_investigated.map((provider) => <Badge key={provider}>{provider.toUpperCase()}: {result.findings.filter((item) => item.provider === provider).length}</Badge>)}</CardContent></Card>
+        <Card><CardHeader><CardTitle>Interactive activity timeline</CardTitle><CardDescription>Expand events to inspect provider, actor, operation, resource, timestamp, and approval correlation.</CardDescription></CardHeader><CardContent className="max-h-[520px] space-y-3 overflow-auto">{result.activity_timeline.map((item, index) => <details key={`${show(item.provider)}-${show(item.evidence_id)}-${index}`} className="rounded-lg border p-3"><summary className="cursor-pointer text-sm font-semibold">{show(item.operation)} · {show(item.provider).toUpperCase()}</summary><div className="mt-2 space-y-1 text-xs text-slate-500"><p>{show(item.timestamp)}</p><p>Actor: {show(item.actor)}</p><p className="break-all">Resource: {show(item.resource)}</p><p>Related change: {show(item.change_id)}</p><p>Approval: {show(item.approval_state)}</p><p>Correlation: {show(item.approval_correlation ?? item.correlation)}</p><p>Reasons: {Array.isArray(item.correlation_reasons) ? item.correlation_reasons.join(", ") : "None"}</p><code>{show(item.evidence_id)}</code></div></details>)}</CardContent></Card>
+        <Card><CardHeader><CardTitle>Supporting Activity Log evidence</CardTitle><Badge variant="neutral">{result.evidence_references.length}</Badge></CardHeader><CardContent className="max-h-[420px] space-y-3 overflow-auto">{result.evidence_references.map((item, index) => <details key={`${show(item.evidence_id)}-${index}`} className="rounded-lg border p-3"><summary className="cursor-pointer text-sm font-semibold">{show(item.evidence_id)} · {show(item.source)}</summary><pre className="mt-3 overflow-auto whitespace-pre-wrap break-all rounded bg-slate-50 p-3 text-xs text-slate-600">{JSON.stringify(item, null, 2)}</pre></details>)}</CardContent></Card>
+        <Card><CardHeader><CardTitle>Evidence limitations</CardTitle></CardHeader><CardContent><ul className="space-y-2 text-sm text-slate-500">{result.evidence_limitations.map((item) => <li key={item} className="flex gap-2"><Filter className="mt-1 size-4 shrink-0"/>{item}</li>)}</ul>{result.findings.length > 0 && <p className="mt-4 flex gap-2 border-t pt-4 text-sm font-semibold text-amber-700"><ShieldAlert className="size-4"/>Unmatched activity requires review and does not establish that the action was unauthorized.</p>}</CardContent></Card>
+      </div>
+    </div>
+    <AiAnalysisPanel analysis={result.ai_analysis}/>
+    <AssessmentFeedback assessmentId={`agent4:${result.investigation_id}`} stage="A4" provider={feedbackProvider(result)} originalDecision={result.findings.length?"FINDINGS_IDENTIFIED":"NO_FINDINGS"} resultReference={result.investigation_id} findingReference={result.findings[0]?.finding_id}/>
+    <AskArcaAction sourceAgent="A4" provider={result.providers_investigated.length === 1 ? result.providers_investigated[0] : "all"} evidenceReferences={result.findings.flatMap((item) => item.evidence_ids)} question={`Explain the priority and next steps for investigation ${result.investigation_id} without changing its deterministic findings.`}/>
+  </section>;
+}

@@ -1,0 +1,49 @@
+ARCA DEVELOPER PRESENTATION (10–15 MINUTES)
+Implementation-verified: 2026-10-21
+
+1. WHAT ARCA IS (1 minute)
+ARCA is a Streamlit assurance workbench for change quality, privileged access, execution evidence, undocumented cloud activity, and read-only conversational investigation. The running project uses synthetic Azure and AWS evidence. It does not connect to production cloud or ServiceNow systems.
+
+2. ARCHITECTURE (2 minutes)
+Open app.py. Point out that cloud evidence provider and LLM provider are independent selections. The UI calls deterministic Stage 1 and Stage 2 validators, Azure/AWS provider adapters for execution and unmatched-event correlation, two LangGraph workflows, and local JSONL observability.
+
+Evidence inventory:
+- Azure: 25 changes, 29 PIM requests, 29 assignments, 9 role definitions, 30 resources, 100 events.
+- AWS: the preserved changes/access_requests/events demonstration files.
+- 41 verified scenarios in data/demo_catalog.json.
+
+3. STAGE 1 — CHANGE INTELLIGENCE (2 minutes)
+Navigate: ARCA > Change Lifecycle > Stage 1 — Validate Change.
+Show Existing Change and Paste Change Details. The input becomes an ExtractedChange Pydantic model, then config/change_validation_policy.json drives deterministic validation. Demonstrate missing fields or a reversed window. Improve Draft creates an editable deterministic baseline; optional OpenAI/Bedrock refinement can improve prose but cannot fill blanks or change protected technical facts. Revalidate does not invoke a model. Copy Draft produces ServiceNow-compatible text but submits nothing.
+
+4. STAGE 2 — PIM INTELLIGENCE (2 minutes)
+Navigate: Stage 2 — Validate Privileges.
+Use Search by Change Number and CHG-AZ-2021. ARCA retrieves pim-az-0021/22/23, validates each, then evaluates combined task coverage without merging different principals. Explain that role suitability, scope, identity, activation status, duration, and justification are separate controls. Results are recommendations, never PIM actions. Contrast with the redundant subscription Contributor scenario.
+
+5. STAGE 3 AND AGENT 4 (2 minutes)
+Navigate: Stage 3 — Verify Execution. CHG-AZ-2001 produces POTENTIAL_MATCH, intentionally not “successful,” because an event match is not proof. CHG-AZ-2007/08/09 demonstrate timing, actor, and resource deviations.
+
+Then show Full Lifecycle Assessment. The first LangGraph conditionally routes Stage 1 VALID to Stage 2 and Stage 3. A Stage 3 deviation enters the Agent 4 investigation node, which packages deviations as REVIEW_REQUIRED. The node is deterministic; only the final narrative is optionally model-generated.
+
+Show Undocumented Changes. Both dashboard and Ask ARCA share the same evidence reference time and UTC window logic. An unmatched event means no exact approved-change correlation in available evidence; it is not automatically unauthorized.
+
+6. ASK ARCA (2 minutes)
+Navigate: Ask ARCA — Cloud Investigation Assistant.
+The second LangGraph is START > plan > investigate > END with MemorySaver checkpoints. The model, or deterministic mock parser, returns a validated intent and parameters. Explicit Python routing executes only read-only tools for resources, activity, assignments, PIM, changes, and unmatched activity. Ambiguous resource or missing identity prompts clarification. Follow-ups reuse selected resource and previous findings. Original evidence IDs appear in results.
+
+Important qualification: this is not an unconstrained autonomous model. Tools and routing are bounded, results are evidence-backed, and root causes remain qualified when evidence is insufficient.
+
+7. OBSERVABILITY (1 minute)
+Select Metrics in the header. Show the compact global filters, Overview, LLM Usage & Cost, Performance, Validation, Feedback, and detailed logs/traces. Telemetry records durations, provider/model, sanitized status, token counts, estimated cost, assessments, and feedback. It never logs API keys. CSV exports use active filters.
+
+8. LLM AND SECURITY BOUNDARIES (1 minute)
+LLM_PROVIDER can be mock, openai, or bedrock. OpenAI uses the Responses structured parse API; Bedrock uses Converse. Pydantic validates structured output. Deterministic policy code—not the LLM—decides completeness, RBAC coverage, scope, duration, and correlation. No component approves PIM, submits changes, or modifies infrastructure.
+
+9. EXTENSION ROADMAP (1 minute)
+Implemented now: synthetic providers, policy controls, graphs, tools, demo catalog, metrics.
+Optional now: configured OpenAI/Bedrock calls.
+Not implemented: live ServiceNow/Azure/AWS, durable multi-worker conversation memory, Snowflake.
+Proposed Snowflake approach: put JSON and Snowflake behind one EvidenceRepository contract, preserve original IDs/timestamps and provider-specific evaluation, use parameterized read-only queries, and prove parity against synthetic fixtures before live ingestion.
+
+CLOSING MESSAGE
+ARCA’s key design choice is separation of concerns: models interpret language, deterministic controls make assurance recommendations, provider adapters preserve cloud semantics, and evidence provenance remains visible. That makes the demo useful today without pretending synthetic evidence is production truth.

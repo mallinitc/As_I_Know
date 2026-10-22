@@ -1,0 +1,794 @@
+{
+  "evaluation_version": "1.0",
+  "evaluation_mode": "controlled_mock_llm",
+  "live_llm_calls": 0,
+  "generated_at": "2026-10-22T21:21:27.293125Z",
+  "case_count": 14,
+  "agents": [
+    "A1",
+    "A2",
+    "A3",
+    "A4",
+    "A5"
+  ],
+  "pass_rates": {
+    "relevance": {
+      "pass": 14,
+      "fail": 0,
+      "not_applicable": 0,
+      "evaluated": 14,
+      "pass_rate": 1.0
+    },
+    "correctness": {
+      "pass": 14,
+      "fail": 0,
+      "not_applicable": 0,
+      "evaluated": 14,
+      "pass_rate": 1.0
+    },
+    "groundedness": {
+      "pass": 14,
+      "fail": 0,
+      "not_applicable": 0,
+      "evaluated": 14,
+      "pass_rate": 1.0
+    },
+    "clarity": {
+      "pass": 14,
+      "fail": 0,
+      "not_applicable": 0,
+      "evaluated": 14,
+      "pass_rate": 1.0
+    },
+    "concision": {
+      "pass": 14,
+      "fail": 0,
+      "not_applicable": 0,
+      "evaluated": 14,
+      "pass_rate": 1.0
+    },
+    "actionability": {
+      "pass": 8,
+      "fail": 0,
+      "not_applicable": 6,
+      "evaluated": 8,
+      "pass_rate": 1.0
+    },
+    "isolation": {
+      "pass": 14,
+      "fail": 0,
+      "not_applicable": 0,
+      "evaluated": 14,
+      "pass_rate": 1.0
+    }
+  },
+  "fallback_validation": {
+    "passed": true,
+    "status": "invalid_response",
+    "deterministic_decision_preserved": true
+  },
+  "cases": [
+    {
+      "case_id": "A1-VALID",
+      "agent": "A1",
+      "provider": "azure",
+      "source": {
+        "type": "stage1",
+        "scenario_id": "S1-VALID"
+      },
+      "expected_decision": "VALID",
+      "actual_decision": "VALID",
+      "expected_evidence_ids": [
+        "S1-VALID"
+      ],
+      "available_evidence_ids": [
+        "S1-VALID",
+        "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod01"
+      ],
+      "prompt_route": "change_quality",
+      "response": {
+        "summary": "The change request is complete for the configured validation checks.",
+        "reasons": [
+          "It identifies the target resource, implementation window, tasks, validation, and rollback plan."
+        ],
+        "next_action": [],
+        "citations": [
+          "S1-VALID"
+        ],
+        "llm_status": "completed"
+      },
+      "scores": {
+        "relevance": "pass",
+        "correctness": "pass",
+        "groundedness": "pass",
+        "clarity": "pass",
+        "concision": "pass",
+        "actionability": "not_applicable",
+        "isolation": "pass"
+      },
+      "failure_causes": []
+    },
+    {
+      "case_id": "A1-INCOMPLETE",
+      "agent": "A1",
+      "provider": "azure",
+      "source": {
+        "type": "stage1",
+        "scenario_id": "S1-MISSING-IMPLEMENTER"
+      },
+      "expected_decision": "INCOMPLETE",
+      "actual_decision": "INCOMPLETE",
+      "expected_evidence_ids": [
+        "S1-MISSING-IMPLEMENTER"
+      ],
+      "available_evidence_ids": [
+        "S1-MISSING-IMPLEMENTER",
+        "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod01"
+      ],
+      "prompt_route": "change_quality",
+      "response": {
+        "summary": "The change request is incomplete because the implementer is missing.",
+        "reasons": [
+          "The configured checks cannot identify who is authorized to perform the work."
+        ],
+        "next_action": [
+          "Add the approved implementer's identity before submission."
+        ],
+        "citations": [
+          "S1-MISSING-IMPLEMENTER"
+        ],
+        "llm_status": "completed"
+      },
+      "scores": {
+        "relevance": "pass",
+        "correctness": "pass",
+        "groundedness": "pass",
+        "clarity": "pass",
+        "concision": "pass",
+        "actionability": "pass",
+        "isolation": "pass"
+      },
+      "failure_causes": []
+    },
+    {
+      "case_id": "A1-RISKY",
+      "agent": "A1",
+      "provider": "azure",
+      "source": {
+        "type": "stage1",
+        "scenario_id": "S1-REVERSED-WINDOW"
+      },
+      "expected_decision": "INCONSISTENT",
+      "actual_decision": "INCONSISTENT",
+      "expected_evidence_ids": [
+        "S1-REVERSED-WINDOW"
+      ],
+      "available_evidence_ids": [
+        "S1-REVERSED-WINDOW",
+        "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod01"
+      ],
+      "prompt_route": "change_quality",
+      "response": {
+        "summary": "The change window is inconsistent because the end time precedes the start time.",
+        "reasons": [
+          "The supplied UTC timestamps cannot form a valid implementation window."
+        ],
+        "next_action": [
+          "Correct the end time so it is later than the start time."
+        ],
+        "citations": [
+          "S1-REVERSED-WINDOW"
+        ],
+        "llm_status": "completed"
+      },
+      "scores": {
+        "relevance": "pass",
+        "correctness": "pass",
+        "groundedness": "pass",
+        "clarity": "pass",
+        "concision": "pass",
+        "actionability": "pass",
+        "isolation": "pass"
+      },
+      "failure_causes": []
+    },
+    {
+      "case_id": "A2-APPROPRIATE",
+      "agent": "A2",
+      "provider": "azure",
+      "source": {
+        "type": "stage2",
+        "scenario_id": "S2C-APPROPRIATE"
+      },
+      "expected_decision": "APPROVE_RECOMMENDED",
+      "actual_decision": "APPROVE_RECOMMENDED",
+      "expected_evidence_ids": [
+        "CHG-AZ-2021",
+        "pim-az-0021",
+        "pim-az-0022",
+        "pim-az-0023"
+      ],
+      "available_evidence_ids": [
+        "pim-az-0021",
+        "CHG-AZ-2021",
+        "20000000-0000-0000-0000-000000000001",
+        "/subscriptions/00000000-1111-2222-3333-444444444444/providers/Microsoft.Authorization/roleDefinitions/10000000-0000-0000-0000-000000000001",
+        "pim-az-0022",
+        "/subscriptions/00000000-1111-2222-3333-444444444444/providers/Microsoft.Authorization/roleDefinitions/10000000-0000-0000-0000-000000000003",
+        "pim-az-0023",
+        "/subscriptions/00000000-1111-2222-3333-444444444444/providers/Microsoft.Authorization/roleDefinitions/10000000-0000-0000-0000-000000000002",
+        "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod01",
+        "rbac-az-0021",
+        "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Web/sites/app-arca-prod01",
+        "rbac-az-0022",
+        "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod01",
+        "rbac-az-0023",
+        "sn-az-0021",
+        "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+        "S2C-APPROPRIATE"
+      ],
+      "prompt_route": "access_intelligence",
+      "response": {
+        "summary": "The three resource-scoped requests appropriately cover the documented operations.",
+        "reasons": [
+          "The role catalog supports the required actions without subscription-wide scope."
+        ],
+        "next_action": [],
+        "citations": [
+          "CHG-AZ-2021",
+          "pim-az-0021",
+          "pim-az-0022",
+          "pim-az-0023"
+        ],
+        "llm_status": "completed"
+      },
+      "scores": {
+        "relevance": "pass",
+        "correctness": "pass",
+        "groundedness": "pass",
+        "clarity": "pass",
+        "concision": "pass",
+        "actionability": "not_applicable",
+        "isolation": "pass"
+      },
+      "failure_causes": []
+    },
+    {
+      "case_id": "A2-OVERPRIVILEGED",
+      "agent": "A2",
+      "provider": "azure",
+      "source": {
+        "type": "stage2",
+        "scenario_id": "S2C-OVERPRIVILEGED"
+      },
+      "expected_decision": "OVERPRIVILEGED",
+      "actual_decision": "OVERPRIVILEGED",
+      "expected_evidence_ids": [
+        "CHG-AZ-2022",
+        "pim-az-0024",
+        "pim-az-0025"
+      ],
+      "available_evidence_ids": [
+        "pim-az-0024",
+        "CHG-AZ-2022",
+        "20000000-0000-0000-0000-000000000005",
+        "/subscriptions/00000000-1111-2222-3333-444444444444/providers/Microsoft.Authorization/roleDefinitions/10000000-0000-0000-0000-000000000001",
+        "pim-az-0025",
+        "/subscriptions/00000000-1111-2222-3333-444444444444/providers/Microsoft.Authorization/roleDefinitions/10000000-0000-0000-0000-000000000008",
+        "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod02",
+        "rbac-az-0024",
+        "rbac-az-0025",
+        "sn-az-0022",
+        "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+        "S2C-OVERPRIVILEGED"
+      ],
+      "prompt_route": "access_intelligence",
+      "response": {
+        "summary": "Subscription-level Contributor access is broader than the documented operation requires.",
+        "reasons": [
+          "A separate resource-scoped request already covers the required work."
+        ],
+        "next_action": [
+          "Remove the redundant subscription-wide Contributor request."
+        ],
+        "citations": [
+          "CHG-AZ-2022",
+          "pim-az-0024",
+          "pim-az-0025"
+        ],
+        "llm_status": "completed"
+      },
+      "scores": {
+        "relevance": "pass",
+        "correctness": "pass",
+        "groundedness": "pass",
+        "clarity": "pass",
+        "concision": "pass",
+        "actionability": "pass",
+        "isolation": "pass"
+      },
+      "failure_causes": []
+    },
+    {
+      "case_id": "A2-INSUFFICIENT",
+      "agent": "A2",
+      "provider": "azure",
+      "source": {
+        "type": "stage2",
+        "scenario_id": "S2C-INSUFFICIENT"
+      },
+      "expected_decision": "INSUFFICIENT_ACCESS",
+      "actual_decision": "INSUFFICIENT_ACCESS",
+      "expected_evidence_ids": [
+        "CHG-AZ-2023",
+        "pim-az-0026"
+      ],
+      "available_evidence_ids": [
+        "pim-az-0026",
+        "CHG-AZ-2023",
+        "20000000-0000-0000-0000-000000000007",
+        "/subscriptions/00000000-1111-2222-3333-444444444444/providers/Microsoft.Authorization/roleDefinitions/10000000-0000-0000-0000-000000000001",
+        "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod03",
+        "rbac-az-0026",
+        "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Network/networkSecurityGroups/nsg-arca-prod01",
+        "sn-az-0023",
+        "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+        "S2C-INSUFFICIENT"
+      ],
+      "prompt_route": "access_intelligence",
+      "response": {
+        "summary": "The requested role does not cover all documented operations.",
+        "reasons": [
+          "The deterministic permission evaluation identified missing operation coverage."
+        ],
+        "next_action": [
+          "Request only catalog-supported permissions that cover the missing operations."
+        ],
+        "citations": [
+          "CHG-AZ-2023",
+          "pim-az-0026"
+        ],
+        "llm_status": "completed"
+      },
+      "scores": {
+        "relevance": "pass",
+        "correctness": "pass",
+        "groundedness": "pass",
+        "clarity": "pass",
+        "concision": "pass",
+        "actionability": "pass",
+        "isolation": "pass"
+      },
+      "failure_causes": []
+    },
+    {
+      "case_id": "A3-COMPLIANT",
+      "agent": "A3",
+      "provider": "azure",
+      "source": {
+        "type": "stage3",
+        "scenario_id": "AZ-EXEC-01",
+        "change_id": "CHG-AZ-2001",
+        "evaluation_timestamp": "2026-10-27T00:00:00Z"
+      },
+      "expected_decision": "COMPLIANT",
+      "actual_decision": "COMPLIANT",
+      "expected_evidence_ids": [
+        "CHG-AZ-2001",
+        "az-event-0001"
+      ],
+      "available_evidence_ids": [
+        "AZ-EXEC-A0CDCE3672C7",
+        "CHG-AZ-2001",
+        "az-event-0001",
+        "20000000-0000-0000-0000-000000000001",
+        "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod01",
+        "az-corr-0001"
+      ],
+      "prompt_route": "execution_assurance",
+      "response": {
+        "summary": "The observed storage operation matched the approved intent.",
+        "reasons": [
+          "The operation, resource, actor, and window aligned with the approved change."
+        ],
+        "next_action": [],
+        "citations": [
+          "CHG-AZ-2001",
+          "az-event-0001"
+        ],
+        "llm_status": "completed"
+      },
+      "scores": {
+        "relevance": "pass",
+        "correctness": "pass",
+        "groundedness": "pass",
+        "clarity": "pass",
+        "concision": "pass",
+        "actionability": "not_applicable",
+        "isolation": "pass"
+      },
+      "failure_causes": []
+    },
+    {
+      "case_id": "A3-WRONG-RESOURCE",
+      "agent": "A3",
+      "provider": "azure",
+      "source": {
+        "type": "stage3",
+        "scenario_id": "AZ-EXEC-07",
+        "change_id": "CHG-AZ-2007",
+        "evaluation_timestamp": "2026-10-27T00:00:00Z"
+      },
+      "expected_decision": "NON_COMPLIANT",
+      "actual_decision": "NON_COMPLIANT",
+      "expected_evidence_ids": [
+        "CHG-AZ-2007",
+        "az-event-0007"
+      ],
+      "available_evidence_ids": [
+        "AZ-EXEC-F9BFC852DDB7",
+        "CHG-AZ-2007",
+        "az-event-0007",
+        "20000000-0000-0000-0000-000000000007",
+        "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod04",
+        "az-corr-0007",
+        "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod03"
+      ],
+      "prompt_route": "execution_assurance",
+      "response": {
+        "summary": "Execution modified the wrong resource instead of the approved target.",
+        "reasons": [
+          "The observed resource did not match the documented operation and expected evidence is missing."
+        ],
+        "next_action": [
+          "Investigate the unexpected target before closing the change."
+        ],
+        "citations": [
+          "CHG-AZ-2007",
+          "az-event-0007"
+        ],
+        "llm_status": "completed"
+      },
+      "scores": {
+        "relevance": "pass",
+        "correctness": "pass",
+        "groundedness": "pass",
+        "clarity": "pass",
+        "concision": "pass",
+        "actionability": "pass",
+        "isolation": "pass"
+      },
+      "failure_causes": []
+    },
+    {
+      "case_id": "A3-ACTOR-DEVIATION",
+      "agent": "A3",
+      "provider": "azure",
+      "source": {
+        "type": "stage3",
+        "scenario_id": "AZ-EXEC-09",
+        "change_id": "CHG-AZ-2009",
+        "evaluation_timestamp": "2026-10-27T00:00:00Z"
+      },
+      "expected_decision": "NON_COMPLIANT",
+      "actual_decision": "NON_COMPLIANT",
+      "expected_evidence_ids": [
+        "CHG-AZ-2009",
+        "az-event-0009"
+      ],
+      "available_evidence_ids": [
+        "AZ-EXEC-262CEE38A1BD",
+        "CHG-AZ-2009",
+        "az-event-0009",
+        "20000000-0000-0000-0000-000000000012",
+        "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.KeyVault/vaults/kv-arca-prod01",
+        "az-corr-0009"
+      ],
+      "prompt_route": "execution_assurance",
+      "response": {
+        "summary": "The execution actor did not match the approved implementer.",
+        "reasons": [
+          "The activity evidence records a different principal for the operation."
+        ],
+        "next_action": [
+          "Confirm why the unexpected actor performed the change."
+        ],
+        "citations": [
+          "CHG-AZ-2009",
+          "az-event-0009"
+        ],
+        "llm_status": "completed"
+      },
+      "scores": {
+        "relevance": "pass",
+        "correctness": "pass",
+        "groundedness": "pass",
+        "clarity": "pass",
+        "concision": "pass",
+        "actionability": "pass",
+        "isolation": "pass"
+      },
+      "failure_causes": []
+    },
+    {
+      "case_id": "A4-DOCUMENTED",
+      "agent": "A4",
+      "provider": "azure",
+      "source": {
+        "type": "stage4",
+        "environment": "azure",
+        "window_days": 1,
+        "evaluation_timestamp": "2026-10-20T11:00:00Z"
+      },
+      "expected_decision": "NO_FINDINGS",
+      "actual_decision": "NO_FINDINGS",
+      "expected_evidence_ids": [
+        "CHG-AZ-2001",
+        "az-event-0001"
+      ],
+      "available_evidence_ids": [
+        "RISK-9A1C6EA5DA29",
+        "az-event-0001",
+        "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod01",
+        "20000000-0000-0000-0000-000000000001",
+        "az-corr-0001",
+        "CHG-AZ-2001"
+      ],
+      "prompt_route": "risk_investigation",
+      "response": {
+        "summary": "The storage update matched approved change CHG-AZ-2001.",
+        "reasons": [
+          "The actor, operation, resource, and approved window correlated with the available change record."
+        ],
+        "next_action": [],
+        "citations": [
+          "CHG-AZ-2001",
+          "az-event-0001"
+        ],
+        "llm_status": "completed"
+      },
+      "scores": {
+        "relevance": "pass",
+        "correctness": "pass",
+        "groundedness": "pass",
+        "clarity": "pass",
+        "concision": "pass",
+        "actionability": "not_applicable",
+        "isolation": "pass"
+      },
+      "failure_causes": []
+    },
+    {
+      "case_id": "A4-POTENTIALLY-UNDOCUMENTED",
+      "agent": "A4",
+      "provider": "azure",
+      "source": {
+        "type": "stage4",
+        "scenario_id": "UD-AZ-24H"
+      },
+      "expected_decision": "FINDINGS_IDENTIFIED",
+      "actual_decision": "FINDINGS_IDENTIFIED",
+      "expected_evidence_ids": [
+        "az-event-0021",
+        "az-event-0022",
+        "az-event-0023"
+      ],
+      "available_evidence_ids": [
+        "RISK-E006FB6DBA24",
+        "RISK-AZURE-az-event-0021-UNMATCHED",
+        "CHG-AZ-2005",
+        "az-event-0021",
+        "RISK-AZURE-az-event-0022-UNMATCHED",
+        "CHG-AZ-2004",
+        "az-event-0022",
+        "RISK-AZURE-az-event-0023-UNMATCHED",
+        "CHG-AZ-2007",
+        "az-event-0023",
+        "RISK-AZURE-az-event-0024-UNMATCHED",
+        "CHG-AZ-2008",
+        "az-event-0024",
+        "RISK-AZURE-az-event-0025-UNMATCHED",
+        "CHG-AZ-2009",
+        "az-event-0025",
+        "RISK-AZURE-az-event-0026-UNMATCHED",
+        "CHG-AZ-2010",
+        "az-event-0026",
+        "RISK-AZURE-az-event-0027-UNMATCHED",
+        "CHG-AZ-2024",
+        "az-event-0027",
+        "RISK-AZURE-az-event-0028-UNMATCHED",
+        "az-event-0028",
+        "RISK-AZURE-az-event-0029-UNMATCHED",
+        "CHG-AZ-2001",
+        "az-event-0029",
+        "RISK-AZURE-az-event-0030-UNMATCHED",
+        "CHG-AZ-2002",
+        "az-event-0030",
+        "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod06",
+        "20000000-0000-0000-0000-000000000005",
+        "az-undoc-0001",
+        "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod03",
+        "20000000-0000-0000-0000-000000000006",
+        "az-undoc-0002",
+        "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod06",
+        "20000000-0000-0000-0000-000000000007",
+        "az-undoc-0003",
+        "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Web/sites/app-arca-prod03",
+        "20000000-0000-0000-0000-000000000008",
+        "az-undoc-0004",
+        "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Web/sites/app-arca-prod06",
+        "20000000-0000-0000-0000-000000000009",
+        "az-undoc-0005",
+        "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.KeyVault/vaults/kv-arca-prod03",
+        "20000000-0000-0000-0000-000000000010",
+        "az-undoc-0006",
+        "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Sql/servers/databases/sql-arca-prod/db02",
+        "20000000-0000-0000-0000-000000000011",
+        "az-undoc-0007",
+        "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Network/networkSecurityGroups/nsg-arca-prod01",
+        "20000000-0000-0000-0000-000000000012",
+        "az-undoc-0008",
+        "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Network/networkSecurityGroups/nsg-arca-prod04",
+        "20000000-0000-0000-0000-000000000001",
+        "az-undoc-0009",
+        "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod03",
+        "20000000-0000-0000-0000-000000000002",
+        "az-undoc-0010"
+      ],
+      "prompt_route": "risk_investigation",
+      "response": {
+        "summary": "Administrative activity had no matching approved change in the available records.",
+        "reasons": [
+          "The unmatched evidence requires review but does not prove malicious or unauthorized activity."
+        ],
+        "next_action": [
+          "Review the actors, timestamps, and related change history."
+        ],
+        "citations": [
+          "az-event-0021",
+          "az-event-0022",
+          "az-event-0023"
+        ],
+        "llm_status": "completed"
+      },
+      "scores": {
+        "relevance": "pass",
+        "correctness": "pass",
+        "groundedness": "pass",
+        "clarity": "pass",
+        "concision": "pass",
+        "actionability": "pass",
+        "isolation": "pass"
+      },
+      "failure_causes": []
+    },
+    {
+      "case_id": "A5-RESOURCE",
+      "agent": "A5",
+      "provider": "azure",
+      "source": {
+        "type": "stage5",
+        "question": "Who modified starchprod04 during the last 48 hours?",
+        "evaluation_timestamp": "2026-10-26T08:20:00Z"
+      },
+      "expected_decision": "INSUFFICIENT_EVIDENCE",
+      "actual_decision": "INSUFFICIENT_EVIDENCE",
+      "expected_evidence_ids": [
+        "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod04"
+      ],
+      "available_evidence_ids": [
+        "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod04"
+      ],
+      "prompt_route": "agent5_synthesis",
+      "response": {
+        "summary": "Advisory AI explanation: No modification evidence was found for starchprod04 in the selected 48-hour window.",
+        "reasons": [],
+        "next_action": [],
+        "citations": [
+          "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod04"
+        ],
+        "llm_status": "completed"
+      },
+      "scores": {
+        "relevance": "pass",
+        "correctness": "pass",
+        "groundedness": "pass",
+        "clarity": "pass",
+        "concision": "pass",
+        "actionability": "not_applicable",
+        "isolation": "pass"
+      },
+      "failure_causes": []
+    },
+    {
+      "case_id": "A5-ACCESS",
+      "agent": "A5",
+      "provider": "azure",
+      "source": {
+        "type": "stage5",
+        "question": "I could access starchprod04 two days ago, but now I cannot. What changed?",
+        "evaluation_timestamp": "2026-10-26T08:20:00Z"
+      },
+      "expected_decision": "INSUFFICIENT_EVIDENCE",
+      "actual_decision": "INSUFFICIENT_EVIDENCE",
+      "expected_evidence_ids": [
+        "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod04"
+      ],
+      "available_evidence_ids": [
+        "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod04"
+      ],
+      "prompt_route": "agent5_synthesis",
+      "response": {
+        "summary": "Advisory AI explanation: The affected identity is required before ARCA can determine what changed. The resource is known, but access evidence must be correlated to a user or service principal. Provide the affected user or service-principal identity.",
+        "reasons": [],
+        "next_action": [
+          "Provide the affected user or service-principal identity."
+        ],
+        "citations": [
+          "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod04"
+        ],
+        "llm_status": "completed"
+      },
+      "scores": {
+        "relevance": "pass",
+        "correctness": "pass",
+        "groundedness": "pass",
+        "clarity": "pass",
+        "concision": "pass",
+        "actionability": "pass",
+        "isolation": "pass"
+      },
+      "failure_causes": []
+    },
+    {
+      "case_id": "A5-MULTITURN-FOLLOWUP",
+      "agent": "A5",
+      "provider": "azure",
+      "source": {
+        "type": "stage5_followup",
+        "initial_question": "What changed on starchprod01?",
+        "question": "Who performed those changes?",
+        "evaluation_timestamp": "2026-10-26T08:20:00Z"
+      },
+      "expected_decision": "COMPLIANT",
+      "actual_decision": "COMPLIANT",
+      "expected_evidence_ids": [
+        "az-event-0101",
+        "az-event-0011",
+        "az-event-0001"
+      ],
+      "available_evidence_ids": [
+        "az-event-0101",
+        "az-event-0011",
+        "az-event-0001"
+      ],
+      "prompt_route": "agent5_synthesis",
+      "response": {
+        "summary": "Advisory AI explanation: The recorded actors were engineer01@example.invalid and engineer11@example.invalid. Those identities appear on the selected resource's prior activity evidence.",
+        "reasons": [],
+        "next_action": [],
+        "citations": [
+          "az-event-0101",
+          "az-event-0011",
+          "az-event-0001"
+        ],
+        "llm_status": "completed"
+      },
+      "scores": {
+        "relevance": "pass",
+        "correctness": "pass",
+        "groundedness": "pass",
+        "clarity": "pass",
+        "concision": "pass",
+        "actionability": "not_applicable",
+        "isolation": "pass"
+      },
+      "failure_causes": []
+    }
+  ],
+  "limitations": [
+    "Scores measure controlled mocked responses, prompt routing, deterministic consistency, and evidence reference handling; they do not measure live model variability.",
+    "No LLM-as-judge or paid model request was used.",
+    "Human feedback is not included in verified labels or pass-rate calculations."
+  ]
+}
