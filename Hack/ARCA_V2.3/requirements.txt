@@ -1,0 +1,7 @@
+pydantic>=2,<3
+python-dotenv>=1,<2
+pytest>=8,<10
+fastapi>=0.115,<1
+httpx>=0.27,<1
+uvicorn>=0.30,<1
+aws-bedrock-token-generator>=1,<2

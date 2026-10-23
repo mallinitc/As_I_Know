@@ -1,0 +1,156 @@
+[
+  {
+    "case_id": "A1-VALID",
+    "agent": "A1",
+    "provider": "azure",
+    "source": {"type": "stage1", "scenario_id": "S1-VALID"},
+    "expected_decision": "VALID",
+    "expected_evidence_ids": ["S1-VALID"],
+    "expected_points": ["complete", "target resource", "rollback"],
+    "next_action_required": false,
+    "mock_response": {"summary": "The change request is complete for the configured validation checks.", "reasons": ["It identifies the target resource, implementation window, tasks, validation, and rollback plan."], "next_action": [], "citations": ["S1-VALID"]}
+  },
+  {
+    "case_id": "A1-INCOMPLETE",
+    "agent": "A1",
+    "provider": "azure",
+    "source": {"type": "stage1", "scenario_id": "S1-MISSING-IMPLEMENTER"},
+    "expected_decision": "INCOMPLETE",
+    "expected_evidence_ids": ["S1-MISSING-IMPLEMENTER"],
+    "expected_points": ["implementer", "missing"],
+    "next_action_required": true,
+    "mock_response": {"summary": "The change request is incomplete because the implementer is missing.", "reasons": ["The configured checks cannot identify who is authorized to perform the work."], "next_action": ["Add the approved implementer's identity before submission."], "citations": ["S1-MISSING-IMPLEMENTER"]}
+  },
+  {
+    "case_id": "A1-RISKY",
+    "agent": "A1",
+    "provider": "azure",
+    "source": {"type": "stage1", "scenario_id": "S1-REVERSED-WINDOW"},
+    "expected_decision": "INCONSISTENT",
+    "expected_evidence_ids": ["S1-REVERSED-WINDOW"],
+    "expected_points": ["end time", "start time"],
+    "next_action_required": true,
+    "mock_response": {"summary": "The change window is inconsistent because the end time precedes the start time.", "reasons": ["The supplied UTC timestamps cannot form a valid implementation window."], "next_action": ["Correct the end time so it is later than the start time."], "citations": ["S1-REVERSED-WINDOW"]}
+  },
+  {
+    "case_id": "A2-APPROPRIATE",
+    "agent": "A2",
+    "provider": "azure",
+    "source": {"type": "stage2", "scenario_id": "S2C-APPROPRIATE"},
+    "expected_decision": "APPROVE_RECOMMENDED",
+    "expected_evidence_ids": ["CHG-AZ-2021", "pim-az-0021", "pim-az-0022", "pim-az-0023"],
+    "expected_points": ["resource-scoped", "documented operations"],
+    "next_action_required": false,
+    "mock_response": {"summary": "The three resource-scoped requests appropriately cover the documented operations.", "reasons": ["The role catalog supports the required actions without subscription-wide scope."], "next_action": [], "citations": ["CHG-AZ-2021", "pim-az-0021", "pim-az-0022", "pim-az-0023"]}
+  },
+  {
+    "case_id": "A2-OVERPRIVILEGED",
+    "agent": "A2",
+    "provider": "azure",
+    "source": {"type": "stage2", "scenario_id": "S2C-OVERPRIVILEGED"},
+    "expected_decision": "OVERPRIVILEGED",
+    "expected_evidence_ids": ["CHG-AZ-2022", "pim-az-0024", "pim-az-0025"],
+    "expected_points": ["subscription", "contributor", "broader"],
+    "next_action_required": true,
+    "mock_response": {"summary": "Subscription-level Contributor access is broader than the documented operation requires.", "reasons": ["A separate resource-scoped request already covers the required work."], "next_action": ["Remove the redundant subscription-wide Contributor request."], "citations": ["CHG-AZ-2022", "pim-az-0024", "pim-az-0025"]}
+  },
+  {
+    "case_id": "A2-INSUFFICIENT",
+    "agent": "A2",
+    "provider": "azure",
+    "source": {"type": "stage2", "scenario_id": "S2C-INSUFFICIENT"},
+    "expected_decision": "INSUFFICIENT_ACCESS",
+    "expected_evidence_ids": ["CHG-AZ-2023", "pim-az-0026"],
+    "expected_points": ["does not cover", "documented operations"],
+    "next_action_required": true,
+    "mock_response": {"summary": "The requested role does not cover all documented operations.", "reasons": ["The deterministic permission evaluation identified missing operation coverage."], "next_action": ["Request only catalog-supported permissions that cover the missing operations."], "citations": ["CHG-AZ-2023", "pim-az-0026"]}
+  },
+  {
+    "case_id": "A3-COMPLIANT",
+    "agent": "A3",
+    "provider": "azure",
+    "source": {"type": "stage3", "scenario_id": "AZ-EXEC-01", "change_id": "CHG-AZ-2001", "evaluation_timestamp": "2026-10-27T00:00:00Z"},
+    "expected_decision": "COMPLIANT",
+    "expected_evidence_ids": ["CHG-AZ-2001", "az-event-0001"],
+    "expected_points": ["matched", "approved intent"],
+    "next_action_required": false,
+    "mock_response": {"summary": "The observed storage operation matched the approved intent.", "reasons": ["The operation, resource, actor, and window aligned with the approved change."], "next_action": [], "citations": ["CHG-AZ-2001", "az-event-0001"]}
+  },
+  {
+    "case_id": "A3-WRONG-RESOURCE",
+    "agent": "A3",
+    "provider": "azure",
+    "source": {"type": "stage3", "scenario_id": "AZ-EXEC-07", "change_id": "CHG-AZ-2007", "evaluation_timestamp": "2026-10-27T00:00:00Z"},
+    "expected_decision": "NON_COMPLIANT",
+    "expected_evidence_ids": ["CHG-AZ-2007", "az-event-0007"],
+    "expected_points": ["wrong resource", "approved target"],
+    "next_action_required": true,
+    "mock_response": {"summary": "Execution modified the wrong resource instead of the approved target.", "reasons": ["The observed resource did not match the documented operation and expected evidence is missing."], "next_action": ["Investigate the unexpected target before closing the change."], "citations": ["CHG-AZ-2007", "az-event-0007"]}
+  },
+  {
+    "case_id": "A3-ACTOR-DEVIATION",
+    "agent": "A3",
+    "provider": "azure",
+    "source": {"type": "stage3", "scenario_id": "AZ-EXEC-09", "change_id": "CHG-AZ-2009", "evaluation_timestamp": "2026-10-27T00:00:00Z"},
+    "expected_decision": "NON_COMPLIANT",
+    "expected_evidence_ids": ["CHG-AZ-2009", "az-event-0009"],
+    "expected_points": ["actor", "approved implementer"],
+    "next_action_required": true,
+    "mock_response": {"summary": "The execution actor did not match the approved implementer.", "reasons": ["The activity evidence records a different principal for the operation."], "next_action": ["Confirm why the unexpected actor performed the change."], "citations": ["CHG-AZ-2009", "az-event-0009"]}
+  },
+  {
+    "case_id": "A4-DOCUMENTED",
+    "agent": "A4",
+    "provider": "azure",
+    "source": {"type": "stage4", "environment": "azure", "window_days": 1, "evaluation_timestamp": "2026-10-20T11:00:00Z"},
+    "expected_decision": "NO_FINDINGS",
+    "expected_evidence_ids": ["CHG-AZ-2001", "az-event-0001"],
+    "expected_points": ["approved change", "storage"],
+    "next_action_required": false,
+    "mock_response": {"summary": "The storage update matched approved change CHG-AZ-2001.", "reasons": ["The actor, operation, resource, and approved window correlated with the available change record."], "next_action": [], "citations": ["CHG-AZ-2001", "az-event-0001"]}
+  },
+  {
+    "case_id": "A4-POTENTIALLY-UNDOCUMENTED",
+    "agent": "A4",
+    "provider": "azure",
+    "source": {"type": "stage4", "scenario_id": "UD-AZ-24H"},
+    "expected_decision": "FINDINGS_IDENTIFIED",
+    "expected_evidence_ids": ["az-event-0021", "az-event-0022", "az-event-0023"],
+    "expected_points": ["no matching approved change", "requires review"],
+    "next_action_required": true,
+    "mock_response": {"summary": "Administrative activity had no matching approved change in the available records.", "reasons": ["The unmatched evidence requires review but does not prove malicious or unauthorized activity."], "next_action": ["Review the actors, timestamps, and related change history."], "citations": ["az-event-0021", "az-event-0022", "az-event-0023"]}
+  },
+  {
+    "case_id": "A5-RESOURCE",
+    "agent": "A5",
+    "provider": "azure",
+    "source": {"type": "stage5", "question": "Who modified starchprod04 during the last 48 hours?", "evaluation_timestamp": "2026-10-26T08:20:00Z"},
+    "expected_decision": "INSUFFICIENT_EVIDENCE",
+    "expected_evidence_ids": ["/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod04"],
+    "expected_points": ["no modification evidence", "48-hour window"],
+    "next_action_required": false,
+    "mock_response": {"summary": "No modification evidence was found for starchprod04 in the selected 48-hour window.", "reasons": [], "next_action": [], "citations": ["/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod04"]}
+  },
+  {
+    "case_id": "A5-ACCESS",
+    "agent": "A5",
+    "provider": "azure",
+    "source": {"type": "stage5", "question": "I could access starchprod04 two days ago, but now I cannot. What changed?", "evaluation_timestamp": "2026-10-26T08:20:00Z"},
+    "expected_decision": "INSUFFICIENT_EVIDENCE",
+    "expected_evidence_ids": ["/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod04"],
+    "expected_points": ["identity", "required"],
+    "next_action_required": true,
+    "mock_response": {"summary": "The affected identity is required before ARCA can determine what changed.", "reasons": ["The resource is known, but access evidence must be correlated to a user or service principal."], "next_action": ["Provide the affected user or service-principal identity."], "citations": ["/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod04"]}
+  },
+  {
+    "case_id": "A5-MULTITURN-FOLLOWUP",
+    "agent": "A5",
+    "provider": "azure",
+    "source": {"type": "stage5_followup", "initial_question": "What changed on starchprod01?", "question": "Who performed those changes?", "evaluation_timestamp": "2026-10-26T08:20:00Z"},
+    "expected_decision": "COMPLIANT",
+    "expected_evidence_ids": ["az-event-0101", "az-event-0011", "az-event-0001"],
+    "expected_points": ["engineer01@example.invalid", "engineer11@example.invalid"],
+    "next_action_required": false,
+    "mock_response": {"summary": "The recorded actors were engineer01@example.invalid and engineer11@example.invalid.", "reasons": ["Those identities appear on the selected resource's prior activity evidence."], "next_action": [], "citations": ["az-event-0101", "az-event-0011", "az-event-0001"]}
+  }
+]

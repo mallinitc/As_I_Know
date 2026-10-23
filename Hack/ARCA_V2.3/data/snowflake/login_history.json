@@ -1,0 +1,182 @@
+[
+  {
+    "event_id": "SF-LOGIN-000",
+    "event_timestamp": "2026-11-01T07:00:00Z",
+    "user_name": "SFSECURITY01",
+    "client_ip": "192.0.2.10",
+    "reported_client_type": "SNOWSQL",
+    "is_success": true,
+    "error_code": null
+  },
+  {
+    "event_id": "SF-LOGIN-001",
+    "event_timestamp": "2026-11-02T07:00:00Z",
+    "user_name": "SFENGINEER01",
+    "client_ip": "192.0.2.11",
+    "reported_client_type": "SNOWSQL",
+    "is_success": true,
+    "error_code": null
+  },
+  {
+    "event_id": "SF-LOGIN-002",
+    "event_timestamp": "2026-11-03T07:00:00Z",
+    "user_name": "SFENGINEER02",
+    "client_ip": "192.0.2.12",
+    "reported_client_type": "SNOWSQL",
+    "is_success": true,
+    "error_code": null
+  },
+  {
+    "event_id": "SF-LOGIN-003",
+    "event_timestamp": "2026-11-04T07:00:00Z",
+    "user_name": "SFENGINEER03",
+    "client_ip": "192.0.2.13",
+    "reported_client_type": "SNOWSQL",
+    "is_success": true,
+    "error_code": null
+  },
+  {
+    "event_id": "SF-LOGIN-004",
+    "event_timestamp": "2026-11-05T07:00:00Z",
+    "user_name": "SFENGINEER05",
+    "client_ip": "192.0.2.14",
+    "reported_client_type": "SNOWSQL",
+    "is_success": true,
+    "error_code": null
+  },
+  {
+    "event_id": "SF-LOGIN-005",
+    "event_timestamp": "2026-11-06T07:00:00Z",
+    "user_name": "SFENGINEER08",
+    "client_ip": "192.0.2.15",
+    "reported_client_type": "SNOWSQL",
+    "is_success": true,
+    "error_code": null
+  },
+  {
+    "event_id": "SF-LOGIN-006",
+    "event_timestamp": "2026-11-07T07:00:00Z",
+    "user_name": "SFSECURITY02",
+    "client_ip": "192.0.2.16",
+    "reported_client_type": "SNOWSQL",
+    "is_success": true,
+    "error_code": null
+  },
+  {
+    "event_id": "SF-LOGIN-007",
+    "event_timestamp": "2026-11-08T07:00:00Z",
+    "user_name": "SFENGINEER12",
+    "client_ip": "192.0.2.17",
+    "reported_client_type": "SNOWSQL",
+    "is_success": false,
+    "error_code": "390100"
+  },
+  {
+    "event_id": "SF-LOGIN-008",
+    "event_timestamp": "2026-11-09T07:00:00Z",
+    "user_name": "SFSECURITY05",
+    "client_ip": "192.0.2.18",
+    "reported_client_type": "SNOWSQL",
+    "is_success": true,
+    "error_code": null
+  },
+  {
+    "event_id": "SF-LOGIN-009",
+    "event_timestamp": "2026-11-10T07:00:00Z",
+    "user_name": "SFENGINEER14",
+    "client_ip": "192.0.2.19",
+    "reported_client_type": "SNOWSQL",
+    "is_success": true,
+    "error_code": null
+  },
+  {
+    "event_id": "SF-LOGIN-010",
+    "event_timestamp": "2026-11-11T07:00:00Z",
+    "user_name": "SFENGINEER16",
+    "client_ip": "192.0.2.20",
+    "reported_client_type": "SNOWSQL",
+    "is_success": true,
+    "error_code": null
+  },
+  {
+    "event_id": "SF-LOGIN-011",
+    "event_timestamp": "2026-11-12T07:00:00Z",
+    "user_name": "SFENGINEER19",
+    "client_ip": "192.0.2.21",
+    "reported_client_type": "SNOWSQL",
+    "is_success": true,
+    "error_code": null
+  },
+  {
+    "event_id": "SF-LOGIN-012",
+    "event_timestamp": "2026-11-13T07:00:00Z",
+    "user_name": "SFENGINEER22",
+    "client_ip": "192.0.2.22",
+    "reported_client_type": "SNOWSQL",
+    "is_success": true,
+    "error_code": null
+  },
+  {
+    "event_id": "SF-LOGIN-013",
+    "event_timestamp": "2026-11-14T07:00:00Z",
+    "user_name": "SFROGUE01",
+    "client_ip": "192.0.2.23",
+    "reported_client_type": "SNOWSQL",
+    "is_success": false,
+    "error_code": "390100"
+  },
+  {
+    "event_id": "SF-LOGIN-014",
+    "event_timestamp": "2026-11-15T07:00:00Z",
+    "user_name": "SFROGUE02",
+    "client_ip": "192.0.2.24",
+    "reported_client_type": "SNOWSQL",
+    "is_success": true,
+    "error_code": null
+  },
+  {
+    "event_id": "SF-LOGIN-015",
+    "event_timestamp": "2026-11-16T07:00:00Z",
+    "user_name": "SFROGUE03",
+    "client_ip": "192.0.2.25",
+    "reported_client_type": "SNOWSQL",
+    "is_success": true,
+    "error_code": null
+  },
+  {
+    "event_id": "SF-LOGIN-016",
+    "event_timestamp": "2026-11-17T07:00:00Z",
+    "user_name": "SFSECURITY01",
+    "client_ip": "192.0.2.26",
+    "reported_client_type": "SNOWSQL",
+    "is_success": true,
+    "error_code": null
+  },
+  {
+    "event_id": "SF-LOGIN-017",
+    "event_timestamp": "2026-11-18T07:00:00Z",
+    "user_name": "SFENGINEER01",
+    "client_ip": "192.0.2.27",
+    "reported_client_type": "SNOWSQL",
+    "is_success": true,
+    "error_code": null
+  },
+  {
+    "event_id": "SF-LOGIN-018",
+    "event_timestamp": "2026-11-19T07:00:00Z",
+    "user_name": "SFENGINEER02",
+    "client_ip": "192.0.2.28",
+    "reported_client_type": "SNOWSQL",
+    "is_success": true,
+    "error_code": null
+  },
+  {
+    "event_id": "SF-LOGIN-019",
+    "event_timestamp": "2026-11-20T07:00:00Z",
+    "user_name": "SFENGINEER03",
+    "client_ip": "192.0.2.29",
+    "reported_client_type": "SNOWSQL",
+    "is_success": true,
+    "error_code": null
+  }
+]

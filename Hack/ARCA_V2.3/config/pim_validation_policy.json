@@ -1,0 +1,7 @@
+{
+  "window_tolerance_minutes": 0,
+  "maximum_scope_levels_above_resource": 0,
+  "escalate_upn_only_match": true,
+  "broad_roles": ["Owner", "Contributor", "User Access Administrator"],
+  "approved_change_states": ["approved", "scheduled", "implement"]
+}

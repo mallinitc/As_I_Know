@@ -1,0 +1,148 @@
+ARCA V2 BACKUP MANIFEST
+
+Backup creation timestamp (local): 2026-10-22T03:46:47+05:30
+Backup verification timestamp (UTC): 2026-10-21T22:18:02Z
+Snapshot lineage: ARCA V2 working application
+Repository location: <path-to-ARCA_V2.2>
+
+INCLUDED CONTENT
+
+Native backend source: backend/
+Next.js frontend source and public assets: frontend/src/, frontend/public/
+Provider configuration and policies: config/
+Synthetic evidence and scenario catalogs: data/
+Runtime logs and generated outputs are intentionally excluded from Git-ready snapshots.
+Backend tests and fixtures: tests/
+Browser and startup scripts: scripts/
+Documentation and demo screenshots: docs/
+Root guides, dependency manifests, templates, and verified-case catalog
+
+The backup contains all AWS, Azure, Snowflake, investigation, and shared demo
+datasets present in the source. Historical log/output directories were not
+discarded. Empty provider directories represented by .gitkeep were retained.
+
+EXCLUSIONS
+
+Dependency environments: .venv/, frontend/node_modules/
+Build/cache directories: frontend/.next/, .pytest_cache/, .mypy_cache/,
+.ruff_cache/, __pycache__/, and .browser-profile-v215d/v215e/v216/v216b/
+Generated files: *.pyc, *.pyo, *.tmp, *.temp, frontend/tsconfig.tsbuildinfo
+Local secret files: .env, .env.local, .env.development.local,
+.env.production.local, and .env.test.local
+Credentials: recognizable API keys, bearer tokens, private keys, api.txt,
+credential files, and machine-specific secret stores
+
+Tracked templates .env.example and frontend/.env.example were intentionally
+included because they contain configuration names/defaults, not secret values.
+
+INVENTORY
+
+Intended source files: 242
+Copied backup files: 242
+Total copied size: 3479333 bytes
+Missing files: 0
+Unexpected extra files: 0
+Content mismatches: 0
+
+The API was already running during the copy and held logs/api/backend.log open.
+That zero-byte file was copied through a read-shared snapshot and its source and
+backup SHA-256 values matched at 2026-10-21T22:18:02Z. No service was stopped.
+
+CATEGORY SHA-256 AGGREGATES
+
+Each aggregate hashes sorted lines of "relative-path|file-SHA-256". These
+digests cover the source snapshot before this manifest's final text update.
+
+backend/ (48 files)
+CA81F2F7467ECC296DA6ECC55AD5E2B4121BEE1222A7E767A71EE656D0B3AD3F
+
+frontend/src/ (52 files)
+2EA92B76982CF5052433496179D599179E38522E9655B7B2F2B9DEDA61AEA06F
+
+data/ (32 files)
+64DAA6A6782F218C2354A6391B56742C61A633ADBFB12B26BF14AAB29A89BFEC
+
+config/ (7 files)
+8D84CDE8551C863E267D947B81741FEAA5BEAB54D0E4FD1FCA3E94874DDBD7DB
+
+scripts/ (3 files)
+30B6CFA4BA7A08106BDC9D58F9153D36FC27B25C8DCF7335BFD580E491A4522E
+
+tests/ (17 files)
+6709FB3C82C09C999EDC2A538AD271FA7375093548CF9F25B2B090178D90D75F
+
+CRITICAL FILE SHA-256 CHECKSUMS
+
+backend/main.py
+FCE318750222361B511FC6AA03D5F16F1AB36DDD42A866D38CBF84BA73B43900
+
+backend/config.py
+C30F429D6A80A123C225E180F7B148FCA5DE4ED2D369954F40767973A996E219
+
+backend/llm/providers.py
+7070FC730E4D2BDA22124A27264D8C075950FA903D62EB5EFF6516FB1022205D
+
+backend/services/ask_arca.py
+4A5D2DB83D3D635F2FFCAAEC58F3CCC238FE020E5BF0AD4DC2A0484BD306A498
+
+requirements.txt
+6310E15A4BA58AAC3B2A91B788BDE077EC30B9D87208F5B5EB65532DADDD6F56
+
+requirements.lock.txt
+14A519F641C9B8A1FDA928F828598E2E0F0C47CF73E17F91F715C52B7ABCB349
+
+frontend/package.json
+75CBF4F658E231BDADE335B24C41EDA7446FB643D8C5592E737DC2158972FE64
+
+frontend/package-lock.json
+2B8BA0D0D6B908D6066C985CDD92954457E8A7600FCC7BF395E2BA6C04C686F1
+
+data/demo_catalog.json
+B74DB87C40FB58B3A3DADF9106009008D1DD5EA687CC6CF59B6FFEA24E01282D
+
+data/aws/changes.json
+75C541978E74EC7522590AE46A1E2E45736FBFB7C22A8E1AC73B05A894861D25
+
+data/azure/servicenow_changes.json
+6EA0B146777F47360920714727B442BA693F42D4F3CD1ED6DD4F62F604517219
+
+data/snowflake/changes.json
+1E98836A1BC8614324E4AA25480409993B5C27DBCA52BCCC5252ADD74B38F80C
+
+.env.example
+EF738F518EC73F6E4B837C9E2907EEC34C88BC8D653340415647E2020AE25735
+
+frontend/.env.example
+1E94FA887CD3AA784BA508AA06A3E4B7D53BED66B2A6F1C3742F5D38D58BC9CE
+
+SECRET-SAFETY VERIFICATION
+
+Populated local .env files: 0
+Credential-named files: 0
+High-confidence API-key/token/private-key pattern matches: 0
+No secret value was printed or recorded during verification.
+
+BACKUP SMOKE TEST
+
+Python syntax: 63 backend/test/script modules compiled in memory; passed.
+Backend tests: 132 passed in 4.38 seconds from the backup; paid/cloud calls
+disabled; pytest cache and bytecode generation disabled.
+API import/health: backend.main imported and TestClient returned HTTP 200 with
+status healthy; passed.
+Datasets: all 31 JSON files parsed successfully.
+Dependency health: pip check reported no broken requirements.
+Frontend dependency lock: npm ci --dry-run --ignore-scripts --offline resolved
+400 packages from package-lock.json; passed and created no node_modules folder.
+Entry points/manifests: six required backend/frontend/lock files were present.
+
+Port 8000 was already occupied by the existing local V2 API (PID 28120), so no
+additional server was launched. The dependency-free backup intentionally has
+no node_modules; a full frontend build was not duplicated inside it. The source
+package-lock had already passed an installed-environment npm ci dry run.
+
+VERIFICATION STATUS
+
+All intended source-relative paths were present in the backup. File lengths and
+SHA-256 checksums matched. Python syntax, backend tests, dependency health,
+frontend lock consistency, expected entry points, and dataset presence are
+recorded by the post-copy smoke test. Final status: VERIFIED.

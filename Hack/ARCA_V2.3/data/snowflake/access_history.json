@@ -1,0 +1,832 @@
+[
+  {
+    "query_id": "SF-QRY-001",
+    "query_start_time": "2026-11-07T10:10:00Z",
+    "user_name": "SFSECURITY01",
+    "direct_objects_accessed": [],
+    "base_objects_accessed": [],
+    "objects_modified": [
+      {
+        "objectName": "ROLE:FINANCE_REPORTING_R_RL->ROLE:BI_DASHBOARD_APP_FR",
+        "objectDomain": "ROLE"
+      }
+    ],
+    "object_modified_by_ddl": true
+  },
+  {
+    "query_id": "SF-QRY-002",
+    "query_start_time": "2026-11-07T11:10:00Z",
+    "user_name": "SFSECURITY01",
+    "direct_objects_accessed": [],
+    "base_objects_accessed": [],
+    "objects_modified": [
+      {
+        "objectName": "ROLE:FINANCE_REPORTING_R_RL->ROLE:BI_DASHBOARD_APP_FR",
+        "objectDomain": "ROLE"
+      }
+    ],
+    "object_modified_by_ddl": true
+  },
+  {
+    "query_id": "SF-QRY-003",
+    "query_start_time": "2026-11-07T10:12:00Z",
+    "user_name": "SFROGUE01",
+    "direct_objects_accessed": [],
+    "base_objects_accessed": [],
+    "objects_modified": [
+      {
+        "objectName": "ROLE:FINANCE_REPORTING_R_RL->ROLE:BI_DASHBOARD_APP_FR",
+        "objectDomain": "ROLE"
+      }
+    ],
+    "object_modified_by_ddl": true
+  },
+  {
+    "query_id": "SF-QRY-004",
+    "query_start_time": "2026-11-07T10:14:00Z",
+    "user_name": "SFSECURITY01",
+    "direct_objects_accessed": [],
+    "base_objects_accessed": [],
+    "objects_modified": [
+      {
+        "objectName": "ROLE:FINANCE_REPORTING_R_RL->ROLE:BI_DASHBOARD_APP_FR",
+        "objectDomain": "ROLE"
+      }
+    ],
+    "object_modified_by_ddl": true
+  },
+  {
+    "query_id": "SF-QRY-005",
+    "query_start_time": "2026-11-07T10:16:00Z",
+    "user_name": "SFSECURITY01",
+    "direct_objects_accessed": [],
+    "base_objects_accessed": [],
+    "objects_modified": [
+      {
+        "objectName": "ROLE:ACCOUNTADMIN->USER:SFROGUE01",
+        "objectDomain": "ROLE"
+      }
+    ],
+    "object_modified_by_ddl": true
+  },
+  {
+    "query_id": "SF-QRY-006",
+    "query_start_time": "2026-11-08T10:20:00Z",
+    "user_name": "SFENGINEER08",
+    "direct_objects_accessed": [],
+    "base_objects_accessed": [],
+    "objects_modified": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.OTHER_TABLE",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "object_modified_by_ddl": true
+  },
+  {
+    "query_id": "SF-QRY-007",
+    "query_start_time": "2026-11-22T10:20:00Z",
+    "user_name": "SFENGINEER22",
+    "direct_objects_accessed": [],
+    "base_objects_accessed": [],
+    "objects_modified": [
+      {
+        "objectName": "UNAPPROVED_DB",
+        "objectDomain": "DATABASE"
+      }
+    ],
+    "object_modified_by_ddl": true
+  },
+  {
+    "query_id": "SF-QRY-008",
+    "query_start_time": "2026-11-08T10:25:00Z",
+    "user_name": "SFENGINEER08",
+    "direct_objects_accessed": [],
+    "base_objects_accessed": [],
+    "objects_modified": [],
+    "object_modified_by_ddl": false
+  },
+  {
+    "query_id": "SF-QRY-009",
+    "query_start_time": "2026-11-20T12:05:00Z",
+    "user_name": "SFROGUE01",
+    "direct_objects_accessed": [],
+    "base_objects_accessed": [],
+    "objects_modified": [
+      {
+        "objectName": "ROLE:FINANCE_REPORTING_R_RL->ROLE:BI_DASHBOARD_APP_FR",
+        "objectDomain": "ROLE"
+      }
+    ],
+    "object_modified_by_ddl": true
+  },
+  {
+    "query_id": "SF-QRY-010",
+    "query_start_time": "2026-11-12T10:20:00Z",
+    "user_name": "SFENGINEER12",
+    "direct_objects_accessed": [],
+    "base_objects_accessed": [],
+    "objects_modified": [
+      {
+        "objectName": "MARKETING_DB.REPORTING",
+        "objectDomain": "SCHEMA"
+      }
+    ],
+    "object_modified_by_ddl": true
+  },
+  {
+    "query_id": "SF-QRY-011",
+    "query_start_time": "2026-11-09T10:10:00Z",
+    "user_name": "SFSECURITY02",
+    "direct_objects_accessed": [],
+    "base_objects_accessed": [],
+    "objects_modified": [
+      {
+        "objectName": "USER:SVC_REPORTING",
+        "objectDomain": "USER"
+      }
+    ],
+    "object_modified_by_ddl": true
+  },
+  {
+    "query_id": "SF-QRY-012",
+    "query_start_time": "2026-11-09T10:15:00Z",
+    "user_name": "SFSECURITY02",
+    "direct_objects_accessed": [],
+    "base_objects_accessed": [],
+    "objects_modified": [
+      {
+        "objectName": "USER:UNAPPROVED_SUPPORT",
+        "objectDomain": "USER"
+      }
+    ],
+    "object_modified_by_ddl": true
+  },
+  {
+    "query_id": "SF-QRY-013",
+    "query_start_time": "2026-11-13T10:20:00Z",
+    "user_name": "SFSECURITY05",
+    "direct_objects_accessed": [],
+    "base_objects_accessed": [],
+    "objects_modified": [
+      {
+        "objectName": "FINANCE_DB.STAGING.TRANSACTIONS_RAW",
+        "objectDomain": "INSERT"
+      }
+    ],
+    "object_modified_by_ddl": true
+  },
+  {
+    "query_id": "SF-QRY-014",
+    "query_start_time": "2026-11-13T10:25:00Z",
+    "user_name": "SFSECURITY05",
+    "direct_objects_accessed": [],
+    "base_objects_accessed": [],
+    "objects_modified": [
+      {
+        "objectName": "ROLE:ACCOUNTADMIN->USER:SFROGUE01",
+        "objectDomain": "ROLE"
+      }
+    ],
+    "object_modified_by_ddl": true
+  },
+  {
+    "query_id": "SF-QRY-015",
+    "query_start_time": "2026-11-07T12:00:00Z",
+    "user_name": "SFSECURITY01",
+    "direct_objects_accessed": [],
+    "base_objects_accessed": [],
+    "objects_modified": [
+      {
+        "objectName": "ROLE:FINANCE_REPORTING_R_RL->ROLE:BI_DASHBOARD_APP_FR",
+        "objectDomain": "ROLE"
+      }
+    ],
+    "object_modified_by_ddl": true
+  },
+  {
+    "query_id": "SF-QRY-016",
+    "query_start_time": "2026-11-14T12:00:00Z",
+    "user_name": "SFENGINEER14",
+    "direct_objects_accessed": [],
+    "base_objects_accessed": [],
+    "objects_modified": [
+      {
+        "objectName": "REPORTING_WH",
+        "objectDomain": "WAREHOUSE"
+      }
+    ],
+    "object_modified_by_ddl": true
+  },
+  {
+    "query_id": "SF-QRY-018",
+    "query_start_time": "2026-11-20T12:00:00Z",
+    "user_name": "SFROGUE01",
+    "direct_objects_accessed": [],
+    "base_objects_accessed": [],
+    "objects_modified": [
+      {
+        "objectName": "USER:UNAPPROVED_ADMIN",
+        "objectDomain": "USER"
+      }
+    ],
+    "object_modified_by_ddl": true
+  },
+  {
+    "query_id": "SF-QRY-019",
+    "query_start_time": "2026-11-20T12:10:00Z",
+    "user_name": "SFROGUE01",
+    "direct_objects_accessed": [],
+    "base_objects_accessed": [],
+    "objects_modified": [
+      {
+        "objectName": "ROLE:ACCOUNTADMIN->USER:SFROGUE01",
+        "objectDomain": "ROLE"
+      }
+    ],
+    "object_modified_by_ddl": true
+  },
+  {
+    "query_id": "SF-QRY-020",
+    "query_start_time": "2026-11-20T12:20:00Z",
+    "user_name": "SFROGUE01",
+    "direct_objects_accessed": [],
+    "base_objects_accessed": [],
+    "objects_modified": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.TRANSACTIONS",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "object_modified_by_ddl": true
+  },
+  {
+    "query_id": "SF-QRY-021",
+    "query_start_time": "2026-11-07T10:18:00Z",
+    "user_name": "SFSECURITY01",
+    "direct_objects_accessed": [],
+    "base_objects_accessed": [],
+    "objects_modified": [
+      {
+        "objectName": "ROLE:FINANCE_REPORTING_R_RL->ROLE:BI_DASHBOARD_APP_FR",
+        "objectDomain": "ROLE"
+      }
+    ],
+    "object_modified_by_ddl": true
+  },
+  {
+    "query_id": "SF-QRY-022",
+    "query_start_time": "2026-11-09T10:18:00Z",
+    "user_name": "SFSECURITY01",
+    "direct_objects_accessed": [],
+    "base_objects_accessed": [],
+    "objects_modified": [
+      {
+        "objectName": "USER:SVC_REPORTING",
+        "objectDomain": "USER"
+      }
+    ],
+    "object_modified_by_ddl": true
+  },
+  {
+    "query_id": "SF-QRY-024",
+    "query_start_time": "2026-10-29T08:00:00Z",
+    "user_name": "SFSECURITY05",
+    "direct_objects_accessed": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.TRANSACTIONS",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "base_objects_accessed": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.TRANSACTIONS",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "objects_modified": [],
+    "object_modified_by_ddl": false
+  },
+  {
+    "query_id": "SF-QRY-025",
+    "query_start_time": "2026-10-29T12:00:00Z",
+    "user_name": "SFENGINEER14",
+    "direct_objects_accessed": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.TRANSACTIONS",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "base_objects_accessed": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.TRANSACTIONS",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "objects_modified": [],
+    "object_modified_by_ddl": false
+  },
+  {
+    "query_id": "SF-QRY-026",
+    "query_start_time": "2026-10-29T16:00:00Z",
+    "user_name": "SFENGINEER16",
+    "direct_objects_accessed": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.TRANSACTIONS",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "base_objects_accessed": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.TRANSACTIONS",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "objects_modified": [],
+    "object_modified_by_ddl": false
+  },
+  {
+    "query_id": "SF-QRY-027",
+    "query_start_time": "2026-10-29T20:00:00Z",
+    "user_name": "SFENGINEER19",
+    "direct_objects_accessed": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.TRANSACTIONS",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "base_objects_accessed": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.TRANSACTIONS",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "objects_modified": [],
+    "object_modified_by_ddl": false
+  },
+  {
+    "query_id": "SF-QRY-028",
+    "query_start_time": "2026-10-30T00:00:00Z",
+    "user_name": "SFENGINEER22",
+    "direct_objects_accessed": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.TRANSACTIONS",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "base_objects_accessed": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.TRANSACTIONS",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "objects_modified": [],
+    "object_modified_by_ddl": false
+  },
+  {
+    "query_id": "SF-QRY-029",
+    "query_start_time": "2026-10-30T04:00:00Z",
+    "user_name": "SFROGUE01",
+    "direct_objects_accessed": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.TRANSACTIONS",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "base_objects_accessed": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.TRANSACTIONS",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "objects_modified": [],
+    "object_modified_by_ddl": false
+  },
+  {
+    "query_id": "SF-QRY-030",
+    "query_start_time": "2026-10-30T08:00:00Z",
+    "user_name": "SFROGUE02",
+    "direct_objects_accessed": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.TRANSACTIONS",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "base_objects_accessed": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.TRANSACTIONS",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "objects_modified": [],
+    "object_modified_by_ddl": false
+  },
+  {
+    "query_id": "SF-QRY-031",
+    "query_start_time": "2026-10-30T12:00:00Z",
+    "user_name": "SFROGUE03",
+    "direct_objects_accessed": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.TRANSACTIONS",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "base_objects_accessed": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.TRANSACTIONS",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "objects_modified": [],
+    "object_modified_by_ddl": false
+  },
+  {
+    "query_id": "SF-QRY-032",
+    "query_start_time": "2026-10-30T16:00:00Z",
+    "user_name": "SFSECURITY01",
+    "direct_objects_accessed": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.TRANSACTIONS",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "base_objects_accessed": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.TRANSACTIONS",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "objects_modified": [],
+    "object_modified_by_ddl": false
+  },
+  {
+    "query_id": "SF-QRY-033",
+    "query_start_time": "2026-10-30T20:00:00Z",
+    "user_name": "SFENGINEER01",
+    "direct_objects_accessed": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.TRANSACTIONS",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "base_objects_accessed": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.TRANSACTIONS",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "objects_modified": [],
+    "object_modified_by_ddl": false
+  },
+  {
+    "query_id": "SF-QRY-034",
+    "query_start_time": "2026-10-31T00:00:00Z",
+    "user_name": "SFENGINEER02",
+    "direct_objects_accessed": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.TRANSACTIONS",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "base_objects_accessed": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.TRANSACTIONS",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "objects_modified": [],
+    "object_modified_by_ddl": false
+  },
+  {
+    "query_id": "SF-QRY-035",
+    "query_start_time": "2026-10-31T04:00:00Z",
+    "user_name": "SFENGINEER03",
+    "direct_objects_accessed": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.TRANSACTIONS",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "base_objects_accessed": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.TRANSACTIONS",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "objects_modified": [],
+    "object_modified_by_ddl": false
+  },
+  {
+    "query_id": "SF-QRY-036",
+    "query_start_time": "2026-10-31T08:00:00Z",
+    "user_name": "SFENGINEER05",
+    "direct_objects_accessed": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.TRANSACTIONS",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "base_objects_accessed": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.TRANSACTIONS",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "objects_modified": [],
+    "object_modified_by_ddl": false
+  },
+  {
+    "query_id": "SF-QRY-037",
+    "query_start_time": "2026-10-31T12:00:00Z",
+    "user_name": "SFENGINEER08",
+    "direct_objects_accessed": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.TRANSACTIONS",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "base_objects_accessed": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.TRANSACTIONS",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "objects_modified": [],
+    "object_modified_by_ddl": false
+  },
+  {
+    "query_id": "SF-QRY-038",
+    "query_start_time": "2026-10-31T16:00:00Z",
+    "user_name": "SFSECURITY02",
+    "direct_objects_accessed": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.TRANSACTIONS",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "base_objects_accessed": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.TRANSACTIONS",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "objects_modified": [],
+    "object_modified_by_ddl": false
+  },
+  {
+    "query_id": "SF-QRY-039",
+    "query_start_time": "2026-10-31T20:00:00Z",
+    "user_name": "SFENGINEER12",
+    "direct_objects_accessed": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.TRANSACTIONS",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "base_objects_accessed": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.TRANSACTIONS",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "objects_modified": [],
+    "object_modified_by_ddl": false
+  },
+  {
+    "query_id": "SF-QRY-040",
+    "query_start_time": "2026-11-01T00:00:00Z",
+    "user_name": "SFSECURITY05",
+    "direct_objects_accessed": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.TRANSACTIONS",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "base_objects_accessed": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.TRANSACTIONS",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "objects_modified": [],
+    "object_modified_by_ddl": false
+  },
+  {
+    "query_id": "SF-QRY-041",
+    "query_start_time": "2026-11-01T04:00:00Z",
+    "user_name": "SFENGINEER14",
+    "direct_objects_accessed": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.TRANSACTIONS",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "base_objects_accessed": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.TRANSACTIONS",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "objects_modified": [],
+    "object_modified_by_ddl": false
+  },
+  {
+    "query_id": "SF-QRY-042",
+    "query_start_time": "2026-11-01T08:00:00Z",
+    "user_name": "SFENGINEER16",
+    "direct_objects_accessed": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.TRANSACTIONS",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "base_objects_accessed": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.TRANSACTIONS",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "objects_modified": [],
+    "object_modified_by_ddl": false
+  },
+  {
+    "query_id": "SF-QRY-043",
+    "query_start_time": "2026-11-01T12:00:00Z",
+    "user_name": "SFENGINEER19",
+    "direct_objects_accessed": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.TRANSACTIONS",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "base_objects_accessed": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.TRANSACTIONS",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "objects_modified": [],
+    "object_modified_by_ddl": false
+  },
+  {
+    "query_id": "SF-QRY-044",
+    "query_start_time": "2026-11-01T16:00:00Z",
+    "user_name": "SFENGINEER22",
+    "direct_objects_accessed": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.TRANSACTIONS",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "base_objects_accessed": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.TRANSACTIONS",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "objects_modified": [],
+    "object_modified_by_ddl": false
+  },
+  {
+    "query_id": "SF-QRY-045",
+    "query_start_time": "2026-11-01T20:00:00Z",
+    "user_name": "SFROGUE01",
+    "direct_objects_accessed": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.TRANSACTIONS",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "base_objects_accessed": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.TRANSACTIONS",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "objects_modified": [],
+    "object_modified_by_ddl": false
+  },
+  {
+    "query_id": "SF-QRY-046",
+    "query_start_time": "2026-11-02T00:00:00Z",
+    "user_name": "SFROGUE02",
+    "direct_objects_accessed": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.TRANSACTIONS",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "base_objects_accessed": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.TRANSACTIONS",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "objects_modified": [],
+    "object_modified_by_ddl": false
+  },
+  {
+    "query_id": "SF-QRY-047",
+    "query_start_time": "2026-11-02T04:00:00Z",
+    "user_name": "SFROGUE03",
+    "direct_objects_accessed": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.TRANSACTIONS",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "base_objects_accessed": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.TRANSACTIONS",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "objects_modified": [],
+    "object_modified_by_ddl": false
+  },
+  {
+    "query_id": "SF-QRY-048",
+    "query_start_time": "2026-11-02T08:00:00Z",
+    "user_name": "SFSECURITY01",
+    "direct_objects_accessed": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.TRANSACTIONS",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "base_objects_accessed": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.TRANSACTIONS",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "objects_modified": [],
+    "object_modified_by_ddl": false
+  },
+  {
+    "query_id": "SF-QRY-049",
+    "query_start_time": "2026-11-02T12:00:00Z",
+    "user_name": "SFENGINEER01",
+    "direct_objects_accessed": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.TRANSACTIONS",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "base_objects_accessed": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.TRANSACTIONS",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "objects_modified": [],
+    "object_modified_by_ddl": false
+  },
+  {
+    "query_id": "SF-QRY-050",
+    "query_start_time": "2026-11-02T16:00:00Z",
+    "user_name": "SFENGINEER02",
+    "direct_objects_accessed": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.TRANSACTIONS",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "base_objects_accessed": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.TRANSACTIONS",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "objects_modified": [],
+    "object_modified_by_ddl": false
+  },
+  {
+    "query_id": "SF-QRY-051",
+    "query_start_time": "2026-11-02T20:00:00Z",
+    "user_name": "SFENGINEER03",
+    "direct_objects_accessed": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.TRANSACTIONS",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "base_objects_accessed": [
+      {
+        "objectName": "FINANCE_DB.REPORTING.TRANSACTIONS",
+        "objectDomain": "TABLE"
+      }
+    ],
+    "objects_modified": [],
+    "object_modified_by_ddl": false
+  },
+  {
+    "query_id": "SF-QRY-099",
+    "query_start_time": "2026-11-11T00:00:00Z",
+    "user_name": "SFENGINEER05",
+    "direct_objects_accessed": [],
+    "base_objects_accessed": [],
+    "objects_modified": [],
+    "object_modified_by_ddl": false
+  }
+]

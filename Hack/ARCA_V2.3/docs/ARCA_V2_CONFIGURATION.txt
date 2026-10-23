@@ -1,0 +1,190 @@
+ARCA V2 CONFIGURATION INVENTORY
+Verified: 2026-10-22
+
+1. Configuration loading
+
+The FastAPI entry point is backend/main.py. It loads ARCA_V2/.env with
+python-dotenv and override=False, so an already-defined process environment
+variable takes precedence. The tracked template is .env.example. Never commit
+or copy the populated .env file.
+
+The Next.js client reads public variables at build/dev-server startup. The
+tracked frontend template is frontend/.env.example. A developer may copy it to
+frontend/.env.local; this local file must not contain server credentials.
+
+2. Backend environment variables
+
+No environment variable is required for deterministic, synthetic-data mode.
+The application defaults shown below are implemented in backend/config.py.
+
+ARCA_API_CORS_ORIGINS
+  Optional. Comma-separated explicit origins. Default:
+  http://localhost:3000,http://127.0.0.1:3000. Wildcards are rejected.
+
+ARCA_LOG_DIR
+  Optional. Default: ARCA_V2/logs. Relative paths must remain under ARCA_V2;
+  absolute paths are accepted. API logs are written below <log dir>/api/.
+
+ARCA_LLM_ENABLED
+  Optional boolean. Default false. Accepted true values: 1, true, yes, on.
+
+ARCA_LLM_PROVIDER
+  Required only when LLM assistance is enabled. Implemented values are
+  openai, azure_openai, openai_compatible, and bedrock.
+
+ARCA_LLM_ENDPOINT
+  Required for azure_openai and openai_compatible. For openai, an empty value
+  defaults to https://api.openai.com. For bedrock, an empty value defaults to
+  https://bedrock-runtime.<region>.amazonaws.com. The URL must use HTTPS.
+
+ARCA_LLM_MODEL
+  Required only for LLM assistance. This is the model/deployment identifier;
+  the verified local configuration uses gpt-5-mini. The bedrock provider is
+  restricted to Amazon Nova Lite: amazon.nova-lite-v1:0 (the default when
+  empty) or a geo inference profile such as us.amazon.nova-lite-v1:0.
+
+ARCA_LLM_API_KEY
+  Required for openai, azure_openai, and openai_compatible. Not used by
+  bedrock. Supply securely in the untracked .env or process environment.
+  Never place a real key in a template or frontend file.
+
+ARCA_LLM_AWS_REGION
+  Required for bedrock unless AWS_REGION or AWS_DEFAULT_REGION is set.
+
+ARCA_BEDROCK_TOKEN_TTL_SECONDS
+  Optional. Default 3600; range 900-43200. Lifetime requested for each
+  short-lived Bedrock API key. Keys are minted with aws-bedrock-token-generator
+  from the standard AWS credential chain (environment, profile, SSO, or the
+  EC2/ECS role), cached in memory only, and replaced five minutes before they
+  expire. A key's real validity is the shorter of this value and the remaining
+  lifetime of the AWS credentials, so a 401/403 response triggers one
+  immediate re-mint and retry. The IAM principal needs bedrock:InvokeModel and
+  bedrock:CallWithBearerToken for Nova Lite.
+
+  Calls use the Bedrock Converse API. Nova Lite has no native structured
+  output, so the response schema is sent as one forced tool call.
+
+ARCA_LLM_API_VERSION
+  Required only for azure_openai. Not used by standard OpenAI or a generic
+  OpenAI-compatible endpoint.
+
+ARCA_LLM_TIMEOUT_SECONDS
+  Optional. Default 20; numeric range 1-120 seconds. The currently configured
+  local value is 45 seconds (the secret itself was not inspected or recorded).
+
+ARCA_LLM_INPUT_MAX_CHARS
+  Optional. Default 30000; permitted range 2000-100000.
+
+ARCA_LLM_MAX_OUTPUT_TOKENS
+  Optional. Default 1200; permitted range 100-10000.
+
+ARCA_LLM_REASONING_EFFORT
+  Optional. Default minimal. Allowed: minimal, low, medium, high.
+
+3. Frontend environment variables
+
+NEXT_PUBLIC_ARCA_API_URL
+  Optional. Default http://127.0.0.1:8000. Template value matches the default.
+
+NEXT_PUBLIC_ARCA_LLM_TIMEOUT_MS
+  Optional. Default 55000 milliseconds for LLM-assisted requests. Ordinary
+  API requests use the fixed 10000 millisecond client timeout.
+
+4. Ports and endpoints
+
+Backend: 127.0.0.1:8000
+OpenAPI UI: http://127.0.0.1:8000/docs
+Health: http://127.0.0.1:8000/api/v1/health
+Frontend: 127.0.0.1:3000
+
+5. Evidence and policy locations
+
+AWS synthetic evidence: data/aws/
+Azure synthetic evidence: data/azure/
+Snowflake synthetic evidence: data/snowflake/
+Investigation scenarios: data/investigations/
+Cross-provider demo catalog: data/demo_catalog.json
+Validation policies: config/change_validation_policy.json and
+config/pim_validation_policy.json
+Model pricing metadata: config/model_pricing.json
+
+All provider repositories are read-only. Azure and Snowflake always use local
+JSON fixtures. AWS uses local fixtures by default and can instead read real
+evidence (see section 5a). No live Azure, Snowflake, ServiceNow, or identity
+connection is configured.
+
+5a. Live AWS evidence (optional)
+
+ARCA_AWS_EVIDENCE_SOURCE
+  Optional. synthetic (default) or live. Only the AWS repository changes; Azure
+  and Snowflake code paths and data are untouched.
+
+In live mode the AWS repository reads CloudTrail (LookupEvents, write events
+only) and IAM policy documents (GetRolePolicy, GetPolicyVersion) from the
+account, read-only, using the standard AWS credential chain. Change records,
+access requests, and scenario definitions come from data/aws_live/manifest.json
+because ServiceNow data does not exist in AWS. Evidence is limited to the
+testbed's resources and its activity window, so unrelated account activity
+never enters an assessment. Results are cached for 120 seconds.
+
+scripts/aws_live_testbed.py manages the testbed:
+  provision  Creates one private S3 bucket, one unattached security group,
+             two customer managed IAM policies, and five IAM roles assumable
+             only by the provisioning principal (all named arca-test-*, tagged
+             Project=ARCA-Test), performs six real API calls, and writes the
+             manifest. The manifest is account-specific and git-ignored.
+  status     Lists the resources and the CloudTrail events visible so far.
+             CloudTrail delivers management events within about 5-15 minutes.
+  teardown   Deletes every resource in the manifest and removes it.
+
+Live scenarios (real CloudTrail and IAM evidence):
+  AWS-LIVE-CHANGE-01..04  change quality: valid, missing description,
+                          invalid window, unapproved
+  AWS-LIVE-ACCESS-05..09  access: scoped allow, s3:* wildcard role, explicit
+                          deny, permissions boundary, unmapped EC2 action
+  AWS-LIVE-EXEC-01..07    execution: compliant, wrong principal, outside
+                          window, wrong target role, failed API call (real
+                          InvalidTag error), unapproved revoke found by
+                          principal investigation, implementer investigation
+
+Live change IDs use the standard CHG<number> form (CHG7001-CHG7011) so Ask
+ARCA recognizes them. In live mode the AWS-only examples for Agent 4
+(RISK-01, 02, 03, 11, 12, 13, 14) and Ask ARCA (ASK-03, 06, 09, 13, 15) are
+replaced by live versions with the same IDs, using the testbed's principals
+and resources and the current time. Azure, Snowflake, and cross-environment
+examples are unchanged.
+
+ServiceNow change IDs are not present in CloudTrail, so live events are linked
+to changes by actor, operation, target ARN, and window only. Each live change
+has its own window so scenarios do not overlap.
+
+tests/backend/test_aws_live.py replays testbed-shaped CloudTrail records
+offline. Its two live tests run against the provisioned account only when
+ARCA_AWS_LIVE_TESTS=1.
+
+6. Agent execution modes
+
+deterministic (default): local rule engines and allowlisted evidence tools only.
+llm_assisted: deterministic results remain authoritative; a configured model
+adds advisory interpretation. Agent 5 may use model planning and synthesis,
+but only registered read-only tools execute. Failed model calls retain the
+deterministic result and are not labeled as AI success.
+
+Agent 5 also accepts legacy API aliases mock and ai, normalized by its service.
+Automated tests use injected/mock clients and do not require paid requests.
+
+7. Test-only browser variables
+
+scripts/browser_validate_v2.mjs optionally reads ARCA_CDP_PORT,
+ARCA_FRONTEND_URL, ARCA_AGENT5_RESPONSE_GZIP_B64, ARCA_AGENT5_ONLY,
+ARCA_AGENT5_EXPECT_COMPLETED, ARCA_AGENT5_RESPONSE_SOURCE, and
+ARCA_FINAL_LLM_VERIFY. These are validation controls, not runtime application
+configuration. The browser script uses an already-running Chromium/Chrome
+DevTools endpoint and adds no npm browser-testing dependency.
+
+8. Required local files
+
+Required: requirements.txt or requirements.lock.txt, frontend/package.json,
+frontend/package-lock.json, config/, data/, backend/, and frontend/src/.
+Optional local-only: .env and frontend/.env.local. Start from the tracked
+.env.example templates and supply secrets separately on each machine.
