@@ -1,0 +1,9 @@
+{
+  "mandatory_fields": [
+    "purpose", "business_justification", "environment", "target_resources",
+    "implementer", "implementation_tasks", "start", "end", "expected_outcome",
+    "validation_steps", "rollback_plan", "risk_impact"
+  ],
+  "recommended_fields": ["role_requirements", "scope_requirements", "expected_operations"],
+  "ambiguous_phrases": ["tbd", "as needed", "as appropriate", "if required", "etc.", "someone", "some resource"]
+}

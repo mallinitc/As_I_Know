@@ -1,0 +1,213 @@
+[
+  {
+    "change_id": "CHG-SF-1001", "provider": "snowflake", "scenario": "VALID_APPROVED_CHANGE",
+    "environment": "production", "short_description": "Create finance analytics database",
+    "description": "Create the approved finance analytics database for governed reporting workloads. Required Snowflake role: FIN_REPORTING_APP_FR.",
+    "business_justification": "Provide an isolated governed database for finance reporting.",
+    "requested_by": "requester01@example.invalid", "implementer": "sfengineer01@example.invalid",
+    "start": "2026-11-01T10:00:00Z", "end": "2026-11-01T11:00:00Z", "state": "approved", "risk": "moderate",
+    "expected": [{"operation": "CREATE DATABASE", "resource_id": "FINANCE_ANALYTICS_DB"}],
+    "expected_outcome": "FINANCE_ANALYTICS_DB exists with the approved ownership configuration.",
+    "validation_steps": ["Confirm the database exists", "Confirm ownership matches the approved role"],
+    "rollback_plan": "Drop the empty database if validation fails before workloads are onboarded.",
+    "snowflake_context": {"account": "ARCA_DEMO_ACCOUNT", "database": "FINANCE_ANALYTICS_DB", "schema": null, "object_type": "DATABASE", "object_name": "FINANCE_ANALYTICS_DB", "requested_role": "FIN_REPORTING_APP_FR"}
+  },
+  {
+    "change_id": "CHG-SF-1002", "provider": "snowflake", "scenario": "MISSING_DESCRIPTION",
+    "environment": "production", "short_description": "Create reporting schema", "description": "",
+    "business_justification": "Separate governed reporting objects from ingestion objects.",
+    "requested_by": "requester02@example.invalid", "implementer": "sfengineer02@example.invalid",
+    "start": "2026-11-02T09:00:00Z", "end": "2026-11-02T10:00:00Z", "state": "approved", "risk": "low",
+    "expected": [{"operation": "CREATE SCHEMA", "resource_id": "FINANCE_DB.REPORTING"}],
+    "expected_outcome": "The reporting schema is available.", "validation_steps": ["Confirm schema ownership"],
+    "rollback_plan": "Drop the empty schema if validation fails.",
+    "snowflake_context": {"account": "ARCA_DEMO_ACCOUNT", "database": "FINANCE_DB", "schema": "REPORTING", "object_type": "SCHEMA", "object_name": "REPORTING", "requested_role": "SYSADMIN"}
+  },
+  {
+    "change_id": "CHG-SF-1003", "provider": "snowflake", "scenario": "INVALID_CHANGE_WINDOW",
+    "environment": "production", "short_description": "Update database retention", "description": "Increase finance database time travel retention to the approved value.",
+    "business_justification": "Meet finance recovery requirements.", "requested_by": "requester03@example.invalid", "implementer": "sfengineer03@example.invalid",
+    "start": "2026-11-03T11:00:00Z", "end": "2026-11-03T10:00:00Z", "state": "approved", "risk": "moderate",
+    "expected": [{"operation": "ALTER DATABASE", "resource_id": "FINANCE_DB"}],
+    "expected_outcome": "The retention setting matches the approved value.", "validation_steps": ["Inspect database retention settings"],
+    "rollback_plan": "Restore the previous retention setting.",
+    "snowflake_context": {"account": "ARCA_DEMO_ACCOUNT", "database": "FINANCE_DB", "schema": null, "object_type": "DATABASE", "object_name": "FINANCE_DB", "requested_role": "SYSADMIN"}
+  },
+  {
+    "change_id": "CHG-SF-1004", "provider": "snowflake", "scenario": "MISSING_IMPLEMENTER",
+    "environment": "development", "short_description": "Create staging table", "description": "Create the approved transaction staging table for development ingestion tests. Required Snowflake role: CATALOG_INCOMPLETE_ROLE.",
+    "business_justification": "Support controlled ingestion testing.", "requested_by": "requester04@example.invalid", "implementer": "",
+    "start": "2026-11-04T08:00:00Z", "end": "2026-11-04T09:00:00Z", "state": "approved", "risk": "low",
+    "expected": [{"operation": "CREATE TABLE", "resource_id": "DEV_DB.STAGING.TRANSACTIONS_RAW"}],
+    "expected_outcome": "The empty staging table is available.", "validation_steps": ["Describe the table and verify columns"],
+    "rollback_plan": "Drop the empty staging table.",
+    "snowflake_context": {"account": "ARCA_DEMO_ACCOUNT", "database": "DEV_DB", "schema": "STAGING", "object_type": "TABLE", "object_name": "TRANSACTIONS_RAW", "requested_role": "CATALOG_INCOMPLETE_ROLE"}
+  },
+  {
+    "change_id": "CHG-SF-1005", "provider": "snowflake", "scenario": "UNAPPROVED_CHANGE",
+    "environment": "production", "short_description": "Change reporting schema ownership", "description": "Transfer reporting schema ownership to the governed reporting administration role. Required Snowflake role: SECURITYADMIN.",
+    "business_justification": "Align schema ownership with the operating model.", "requested_by": "requester05@example.invalid", "implementer": "sfengineer05@example.invalid",
+    "start": "2026-11-05T10:00:00Z", "end": "2026-11-05T11:00:00Z", "state": "pending_approval", "risk": "high",
+    "expected": [{"operation": "ALTER SCHEMA", "resource_id": "FINANCE_DB.REPORTING"}],
+    "expected_outcome": "Schema ownership is assigned to the approved role.", "validation_steps": ["Inspect schema owner"],
+    "rollback_plan": "Transfer ownership back to the prior owner.",
+    "snowflake_context": {"account": "ARCA_DEMO_ACCOUNT", "database": "FINANCE_DB", "schema": "REPORTING", "object_type": "SCHEMA", "object_name": "REPORTING", "requested_role": "SECURITYADMIN"}
+  },
+  {
+    "change_id": "CHG-SF-1006", "provider": "snowflake", "scenario": "MISSING_EXPECTED_OPERATIONS",
+    "environment": "production", "short_description": "Prepare sales reporting objects", "description": "Prepare the approved sales reporting objects during the maintenance window.",
+    "business_justification": "Support the quarterly sales reporting release.", "requested_by": "requester06@example.invalid", "implementer": "sfengineer06@example.invalid",
+    "start": "2026-11-06T10:00:00Z", "end": "2026-11-06T11:00:00Z", "state": "approved", "risk": "moderate", "expected": [],
+    "expected_outcome": "Sales reporting objects are ready.", "validation_steps": ["Confirm expected objects"],
+    "rollback_plan": "Remove objects created by the change.",
+    "snowflake_context": {"account": "ARCA_DEMO_ACCOUNT", "database": "SALES_DB", "schema": "REPORTING", "object_type": "SCHEMA", "object_name": "REPORTING", "requested_role": "UNKNOWN_DEMO_ROLE"}
+  },
+  {
+    "change_id": "CHG-SF-1007", "provider": "snowflake", "scenario": "VALID_ROLE_GRANT",
+    "environment": "production", "short_description": "Grant analyst role", "description": "Grant the finance analyst role to the approved reporting user role. Required Snowflake role: SECURITYADMIN.",
+    "business_justification": "Enable approved analysts to use governed finance reporting objects.", "requested_by": "requester07@example.invalid", "implementer": "sfsecurity01@example.invalid",
+    "start": "2026-11-07T10:00:00Z", "end": "2026-11-07T10:30:00Z", "state": "approved", "risk": "moderate",
+    "expected": [{"operation": "GRANT ROLE", "resource_id": "ROLE:FINANCE_REPORTING_R_RL->ROLE:BI_DASHBOARD_APP_FR"}],
+    "expected_outcome": "BI_DASHBOARD_APP_FR inherits FINANCE_REPORTING_R_RL.", "validation_steps": ["Review the resulting role hierarchy"],
+    "rollback_plan": "Revoke FINANCE_REPORTING_R_RL from BI_DASHBOARD_APP_FR.",
+    "snowflake_context": {"account": "ARCA_DEMO_ACCOUNT", "database": null, "schema": null, "object_type": "ROLE_GRANT", "object_name": "FINANCE_REPORTING_R_RL", "requested_role": "SECURITYADMIN"}
+  },
+  {
+    "change_id": "CHG-SF-1008", "provider": "snowflake", "scenario": "VALID_TABLE_ALTERATION",
+    "environment": "production", "short_description": "Add transaction source column", "description": "Add the approved source system column to the finance transactions table. Required Snowflake role: ACCOUNTADMIN.",
+    "business_justification": "Support source-level reconciliation in financial reporting.", "requested_by": "requester08@example.invalid", "implementer": "sfengineer08@example.invalid",
+    "start": "2026-11-08T10:00:00Z", "end": "2026-11-08T11:00:00Z", "state": "approved", "risk": "moderate",
+    "expected": [{"operation": "ALTER TABLE", "resource_id": "FINANCE_DB.REPORTING.TRANSACTIONS"}],
+    "expected_outcome": "The source system column exists with the approved type.", "validation_steps": ["Describe the table", "Run the approved null-count validation"],
+    "rollback_plan": "Drop the new column if downstream validation fails.",
+    "snowflake_context": {"account": "ARCA_DEMO_ACCOUNT", "database": "FINANCE_DB", "schema": "REPORTING", "object_type": "TABLE", "object_name": "TRANSACTIONS", "requested_role": "ACCOUNTADMIN"}
+  },
+  {
+    "change_id": "CHG-SF-1009", "provider": "snowflake", "scenario": "VALID_USER_MODIFICATION",
+    "environment": "production", "short_description": "Enforce service user network policy", "description": "Assign the approved restricted network policy to the reporting service user. Required Snowflake role: ACCOUNTADMIN.",
+    "business_justification": "Restrict service-user access to approved network locations.", "requested_by": "requester09@example.invalid", "implementer": "sfsecurity02@example.invalid",
+    "start": "2026-11-09T10:00:00Z", "end": "2026-11-09T10:30:00Z", "state": "approved", "risk": "high",
+    "expected": [{"operation": "ALTER USER", "resource_id": "USER:SVC_REPORTING"}],
+    "expected_outcome": "SVC_REPORTING uses the approved network policy.", "validation_steps": ["Inspect the user network policy"],
+    "rollback_plan": "Restore the prior network policy assignment.",
+    "snowflake_context": {"account": "ARCA_DEMO_ACCOUNT", "database": null, "schema": null, "object_type": "USER", "object_name": "SVC_REPORTING", "requested_role": "USERADMIN"}
+  },
+  {
+    "change_id": "CHG-SF-1010", "provider": "snowflake", "scenario": "INVALID_START_TIMESTAMP",
+    "environment": "test", "short_description": "Create test automation user", "description": "Create the approved test automation user with disabled password authentication. Required Snowflake role: USERADMIN.",
+    "business_justification": "Support controlled automated testing.", "requested_by": "requester10@example.invalid", "implementer": "sfsecurity03@example.invalid",
+    "start": "not-a-timestamp", "end": "2026-11-10T11:00:00Z", "state": "approved", "risk": "moderate",
+    "expected": [{"operation": "CREATE USER", "resource_id": "USER:SVC_TEST_AUTOMATION"}],
+    "expected_outcome": "The service user exists with approved authentication controls.", "validation_steps": ["Inspect user properties"],
+    "rollback_plan": "Drop the unused test user.",
+    "snowflake_context": {"account": "ARCA_DEMO_ACCOUNT", "database": null, "schema": null, "object_type": "USER", "object_name": "SVC_TEST_AUTOMATION", "requested_role": "USERADMIN"}
+  },
+  {
+    "change_id": "CHG-SF-1011", "provider": "snowflake", "scenario": "MISSING_TARGET_OBJECT",
+    "environment": "production", "short_description": "Revoke obsolete role grant", "description": "Revoke an obsolete role inheritance identified by the quarterly access review. Required Snowflake role: SECURITYADMIN.",
+    "business_justification": "Remove access that is no longer required.", "requested_by": "requester11@example.invalid", "implementer": "sfsecurity04@example.invalid",
+    "start": "2026-11-11T10:00:00Z", "end": "2026-11-11T10:30:00Z", "state": "approved", "risk": "moderate",
+    "expected": [{"operation": "REVOKE ROLE", "resource_id": ""}],
+    "expected_outcome": "The obsolete role inheritance is removed.", "validation_steps": ["Review the resulting role hierarchy"],
+    "rollback_plan": "Restore the documented role grant if access validation fails.",
+    "snowflake_context": {"account": "ARCA_DEMO_ACCOUNT", "database": null, "schema": null, "object_type": "ROLE_GRANT", "object_name": null, "requested_role": "SECURITYADMIN"}
+  },
+  {
+    "change_id": "CHG-SF-1012", "provider": "snowflake", "scenario": "MULTIPLE_EXPECTED_OPERATIONS",
+    "environment": "production", "short_description": "Deploy governed marketing reporting objects", "description": "Create the marketing reporting schema and table, then grant the approved read privilege. Required Snowflake role: DB_MARKETING_C_RL.",
+    "business_justification": "Deliver the approved governed marketing dashboard dataset.", "requested_by": "requester12@example.invalid", "implementer": "sfengineer12@example.invalid",
+    "start": "2026-11-12T10:00:00Z", "end": "2026-11-12T12:00:00Z", "state": "approved", "risk": "moderate",
+    "expected": [
+      {"operation": "CREATE SCHEMA", "resource_id": "MARKETING_DB.REPORTING"},
+      {"operation": "CREATE TABLE", "resource_id": "MARKETING_DB.REPORTING.CAMPAIGN_SUMMARY"},
+      {"operation": "GRANT SELECT", "resource_id": "MARKETING_DB.REPORTING.CAMPAIGN_SUMMARY"}
+    ],
+    "expected_outcome": "The reporting objects and approved read privilege are present.", "validation_steps": ["Confirm both objects", "Review grants on CAMPAIGN_SUMMARY"],
+    "rollback_plan": "Revoke the grant and remove the newly created objects in reverse order.",
+    "snowflake_context": {"account": "ARCA_DEMO_ACCOUNT", "database": "MARKETING_DB", "schema": "REPORTING", "object_type": "CHANGE_SET", "object_name": "CAMPAIGN_SUMMARY", "requested_role": "DB_MARKETING_C_RL"}
+  },
+  {
+    "change_id": "CHG-SF-1013", "provider": "snowflake", "scenario": "HIGH_RISK_PRODUCTION_CHANGE",
+    "environment": "production", "short_description": "Revoke legacy write privilege", "description": "Revoke the legacy write privilege from the deprecated finance loader role. Required Snowflake role: FINANCE_STAGING_C_RL.",
+    "business_justification": "Complete the approved loader decommissioning control.", "requested_by": "requester13@example.invalid", "implementer": "sfsecurity05@example.invalid",
+    "start": "2026-11-13T10:00:00Z", "end": "2026-11-13T11:00:00Z", "state": "approved", "risk": "high",
+    "expected": [{"operation": "REVOKE INSERT", "resource_id": "FINANCE_DB.STAGING.TRANSACTIONS_RAW"}],
+    "expected_outcome": "The deprecated role no longer has INSERT on the staging table.", "validation_steps": ["Review grants on the table", "Run the approved access-negative test"],
+    "rollback_plan": "Restore INSERT to the documented role if an approved dependency fails.",
+    "snowflake_context": {"account": "ARCA_DEMO_ACCOUNT", "database": "FINANCE_DB", "schema": "STAGING", "object_type": "TABLE", "object_name": "TRANSACTIONS_RAW", "requested_role": "FINANCE_STAGING_C_RL"}
+  },
+  {
+    "change_id": "CHG-SF-1014", "provider": "snowflake", "scenario": "VALID_WAREHOUSE_MODIFICATION",
+    "environment": "production", "short_description": "Increase reporting warehouse capacity", "description": "Increase the reporting warehouse size during the approved maintenance window. Required Snowflake role: WH_REPORTING_O_RL.",
+    "business_justification": "Meet the approved month-end reporting performance target.", "requested_by": "requester14@example.invalid", "implementer": "sfengineer14@example.invalid",
+    "start": "2026-11-14T10:00:00Z", "end": "2026-11-14T11:00:00Z", "state": "approved", "risk": "moderate",
+    "expected": [{"operation": "ALTER WAREHOUSE", "resource_id": "REPORTING_WH"}],
+    "expected_outcome": "REPORTING_WH uses the approved size and auto-suspend configuration.", "validation_steps": ["Inspect warehouse properties", "Run the approved benchmark"],
+    "rollback_plan": "Restore the previous warehouse size and auto-suspend configuration.",
+    "snowflake_context": {"account": "ARCA_DEMO_ACCOUNT", "database": null, "schema": null, "object_type": "WAREHOUSE", "object_name": "REPORTING_WH", "requested_role": "WH_REPORTING_O_RL"}
+  },
+  {
+    "change_id": "CHG-SF-1015", "provider": "snowflake", "scenario": "INCOMPLETE_CHANGE_REQUEST",
+    "environment": "production", "short_description": "Incomplete production request", "description": "",
+    "business_justification": "", "requested_by": "requester15@example.invalid", "implementer": "",
+    "start": "", "end": "2026-11-15T11:00:00Z", "state": "draft", "risk": "", "expected": [],
+    "expected_outcome": "", "validation_steps": [], "rollback_plan": "",
+    "snowflake_context": {"account": "ARCA_DEMO_ACCOUNT", "database": null, "schema": null, "object_type": null, "object_name": null, "requested_role": null}
+  },
+  {
+    "change_id": "CHG-SF-1016", "provider": "snowflake", "scenario": "MULTIPLE_OPERATIONS_APPROPRIATE_ROLE",
+    "environment": "production", "short_description": "Deploy reporting schema and governed access", "description": "Create the reporting schema and table, then grant the approved read privilege. Required Snowflake role: MKT_DDL_FR.",
+    "business_justification": "Deliver the approved reporting dataset with governed access.", "requested_by": "requester16@example.invalid", "implementer": "sfengineer16@example.invalid",
+    "start": "2026-11-16T10:00:00Z", "end": "2026-11-16T12:00:00Z", "state": "approved", "risk": "moderate",
+    "expected": [{"operation": "CREATE SCHEMA", "resource_id": "MARKETING_DB.REPORTING"}, {"operation": "CREATE TABLE", "resource_id": "MARKETING_DB.REPORTING.CAMPAIGN_SUMMARY"}, {"operation": "GRANT SELECT", "resource_id": "MARKETING_DB.REPORTING.CAMPAIGN_SUMMARY"}],
+    "expected_outcome": "The reporting objects and approved access are present.", "validation_steps": ["Confirm objects", "Review table grants"], "rollback_plan": "Revoke access and remove the new objects in reverse order.",
+    "snowflake_context": {"account": "ARCA_DEMO_ACCOUNT", "database": "MARKETING_DB", "schema": "REPORTING", "object_type": "CHANGE_SET", "object_name": "CAMPAIGN_SUMMARY", "requested_role": "MKT_DDL_FR"}
+  },
+  {
+    "change_id": "CHG-SF-1017", "provider": "snowflake", "scenario": "MISSING_REQUESTED_ROLE",
+    "environment": "production", "short_description": "Resize reporting warehouse", "description": "Resize the reporting warehouse during the approved window.",
+    "business_justification": "Support the approved reporting workload.", "requested_by": "requester17@example.invalid", "implementer": "sfengineer17@example.invalid",
+    "start": "2026-11-17T10:00:00Z", "end": "2026-11-17T11:00:00Z", "state": "approved", "risk": "moderate",
+    "expected": [{"operation": "ALTER WAREHOUSE", "resource_id": "REPORTING_WH"}], "expected_outcome": "The warehouse uses the approved size.",
+    "validation_steps": ["Inspect warehouse properties"], "rollback_plan": "Restore the prior warehouse size.",
+    "snowflake_context": {"account": "ARCA_DEMO_ACCOUNT", "database": null, "schema": null, "object_type": "WAREHOUSE", "object_name": "REPORTING_WH", "requested_role": null}
+  },
+  {
+    "change_id": "CHG-SF-1018", "provider": "snowflake", "scenario": "UNKNOWN_REQUESTED_ROLE",
+    "environment": "production", "short_description": "Resize reporting warehouse with unknown role", "description": "Resize the reporting warehouse using the documented requested access. Required Snowflake role: UNLISTED_OPERATIONS_ROLE.",
+    "business_justification": "Support the approved reporting workload.", "requested_by": "requester18@example.invalid", "implementer": "sfengineer18@example.invalid",
+    "start": "2026-11-18T10:00:00Z", "end": "2026-11-18T11:00:00Z", "state": "approved", "risk": "moderate",
+    "expected": [{"operation": "ALTER WAREHOUSE", "resource_id": "REPORTING_WH"}], "expected_outcome": "The warehouse uses the approved size.",
+    "validation_steps": ["Inspect warehouse properties"], "rollback_plan": "Restore the prior warehouse size.",
+    "snowflake_context": {"account": "ARCA_DEMO_ACCOUNT", "database": null, "schema": null, "object_type": "WAREHOUSE", "object_name": "REPORTING_WH", "requested_role": "UNLISTED_OPERATIONS_ROLE"}
+  },
+  {
+    "change_id": "CHG-SF-1019", "provider": "snowflake", "scenario": "VALID_ROLE_THROUGH_INHERITANCE",
+    "environment": "production", "short_description": "Resize warehouse through inherited operations role", "description": "Resize the reporting warehouse using inherited operational access. Required Snowflake role: REPORTING_OPS_FR.",
+    "business_justification": "Support the approved reporting workload.", "requested_by": "requester19@example.invalid", "implementer": "sfengineer19@example.invalid",
+    "start": "2026-11-19T10:00:00Z", "end": "2026-11-19T11:00:00Z", "state": "approved", "risk": "moderate",
+    "expected": [{"operation": "ALTER WAREHOUSE", "resource_id": "REPORTING_WH"}], "expected_outcome": "The warehouse uses the approved size.",
+    "validation_steps": ["Inspect warehouse properties"], "rollback_plan": "Restore the prior warehouse size.",
+    "snowflake_context": {"account": "ARCA_DEMO_ACCOUNT", "database": null, "schema": null, "object_type": "WAREHOUSE", "object_name": "REPORTING_WH", "requested_role": "REPORTING_OPS_FR"}
+  },
+  {
+    "change_id": "CHG-SF-1020", "provider": "snowflake", "scenario": "WRONG_OBJECT_PERMISSIONS",
+    "environment": "production", "short_description": "Alter unsupported reporting table", "description": "Alter a reporting table outside the role's evidenced object grants. Required Snowflake role: FINANCE_REPORTING_C_RL.",
+    "business_justification": "Apply the approved reporting structure update.", "requested_by": "requester20@example.invalid", "implementer": "sfengineer20@example.invalid",
+    "start": "2026-11-20T10:00:00Z", "end": "2026-11-20T11:00:00Z", "state": "approved", "risk": "moderate",
+    "expected": [{"operation": "ALTER TABLE", "resource_id": "FINANCE_DB.REPORTING.OTHER_TABLE"}], "expected_outcome": "The approved table structure is updated.",
+    "validation_steps": ["Describe the table"], "rollback_plan": "Restore the prior table definition.",
+    "snowflake_context": {"account": "ARCA_DEMO_ACCOUNT", "database": "FINANCE_DB", "schema": "REPORTING", "object_type": "TABLE", "object_name": "OTHER_TABLE", "requested_role": "FINANCE_REPORTING_C_RL"}
+  },
+  {
+    "change_id":"CHG-SF-1021","provider":"snowflake","scenario":"VALID_TABLE_ALTERATION_APPROPRIATE","environment":"production","short_description":"Alter governed transactions table","description":"Alter the approved transactions table. Required Snowflake role: FINANCE_REPORTING_C_RL.","business_justification":"Apply the approved reporting schema update.","requested_by":"requester21@example.invalid","implementer":"sfengineer21@example.invalid","start":"2026-11-21T10:00:00Z","end":"2026-11-21T11:00:00Z","state":"approved","risk":"moderate","expected":[{"operation":"ALTER TABLE","resource_id":"FINANCE_DB.REPORTING.TRANSACTIONS"}],"expected_outcome":"The approved column exists.","validation_steps":["Describe the table"],"rollback_plan":"Restore the prior table definition.","snowflake_context":{"account":"ARCA_DEMO_ACCOUNT","database":"FINANCE_DB","schema":"REPORTING","object_type":"TABLE","object_name":"TRANSACTIONS","requested_role":"FINANCE_REPORTING_C_RL"}
+  },
+  {
+    "change_id":"CHG-SF-1022","provider":"snowflake","scenario":"VALID_DATABASE_CREATION","environment":"production","short_description":"Create governed finance database","description":"Create the approved finance analytics database. Required Snowflake role: PLATFORM_DB_ADMIN_FR.","business_justification":"Provide a governed reporting database.","requested_by":"requester22@example.invalid","implementer":"sfengineer22@example.invalid","start":"2026-11-22T10:00:00Z","end":"2026-11-22T11:00:00Z","state":"approved","risk":"moderate","expected":[{"operation":"CREATE DATABASE","resource_id":"FINANCE_ANALYTICS_DB"}],"expected_outcome":"The database exists.","validation_steps":["Show the database"],"rollback_plan":"Drop the empty database.","snowflake_context":{"account":"ARCA_DEMO_ACCOUNT","database":"FINANCE_ANALYTICS_DB","schema":null,"object_type":"DATABASE","object_name":"FINANCE_ANALYTICS_DB","requested_role":"PLATFORM_DB_ADMIN_FR"}
+  },
+  {
+    "change_id":"CHG-SF-1023","provider":"snowflake","scenario":"AMBIGUOUS_CHANGE_INTENT","environment":"production","short_description":"Update network controls","description":"Update the approved network controls. Required Snowflake role: SECURITYADMIN.","business_justification":"Apply the approved security baseline.","requested_by":"requester23@example.invalid","implementer":"sfsecurity23@example.invalid","start":"2026-11-23T10:00:00Z","end":"2026-11-23T11:00:00Z","state":"approved","risk":"high","expected":[{"operation":"UPDATE NETWORK CONTROLS","resource_id":"POLICY:RESTRICTED_NETWORK"}],"expected_outcome":"The approved network controls apply.","validation_steps":["Inspect policy state"],"rollback_plan":"Restore the prior policy.","snowflake_context":{"account":"ARCA_DEMO_ACCOUNT","database":null,"schema":null,"object_type":"NETWORK_POLICY","object_name":"RESTRICTED_NETWORK","requested_role":"SECURITYADMIN"}
+  },
+  {"change_id": "CHG-SF-1024", "provider": "snowflake", "scenario": "DEFAULT_ROLE_FOR_DATA_CHANGE", "environment": "production", "short_description": "Create finance analytics schema", "description": "Create the FINANCE_DB.ANALYTICS schema for curated finance analytics. Required Snowflake role: SYSADMIN.", "business_justification": "Separate curated analytics tables from operational reporting tables.", "requested_by": "requester22@example.invalid", "implementer": "sfengineer02@example.invalid", "start": "2026-11-22T10:00:00Z", "end": "2026-11-22T11:00:00Z", "state": "approved", "risk": "moderate", "expected": [{"operation": "CREATE SCHEMA", "resource_id": "FINANCE_DB.ANALYTICS"}], "expected_outcome": "FINANCE_DB.ANALYTICS exists and is owned by the approved custom role.", "validation_steps": ["Confirm the schema exists", "Confirm schema ownership"], "rollback_plan": "Drop the empty database.", "snowflake_context": {"account": "ARCA_DEMO_ACCOUNT", "database": "FINANCE_DB", "schema": "ANALYTICS", "object_type": "SCHEMA", "object_name": "FINANCE_DB.ANALYTICS", "requested_role": "SYSADMIN"}},
+  {"change_id": "CHG-SF-1025", "provider": "snowflake", "scenario": "CUSTOM_ROLE_FOR_DATA_CHANGE", "environment": "production", "short_description": "Create finance analytics schema", "description": "Create the FINANCE_DB.ANALYTICS schema for curated finance analytics using the database create role. Required Snowflake role: DB_FINANCE_C_RL.", "business_justification": "Separate curated analytics tables from operational reporting tables.", "requested_by": "requester22@example.invalid", "implementer": "sfengineer02@example.invalid", "start": "2026-11-22T10:00:00Z", "end": "2026-11-22T11:00:00Z", "state": "approved", "risk": "moderate", "expected": [{"operation": "CREATE SCHEMA", "resource_id": "FINANCE_DB.ANALYTICS"}], "expected_outcome": "FINANCE_DB.ANALYTICS exists and is owned by the approved custom role.", "validation_steps": ["Confirm the schema exists", "Confirm schema ownership"], "rollback_plan": "Drop the empty database.", "snowflake_context": {"account": "ARCA_DEMO_ACCOUNT", "database": "FINANCE_DB", "schema": "ANALYTICS", "object_type": "SCHEMA", "object_name": "FINANCE_DB.ANALYTICS", "requested_role": "DB_FINANCE_C_RL"}}
+]

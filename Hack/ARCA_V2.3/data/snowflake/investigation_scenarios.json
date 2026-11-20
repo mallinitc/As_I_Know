@@ -1,0 +1,198 @@
+[
+  {
+    "scenario_id": "SF-INV-01",
+    "scenario_name": "01 \u2014 Investigate Approved Change",
+    "investigation_prompt": "Investigate change CHG-SF-1007.",
+    "expected_intent": "snowflake_change",
+    "change_id": "CHG-SF-1007",
+    "user_identity": null,
+    "evaluation_timestamp": "2026-11-24T00:00:00Z",
+    "expected_finding_categories": [
+      "COMPLIANT_EXECUTION",
+      "EXECUTED_OUTSIDE_WINDOW",
+      "UNAUTHORIZED_IMPLEMENTER",
+      "ROLE_MISMATCH",
+      "WRONG_TARGET_OBJECT",
+      "UNAPPROVED_OPERATION",
+      "UNEXPECTED_ADDITIONAL_OPERATION"
+    ]
+  },
+  {
+    "scenario_id": "SF-INV-02",
+    "scenario_name": "02 \u2014 Investigate Out-of-Window Change",
+    "investigation_prompt": "Was CHG-SF-1014 implemented correctly?",
+    "expected_intent": "snowflake_change",
+    "change_id": "CHG-SF-1014",
+    "user_identity": null,
+    "evaluation_timestamp": "2026-11-24T00:00:00Z",
+    "expected_finding_categories": [
+      "EXECUTED_OUTSIDE_WINDOW"
+    ]
+  },
+  {
+    "scenario_id": "SF-INV-03",
+    "scenario_name": "03 \u2014 Investigate Unauthorized Role Grant",
+    "investigation_prompt": "Find unexpected role grants in the last 10 days.",
+    "expected_intent": "snowflake_unapproved",
+    "change_id": null,
+    "user_identity": null,
+    "evaluation_timestamp": "2026-11-24T00:00:00Z",
+    "expected_finding_categories": [
+      "POSSIBLE_UNAPPROVED_ACTIVITY"
+    ]
+  },
+  {
+    "scenario_id": "SF-INV-04",
+    "scenario_name": "04 \u2014 Investigate User Activity / Last 10 Days",
+    "investigation_prompt": "Investigate rogue.engineer@example.invalid for the last 10 days.",
+    "expected_intent": "snowflake_user",
+    "change_id": null,
+    "user_identity": "rogue.engineer@example.invalid",
+    "evaluation_timestamp": "2026-11-24T00:00:00Z",
+    "expected_finding_categories": [
+      "POSSIBLE_UNAPPROVED_ACTIVITY"
+    ]
+  },
+  {
+    "scenario_id": "SF-INV-05",
+    "scenario_name": "05 \u2014 Investigate User Activity / Last 15 Days",
+    "investigation_prompt": "Show changes performed by rogue.engineer@example.invalid during the last 15 days.",
+    "expected_intent": "snowflake_user",
+    "change_id": null,
+    "user_identity": "rogue.engineer@example.invalid",
+    "evaluation_timestamp": "2026-11-24T00:00:00Z",
+    "expected_finding_categories": [
+      "POSSIBLE_UNAPPROVED_ACTIVITY"
+    ]
+  },
+  {
+    "scenario_id": "SF-INV-06",
+    "scenario_name": "06 \u2014 Find Unexpected Administrative Actions",
+    "investigation_prompt": "Show database modifications performed without approved changes.",
+    "expected_intent": "snowflake_unapproved",
+    "change_id": null,
+    "user_identity": null,
+    "evaluation_timestamp": "2026-11-24T00:00:00Z",
+    "expected_finding_categories": [
+      "POSSIBLE_UNAPPROVED_ACTIVITY"
+    ]
+  },
+  {
+    "scenario_id": "SF-INV-07",
+    "scenario_name": "07 \u2014 Investigate Privilege Escalation",
+    "investigation_prompt": "Find privilege escalation activity in Snowflake during the last 10 days.",
+    "expected_intent": "snowflake_unapproved",
+    "change_id": null,
+    "user_identity": null,
+    "evaluation_timestamp": "2026-11-24T00:00:00Z",
+    "expected_finding_categories": [
+      "POSSIBLE_UNAPPROVED_ACTIVITY"
+    ]
+  },
+  {
+    "scenario_id": "SF-INV-08",
+    "scenario_name": "08 \u2014 Investigate Failed Snowflake Changes",
+    "investigation_prompt": "Investigate change CHG-SF-1008.",
+    "expected_intent": "snowflake_change",
+    "change_id": "CHG-SF-1008",
+    "user_identity": null,
+    "evaluation_timestamp": "2026-11-24T00:00:00Z",
+    "expected_finding_categories": [
+      "WRONG_TARGET_OBJECT",
+      "FAILED_EXECUTION",
+      "EXPECTED_OPERATION_MISSING"
+    ]
+  },
+  {
+    "scenario_id": "SF-INV-09",
+    "scenario_name": "09 \u2014 Identify Wrong Target Modifications",
+    "investigation_prompt": "Investigate change CHG-SF-1022.",
+    "expected_intent": "snowflake_change",
+    "change_id": "CHG-SF-1022",
+    "user_identity": null,
+    "evaluation_timestamp": "2026-11-24T00:00:00Z",
+    "expected_finding_categories": [
+      "WRONG_TARGET_OBJECT",
+      "EXPECTED_OPERATION_MISSING"
+    ]
+  },
+  {
+    "scenario_id": "SF-INV-10",
+    "scenario_name": "10 \u2014 Investigate ACCOUNTADMIN Usage",
+    "investigation_prompt": "Which Snowflake changes were performed using ACCOUNTADMIN in the last 30 days?",
+    "expected_intent": "snowflake_unapproved",
+    "change_id": null,
+    "user_identity": null,
+    "evaluation_timestamp": "2026-11-24T00:00:00Z",
+    "expected_finding_categories": [
+      "POSSIBLE_UNAPPROVED_ACTIVITY"
+    ]
+  },
+  {
+    "scenario_id": "SF-INV-11",
+    "scenario_name": "11 \u2014 Investigate Missing Change Execution",
+    "investigation_prompt": "Investigate change CHG-SF-1017.",
+    "expected_intent": "snowflake_change",
+    "change_id": "CHG-SF-1017",
+    "user_identity": null,
+    "evaluation_timestamp": "2026-11-24T00:00:00Z",
+    "expected_finding_categories": [
+      "NO_EXECUTION_EVIDENCE",
+      "EXPECTED_OPERATION_MISSING"
+    ]
+  },
+  {
+    "scenario_id": "SF-INV-12",
+    "scenario_name": "12 \u2014 Investigate Multiple Changes by One User",
+    "investigation_prompt": "Investigate sfsecurity01@example.invalid for the last 20 days.",
+    "expected_intent": "snowflake_user",
+    "change_id": null,
+    "user_identity": "sfsecurity01@example.invalid",
+    "evaluation_timestamp": "2026-11-24T00:00:00Z",
+    "expected_finding_categories": [
+      "COMPLIANT_EXECUTION",
+      "EXECUTED_OUTSIDE_WINDOW",
+      "ROLE_MISMATCH",
+      "WRONG_TARGET_OBJECT",
+      "UNAPPROVED_OPERATION",
+      "UNEXPECTED_ADDITIONAL_OPERATION",
+      "UNAUTHORIZED_IMPLEMENTER"
+    ]
+  },
+  {
+    "scenario_id": "SF-INV-13",
+    "scenario_name": "13 \u2014 Investigate Unapproved Object Creation",
+    "investigation_prompt": "Find unapproved user creation in Snowflake during the last 10 days.",
+    "expected_intent": "snowflake_unapproved",
+    "change_id": null,
+    "user_identity": null,
+    "evaluation_timestamp": "2026-11-24T00:00:00Z",
+    "expected_finding_categories": [
+      "POSSIBLE_UNAPPROVED_ACTIVITY"
+    ]
+  },
+  {
+    "scenario_id": "SF-INV-14",
+    "scenario_name": "14 \u2014 Investigate Role Revocation",
+    "investigation_prompt": "Find role revocation activity in Snowflake during the last 30 days.",
+    "expected_intent": "snowflake_unapproved",
+    "change_id": null,
+    "user_identity": null,
+    "evaluation_timestamp": "2026-11-24T00:00:00Z",
+    "expected_finding_categories": [
+      "POSSIBLE_UNAPPROVED_ACTIVITY"
+    ]
+  },
+  {
+    "scenario_id": "SF-INV-15",
+    "scenario_name": "15 \u2014 Investigate Activity Without Approved Change",
+    "investigation_prompt": "Find Snowflake activity without approved changes during the last 10 days.",
+    "expected_intent": "snowflake_unapproved",
+    "change_id": null,
+    "user_identity": null,
+    "evaluation_timestamp": "2026-11-24T00:00:00Z",
+    "expected_finding_categories": [
+      "POSSIBLE_UNAPPROVED_ACTIVITY"
+    ]
+  }
+]

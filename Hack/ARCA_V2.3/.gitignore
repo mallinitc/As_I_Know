@@ -1,0 +1,71 @@
+# Local credentials and secrets
+.env
+.env.*
+!.env.example
+api.txt
+*.pem
+*.key
+*.pfx
+*.p12
+.streamlit/secrets.toml
+.aws/
+
+# Python environments and caches
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+.pytest_cache/
+.browser-profile-*/
+
+# Local runtime output and transferable archives
+logs/
+backups/
+*.log
+*.zip
+frontend/node_modules/
+frontend/.next/
+frontend/*.tsbuildinfo
+
+# Keep environment directory structure, not generated runtime contents
+!logs/
+logs/*
+!logs/aws/
+!logs/azure/
+!logs/snowflake/
+!logs/aws/.gitkeep
+!logs/azure/.gitkeep
+!logs/snowflake/.gitkeep
+outputs/*
+!outputs/aws/
+!outputs/azure/
+!outputs/snowflake/
+!outputs/cross_environment/
+!outputs/aws/.gitkeep
+!outputs/azure/.gitkeep
+!outputs/snowflake/.gitkeep
+!outputs/cross_environment/.gitkeep
+
+# Local databases
+*.db
+*.sqlite3
+
+# Local tool and operating-system artifacts
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.tmp
+*.bak
+*.swp
+.DS_Store
+Thumbs.db
+
+# Common local credential filenames
+credentials.json
+service-account*.json
+snowflake_private_key*
+
+# Live AWS testbed manifest (account-specific; created by scripts/aws_live_testbed.py)
+data/aws_live/manifest.json

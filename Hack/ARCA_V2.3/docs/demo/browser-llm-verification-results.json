@@ -1,0 +1,12 @@
+{
+  "generated_at": "2026-10-21T21:38:21.324Z",
+  "browser": "Installed Google Chrome via DevTools Protocol",
+  "results": [
+    {
+      "name": "Agent 5 accepted-response UI fixture",
+      "status": "PASS",
+      "detail": "{\"assisted\":true,\"status\":true,\"model\":true,\"synthesis\":true,\"deterministic\":true,\"evidence\":true,\"plannedTool\":true,\"evidenceTool\":true}"
+    }
+  ],
+  "failures": []
+}

@@ -1,0 +1,567 @@
+[
+  {
+    "sys_id": "sn-az-0001",
+    "change_id": "CHG-AZ-2001",
+    "provider": "azure",
+    "tenant_id": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+    "environment": "production",
+    "requested_by": "requestor01@example.invalid",
+    "implementer": {
+      "principal_id": "20000000-0000-0000-0000-000000000001",
+      "principal_name": "engineer01@example.invalid",
+      "principal_type": "User"
+    },
+    "start": "2026-10-20T10:00:00Z",
+    "end": "2026-10-20T11:00:00Z",
+    "description": "Implement approved synthetic Azure operation Microsoft.Storage/storageAccounts/write on starchprod01.",
+    "risk": "moderate",
+    "state": "approved",
+    "scenario": "VALID_APPROVED_CHANGE",
+    "expected": [
+      {
+        "operation": "Microsoft.Storage/storageAccounts/write",
+        "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod01"
+      }
+    ]
+  },
+  {
+    "sys_id": "sn-az-0002",
+    "change_id": "CHG-AZ-2002",
+    "provider": "azure",
+    "tenant_id": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+    "environment": "production",
+    "requested_by": "requestor02@example.invalid",
+    "implementer": {
+      "principal_id": "20000000-0000-0000-0000-000000000002",
+      "principal_name": "engineer02@example.invalid",
+      "principal_type": "User"
+    },
+    "start": "2026-10-20T12:00:00Z",
+    "end": "2026-10-20T13:00:00Z",
+    "description": "",
+    "risk": "moderate",
+    "state": "approved",
+    "scenario": "INCOMPLETE_CHANGE_REQUEST",
+    "expected": [
+      {
+        "operation": "Microsoft.Compute/virtualMachines/restart/action",
+        "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod01"
+      }
+    ]
+  },
+  {
+    "sys_id": "sn-az-0003",
+    "change_id": "CHG-AZ-2003",
+    "provider": "azure",
+    "tenant_id": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+    "environment": "production",
+    "requested_by": "requestor03@example.invalid",
+    "implementer": {
+      "principal_id": "20000000-0000-0000-0000-000000000003",
+      "principal_name": "engineer03@example.invalid",
+      "principal_type": "User"
+    },
+    "start": "2026-10-20T14:00:00Z",
+    "end": "2026-10-20T15:00:00Z",
+    "description": "Implement approved synthetic Azure operation Microsoft.Web/sites/write on app-arca-prod01.",
+    "risk": "moderate",
+    "state": "approved",
+    "scenario": "OVERPRIVILEGED_PIM_REQUEST",
+    "expected": [
+      {
+        "operation": "Microsoft.Web/sites/write",
+        "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Web/sites/app-arca-prod01"
+      }
+    ]
+  },
+  {
+    "sys_id": "sn-az-0004",
+    "change_id": "CHG-AZ-2004",
+    "provider": "azure",
+    "tenant_id": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+    "environment": "production",
+    "requested_by": "requestor04@example.invalid",
+    "implementer": {
+      "principal_id": "20000000-0000-0000-0000-000000000004",
+      "principal_name": "engineer04@example.invalid",
+      "principal_type": "User"
+    },
+    "start": "2026-10-20T16:00:00Z",
+    "end": "2026-10-20T17:00:00Z",
+    "description": "Implement approved synthetic Azure operation Microsoft.Compute/virtualMachines/delete on vm-arca-prod02.",
+    "risk": "moderate",
+    "state": "approved",
+    "scenario": "INSUFFICIENT_RBAC_PERMISSIONS",
+    "expected": [
+      {
+        "operation": "Microsoft.Compute/virtualMachines/delete",
+        "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod02"
+      }
+    ]
+  },
+  {
+    "sys_id": "sn-az-0005",
+    "change_id": "CHG-AZ-2005",
+    "provider": "azure",
+    "tenant_id": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+    "environment": "production",
+    "requested_by": "requestor05@example.invalid",
+    "implementer": {
+      "principal_id": "20000000-0000-0000-0000-000000000005",
+      "principal_name": "engineer05@example.invalid",
+      "principal_type": "User"
+    },
+    "start": "2026-10-20T18:00:00Z",
+    "end": "2026-10-20T19:00:00Z",
+    "description": "Implement approved synthetic Azure operation Microsoft.Storage/storageAccounts/write on starchprod02.",
+    "risk": "moderate",
+    "state": "approved",
+    "scenario": "EXCESSIVE_SUBSCRIPTION_SCOPE",
+    "expected": [
+      {
+        "operation": "Microsoft.Storage/storageAccounts/write",
+        "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod02"
+      }
+    ]
+  },
+  {
+    "sys_id": "sn-az-0006",
+    "change_id": "CHG-AZ-2006",
+    "provider": "azure",
+    "tenant_id": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+    "environment": "production",
+    "requested_by": "requestor06@example.invalid",
+    "implementer": {
+      "principal_id": "20000000-0000-0000-0000-000000000006",
+      "principal_name": "engineer06@example.invalid",
+      "principal_type": "User"
+    },
+    "start": "2026-10-20T20:00:00Z",
+    "end": "2026-10-20T21:00:00Z",
+    "description": "Implement approved synthetic Azure operation Microsoft.Web/sites/write on app-arca-prod02.",
+    "risk": "moderate",
+    "state": "approved",
+    "scenario": "PIM_EXTENDS_BEYOND_CHANGE_WINDOW",
+    "expected": [
+      {
+        "operation": "Microsoft.Web/sites/write",
+        "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Web/sites/app-arca-prod02"
+      }
+    ]
+  },
+  {
+    "sys_id": "sn-az-0007",
+    "change_id": "CHG-AZ-2007",
+    "provider": "azure",
+    "tenant_id": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+    "environment": "production",
+    "requested_by": "requestor07@example.invalid",
+    "implementer": {
+      "principal_id": "20000000-0000-0000-0000-000000000007",
+      "principal_name": "engineer07@example.invalid",
+      "principal_type": "User"
+    },
+    "start": "2026-10-20T22:00:00Z",
+    "end": "2026-10-20T23:00:00Z",
+    "description": "Implement approved synthetic Azure operation Microsoft.Storage/storageAccounts/write on starchprod03.",
+    "risk": "moderate",
+    "state": "approved",
+    "scenario": "UNEXPECTED_RESOURCE_MODIFICATION",
+    "expected": [
+      {
+        "operation": "Microsoft.Storage/storageAccounts/write",
+        "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod03"
+      }
+    ]
+  },
+  {
+    "sys_id": "sn-az-0008",
+    "change_id": "CHG-AZ-2008",
+    "provider": "azure",
+    "tenant_id": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+    "environment": "production",
+    "requested_by": "requestor08@example.invalid",
+    "implementer": {
+      "principal_id": "20000000-0000-0000-0000-000000000008",
+      "principal_name": "engineer08@example.invalid",
+      "principal_type": "User"
+    },
+    "start": "2026-10-21T00:00:00Z",
+    "end": "2026-10-21T01:00:00Z",
+    "description": "Implement approved synthetic Azure operation Microsoft.Compute/virtualMachines/start/action on vm-arca-prod03.",
+    "risk": "moderate",
+    "state": "approved",
+    "scenario": "ACTIVITY_OUTSIDE_CHANGE_WINDOW",
+    "expected": [
+      {
+        "operation": "Microsoft.Compute/virtualMachines/start/action",
+        "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod03"
+      }
+    ]
+  },
+  {
+    "sys_id": "sn-az-0009",
+    "change_id": "CHG-AZ-2009",
+    "provider": "azure",
+    "tenant_id": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+    "environment": "production",
+    "requested_by": "requestor09@example.invalid",
+    "implementer": {
+      "principal_id": "20000000-0000-0000-0000-000000000009",
+      "principal_name": "engineer09@example.invalid",
+      "principal_type": "User"
+    },
+    "start": "2026-10-21T02:00:00Z",
+    "end": "2026-10-21T03:00:00Z",
+    "description": "Implement approved synthetic Azure operation Microsoft.KeyVault/vaults/write on kv-arca-prod01.",
+    "risk": "moderate",
+    "state": "approved",
+    "scenario": "UNEXPECTED_ENGINEER",
+    "expected": [
+      {
+        "operation": "Microsoft.KeyVault/vaults/write",
+        "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.KeyVault/vaults/kv-arca-prod01"
+      }
+    ]
+  },
+  {
+    "sys_id": "sn-az-0010",
+    "change_id": "CHG-AZ-2010",
+    "provider": "azure",
+    "tenant_id": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+    "environment": "production",
+    "requested_by": "requestor10@example.invalid",
+    "implementer": {
+      "principal_id": "20000000-0000-0000-0000-000000000010",
+      "principal_name": "engineer10@example.invalid",
+      "principal_type": "User"
+    },
+    "start": "2026-10-21T04:00:00Z",
+    "end": "2026-10-21T05:00:00Z",
+    "description": "Implement approved synthetic Azure operation Microsoft.Sql/servers/databases/write on sql-arca-prod/db01.",
+    "risk": "moderate",
+    "state": "approved",
+    "scenario": "VALID_APPROVED_CHANGE",
+    "expected": [
+      {
+        "operation": "Microsoft.Sql/servers/databases/write",
+        "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Sql/servers/databases/sql-arca-prod/db01"
+      }
+    ]
+  },
+  {
+    "sys_id": "sn-az-0011",
+    "change_id": "CHG-AZ-2011",
+    "provider": "azure",
+    "tenant_id": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+    "environment": "production",
+    "requested_by": "requestor11@example.invalid",
+    "implementer": {
+      "principal_id": "20000000-0000-0000-0000-000000000011",
+      "principal_name": "engineer11@example.invalid",
+      "principal_type": "User"
+    },
+    "start": "2026-10-21T06:00:00Z",
+    "end": "2026-10-21T07:00:00Z",
+    "description": "Implement approved synthetic Azure operation Microsoft.Authorization/roleAssignments/delete on starchprod01.",
+    "risk": "moderate",
+    "state": "approved",
+    "scenario": "STORAGE_ACCESS_LOSS_ROLE_REMOVAL",
+    "expected": [
+      {
+        "operation": "Microsoft.Authorization/roleAssignments/delete",
+        "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod01/providers/Microsoft.Authorization/roleAssignments/30000000-0000-0000-0000-000000000011"
+      }
+    ]
+  },
+  {
+    "sys_id": "sn-az-0012",
+    "change_id": "CHG-AZ-2012",
+    "provider": "azure",
+    "tenant_id": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+    "environment": "production",
+    "requested_by": "requestor12@example.invalid",
+    "implementer": {
+      "principal_id": "20000000-0000-0000-0000-000000000012",
+      "principal_name": "engineer12@example.invalid",
+      "principal_type": "User"
+    },
+    "start": "2026-10-21T08:00:00Z",
+    "end": "2026-10-21T09:00:00Z",
+    "description": "Implement approved synthetic Azure operation Microsoft.Storage/storageAccounts/write on starchprod04.",
+    "risk": "moderate",
+    "state": "approved",
+    "scenario": "STORAGE_ACCESS_LOSS_FIREWALL",
+    "expected": [
+      {
+        "operation": "Microsoft.Storage/storageAccounts/write",
+        "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod04"
+      }
+    ]
+  },
+  {
+    "sys_id": "sn-az-0013",
+    "change_id": "CHG-AZ-2013",
+    "provider": "azure",
+    "tenant_id": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+    "environment": "production",
+    "requested_by": "requestor13@example.invalid",
+    "implementer": {
+      "principal_id": "20000000-0000-0000-0000-000000000001",
+      "principal_name": "engineer01@example.invalid",
+      "principal_type": "User"
+    },
+    "start": "2026-10-21T10:00:00Z",
+    "end": "2026-10-21T11:00:00Z",
+    "description": "Implement approved synthetic Azure operation Microsoft.Network/networkSecurityGroups/write on nsg-arca-prod01.",
+    "risk": "moderate",
+    "state": "approved",
+    "scenario": "VALID_APPROVED_CHANGE",
+    "expected": [
+      {
+        "operation": "Microsoft.Network/networkSecurityGroups/write",
+        "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Network/networkSecurityGroups/nsg-arca-prod01"
+      }
+    ]
+  },
+  {
+    "sys_id": "sn-az-0014",
+    "change_id": "CHG-AZ-2014",
+    "provider": "azure",
+    "tenant_id": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+    "environment": "production",
+    "requested_by": "requestor14@example.invalid",
+    "implementer": {
+      "principal_id": "20000000-0000-0000-0000-000000000002",
+      "principal_name": "engineer02@example.invalid",
+      "principal_type": "User"
+    },
+    "start": "2026-10-21T12:00:00Z",
+    "end": "2026-10-21T13:00:00Z",
+    "description": "Implement approved synthetic Azure operation Microsoft.Web/sites/config/write on app-arca-prod03.",
+    "risk": "moderate",
+    "state": "approved",
+    "scenario": "VALID_APPROVED_CHANGE",
+    "expected": [
+      {
+        "operation": "Microsoft.Web/sites/config/write",
+        "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Web/sites/app-arca-prod03"
+      }
+    ]
+  },
+  {
+    "sys_id": "sn-az-0015",
+    "change_id": "CHG-AZ-2015",
+    "provider": "azure",
+    "tenant_id": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+    "environment": "production",
+    "requested_by": "requestor15@example.invalid",
+    "implementer": {
+      "principal_id": "20000000-0000-0000-0000-000000000003",
+      "principal_name": "engineer03@example.invalid",
+      "principal_type": "User"
+    },
+    "start": "2026-10-21T14:00:00Z",
+    "end": "2026-10-21T15:00:00Z",
+    "description": "Implement approved synthetic Azure operation Microsoft.Compute/virtualMachines/deallocate/action on vm-arca-prod04.",
+    "risk": "moderate",
+    "state": "approved",
+    "scenario": "VALID_APPROVED_CHANGE",
+    "expected": [
+      {
+        "operation": "Microsoft.Compute/virtualMachines/deallocate/action",
+        "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod04"
+      }
+    ]
+  },
+  {
+    "sys_id": "sn-az-0016",
+    "change_id": "CHG-AZ-2016",
+    "provider": "azure",
+    "tenant_id": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+    "environment": "production",
+    "requested_by": "requestor16@example.invalid",
+    "implementer": {
+      "principal_id": "20000000-0000-0000-0000-000000000004",
+      "principal_name": "engineer04@example.invalid",
+      "principal_type": "User"
+    },
+    "start": "2026-10-21T16:00:00Z",
+    "end": "2026-10-21T17:00:00Z",
+    "description": "Implement approved synthetic Azure operation Microsoft.Storage/storageAccounts/write on starchprod05.",
+    "risk": "moderate",
+    "state": "approved",
+    "scenario": "VALID_APPROVED_CHANGE",
+    "expected": [
+      {
+        "operation": "Microsoft.Storage/storageAccounts/write",
+        "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod05"
+      }
+    ]
+  },
+  {
+    "sys_id": "sn-az-0017",
+    "change_id": "CHG-AZ-2017",
+    "provider": "azure",
+    "tenant_id": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+    "environment": "production",
+    "requested_by": "requestor17@example.invalid",
+    "implementer": {
+      "principal_id": "20000000-0000-0000-0000-000000000005",
+      "principal_name": "engineer05@example.invalid",
+      "principal_type": "User"
+    },
+    "start": "2026-10-21T18:00:00Z",
+    "end": "2026-10-21T19:00:00Z",
+    "description": "Implement approved synthetic Azure operation Microsoft.Sql/servers/databases/write on sql-arca-prod/db02.",
+    "risk": "moderate",
+    "state": "approved",
+    "scenario": "VALID_APPROVED_CHANGE",
+    "expected": [
+      {
+        "operation": "Microsoft.Sql/servers/databases/write",
+        "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Sql/servers/databases/sql-arca-prod/db02"
+      }
+    ]
+  },
+  {
+    "sys_id": "sn-az-0018",
+    "change_id": "CHG-AZ-2018",
+    "provider": "azure",
+    "tenant_id": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+    "environment": "production",
+    "requested_by": "requestor18@example.invalid",
+    "implementer": {
+      "principal_id": "20000000-0000-0000-0000-000000000006",
+      "principal_name": "engineer06@example.invalid",
+      "principal_type": "User"
+    },
+    "start": "2026-10-21T20:00:00Z",
+    "end": "2026-10-21T21:00:00Z",
+    "description": "Implement approved synthetic Azure operation Microsoft.KeyVault/vaults/write on kv-arca-prod02.",
+    "risk": "moderate",
+    "state": "approved",
+    "scenario": "VALID_APPROVED_CHANGE",
+    "expected": [
+      {
+        "operation": "Microsoft.KeyVault/vaults/write",
+        "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.KeyVault/vaults/kv-arca-prod02"
+      }
+    ]
+  },
+  {
+    "sys_id": "sn-az-0019",
+    "change_id": "CHG-AZ-2019",
+    "provider": "azure",
+    "tenant_id": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+    "environment": "production",
+    "requested_by": "requestor19@example.invalid",
+    "implementer": {
+      "principal_id": "20000000-0000-0000-0000-000000000007",
+      "principal_name": "engineer07@example.invalid",
+      "principal_type": "User"
+    },
+    "start": "2026-10-21T22:00:00Z",
+    "end": "2026-10-21T23:00:00Z",
+    "description": "Implement approved synthetic Azure operation Microsoft.Network/networkSecurityGroups/securityRules/write on nsg-arca-prod02.",
+    "risk": "moderate",
+    "state": "approved",
+    "scenario": "VALID_APPROVED_CHANGE",
+    "expected": [
+      {
+        "operation": "Microsoft.Network/networkSecurityGroups/securityRules/write",
+        "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Network/networkSecurityGroups/nsg-arca-prod02"
+      }
+    ]
+  },
+  {
+    "sys_id": "sn-az-0020",
+    "change_id": "CHG-AZ-2020",
+    "provider": "azure",
+    "tenant_id": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+    "environment": "production",
+    "requested_by": "requestor20@example.invalid",
+    "implementer": {
+      "principal_id": "20000000-0000-0000-0000-000000000008",
+      "principal_name": "engineer08@example.invalid",
+      "principal_type": "User"
+    },
+    "start": "2026-10-22T00:00:00Z",
+    "end": "2026-10-22T01:00:00Z",
+    "description": "Implement approved synthetic Azure operation Microsoft.Web/sites/restart/action on app-arca-prod04.",
+    "risk": "moderate",
+    "state": "approved",
+    "scenario": "VALID_APPROVED_CHANGE",
+    "expected": [
+      {
+        "operation": "Microsoft.Web/sites/restart/action",
+        "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Web/sites/app-arca-prod04"
+      }
+    ]
+  },
+  {
+    "sys_id": "sn-az-0021", "change_id": "CHG-AZ-2021", "provider": "azure",
+    "tenant_id": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee", "environment": "production",
+    "requested_by": "requestor21@example.invalid",
+    "implementer": {"principal_id": "20000000-0000-0000-0000-000000000001", "principal_name": "engineer01@example.invalid", "principal_type": "User"},
+    "authorized_implementers": [{"principal_id": "20000000-0000-0000-0000-000000000001", "principal_name": "engineer01@example.invalid"}],
+    "start": "2026-10-22T02:00:00Z", "end": "2026-10-22T04:00:00Z",
+    "description": "Coordinated update of storage, web application, and virtual machine resources using three least-privilege activations.",
+    "risk": "moderate", "state": "approved", "scenario": "MULTI_PIM_THREE_APPROPRIATE",
+    "expected": [
+      {"operation": "Microsoft.Storage/storageAccounts/write", "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod01"},
+      {"operation": "Microsoft.Web/sites/write", "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Web/sites/app-arca-prod01"},
+      {"operation": "Microsoft.Compute/virtualMachines/restart/action", "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Compute/virtualMachines/vm-arca-prod01"}
+    ]
+  },
+  {
+    "sys_id": "sn-az-0022", "change_id": "CHG-AZ-2022", "provider": "azure",
+    "tenant_id": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee", "environment": "production",
+    "requested_by": "requestor22@example.invalid",
+    "implementer": {"principal_id": "20000000-0000-0000-0000-000000000005", "principal_name": "engineer05@example.invalid", "principal_type": "User"},
+    "start": "2026-10-22T05:00:00Z", "end": "2026-10-22T06:00:00Z",
+    "description": "Update a production storage account with a resource-scoped role; detect a redundant subscription Contributor activation.",
+    "risk": "high", "state": "approved", "scenario": "MULTI_PIM_REDUNDANT_CONTRIBUTOR",
+    "expected": [{"operation": "Microsoft.Storage/storageAccounts/write", "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod02"}]
+  },
+  {
+    "sys_id": "sn-az-0023", "change_id": "CHG-AZ-2023", "provider": "azure",
+    "tenant_id": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee", "environment": "production",
+    "requested_by": "requestor23@example.invalid",
+    "implementer": {"principal_id": "20000000-0000-0000-0000-000000000007", "principal_name": "engineer07@example.invalid", "principal_type": "User"},
+    "start": "2026-10-22T07:00:00Z", "end": "2026-10-22T08:00:00Z",
+    "description": "Update a storage account and network security group; available PIM evidence covers only storage.",
+    "risk": "high", "state": "approved", "scenario": "MULTI_PIM_INSUFFICIENT_AGGREGATE",
+    "expected": [
+      {"operation": "Microsoft.Storage/storageAccounts/write", "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod03"},
+      {"operation": "Microsoft.Network/networkSecurityGroups/write", "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Network/networkSecurityGroups/nsg-arca-prod01"}
+    ]
+  },
+  {
+    "sys_id": "sn-az-0024", "change_id": "CHG-AZ-2024", "provider": "azure",
+    "tenant_id": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee", "environment": "production",
+    "requested_by": "requestor24@example.invalid",
+    "implementer": {"principal_id": "20000000-0000-0000-0000-000000000011", "principal_name": "engineer11@example.invalid", "principal_type": "User"},
+    "authorized_implementers": [
+      {"principal_id": "20000000-0000-0000-0000-000000000011", "principal_name": "engineer11@example.invalid"},
+      {"principal_id": "20000000-0000-0000-0000-000000000012", "principal_name": "engineer12@example.invalid"}
+    ],
+    "start": "2026-10-22T09:00:00Z", "end": "2026-10-22T11:00:00Z",
+    "description": "Two explicitly authorized engineers update a storage account and web application under separate privileges.",
+    "risk": "moderate", "state": "approved", "scenario": "MULTI_PIM_TWO_AUTHORIZED_IMPLEMENTERS",
+    "expected": [
+      {"operation": "Microsoft.Storage/storageAccounts/write", "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Storage/storageAccounts/starchprod04", "authorized_principal_id": "20000000-0000-0000-0000-000000000011"},
+      {"operation": "Microsoft.Web/sites/write", "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.Web/sites/app-arca-prod02", "authorized_principal_id": "20000000-0000-0000-0000-000000000012"}
+    ]
+  },
+  {
+    "sys_id": "sn-az-0025", "change_id": "CHG-AZ-2025", "provider": "azure",
+    "tenant_id": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee", "environment": "production",
+    "requested_by": "requestor25@example.invalid",
+    "implementer": {"principal_id": "20000000-0000-0000-0000-000000000009", "principal_name": "engineer09@example.invalid", "principal_type": "User"},
+    "start": "2026-10-22T12:00:00Z", "end": "2026-10-22T13:00:00Z",
+    "description": "Update a production Key Vault; the linked PIM justification contains an incorrect change reference.",
+    "risk": "high", "state": "approved", "scenario": "MULTI_PIM_WRONG_JUSTIFICATION_REFERENCE",
+    "expected": [{"operation": "Microsoft.KeyVault/vaults/write", "resource_id": "/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/rg-arca-prod/providers/Microsoft.KeyVault/vaults/kv-arca-prod01"}]
+  }
+]

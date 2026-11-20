@@ -1,0 +1,23 @@
+[
+  {"scenario_id":"AWS-CHANGE-01","scenario_name":"01 - Valid Change","stage":"change","change_id":"CHG1002","expected_status":"VALID","expected_findings":[]},
+  {"scenario_id":"AWS-CHANGE-02","scenario_name":"02 - Missing Change Description","stage":"change","change_id":"CHG1003","expected_status":"INCOMPLETE","expected_findings":["MISSING_MANDATORY_FIELD"]},
+  {"scenario_id":"AWS-CHANGE-03","scenario_name":"03 - Missing Implementer","stage":"change","change_id":"CHG1004","expected_status":"INCOMPLETE","expected_findings":["MISSING_MANDATORY_FIELD"]},
+  {"scenario_id":"AWS-CHANGE-04","scenario_name":"04 - Invalid Change Window","stage":"change","change_id":"CHG1005","expected_status":"INCONSISTENT","expected_findings":["INVALID_CHANGE_WINDOW"]},
+  {"scenario_id":"AWS-CHANGE-05","scenario_name":"05 - Unapproved Change","stage":"change","change_id":"CHG1006","expected_status":"MANUAL_REVIEW_REQUIRED","expected_findings":["CHANGE_NOT_APPROVED"]},
+  {"scenario_id":"AWS-ACCESS-06","scenario_name":"06 - Appropriate S3 Permission","stage":"access","change_id":"CHG1007","expected_status":"APPROPRIATE_WITH_LIMITATIONS","expected_findings":[]},
+  {"scenario_id":"AWS-ACCESS-07","scenario_name":"07 - Excessive S3 Wildcard Access","stage":"access","change_id":"CHG1001","expected_status":"OVERPRIVILEGED","expected_findings":["ACTION_WILDCARD","RESOURCE_WILDCARD"]},
+  {"scenario_id":"AWS-ACCESS-08","scenario_name":"08 - Insufficient S3 Permissions","stage":"access","change_id":"CHG1008","expected_status":"INSUFFICIENT_ACCESS","expected_findings":["INSUFFICIENT_PERMISSION"]},
+  {"scenario_id":"AWS-ACCESS-09","scenario_name":"09 - Appropriate EC2 Permission","stage":"access","change_id":"CHG1002","expected_status":"APPROPRIATE_WITH_LIMITATIONS","expected_findings":[]},
+  {"scenario_id":"AWS-ACCESS-10","scenario_name":"10 - Excessive EC2 Access","stage":"access","change_id":"CHG1009","expected_status":"OVERPRIVILEGED","expected_findings":["ACTION_WILDCARD","RESOURCE_WILDCARD"]},
+  {"scenario_id":"AWS-ACCESS-11","scenario_name":"11 - Explicit Deny","stage":"access","change_id":"CHG1010","expected_status":"EXPLICITLY_DENIED","expected_findings":["EXPLICIT_DENY"]},
+  {"scenario_id":"AWS-ACCESS-12","scenario_name":"12 - Resource ARN Mismatch","stage":"access","change_id":"CHG1011","expected_status":"INSUFFICIENT_ACCESS","expected_findings":["INSUFFICIENT_PERMISSION"]},
+  {"scenario_id":"AWS-ACCESS-13","scenario_name":"13 - Broad Resource Wildcard","stage":"access","change_id":"CHG1012","expected_status":"OVERPRIVILEGED","expected_findings":["RESOURCE_WILDCARD"]},
+  {"scenario_id":"AWS-ACCESS-14","scenario_name":"14 - Missing IAM Policy Evidence","stage":"access","change_id":"CHG1013","expected_status":"NEED_MORE_INFO","expected_findings":["MISSING_POLICY_EVIDENCE"]},
+  {"scenario_id":"AWS-ACCESS-15","scenario_name":"15 - Multiple Expected Operations","stage":"access","change_id":"CHG1014","expected_status":"APPROPRIATE_WITH_LIMITATIONS","expected_findings":[]},
+  {"scenario_id":"AWS-ACCESS-16","scenario_name":"16 - Partial Permission Coverage","stage":"access","change_id":"CHG1015","expected_status":"INSUFFICIENT_ACCESS","expected_findings":["INSUFFICIENT_PERMISSION"]},
+  {"scenario_id":"AWS-ACCESS-17","scenario_name":"17 - Unknown IAM Action","stage":"access","change_id":"CHG1016","expected_status":"MANUAL_REVIEW_REQUIRED","expected_findings":["UNKNOWN_IAM_ACTION"]},
+  {"scenario_id":"AWS-CHANGE-18","scenario_name":"18 - Missing Target Resource","stage":"change","change_id":"CHG1017","expected_status":"INCOMPLETE","expected_findings":["MISSING_TARGET_RESOURCE"]},
+  {"scenario_id":"AWS-ACCESS-19","scenario_name":"19 - Time-Limited Access","stage":"access","change_id":"CHG1018","expected_status":"APPROPRIATE_WITH_LIMITATIONS","expected_findings":[]},
+  {"scenario_id":"AWS-ACCESS-20","scenario_name":"20 - Ambiguous Policy Conditions","stage":"access","change_id":"CHG1019","expected_status":"MANUAL_REVIEW_REQUIRED","expected_findings":["UNSUPPORTED_POLICY_CONDITION"]},
+  {"scenario_id":"AWS-ACCESS-21","scenario_name":"21 - Permission Boundary Constraint","stage":"access","change_id":"CHG1020","expected_status":"INSUFFICIENT_ACCESS","expected_findings":["PERMISSION_BOUNDARY_CONSTRAINT"]}
+]

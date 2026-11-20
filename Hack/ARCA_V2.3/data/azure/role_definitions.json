@@ -1,0 +1,174 @@
+[
+  {
+    "role_definition_id": "/subscriptions/00000000-1111-2222-3333-444444444444/providers/Microsoft.Authorization/roleDefinitions/10000000-0000-0000-0000-000000000001",
+    "role_name": "Storage Account Contributor",
+    "role_type": "BuiltInRole",
+    "synthetic_key": "storage-contrib",
+    "permissions": [
+      {
+        "actions": [
+          "Microsoft.Storage/storageAccounts/read",
+          "Microsoft.Storage/storageAccounts/write"
+        ],
+        "not_actions": [],
+        "data_actions": [],
+        "not_data_actions": []
+      }
+    ],
+    "assignable_scopes": [
+      "/subscriptions/00000000-1111-2222-3333-444444444444"
+    ]
+  },
+  {
+    "role_definition_id": "/subscriptions/00000000-1111-2222-3333-444444444444/providers/Microsoft.Authorization/roleDefinitions/10000000-0000-0000-0000-000000000002",
+    "role_name": "Virtual Machine Contributor",
+    "role_type": "BuiltInRole",
+    "synthetic_key": "vm-contrib",
+    "permissions": [
+      {
+        "actions": [
+          "Microsoft.Compute/virtualMachines/*"
+        ],
+        "not_actions": [],
+        "data_actions": [],
+        "not_data_actions": []
+      }
+    ],
+    "assignable_scopes": [
+      "/subscriptions/00000000-1111-2222-3333-444444444444"
+    ]
+  },
+  {
+    "role_definition_id": "/subscriptions/00000000-1111-2222-3333-444444444444/providers/Microsoft.Authorization/roleDefinitions/10000000-0000-0000-0000-000000000003",
+    "role_name": "Website Contributor",
+    "role_type": "BuiltInRole",
+    "synthetic_key": "web-contrib",
+    "permissions": [
+      {
+        "actions": [
+          "Microsoft.Web/sites/*"
+        ],
+        "not_actions": [],
+        "data_actions": [],
+        "not_data_actions": []
+      }
+    ],
+    "assignable_scopes": [
+      "/subscriptions/00000000-1111-2222-3333-444444444444"
+    ]
+  },
+  {
+    "role_definition_id": "/subscriptions/00000000-1111-2222-3333-444444444444/providers/Microsoft.Authorization/roleDefinitions/10000000-0000-0000-0000-000000000004",
+    "role_name": "Key Vault Contributor",
+    "role_type": "BuiltInRole",
+    "synthetic_key": "kv-contrib",
+    "permissions": [
+      {
+        "actions": [
+          "Microsoft.KeyVault/vaults/*"
+        ],
+        "not_actions": [],
+        "data_actions": [],
+        "not_data_actions": []
+      }
+    ],
+    "assignable_scopes": [
+      "/subscriptions/00000000-1111-2222-3333-444444444444"
+    ]
+  },
+  {
+    "role_definition_id": "/subscriptions/00000000-1111-2222-3333-444444444444/providers/Microsoft.Authorization/roleDefinitions/10000000-0000-0000-0000-000000000005",
+    "role_name": "SQL DB Contributor",
+    "role_type": "BuiltInRole",
+    "synthetic_key": "sql-contrib",
+    "permissions": [
+      {
+        "actions": [
+          "Microsoft.Sql/servers/databases/*"
+        ],
+        "not_actions": [],
+        "data_actions": [],
+        "not_data_actions": []
+      }
+    ],
+    "assignable_scopes": [
+      "/subscriptions/00000000-1111-2222-3333-444444444444"
+    ]
+  },
+  {
+    "role_definition_id": "/subscriptions/00000000-1111-2222-3333-444444444444/providers/Microsoft.Authorization/roleDefinitions/10000000-0000-0000-0000-000000000006",
+    "role_name": "Network Contributor",
+    "role_type": "BuiltInRole",
+    "synthetic_key": "network-contrib",
+    "permissions": [
+      {
+        "actions": [
+          "Microsoft.Network/networkSecurityGroups/*"
+        ],
+        "not_actions": [],
+        "data_actions": [],
+        "not_data_actions": []
+      }
+    ],
+    "assignable_scopes": [
+      "/subscriptions/00000000-1111-2222-3333-444444444444"
+    ]
+  },
+  {
+    "role_definition_id": "/subscriptions/00000000-1111-2222-3333-444444444444/providers/Microsoft.Authorization/roleDefinitions/10000000-0000-0000-0000-000000000007",
+    "role_name": "Reader",
+    "role_type": "BuiltInRole",
+    "synthetic_key": "reader",
+    "permissions": [
+      {
+        "actions": [
+          "*/read"
+        ],
+        "not_actions": [],
+        "data_actions": [],
+        "not_data_actions": []
+      }
+    ],
+    "assignable_scopes": [
+      "/subscriptions/00000000-1111-2222-3333-444444444444"
+    ]
+  },
+  {
+    "role_definition_id": "/subscriptions/00000000-1111-2222-3333-444444444444/providers/Microsoft.Authorization/roleDefinitions/10000000-0000-0000-0000-000000000008",
+    "role_name": "Contributor",
+    "role_type": "BuiltInRole",
+    "synthetic_key": "contributor",
+    "permissions": [
+      {
+        "actions": [
+          "*"
+        ],
+        "not_actions": [],
+        "data_actions": [],
+        "not_data_actions": []
+      }
+    ],
+    "assignable_scopes": [
+      "/subscriptions/00000000-1111-2222-3333-444444444444"
+    ]
+  },
+  {
+    "role_definition_id": "/subscriptions/00000000-1111-2222-3333-444444444444/providers/Microsoft.Authorization/roleDefinitions/10000000-0000-0000-0000-000000000009",
+    "role_name": "User Access Administrator",
+    "role_type": "BuiltInRole",
+    "synthetic_key": "uaa",
+    "permissions": [
+      {
+        "actions": [
+          "Microsoft.Authorization/roleAssignments/*"
+        ],
+        "not_actions": [],
+        "data_actions": [],
+        "not_data_actions": []
+      }
+    ],
+    "assignable_scopes": [
+      "/subscriptions/00000000-1111-2222-3333-444444444444"
+    ]
+  }
+]

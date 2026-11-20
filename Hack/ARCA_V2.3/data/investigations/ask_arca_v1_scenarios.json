@@ -1,0 +1,8 @@
+[
+  {"scenario_id":"ASK-UNDOCUMENTED","scenario_name":"Find recent undocumented changes","question":"Show undocumented production changes in the last 24 hours.","evaluation_timestamp":"2026-10-26T08:20:00Z","expected_intent":"undocumented_changes","expected_providers":["azure"]},
+  {"scenario_id":"ASK-PIM","scenario_name":"Review subscription Contributor requests","question":"Who requested Contributor access at subscription scope this week?","evaluation_timestamp":"2026-10-26T08:20:00Z","expected_intent":"pim_requests","expected_providers":["azure"]},
+  {"scenario_id":"ASK-RESOURCE","scenario_name":"Investigate a uniquely named resource","question":"Who modified starchprod04 during the last 48 hours?","evaluation_timestamp":"2026-10-26T08:20:00Z","expected_intent":"resource_changes","expected_providers":["azure"]},
+  {"scenario_id":"ASK-ACCESS","scenario_name":"Troubleshoot storage access loss","question":"I could access starchprod04 two days ago, but now I cannot. What changed?","evaluation_timestamp":"2026-10-26T08:20:00Z","expected_intent":"access_troubleshooting","expected_providers":["azure"]},
+  {"scenario_id":"ASK-AMBIGUOUS","scenario_name":"Ambiguous Storage Account reference","question":"Who modified this Storage Account during the last 48 hours?","evaluation_timestamp":"2026-10-26T08:20:00Z","expected_intent":"resource_changes","expected_providers":["azure"]},
+  {"scenario_id":"ASK-UNSUPPORTED","scenario_name":"Unsupported question guardrail","question":"What is the weather tomorrow?","evaluation_timestamp":"2026-10-26T08:20:00Z","expected_intent":"unsupported","expected_providers":[]}
+]

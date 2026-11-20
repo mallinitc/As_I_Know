@@ -1,0 +1,31 @@
+const port=Number(process.env.ARCA_CDP_PORT||9222);
+const base=process.env.ARCA_FRONTEND_URL||"http://127.0.0.1:3000";
+const target=await fetch(`http://127.0.0.1:${port}/json/new?${encodeURIComponent("about:blank")}`,{method:"PUT"}).then(r=>r.json());
+const socket=new WebSocket(target.webSocketDebuggerUrl);await new Promise((resolve,reject)=>{socket.onopen=resolve;socket.onerror=reject});
+let id=0;const pending=new Map();socket.onmessage=event=>{const value=JSON.parse(event.data);if(!value.id)return;const item=pending.get(value.id);pending.delete(value.id);value.error?item.reject(new Error(value.error.message)):item.resolve(value.result)};
+const send=(method,params={})=>new Promise((resolve,reject)=>{const key=++id;pending.set(key,{resolve,reject});socket.send(JSON.stringify({id:key,method,params}))});
+await send("Page.enable");await send("Runtime.enable");
+async function evaluate(expression){const result=await send("Runtime.evaluate",{expression,awaitPromise:true,returnByValue:true});if(result.exceptionDetails)throw new Error(result.exceptionDetails.text);return result.result.value}
+const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+async function wait(expression,label){for(let i=0;i<180;i++){if(await evaluate(`Boolean(${expression})`))return;await sleep(100)}const body=await evaluate("document.body.innerText.slice(-1800)");throw new Error(`Timed out: ${label}\n${body}`)}
+async function click(text){return evaluate(`(()=>{const button=[...document.querySelectorAll('button')].find(x=>x.innerText.includes(${JSON.stringify(text)})&&!x.disabled);if(!button)return false;button.click();return true})()`)}
+async function selectScenario(index){const info=await evaluate(`(()=>{const select=[...document.querySelectorAll('label')].find(x=>x.innerText.includes('Verified Demo Example'))?.querySelector('select');const option=select?.options[${index}];return option?.value?{count:select.options.length,text:option.text,value:option.value}:null})()`);if(!info)throw new Error("Scenario option was unavailable");for(let i=0;i<index;i++){await evaluate(`(()=>{const select=[...document.querySelectorAll('label')].find(x=>x.innerText.includes('Verified Demo Example'))?.querySelector('select');select?.focus();return Boolean(select)})()`);await send("Input.dispatchKeyEvent",{type:"keyDown",key:"ArrowDown",code:"ArrowDown",windowsVirtualKeyCode:40,nativeVirtualKeyCode:40});await send("Input.dispatchKeyEvent",{type:"keyUp",key:"ArrowDown",code:"ArrowDown",windowsVirtualKeyCode:40,nativeVirtualKeyCode:40});await sleep(120)}return info}
+async function resetChangeMode(){await click("By Change Number");await wait("[...document.querySelectorAll('label')].find(x=>x.innerText.includes('Verified Demo Example'))?.querySelector('select')?.value===''","change-mode reset");await wait("!document.body.innerText.includes('Original V1 execution assessment')","stale result cleared")}
+
+await send("Page.navigate",{url:`${base}/`});await wait("document.readyState==='complete'","home");
+await wait("document.querySelector('#global-environment')","environment selector");
+await evaluate(`(()=>{const x=document.querySelector('#global-environment');x.value='azure';x.dispatchEvent(new Event('change',{bubbles:true}));document.querySelector('a[href="/execution-assurance"]')?.click();return true})()`);
+await wait("location.pathname==='/execution-assurance'","execution route");
+await wait("[...document.querySelectorAll('label')].find(x=>x.innerText.includes('Verified Demo Example'))?.querySelector('select')?.options.length===31","V1 and extended change scenarios");
+const match=await selectScenario(1);await wait("[...document.querySelectorAll('label')].find(x=>x.innerText.includes('Approved Change Record'))?.querySelector('select')?.value==='CHG-AZ-2001'","match demo population");
+const approvedDetails=await evaluate("document.body.innerText.includes('Approved execution intent')&&document.body.innerText.includes('engineer01@example.invalid')");
+await click("Run Execution Validation");await wait("document.body.innerText.toUpperCase().includes('POTENTIAL MATCH')&&document.body.innerText.includes('az-event-0001')","potential match result");
+await resetChangeMode();const deviation=await selectScenario(2);await wait("[...document.querySelectorAll('label')].find(x=>x.innerText.includes('Approved Change Record'))?.querySelector('select')?.value==='CHG-AZ-2007'","deviation demo population");
+await click("Run Execution Validation");await wait("document.body.innerText.toUpperCase().includes('DEVIATION DETECTED')&&document.body.innerText.toUpperCase().includes('UNEXPECTED OPERATION OR RESOURCE')","deviation result");
+await resetChangeMode();const incomplete=await selectScenario(5);await wait("[...document.querySelectorAll('label')].find(x=>x.innerText.includes('Approved Change Record'))?.querySelector('select')?.value==='CHG-AZ-2021'","no-evidence demo population");
+await click("Run Execution Validation");await wait("document.body.innerText.toUpperCase().includes('EVIDENCE INCOMPLETE')&&document.body.innerText.includes('No relevant successful Activity Log event was found')","incomplete result");
+await click("By User ID / Email");await wait("[...document.querySelectorAll('label')].some(x=>x.innerText.includes('Principal ID or email'))","user mode");await wait("[...document.querySelectorAll('label')].find(x=>x.innerText.includes('Verified Demo Example'))?.querySelector('select')?.options.length===6","user examples");
+const user=await selectScenario(1);await wait("[...document.querySelectorAll('label')].find(x=>x.innerText.includes('Principal ID or email'))?.querySelector('input')?.value==='engineer05@example.invalid'","user demo population");
+await click("Investigate User Activity");await wait("document.body.innerText.toUpperCase().includes('POSSIBLE UNAPPROVED ACTIVITY')&&document.body.innerText.includes('az-event-0021')","user investigation");
+const report={changeOptions:match.count,userOptions:user.count,restoredV1:[match.text,deviation.text,incomplete.text],statuses:["POTENTIAL_MATCH","DEVIATION_DETECTED","EVIDENCE_INCOMPLETE"],approvedDetails,snowflakeLeak:await evaluate("document.body.innerText.includes('selected Snowflake')"),status:approvedDetails?"PASS":"FAIL"};
+console.log(JSON.stringify(report));socket.close();
