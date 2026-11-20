@@ -1,0 +1,21 @@
+{
+  "project": "AI NETRA",
+  "step": "8.35",
+  "generated_at": "2026-11-12T05:48:23.925563+00:00",
+  "total_buildings": 11659,
+  "areas_calculated": 11659,
+  "invalid_records": 0,
+  "minimum_area_m2": 5.575558859097234,
+  "maximum_area_m2": 8642.21519285449,
+  "mean_area_m2": 181.33124624290207,
+  "median_area_m2": 154.36398967503555,
+  "method": "local_equirectangular_projection",
+  "source": "OpenStreetMap",
+  "limitations": [
+    "Areas are derived from crowdsourced OSM polygons",
+    "Calculations use an approximate local metric projection",
+    "OSM footprints may not match physical building boundaries",
+    "Areas are not cadastral or survey-verified",
+    "Footprint area does not represent total floor area"
+  ]
+}

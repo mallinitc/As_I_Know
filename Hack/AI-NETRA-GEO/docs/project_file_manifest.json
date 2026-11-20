@@ -1,0 +1,404 @@
+{
+  "project": "AI NETRA GEO",
+  "generated_at_utc": "2026-11-14T04:51:36+00:00",
+  "file_count": 78,
+  "counts": {
+    "buildings": 11659,
+    "areas": 11659,
+    "river_distances": 11659,
+    "tgrac_points": 23,
+    "waterlogging_distances": 11659
+  },
+  "files": [
+    {
+      "path": "api.py",
+      "size_bytes": 14930,
+      "purpose": "FastAPI building query endpoint, river and waterlogging evidence joins."
+    },
+    {
+      "path": "checkpoints/geo_progress_001.json",
+      "size_bytes": 2393,
+      "purpose": "Review purpose; not yet documented individually."
+    },
+    {
+      "path": "data/ai_netra_building_areas_v1.csv",
+      "size_bytes": 1175047,
+      "purpose": "Approximate polygon-derived building areas."
+    },
+    {
+      "path": "data/ai_netra_building_catalog_v1.geojson",
+      "size_bytes": 10335791,
+      "purpose": "Consolidated OSM building polygons and estimated-height attributes."
+    },
+    {
+      "path": "data/ai_netra_building_heights_2023_v1.csv",
+      "size_bytes": 10136,
+      "purpose": "Review purpose; not yet documented individually."
+    },
+    {
+      "path": "data/ai_netra_expanded_heights_2023_v1.csv",
+      "size_bytes": 1321682,
+      "purpose": "Review purpose; not yet documented individually."
+    },
+    {
+      "path": "data/ai_netra_merged_heights_2023_v1.csv",
+      "size_bytes": 1577911,
+      "purpose": "Merged 2023 model-estimated building height records."
+    },
+    {
+      "path": "data/ai_netra_musi_distances_v1.csv",
+      "size_bytes": 2267411,
+      "purpose": "Distances to mapped river-water polygons."
+    },
+    {
+      "path": "data/ai_netra_waterlogging_distances_v1.csv",
+      "size_bytes": 2291016,
+      "purpose": "Distances to the nearest TGRAC waterlogging point."
+    },
+    {
+      "path": "data/building_area_validation_v1.json",
+      "size_bytes": 749,
+      "purpose": "Review purpose; not yet documented individually."
+    },
+    {
+      "path": "data/building_catalog_validation_v1.json",
+      "size_bytes": 715,
+      "purpose": "Review purpose; not yet documented individually."
+    },
+    {
+      "path": "data/height_merge_validation_v1.json",
+      "size_bytes": 887,
+      "purpose": "Review purpose; not yet documented individually."
+    },
+    {
+      "path": "data/moosarambagh_building_points.csv",
+      "size_bytes": 5056,
+      "purpose": "Review purpose; not yet documented individually."
+    },
+    {
+      "path": "data/moosarambagh_expanded_building_points_v1.csv",
+      "size_bytes": 564253,
+      "purpose": "Review purpose; not yet documented individually."
+    },
+    {
+      "path": "data/moosarambagh_new_height_points_v1.csv",
+      "size_bytes": 559229,
+      "purpose": "Review purpose; not yet documented individually."
+    },
+    {
+      "path": "data/moosarambagh_osm_buildings.geojson",
+      "size_bytes": 113930,
+      "purpose": "Review purpose; not yet documented individually."
+    },
+    {
+      "path": "data/moosarambagh_osm_buildings_expanded_partial_v1.geojson",
+      "size_bytes": 12093340,
+      "purpose": "Review purpose; not yet documented individually."
+    },
+    {
+      "path": "data/moosarambagh_osm_buildings_expanded_v1.geojson",
+      "size_bytes": 12093340,
+      "purpose": "Review purpose; not yet documented individually."
+    },
+    {
+      "path": "data/musi_distance_validation_v1.json",
+      "size_bytes": 1159,
+      "purpose": "Review purpose; not yet documented individually."
+    },
+    {
+      "path": "data/musi_river_geometry_validation_v1.json",
+      "size_bytes": 718,
+      "purpose": "Review purpose; not yet documented individually."
+    },
+    {
+      "path": "data/musi_river_metadata_v1.json",
+      "size_bytes": 1475,
+      "purpose": "Review purpose; not yet documented individually."
+    },
+    {
+      "path": "data/musi_river_osm_raw_v1.json",
+      "size_bytes": 110485,
+      "purpose": "Original Overpass response for Musi river features."
+    },
+    {
+      "path": "data/musi_river_water_polygons_v1.geojson",
+      "size_bytes": 78058,
+      "purpose": "Reconstructed OSM river-water polygon geometry."
+    },
+    {
+      "path": "data/source_registry.json",
+      "size_bytes": 2598,
+      "purpose": "Review purpose; not yet documented individually."
+    },
+    {
+      "path": "data/tgrac_inundation_points_raw_v1.json",
+      "size_bytes": 9793,
+      "purpose": "Original TGRAC ArcGIS point data, preserved unchanged."
+    },
+    {
+      "path": "data/tgrac_inundation_validation_v1.json",
+      "size_bytes": 1347,
+      "purpose": "Review purpose; not yet documented individually."
+    },
+    {
+      "path": "data/tgrac_waterlogging_points_v1.geojson",
+      "size_bytes": 26561,
+      "purpose": "TGRAC waterlogging point records in GeoJSON."
+    },
+    {
+      "path": "data/waterlogging_distance_validation_v1.json",
+      "size_bytes": 1037,
+      "purpose": "Review purpose; not yet documented individually."
+    },
+    {
+      "path": "docs/API_REFERENCE.md",
+      "size_bytes": 0,
+      "purpose": "Review purpose; not yet documented individually."
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "size_bytes": 0,
+      "purpose": "Review purpose; not yet documented individually."
+    },
+    {
+      "path": "docs/DATA_PIPELINE.md",
+      "size_bytes": 0,
+      "purpose": "Review purpose; not yet documented individually."
+    },
+    {
+      "path": "docs/DATA_SOURCES.md",
+      "size_bytes": 0,
+      "purpose": "Review purpose; not yet documented individually."
+    },
+    {
+      "path": "docs/DEVELOPMENT_LOG.md",
+      "size_bytes": 0,
+      "purpose": "Review purpose; not yet documented individually."
+    },
+    {
+      "path": "docs/FILE_INVENTORY.md",
+      "size_bytes": 0,
+      "purpose": "Review purpose; not yet documented individually."
+    },
+    {
+      "path": "docs/KNOWN_LIMITATIONS.md",
+      "size_bytes": 0,
+      "purpose": "Review purpose; not yet documented individually."
+    },
+    {
+      "path": "docs/README.md",
+      "size_bytes": 0,
+      "purpose": "Review purpose; not yet documented individually."
+    },
+    {
+      "path": "docs/TECH_STACK.md",
+      "size_bytes": 0,
+      "purpose": "Review purpose; not yet documented individually."
+    },
+    {
+      "path": "frontend/.gitignore",
+      "size_bytes": 480,
+      "purpose": "Review purpose; not yet documented individually."
+    },
+    {
+      "path": "frontend/AGENTS.md",
+      "size_bytes": 679,
+      "purpose": "Review purpose; not yet documented individually."
+    },
+    {
+      "path": "frontend/eslint.config.mjs",
+      "size_bytes": 465,
+      "purpose": "Review purpose; not yet documented individually."
+    },
+    {
+      "path": "frontend/next-env.d.ts",
+      "size_bytes": 296,
+      "purpose": "Review purpose; not yet documented individually."
+    },
+    {
+      "path": "frontend/next.config.ts",
+      "size_bytes": 186,
+      "purpose": "Review purpose; not yet documented individually."
+    },
+    {
+      "path": "frontend/package-lock.json",
+      "size_bytes": 214640,
+      "purpose": "Locked transitive npm dependencies."
+    },
+    {
+      "path": "frontend/package.json",
+      "size_bytes": 560,
+      "purpose": "Frontend scripts and direct dependencies."
+    },
+    {
+      "path": "frontend/public/file.svg",
+      "size_bytes": 391,
+      "purpose": "Review purpose; not yet documented individually."
+    },
+    {
+      "path": "frontend/public/globe.svg",
+      "size_bytes": 1035,
+      "purpose": "Review purpose; not yet documented individually."
+    },
+    {
+      "path": "frontend/public/next.svg",
+      "size_bytes": 1375,
+      "purpose": "Review purpose; not yet documented individually."
+    },
+    {
+      "path": "frontend/public/vercel.svg",
+      "size_bytes": 128,
+      "purpose": "Review purpose; not yet documented individually."
+    },
+    {
+      "path": "frontend/public/window.svg",
+      "size_bytes": 385,
+      "purpose": "Review purpose; not yet documented individually."
+    },
+    {
+      "path": "frontend/README.md",
+      "size_bytes": 1450,
+      "purpose": "Review purpose; not yet documented individually."
+    },
+    {
+      "path": "frontend/src/app/favicon.ico",
+      "size_bytes": 15086,
+      "purpose": "Review purpose; not yet documented individually."
+    },
+    {
+      "path": "frontend/src/app/globals.css",
+      "size_bytes": 697,
+      "purpose": "Review purpose; not yet documented individually."
+    },
+    {
+      "path": "frontend/src/app/layout.tsx",
+      "size_bytes": 617,
+      "purpose": "Review purpose; not yet documented individually."
+    },
+    {
+      "path": "frontend/src/app/page.module.css",
+      "size_bytes": 2612,
+      "purpose": "Review purpose; not yet documented individually."
+    },
+    {
+      "path": "frontend/src/app/page.tsx",
+      "size_bytes": 590,
+      "purpose": "Review purpose; not yet documented individually."
+    },
+    {
+      "path": "frontend/src/components/BuildingMap.tsx",
+      "size_bytes": 47808,
+      "purpose": "Leaflet map; building results, government markers, and location navigation."
+    },
+    {
+      "path": "frontend/tsconfig.json",
+      "size_bytes": 670,
+      "purpose": "Review purpose; not yet documented individually."
+    },
+    {
+      "path": "scripts/build_geospatial_catalog.py",
+      "size_bytes": 7696,
+      "purpose": "Merge OSM building geometry and height evidence into one GeoJSON catalog."
+    },
+    {
+      "path": "scripts/build_musi_river_geometry.py",
+      "size_bytes": 11187,
+      "purpose": "Reconstruct OSM river-water multipolygons, preserving inner rings."
+    },
+    {
+      "path": "scripts/calculate_building_areas.py",
+      "size_bytes": 6355,
+      "purpose": "Compute approximate mapped building footprint area."
+    },
+    {
+      "path": "scripts/calculate_river_distances.py",
+      "size_bytes": 9891,
+      "purpose": "Compute distances from building polygons to mapped Musi water polygons."
+    },
+    {
+      "path": "scripts/calculate_waterlogging_distances.py",
+      "size_bytes": 8158,
+      "purpose": "Compute footprint-to-nearest-government-waterlogging-point distances."
+    },
+    {
+      "path": "scripts/convert_tgrac_to_geojson.py",
+      "size_bytes": 3212,
+      "purpose": "Convert government waterlogging points from ArcGIS JSON to GeoJSON."
+    },
+    {
+      "path": "scripts/diagnose_height_data.py",
+      "size_bytes": 3232,
+      "purpose": "Review purpose; not yet documented individually."
+    },
+    {
+      "path": "scripts/download_musi_river.py",
+      "size_bytes": 5129,
+      "purpose": "Download OSM river lines and water multipolygon members."
+    },
+    {
+      "path": "scripts/download_osm.py",
+      "size_bytes": 3408,
+      "purpose": "Review purpose; not yet documented individually."
+    },
+    {
+      "path": "scripts/download_osm_expanded.py",
+      "size_bytes": 10724,
+      "purpose": "Review purpose; not yet documented individually."
+    },
+    {
+      "path": "scripts/generate_project_docs.py",
+      "size_bytes": 20751,
+      "purpose": "Inventory actual files and generate baseline technical documentation."
+    },
+    {
+      "path": "scripts/merge_building_heights.py",
+      "size_bytes": 6309,
+      "purpose": "Merge 2023 Google height estimates with building IDs."
+    },
+    {
+      "path": "scripts/prepare_earth_engine_points.py",
+      "size_bytes": 1129,
+      "purpose": "Review purpose; not yet documented individually."
+    },
+    {
+      "path": "scripts/prepare_expanded_earth_engine_points.py",
+      "size_bytes": 4361,
+      "purpose": "Export building sample points for Earth Engine."
+    },
+    {
+      "path": "scripts/query_building.py",
+      "size_bytes": 15573,
+      "purpose": "Shapely STRtree, exact polygon matches, and nearby buildings."
+    },
+    {
+      "path": "scripts/source_investigation.py",
+      "size_bytes": 3480,
+      "purpose": "Source registry and per-building evidence reporting."
+    },
+    {
+      "path": "scripts/validate_building_heights.py",
+      "size_bytes": 2064,
+      "purpose": "Review purpose; not yet documented individually."
+    },
+    {
+      "path": "scripts/validate_musi_river.py",
+      "size_bytes": 5283,
+      "purpose": "Validate OSM river geometry and relation members."
+    },
+    {
+      "path": "scripts/validate_osm_expanded.py",
+      "size_bytes": 4330,
+      "purpose": "Review purpose; not yet documented individually."
+    },
+    {
+      "path": "scripts/validate_tgrac_inundation.py",
+      "size_bytes": 4186,
+      "purpose": "Validate TGRAC ArcGIS point coordinates and pilot coverage."
+    },
+    {
+      "path": "waterlogging_api.py",
+      "size_bytes": 1554,
+      "purpose": "FastAPI endpoint serving TGRAC point GeoJSON."
+    }
+  ]
+}

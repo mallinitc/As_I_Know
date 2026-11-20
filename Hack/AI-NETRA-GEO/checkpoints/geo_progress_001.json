@@ -1,0 +1,74 @@
+{
+  "project": "AI NETRA",
+  "workstream": "Hyderabad Building Intelligence",
+  "checkpoint_id": "GEO-PROGRESS-001",
+  "checkpoint_date": "2026-11-10",
+  "status": "working_prototype",
+  "pilot": {
+    "location": "Moosarambagh, Hyderabad",
+    "bbox_wgs84": [
+      78.5105,
+      17.3698,
+      78.5138,
+      17.3723
+    ]
+  },
+  "datasets": {
+    "openstreetmap": {
+      "file": "data/moosarambagh_osm_buildings.geojson",
+      "buildings": 103,
+      "status": "integrated"
+    },
+    "google_open_buildings_2_5d": {
+      "file": "data/ai_netra_building_heights_2023_v1.csv",
+      "dataset_year": 2023,
+      "input_points": 103,
+      "points_with_height_estimates": 103,
+      "status": "integrated",
+      "measurement_type": "model_estimate",
+      "sampling_method": "representative_point"
+    }
+  },
+  "implementation": {
+    "backend": "Python FastAPI",
+    "frontend": "Next.js TypeScript Leaflet",
+    "spatial_engine": "Shapely",
+    "coordinate_system": "EPSG:4326",
+    "nearby_search_radius_m": 100,
+    "maximum_nearby_candidates": 5
+  },
+  "verified_capabilities": [
+    "interactive_map",
+    "map_click_coordinate_capture",
+    "fastapi_building_query",
+    "exact_polygon_identification",
+    "building_polygon_highlighting",
+    "google_height_enrichment",
+    "attribute_provenance",
+    "source_investigation_reporting",
+    "missing_attribute_reporting",
+    "nearby_building_search",
+    "nearby_distance_calculation",
+    "nearby_candidate_highlighting"
+  ],
+  "known_limitations": [
+    "OSM building coverage is incomplete",
+    "Google heights are satellite-derived estimates",
+    "Height sampling uses one representative point",
+    "Low height estimates require further validation",
+    "Actual construction years are unavailable",
+    "Floor counts are unavailable for many buildings",
+    "Source investigation does not perform live searches",
+    "Source investigation history is not persisted",
+    "Building flood exposure is not yet implemented",
+    "Nearby distances use approximate local projection"
+  ],
+  "next_priorities": [
+    "expand_building_footprint_coverage",
+    "validate_height_estimates",
+    "integrate_additional_data_sources",
+    "calculate_building_footprint_area",
+    "calculate_distance_to_musi_river",
+    "implement_preliminary_flood_exposure"
+  ]
+}

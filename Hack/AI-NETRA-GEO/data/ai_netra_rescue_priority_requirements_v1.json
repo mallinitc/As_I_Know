@@ -1,0 +1,32 @@
+﻿{
+  "project": "AI NETRA",
+  "component": "Explainable Rescue Prioritization",
+  "version": "1.0.0",
+  "mode": "experimental_synthetic_only",
+  "assessment_factors": [
+    "estimated_people_stranded",
+    "children",
+    "senior_citizens",
+    "observed_water_depth_m",
+    "observed_flow_velocity_mps",
+    "estimated_time_to_submerge_minutes",
+    "building_characteristics",
+    "evidence_verification_status"
+  ],
+  "requirements": {
+    "explainable_assessment": true,
+    "preserve_source_provenance": true,
+    "support_missing_measurements": true,
+    "distinguish_reported_from_verified": true,
+    "human_review_required": true,
+    "automated_rescue_dispatch": false,
+    "operational_priority_assignment": false
+  },
+  "limitations": [
+    "Synthetic prototype only",
+    "No validated operational prioritization thresholds",
+    "No independently verified live flood observations",
+    "Historical evidence does not establish current flooding",
+    "Missing measurements must not delay emergency human response"
+  ]
+}

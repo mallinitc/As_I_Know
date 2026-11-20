@@ -1,0 +1,826 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "project": "AI NETRA",
+    "dataset_version": "1.0",
+    "source": "Telangana Government TGRAC",
+    "original_dataset": "MAJOR WATER LOGGING PLACES.kmz",
+    "source_layer": "Inundation Areas",
+    "geometry_type": "Point",
+    "generated_at": "2026-11-14T03:59:53.693414+00:00",
+    "feature_count": 23,
+    "limitations": [
+      "Points do not represent inundation boundaries",
+      "Observation dates are unavailable",
+      "Water depth and duration are unavailable",
+      "Nearby buildings are not confirmed flooded"
+    ]
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "waterlogging_id": 1,
+        "name": "BALKAMPET RUB",
+        "classification": "mapped_waterlogging_location",
+        "source": "Telangana Government TGRAC",
+        "source_layer": "Inundation Areas",
+        "original_folder": "MAJOR WATER LOGGING PLACES.kmz/Water logging",
+        "observation_date": null,
+        "water_depth_m": null,
+        "duration_hours": null,
+        "verification_status": "government_mapped_point_not_field_verified",
+        "building_flooding_confirmed": false,
+        "original_attributes": {
+          "OID": 1,
+          "Name": "BALKAMPET RUB",
+          "FolderPath": "MAJOR WATER LOGGING PLACES.kmz/Water logging",
+          "SymbolID": 0,
+          "AltMode": -1,
+          "Base": 0,
+          "Snippet": "",
+          "PopupInfo": "",
+          "HasLabel": -1,
+          "LabelID": 0
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.45129286700006,
+          17.448776054000064
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "waterlogging_id": 2,
+        "name": "NEAR APOLLO CRADLE HOSPITAL , ROAD NO 12",
+        "classification": "mapped_waterlogging_location",
+        "source": "Telangana Government TGRAC",
+        "source_layer": "Inundation Areas",
+        "original_folder": "MAJOR WATER LOGGING PLACES.kmz/Water logging",
+        "observation_date": null,
+        "water_depth_m": null,
+        "duration_hours": null,
+        "verification_status": "government_mapped_point_not_field_verified",
+        "building_flooding_confirmed": false,
+        "original_attributes": {
+          "OID": 2,
+          "Name": "NEAR APOLLO CRADLE HOSPITAL , ROAD NO 12",
+          "FolderPath": "MAJOR WATER LOGGING PLACES.kmz/Water logging",
+          "SymbolID": 0,
+          "AltMode": -1,
+          "Base": 0,
+          "Snippet": "",
+          "PopupInfo": "",
+          "HasLabel": -1,
+          "LabelID": 0
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.41964021900003,
+          17.41601634500006
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "waterlogging_id": 3,
+        "name": "NEAR TAPADIA DIAGNOSTIC CENTRE, CHIKKADPALLY",
+        "classification": "mapped_waterlogging_location",
+        "source": "Telangana Government TGRAC",
+        "source_layer": "Inundation Areas",
+        "original_folder": "MAJOR WATER LOGGING PLACES.kmz/Water logging",
+        "observation_date": null,
+        "water_depth_m": null,
+        "duration_hours": null,
+        "verification_status": "government_mapped_point_not_field_verified",
+        "building_flooding_confirmed": false,
+        "original_attributes": {
+          "OID": 3,
+          "Name": "NEAR TAPADIA DIAGNOSTIC CENTRE, CHIKKADPALLY",
+          "FolderPath": "MAJOR WATER LOGGING PLACES.kmz/Water logging",
+          "SymbolID": 0,
+          "AltMode": -1,
+          "Base": 0,
+          "Snippet": "",
+          "PopupInfo": "",
+          "HasLabel": -1,
+          "LabelID": 0
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.49711426400006,
+          17.407571075000078
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "waterlogging_id": 4,
+        "name": "FIZA HOTEL,BHAHADURPURA X ROADS",
+        "classification": "mapped_waterlogging_location",
+        "source": "Telangana Government TGRAC",
+        "source_layer": "Inundation Areas",
+        "original_folder": "MAJOR WATER LOGGING PLACES.kmz/Water logging",
+        "observation_date": null,
+        "water_depth_m": null,
+        "duration_hours": null,
+        "verification_status": "government_mapped_point_not_field_verified",
+        "building_flooding_confirmed": false,
+        "original_attributes": {
+          "OID": 4,
+          "Name": "FIZA HOTEL,BHAHADURPURA X ROADS",
+          "FolderPath": "MAJOR WATER LOGGING PLACES.kmz/Water logging",
+          "SymbolID": 0,
+          "AltMode": -1,
+          "Base": 0,
+          "Snippet": "",
+          "PopupInfo": "",
+          "HasLabel": -1,
+          "LabelID": 0
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.45423124500007,
+          17.355292236000025
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "waterlogging_id": 5,
+        "name": "OPP BEGUM BAZAR POLICE STATION",
+        "classification": "mapped_waterlogging_location",
+        "source": "Telangana Government TGRAC",
+        "source_layer": "Inundation Areas",
+        "original_folder": "MAJOR WATER LOGGING PLACES.kmz/Water logging",
+        "observation_date": null,
+        "water_depth_m": null,
+        "duration_hours": null,
+        "verification_status": "government_mapped_point_not_field_verified",
+        "building_flooding_confirmed": false,
+        "original_attributes": {
+          "OID": 5,
+          "Name": "OPP BEGUM BAZAR POLICE STATION",
+          "FolderPath": "MAJOR WATER LOGGING PLACES.kmz/Water logging",
+          "SymbolID": 0,
+          "AltMode": -1,
+          "Base": 0,
+          "Snippet": "",
+          "PopupInfo": "",
+          "HasLabel": -1,
+          "LabelID": 0
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.47520357500008,
+          17.379778402000056
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "waterlogging_id": 6,
+        "name": "RETHIBOWLI JUNCTION",
+        "classification": "mapped_waterlogging_location",
+        "source": "Telangana Government TGRAC",
+        "source_layer": "Inundation Areas",
+        "original_folder": "MAJOR WATER LOGGING PLACES.kmz/Water logging",
+        "observation_date": null,
+        "water_depth_m": null,
+        "duration_hours": null,
+        "verification_status": "government_mapped_point_not_field_verified",
+        "building_flooding_confirmed": false,
+        "original_attributes": {
+          "OID": 6,
+          "Name": "RETHIBOWLI JUNCTION",
+          "FolderPath": "MAJOR WATER LOGGING PLACES.kmz/Water logging",
+          "SymbolID": 0,
+          "AltMode": -1,
+          "Base": 0,
+          "Snippet": "",
+          "PopupInfo": "",
+          "HasLabel": -1,
+          "LabelID": 0
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.43107783400006,
+          17.39553301500007
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "waterlogging_id": 7,
+        "name": "NEAR GALAXY THEATRE,TOLICHOWKI",
+        "classification": "mapped_waterlogging_location",
+        "source": "Telangana Government TGRAC",
+        "source_layer": "Inundation Areas",
+        "original_folder": "MAJOR WATER LOGGING PLACES.kmz/Water logging",
+        "observation_date": null,
+        "water_depth_m": null,
+        "duration_hours": null,
+        "verification_status": "government_mapped_point_not_field_verified",
+        "building_flooding_confirmed": false,
+        "original_attributes": {
+          "OID": 7,
+          "Name": "NEAR GALAXY THEATRE,TOLICHOWKI",
+          "FolderPath": "MAJOR WATER LOGGING PLACES.kmz/Water logging",
+          "SymbolID": 0,
+          "AltMode": -1,
+          "Base": 0,
+          "Snippet": "",
+          "PopupInfo": "",
+          "HasLabel": -1,
+          "LabelID": 0
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.41073530800008,
+          17.402771021000035
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "waterlogging_id": 8,
+        "name": "LAKDIKAPUL",
+        "classification": "mapped_waterlogging_location",
+        "source": "Telangana Government TGRAC",
+        "source_layer": "Inundation Areas",
+        "original_folder": "MAJOR WATER LOGGING PLACES.kmz/Water logging",
+        "observation_date": null,
+        "water_depth_m": null,
+        "duration_hours": null,
+        "verification_status": "government_mapped_point_not_field_verified",
+        "building_flooding_confirmed": false,
+        "original_attributes": {
+          "OID": 8,
+          "Name": "LAKDIKAPUL",
+          "FolderPath": "MAJOR WATER LOGGING PLACES.kmz/Water logging",
+          "SymbolID": 0,
+          "AltMode": -1,
+          "Base": 0,
+          "Snippet": "",
+          "PopupInfo": "",
+          "HasLabel": -1,
+          "LabelID": 0
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.46449549900007,
+          17.404140093000024
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "waterlogging_id": 9,
+        "name": "Bombay Hotel, Ranigunj",
+        "classification": "mapped_waterlogging_location",
+        "source": "Telangana Government TGRAC",
+        "source_layer": "Inundation Areas",
+        "original_folder": "MAJOR WATER LOGGING PLACES.kmz/Water logging",
+        "observation_date": null,
+        "water_depth_m": null,
+        "duration_hours": null,
+        "verification_status": "government_mapped_point_not_field_verified",
+        "building_flooding_confirmed": false,
+        "original_attributes": {
+          "OID": 9,
+          "Name": "Bombay Hotel, Ranigunj",
+          "FolderPath": "MAJOR WATER LOGGING PLACES.kmz/Water logging",
+          "SymbolID": 0,
+          "AltMode": -1,
+          "Base": 0,
+          "Snippet": "",
+          "PopupInfo": "",
+          "HasLabel": -1,
+          "LabelID": 0
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.48847768200005,
+          17.43247844700005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "waterlogging_id": 10,
+        "name": "MODEL HOUSE, PUNJAGUTTA",
+        "classification": "mapped_waterlogging_location",
+        "source": "Telangana Government TGRAC",
+        "source_layer": "Inundation Areas",
+        "original_folder": "MAJOR WATER LOGGING PLACES.kmz/Water logging",
+        "observation_date": null,
+        "water_depth_m": null,
+        "duration_hours": null,
+        "verification_status": "government_mapped_point_not_field_verified",
+        "building_flooding_confirmed": false,
+        "original_attributes": {
+          "OID": 10,
+          "Name": "MODEL HOUSE, PUNJAGUTTA",
+          "FolderPath": "MAJOR WATER LOGGING PLACES.kmz/Water logging",
+          "SymbolID": 0,
+          "AltMode": -1,
+          "Base": 0,
+          "Snippet": "",
+          "PopupInfo": "",
+          "HasLabel": -1,
+          "LabelID": 0
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.45358704600005,
+          17.42445231000005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "waterlogging_id": 11,
+        "name": "LAKE VIEW GUEST HOUSE",
+        "classification": "mapped_waterlogging_location",
+        "source": "Telangana Government TGRAC",
+        "source_layer": "Inundation Areas",
+        "original_folder": "MAJOR WATER LOGGING PLACES.kmz/Water logging",
+        "observation_date": null,
+        "water_depth_m": null,
+        "duration_hours": null,
+        "verification_status": "government_mapped_point_not_field_verified",
+        "building_flooding_confirmed": false,
+        "original_attributes": {
+          "OID": 11,
+          "Name": "LAKE VIEW GUEST HOUSE",
+          "FolderPath": "MAJOR WATER LOGGING PLACES.kmz/Water logging",
+          "SymbolID": 0,
+          "AltMode": -1,
+          "Base": 0,
+          "Snippet": "",
+          "PopupInfo": "",
+          "HasLabel": -1,
+          "LabelID": 0
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.46081363900004,
+          17.416228709000052
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "waterlogging_id": 12,
+        "name": "VILLA MARY COLLEGE , RAJBHAVAN ROAD",
+        "classification": "mapped_waterlogging_location",
+        "source": "Telangana Government TGRAC",
+        "source_layer": "Inundation Areas",
+        "original_folder": "MAJOR WATER LOGGING PLACES.kmz/Water logging",
+        "observation_date": null,
+        "water_depth_m": null,
+        "duration_hours": null,
+        "verification_status": "government_mapped_point_not_field_verified",
+        "building_flooding_confirmed": false,
+        "original_attributes": {
+          "OID": 12,
+          "Name": "VILLA MARY COLLEGE , RAJBHAVAN ROAD",
+          "FolderPath": "MAJOR WATER LOGGING PLACES.kmz/Water logging",
+          "SymbolID": 0,
+          "AltMode": -1,
+          "Base": 0,
+          "Snippet": "",
+          "PopupInfo": "",
+          "HasLabel": -1,
+          "LabelID": 0
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.46030097100004,
+          17.421284709000076
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "waterlogging_id": 13,
+        "name": "KCP JUNCTION ,NEAR RTA OFFICE,KHAIRATHABAD",
+        "classification": "mapped_waterlogging_location",
+        "source": "Telangana Government TGRAC",
+        "source_layer": "Inundation Areas",
+        "original_folder": "MAJOR WATER LOGGING PLACES.kmz/Water logging",
+        "observation_date": null,
+        "water_depth_m": null,
+        "duration_hours": null,
+        "verification_status": "government_mapped_point_not_field_verified",
+        "building_flooding_confirmed": false,
+        "original_attributes": {
+          "OID": 13,
+          "Name": "KCP JUNCTION ,NEAR RTA OFFICE,KHAIRATHABAD",
+          "FolderPath": "MAJOR WATER LOGGING PLACES.kmz/Water logging",
+          "SymbolID": 0,
+          "AltMode": -1,
+          "Base": 0,
+          "Snippet": "",
+          "PopupInfo": "",
+          "HasLabel": -1,
+          "LabelID": 0
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.45706581000007,
+          17.417478603000063
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "waterlogging_id": 14,
+        "name": "NEERU'S SHOWROOM ROAD NO 36,BANJARAHILLS",
+        "classification": "mapped_waterlogging_location",
+        "source": "Telangana Government TGRAC",
+        "source_layer": "Inundation Areas",
+        "original_folder": "MAJOR WATER LOGGING PLACES.kmz/Water logging",
+        "observation_date": null,
+        "water_depth_m": null,
+        "duration_hours": null,
+        "verification_status": "government_mapped_point_not_field_verified",
+        "building_flooding_confirmed": false,
+        "original_attributes": {
+          "OID": 14,
+          "Name": "NEERU'S SHOWROOM ROAD NO 36,BANJARAHILLS",
+          "FolderPath": "MAJOR WATER LOGGING PLACES.kmz/Water logging",
+          "SymbolID": 0,
+          "AltMode": -1,
+          "Base": 0,
+          "Snippet": "",
+          "PopupInfo": "",
+          "HasLabel": -1,
+          "LabelID": 0
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.39952347400003,
+          17.43865293300007
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "waterlogging_id": 15,
+        "name": "MINERVA HOTEL,HIMAYATHNAGAR",
+        "classification": "mapped_waterlogging_location",
+        "source": "Telangana Government TGRAC",
+        "source_layer": "Inundation Areas",
+        "original_folder": "MAJOR WATER LOGGING PLACES.kmz/Water logging",
+        "observation_date": null,
+        "water_depth_m": null,
+        "duration_hours": null,
+        "verification_status": "government_mapped_point_not_field_verified",
+        "building_flooding_confirmed": false,
+        "original_attributes": {
+          "OID": 15,
+          "Name": "MINERVA HOTEL,HIMAYATHNAGAR",
+          "FolderPath": "MAJOR WATER LOGGING PLACES.kmz/Water logging",
+          "SymbolID": 0,
+          "AltMode": -1,
+          "Base": 0,
+          "Snippet": "",
+          "PopupInfo": "",
+          "HasLabel": -1,
+          "LabelID": 0
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.48548390600007,
+          17.401406896000026
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "waterlogging_id": 16,
+        "name": "OLIPHANT BRIDGE,CHILKALGUDA X ROADS",
+        "classification": "mapped_waterlogging_location",
+        "source": "Telangana Government TGRAC",
+        "source_layer": "Inundation Areas",
+        "original_folder": "MAJOR WATER LOGGING PLACES.kmz/Water logging",
+        "observation_date": null,
+        "water_depth_m": null,
+        "duration_hours": null,
+        "verification_status": "government_mapped_point_not_field_verified",
+        "building_flooding_confirmed": false,
+        "original_attributes": {
+          "OID": 16,
+          "Name": "OLIPHANT BRIDGE,CHILKALGUDA X ROADS",
+          "FolderPath": "MAJOR WATER LOGGING PLACES.kmz/Water logging",
+          "SymbolID": 0,
+          "AltMode": -1,
+          "Base": 0,
+          "Snippet": "",
+          "PopupInfo": "",
+          "HasLabel": -1,
+          "LabelID": 0
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.50594456300007,
+          17.433646469000053
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "waterlogging_id": 17,
+        "name": "NAMPALLY T JUMCTION",
+        "classification": "mapped_waterlogging_location",
+        "source": "Telangana Government TGRAC",
+        "source_layer": "Inundation Areas",
+        "original_folder": "MAJOR WATER LOGGING PLACES.kmz/Water logging",
+        "observation_date": null,
+        "water_depth_m": null,
+        "duration_hours": null,
+        "verification_status": "government_mapped_point_not_field_verified",
+        "building_flooding_confirmed": false,
+        "original_attributes": {
+          "OID": 17,
+          "Name": "NAMPALLY T JUMCTION",
+          "FolderPath": "MAJOR WATER LOGGING PLACES.kmz/Water logging",
+          "SymbolID": 0,
+          "AltMode": -1,
+          "Base": 0,
+          "Snippet": "",
+          "PopupInfo": "",
+          "HasLabel": -1,
+          "LabelID": 0
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.47002679900004,
+          17.392302073000053
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "waterlogging_id": 18,
+        "name": "OPP MEDIVISION EYE HOSPITAL, NMDC",
+        "classification": "mapped_waterlogging_location",
+        "source": "Telangana Government TGRAC",
+        "source_layer": "Inundation Areas",
+        "original_folder": "MAJOR WATER LOGGING PLACES.kmz/Water logging",
+        "observation_date": null,
+        "water_depth_m": null,
+        "duration_hours": null,
+        "verification_status": "government_mapped_point_not_field_verified",
+        "building_flooding_confirmed": false,
+        "original_attributes": {
+          "OID": 18,
+          "Name": "OPP MEDIVISION EYE HOSPITAL, NMDC",
+          "FolderPath": "MAJOR WATER LOGGING PLACES.kmz/Water logging",
+          "SymbolID": 0,
+          "AltMode": -1,
+          "Base": 0,
+          "Snippet": "",
+          "PopupInfo": "",
+          "HasLabel": -1,
+          "LabelID": 0
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.44794760900004,
+          17.399061938000045
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "waterlogging_id": 19,
+        "name": "MOGHAL ENGINEERING COLLEGE,BANDLAGUDA",
+        "classification": "mapped_waterlogging_location",
+        "source": "Telangana Government TGRAC",
+        "source_layer": "Inundation Areas",
+        "original_folder": "MAJOR WATER LOGGING PLACES.kmz/Water logging",
+        "observation_date": null,
+        "water_depth_m": null,
+        "duration_hours": null,
+        "verification_status": "government_mapped_point_not_field_verified",
+        "building_flooding_confirmed": false,
+        "original_attributes": {
+          "OID": 19,
+          "Name": "MOGHAL ENGINEERING COLLEGE,BANDLAGUDA",
+          "FolderPath": "MAJOR WATER LOGGING PLACES.kmz/Water logging",
+          "SymbolID": 0,
+          "AltMode": -1,
+          "Base": 0,
+          "Snippet": "",
+          "PopupInfo": "",
+          "HasLabel": -1,
+          "LabelID": 0
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.45995320100008,
+          17.314368804000026
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "waterlogging_id": 20,
+        "name": "MALAKPET GUNJ",
+        "classification": "mapped_waterlogging_location",
+        "source": "Telangana Government TGRAC",
+        "source_layer": "Inundation Areas",
+        "original_folder": "MAJOR WATER LOGGING PLACES.kmz/Water logging",
+        "observation_date": null,
+        "water_depth_m": null,
+        "duration_hours": null,
+        "verification_status": "government_mapped_point_not_field_verified",
+        "building_flooding_confirmed": false,
+        "original_attributes": {
+          "OID": 20,
+          "Name": "MALAKPET GUNJ",
+          "FolderPath": "MAJOR WATER LOGGING PLACES.kmz/Water logging",
+          "SymbolID": 0,
+          "AltMode": -1,
+          "Base": 0,
+          "Snippet": "",
+          "PopupInfo": "",
+          "HasLabel": -1,
+          "LabelID": 0
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.50461684600003,
+          17.37330128700006
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "waterlogging_id": 21,
+        "name": "MALAKPET RUB",
+        "classification": "mapped_waterlogging_location",
+        "source": "Telangana Government TGRAC",
+        "source_layer": "Inundation Areas",
+        "original_folder": "MAJOR WATER LOGGING PLACES.kmz/Water logging",
+        "observation_date": null,
+        "water_depth_m": null,
+        "duration_hours": null,
+        "verification_status": "government_mapped_point_not_field_verified",
+        "building_flooding_confirmed": false,
+        "original_attributes": {
+          "OID": 21,
+          "Name": "MALAKPET RUB",
+          "FolderPath": "MAJOR WATER LOGGING PLACES.kmz/Water logging",
+          "SymbolID": 0,
+          "AltMode": -1,
+          "Base": 0,
+          "Snippet": "",
+          "PopupInfo": "",
+          "HasLabel": -1,
+          "LabelID": 0
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.49513787300003,
+          17.377045666000072
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "waterlogging_id": 22,
+        "name": "CHILKALGUDA RUB",
+        "classification": "mapped_waterlogging_location",
+        "source": "Telangana Government TGRAC",
+        "source_layer": "Inundation Areas",
+        "original_folder": "MAJOR WATER LOGGING PLACES.kmz/Water logging",
+        "observation_date": null,
+        "water_depth_m": null,
+        "duration_hours": null,
+        "verification_status": "government_mapped_point_not_field_verified",
+        "building_flooding_confirmed": false,
+        "original_attributes": {
+          "OID": 22,
+          "Name": "CHILKALGUDA RUB",
+          "FolderPath": "MAJOR WATER LOGGING PLACES.kmz/Water logging",
+          "SymbolID": 0,
+          "AltMode": -1,
+          "Base": 0,
+          "Snippet": "",
+          "PopupInfo": "",
+          "HasLabel": -1,
+          "LabelID": 0
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.51246681600009,
+          17.434696622000047
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "waterlogging_id": 23,
+        "name": "SHAIKPET NALA",
+        "classification": "mapped_waterlogging_location",
+        "source": "Telangana Government TGRAC",
+        "source_layer": "Inundation Areas",
+        "original_folder": "MAJOR WATER LOGGING PLACES.kmz/Water logging",
+        "observation_date": null,
+        "water_depth_m": null,
+        "duration_hours": null,
+        "verification_status": "government_mapped_point_not_field_verified",
+        "building_flooding_confirmed": false,
+        "original_attributes": {
+          "OID": 23,
+          "Name": "SHAIKPET NALA",
+          "FolderPath": "MAJOR WATER LOGGING PLACES.kmz/Water logging",
+          "SymbolID": 0,
+          "AltMode": -1,
+          "Base": 0,
+          "Snippet": "",
+          "PopupInfo": "",
+          "HasLabel": -1,
+          "LabelID": 0
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.40284116500004,
+          17.40672156000005
+        ]
+      }
+    }
+  ]
+}

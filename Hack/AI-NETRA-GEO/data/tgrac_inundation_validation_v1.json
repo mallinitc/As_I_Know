@@ -1,0 +1,55 @@
+{
+  "project": "AI NETRA",
+  "step": "8.53",
+  "source": "Telangana Government TGRAC ArcGIS",
+  "source_layer": "Inundation Areas",
+  "source_layer_id": 1,
+  "generated_at": "2026-11-14T03:58:01.702858+00:00",
+  "total_records": 23,
+  "valid_coordinates": 23,
+  "invalid_coordinates": 0,
+  "inside_pilot": 1,
+  "outside_pilot": 22,
+  "pilot_bbox": [
+    78.5,
+    17.36,
+    78.53,
+    17.38
+  ],
+  "source_attribute_fields": [
+    "AltMode",
+    "Base",
+    "FolderPath",
+    "HasLabel",
+    "LabelID",
+    "Name",
+    "OID",
+    "PopupInfo",
+    "Snippet",
+    "SymbolID"
+  ],
+  "inside_records": [
+    {
+      "record_number": 20,
+      "name": "MALAKPET GUNJ",
+      "latitude": 17.37330128700006,
+      "longitude": 78.50461684600003,
+      "attributes": {
+        "OID": 20,
+        "Name": "MALAKPET GUNJ",
+        "FolderPath": "MAJOR WATER LOGGING PLACES.kmz/Water logging",
+        "SymbolID": 0,
+        "AltMode": -1,
+        "Base": 0,
+        "Snippet": "",
+        "PopupInfo": "",
+        "HasLabel": -1,
+        "LabelID": 0
+      }
+    }
+  ],
+  "invalid_records": [],
+  "interpretation": "Government-mapped inundation-related point locations. Not verified historical inundation polygons.",
+  "historical_event_date": null,
+  "building_level_flood_exposure_confirmed": false
+}

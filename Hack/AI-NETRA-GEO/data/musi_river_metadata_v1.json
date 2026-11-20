@@ -1,0 +1,57 @@
+{
+  "project": "AI NETRA",
+  "workstream": "Building Intelligence",
+  "dataset_version": "1.0",
+  "source": "OpenStreetMap",
+  "license": "ODbL-1.0",
+  "attribution": "\u00a9 OpenStreetMap contributors",
+  "retrieved_at": "2026-11-12T05:54:28.442180+00:00",
+  "bbox": [
+    78.5,
+    17.36,
+    78.53,
+    17.38
+  ],
+  "feature_count": 3,
+  "feature_types": {
+    "way": 1,
+    "relation": 2
+  },
+  "features": [
+    {
+      "osm_id": 152700214,
+      "element_type": "way",
+      "name": "Musi River",
+      "waterway": "river",
+      "natural": null,
+      "water": null,
+      "source_timestamp": "2025-12-24T09:44:38Z"
+    },
+    {
+      "osm_id": 8921715,
+      "element_type": "relation",
+      "name": null,
+      "waterway": null,
+      "natural": "water",
+      "water": "river",
+      "source_timestamp": "2021-03-08T16:14:37Z"
+    },
+    {
+      "osm_id": 8978997,
+      "element_type": "relation",
+      "name": null,
+      "waterway": null,
+      "natural": "water",
+      "water": "river",
+      "source_timestamp": "2018-11-19T06:03:39Z"
+    }
+  ],
+  "limitations": [
+    "OSM river geometry is crowdsourced",
+    "River centreline and water boundaries are different",
+    "Water polygons may be incomplete",
+    "Multipolygon relations require topology reconstruction",
+    "Mapped water extent is not a verified flood boundary",
+    "River geometry must be inspected before distance calculations"
+  ]
+}

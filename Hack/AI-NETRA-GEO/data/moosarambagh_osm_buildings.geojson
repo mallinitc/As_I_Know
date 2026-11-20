@@ -1,0 +1,4954 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "project": "AI NETRA",
+    "workstream": "Building Intelligence",
+    "pilot": "Moosarambagh",
+    "source": "OpenStreetMap",
+    "license": "ODbL-1.0",
+    "attribution": "\u00a9 OpenStreetMap contributors",
+    "retrieved_at": "2026-11-10T16:08:57.011568+00:00",
+    "bbox": [
+      78.5105,
+      17.3698,
+      78.5138,
+      17.3723
+    ],
+    "limitations": [
+      "OSM building coverage may be incomplete",
+      "Only building ways are included",
+      "Building multipolygon relations are not yet included",
+      "Building tags are not independently verified"
+    ]
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-356511901",
+        "source": "OpenStreetMap",
+        "source_id": 356511901,
+        "source_timestamp": "2015-06-26T10:03:55Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5126628,
+              17.3699128
+            ],
+            [
+              78.5127711,
+              17.3698736
+            ],
+            [
+              78.5127364,
+              17.369786
+            ],
+            [
+              78.512628,
+              17.3698252
+            ],
+            [
+              78.5126628,
+              17.3699128
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-356512328",
+        "source": "OpenStreetMap",
+        "source_id": 356512328,
+        "source_timestamp": "2015-06-26T10:04:04Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.512481,
+              17.3701382
+            ],
+            [
+              78.5125835,
+              17.370133
+            ],
+            [
+              78.5125775,
+              17.3700244
+            ],
+            [
+              78.5124749,
+              17.3700296
+            ],
+            [
+              78.512481,
+              17.3701382
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-356512387",
+        "source": "OpenStreetMap",
+        "source_id": 356512387,
+        "source_timestamp": "2015-06-29T06:00:21Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5130715,
+              17.3699189
+            ],
+            [
+              78.5133457,
+              17.3697906
+            ],
+            [
+              78.5132975,
+              17.3696966
+            ],
+            [
+              78.5132266,
+              17.3697298
+            ],
+            [
+              78.51321,
+              17.3696975
+            ],
+            [
+              78.5130066,
+              17.3697926
+            ],
+            [
+              78.5130715,
+              17.3699189
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-356512526",
+        "source": "OpenStreetMap",
+        "source_id": 356512526,
+        "source_timestamp": "2015-06-26T10:04:10Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5128008,
+              17.3698676
+            ],
+            [
+              78.5129265,
+              17.3698122
+            ],
+            [
+              78.51287,
+              17.3696953
+            ],
+            [
+              78.5127442,
+              17.3697507
+            ],
+            [
+              78.5128008,
+              17.3698676
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-356512568",
+        "source": "OpenStreetMap",
+        "source_id": 356512568,
+        "source_timestamp": "2015-06-26T10:04:11Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5119587,
+              17.370557
+            ],
+            [
+              78.5120863,
+              17.3704579
+            ],
+            [
+              78.5120196,
+              17.3703797
+            ],
+            [
+              78.511892,
+              17.3704787
+            ],
+            [
+              78.5119587,
+              17.370557
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357048168",
+        "source": "OpenStreetMap",
+        "source_id": 357048168,
+        "source_timestamp": "2015-06-29T05:59:55Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5133763,
+              17.3714344
+            ],
+            [
+              78.5134057,
+              17.3714181
+            ],
+            [
+              78.5134124,
+              17.371429
+            ],
+            [
+              78.5134519,
+              17.3714071
+            ],
+            [
+              78.5134452,
+              17.3713962
+            ],
+            [
+              78.5134794,
+              17.3713772
+            ],
+            [
+              78.5134751,
+              17.3713701
+            ],
+            [
+              78.5135271,
+              17.3713412
+            ],
+            [
+              78.5134839,
+              17.3712702
+            ],
+            [
+              78.5133287,
+              17.3713563
+            ],
+            [
+              78.5133763,
+              17.3714344
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357048183",
+        "source": "OpenStreetMap",
+        "source_id": 357048183,
+        "source_timestamp": "2015-06-29T05:59:57Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5126282,
+              17.3715867
+            ],
+            [
+              78.5127475,
+              17.3715233
+            ],
+            [
+              78.512638,
+              17.3713357
+            ],
+            [
+              78.5125187,
+              17.3713991
+            ],
+            [
+              78.5126282,
+              17.3715867
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357048191",
+        "source": "OpenStreetMap",
+        "source_id": 357048191,
+        "source_timestamp": "2015-06-29T05:59:57Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5132546,
+              17.3719781
+            ],
+            [
+              78.5135137,
+              17.3719016
+            ],
+            [
+              78.5134726,
+              17.3717747
+            ],
+            [
+              78.5132135,
+              17.3718513
+            ],
+            [
+              78.5132546,
+              17.3719781
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357048200",
+        "source": "OpenStreetMap",
+        "source_id": 357048200,
+        "source_timestamp": "2015-06-29T05:59:57Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5117871,
+              17.3724937
+            ],
+            [
+              78.5120139,
+              17.372433
+            ],
+            [
+              78.5119728,
+              17.3722929
+            ],
+            [
+              78.5117459,
+              17.3723535
+            ],
+            [
+              78.5117871,
+              17.3724937
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357048203",
+        "source": "OpenStreetMap",
+        "source_id": 357048203,
+        "source_timestamp": "2015-06-29T05:59:58Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5124064,
+              17.3717317
+            ],
+            [
+              78.5125131,
+              17.3716773
+            ],
+            [
+              78.5124039,
+              17.371482
+            ],
+            [
+              78.5122971,
+              17.3715364
+            ],
+            [
+              78.5124064,
+              17.3717317
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357048221",
+        "source": "OpenStreetMap",
+        "source_id": 357048221,
+        "source_timestamp": "2015-06-29T05:59:58Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5124202,
+              17.371413
+            ],
+            [
+              78.5126131,
+              17.371314
+            ],
+            [
+              78.5125348,
+              17.371175
+            ],
+            [
+              78.5123419,
+              17.371274
+            ],
+            [
+              78.5124202,
+              17.371413
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357048232",
+        "source": "OpenStreetMap",
+        "source_id": 357048232,
+        "source_timestamp": "2015-06-29T05:59:59Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5134941,
+              17.3721658
+            ],
+            [
+              78.5136089,
+              17.3721394
+            ],
+            [
+              78.5135875,
+              17.3720547
+            ],
+            [
+              78.5134727,
+              17.3720811
+            ],
+            [
+              78.5134941,
+              17.3721658
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357048235",
+        "source": "OpenStreetMap",
+        "source_id": 357048235,
+        "source_timestamp": "2015-06-29T05:59:59Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5126988,
+              17.3718061
+            ],
+            [
+              78.5128371,
+              17.3717527
+            ],
+            [
+              78.5127841,
+              17.371628
+            ],
+            [
+              78.5126459,
+              17.3716814
+            ],
+            [
+              78.5126988,
+              17.3718061
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357048250",
+        "source": "OpenStreetMap",
+        "source_id": 357048250,
+        "source_timestamp": "2015-06-29T06:00:00Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5117638,
+              17.3723314
+            ],
+            [
+              78.5119187,
+              17.3722924
+            ],
+            [
+              78.5118927,
+              17.3721982
+            ],
+            [
+              78.5117378,
+              17.3722371
+            ],
+            [
+              78.5117638,
+              17.3723314
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357048251",
+        "source": "OpenStreetMap",
+        "source_id": 357048251,
+        "source_timestamp": "2015-06-29T06:00:00Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5120235,
+              17.3716229
+            ],
+            [
+              78.5122406,
+              17.3715101
+            ],
+            [
+              78.5121432,
+              17.3713395
+            ],
+            [
+              78.5119261,
+              17.3714523
+            ],
+            [
+              78.5120235,
+              17.3716229
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357048266",
+        "source": "OpenStreetMap",
+        "source_id": 357048266,
+        "source_timestamp": "2015-06-29T06:00:00Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5135743,
+              17.372375
+            ],
+            [
+              78.513698,
+              17.3723414
+            ],
+            [
+              78.5136732,
+              17.3722581
+            ],
+            [
+              78.5135494,
+              17.3722918
+            ],
+            [
+              78.5135743,
+              17.372375
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357048286",
+        "source": "OpenStreetMap",
+        "source_id": 357048286,
+        "source_timestamp": "2015-06-29T06:00:02Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5120404,
+              17.3723986
+            ],
+            [
+              78.5122727,
+              17.3723379
+            ],
+            [
+              78.5122415,
+              17.3722294
+            ],
+            [
+              78.5120092,
+              17.3722901
+            ],
+            [
+              78.5120404,
+              17.3723986
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357048312",
+        "source": "OpenStreetMap",
+        "source_id": 357048312,
+        "source_timestamp": "2015-06-29T06:00:03Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5124949,
+              17.3716123
+            ],
+            [
+              78.5125984,
+              17.3715565
+            ],
+            [
+              78.5125106,
+              17.371408
+            ],
+            [
+              78.5124071,
+              17.3714638
+            ],
+            [
+              78.5124949,
+              17.3716123
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357048338",
+        "source": "OpenStreetMap",
+        "source_id": 357048338,
+        "source_timestamp": "2015-06-29T06:00:05Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.512853,
+              17.3717348
+            ],
+            [
+              78.5129988,
+              17.3716834
+            ],
+            [
+              78.5129446,
+              17.3715434
+            ],
+            [
+              78.5127987,
+              17.3715949
+            ],
+            [
+              78.512853,
+              17.3717348
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357048343",
+        "source": "OpenStreetMap",
+        "source_id": 357048343,
+        "source_timestamp": "2015-06-29T06:00:05Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5136639,
+              17.3710837
+            ],
+            [
+              78.5138242,
+              17.3710315
+            ],
+            [
+              78.5137939,
+              17.3709467
+            ],
+            [
+              78.5136335,
+              17.370999
+            ],
+            [
+              78.5136639,
+              17.3710837
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357048344",
+        "source": "OpenStreetMap",
+        "source_id": 357048344,
+        "source_timestamp": "2015-06-29T06:00:05Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5123013,
+              17.3717819
+            ],
+            [
+              78.512383,
+              17.3717382
+            ],
+            [
+              78.5122696,
+              17.3715449
+            ],
+            [
+              78.5121879,
+              17.3715885
+            ],
+            [
+              78.5123013,
+              17.3717819
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357048363",
+        "source": "OpenStreetMap",
+        "source_id": 357048363,
+        "source_timestamp": "2015-06-29T06:00:06Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5135045,
+              17.3722582
+            ],
+            [
+              78.5136379,
+              17.3722239
+            ],
+            [
+              78.5136195,
+              17.3721588
+            ],
+            [
+              78.5134861,
+              17.3721931
+            ],
+            [
+              78.5135045,
+              17.3722582
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357048368",
+        "source": "OpenStreetMap",
+        "source_id": 357048368,
+        "source_timestamp": "2015-06-29T06:00:06Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5127506,
+              17.3719044
+            ],
+            [
+              78.5128716,
+              17.3718602
+            ],
+            [
+              78.5128359,
+              17.3717712
+            ],
+            [
+              78.5127149,
+              17.3718154
+            ],
+            [
+              78.5127506,
+              17.3719044
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357048376",
+        "source": "OpenStreetMap",
+        "source_id": 357048376,
+        "source_timestamp": "2015-06-29T06:00:07Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5132571,
+              17.3710137
+            ],
+            [
+              78.5134034,
+              17.3709661
+            ],
+            [
+              78.513333,
+              17.3707692
+            ],
+            [
+              78.5131867,
+              17.3708168
+            ],
+            [
+              78.5132571,
+              17.3710137
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357048394",
+        "source": "OpenStreetMap",
+        "source_id": 357048394,
+        "source_timestamp": "2015-06-29T06:00:08Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5120049,
+              17.372279
+            ],
+            [
+              78.512222,
+              17.3722249
+            ],
+            [
+              78.5121901,
+              17.3721084
+            ],
+            [
+              78.511973,
+              17.3721625
+            ],
+            [
+              78.5120049,
+              17.372279
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357048403",
+        "source": "OpenStreetMap",
+        "source_id": 357048403,
+        "source_timestamp": "2015-06-29T06:00:08Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5131224,
+              17.3723326
+            ],
+            [
+              78.5132188,
+              17.3723041
+            ],
+            [
+              78.513187,
+              17.3722061
+            ],
+            [
+              78.5130907,
+              17.3722346
+            ],
+            [
+              78.5131224,
+              17.3723326
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357048406",
+        "source": "OpenStreetMap",
+        "source_id": 357048406,
+        "source_timestamp": "2015-06-29T06:00:08Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.513342,
+              17.3716935
+            ],
+            [
+              78.5134563,
+              17.3716514
+            ],
+            [
+              78.5134044,
+              17.3715234
+            ],
+            [
+              78.5132902,
+              17.3715655
+            ],
+            [
+              78.513342,
+              17.3716935
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357048412",
+        "source": "OpenStreetMap",
+        "source_id": 357048412,
+        "source_timestamp": "2015-06-29T06:00:08Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5137544,
+              17.3721235
+            ],
+            [
+              78.5140341,
+              17.3720508
+            ],
+            [
+              78.5139957,
+              17.3719165
+            ],
+            [
+              78.5137161,
+              17.3719893
+            ],
+            [
+              78.5137544,
+              17.3721235
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357048424",
+        "source": "OpenStreetMap",
+        "source_id": 357048424,
+        "source_timestamp": "2015-06-29T06:00:10Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.512946,
+              17.3709536
+            ],
+            [
+              78.5131254,
+              17.3708612
+            ],
+            [
+              78.5130858,
+              17.3707911
+            ],
+            [
+              78.5129064,
+              17.3708835
+            ],
+            [
+              78.512946,
+              17.3709536
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357048436",
+        "source": "OpenStreetMap",
+        "source_id": 357048436,
+        "source_timestamp": "2015-06-29T06:00:11Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.513802,
+              17.3723882
+            ],
+            [
+              78.5138969,
+              17.3723636
+            ],
+            [
+              78.5138539,
+              17.3722124
+            ],
+            [
+              78.513759,
+              17.372237
+            ],
+            [
+              78.513802,
+              17.3723882
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357048455",
+        "source": "OpenStreetMap",
+        "source_id": 357048455,
+        "source_timestamp": "2015-06-29T06:00:12Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5133375,
+              17.3722079
+            ],
+            [
+              78.5133608,
+              17.3722725
+            ],
+            [
+              78.5134918,
+              17.3722296
+            ],
+            [
+              78.5134686,
+              17.3721649
+            ],
+            [
+              78.5133375,
+              17.3722079
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357048471",
+        "source": "OpenStreetMap",
+        "source_id": 357048471,
+        "source_timestamp": "2015-06-29T06:00:13Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5136736,
+              17.3709335
+            ],
+            [
+              78.5137831,
+              17.3709158
+            ],
+            [
+              78.5137469,
+              17.3707115
+            ],
+            [
+              78.5136375,
+              17.3707291
+            ],
+            [
+              78.5136736,
+              17.3709335
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357048472",
+        "source": "OpenStreetMap",
+        "source_id": 357048472,
+        "source_timestamp": "2015-06-29T06:00:13Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5121326,
+              17.371832
+            ],
+            [
+              78.5122508,
+              17.371765
+            ],
+            [
+              78.5121484,
+              17.3716007
+            ],
+            [
+              78.5120303,
+              17.3716677
+            ],
+            [
+              78.5121326,
+              17.371832
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357048474",
+        "source": "OpenStreetMap",
+        "source_id": 357048474,
+        "source_timestamp": "2015-06-29T06:00:13Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5127665,
+              17.371229
+            ],
+            [
+              78.5128587,
+              17.3711804
+            ],
+            [
+              78.5127404,
+              17.370976
+            ],
+            [
+              78.5126482,
+              17.3710246
+            ],
+            [
+              78.5127665,
+              17.371229
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357048482",
+        "source": "OpenStreetMap",
+        "source_id": 357048482,
+        "source_timestamp": "2015-06-29T06:00:13Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5128578,
+              17.3721961
+            ],
+            [
+              78.5129947,
+              17.3721512
+            ],
+            [
+              78.5129659,
+              17.3720711
+            ],
+            [
+              78.512829,
+              17.372116
+            ],
+            [
+              78.5128578,
+              17.3721961
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357048490",
+        "source": "OpenStreetMap",
+        "source_id": 357048490,
+        "source_timestamp": "2015-06-29T06:00:13Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.512779,
+              17.3719869
+            ],
+            [
+              78.5128868,
+              17.371944
+            ],
+            [
+              78.5128588,
+              17.3718799
+            ],
+            [
+              78.512751,
+              17.3719228
+            ],
+            [
+              78.512779,
+              17.3719869
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357048494",
+        "source": "OpenStreetMap",
+        "source_id": 357048494,
+        "source_timestamp": "2015-06-29T06:00:14Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5134644,
+              17.3715704
+            ],
+            [
+              78.5136022,
+              17.3714939
+            ],
+            [
+              78.5135364,
+              17.3713859
+            ],
+            [
+              78.5133985,
+              17.3714624
+            ],
+            [
+              78.5134644,
+              17.3715704
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357048509",
+        "source": "OpenStreetMap",
+        "source_id": 357048509,
+        "source_timestamp": "2015-06-29T06:00:14Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5135104,
+              17.3711453
+            ],
+            [
+              78.5136473,
+              17.371097
+            ],
+            [
+              78.5136004,
+              17.3709757
+            ],
+            [
+              78.5134634,
+              17.371024
+            ],
+            [
+              78.5135104,
+              17.3711453
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357048519",
+        "source": "OpenStreetMap",
+        "source_id": 357048519,
+        "source_timestamp": "2015-06-29T06:00:14Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5127465,
+              17.3714719
+            ],
+            [
+              78.5128575,
+              17.3714127
+            ],
+            [
+              78.5127695,
+              17.3712625
+            ],
+            [
+              78.5126585,
+              17.3713217
+            ],
+            [
+              78.5127465,
+              17.3714719
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357048536",
+        "source": "OpenStreetMap",
+        "source_id": 357048536,
+        "source_timestamp": "2015-06-29T06:00:15Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5134616,
+              17.3720728
+            ],
+            [
+              78.5136102,
+              17.3720279
+            ],
+            [
+              78.5135789,
+              17.3719334
+            ],
+            [
+              78.5134303,
+              17.3719782
+            ],
+            [
+              78.5134616,
+              17.3720728
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357048540",
+        "source": "OpenStreetMap",
+        "source_id": 357048540,
+        "source_timestamp": "2015-06-29T06:00:15Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5128121,
+              17.3710207
+            ],
+            [
+              78.5129245,
+              17.3709558
+            ],
+            [
+              78.5128877,
+              17.3708978
+            ],
+            [
+              78.5127753,
+              17.3709626
+            ],
+            [
+              78.5128121,
+              17.3710207
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357048559",
+        "source": "OpenStreetMap",
+        "source_id": 357048559,
+        "source_timestamp": "2015-06-29T06:00:15Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5128198,
+              17.3720885
+            ],
+            [
+              78.5129276,
+              17.3720463
+            ],
+            [
+              78.5129015,
+              17.3719854
+            ],
+            [
+              78.5127936,
+              17.3720277
+            ],
+            [
+              78.5128198,
+              17.3720885
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357048564",
+        "source": "OpenStreetMap",
+        "source_id": 357048564,
+        "source_timestamp": "2015-06-29T06:00:15Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5131332,
+              17.3717562
+            ],
+            [
+              78.5133254,
+              17.3716962
+            ],
+            [
+              78.5132794,
+              17.371562
+            ],
+            [
+              78.5130872,
+              17.371622
+            ],
+            [
+              78.5131332,
+              17.3717562
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357048579",
+        "source": "OpenStreetMap",
+        "source_id": 357048579,
+        "source_timestamp": "2015-06-29T06:00:16Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5122812,
+              17.3715166
+            ],
+            [
+              78.5123919,
+              17.3714585
+            ],
+            [
+              78.5122802,
+              17.3712647
+            ],
+            [
+              78.5121696,
+              17.3713228
+            ],
+            [
+              78.5122812,
+              17.3715166
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357048613",
+        "source": "OpenStreetMap",
+        "source_id": 357048613,
+        "source_timestamp": "2015-06-29T06:00:17Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5130344,
+              17.3711095
+            ],
+            [
+              78.5131801,
+              17.3710358
+            ],
+            [
+              78.513098,
+              17.370888
+            ],
+            [
+              78.5129523,
+              17.3709617
+            ],
+            [
+              78.5130344,
+              17.3711095
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357048631",
+        "source": "OpenStreetMap",
+        "source_id": 357048631,
+        "source_timestamp": "2015-06-29T06:00:17Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5119282,
+              17.3719365
+            ],
+            [
+              78.5120091,
+              17.3718876
+            ],
+            [
+              78.5119658,
+              17.3718223
+            ],
+            [
+              78.5118849,
+              17.3718711
+            ],
+            [
+              78.5119282,
+              17.3719365
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357048635",
+        "source": "OpenStreetMap",
+        "source_id": 357048635,
+        "source_timestamp": "2015-06-29T06:00:17Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5133661,
+              17.3723493
+            ],
+            [
+              78.5134956,
+              17.3723143
+            ],
+            [
+              78.5134767,
+              17.3722504
+            ],
+            [
+              78.5133471,
+              17.3722854
+            ],
+            [
+              78.5133661,
+              17.3723493
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357048680",
+        "source": "OpenStreetMap",
+        "source_id": 357048680,
+        "source_timestamp": "2015-06-29T06:00:18Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5130175,
+              17.3721591
+            ],
+            [
+              78.5131834,
+              17.3721169
+            ],
+            [
+              78.5131577,
+              17.3720248
+            ],
+            [
+              78.5129918,
+              17.372067
+            ],
+            [
+              78.5130175,
+              17.3721591
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357048702",
+        "source": "OpenStreetMap",
+        "source_id": 357048702,
+        "source_timestamp": "2015-06-29T06:00:19Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5128907,
+              17.371145
+            ],
+            [
+              78.5129898,
+              17.3710943
+            ],
+            [
+              78.5129242,
+              17.3709776
+            ],
+            [
+              78.5128252,
+              17.3710283
+            ],
+            [
+              78.5128907,
+              17.371145
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357048744",
+        "source": "OpenStreetMap",
+        "source_id": 357048744,
+        "source_timestamp": "2015-06-29T06:00:20Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5130276,
+              17.3713939
+            ],
+            [
+              78.5131401,
+              17.3713319
+            ],
+            [
+              78.5130906,
+              17.37125
+            ],
+            [
+              78.513049,
+              17.3712729
+            ],
+            [
+              78.513028,
+              17.3712382
+            ],
+            [
+              78.5129571,
+              17.3712773
+            ],
+            [
+              78.5130276,
+              17.3713939
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357048749",
+        "source": "OpenStreetMap",
+        "source_id": 357048749,
+        "source_timestamp": "2015-06-29T06:00:20Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5132909,
+              17.3720848
+            ],
+            [
+              78.5133739,
+              17.3720665
+            ],
+            [
+              78.5133767,
+              17.3720783
+            ],
+            [
+              78.5134355,
+              17.3720653
+            ],
+            [
+              78.5134156,
+              17.3719832
+            ],
+            [
+              78.5132739,
+              17.3720145
+            ],
+            [
+              78.5132909,
+              17.3720848
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357048755",
+        "source": "OpenStreetMap",
+        "source_id": 357048755,
+        "source_timestamp": "2015-06-29T06:00:20Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5132789,
+              17.3721378
+            ],
+            [
+              78.51329,
+              17.3721699
+            ],
+            [
+              78.5133157,
+              17.3721618
+            ],
+            [
+              78.5133264,
+              17.372193
+            ],
+            [
+              78.5134598,
+              17.3721509
+            ],
+            [
+              78.5134379,
+              17.3720877
+            ],
+            [
+              78.5132789,
+              17.3721378
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357048769",
+        "source": "OpenStreetMap",
+        "source_id": 357048769,
+        "source_timestamp": "2015-06-29T06:00:20Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5129173,
+              17.3718411
+            ],
+            [
+              78.513023,
+              17.3718028
+            ],
+            [
+              78.5129839,
+              17.3717044
+            ],
+            [
+              78.5128469,
+              17.3717539
+            ],
+            [
+              78.5128607,
+              17.3717887
+            ],
+            [
+              78.512892,
+              17.3717774
+            ],
+            [
+              78.5129173,
+              17.3718411
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357048802",
+        "source": "OpenStreetMap",
+        "source_id": 357048802,
+        "source_timestamp": "2023-05-24T04:56:50Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5129513,
+              17.3727558
+            ],
+            [
+              78.5130642,
+              17.3727266
+            ],
+            [
+              78.5129383,
+              17.3722982
+            ],
+            [
+              78.512935,
+              17.3722889
+            ],
+            [
+              78.5128271,
+              17.3723191
+            ],
+            [
+              78.5128864,
+              17.3725277
+            ],
+            [
+              78.5129569,
+              17.3725095
+            ],
+            [
+              78.5129699,
+              17.372555
+            ],
+            [
+              78.5128994,
+              17.3725733
+            ],
+            [
+              78.5129513,
+              17.3727558
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357306486",
+        "source": "OpenStreetMap",
+        "source_id": 357306486,
+        "source_timestamp": "2015-06-30T05:00:21Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5103417,
+              17.3724665
+            ],
+            [
+              78.5105616,
+              17.3723893
+            ],
+            [
+              78.510522,
+              17.3722867
+            ],
+            [
+              78.5103022,
+              17.3723639
+            ],
+            [
+              78.5103417,
+              17.3724665
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357376125",
+        "source": "OpenStreetMap",
+        "source_id": 357376125,
+        "source_timestamp": "2015-07-21T06:41:03Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5115673,
+              17.3718879
+            ],
+            [
+              78.5116821,
+              17.3718271
+            ],
+            [
+              78.5115556,
+              17.3716098
+            ],
+            [
+              78.5114409,
+              17.3716707
+            ],
+            [
+              78.5115673,
+              17.3718879
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357376138",
+        "source": "OpenStreetMap",
+        "source_id": 357376138,
+        "source_timestamp": "2015-06-30T08:51:04Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5116909,
+              17.3720866
+            ],
+            [
+              78.5117804,
+              17.3720391
+            ],
+            [
+              78.511732,
+              17.371956
+            ],
+            [
+              78.5116425,
+              17.3720034
+            ],
+            [
+              78.5116909,
+              17.3720866
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357376207",
+        "source": "OpenStreetMap",
+        "source_id": 357376207,
+        "source_timestamp": "2015-06-30T08:51:07Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5118366,
+              17.3720287
+            ],
+            [
+              78.5119349,
+              17.3719766
+            ],
+            [
+              78.5118327,
+              17.371801
+            ],
+            [
+              78.5117344,
+              17.3718532
+            ],
+            [
+              78.5118366,
+              17.3720287
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357376308",
+        "source": "OpenStreetMap",
+        "source_id": 357376308,
+        "source_timestamp": "2015-06-30T08:51:12Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5108798,
+              17.3722239
+            ],
+            [
+              78.5110074,
+              17.3721563
+            ],
+            [
+              78.5108984,
+              17.3719691
+            ],
+            [
+              78.5107709,
+              17.3720367
+            ],
+            [
+              78.5108798,
+              17.3722239
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357376318",
+        "source": "OpenStreetMap",
+        "source_id": 357376318,
+        "source_timestamp": "2015-06-30T08:51:12Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5116279,
+              17.3719914
+            ],
+            [
+              78.5117351,
+              17.3719345
+            ],
+            [
+              78.5116895,
+              17.3718561
+            ],
+            [
+              78.5115822,
+              17.371913
+            ],
+            [
+              78.5116279,
+              17.3719914
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357376341",
+        "source": "OpenStreetMap",
+        "source_id": 357376341,
+        "source_timestamp": "2015-06-30T08:51:13Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5111366,
+              17.3723907
+            ],
+            [
+              78.5112422,
+              17.3723347
+            ],
+            [
+              78.5111303,
+              17.3721425
+            ],
+            [
+              78.5110247,
+              17.3721984
+            ],
+            [
+              78.5111366,
+              17.3723907
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357376350",
+        "source": "OpenStreetMap",
+        "source_id": 357376350,
+        "source_timestamp": "2015-06-30T08:51:14Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5109909,
+              17.3724221
+            ],
+            [
+              78.5110998,
+              17.3723643
+            ],
+            [
+              78.5109987,
+              17.3721906
+            ],
+            [
+              78.5108898,
+              17.3722484
+            ],
+            [
+              78.5109909,
+              17.3724221
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357376377",
+        "source": "OpenStreetMap",
+        "source_id": 357376377,
+        "source_timestamp": "2015-06-30T08:51:16Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5112554,
+              17.3720247
+            ],
+            [
+              78.5114234,
+              17.3719357
+            ],
+            [
+              78.5113307,
+              17.3717765
+            ],
+            [
+              78.5111628,
+              17.3718656
+            ],
+            [
+              78.5112554,
+              17.3720247
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357376392",
+        "source": "OpenStreetMap",
+        "source_id": 357376392,
+        "source_timestamp": "2015-06-30T08:51:17Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5110095,
+              17.372153
+            ],
+            [
+              78.5111147,
+              17.3720972
+            ],
+            [
+              78.5110163,
+              17.3719282
+            ],
+            [
+              78.510911,
+              17.371984
+            ],
+            [
+              78.5110095,
+              17.372153
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357376463",
+        "source": "OpenStreetMap",
+        "source_id": 357376463,
+        "source_timestamp": "2015-06-30T08:51:21Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.510675,
+              17.372304
+            ],
+            [
+              78.5108528,
+              17.3722098
+            ],
+            [
+              78.5107523,
+              17.3720371
+            ],
+            [
+              78.5106107,
+              17.3720894
+            ],
+            [
+              78.510675,
+              17.372304
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357376495",
+        "source": "OpenStreetMap",
+        "source_id": 357376495,
+        "source_timestamp": "2015-06-30T08:51:23Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5112564,
+              17.3723205
+            ],
+            [
+              78.5113351,
+              17.3722787
+            ],
+            [
+              78.511229,
+              17.3720965
+            ],
+            [
+              78.5111503,
+              17.3721382
+            ],
+            [
+              78.5112564,
+              17.3723205
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357376515",
+        "source": "OpenStreetMap",
+        "source_id": 357376515,
+        "source_timestamp": "2015-06-30T08:51:24Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5113492,
+              17.3722793
+            ],
+            [
+              78.5114335,
+              17.3722346
+            ],
+            [
+              78.5113248,
+              17.3720479
+            ],
+            [
+              78.5112405,
+              17.3720925
+            ],
+            [
+              78.5113492,
+              17.3722793
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357376529",
+        "source": "OpenStreetMap",
+        "source_id": 357376529,
+        "source_timestamp": "2015-06-30T08:51:26Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5114456,
+              17.3719374
+            ],
+            [
+              78.5115429,
+              17.3718858
+            ],
+            [
+              78.5114436,
+              17.3717153
+            ],
+            [
+              78.5113463,
+              17.3717669
+            ],
+            [
+              78.5114456,
+              17.3719374
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357376551",
+        "source": "OpenStreetMap",
+        "source_id": 357376551,
+        "source_timestamp": "2015-06-30T08:51:27Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5111225,
+              17.372097
+            ],
+            [
+              78.511211,
+              17.37205
+            ],
+            [
+              78.5111117,
+              17.3718795
+            ],
+            [
+              78.5110232,
+              17.3719264
+            ],
+            [
+              78.5111225,
+              17.372097
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357376574",
+        "source": "OpenStreetMap",
+        "source_id": 357376574,
+        "source_timestamp": "2015-06-30T08:51:29Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5117517,
+              17.3717918
+            ],
+            [
+              78.5119447,
+              17.3716893
+            ],
+            [
+              78.511857,
+              17.3715391
+            ],
+            [
+              78.5116641,
+              17.3716416
+            ],
+            [
+              78.5117517,
+              17.3717918
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357376585",
+        "source": "OpenStreetMap",
+        "source_id": 357376585,
+        "source_timestamp": "2015-06-30T08:51:29Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5106986,
+              17.3723251
+            ],
+            [
+              78.5107562,
+              17.3724241
+            ],
+            [
+              78.5108551,
+              17.3723716
+            ],
+            [
+              78.5109148,
+              17.3724741
+            ],
+            [
+              78.5109723,
+              17.3724436
+            ],
+            [
+              78.5108551,
+              17.3722421
+            ],
+            [
+              78.5106986,
+              17.3723251
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357584223",
+        "source": "OpenStreetMap",
+        "source_id": 357584223,
+        "source_timestamp": "2015-07-01T04:59:57Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5133635,
+              17.3711624
+            ],
+            [
+              78.5134525,
+              17.3711325
+            ],
+            [
+              78.5134054,
+              17.3710051
+            ],
+            [
+              78.5133165,
+              17.371035
+            ],
+            [
+              78.5133635,
+              17.3711624
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357584286",
+        "source": "OpenStreetMap",
+        "source_id": 357584286,
+        "source_timestamp": "2015-07-01T05:00:00Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5136447,
+              17.3714025
+            ],
+            [
+              78.5137384,
+              17.3713729
+            ],
+            [
+              78.5136858,
+              17.3712212
+            ],
+            [
+              78.5135921,
+              17.3712507
+            ],
+            [
+              78.5136447,
+              17.3714025
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357758241",
+        "source": "OpenStreetMap",
+        "source_id": 357758241,
+        "source_timestamp": "2015-07-01T11:20:51Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5105862,
+              17.3705136
+            ],
+            [
+              78.5107434,
+              17.3704602
+            ],
+            [
+              78.5107168,
+              17.3703889
+            ],
+            [
+              78.5105597,
+              17.3704423
+            ],
+            [
+              78.5105862,
+              17.3705136
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357758252",
+        "source": "OpenStreetMap",
+        "source_id": 357758252,
+        "source_timestamp": "2015-07-01T11:20:51Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5117668,
+              17.3699044
+            ],
+            [
+              78.5121912,
+              17.3701069
+            ],
+            [
+              78.5122798,
+              17.3699378
+            ],
+            [
+              78.5118554,
+              17.3697353
+            ],
+            [
+              78.5117668,
+              17.3699044
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357758264",
+        "source": "OpenStreetMap",
+        "source_id": 357758264,
+        "source_timestamp": "2015-07-01T11:20:52Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5107558,
+              17.3704475
+            ],
+            [
+              78.5109451,
+              17.3703833
+            ],
+            [
+              78.5109186,
+              17.3703122
+            ],
+            [
+              78.5107293,
+              17.3703764
+            ],
+            [
+              78.5107558,
+              17.3704475
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357758280",
+        "source": "OpenStreetMap",
+        "source_id": 357758280,
+        "source_timestamp": "2015-07-01T11:20:53Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5111017,
+              17.3706244
+            ],
+            [
+              78.5112778,
+              17.3706907
+            ],
+            [
+              78.5113129,
+              17.3706059
+            ],
+            [
+              78.5111367,
+              17.3705396
+            ],
+            [
+              78.5111017,
+              17.3706244
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357758287",
+        "source": "OpenStreetMap",
+        "source_id": 357758287,
+        "source_timestamp": "2015-07-01T11:20:54Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5108781,
+              17.3707451
+            ],
+            [
+              78.5110611,
+              17.3706829
+            ],
+            [
+              78.5110351,
+              17.3706133
+            ],
+            [
+              78.5108521,
+              17.3706754
+            ],
+            [
+              78.5108781,
+              17.3707451
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357758298",
+        "source": "OpenStreetMap",
+        "source_id": 357758298,
+        "source_timestamp": "2015-07-01T11:20:54Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5104601,
+              17.370905
+            ],
+            [
+              78.5106356,
+              17.3708454
+            ],
+            [
+              78.5106077,
+              17.3707705
+            ],
+            [
+              78.5104322,
+              17.37083
+            ],
+            [
+              78.5104601,
+              17.370905
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357758311",
+        "source": "OpenStreetMap",
+        "source_id": 357758311,
+        "source_timestamp": "2015-07-01T11:20:55Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5103392,
+              17.3705822
+            ],
+            [
+              78.510559,
+              17.3705077
+            ],
+            [
+              78.5105318,
+              17.3704345
+            ],
+            [
+              78.510312,
+              17.3705091
+            ],
+            [
+              78.5103392,
+              17.3705822
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357758313",
+        "source": "OpenStreetMap",
+        "source_id": 357758313,
+        "source_timestamp": "2015-07-01T11:20:55Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5112738,
+              17.3700486
+            ],
+            [
+              78.5113595,
+              17.3700895
+            ],
+            [
+              78.5114341,
+              17.3699471
+            ],
+            [
+              78.5113484,
+              17.3699062
+            ],
+            [
+              78.5112738,
+              17.3700486
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357758358",
+        "source": "OpenStreetMap",
+        "source_id": 357758358,
+        "source_timestamp": "2015-07-01T11:20:57Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5115376,
+              17.3706954
+            ],
+            [
+              78.5116411,
+              17.3706406
+            ],
+            [
+              78.5115388,
+              17.3704645
+            ],
+            [
+              78.5114352,
+              17.3705193
+            ],
+            [
+              78.5115376,
+              17.3706954
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357758367",
+        "source": "OpenStreetMap",
+        "source_id": 357758367,
+        "source_timestamp": "2015-07-01T11:20:57Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5117193,
+              17.3702392
+            ],
+            [
+              78.5118917,
+              17.3703112
+            ],
+            [
+              78.5119353,
+              17.3702161
+            ],
+            [
+              78.5117629,
+              17.3701441
+            ],
+            [
+              78.5117193,
+              17.3702392
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357758385",
+        "source": "OpenStreetMap",
+        "source_id": 357758385,
+        "source_timestamp": "2015-07-01T11:20:58Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5114958,
+              17.3704191
+            ],
+            [
+              78.5116157,
+              17.3702649
+            ],
+            [
+              78.5115234,
+              17.3701996
+            ],
+            [
+              78.5114036,
+              17.3703538
+            ],
+            [
+              78.5114958,
+              17.3704191
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357758394",
+        "source": "OpenStreetMap",
+        "source_id": 357758394,
+        "source_timestamp": "2015-07-01T11:20:58Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5109601,
+              17.3703622
+            ],
+            [
+              78.5110535,
+              17.370327
+            ],
+            [
+              78.5110332,
+              17.3702781
+            ],
+            [
+              78.5109398,
+              17.3703133
+            ],
+            [
+              78.5109601,
+              17.3703622
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357758403",
+        "source": "OpenStreetMap",
+        "source_id": 357758403,
+        "source_timestamp": "2015-07-01T11:20:59Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5113112,
+              17.3697476
+            ],
+            [
+              78.5114872,
+              17.3698315
+            ],
+            [
+              78.5115378,
+              17.3697349
+            ],
+            [
+              78.5113619,
+              17.3696509
+            ],
+            [
+              78.5113112,
+              17.3697476
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357758429",
+        "source": "OpenStreetMap",
+        "source_id": 357758429,
+        "source_timestamp": "2015-07-01T11:21:01Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5115054,
+              17.3698412
+            ],
+            [
+              78.5116909,
+              17.3699297
+            ],
+            [
+              78.511752,
+              17.369813
+            ],
+            [
+              78.5115666,
+              17.3697245
+            ],
+            [
+              78.5115054,
+              17.3698412
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357758445",
+        "source": "OpenStreetMap",
+        "source_id": 357758445,
+        "source_timestamp": "2015-07-01T11:21:02Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5110411,
+              17.3699992
+            ],
+            [
+              78.5111536,
+              17.3700529
+            ],
+            [
+              78.5111932,
+              17.3699774
+            ],
+            [
+              78.5110807,
+              17.3699237
+            ],
+            [
+              78.5110411,
+              17.3699992
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357758471",
+        "source": "OpenStreetMap",
+        "source_id": 357758471,
+        "source_timestamp": "2015-07-01T11:21:03Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5112321,
+              17.3702557
+            ],
+            [
+              78.511312,
+              17.3702938
+            ],
+            [
+              78.5113977,
+              17.3701303
+            ],
+            [
+              78.5113177,
+              17.3700921
+            ],
+            [
+              78.5112321,
+              17.3702557
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357758485",
+        "source": "OpenStreetMap",
+        "source_id": 357758485,
+        "source_timestamp": "2015-07-01T11:21:04Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5110519,
+              17.36989
+            ],
+            [
+              78.5111736,
+              17.3699481
+            ],
+            [
+              78.5112094,
+              17.3698797
+            ],
+            [
+              78.5110877,
+              17.3698216
+            ],
+            [
+              78.5110519,
+              17.36989
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357758580",
+        "source": "OpenStreetMap",
+        "source_id": 357758580,
+        "source_timestamp": "2015-07-01T11:21:07Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5116197,
+              17.3708984
+            ],
+            [
+              78.5117893,
+              17.3708149
+            ],
+            [
+              78.5117443,
+              17.3707315
+            ],
+            [
+              78.5115746,
+              17.370815
+            ],
+            [
+              78.5116197,
+              17.3708984
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357758644",
+        "source": "OpenStreetMap",
+        "source_id": 357758644,
+        "source_timestamp": "2015-07-01T11:21:08Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5118351,
+              17.3707995
+            ],
+            [
+              78.5119886,
+              17.3706851
+            ],
+            [
+              78.5119214,
+              17.370603
+            ],
+            [
+              78.5117679,
+              17.3707173
+            ],
+            [
+              78.5118351,
+              17.3707995
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357758816",
+        "source": "OpenStreetMap",
+        "source_id": 357758816,
+        "source_timestamp": "2015-07-01T11:21:11Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5106905,
+              17.3708132
+            ],
+            [
+              78.5108596,
+              17.3707558
+            ],
+            [
+              78.5108295,
+              17.3706751
+            ],
+            [
+              78.5106604,
+              17.3707325
+            ],
+            [
+              78.5106905,
+              17.3708132
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357758841",
+        "source": "OpenStreetMap",
+        "source_id": 357758841,
+        "source_timestamp": "2015-07-01T11:21:12Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5115308,
+              17.3701775
+            ],
+            [
+              78.5116385,
+              17.3702302
+            ],
+            [
+              78.5117208,
+              17.370077
+            ],
+            [
+              78.5116131,
+              17.3700243
+            ],
+            [
+              78.5115308,
+              17.3701775
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-357758981",
+        "source": "OpenStreetMap",
+        "source_id": 357758981,
+        "source_timestamp": "2015-07-01T11:21:16Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.510312,
+              17.3705009
+            ],
+            [
+              78.5104934,
+              17.3704393
+            ],
+            [
+              78.5104594,
+              17.370348
+            ],
+            [
+              78.5104058,
+              17.3703662
+            ],
+            [
+              78.5103972,
+              17.3703432
+            ],
+            [
+              78.5104508,
+              17.370325
+            ],
+            [
+              78.5104388,
+              17.3702927
+            ],
+            [
+              78.510495,
+              17.3702737
+            ],
+            [
+              78.5105067,
+              17.3703052
+            ],
+            [
+              78.5105834,
+              17.3702791
+            ],
+            [
+              78.5105913,
+              17.3703002
+            ],
+            [
+              78.5105145,
+              17.3703263
+            ],
+            [
+              78.5105496,
+              17.3704203
+            ],
+            [
+              78.5107371,
+              17.3703566
+            ],
+            [
+              78.5107044,
+              17.3702688
+            ],
+            [
+              78.5106533,
+              17.3702861
+            ],
+            [
+              78.5106449,
+              17.3702634
+            ],
+            [
+              78.5106959,
+              17.3702461
+            ],
+            [
+              78.5106815,
+              17.3702073
+            ],
+            [
+              78.5107381,
+              17.3701881
+            ],
+            [
+              78.5107511,
+              17.3702228
+            ],
+            [
+              78.5108282,
+              17.3701967
+            ],
+            [
+              78.5108372,
+              17.3702208
+            ],
+            [
+              78.5107601,
+              17.370247
+            ],
+            [
+              78.5107938,
+              17.3703374
+            ],
+            [
+              78.5109813,
+              17.3702737
+            ],
+            [
+              78.5109459,
+              17.3701786
+            ],
+            [
+              78.5108806,
+              17.3702008
+            ],
+            [
+              78.510871,
+              17.370175
+            ],
+            [
+              78.5109363,
+              17.3701528
+            ],
+            [
+              78.5109048,
+              17.3700683
+            ],
+            [
+              78.5108338,
+              17.3700924
+            ],
+            [
+              78.5108259,
+              17.3700711
+            ],
+            [
+              78.5108969,
+              17.370047
+            ],
+            [
+              78.5108619,
+              17.3699533
+            ],
+            [
+              78.5108069,
+              17.3699719
+            ],
+            [
+              78.5107979,
+              17.3699477
+            ],
+            [
+              78.5108529,
+              17.369929
+            ],
+            [
+              78.5108251,
+              17.3698544
+            ],
+            [
+              78.5106414,
+              17.3699168
+            ],
+            [
+              78.5106717,
+              17.3699982
+            ],
+            [
+              78.5107476,
+              17.3699724
+            ],
+            [
+              78.5107569,
+              17.3699973
+            ],
+            [
+              78.510681,
+              17.3700231
+            ],
+            [
+              78.5107085,
+              17.3700969
+            ],
+            [
+              78.5106459,
+              17.3701182
+            ],
+            [
+              78.5106182,
+              17.3700437
+            ],
+            [
+              78.5105493,
+              17.370067
+            ],
+            [
+              78.510539,
+              17.3700392
+            ],
+            [
+              78.5106078,
+              17.3700158
+            ],
+            [
+              78.5105788,
+              17.369938
+            ],
+            [
+              78.5104049,
+              17.369997
+            ],
+            [
+              78.5104357,
+              17.3700797
+            ],
+            [
+              78.5105077,
+              17.3700553
+            ],
+            [
+              78.5105163,
+              17.3700786
+            ],
+            [
+              78.5104444,
+              17.370103
+            ],
+            [
+              78.5104654,
+              17.3701593
+            ],
+            [
+              78.510396,
+              17.3701829
+            ],
+            [
+              78.5103758,
+              17.3701286
+            ],
+            [
+              78.5103023,
+              17.3701536
+            ],
+            [
+              78.5102951,
+              17.3701342
+            ],
+            [
+              78.5103686,
+              17.3701093
+            ],
+            [
+              78.5103355,
+              17.3700206
+            ],
+            [
+              78.5101558,
+              17.3700816
+            ],
+            [
+              78.5101864,
+              17.3701636
+            ],
+            [
+              78.5102629,
+              17.3701376
+            ],
+            [
+              78.5102744,
+              17.3701686
+            ],
+            [
+              78.5101979,
+              17.3701945
+            ],
+            [
+              78.5102238,
+              17.3702641
+            ],
+            [
+              78.5101897,
+              17.3702757
+            ],
+            [
+              78.5101786,
+              17.3702459
+            ],
+            [
+              78.5101453,
+              17.3702572
+            ],
+            [
+              78.5101681,
+              17.3703182
+            ],
+            [
+              78.5102354,
+              17.3702953
+            ],
+            [
+              78.5102718,
+              17.370393
+            ],
+            [
+              78.5103384,
+              17.3703704
+            ],
+            [
+              78.5103447,
+              17.3703874
+            ],
+            [
+              78.5102782,
+              17.37041
+            ],
+            [
+              78.510312,
+              17.3705009
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-635386167",
+        "source": "OpenStreetMap",
+        "source_id": 635386167,
+        "source_timestamp": "2024-01-30T14:34:23Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes",
+          "layer": "1",
+          "name": "Moosarambagh",
+          "network": "Hyderabad Metro",
+          "note": "Contributors are requested to not edit the \"network\" and the \"operator\" tags. (2023/11/08)",
+          "operator": "Hyderabad Metro Rail Limited",
+          "public_transport": "stop_position",
+          "station": "subway",
+          "subway": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5113577,
+              17.3713151
+            ],
+            [
+              78.5114646,
+              17.3714919
+            ],
+            [
+              78.5125864,
+              17.3708739
+            ],
+            [
+              78.5124795,
+              17.3706972
+            ],
+            [
+              78.5113577,
+              17.3713151
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-646809360",
+        "source": "OpenStreetMap",
+        "source_id": 646809360,
+        "source_timestamp": "2018-11-20T10:58:32Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5114569,
+              17.3722292
+            ],
+            [
+              78.5113753,
+              17.3720772
+            ],
+            [
+              78.5115688,
+              17.3719704
+            ],
+            [
+              78.5116522,
+              17.3721288
+            ],
+            [
+              78.5114569,
+              17.3722292
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-1165018348",
+        "source": "OpenStreetMap",
+        "source_id": 1165018348,
+        "source_timestamp": "2023-04-24T07:44:51Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5117707,
+              17.3721478
+            ],
+            [
+              78.5118031,
+              17.3722197
+            ],
+            [
+              78.5119258,
+              17.3721694
+            ],
+            [
+              78.5118933,
+              17.3720974
+            ],
+            [
+              78.5117707,
+              17.3721478
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-1165018350",
+        "source": "OpenStreetMap",
+        "source_id": 1165018350,
+        "source_timestamp": "2023-04-24T07:44:51Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.513001,
+              17.3724871
+            ],
+            [
+              78.5129383,
+              17.3722982
+            ],
+            [
+              78.5130538,
+              17.3722632
+            ],
+            [
+              78.5131166,
+              17.3724521
+            ],
+            [
+              78.513001,
+              17.3724871
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-1165018351",
+        "source": "OpenStreetMap",
+        "source_id": 1165018351,
+        "source_timestamp": "2023-04-24T07:44:51Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5136365,
+              17.3717893
+            ],
+            [
+              78.51368,
+              17.37192
+            ],
+            [
+              78.51404,
+              17.3718207
+            ],
+            [
+              78.513994,
+              17.3716827
+            ],
+            [
+              78.5136365,
+              17.3717893
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-1165018352",
+        "source": "OpenStreetMap",
+        "source_id": 1165018352,
+        "source_timestamp": "2023-04-24T07:44:51Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5136894,
+              17.3712214
+            ],
+            [
+              78.513741,
+              17.371371
+            ],
+            [
+              78.5138368,
+              17.3713409
+            ],
+            [
+              78.5137852,
+              17.3711913
+            ],
+            [
+              78.5136894,
+              17.3712214
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-1165018353",
+        "source": "OpenStreetMap",
+        "source_id": 1165018353,
+        "source_timestamp": "2023-04-24T07:44:51Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5138459,
+              17.3709036
+            ],
+            [
+              78.5139225,
+              17.3708826
+            ],
+            [
+              78.5138696,
+              17.3707067
+            ],
+            [
+              78.5137929,
+              17.3707278
+            ],
+            [
+              78.5138459,
+              17.3709036
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building_id": "osm-way-1193927884",
+        "source": "OpenStreetMap",
+        "source_id": 1193927884,
+        "source_timestamp": "2023-08-02T09:05:41Z",
+        "building_type": "yes",
+        "building_levels": null,
+        "height": null,
+        "construction_date": null,
+        "source_classification": "crowdsourced",
+        "tags": {
+          "building": "yes"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              78.5139204,
+              17.3702006
+            ],
+            [
+              78.5137014,
+              17.3702603
+            ],
+            [
+              78.5137401,
+              17.3703641
+            ],
+            [
+              78.5139542,
+              17.3702927
+            ],
+            [
+              78.5139204,
+              17.3702006
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

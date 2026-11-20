@@ -1,0 +1,26 @@
+{
+  "project": "AI NETRA",
+  "report_version": "1.0",
+  "generated_at": "2026-11-12T00:56:25.898824+00:00",
+  "expected_osm_buildings": 11659,
+  "merged_records": 11659,
+  "numeric_height_records": 11557,
+  "missing_building_ids": 0,
+  "duplicate_ids": 0,
+  "unexpected_ids": 0,
+  "invalid_height_values": 102,
+  "low_height_threshold_m": 2.0,
+  "low_estimates_flagged": 341,
+  "minimum_height_m": 0.015625,
+  "maximum_height_m": 82.578125,
+  "mean_height_m": 8.91421324738254,
+  "median_height_m": 8.4140625,
+  "dataset_year": 2023,
+  "source": "Google Open Buildings 2.5D",
+  "limitations": [
+    "Heights are satellite-derived model estimates",
+    "Representative-point sampling does not validate whole-building height",
+    "Low estimates are flagged for review, not declared incorrect",
+    "No independent ground-truth accuracy assessment performed"
+  ]
+}

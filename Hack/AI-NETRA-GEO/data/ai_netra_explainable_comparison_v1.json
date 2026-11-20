@@ -1,0 +1,192 @@
+{
+  "project": "AI NETRA",
+  "schema_version": "1.0.0",
+  "assessment_type": "synthetic_explainable_comparison",
+  "scenario_count": 3,
+  "pairwise_comparison_count": 3,
+  "comparison_method": "descriptive_factor_by_factor",
+  "comparisons": [
+    {
+      "first_scenario": "AI_NETRA_DEMO_001",
+      "second_scenario": "AI_NETRA_DEMO_002",
+      "same_building_id": true,
+      "factor_comparisons": [
+        {
+          "factor": "reported_people",
+          "description": "People reportedly stranded",
+          "first_value": 5,
+          "second_value": 12,
+          "relationship": "second_higher",
+          "higher_reported_value_scenario": "AI_NETRA_DEMO_002",
+          "interpretation": "Descriptive comparison of fictional reports. A higher value does not independently establish greater rescue urgency."
+        },
+        {
+          "factor": "reported_children",
+          "description": "Children reportedly present",
+          "first_value": 2,
+          "second_value": 4,
+          "relationship": "second_higher",
+          "higher_reported_value_scenario": "AI_NETRA_DEMO_002",
+          "interpretation": "Descriptive comparison of fictional reports. A higher value does not independently establish greater rescue urgency."
+        },
+        {
+          "factor": "reported_seniors",
+          "description": "Senior citizens reportedly present",
+          "first_value": 1,
+          "second_value": 3,
+          "relationship": "second_higher",
+          "higher_reported_value_scenario": "AI_NETRA_DEMO_002",
+          "interpretation": "Descriptive comparison of fictional reports. A higher value does not independently establish greater rescue urgency."
+        },
+        {
+          "factor": "reported_water_depth_m",
+          "description": "Reported water depth",
+          "first_value": 1.5,
+          "second_value": 0.8,
+          "relationship": "first_higher",
+          "higher_reported_value_scenario": "AI_NETRA_DEMO_001",
+          "interpretation": "Descriptive comparison of fictional reports. A higher value does not independently establish greater rescue urgency."
+        },
+        {
+          "factor": "reported_flow_velocity_mps",
+          "description": "Reported flow velocity",
+          "first_value": 0.8,
+          "second_value": 0.3,
+          "relationship": "first_higher",
+          "higher_reported_value_scenario": "AI_NETRA_DEMO_001",
+          "interpretation": "Descriptive comparison of fictional reports. A higher value does not independently establish greater rescue urgency."
+        }
+      ],
+      "first_higher_factor_count": 2,
+      "second_higher_factor_count": 3,
+      "tradeoffs_present": true,
+      "rescue_priority_comparison": "not_determined",
+      "operational_ranking_performed": false
+    },
+    {
+      "first_scenario": "AI_NETRA_DEMO_001",
+      "second_scenario": "AI_NETRA_DEMO_003",
+      "same_building_id": true,
+      "factor_comparisons": [
+        {
+          "factor": "reported_people",
+          "description": "People reportedly stranded",
+          "first_value": 5,
+          "second_value": 2,
+          "relationship": "first_higher",
+          "higher_reported_value_scenario": "AI_NETRA_DEMO_001",
+          "interpretation": "Descriptive comparison of fictional reports. A higher value does not independently establish greater rescue urgency."
+        },
+        {
+          "factor": "reported_children",
+          "description": "Children reportedly present",
+          "first_value": 2,
+          "second_value": 0,
+          "relationship": "first_higher",
+          "higher_reported_value_scenario": "AI_NETRA_DEMO_001",
+          "interpretation": "Descriptive comparison of fictional reports. A higher value does not independently establish greater rescue urgency."
+        },
+        {
+          "factor": "reported_seniors",
+          "description": "Senior citizens reportedly present",
+          "first_value": 1,
+          "second_value": 1,
+          "relationship": "equal",
+          "higher_reported_value_scenario": null,
+          "interpretation": "Descriptive comparison of fictional reports. A higher value does not independently establish greater rescue urgency."
+        },
+        {
+          "factor": "reported_water_depth_m",
+          "description": "Reported water depth",
+          "first_value": 1.5,
+          "second_value": 2.2,
+          "relationship": "second_higher",
+          "higher_reported_value_scenario": "AI_NETRA_DEMO_003",
+          "interpretation": "Descriptive comparison of fictional reports. A higher value does not independently establish greater rescue urgency."
+        },
+        {
+          "factor": "reported_flow_velocity_mps",
+          "description": "Reported flow velocity",
+          "first_value": 0.8,
+          "second_value": 1.1,
+          "relationship": "second_higher",
+          "higher_reported_value_scenario": "AI_NETRA_DEMO_003",
+          "interpretation": "Descriptive comparison of fictional reports. A higher value does not independently establish greater rescue urgency."
+        }
+      ],
+      "first_higher_factor_count": 2,
+      "second_higher_factor_count": 2,
+      "tradeoffs_present": true,
+      "rescue_priority_comparison": "not_determined",
+      "operational_ranking_performed": false
+    },
+    {
+      "first_scenario": "AI_NETRA_DEMO_002",
+      "second_scenario": "AI_NETRA_DEMO_003",
+      "same_building_id": true,
+      "factor_comparisons": [
+        {
+          "factor": "reported_people",
+          "description": "People reportedly stranded",
+          "first_value": 12,
+          "second_value": 2,
+          "relationship": "first_higher",
+          "higher_reported_value_scenario": "AI_NETRA_DEMO_002",
+          "interpretation": "Descriptive comparison of fictional reports. A higher value does not independently establish greater rescue urgency."
+        },
+        {
+          "factor": "reported_children",
+          "description": "Children reportedly present",
+          "first_value": 4,
+          "second_value": 0,
+          "relationship": "first_higher",
+          "higher_reported_value_scenario": "AI_NETRA_DEMO_002",
+          "interpretation": "Descriptive comparison of fictional reports. A higher value does not independently establish greater rescue urgency."
+        },
+        {
+          "factor": "reported_seniors",
+          "description": "Senior citizens reportedly present",
+          "first_value": 3,
+          "second_value": 1,
+          "relationship": "first_higher",
+          "higher_reported_value_scenario": "AI_NETRA_DEMO_002",
+          "interpretation": "Descriptive comparison of fictional reports. A higher value does not independently establish greater rescue urgency."
+        },
+        {
+          "factor": "reported_water_depth_m",
+          "description": "Reported water depth",
+          "first_value": 0.8,
+          "second_value": 2.2,
+          "relationship": "second_higher",
+          "higher_reported_value_scenario": "AI_NETRA_DEMO_003",
+          "interpretation": "Descriptive comparison of fictional reports. A higher value does not independently establish greater rescue urgency."
+        },
+        {
+          "factor": "reported_flow_velocity_mps",
+          "description": "Reported flow velocity",
+          "first_value": 0.3,
+          "second_value": 1.1,
+          "relationship": "second_higher",
+          "higher_reported_value_scenario": "AI_NETRA_DEMO_003",
+          "interpretation": "Descriptive comparison of fictional reports. A higher value does not independently establish greater rescue urgency."
+        }
+      ],
+      "first_higher_factor_count": 3,
+      "second_higher_factor_count": 2,
+      "tradeoffs_present": true,
+      "rescue_priority_comparison": "not_determined",
+      "operational_ranking_performed": false
+    }
+  ],
+  "ranking_performed": false,
+  "priority_scores_assigned": false,
+  "human_review_required": true,
+  "automated_dispatch_authorized": false,
+  "limitations": [
+    "All incident values are fictional and unverified",
+    "Scenarios may reference the same building",
+    "Higher measurements do not independently establish rescue urgency",
+    "No validated operational weighting or thresholds",
+    "No automated rescue decisions"
+  ]
+}

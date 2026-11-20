@@ -1,0 +1,53 @@
+{
+  "scenario_id": "AI_NETRA_DEMO_001",
+  "scenario_type": "synthetic_training_scenario",
+  "building_id": "osm-way-357584220",
+  "reported_indicators": [
+    {
+      "indicator": "people_reportedly_stranded",
+      "value": 5,
+      "explanation": "The synthetic report indicates people may require emergency assistance."
+    },
+    {
+      "indicator": "children_reportedly_present",
+      "value": 2,
+      "explanation": "Children are reportedly among those requiring assistance. Their needs require human assessment."
+    },
+    {
+      "indicator": "senior_citizens_reportedly_present",
+      "value": 1,
+      "explanation": "Senior citizens are reportedly present. Mobility and support needs require assessment."
+    },
+    {
+      "indicator": "reported_water_depth",
+      "value": 1.5,
+      "unit": "m",
+      "explanation": "The synthetic report includes a positive water depth. This is not a verified measurement."
+    },
+    {
+      "indicator": "reported_flow_velocity",
+      "value": 0.8,
+      "unit": "m/s",
+      "explanation": "The synthetic report includes water movement. The measurement has not been verified."
+    }
+  ],
+  "indicator_count": 5,
+  "observation_source": "synthetic_emergency_report",
+  "verification_status": "unverified",
+  "triage": {
+    "status": "reported_urgent_review",
+    "human_attention_flag": true,
+    "human_review_required": true,
+    "rescue_priority": "not_assessed",
+    "priority_score": null,
+    "current_flooding_confirmed": false,
+    "automated_dispatch_authorized": false,
+    "explanation": "Synthetic emergency information suggests potential assistance needs. The report is unverified and must be assessed by a human. No operational rescue priority is assigned."
+  },
+  "limitations": [
+    "Synthetic demonstration only",
+    "No verified current flood observations",
+    "No validated rescue-priority thresholds",
+    "No automated dispatch authorization"
+  ]
+}

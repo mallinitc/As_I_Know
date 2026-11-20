@@ -1,0 +1,32 @@
+{
+  "project": "AI NETRA",
+  "workstream": "Hyderabad Building Intelligence",
+  "step": "8.41",
+  "generated_at": "2026-11-12T06:00:07.826949+00:00",
+  "total_buildings": 11659,
+  "distances_calculated": 11659,
+  "failed_records": 0,
+  "river_water_polygons": 2,
+  "buildings_intersecting_mapped_water": 0,
+  "proximity_categories": {
+    "beyond_500m": 9235,
+    "within_500m": 1290,
+    "within_250m": 738,
+    "within_100m": 245,
+    "within_50m": 151
+  },
+  "minimum_distance_m": 8.742440158391064,
+  "maximum_distance_m": 2482.7141358265203,
+  "mean_distance_m": 1060.5873025067074,
+  "median_distance_m": 1083.2297204415393,
+  "distance_method": "local_equirectangular_polygon_distance",
+  "source": "OpenStreetMap",
+  "limitations": [
+    "Mapped water polygons are not verified flood boundaries",
+    "Water polygons may not reflect current river extent",
+    "Distance is measured to mapped polygon, not historical flood extent",
+    "Calculations use an approximate local metric projection",
+    "Near-river proximity does not establish flood risk",
+    "River geometry may be incomplete outside mapped segments"
+  ]
+}
