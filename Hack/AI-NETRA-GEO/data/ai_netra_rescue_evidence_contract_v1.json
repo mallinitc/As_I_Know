@@ -1,0 +1,43 @@
+﻿{
+  "schema_version": "1.0.0",
+  "project": "AI NETRA",
+  "component": "Rescue Prioritization Evidence Contract",
+  "assessment_status": "experimental",
+  "evidence": {
+    "building": {
+      "building_id": null,
+      "latitude": null,
+      "longitude": null,
+      "footprint_area_m2": null,
+      "estimated_height_m": null
+    },
+    "environmental": {
+      "distance_to_musi_water_m": null,
+      "distance_to_waterlogging_point_m": null,
+      "historical_evidence_category": null,
+      "sentinel1_historical_radar": null
+    },
+    "incident": {
+      "incident_timestamp": null,
+      "observed_water_depth_m": null,
+      "observed_flow_velocity_mps": null,
+      "estimated_people_stranded": null,
+      "observation_source": null,
+      "verification_status": "unavailable"
+    }
+  },
+  "assessment": {
+    "evidence_completeness": "unknown",
+    "current_flooding_status": "not_established",
+    "rescue_priority": "not_assessed",
+    "priority_score": null,
+    "human_review_required": true,
+    "explanation": [],
+    "missing_evidence": []
+  },
+  "safety": {
+    "historical_evidence_is_current_flooding": false,
+    "satellite_radar_change_is_verified_inundation": false,
+    "automated_rescue_dispatch_authorized": false
+  }
+}

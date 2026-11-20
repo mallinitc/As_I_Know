@@ -1,0 +1,27 @@
+{
+  "catalog_version": "1.0",
+  "total_buildings": 11659,
+  "height_quality_counts": {
+    "review_low_estimate": 341,
+    "unverified_estimate": 11216,
+    "unavailable": 102
+  },
+  "buildings_without_usable_height": 102,
+  "sample_missing_height_ids": [
+    "osm-way-356511881",
+    "osm-way-356527886",
+    "osm-way-357310671",
+    "osm-way-357710805",
+    "osm-way-357710821",
+    "osm-way-357758225",
+    "osm-way-357758265",
+    "osm-way-357758286",
+    "osm-way-357758291",
+    "osm-way-357758396"
+  ],
+  "catalog_file": "ai_netra_building_catalog_v1.geojson",
+  "source_files": [
+    "moosarambagh_osm_buildings_expanded_v1.geojson",
+    "ai_netra_merged_heights_2023_v1.csv"
+  ]
+}

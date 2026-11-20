@@ -1,0 +1,35 @@
+{
+  "project": "AI NETRA",
+  "step": "8.40",
+  "source_file": "musi_river_osm_raw_v1.json",
+  "successful_relations": 2,
+  "failed_relations": 0,
+  "validation_results": [
+    {
+      "relation_id": 8921715,
+      "status": "valid",
+      "geometry_type": "Polygon",
+      "outer_rings": 1,
+      "inner_rings": 12,
+      "bounds": [
+        78.5171011,
+        17.3748866,
+        78.5390979,
+        17.3828014
+      ]
+    },
+    {
+      "relation_id": 8978997,
+      "status": "valid",
+      "geometry_type": "Polygon",
+      "outer_rings": 1,
+      "inner_rings": 4,
+      "bounds": [
+        78.4956709,
+        17.37915,
+        78.517651,
+        17.3866307
+      ]
+    }
+  ]
+}

@@ -1,0 +1,342 @@
+{
+  "project": "AI NETRA",
+  "schema_version": "1.0.0",
+  "assessment_type": "synthetic_incident_evidence_assessment",
+  "building_id": "osm-way-357584220",
+  "building_evidence": {
+    "building_id": "osm-way-357584220",
+    "latitude": 17.37990065,
+    "longitude": 78.51797466199042,
+    "footprint_area_m2": 99.08,
+    "estimated_height_m": 5.65625
+  },
+  "environmental_evidence": {
+    "distance_to_musi_water_m": 22.2,
+    "distance_to_waterlogging_point_m": 1588.17,
+    "historical_evidence_category": "both",
+    "sentinel1_historical_radar": {
+      "availability": "available",
+      "source": "Sentinel-1A / Google Earth Engine",
+      "source_file": "ai_netra_targeted_radar_evidence_40_v1.csv",
+      "measurement_type": "neighbourhood_radar_backscatter_change_threshold",
+      "threshold_db": -3,
+      "threshold_direction": "below_minus_3_db",
+      "verification_status": "exploratory_not_ground_verified",
+      "building_inundation_status": "not_established",
+      "building_flooding_confirmed": false,
+      "flood_risk_assigned": false,
+      "note": "Fractions describe 10 m raster sample locations with decreases greater than 3 dB in a 50 m building-centred neighbourhood; samples are not independent, neighbourhoods may overlap, and radar changes are not verified inundation or flood probabilities. Data exist only for the 40 targeted experimental buildings.",
+      "proximity_group": "intersecting",
+      "distance_m": 0.0,
+      "footprint_area_m2": 99.08,
+      "neighbourhood_radius_m": 50.0,
+      "control_VV_negative_fraction": 0.023775727466288143,
+      "event_VV_negative_fraction": 0.11269390651931457,
+      "control_VH_negative_fraction": 0.0,
+      "event_VH_negative_fraction": 0.17281760113555708,
+      "control_VV_sample_count": 94,
+      "event_VV_sample_count": 94,
+      "control_VH_sample_count": 94,
+      "event_VH_sample_count": 94,
+      "satellite_source": "Sentinel-1A",
+      "control_start": "2020-09-27",
+      "control_end": "2020-10-09",
+      "event_start": "2020-10-09",
+      "event_end": "2020-10-21",
+      "evidence_type": "historical_radar_change",
+      "flood_status": "not_verified"
+    }
+  },
+  "incident_evidence": {
+    "incident_timestamp": null,
+    "observed_water_depth_m": null,
+    "observed_flow_velocity_mps": null,
+    "estimated_people_stranded": null,
+    "observation_source": null,
+    "verification_status": "unavailable"
+  },
+  "evidence_completeness": {
+    "schema_version": "1.0.0",
+    "building": {
+      "available": [
+        "building_id",
+        "latitude",
+        "longitude",
+        "footprint_area_m2",
+        "estimated_height_m"
+      ],
+      "missing": [],
+      "available_count": 5,
+      "missing_count": 0,
+      "total_fields": 5
+    },
+    "environmental": {
+      "available": [
+        "distance_to_musi_water_m",
+        "distance_to_waterlogging_point_m",
+        "historical_evidence_category",
+        "sentinel1_historical_radar"
+      ],
+      "missing": [],
+      "available_count": 4,
+      "missing_count": 0,
+      "total_fields": 4
+    },
+    "incident": {
+      "available": [
+        "verification_status"
+      ],
+      "missing": [
+        "incident_timestamp",
+        "observed_water_depth_m",
+        "observed_flow_velocity_mps",
+        "estimated_people_stranded",
+        "observation_source"
+      ],
+      "available_count": 1,
+      "missing_count": 5,
+      "total_fields": 6
+    },
+    "current_observation_available": false,
+    "incident_measurements_available": false,
+    "ready_for_human_review": false,
+    "rescue_priority": "not_assessed",
+    "priority_score": null,
+    "current_flooding_status": "not_established",
+    "human_review_required": true,
+    "automated_dispatch_authorized": false
+  },
+  "evidence_quality": {
+    "classifications": {
+      "geometry_derived": 6,
+      "model_estimated": 1,
+      "mapped_historical": 1,
+      "observed_historical": 1,
+      "unavailable": 5
+    },
+    "records": [
+      {
+        "section": "building",
+        "field": "building_id",
+        "available": true,
+        "classification": "geometry_derived",
+        "current_incident_evidence": false,
+        "independently_verified": false
+      },
+      {
+        "section": "building",
+        "field": "latitude",
+        "available": true,
+        "classification": "geometry_derived",
+        "current_incident_evidence": false,
+        "independently_verified": false
+      },
+      {
+        "section": "building",
+        "field": "longitude",
+        "available": true,
+        "classification": "geometry_derived",
+        "current_incident_evidence": false,
+        "independently_verified": false
+      },
+      {
+        "section": "building",
+        "field": "footprint_area_m2",
+        "available": true,
+        "classification": "geometry_derived",
+        "current_incident_evidence": false,
+        "independently_verified": false
+      },
+      {
+        "section": "building",
+        "field": "estimated_height_m",
+        "available": true,
+        "classification": "model_estimated",
+        "current_incident_evidence": false,
+        "independently_verified": false
+      },
+      {
+        "section": "environmental",
+        "field": "distance_to_musi_water_m",
+        "available": true,
+        "classification": "geometry_derived",
+        "current_incident_evidence": false,
+        "independently_verified": false
+      },
+      {
+        "section": "environmental",
+        "field": "distance_to_waterlogging_point_m",
+        "available": true,
+        "classification": "geometry_derived",
+        "current_incident_evidence": false,
+        "independently_verified": false
+      },
+      {
+        "section": "environmental",
+        "field": "historical_evidence_category",
+        "available": true,
+        "classification": "mapped_historical",
+        "current_incident_evidence": false,
+        "independently_verified": false
+      },
+      {
+        "section": "environmental",
+        "field": "sentinel1_historical_radar",
+        "available": true,
+        "classification": "observed_historical",
+        "current_incident_evidence": false,
+        "independently_verified": false
+      },
+      {
+        "section": "incident",
+        "field": "incident_timestamp",
+        "available": false,
+        "classification": "unavailable",
+        "current_incident_evidence": false,
+        "independently_verified": false
+      },
+      {
+        "section": "incident",
+        "field": "observed_water_depth_m",
+        "available": false,
+        "classification": "unavailable",
+        "current_incident_evidence": false,
+        "independently_verified": false
+      },
+      {
+        "section": "incident",
+        "field": "observed_flow_velocity_mps",
+        "available": false,
+        "classification": "unavailable",
+        "current_incident_evidence": false,
+        "independently_verified": false
+      },
+      {
+        "section": "incident",
+        "field": "estimated_people_stranded",
+        "available": false,
+        "classification": "unavailable",
+        "current_incident_evidence": false,
+        "independently_verified": false
+      },
+      {
+        "section": "incident",
+        "field": "observation_source",
+        "available": false,
+        "classification": "unavailable",
+        "current_incident_evidence": false,
+        "independently_verified": false
+      }
+    ]
+  },
+  "rescue_readiness": {
+    "building_id": "osm-way-357584220",
+    "incident_fields_available": [],
+    "incident_fields_missing": [
+      {
+        "field": "incident_timestamp",
+        "description": "Current incident timestamp"
+      },
+      {
+        "field": "observation_source",
+        "description": "Current observation source"
+      },
+      {
+        "field": "verification_status",
+        "description": "Verified observation status"
+      },
+      {
+        "field": "estimated_people_stranded",
+        "description": "People requiring assistance"
+      },
+      {
+        "field": "observed_water_depth_m",
+        "description": "Observed floodwater depth"
+      },
+      {
+        "field": "observed_flow_velocity_mps",
+        "description": "Observed water-flow velocity"
+      }
+    ],
+    "current_flooding_status": "not_established",
+    "rescue_priority": "not_assessed",
+    "priority_score": null,
+    "human_review_required": true,
+    "automated_dispatch_authorized": false,
+    "explanation": "Current incident evidence is incomplete or unverified. Historical geographic and satellite observations cannot establish current rescue urgency."
+  },
+  "assessment": {
+    "current_flooding_status": "not_established",
+    "incident_report_status": "synthetic_unverified",
+    "human_attention_flag": true,
+    "triage_status": "reported_urgent_review",
+    "rescue_priority": "not_assessed",
+    "priority_score": null,
+    "human_review_required": true,
+    "automated_dispatch_authorized": false,
+    "explanation": "The synthetic scenario reports people requiring assistance and potential flood hazards. These values are fictional and unverified. The report demonstrates a human-review alert, not an operational rescue-priority decision."
+  },
+  "scenario": {
+    "scenario_id": "AI_NETRA_DEMO_001",
+    "scenario_type": "synthetic_training_scenario",
+    "synthetic": true,
+    "verification_status": "unverified"
+  },
+  "synthetic_incident": {
+    "reported_values": {
+      "estimated_people_stranded": 5,
+      "children": 2,
+      "senior_citizens": 1,
+      "observed_water_depth_m": 1.5,
+      "observed_flow_velocity_mps": 0.8,
+      "observation_source": "synthetic_emergency_report",
+      "verification_status": "unverified"
+    },
+    "triage": {
+      "status": "reported_urgent_review",
+      "human_attention_flag": true,
+      "human_review_required": true,
+      "rescue_priority": "not_assessed",
+      "priority_score": null,
+      "current_flooding_confirmed": false,
+      "automated_dispatch_authorized": false,
+      "explanation": "Synthetic emergency information suggests potential assistance needs. The report is unverified and must be assessed by a human. No operational rescue priority is assigned."
+    },
+    "reported_indicators": [
+      {
+        "indicator": "people_reportedly_stranded",
+        "value": 5,
+        "explanation": "The synthetic report indicates people may require emergency assistance."
+      },
+      {
+        "indicator": "children_reportedly_present",
+        "value": 2,
+        "explanation": "Children are reportedly among those requiring assistance. Their needs require human assessment."
+      },
+      {
+        "indicator": "senior_citizens_reportedly_present",
+        "value": 1,
+        "explanation": "Senior citizens are reportedly present. Mobility and support needs require assessment."
+      },
+      {
+        "indicator": "reported_water_depth",
+        "value": 1.5,
+        "unit": "m",
+        "explanation": "The synthetic report includes a positive water depth. This is not a verified measurement."
+      },
+      {
+        "indicator": "reported_flow_velocity",
+        "value": 0.8,
+        "unit": "m/s",
+        "explanation": "The synthetic report includes water movement. The measurement has not been verified."
+      }
+    ],
+    "limitations": [
+      "Synthetic demonstration only",
+      "No verified current flood observations",
+      "No validated rescue-priority thresholds",
+      "No automated dispatch authorization"
+    ]
+  },
+  "disclaimer": "SYNTHETIC DEMONSTRATION ONLY. No real emergency, confirmed flooding, verified measurements, or authorized rescue dispatch."
+}

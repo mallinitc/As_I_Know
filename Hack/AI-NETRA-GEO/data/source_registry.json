@@ -1,0 +1,100 @@
+{
+  "project": "AI NETRA",
+  "workstream": "GEO-BUILDING-INTELLIGENCE",
+  "registry_version": "1.0",
+  "sources": [
+    {
+      "id": "osm",
+      "name": "OpenStreetMap",
+      "access": "Overpass API",
+      "attributes": [
+        "footprint",
+        "building_type",
+        "floors",
+        "height",
+        "construction_year"
+      ],
+      "integration_status": "integrated",
+      "dataset_status": "available"
+    },
+    {
+      "id": "overture",
+      "name": "Overture Maps",
+      "access": "GeoParquet",
+      "attributes": [
+        "footprint",
+        "height",
+        "floors",
+        "building_class"
+      ],
+      "integration_status": "not_started",
+      "dataset_status": "not_checked"
+    },
+    {
+      "id": "google_open_buildings",
+      "name": "Google Open Buildings",
+      "access": "Public geospatial dataset",
+      "attributes": [
+        "footprint",
+        "detection_confidence"
+      ],
+      "integration_status": "not_started",
+      "dataset_status": "not_checked"
+    },
+    {
+      "id": "google_2_5d",
+      "name": "Google Open Buildings 2.5D",
+      "access": "Google Earth Engine",
+      "attributes": [
+        "estimated_height",
+        "historical_building_presence"
+      ],
+      "integration_status": "not_started",
+      "dataset_status": "not_checked"
+    },
+    {
+      "id": "gobs",
+      "name": "Geospatial Open Building Stack",
+      "access": "Access-requested dataset",
+      "attributes": [
+        "estimated_height",
+        "estimated_floors",
+        "estimated_land_use"
+      ],
+      "integration_status": "not_started",
+      "dataset_status": "access_required"
+    },
+    {
+      "id": "tgbpass",
+      "name": "Telangana TG-bPASS",
+      "access": "Government portal",
+      "attributes": [
+        "building_permission",
+        "sanctioned_floors"
+      ],
+      "integration_status": "not_started",
+      "dataset_status": "manual_access_review"
+    },
+    {
+      "id": "ghmc",
+      "name": "GHMC Building Records",
+      "access": "Government portal",
+      "attributes": [
+        "building_permission",
+        "building_classification"
+      ],
+      "integration_status": "not_started",
+      "dataset_status": "manual_access_review"
+    },
+    {
+      "id": "nrsc",
+      "name": "NRSC Flood Data",
+      "access": "Official geospatial resources",
+      "attributes": [
+        "historical_flood_exposure"
+      ],
+      "integration_status": "not_started",
+      "dataset_status": "not_checked"
+    }
+  ]
+}

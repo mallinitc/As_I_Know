@@ -1,0 +1,21 @@
+﻿{
+  "scenario_id": "AI_NETRA_DEMO_001",
+  "scenario_type": "synthetic_training_scenario",
+  "building_id": "osm-way-357584220",
+  "location": "Moosarambagh, Hyderabad",
+  "incident": {
+    "estimated_people_stranded": 5,
+    "children": 2,
+    "senior_citizens": 1,
+    "observed_water_depth_m": 1.5,
+    "observed_flow_velocity_mps": 0.8,
+    "observation_source": "synthetic_emergency_report",
+    "verification_status": "unverified"
+  },
+  "assessment": {
+    "rescue_priority": "not_assessed",
+    "human_review_required": true,
+    "automated_dispatch_authorized": false
+  },
+  "disclaimer": "Synthetic hackathon demonstration. No actual flooding, stranded people, or emergency observations are represented."
+}

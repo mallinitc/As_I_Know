@@ -1,0 +1,73 @@
+{
+  "project": "AI NETRA",
+  "schema_version": "1.0.0",
+  "assessment_type": "synthetic_multi_incident_comparison",
+  "scenario_count": 3,
+  "comparison_mode": "descriptive_only",
+  "ranking_performed": false,
+  "incidents": [
+    {
+      "scenario_id": "AI_NETRA_DEMO_001",
+      "building_id": "osm-way-357584220",
+      "synthetic": true,
+      "reported_people": 5,
+      "reported_children": 2,
+      "reported_seniors": 1,
+      "reported_water_depth_m": 1.5,
+      "reported_flow_velocity_mps": 0.8,
+      "indicator_count": 5,
+      "triage_status": "reported_urgent_review",
+      "human_attention_flag": true,
+      "verification_status": "unverified",
+      "rescue_priority": "not_assessed",
+      "priority_score": null,
+      "automated_dispatch_authorized": false,
+      "explanation": "Synthetic emergency information suggests potential assistance needs. The report is unverified and must be assessed by a human. No operational rescue priority is assigned."
+    },
+    {
+      "scenario_id": "AI_NETRA_DEMO_002",
+      "building_id": "osm-way-357584220",
+      "synthetic": true,
+      "reported_people": 12,
+      "reported_children": 4,
+      "reported_seniors": 3,
+      "reported_water_depth_m": 0.8,
+      "reported_flow_velocity_mps": 0.3,
+      "indicator_count": 5,
+      "triage_status": "reported_urgent_review",
+      "human_attention_flag": true,
+      "verification_status": "unverified",
+      "rescue_priority": "not_assessed",
+      "priority_score": null,
+      "automated_dispatch_authorized": false,
+      "explanation": "Synthetic emergency information suggests potential assistance needs. The report is unverified and must be assessed by a human. No operational rescue priority is assigned."
+    },
+    {
+      "scenario_id": "AI_NETRA_DEMO_003",
+      "building_id": "osm-way-357584220",
+      "synthetic": true,
+      "reported_people": 2,
+      "reported_children": 0,
+      "reported_seniors": 1,
+      "reported_water_depth_m": 2.2,
+      "reported_flow_velocity_mps": 1.1,
+      "indicator_count": 4,
+      "triage_status": "reported_urgent_review",
+      "human_attention_flag": true,
+      "verification_status": "unverified",
+      "rescue_priority": "not_assessed",
+      "priority_score": null,
+      "automated_dispatch_authorized": false,
+      "explanation": "Synthetic emergency information suggests potential assistance needs. The report is unverified and must be assessed by a human. No operational rescue priority is assigned."
+    }
+  ],
+  "human_review_required": true,
+  "automated_dispatch_authorized": false,
+  "limitations": [
+    "All scenarios are fictional",
+    "No independently verified incident measurements",
+    "No operational rescue-priority ranking",
+    "Reported values are not validated hazard estimates",
+    "Human emergency decisions are outside this prototype"
+  ]
+}

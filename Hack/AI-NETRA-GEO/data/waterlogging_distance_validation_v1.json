@@ -1,0 +1,30 @@
+{
+  "project": "AI NETRA",
+  "step": "8.58",
+  "generated_at": "2026-11-14T04:29:01.281778+00:00",
+  "total_buildings": 11659,
+  "waterlogging_locations": 23,
+  "distances_calculated": 11659,
+  "failed_records": 0,
+  "proximity_distribution": {
+    "within_1000m": 1835,
+    "beyond_1000m": 8082,
+    "within_500m": 1308,
+    "within_250m": 356,
+    "within_100m": 78
+  },
+  "minimum_distance_m": 15.062531543169289,
+  "maximum_distance_m": 3063.1983413041794,
+  "average_distance_m": 1484.3112855748932,
+  "median_distance_m": 1482.2410897284099,
+  "source": "Telangana Government TGRAC",
+  "method": "local_equirectangular_footprint_to_point",
+  "limitations": [
+    "Government points are not inundation boundaries.",
+    "Observation dates are unavailable.",
+    "The dataset may not contain every waterlogging location.",
+    "Nearest point does not establish historical flooding.",
+    "Distances use an approximate local metric projection.",
+    "No flood-risk classification has been assigned."
+  ]
+}
